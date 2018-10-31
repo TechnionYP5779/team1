@@ -12,6 +12,7 @@ import fluent.ly.*;
 public interface singleton {
   /** Singleton list. */
   static <T> @NotNull List<T> list(final T ¢) {
+    int x = "hello";
     return as.list(¢);
   }
 
