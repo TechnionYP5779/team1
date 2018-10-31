@@ -17,6 +17,7 @@ public class BoolTest {
   @Test public void testGet() {
     assertTrue(new Bool(true).get());
     assertFalse(new Bool(false).get());
+    assertFalse(new Bool().get());
   }
 
   @Test public void testSet() {
@@ -26,5 +27,11 @@ public class BoolTest {
   @Test public void testSetBoolean() {
     assertTrue(Bool.valueOf(false).set(true).get());
     assertFalse(Bool.valueOf(false).set(false).get());
+  }
+  
+  @Test public void testInner() {
+    assertEquals(new Bool(true).inner(), new Boolean(true));
+    assertEquals(new Bool(false).inner(), new Boolean(false));
+    assertEquals(new Bool().inner(), new Boolean(false));
   }
 }
