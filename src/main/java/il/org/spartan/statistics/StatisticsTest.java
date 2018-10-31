@@ -1,6 +1,5 @@
 package il.org.spartan.statistics;
 
-import static il.org.spartan.statistics.MomentUtils.*;
 import static org.junit.Assert.*;
 
 import java.util.*;
