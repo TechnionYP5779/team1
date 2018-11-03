@@ -6,7 +6,7 @@ import java.util.stream.*;
 
 import org.jetbrains.annotations.*;
 
-import src.main.java.il.org.spartan.*;
+//import src.main.java.il.org.spartan.*;
 
 /** @author Yossi Gil <tt>yogi@cs.technion.ac.il</tt>
  * @since 2017-04-23 */
