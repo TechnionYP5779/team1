@@ -1,2 +1,8 @@
 /target/
 /bin/
+<<<<<<< HEAD
+=======
+.classpath
+/.apt_generated/
+/.apt_generated_tests/
+>>>>>>> c58ffe79ecb07d823b8bc672d6997d64a15fb8cc
