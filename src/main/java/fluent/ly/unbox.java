@@ -114,7 +114,7 @@ import org.jetbrains.annotations.*;
   public static double @NotNull [] unbox(final @NotNull Double[] ds) {
     final double @NotNull [] $ = new double[ds.length];
     for (int ¢ = 0; ¢ < ds.length; ++¢)
-      $[¢] = ds[¢].floatValue();
+      $[¢] = ds[¢].doubleValue();
     return $;
   }
 
