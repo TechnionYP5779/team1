@@ -7,12 +7,12 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 public class SingletonTest {
-    @Test
+    @SuppressWarnings("static-method") @Test
     public void testToList() {
         assertEquals(Arrays.asList("hello"), singleton.list("hello"));
     }
 
-    @Test
+    @SuppressWarnings("static-method") @Test
     public void testToArray() {
         Object[] a = singleton.array("hello");
         assertEquals("hello", a[0]);
