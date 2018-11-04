@@ -7,14 +7,14 @@ import java.util.*;
 import org.junit.*;
 
 public class IntTest {
-  @Test
+  @SuppressWarnings("static-method") @Test
   public void testGet() {
     int i = new Random().nextInt();
     Int int1 = Int.valueOf(i);
     assertTrue(int1.inner().equals(Integer.valueOf(i)));
   }
   
-  @Test
+  @SuppressWarnings("static-method") @Test
   public void testStep() {
     int i = new Random().nextInt();
     Int int1 = Int.valueOf(i);
@@ -22,7 +22,7 @@ public class IntTest {
     assertTrue(int1.inner().equals(Integer.valueOf(i + 1)));
   }
 
-  @Test
+  @SuppressWarnings("static-method") @Test
   public void testAddRegularInt() {
     Random random = new Random();
     int i1 = random.nextInt(), i2 = random.nextInt();
@@ -31,7 +31,7 @@ public class IntTest {
     assertTrue(int1.inner().equals(Integer.valueOf(i1 + i2)));
   }
   
-  @Test
+  @SuppressWarnings("static-method") @Test
   public void testAddOtherInt() {
     Random random = new Random();
     int i1 = random.nextInt(), i2 = random.nextInt();
@@ -41,7 +41,7 @@ public class IntTest {
     assertEquals(int1.inner(),Integer.valueOf(i1 + i2));
   }
   
-  @Test
+  @SuppressWarnings("static-method") @Test
   public void testToString() {
     Random random = new Random();
     int i1 = random.nextInt();
@@ -49,7 +49,7 @@ public class IntTest {
     assertEquals(int1.toString(), Integer.valueOf(i1).toString());
   }
   
-  @Test
+  @SuppressWarnings("static-method") @Test
   public void testSet() {
     Random random = new Random();
     int i1 = random.nextInt(), i2 = random.nextInt();
@@ -61,7 +61,7 @@ public class IntTest {
     
   }
   
-  @Test
+  @SuppressWarnings("static-method") @Test
   public void testNext() {
     Random random = new Random();
     int i1 = random.nextInt();
@@ -70,7 +70,7 @@ public class IntTest {
     assertEquals(int1.inner(), Integer.valueOf(i1 + 1));
   }
   
-  @Test
+  @SuppressWarnings("static-method") @Test
   public void testClear() {
     Random random = new Random();
     int i1 = random.nextInt();
