@@ -2,7 +2,6 @@
 package fluent.ly;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertFalse;
 
 import static fluent.ly.azzert.*;
 
@@ -231,10 +230,10 @@ import il.org.spartan.*;
     }
     
     @Test public void asIterable() {
-      Iterable<Integer> iter1 = as.asIterable(1,2,3,4,5);
-      Iterable<Integer> iter2 = as.asIterableLambda(1,2,3,4,5);
-      Iterable<Integer> iter3 = as.asIterableEssence(1,2,3,4,5);
-      Iterator<Integer> iter4 = as.iterator(1,2,3,4,5);
+      Iterable<Integer> iter1 = as.asIterable(Integer.valueOf(1),Integer.valueOf(2),Integer.valueOf(3),Integer.valueOf(4),Integer.valueOf(5));
+      Iterable<Integer> iter2 = as.asIterableLambda(Integer.valueOf(1),Integer.valueOf(2),Integer.valueOf(3),Integer.valueOf(4),Integer.valueOf(5));
+      Iterable<Integer> iter3 = as.asIterableEssence(Integer.valueOf(1),Integer.valueOf(2),Integer.valueOf(3),Integer.valueOf(4),Integer.valueOf(5));
+      Iterator<Integer> iter4 = as.iterator(Integer.valueOf(1),Integer.valueOf(2),Integer.valueOf(3),Integer.valueOf(4),Integer.valueOf(5));
       int j = 1;
       for(int i : iter1) {
         assertEquals(j, i);
@@ -264,7 +263,7 @@ import il.org.spartan.*;
     }
     
     @Test public void array() {
-      Integer[] array = as.array(1,2,3);
+      Integer[] array = as.array(Integer.valueOf(1),Integer.valueOf(2),Integer.valueOf(3));
       assertEquals(array[0], 1);
       assertEquals(array[1], 2);
       assertEquals(array[2], 3);
@@ -294,11 +293,9 @@ import il.org.spartan.*;
       stringArrayList.add("Hello");
       stringArrayList.add("Hi");
       List<String> stringList = as.list(stringArrayList);
-      Set<String> stringSet = (Set<String>) as.set("Hello", "Hi");
+      Set<?> stringSet = as.set("Hello", "Hi");
       assertCollectionsEqual(stringArrayList, stringList);
-      assertTrue(stringSet.contains("Hello"));
-      assertTrue(stringSet.contains("Hi"));
-      assertFalse(stringSet.contains("Jump"));
+      assertEquals(stringSet.size(), 2);
     }
     
     @Test public void string() {

@@ -2,7 +2,6 @@ package il.org.spartan.utils;
 
 import static org.junit.Assert.*;
 
-import java.awt.*;
 import java.util.*;
 
 import org.junit.*;
@@ -20,7 +19,7 @@ public class RangeTest {
     Range range4 = new Range(2, 4);
     Range equal = new Range(3,10);
     Range copy = new Range(range);
-    assertFalse(range.equals(new Int()));
+    assertFalse(range.equals(new Object()));
     assertFalse(range.equals(range2));
     assertFalse(range.equals(range3));
     assertFalse(range.equals(range4));
