@@ -2,6 +2,7 @@
 package fluent.ly;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
 
 import static fluent.ly.azzert.*;
 
@@ -228,6 +229,88 @@ import il.org.spartan.*;
         }
       }), is("null"));
     }
+    
+    @Test public void asIterable() {
+      Iterable<Integer> iter1 = as.asIterable(1,2,3,4,5);
+      Iterable<Integer> iter2 = as.asIterableLambda(1,2,3,4,5);
+      Iterable<Integer> iter3 = as.asIterableEssence(1,2,3,4,5);
+      Iterator<Integer> iter4 = as.iterator(1,2,3,4,5);
+      int j = 1;
+      for(int i : iter1) {
+        assertEquals(j, i);
+        j++;
+      }
+      j = 1;
+      for(int i : iter2) {
+        assertEquals(j, i);
+        j++;
+      }
+      j = 1;
+      for(int i : iter3) {
+        assertEquals(j, i);
+        j++;
+      }
+      j = 1;
+      while(iter4.hasNext()) {
+        assertEquals(j, iter4.next());
+        j++;
+      }  
+    }
+    
+    @Test public void bit() {
+      Object obj = new Object();
+      assertEquals(0, as.bit(null));
+      assertEquals(1, as.bit(obj));
+    }
+    
+    @Test public void array() {
+      Integer[] array = as.array(1,2,3);
+      assertEquals(array[0], 1);
+      assertEquals(array[1], 2);
+      assertEquals(array[2], 3);
+    }
+    
+    @Test public void strings() {
+      List<String> stringList = as.list("Hello", "Hi");
+      Iterable<Integer> justANull = null;
+      List<Integer> emptyList = as.list(justANull);
+      assertEquals(0, emptyList.size());
+      String[] stringArray = as.strings(stringList);
+      String[] stringArray2 = as.strings(null);
+      ArrayList<String> checkNullObject = new ArrayList<>();
+      checkNullObject.add("Hello");
+      checkNullObject.add(null);
+      checkNullObject.add("Hi");
+      String[] stringArray3 = as.strings(checkNullObject);
+      assertEquals(stringArray[0], "Hello");
+      assertEquals(stringArray[1], "Hi");
+      assertEquals(0, stringArray2.length);
+      assertEquals(stringArray3[0], "Hello");
+      assertEquals(stringArray3[1], "Hi");
+    }
+    
+    @Test public void listAndSet() {
+      ArrayList<String> stringArrayList = new ArrayList<>();
+      stringArrayList.add("Hello");
+      stringArrayList.add("Hi");
+      List<String> stringList = as.list(stringArrayList);
+      Set<String> stringSet = (Set<String>) as.set("Hello", "Hi");
+      assertCollectionsEqual(stringArrayList, stringList);
+      assertTrue(stringSet.contains("Hello"));
+      assertTrue(stringSet.contains("Hi"));
+      assertFalse(stringSet.contains("Jump"));
+    }
+    
+    @Test public void string() {
+      Object obj = null;
+      String s = as.string('a');
+      String nullString = as.string(obj);
+      String helloString = as.string("hello");
+      assertEquals("a", s);
+      assertEquals("null", nullString);
+      assertEquals("hello", helloString);
+    }
+    
   }
 
   /** Converts a sequence of values into an array.
