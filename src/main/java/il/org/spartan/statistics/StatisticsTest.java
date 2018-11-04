@@ -4,29 +4,44 @@ import static org.junit.Assert.*;
 
 import java.util.*;
 
+import org.jetbrains.annotations.*;
 import org.junit.*;
 
 public class StatisticsTest {
-  
   //========== CLASS VARIABLES - FOR TESTING ==========
-  private final double [] first_integers_sample = new double[] {10.0, 15.0, 15.0, 17.0, 18.0, 21.0};
-  private final double first_median = 16.0;
-  private final double first_mean = 16.0;
+  double @NotNull [] first_integers_sample = new double[] {10.0, 15.0, 15.0, 17.0, 18.0, 21.0};
+  double first_mean;
   
-  private final double [] second_integer_sample = new double [] {0,0,0,0,0,0};
-  private final double second_median = 0;
-  private final double second_mean = 0;
-  private final double second_variance = 0;
+  double @NotNull [] second_integer_sample  = new double [] {0,0,0,0,0,0};
+  double second_median;
+  double second_mean;
+  double second_variance;
   
-  private final double [] third_integer_sample = new double[] {1,2,3,4,5};
-  private final double third_median = 3;
-  private final double third_mean = 3;
-  private final double third_variance = 2.5;
+  double @NotNull [] third_integer_sample = new double[] {1,2,3,4,5};
+  double third_median;
+  double third_mean;
+  double third_variance;
   
-  private final Statistics my_statistics = new Statistics() {};
+  Statistics my_statistics;
+  
+  //=====================================================
+  @Before
+  public void initClassVariables() { 
+    first_mean = 16.0;
+    
+    second_median = 0;
+    second_mean = 0;
+    second_variance = 0;
+    
+    third_median = 3;
+    third_mean = 3;
+    third_variance = 2.5;
+    
+    my_statistics = new Statistics() {/*Redundant*/};
+  }
   //=====================================================
   
-  @Test public void testMad() {    
+  @Test public void testMad() {
     //========== ANOTHER TEST ==========
     double mad2 = Statistics.mad(second_integer_sample);
     assertTrue(mad2 == 0);
@@ -95,10 +110,10 @@ public class StatisticsTest {
     //========== ANOTHER TEST ==========
     try {
       my_statistics.n = 0;
-      double max = my_statistics.max();
+      my_statistics.max();
       fail("you should have not got here");
     }
-    catch(ArithmeticException e) {
+    catch(@SuppressWarnings("unused") ArithmeticException e) {
       assertTrue(true);
     }
     
@@ -111,9 +126,9 @@ public class StatisticsTest {
   @Test public void testMean() {
     //========== ANOTHER TEST ==========
     try {
-      double mean = my_statistics.mean();
+      my_statistics.mean();
     }
-    catch(ArithmeticException e) {
+    catch(@SuppressWarnings("unused") ArithmeticException e) {
       assertTrue(true);
     }
     
@@ -135,9 +150,9 @@ public class StatisticsTest {
   @Test public void testMin() {
     //========== ANOTHER TEST ==========
     try {
-      double min = my_statistics.min();
+      my_statistics.min();
     }
-    catch(ArithmeticException e) {
+    catch(@SuppressWarnings("unused") ArithmeticException e) {
       assertTrue(true);
     }
     
@@ -203,7 +218,7 @@ public class StatisticsTest {
       my_statistics.checkEmpty();
       fail("YOU SHOULD HAVE RAISED EXCEPTION");
     }
-    catch(ArithmeticException e) {
+    catch(@SuppressWarnings("unused") ArithmeticException e) {
       assertTrue(true);
     }
     
@@ -214,7 +229,7 @@ public class StatisticsTest {
       assertTrue(true);
     }
     catch (ArithmeticException e) {
-      fail("YOU SHOULD HAVE NOT RAISED EXCEPTION");
+      fail("YOU SHOULD HAVE NOT RAISED EXCEPTION"+e.getMessage());
     }
   }
   

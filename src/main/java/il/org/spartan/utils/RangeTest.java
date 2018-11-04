@@ -6,7 +6,6 @@ import java.awt.*;
 import java.util.*;
 
 import org.junit.*;
-import org.w3c.dom.ranges.*;
 
 public class RangeTest {
   @Test public void testHashCode() {
