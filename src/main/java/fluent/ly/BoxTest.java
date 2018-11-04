@@ -6,13 +6,13 @@ import java.util.*;
 
 import org.junit.*;
 
-public class BoxTest {
+@SuppressWarnings({ "boxing", "static-method" }) public class BoxTest {
   @Test public void testBoxBoolean() {
     Random random = new Random();
     boolean tested = random.nextBoolean();
     Boolean mybox = box.box(tested);
     Boolean expected = tested;
-    assertEquals(expected, tested);
+    assertEquals(expected, mybox);
   }
 
   @Test public void testBoxBooleanArray() {
@@ -20,7 +20,7 @@ public class BoxTest {
     boolean[] tested = new boolean[len];
     Boolean[] expected = new Boolean[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = random.nextBoolean();
       expected[i] = tested[i];
     }
@@ -43,9 +43,8 @@ public class BoxTest {
     int len = 100;
     byte[] tested = new byte[len];
     Byte[] expected = new Byte[len];
-
     random.nextBytes(tested);
-    for(int i=0; i< len ; i++) {
+    for (int i = 0; i < len; i++) {
       expected[i] = tested[i];
     }
     Byte[] mybox = box.box(tested);
@@ -65,7 +64,7 @@ public class BoxTest {
     char[] tested = new char[len];
     Character[] expected = new Character[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = (char) random.nextInt(Character.MAX_VALUE + 1);
       expected[i] = tested[i];
     }
@@ -74,12 +73,11 @@ public class BoxTest {
   }
 
   @Test public void testBoxDouble() {
-    
     Random random = new Random();
     double tested = random.nextDouble();
     Double expected = tested;
     Double mybox = box.box(expected);
- // Maybe shouldnt compare using assertEquals even when 
+    // Maybe shouldnt compare using assertEquals even when
     assertEquals(expected, mybox);
   }
 
@@ -88,7 +86,7 @@ public class BoxTest {
     double[] tested = new double[len];
     Double[] expected = new Double[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = random.nextDouble();
       expected[i] = tested[i];
     }
@@ -109,7 +107,7 @@ public class BoxTest {
     float[] tested = new float[len];
     Float[] expected = new Float[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = random.nextFloat();
       expected[i] = tested[i];
     }
@@ -130,7 +128,7 @@ public class BoxTest {
     int[] tested = new int[len];
     Integer[] expected = new Integer[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = random.nextInt();
       expected[i] = tested[i];
     }
@@ -151,7 +149,7 @@ public class BoxTest {
     long[] tested = new long[len];
     Long[] expected = new Long[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = random.nextLong();
       expected[i] = tested[i];
     }
@@ -172,7 +170,7 @@ public class BoxTest {
     short[] tested = new short[len];
     Short[] expected = new Short[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = (short) random.nextInt(Short.MAX_VALUE + 1);
       expected[i] = tested[i];
     }
@@ -185,16 +183,15 @@ public class BoxTest {
     boolean tested = random.nextBoolean();
     Boolean mybox = box.it(tested);
     Boolean expected = tested;
-    assertEquals(expected, tested);
+    assertEquals(expected, mybox);
   }
 
   @Test public void testItBooleanArray() {
     int len = 100;
     boolean[] tested = new boolean[len];
     Boolean[] expected = new Boolean[len];
-
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = random.nextBoolean();
       expected[i] = tested[i];
     }
@@ -216,10 +213,9 @@ public class BoxTest {
     Random random = new Random();
     int len = 100;
     byte[] tested = new byte[len];
-
     Byte[] expected = new Byte[len];
     random.nextBytes(tested);
-    for(int i=0; i< len ; i++) {
+    for (int i = 0; i < len; i++) {
       expected[i] = tested[i];
     }
     Byte[] mybox = box.box(tested);
@@ -239,7 +235,7 @@ public class BoxTest {
     char[] tested = new char[len];
     Character[] expected = new Character[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = (char) random.nextInt(Character.MAX_VALUE + 1);
       expected[i] = tested[i];
     }
@@ -260,7 +256,7 @@ public class BoxTest {
     double[] tested = new double[len];
     Double[] expected = new Double[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = random.nextDouble();
       expected[i] = tested[i];
     }
@@ -281,7 +277,7 @@ public class BoxTest {
     float[] tested = new float[len];
     Float[] expected = new Float[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = random.nextFloat();
       expected[i] = tested[i];
     }
@@ -302,7 +298,7 @@ public class BoxTest {
     int[] tested = new int[len];
     Integer[] expected = new Integer[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = random.nextInt();
       expected[i] = tested[i];
     }
@@ -323,7 +319,7 @@ public class BoxTest {
     long[] tested = new long[len];
     Long[] expected = new Long[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = random.nextLong();
       expected[i] = tested[i];
     }
@@ -344,7 +340,7 @@ public class BoxTest {
     short[] tested = new short[len];
     Short[] expected = new Short[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       tested[i] = (short) random.nextInt(Short.MAX_VALUE + 1);
       expected[i] = tested[i];
     }

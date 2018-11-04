@@ -6,21 +6,20 @@ import java.util.*;
 
 import org.junit.*;
 
-public class BoxUnboxTest {
-  
+@SuppressWarnings({ "null", "static-method" }) public class BoxUnboxTest {
   @Test public void testBoolean() {
-      Random random = new Random();
-      boolean expected = random.nextBoolean();
-      Boolean mybox = box.box(expected);
-      boolean res = unbox.unbox(mybox);
-      assertEquals(expected, res);
+    Random random = new Random();
+    boolean expected = random.nextBoolean();
+    Boolean mybox = box.box(expected);
+    boolean res = unbox.unbox(mybox);
+    assertTrue(expected == res);
   }
 
   @Test public void testBooleanArray() {
     int len = 100;
     boolean[] expected = new boolean[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       expected[i] = random.nextBoolean();
     }
     Boolean[] mybox = box.box(expected);
@@ -49,7 +48,6 @@ public class BoxUnboxTest {
   }
 
   @Test public void testChar() {
-    int len = 100;
     Random random = new Random();
     char expected = (char) random.nextInt(Character.MAX_VALUE + 1);
     Character mybox = box.box(expected);
@@ -61,7 +59,7 @@ public class BoxUnboxTest {
     int len = 100;
     char[] expected = new char[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       expected[i] = (char) random.nextInt(Character.MAX_VALUE + 1);
     }
     Character[] mybox = box.box(expected);
@@ -74,22 +72,22 @@ public class BoxUnboxTest {
     double expected = random.nextDouble();
     Double mybox = box.box(expected);
     double res = unbox.unbox(mybox);
-    double epsilon = 0.0000000001;
-    assertTrue(Math.abs(expected-res) < epsilon);
+    double delta = 0.0000000001;
+    assertEquals(expected,res,delta);
   }
 
   @Test public void testDoubleArray() {
     Random random = new Random();
     int len = 100;
     double[] expected = new double[len];
-    for(int i =0; i< len; i++) {
+    for (int i = 0; i < len; i++) {
       expected[i] = random.nextDouble();
     }
     Double[] mybox = box.box(expected);
     double[] res = unbox.unbox(mybox);
-    double epsilon = 0.0000000001;
-    for(int i = 0; i < len; i++) {
-      assertTrue(Math.abs(expected[i]-res[i]) < epsilon);
+    double delta = 0.0000000001;
+    for (int i = 0; i < len; i++) {
+      assertEquals(expected[i], res[i], delta);
     }
   }
 
@@ -98,22 +96,22 @@ public class BoxUnboxTest {
     float expected = random.nextFloat();
     Float mybox = box.box(expected);
     float res = unbox.unbox(mybox);
-    double epsilon = 0.0000000001;
-    assertTrue(Math.abs(expected-res) < epsilon);
+    double delta = 0.0000000001;
+    assertEquals(expected, res, delta);
   }
 
   @Test public void testFloatArray() {
     Random random = new Random();
     int len = 100;
     float[] expected = new float[len];
-    for(int i =0; i< len; i++) {
+    for (int i = 0; i < len; i++) {
       expected[i] = random.nextFloat();
     }
     Float[] mybox = box.box(expected);
     float[] res = unbox.unbox(mybox);
-    double epsilon = 0.0000000001;
-    for(int i = 0; i < len; i++) {
-      assertTrue(Math.abs(expected[i]-res[i]) < epsilon);
+    double delta = 0.0000000001;
+    for (int i = 0; i < len; i++) {
+      assertEquals(expected[i], res[i], delta);
     }
   }
 
@@ -129,7 +127,7 @@ public class BoxUnboxTest {
     int len = 100;
     int[] expected = new int[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       expected[i] = random.nextInt();
     }
     Integer[] mybox = box.box(expected);
@@ -149,7 +147,7 @@ public class BoxUnboxTest {
     int len = 100;
     long[] expected = new long[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       expected[i] = random.nextLong();
     }
     Long[] mybox = box.box(expected);
@@ -169,7 +167,7 @@ public class BoxUnboxTest {
     int len = 100;
     short[] expected = new short[len];
     Random random = new Random();
-    for(int i=0; i<len; i++) {
+    for (int i = 0; i < len; i++) {
       expected[i] = (short) random.nextInt(Short.MAX_VALUE + 1);
     }
     Short[] mybox = box.box(expected);
