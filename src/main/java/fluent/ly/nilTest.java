@@ -10,9 +10,9 @@ import fluent.ly.nil.*;
 
 public class nilTest {
   @SuppressWarnings("static-method") @Test public  void testForgetting() {
-    assertNull(nil.forgetting(new Integer(1), new Integer(2)));
-    assertNull(nil.forgetting(new Integer(1), "abc"));
-    assertNull(nil.forgetting(new Integer(1), new Double(2.5), "abc", Arrays.asList(new Integer(1),
+    assertNull(nil.forgetting(Integer.valueOf(1), Integer.valueOf(2)));
+    assertNull(nil.forgetting(Integer.valueOf(1), "abc"));
+    assertNull(nil.forgetting(Integer.valueOf(1), Double.valueOf(2.5), "abc", Arrays.asList(new Integer(1),
         new Integer(2),new Integer(3))));
   }
 

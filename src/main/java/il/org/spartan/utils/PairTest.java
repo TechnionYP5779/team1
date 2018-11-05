@@ -31,7 +31,7 @@ public class PairTest {
     assertTrue(samplePair.toString().equals(Pair.newPair(first, second).toString()));
   }
 
-  @Test public void testMakePairsInt() {
+  @SuppressWarnings("static-method") @Test public void testMakePairsInt() {
     assertTrue(Pair.makePairs(5).length == 5 );
   }
 
