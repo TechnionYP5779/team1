@@ -63,7 +63,7 @@ public class asTest {
   }
 
   @SuppressWarnings("static-method") @Test public void testListTArray() {
-    List<Integer> x = as.list(1,2,3);
+    List<Integer> x = as.ingeterList(1,2,3);
     assertTrue(x.contains(Integer.valueOf(1)));
     assertTrue(x.contains(Integer.valueOf(2)));
     assertTrue(x.contains(Integer.valueOf(3)));
