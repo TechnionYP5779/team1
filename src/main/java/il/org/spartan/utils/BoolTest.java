@@ -30,8 +30,8 @@ public class BoolTest {
   }
   
   @SuppressWarnings("static-method") @Test public  void testInner() {
-    assertEquals(new Bool(true).inner(), new Boolean(true));
-    assertEquals(new Bool(false).inner(), new Boolean(false));
-    assertEquals(new Bool().inner(), new Boolean(false));
+    assertEquals(new Bool(true).inner(), Boolean.valueOf(true));
+    assertEquals(new Bool(false).inner(), Boolean.valueOf(false));
+    assertEquals(new Bool().inner(), Boolean.valueOf(false));
   }
 }
