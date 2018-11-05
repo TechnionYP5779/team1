@@ -6,7 +6,7 @@ import java.util.*;
 
 import org.junit.*;
 
-import il.org.spartan.*;
+//import il.org.spartan.*;
 
 public class PairTest {
   
@@ -18,9 +18,9 @@ public class PairTest {
   public void beforeFunction(){
     Random r = new Random();
     int nextInt = r.nextInt();
-    first = nextInt;
+    first = Integer.valueOf(nextInt);
     nextInt = r.nextInt();
-    second = nextInt;
+    second = Integer.valueOf(nextInt);
     samplePair =  new Pair<>(first, second) ;
   }
 
