@@ -91,7 +91,7 @@ public interface the {
   }
 
   @NotNull static <T> Iterable<T> lastOf(final @NotNull Iterable<T> ¢) {
-    return () -> new Iterator<>() {
+    return () -> new Iterator<T>() {
       final Iterator<T> $ = ¢.iterator();
       {
         $.next();

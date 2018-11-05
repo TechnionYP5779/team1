@@ -14,9 +14,9 @@ public enum empty {
   }
 
   public static <@Nullable T> Iterable<T> iterable() {
-    return new Iterable<>() {
+    return new Iterable<T>() {
       @Override public Iterator<T> iterator() {
-        return new Iterator<>() {
+        return new Iterator<T>() {
           @Override public boolean hasNext() {
             return false;
           }
