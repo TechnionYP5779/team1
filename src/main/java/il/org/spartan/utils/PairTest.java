@@ -35,7 +35,7 @@ public class PairTest {
     assertTrue(Pair.makePairs(5).length == 5 );
   }
 
-  @Test public void testMakePairsIntInt() {
+  @SuppressWarnings("static-method") @Test public void testMakePairsIntInt() {
     assertTrue(Pair.makePairs(5,5).length == 5* 5 );
   }
 }
