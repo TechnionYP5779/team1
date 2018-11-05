@@ -141,7 +141,7 @@ import org.junit.*;
   @SuppressWarnings({ "static-method", "synthetic-access" }) public static class TEST2 {
     @NotNull final String @NotNull [] alternatingArray = new String[] { null, "A", null, null, "B", null, null, null, "C", null };
     @NotNull final String @NotNull [] nonNullArray = { "1", "2", "4" };
-    @NotNull final Supplier<List<String>> x = new Supplier<List<String>>() {
+    @NotNull final Supplier<List<String>> x = new Supplier<>() {
       @Override public List<String> get() {
         List<String> $ = an.empty.list();
         $.add(null);

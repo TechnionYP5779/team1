@@ -68,7 +68,7 @@ public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
    * @author Yossi Gil
    * @since 2017-03-10 */
   static <@Nullable T, @Nullable R> @Nullable OnApplicator<T, R> on(final Predicate<T> p) {
-    return c -> new Rule.Stateful<T, R>() {
+    return c -> new Rule.Stateful<>() {
       @Override public R fire() {
         c.accept(current());
         return null;
@@ -101,7 +101,7 @@ public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
   }
 
   @Check default Rule<T, R> afterCheck(final Predicate<T> p) {
-    return new Interceptor<T, R>(this) {
+    return new Interceptor<>(this) {
       @Override public boolean check(final T ¢) {
         return inner.check(¢) && p.test(¢);
       }
@@ -135,7 +135,7 @@ public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
   }
 
   default Rule<T, R> beforeCheck(final Predicate<T> p) {
-    return new Interceptor<T, R>(this) {
+    return new Interceptor<>(this) {
       @Override public boolean check(final T ¢) {
         return p.test(¢) && inner.check(¢);
       }
