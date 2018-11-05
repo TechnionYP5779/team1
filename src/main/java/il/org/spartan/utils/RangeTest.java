@@ -7,12 +7,12 @@ import java.util.*;
 import org.junit.*;
 
 public class RangeTest {
-  @Test public void testHashCode() {
+  @SuppressWarnings("static-method") @Test public void testHashCode() {
     Range range = new Range(1,2);
     assertEquals(7, range.hashCode());
   }
 
-  @Test public void testEqualsObject() {
+  @SuppressWarnings("static-method") @Test public void testEqualsObject() {
     Range range = new Range(3, 10);
     Range range2 = new Range(5, 10);
     Range range3 = new Range(3, 8);
@@ -27,7 +27,7 @@ public class RangeTest {
     assertTrue(range.equals(copy));
   }
 
-  @Test public void testFindIncludedIn() {
+  @SuppressWarnings("static-method") @Test public void testFindIncludedIn() {
       Range range1 = new Range(2,5);
       Range range2 = new Range(1,3);
       Range toFindSucc = new Range(3,4);
@@ -43,21 +43,21 @@ public class RangeTest {
       assertEquals(range1,toFindSucc.findIncludedIn(rangeList));
   }
 
-  @Test public void testIncludedIn() {
+  @SuppressWarnings("static-method") @Test public void testIncludedIn() {
     Range contained = new Range(5, 8);
     Range container = new Range(3, 10);
     assertTrue(contained.includedIn(container));
     assertFalse(container.includedIn(contained));
   }
 
-  @Test public void testIsEmpty() {
+  @SuppressWarnings("static-method") @Test public void testIsEmpty() {
     Range empty = new Range(2, 2);
     Range notEmpty = new Range(2,3);
     assertTrue(empty.isEmpty());
     assertFalse(notEmpty.isEmpty());
   }
 
-  @Test public void testMerge() {
+  @SuppressWarnings("static-method") @Test public void testMerge() {
     Range small = new Range(2,5);
     Range big = new Range(3,8);
     Range combined = new Range(2,8);
@@ -66,7 +66,7 @@ public class RangeTest {
     assertFalse(small.merge(big).equals(incorrect));
   }
 
-  @Test public void testOverlapping() {
+  @SuppressWarnings("static-method") @Test public void testOverlapping() {
     Range main = new Range(2,5);
     Range contained = new Range(3,4);
     Range comingFromLeft = new Range(1, 3);
@@ -81,7 +81,7 @@ public class RangeTest {
     assertTrue(main.overlapping(unrelated));
   }
 
-  @Test public void testPruneIncluders() {
+  @SuppressWarnings("static-method") @Test public void testPruneIncluders() {
     Range range1 = new Range(2,5);
     Range range2 = new Range(1,3);
     Range toFindSucc = new Range(3,4);
@@ -96,7 +96,7 @@ public class RangeTest {
     assertEquals(1,rangeList.size());
   }
 
-  @Test public void testSize() {
+  @SuppressWarnings("static-method") @Test public void testSize() {
     Range range = new Range(2,10);
     Range range2 = new Range(2,2);
     Range range3 = new Range(5,4);
@@ -106,7 +106,7 @@ public class RangeTest {
 
   }
 
-  @Test public void testToString() {
+  @SuppressWarnings("static-method") @Test public void testToString() {
     Range range = new Range(2,10);
     assertEquals(range.toString(), "[2, 10]");
   }
