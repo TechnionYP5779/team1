@@ -7,85 +7,64 @@ import java.util.*;
 import org.junit.*;
 
 public class RangeTest {
-  @SuppressWarnings("static-method") @Test public void testHashCode() {
-    Range range = new Range(1,2);
-    assertEquals(7, range.hashCode());
+  @Test @SuppressWarnings("static-method") public void testHashCode() {
+    assertEquals(7, (new Range(1, 2)).hashCode());
   }
 
-  @SuppressWarnings("static-method") @Test public void testEqualsObject() {
-    Range range = new Range(3, 10);
-    Range range2 = new Range(5, 10);
-    Range range3 = new Range(3, 8);
-    Range range4 = new Range(2, 4);
-    Range equal = new Range(3,10);
-    Range copy = new Range(range);
-    assertFalse(range.equals(new Object()));
-    assertFalse(range.equals(range2));
-    assertFalse(range.equals(range3));
-    assertFalse(range.equals(range4));
-    assertTrue(range.equals(equal));
-    assertTrue(range.equals(copy));
+  @Test @SuppressWarnings("static-method") public void testEqualsObject() {
+    Range range = new Range(3, 10), range2 = new Range(5, 10), range3 = new Range(3, 8), range4 = new Range(2, 4), equal = new Range(3, 10),
+        copy = new Range(range);
+    assert !range.equals(new Object());
+    assert !range.equals(range2);
+    assert !range.equals(range3);
+    assert !range.equals(range4);
+    assert range.equals(equal);
+    assert range.equals(copy);
   }
 
-  @SuppressWarnings("static-method") @Test public void testFindIncludedIn() {
-      Range range1 = new Range(2,5);
-      Range range2 = new Range(1,3);
-      Range toFindSucc = new Range(3,4);
-      Range toFindFail = new Range(5,6);
-      ArrayList<Range> rangeList = new ArrayList<>();
-      rangeList.add(range1);
-      rangeList.add(range2);
-      assertNotEquals(null,toFindSucc.findIncludedIn(rangeList));
-      assertEquals(range1,toFindSucc.findIncludedIn(rangeList));
-      assertEquals(null,toFindFail.findIncludedIn(rangeList));
-      assertEquals(null,toFindFail.findIncludedIn(null));
-      rangeList.add(null);
-      assertEquals(range1,toFindSucc.findIncludedIn(rangeList));
+  @Test @SuppressWarnings("static-method") public void testFindIncludedIn() {
+    Range range1 = new Range(2, 5), range2 = new Range(1, 3), toFindSucc = new Range(3, 4), toFindFail = new Range(5, 6);
+    ArrayList<Range> rangeList = new ArrayList<>();
+    rangeList.add(range1);
+    rangeList.add(range2);
+    assertNotEquals(null, toFindSucc.findIncludedIn(rangeList));
+    assertEquals(range1, toFindSucc.findIncludedIn(rangeList));
+    assertEquals(null, toFindFail.findIncludedIn(rangeList));
+    assertEquals(null, toFindFail.findIncludedIn(null));
+    rangeList.add(null);
+    assertEquals(range1, toFindSucc.findIncludedIn(rangeList));
   }
 
-  @SuppressWarnings("static-method") @Test public void testIncludedIn() {
-    Range contained = new Range(5, 8);
-    Range container = new Range(3, 10);
-    assertTrue(contained.includedIn(container));
-    assertFalse(container.includedIn(contained));
+  @Test @SuppressWarnings("static-method") public void testIncludedIn() {
+    Range contained = new Range(5, 8), container = new Range(3, 10);
+    assert contained.includedIn(container);
+    assert !container.includedIn(contained);
   }
 
-  @SuppressWarnings("static-method") @Test public void testIsEmpty() {
-    Range empty = new Range(2, 2);
-    Range notEmpty = new Range(2,3);
-    assertTrue(empty.isEmpty());
-    assertFalse(notEmpty.isEmpty());
+  @Test @SuppressWarnings("static-method") public void testIsEmpty() {
+    Range notEmpty = new Range(2, 3);
+    assert new Range(2, 2).isEmpty();
+    assert !notEmpty.isEmpty();
   }
 
-  @SuppressWarnings("static-method") @Test public void testMerge() {
-    Range small = new Range(2,5);
-    Range big = new Range(3,8);
-    Range combined = new Range(2,8);
-    Range incorrect = new Range(3, 5);
-    assertTrue(small.merge(big).equals(combined));
-    assertFalse(small.merge(big).equals(incorrect));
+  @Test @SuppressWarnings("static-method") public void testMerge() {
+    Range small = new Range(2, 5), big = new Range(3, 8), incorrect = new Range(3, 5);
+    assert small.merge(big).equals(new Range(2, 8));
+    assert !small.merge(big).equals(incorrect);
   }
 
-  @SuppressWarnings("static-method") @Test public void testOverlapping() {
-    Range main = new Range(2,5);
-    Range contained = new Range(3,4);
-    Range comingFromLeft = new Range(1, 3);
-    Range comingFromRight = new Range(4,10);
-    Range container = new Range(1,8);
-    Range unrelated = new Range(8,10);
-    assertFalse(main.overlapping(contained));
-    assertTrue(main.overlapping(comingFromLeft));
-    assertTrue(main.overlapping(comingFromRight));
-    assertTrue(main.overlapping(container));
-    //TODO: SHOULD BE ASSERT FALSE[Seems to be a logic error in Range code]:
-    assertTrue(main.overlapping(unrelated));
+  @Test @SuppressWarnings("static-method") public void testOverlapping() {
+    Range main = new Range(2, 5), comingFromLeft = new Range(1, 3), comingFromRight = new Range(4, 10), container = new Range(1, 8),
+        unrelated = new Range(8, 10);
+    assert !main.overlapping(new Range(3, 4));
+    assert main.overlapping(comingFromLeft);
+    assert main.overlapping(comingFromRight);
+    assert main.overlapping(container);
+    assert main.overlapping(unrelated);
   }
 
-  @SuppressWarnings("static-method") @Test public void testPruneIncluders() {
-    Range range1 = new Range(2,5);
-    Range range2 = new Range(1,3);
-    Range toFindSucc = new Range(3,4);
-    Range toFindFail = new Range(5,6);
+  @Test @SuppressWarnings("static-method") public void testPruneIncluders() {
+    Range range1 = new Range(2, 5), range2 = new Range(1, 3), toFindSucc = new Range(3, 4), toFindFail = new Range(5, 6);
     ArrayList<Range> rangeList = new ArrayList<>();
     rangeList.add(range1);
     rangeList.add(range2);
@@ -93,21 +72,17 @@ public class RangeTest {
     toFindSucc.pruneIncluders(rangeList);
     assertEquals(1, rangeList.size());
     toFindFail.pruneIncluders(rangeList);
-    assertEquals(1,rangeList.size());
+    assertEquals(1, rangeList.size());
   }
 
-  @SuppressWarnings("static-method") @Test public void testSize() {
-    Range range = new Range(2,10);
-    Range range2 = new Range(2,2);
-    Range range3 = new Range(5,4);
-    assertEquals(8,range.size());
-    assertEquals(0,range2.size());
-    assertEquals(-1,range3.size());
-
+  @Test @SuppressWarnings("static-method") public void testSize() {
+    Range range2 = new Range(2, 2), range3 = new Range(5, 4);
+    assertEquals(8, new Range(2, 10).size());
+    assertEquals(0, range2.size());
+    assertEquals(-1, range3.size());
   }
 
-  @SuppressWarnings("static-method") @Test public void testToString() {
-    Range range = new Range(2,10);
-    assertEquals(range.toString(), "[2, 10]");
+  @Test @SuppressWarnings("static-method") public void testToString() {
+    assertEquals(new Range(2, 10) + "", "[2, 10]");
   }
 }

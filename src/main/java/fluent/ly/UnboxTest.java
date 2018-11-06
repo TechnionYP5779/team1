@@ -12,16 +12,11 @@ import org.junit.*;
     int len = 100;
     Double[] tested = new Double[len];
     double[] expected = new double[len];
-    for (int i = 0; i < len; i++) {
-      double num = random.nextDouble();
-      tested[i] = num;
-      expected[i] = num;
-    }
+    for (int ¢ = 0; ¢ < len; ++¢)
+      expected[¢] = tested[¢] = random.nextDouble();
     double[] res = unbox.it(tested);
-    double epsilon = 0.0000000001;
-    for (int i = 0; i < len; i++) {
-      assertEquals(expected[i], res[i], epsilon);
-    }
+    for (int ¢ = 0; ¢ < len; ++¢)
+      assertEquals(expected[¢], res[¢], 0.0000000001);
   }
 
   @Test public void testItFloatArray() {
@@ -29,24 +24,17 @@ import org.junit.*;
     int len = 100;
     Float[] tested = new Float[len];
     float[] expected = new float[len];
-    for (int i = 0; i < len; i++) {
-      float num = random.nextFloat();
-      tested[i] = num;
-      expected[i] = num;
-    }
+    for (int ¢ = 0; ¢ < len; ++¢)
+      expected[¢] = tested[¢] = random.nextFloat();
     float[] res = unbox.it(tested);
     float epsilon = (float) 0.0000001;
-    for (int i = 0; i < len; i++) {
-      assertEquals(expected[i], res[i], epsilon);
-    }
+    for (int ¢ = 0; ¢ < len; ++¢)
+      assertEquals(expected[¢], res[¢], epsilon);
   }
 
   @Test public void testItInteger() {
-    Random random = new Random();
-    Integer tested = random.nextInt();
-    int expected = tested;
-    int res = unbox.it(tested);
-    assertEquals(expected, res);
+    Integer tested = new Random().nextInt();
+    assertEquals((int)tested, unbox.it(tested));
   }
 
   @Test public void testItIntegerArray() {
@@ -54,12 +42,11 @@ import org.junit.*;
     int len = 100;
     Integer[] tested = new Integer[len];
     int[] expected = new int[len];
-    for (int i = 0; i < len; i++) {
-      tested[i] = random.nextInt();
-      expected[i] = tested[i];
+    for (int ¢ = 0; ¢ < len; ++¢) {
+      tested[¢] = random.nextInt();
+      expected[¢] = tested[¢];
     }
-    int[] res = unbox.it(tested);
-    assertArrayEquals(expected, res);
+    assertArrayEquals(expected, unbox.it(tested));
   }
 
   @Test public void testItListOfInteger() {
@@ -67,21 +54,17 @@ import org.junit.*;
     int len = 100;
     List<Integer> tested = new ArrayList<>();
     int[] expected = new int[len];
-    for (int i = 0; i < len; i++) {
+    for (int i = 0; i < len; ++i) {
       Integer num = random.nextInt();
       tested.add(num);
       expected[i] = num;
     }
-    int[] res = unbox.it(tested);
-    assertArrayEquals(expected, res);
+    assertArrayEquals(expected, unbox.it(tested));
   }
 
   @Test public void testUnboxBoolean() {
-    Random random = new Random();
-    Integer tested = random.nextInt();
-    int expected = tested;
-    int res = unbox.unbox(tested);
-    assertEquals(expected, res);
+    Integer tested = new Random().nextInt();
+    assertEquals((int)tested, unbox.unbox(tested));
   }
 
   @Test public void testUnboxBooleanArray() {
@@ -89,22 +72,18 @@ import org.junit.*;
     int len = 100;
     Boolean[] tested = new Boolean[len];
     boolean[] expected = new boolean[len];
-    for (int i = 0; i < len; i++) {
-      tested[i] = random.nextBoolean();
-      expected[i] = tested[i];
+    for (int ¢ = 0; ¢ < len; ++¢) {
+      tested[¢] = random.nextBoolean();
+      expected[¢] = tested[¢];
     }
-    boolean[] res = unbox.unbox(tested);
-    assertArrayEquals(expected, res);
+    assertArrayEquals(expected, unbox.unbox(tested));
   }
 
   @Test public void testUnboxByte() {
     Random random = new Random();
     byte[] arr = new byte[1];
     random.nextBytes(arr);
-    Byte tested = arr[0];
-    byte expected = tested;
-    byte res = unbox.unbox(tested);
-    assertEquals(expected, res);
+    assertEquals(arr[0], unbox.unbox(arr[0]));
   }
 
   @Test public void testUnboxByteArray() {
@@ -114,20 +93,16 @@ import org.junit.*;
     random.nextBytes(arr);
     Byte[] tested = new Byte[len];
     byte[] expected = new byte[len];
-    for (int i = 0; i < len; i++) {
-      tested[i] = arr[i];
-      expected[i] = tested[i];
+    for (int ¢ = 0; ¢ < len; ++¢) {
+      tested[¢] = arr[¢];
+      expected[¢] = tested[¢];
     }
-    byte[] res = unbox.unbox(tested);
-    assertArrayEquals(expected, res);
+    assertArrayEquals(expected, unbox.unbox(tested));
   }
 
   @Test public void testUnboxCharacter() {
-    Random random = new Random();
-    Character tested = ((char) random.nextInt(Character.MAX_VALUE + 1));
-    char expected = tested;
-    char res = unbox.unbox(tested);
-    assertEquals(expected, res);
+    Character tested = ((char) new Random().nextInt(Character.MAX_VALUE + 1));
+    assertEquals((int)tested, unbox.unbox(tested));
   }
 
   @Test public void testUnboxCharacterArray() {
@@ -135,12 +110,11 @@ import org.junit.*;
     int len = 100;
     Character[] tested = new Character[len];
     char[] expected = new char[len];
-    for (int i = 0; i < len; i++) {
-      tested[i] = ((char) random.nextInt(Character.MAX_VALUE + 1));
-      expected[i] = tested[i];
+    for (int ¢ = 0; ¢ < len; ++¢) {
+      tested[¢] = ((char) random.nextInt(Character.MAX_VALUE + 1));
+      expected[¢] = tested[¢];
     }
-    char[] res = unbox.unbox(tested);
-    assertArrayEquals(expected, res);
+    assertArrayEquals(expected, unbox.unbox(tested));
   }
 
   @Test public void testUnboxOrderedCollectionOfShort() {
@@ -148,22 +122,17 @@ import org.junit.*;
     int len = 100;
     Collection<Short> tested = new ArrayList<>();
     short[] expected = new short[len];
-    for (int i = 0; i < len; i++) {
+    for (int i = 0; i < len; ++i) {
       Short num = Short.valueOf((short) random.nextInt(Short.MAX_VALUE + 1));
       tested.add(num);
       expected[i] = num;
     }
-    short[] res = unbox.unbox(tested);
-    assertArrayEquals(expected, res);
+    assertArrayEquals(expected, unbox.unbox(tested));
   }
 
   @Test public void testUnboxDouble() {
-    Random random = new Random();
-    Double tested = random.nextDouble();
-    double expected = tested;
-    double res = unbox.unbox(tested);
-    double epsilon = 0.0000000001;
-    assertEquals(expected, res, epsilon);
+    Double tested = new Random().nextDouble();
+    assertEquals(tested, unbox.unbox(tested), 0.0000000001);
   }
 
   @Test public void testUnboxDoubleArray() {
@@ -171,24 +140,18 @@ import org.junit.*;
     int len = 100;
     Double[] tested = new Double[len];
     double[] expected = new double[len];
-    for (int i = 0; i < len; i++) {
-      tested[i] = random.nextDouble();
-      expected[i] = tested[i];
+    for (int ¢ = 0; ¢ < len; ++¢) {
+      tested[¢] = random.nextDouble();
+      expected[¢] = tested[¢];
     }
     double[] res = unbox.unbox(tested);
-    double epsilon = 0.0000000001;
-    for (int i = 0; i < len; i++) {
-      assertEquals(expected[i], res[i], epsilon);
-    }
+    for (int ¢ = 0; ¢ < len; ++¢)
+      assertEquals(expected[¢], res[¢], 0.0000000001);
   }
 
   @Test public void testUnboxFloat() {
-    Random random = new Random();
-    Float tested = random.nextFloat();
-    float expected = tested;
-    float res = unbox.unbox(tested);
-    float epsilon = (float) 0.0000001;
-    assertEquals(expected, res, epsilon);
+    Float tested = new Random().nextFloat();
+    assertEquals(tested, unbox.unbox(tested), (float) 0.0000001);
   }
 
   @Test public void testUnboxFloatArray() {
@@ -196,23 +159,19 @@ import org.junit.*;
     int len = 100;
     Float[] tested = new Float[len];
     float[] expected = new float[len];
-    for (int i = 0; i < len; i++) {
-      tested[i] = random.nextFloat();
-      expected[i] = tested[i];
+    for (int ¢ = 0; ¢ < len; ++¢) {
+      tested[¢] = random.nextFloat();
+      expected[¢] = tested[¢];
     }
     float[] res = unbox.unbox(tested);
     float epsilon = (float) 0.0000001;
-    for (int i = 0; i < len; i++) {
-      assertEquals(expected[i], res[i], epsilon);
-    }
+    for (int ¢ = 0; ¢ < len; ++¢)
+      assertEquals(expected[¢], res[¢], epsilon);
   }
 
   @Test public void testUnboxInteger() {
-    Random random = new Random();
-    Integer tested = random.nextInt();
-    int expected = tested;
-    int res = unbox.unbox(tested);
-    assertEquals(expected, res);
+    Integer tested = new Random().nextInt();
+    assertEquals((int)tested, unbox.unbox(tested));
   }
 
   @Test public void testUnboxIntegerArray() {
@@ -220,20 +179,16 @@ import org.junit.*;
     int len = 100;
     Integer[] tested = new Integer[len];
     int[] expected = new int[len];
-    for (int i = 0; i < len; i++) {
-      tested[i] = random.nextInt();
-      expected[i] = tested[i];
+    for (int ¢ = 0; ¢ < len; ++¢) {
+      tested[¢] = random.nextInt();
+      expected[¢] = tested[¢];
     }
-    int[] res = unbox.unbox(tested);
-    assertArrayEquals(expected, res);
+    assertArrayEquals(expected, unbox.unbox(tested));
   }
 
   @Test public void testUnboxLong() {
-    Random random = new Random();
-    Long tested = random.nextLong();
-    long expected = tested;
-    long res = unbox.unbox(tested);
-    assertEquals(expected, res);
+    Long tested = new Random().nextLong();
+    assertEquals((long)tested, unbox.unbox(tested));
   }
 
   @Test public void testUnboxLongArray() {
@@ -241,20 +196,16 @@ import org.junit.*;
     int len = 100;
     Long[] tested = new Long[len];
     long[] expected = new long[len];
-    for (int i = 0; i < len; i++) {
-      tested[i] = random.nextLong();
-      expected[i] = tested[i];
+    for (int ¢ = 0; ¢ < len; ++¢) {
+      tested[¢] = random.nextLong();
+      expected[¢] = tested[¢];
     }
-    long[] res = unbox.unbox(tested);
-    assertArrayEquals(expected, res);
+    assertArrayEquals(expected, unbox.unbox(tested));
   }
 
   @Test public void testUnboxShort() {
-    Random random = new Random();
-    Short tested = Short.valueOf((short) random.nextInt(Short.MAX_VALUE + 1));
-    short expected = tested;
-    short res = unbox.unbox(tested);
-    assertEquals(expected, res);
+    Short tested = Short.valueOf((short) new Random().nextInt(Short.MAX_VALUE + 1));
+    assertEquals((short)tested, unbox.unbox(tested));
   }
 
   @Test public void testUnboxShortArray() {
@@ -262,11 +213,10 @@ import org.junit.*;
     int len = 100;
     Short[] tested = new Short[len];
     short[] expected = new short[len];
-    for (int i = 0; i < len; i++) {
-      tested[i] = Short.valueOf((short) random.nextInt(Short.MAX_VALUE + 1));
-      expected[i] = tested[i];
+    for (int ¢ = 0; ¢ < len; ++¢) {
+      tested[¢] = Short.valueOf((short) random.nextInt(Short.MAX_VALUE + 1));
+      expected[¢] = tested[¢];
     }
-    short[] res = unbox.unbox(tested);
-    assertArrayEquals(expected, res);
+    assertArrayEquals(expected, unbox.unbox(tested));
   }
 }

@@ -7,74 +7,57 @@ import java.util.*;
 import org.junit.*;
 
 public class IntTest {
-  @SuppressWarnings("static-method") @Test
-  public void testGet() {
+  @Test @SuppressWarnings("static-method") public void testGet() {
     int i = new Random().nextInt();
-    Int int1 = Int.valueOf(i);
-    assertTrue(int1.inner().equals(Integer.valueOf(i)));
+    assert Int.valueOf(i).inner().equals(Integer.valueOf(i));
   }
   
-  @SuppressWarnings("static-method") @Test
-  public void testStep() {
+  @Test @SuppressWarnings("static-method") public void testStep() {
     int i = new Random().nextInt();
     Int int1 = Int.valueOf(i);
     int1.step();
-    assertTrue(int1.inner().equals(Integer.valueOf(i + 1)));
+    assert int1.inner().equals(Integer.valueOf(i + 1));
   }
 
-  @SuppressWarnings("static-method") @Test
-  public void testAddRegularInt() {
+  @Test @SuppressWarnings("static-method") public void testAddRegularInt() {
     Random random = new Random();
     int i1 = random.nextInt(), i2 = random.nextInt();
     Int int1 = Int.valueOf(i1);
     int1.add(i2);
-    assertTrue(int1.inner().equals(Integer.valueOf(i1 + i2)));
+    assert int1.inner().equals(Integer.valueOf(i1 + i2));
   }
   
-  @SuppressWarnings("static-method") @Test
-  public void testAddOtherInt() {
+  @Test @SuppressWarnings("static-method") public void testAddOtherInt() {
     Random random = new Random();
     int i1 = random.nextInt(), i2 = random.nextInt();
     Int int1 = Int.valueOf(i1);
-    Int int2 = Int.valueOf(i2);
-    int1.add(int2);
-    assertEquals(int1.inner(),Integer.valueOf(i1 + i2));
+    int1.add(Int.valueOf(i2));
+    assertEquals(int1.inner(), Integer.valueOf(i1 + i2));
   }
   
-  @SuppressWarnings("static-method") @Test
-  public void testToString() {
-    Random random = new Random();
-    int i1 = random.nextInt();
-    Int int1 = Int.valueOf(i1);
-    assertEquals(int1.toString(), Integer.valueOf(i1).toString());
+  @Test @SuppressWarnings("static-method") public void testToString() {
+    int i1 = new Random().nextInt();
+    assertEquals(Int.valueOf(i1) + "", Integer.valueOf(i1) + "");
   }
   
-  @SuppressWarnings("static-method") @Test
-  public void testSet() {
+  @Test @SuppressWarnings("static-method") public void testSet() {
     Random random = new Random();
     int i1 = random.nextInt(), i2 = random.nextInt();
     Int int1 = Int.valueOf(i1);
     int1.set(i2);
-    
     assertNotEquals(int1.inner(), Integer.valueOf(i1));
     assertEquals(int1.inner(), Integer.valueOf(i2));
-    
   }
   
-  @SuppressWarnings("static-method") @Test
-  public void testNext() {
-    Random random = new Random();
-    int i1 = random.nextInt();
+  @Test @SuppressWarnings("static-method") public void testNext() {
+    int i1 = new Random().nextInt();
     Int int1 = Int.valueOf(i1);
     assertEquals(int1.next(), i1 + 1);
     assertEquals(int1.inner(), Integer.valueOf(i1 + 1));
   }
   
-  @SuppressWarnings("static-method") @Test
-  public void testClear() {
-    Random random = new Random();
-    int i1 = random.nextInt();
-    Int int1 = Int.valueOf(i1);
+  @Test @SuppressWarnings("static-method") public void testClear() {
+    Int int1 = Int.valueOf(new Random().nextInt());
     int1.clear();
     assertEquals(int1.inner(), Integer.valueOf(0));
   }

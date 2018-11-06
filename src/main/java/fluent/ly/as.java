@@ -32,7 +32,7 @@ import il.org.spartan.*;
    *           type is isomorphic to array parameters in Java
    * @return an {@link Iterable} over the array, which can then be used to to
    *         iterate over the parameter(s) */
-  public static Iterable<Integer> asIterable(final @NotNull Integer... is) {
+  @SuppressWarnings("unused") public static Iterable<Integer> asIterable(final @NotNull Integer... is) {
     // Create an object of a new <em>anonymous</em> class that
     // <code><b>implements</b></code> {@link Iterable}
     return () -> new Iterator<Integer>() {
@@ -48,7 +48,7 @@ import il.org.spartan.*;
     };
   }
 
-  public static Iterable<Integer> asIterableLambda(final @NotNull Integer... is) {
+  @SuppressWarnings("unused") public static Iterable<Integer> asIterableLambda(final @NotNull Integer... is) {
     return () -> new Iterator<Integer>() {
       int current;
 
@@ -172,7 +172,7 @@ import il.org.spartan.*;
     return Utils.cantBeNull($.toArray(new String @NotNull [$.size()]));
   }
 
-  static Iterable<Integer> asIterableEssence(final @NotNull Integer... is) {
+  @SuppressWarnings("unused") static Iterable<Integer> asIterableEssence(final @NotNull Integer... is) {
     return () -> new Iterator<Integer>() {
       int current;
 
@@ -230,30 +230,28 @@ import il.org.spartan.*;
     }
     
     @Test public void asIterable() {
-      Iterable<Integer> iter1 = as.asIterable(Integer.valueOf(1),Integer.valueOf(2),Integer.valueOf(3),Integer.valueOf(4),Integer.valueOf(5));
-      Iterable<Integer> iter2 = as.asIterableLambda(Integer.valueOf(1),Integer.valueOf(2),Integer.valueOf(3),Integer.valueOf(4),Integer.valueOf(5));
-      Iterable<Integer> iter3 = as.asIterableEssence(Integer.valueOf(1),Integer.valueOf(2),Integer.valueOf(3),Integer.valueOf(4),Integer.valueOf(5));
+      Iterable<Integer> iter1 = as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5)),
+          iter2 = as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5)),
+          iter3 = as.asIterableEssence(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5));
       Iterator<Integer> iter4 = as.iterator(Integer.valueOf(1),Integer.valueOf(2),Integer.valueOf(3),Integer.valueOf(4),Integer.valueOf(5));
       int j = 1;
-      for(int i : iter1) {
-        assertEquals(j, i);
-        j++;
+      for(int ¢ : iter1) {
+        assertEquals(j, ¢);
+        ++j;
       }
       j = 1;
-      for(int i : iter2) {
-        assertEquals(j, i);
-        j++;
+      for(int ¢ : iter2) {
+        assertEquals(j, ¢);
+        ++j;
       }
       j = 1;
-      for(int i : iter3) {
-        assertEquals(j, i);
-        j++;
+      for(int ¢ : iter3) {
+        assertEquals(j, ¢);
+        ++j;
       }
       j = 1;
-      while(iter4.hasNext()) {
-        assertEquals(j, iter4.next());
-        j++;
-      }  
+      for (; iter4.hasNext(); ++j)
+        assertEquals(j, iter4.next());  
     }
     
     @Test public void bit() {
@@ -274,8 +272,7 @@ import il.org.spartan.*;
       Iterable<Integer> justANull = null;
       List<Integer> emptyList = as.list(justANull);
       assertEquals(0, emptyList.size());
-      String[] stringArray = as.strings(stringList);
-      String[] stringArray2 = as.strings(null);
+      String[] stringArray = as.strings(stringList), stringArray2 = as.strings(null);
       ArrayList<String> checkNullObject = new ArrayList<>();
       checkNullObject.add("Hello");
       checkNullObject.add(null);
@@ -299,11 +296,8 @@ import il.org.spartan.*;
     }
     
     @Test public void string() {
-      Object obj = null;
-      String s = as.string('a');
-      String nullString = as.string(obj);
-      String helloString = as.string("hello");
-      assertEquals("a", s);
+      String nullString = as.string(null), helloString = as.string("hello");
+      assertEquals("a", as.string('a'));
       assertEquals("null", nullString);
       assertEquals("hello", helloString);
     }

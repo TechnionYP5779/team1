@@ -5,33 +5,33 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 public class BoolTest {
-  @SuppressWarnings("static-method") @Test public void testValueOf() {
-    assertTrue(Bool.valueOf(true).get());
-    assertFalse(Bool.valueOf(false).get());
+  @Test @SuppressWarnings("static-method") public void testValueOf() {
+    assert Bool.valueOf(true).get();
+    assert !Bool.valueOf(false).get();
   }
 
-  @SuppressWarnings("static-method") @Test public void testClear() {
-    assertFalse(Bool.valueOf(true).clear().get());
+  @Test @SuppressWarnings("static-method") public void testClear() {
+    assert !Bool.valueOf(true).clear().get();
   }
 
-  @SuppressWarnings("static-method") @Test public void testGet() {
-    assertTrue(new Bool(true).get());
-    assertFalse(new Bool(false).get());
-    assertFalse(new Bool().get());
+  @Test @SuppressWarnings("static-method") public void testGet() {
+    assert new Bool(true).get();
+    assert !new Bool(false).get();
+    assert !new Bool().get();
   }
 
-  @SuppressWarnings("static-method") @Test public  void testSet() {
-    assertTrue(Bool.valueOf(false).set().get());
+  @Test @SuppressWarnings("static-method") public void testSet() {
+    assert Bool.valueOf(false).set().get();
   }
 
-  @SuppressWarnings("static-method") @Test public  void testSetBoolean() {
-    assertTrue(Bool.valueOf(false).set(true).get());
-    assertFalse(Bool.valueOf(false).set(false).get());
+  @Test @SuppressWarnings("static-method") public void testSetBoolean() {
+    assert Bool.valueOf(false).set(true).get();
+    assert !Bool.valueOf(false).set(false).get();
   }
   
-  @SuppressWarnings("static-method") @Test public  void testInner() {
-    assertEquals(new Bool(true).inner(), Boolean.valueOf(true));
-    assertEquals(new Bool(false).inner(), Boolean.valueOf(false));
-    assertEquals(new Bool().inner(), Boolean.valueOf(false));
+  @Test @SuppressWarnings("static-method") public void testInner() {
+    assertEquals(new Bool(true).inner(), Boolean.TRUE);
+    assertEquals(new Bool(false).inner(), Boolean.FALSE);
+    assertEquals(new Bool().inner(), Boolean.FALSE);
   }
 }

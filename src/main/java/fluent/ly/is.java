@@ -17,7 +17,7 @@ public interface is {
    * @return true if the the item is found in the list */
   @SafeVarargs static <T> boolean in(final T candidate, final @NotNull T... ts) {
     for (final T ¢ : ts)
-      if (¢ != null && ¢.equals(candidate))
+      if (¢.equals(candidate))
         return true;
     return false;
   }
@@ -35,7 +35,7 @@ public interface is {
 
   interface not {
     /** the candidate is not in ts */
-    @SafeVarargs static <T> boolean in(final T candidate, final T... ts) {
+    @SafeVarargs static <T> boolean in(final T candidate, final @NotNull T... ts) {
       return !is.in(candidate, ts);
     }
   }
@@ -45,7 +45,7 @@ public interface is {
    * @param candidate what to search for
    * @param ts        where to search
    * @return true if the the item is not found in the list */
-  @SafeVarargs static <T> boolean out(final T candidate, final T... ts) {
+  @SafeVarargs static <T> boolean out(final T candidate, final @NotNull T... ts) {
     return !in(candidate, ts);
   }
 

@@ -29,12 +29,9 @@ public class StatisticsTest {
   public void initClassVariables() { 
     first_mean = 16.0;
     
-    second_median = 0;
-    second_mean = 0;
-    second_variance = 0;
+    second_variance = second_mean = 0;
     
-    third_median = 3;
-    third_mean = 3;
+    third_mean = third_median = 3;
     third_variance = 2.5;
     
     my_statistics = new Statistics() {/*Redundant*/};
@@ -42,28 +39,20 @@ public class StatisticsTest {
   //=====================================================
   
   @Test public void testMad() {
-    //========== ANOTHER TEST ==========
-    double mad2 = Statistics.mad(second_integer_sample);
-    assertTrue(mad2 == 0);
+    assert Statistics.mad(second_integer_sample) == 0;
     
     //========== ANOTHER TEST ==========
     double mad3 = Statistics.mad(third_integer_sample);
-    assertTrue(mad3 >= 1 && mad3 <= 2);
+    assert mad3 >= 1 && mad3 <= 2;
    
   }
 
   @Test public void testMedian() {
-  //========== ANOTHER TEST ==========
-    double median1 = Statistics.median(first_integers_sample);
-    assertTrue(median1 == 16.0);
+  assert Statistics.median(first_integers_sample) == 16.0;
     
-  //========== ANOTHER TEST ==========
-    double median2 = Statistics.median(second_integer_sample);
-    assertTrue(median2 == second_median);
+  assert Statistics.median(second_integer_sample) == second_median;
     
-  //========== ANOTHER TEST ==========
-    double median3 = Statistics.median(third_integer_sample);
-    assertTrue(median3 == third_median);
+  assert Statistics.median(third_integer_sample) == third_median;
   }
 
 //  @Test public void testPrune() {
@@ -71,39 +60,33 @@ public class StatisticsTest {
 //  }
 
   @Test public void testSampleMean() {
-  //========== ANOTHER TEST ==========
-    assertTrue(Statistics.sampleMean(first_integers_sample) == first_mean);
+  assert Statistics.sampleMean(first_integers_sample) == first_mean;
   
-    //========== ANOTHER TEST ==========
-    assertTrue(Statistics.sampleMean(second_integer_sample) == second_mean);
+    assert Statistics.sampleMean(second_integer_sample) == second_mean;
   
-    //========== ANOTHER TEST ==========
-    assertTrue(Statistics.sampleMean(third_integer_sample) == third_mean);
+    assert Statistics.sampleMean(third_integer_sample) == third_mean;
   }
 
   @Test public void testSampleVariance() {
   //========== ANOTHER TEST ==========
     double firstVariance = Statistics.sampleVariance(first_integers_sample);
-    assertTrue(firstVariance >= 13 && firstVariance <= 14);
+    assert firstVariance >= 13 && firstVariance <= 14;
     
-  //========== ANOTHER TEST ==========
-    assertTrue(Statistics.sampleVariance(second_integer_sample) == second_variance);
+  assert Statistics.sampleVariance(second_integer_sample) == second_variance;
     
-  //========== ANOTHER TEST ==========
-    assertTrue(Statistics.sampleVariance(third_integer_sample) == third_variance);
+  assert Statistics.sampleVariance(third_integer_sample) == third_variance;
   }
 
   @Test public void testIsEmpty() {
-  //========== ANOTHER TEST ==========
-    assertTrue(my_statistics.isEmpty());
+  assert my_statistics.isEmpty();
     
   //========== ANOTHER TEST ==========
     my_statistics.n = 7;
-    assertTrue(! my_statistics.isEmpty());
+    assert !my_statistics.isEmpty();
     
     //========== ANOTHER TEST ==========
     my_statistics.n = 0;
-    assertTrue(my_statistics.isEmpty());
+    assert my_statistics.isEmpty();
   }
 
   @Test public void testMax() {
@@ -114,13 +97,13 @@ public class StatisticsTest {
       fail("you should have not got here");
     }
     catch(@SuppressWarnings("unused") ArithmeticException e) {
-      assertTrue(true);
+      assert true;
     }
     
     //========== ANOTHER TEST ==========
     my_statistics.n = 3;
     my_statistics.max = 15;
-    assertTrue(my_statistics.max() == 15);
+    assert my_statistics.max() == 15;
   }
 
   @Test public void testMean() {
@@ -129,22 +112,22 @@ public class StatisticsTest {
       my_statistics.mean();
     }
     catch(@SuppressWarnings("unused") ArithmeticException e) {
-      assertTrue(true);
+      assert true;
     }
     
     //========== ANOTHER TEST ==========
     my_statistics.n = 6;
     my_statistics.moments[1] = Arrays.stream(first_integers_sample).sum();
-    assertTrue(my_statistics.mean() == first_mean);
+    assert my_statistics.mean() == first_mean;
     
     //========== ANOTHER TEST ==========
     my_statistics.moments[1] = Arrays.stream(second_integer_sample).sum();
-    assertTrue(my_statistics.mean() == second_mean);
+    assert my_statistics.mean() == second_mean;
     
     //========== ANOTHER TEST ==========
     my_statistics.n = 5;
     my_statistics.moments[1] = Arrays.stream(third_integer_sample).sum();
-    assertTrue(my_statistics.mean() == third_mean);
+    assert my_statistics.mean() == third_mean;
   }
 
   @Test public void testMin() {
@@ -153,33 +136,31 @@ public class StatisticsTest {
       my_statistics.min();
     }
     catch(@SuppressWarnings("unused") ArithmeticException e) {
-      assertTrue(true);
+      assert true;
     }
     
     //========== ANOTHER TEST ==========
     my_statistics.n = 3;
     my_statistics.min = 15;
-    assertTrue(my_statistics.min() == 15);
+    assert my_statistics.min() == 15;
   }
 
   @Test public void testMissing() {
-    //========== ANOTHER TEST ==========
-    assertTrue(my_statistics.missing() == 0);
+    assert my_statistics.missing() == 0;
   
     //========== ANOTHER TEST ==========
     int missing_value = 5;
     my_statistics.missing = missing_value;
-    assertTrue(my_statistics.missing() == missing_value);
+    assert my_statistics.missing() == missing_value;
   }
 
   @Test public void testN() {
-    //========== ANOTHER TEST ==========
-    assertTrue(my_statistics.n == 0);
+    assert my_statistics.n == 0;
   
     //========== ANOTHER TEST ==========
     int nth_value = 7;
     my_statistics.n = nth_value;
-    assertTrue(my_statistics.n == nth_value);
+    assert my_statistics.n == nth_value;
   }
 
 //  @Test public void testRelativeError() {
@@ -188,7 +169,7 @@ public class StatisticsTest {
 
   @Test public void testSd() {
     testVariance();
-    assertTrue(2 == my_statistics.sd());
+    assert my_statistics.sd() == 2;
   }
 
   @Test public void testSum() {
@@ -206,9 +187,8 @@ public class StatisticsTest {
   @Test public void testVariance() {
     //========== ANOTHER TEST ==========
     my_statistics.moments[2] = 55;
-    my_statistics.n = 11;
-    my_statistics.moments[1] = 11;
-    assertTrue(4 == my_statistics.variance());
+    my_statistics.moments[1] = my_statistics.n = 11;
+    assert my_statistics.variance() == 4;
   }
 
   @Test public void testCheckEmpty() {
@@ -219,17 +199,17 @@ public class StatisticsTest {
       fail("YOU SHOULD HAVE RAISED EXCEPTION");
     }
     catch(@SuppressWarnings("unused") ArithmeticException e) {
-      assertTrue(true);
+      assert true;
     }
     
     //========== ANOTHER TEST ==========
     try{
       my_statistics.n = 7;
       my_statistics.checkEmpty();
-      assertTrue(true);
+      assert true;
     }
-    catch (ArithmeticException e) {
-      fail("YOU SHOULD HAVE NOT RAISED EXCEPTION"+e.getMessage());
+    catch (ArithmeticException ¢) {
+      fail("YOU SHOULD HAVE NOT RAISED EXCEPTION"+¢.getMessage());
     }
   }
   
@@ -239,9 +219,6 @@ public class StatisticsTest {
   private void checkSum(int index) {
     my_statistics.moments[index] = 5;
     my_statistics.n = 1;
-    if(index == 1)
-      assertTrue(5 == my_statistics.sum());
-    else
-      assertTrue(5 == my_statistics.sum2());
+    assert (index == 1 ? my_statistics.sum() : my_statistics.sum2()) == 5;
   }
 }

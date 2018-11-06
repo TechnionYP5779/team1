@@ -33,7 +33,7 @@ public class file {
     file.rename(old, old + ".csv");
   }
   
-  @SuppressWarnings("null") @NotNull public static String read(final @NotNull File f) throws IOException {
+  @NotNull @SuppressWarnings("null") public static String read(final @NotNull File f) throws IOException {
     final @NotNull String ls = System.getProperty("line.separator");
     System.err.println(ls.compareTo("\n"));
     final @NotNull StringBuilder $ = new StringBuilder();
