@@ -2,7 +2,7 @@
 package fluent.ly;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.azzert.assertEquals;
 
 import static fluent.ly.azzert.*;
 
@@ -213,23 +213,23 @@ import il.org.spartan.*;
     }
 
     @Test public void testBitBoolean() {
-      assertEquals(as.bit(true), 1);
-      assertEquals(as.bit(false), 0);
+      azzert.assertEquals(as.bit(true), 1);
+      azzert.assertEquals(as.bit(false), 0);
     }
 
     @Test public void testBitObject() {
-      assertEquals(as.bit(Boolean.TRUE), 1);
-      assertEquals(as.bit(null), 0);
+      azzert.assertEquals(as.bit(Boolean.TRUE), 1);
+      azzert.assertEquals(as.bit(null), 0);
     }
 
     @Test public void testIngeterList() {
-      assertEquals(as.ingeterList(1, 23, 3, 44, 5).size(), 5);
+      azzert.assertEquals(as.ingeterList(1, 23, 3, 44, 5).size(), 5);
     }
 
     @Test public void testIntArrayIntArray() {
       int[] x = as.intArray(0, 1, 2, 3, 4);
       for (int ¢ = 0; ¢ < 5; ++¢)
-        assertEquals(¢, x[¢]);
+        azzert.assertEquals(¢, x[¢]);
     }
 
     @Test  public void testIntArrayListOfInteger() {
@@ -238,12 +238,12 @@ import il.org.spartan.*;
         y.add(Integer.valueOf(¢));
       int[] x = as.intArray(0, 1, 2, 3, 4);
       for (int ¢ = 0; ¢ < 5; ++¢)
-        assertEquals(¢, x[¢]);
+        azzert.assertEquals(¢, x[¢]);
     }
 
 
     @Test public void testListIterableOfQextendsT() {
-      assertEquals(an.empty.list(), as.list(new ArrayList<>()));
+      azzert.assertEquals(an.empty.list(), as.list(new ArrayList<>()));
     }
 
     @Test public void testListTArray() {
@@ -261,15 +261,15 @@ import il.org.spartan.*;
     }
 
     @Test public void testStringObject() {
-      assertEquals(as.string((Object) null), "null");
+      azzert.assertEquals(as.string((Object) null), "null");
     }
 
     @Test public void testStringChar() {
-      assertEquals(as.string('g'), "g");
+      azzert.assertEquals(as.string('g'), "g");
     }
 
     @Test public void testStringString() {
-      assertEquals(as.string(null), "null");
+      azzert.assertEquals(as.string(null), "null");
     }
 
     @Test public void testStrings() {
@@ -328,35 +328,35 @@ import il.org.spartan.*;
       Iterator<Integer> iter4 = as.iterator(Integer.valueOf(1),Integer.valueOf(2),Integer.valueOf(3),Integer.valueOf(4),Integer.valueOf(5));
       int j = 1;
       for(int ¢ : iter1) {
-        assertEquals(j, ¢);
+        azzert.assertEquals(j, ¢);
         ++j;
       }
       j = 1;
       for(int ¢ : iter2) {
-        assertEquals(j, ¢);
+        azzert.assertEquals(j, ¢);
         ++j;
       }
       j = 1;
       for(int ¢ : iter3) {
-        assertEquals(j, ¢);
+        azzert.assertEquals(j, ¢);
         ++j;
       }
       j = 1;
       for (; iter4.hasNext(); ++j)
-        assertEquals(j, iter4.next());  
+        azzert.assertEquals(j, iter4.next());  
     }
     
     @Test public void bit() {
       Object obj = new Object();
-      assertEquals(0, as.bit(null));
-      assertEquals(1, as.bit(obj));
+      azzert.assertEquals(0, as.bit(null));
+      azzert.assertEquals(1, as.bit(obj));
     }
     
     @Test public void array() {
       Integer[] array = as.array(Integer.valueOf(1),Integer.valueOf(2),Integer.valueOf(3));
-      assertEquals(array[0], 1);
-      assertEquals(array[1], 2);
-      assertEquals(array[2], 3);
+      azzert.assertEquals(array[0], 1);
+      azzert.assertEquals(array[1], 2);
+      azzert.assertEquals(array[2], 3);
     }
     
     @Test public void strings() {
@@ -366,11 +366,11 @@ import il.org.spartan.*;
       checkNullObject.add(null);
       checkNullObject.add("Hi");
       String[] stringArray3 = as.strings(checkNullObject);
-      assertEquals(stringArray[0], "Hello");
-      assertEquals(stringArray[1], "Hi");
-      assertEquals(0, stringArray2.length);
-      assertEquals(stringArray3[0], "Hello");
-      assertEquals(stringArray3[1], "Hi");
+      azzert.assertEquals(stringArray[0], "Hello");
+      azzert.assertEquals(stringArray[1], "Hi");
+      azzert.assertEquals(0, stringArray2.length);
+      azzert.assertEquals(stringArray3[0], "Hello");
+      azzert.assertEquals(stringArray3[1], "Hi");
     }
     
     @Test public void listAndSet() {
@@ -380,14 +380,14 @@ import il.org.spartan.*;
       List<String> stringList = as.list(stringArrayList);
       Set<?> stringSet = as.set("Hello", "Hi");
       assertCollectionsEqual(stringArrayList, stringList);
-      assertEquals(stringSet.size(), 2);
+      azzert.assertEquals(stringSet.size(), 2);
     }
     
     @Test public void string() {
       String nullString = as.string(null), helloString = as.string("hello");
-      assertEquals("a", as.string('a'));
-      assertEquals("null", nullString);
-      assertEquals("hello", helloString);
+      azzert.assertEquals("a", as.string('a'));
+      azzert.assertEquals("null", nullString);
+      azzert.assertEquals("hello", helloString);
     }
     
   }
