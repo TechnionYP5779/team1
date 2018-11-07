@@ -231,12 +231,14 @@ import il.org.spartan.Utils.FoundHandleForT.*;
   }
 
 
-  /** Determine whether an {@link Object} is list.penultimate in its {@link List} .
+  /** Determine whether an {@link Object} is the penultimate in its {@link List} .
+   * An object is the penultimate if and only if it is the element before the last.
    * @param    <T> JD
    * @param o  JD
    * @param os JD
    * @return <code><b>true</b></code> <i>iff</i> the an {@link Object} parameter
-   *         occurs as the list.penultimate element of the {@link List} parameter */
+   *         occurs as the penultimate element of the {@link List} parameter 
+   *         (meaning, one before the last element of the list)*/
   static <@Nullable T> boolean penultimateIn(final T o, final @Nullable List<T> os) {
     assert os != null;
     return list.penultimate(os) == o;
