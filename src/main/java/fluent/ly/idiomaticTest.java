@@ -29,17 +29,6 @@ public class idiomaticTest {
 //    }
 // }
 
-  @Test @SuppressWarnings({ "null", "static-method" }) public void testKatching1() {
-    idiomatic.Producer<Integer> thrower = () -> {
-      throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");
-    };
-    try {
-      assertNull(idiomatic.katching(thrower));
-    } catch (Exception ¢) {
-      ¢.printStackTrace();
-      fail("Exception uncaught by katching");
-    }
-  }
   
   @Test @SuppressWarnings({ "null", "static-method" }) public void testKatching2() {
     idiomatic.Producer<Integer> notThrower = () -> Integer.valueOf(1);
