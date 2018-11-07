@@ -19,7 +19,6 @@ public class idiomaticTest {
     assertEquals(Integer.valueOf(1), idiomatic.incase(true, Integer.valueOf(1)));
   }
 
-<<<<<<< HEAD
 //  @SuppressWarnings({ "null", "static-method" }) @Test public void testKatching1() {
 //    idiomatic.Producer<Integer> thrower = () -> {throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");};
 //    try {
@@ -29,7 +28,7 @@ public class idiomaticTest {
 //      fail("Exception uncaught by katching");
 //    }
 // }
-=======
+
   @Test @SuppressWarnings({ "null", "static-method" }) public void testKatching1() {
     idiomatic.Producer<Integer> thrower = () -> {
       throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");
@@ -41,7 +40,6 @@ public class idiomaticTest {
       fail("Exception uncaught by katching");
     }
   }
->>>>>>> 666657ade948da6bf227ffbc4585e671d9c0525e
   
   @Test @SuppressWarnings({ "null", "static-method" }) public void testKatching2() {
     idiomatic.Producer<Integer> notThrower = () -> Integer.valueOf(1);
