@@ -1,8 +1,11 @@
 package a;
 
+import static org.junit.Assert.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
+import org.junit.*;
 
 import fluent.ly.*;
 
@@ -19,4 +22,20 @@ public interface singleton {
   static <T> T[] array(final T ¢) {
     return as.array(¢);
   }
+  
+  @SuppressWarnings("static-method") class TEST {
+    @Test public void testToList() {
+      assertEquals(Arrays.asList("hello"), singleton.list("hello"));
+    }
+
+    @Test public void testToArray() {
+      Object[] a = singleton.array("hello");
+      assertEquals("hello", a[0]);
+      assertEquals(1, a.length);
+    }
+  }
+  
 }
+
+
+
