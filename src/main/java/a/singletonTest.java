@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 
-public class SingletonTest {
+public class singletonTest {
     @Test @SuppressWarnings("static-method") public void testToList() {
       assertEquals(Arrays.asList("hello"), singleton.list("hello"));
     }
