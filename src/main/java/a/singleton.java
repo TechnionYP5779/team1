@@ -17,6 +17,7 @@ public interface singleton {
 
   /** Singleton array. */
   static <T> T[] array(final T ¢) {
+    //ofir's comment
     return as.array(¢);
   }
 }
