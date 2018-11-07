@@ -23,7 +23,7 @@ public interface singleton {
     return as.array(¢);
   }
   
-  @SuppressWarnings("static-method") class TEST {
+  @SuppressWarnings("static-method") static class TEST {
     @Test public void testToList() {
       assertEquals(Arrays.asList("hello"), singleton.list("hello"));
     }
