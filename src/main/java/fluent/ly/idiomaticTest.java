@@ -4,23 +4,22 @@ import static org.junit.Assert.*;
 
 import static fluent.ly.azzert.*;
 
-import java.util.function.*;
 
 import org.junit.*;
 
 import fluent.ly.idiomatic.*;
 
 public class idiomaticTest {
-  @SuppressWarnings({ "static-method", "null" }) @Test public void testEval() {
-    Supplier<Integer> s = () -> Integer.valueOf(1);
-    assertEquals(Integer.valueOf(1), idiomatic.eval(s).get());
+  @Test @SuppressWarnings({ "static-method" }) public void testEval() {
+    assertEquals(Integer.valueOf(1), idiomatic.eval(() -> Integer.valueOf(1)).get());
   }
 
-  @SuppressWarnings("static-method") @Test public void testIncase() {
-    assertEquals(null, idiomatic.incase(true == false, Integer.valueOf(1)));
+  @Test @SuppressWarnings("static-method") public void testIncase() {
+    assertEquals(null, idiomatic.incase(false, Integer.valueOf(1)));
     assertEquals(Integer.valueOf(1), idiomatic.incase(true, Integer.valueOf(1)));
   }
 
+<<<<<<< HEAD
 //  @SuppressWarnings({ "null", "static-method" }) @Test public void testKatching1() {
 //    idiomatic.Producer<Integer> thrower = () -> {throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");};
 //    try {
@@ -30,59 +29,71 @@ public class idiomaticTest {
 //      fail("Exception uncaught by katching");
 //    }
 // }
+=======
+  @Test @SuppressWarnings({ "null", "static-method" }) public void testKatching1() {
+    idiomatic.Producer<Integer> thrower = () -> {
+      throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");
+    };
+    try {
+      assertNull(idiomatic.katching(thrower));
+    } catch (Exception ¢) {
+      ¢.printStackTrace();
+      fail("Exception uncaught by katching");
+    }
+  }
+>>>>>>> 666657ade948da6bf227ffbc4585e671d9c0525e
   
-  @SuppressWarnings({ "null", "static-method" }) @Test public void testKatching2() {
+  @Test @SuppressWarnings({ "null", "static-method" }) public void testKatching2() {
     idiomatic.Producer<Integer> notThrower = () -> Integer.valueOf(1);
-    
     try {
       assertNotNull(idiomatic.katching(notThrower));
-    } catch(Exception e) {
-      e.printStackTrace();
+    } catch (Exception ¢) {
+      ¢.printStackTrace();
       fail("there should not have been an Exception");
     }
-    
   }
 
-  @SuppressWarnings("static-method") @Test public void testQuote() {
-    assertEquals( "<null reference>" , idiomatic.quote(null));
+  @Test @SuppressWarnings("static-method") public void testQuote() {
+    assertEquals("<null reference>", idiomatic.quote(null));
     assertEquals("'abc'", idiomatic.quote("abc"));
   }
 
-  @SuppressWarnings("static-method") @Test public void testRunDoesNotThrow_SanityCheck() {
-    Runnable r = () -> {@SuppressWarnings("unused") int x = 1;};
-    idiomatic.Runner runner = idiomatic.run(r);
-    try{
+  @Test @SuppressWarnings("static-method") public void testRunDoesNotThrow_SanityCheck() {
+    idiomatic.Runner runner = idiomatic.run(() -> {
+      @SuppressWarnings("unused") int x = 1;
+    });
+    try {
       runner.run();
       runner.when(false);
       runner.when(true);
       runner.unless(false);
       runner.unless(true);
-    } catch(Exception e) {
-      e.printStackTrace();
+    } catch (Exception ¢) {
+      ¢.printStackTrace();
       fail("Should not throw");
     }
   }
 
-  @SuppressWarnings({ "static-method", "null" }) @Test public void testTake() {
-    Storer<Boolean> sto = idiomatic.take(Boolean.valueOf(true));
-    assertTrue(sto.get().booleanValue());
+  @Test @SuppressWarnings({ "static-method", "null" }) public void testTake() {
+    Storer<Boolean> sto = idiomatic.take(Boolean.TRUE);
+    assert sto.get().booleanValue();
     assertNull(sto.when(false));
-    assertTrue(sto.when(true).booleanValue());
+    assert sto.when(true).booleanValue();
     assertNull(sto.unless(true));
-    assertTrue(sto.unless(false).booleanValue());
+    assert sto.unless(false).booleanValue();
   }
 
-  @SuppressWarnings("static-method") @Test public void testUnlessBoolean() {
+  @Test @SuppressWarnings("static-method") public void testUnlessBoolean() {
     assertNull(idiomatic.unless(true).eval(Integer.valueOf(1)));
     assertEquals(Integer.valueOf(1), idiomatic.unless(false).eval(Integer.valueOf(1)));
   }
 
-  @SuppressWarnings("static-method") @Test public void testUnlessBooleanT() {
+  @Test @SuppressWarnings("static-method") public void testUnlessBooleanT() {
     assertNull(idiomatic.unless(true, Integer.valueOf(2)));
     assertEquals(Integer.valueOf(2), idiomatic.unless(false, Integer.valueOf(2)));
   }
 
-  @SuppressWarnings("static-method") @Test public void testWhen() {
+  @Test @SuppressWarnings("static-method") public void testWhen() {
     assertNull(idiomatic.when(false).eval(Integer.valueOf(1)));
     assertEquals(Integer.valueOf(1), idiomatic.when(true).eval(Integer.valueOf(1)));
   }
@@ -91,11 +102,11 @@ public class idiomaticTest {
     assert new Storer<>(this) != null;
   }
 
-  @SuppressWarnings("static-method") @Test public void use08() {
+  @Test @SuppressWarnings("static-method") public void use08() {
     azzert.isNull(idiomatic.unless(true).eval(() -> new Object()));
   }
 
-  @SuppressWarnings("static-method") @Test public void use09() {
+  @Test @SuppressWarnings("static-method") public void use09() {
     assert idiomatic.unless(false).eval(() -> new Object()) != null;
   }
 
@@ -104,11 +115,11 @@ public class idiomaticTest {
     new Storer<>(this).when(true);
   }
 
-  @SuppressWarnings("static-method") @Test public void use10() {
+  @Test @SuppressWarnings("static-method") public void use10() {
     assert idiomatic.when(true).eval(() -> new Object()) != null;
   }
 
-  @SuppressWarnings("static-method") @Test public void use11() {
+  @Test @SuppressWarnings("static-method") public void use11() {
     azzert.isNull(idiomatic.when(false).eval(() -> new Object()));
   }
 
