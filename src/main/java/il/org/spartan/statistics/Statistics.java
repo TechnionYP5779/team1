@@ -167,7 +167,7 @@ public abstract class Statistics {
   // ==================================================================
   // Tests for statistics
   // ==================================================================
-  public static class StatisticsTest {
+  public static class TEST {
     //========== CLASS VARIABLES - FOR TESTING ==========
     double @NotNull [] first_integers_sample = new double[] {10.0, 15.0, 15.0, 17.0, 18.0, 21.0};
     double first_mean;
