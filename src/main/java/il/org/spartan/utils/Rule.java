@@ -100,7 +100,7 @@ public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
     });
   }
 
-  @SuppressWarnings("unused") @Check default Rule<T, R> afterCheck(final Predicate<T> p) {
+  @Check @SuppressWarnings("unused") default Rule<T, R> afterCheck(final Predicate<T> p) {
     return new Interceptor<T, R>(this) {
       @Override public boolean check(final T ¢) {
         return inner.check(¢) && p.test(¢);
