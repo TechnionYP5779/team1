@@ -188,7 +188,7 @@ import org.junit.*;
 
   @Test public void testUnboxLong() {
     Long tested = new Random().nextLong();
-    assertEquals((long)tested, unbox.unbox(tested));
+    assertEquals(1L * tested, unbox.unbox(tested));
   }
 
   @Test public void testUnboxLongArray() {

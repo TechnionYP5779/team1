@@ -24,27 +24,25 @@ public class Rectangle {
   
 
   public double area() {
-    return length*width;
+    return width * length;
   }
 
   public double perim() {
-    return 2*(length + width);
+    return 2*(width + length);
   }
 
 
   public Rectangle transpose() {
-    Pair<Double, Double> p1_new = Pair.newPair(p1.second, p1.first);
-    Pair<Double, Double> p2_new = Pair.newPair(p2.second, p2.first);
-    
-    Rectangle newRec = null;
+    Pair<Double, Double> p1_new = Pair.newPair(p1.second, p1.first), p2_new = Pair.newPair(p2.second, p2.first);
+    Rectangle $ = null;
     
     try {
-      newRec =  new Rectangle(p1_new, p2_new);
+      $ =  new Rectangle(p1_new, p2_new);
     } catch (@SuppressWarnings("unused") IllegalArgumentException ignore) {
       throw new AssertionError();
     }
   
-    return newRec;
+    return $;
   }
   
   
