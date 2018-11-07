@@ -32,7 +32,7 @@ import il.org.spartan.*;
    *           type is isomorphic to array parameters in Java
    * @return an {@link Iterable} over the array, which can then be used to to
    *         iterate over the parameter(s) */
-  public static Iterable<Integer> asIterable(final @NotNull Integer... is) {
+  @SuppressWarnings("unused") public static Iterable<Integer> asIterable(final @NotNull Integer... is) {
     // Create an object of a new <em>anonymous</em> class that
     // <code><b>implements</b></code> {@link Iterable}
     return () -> new Iterator<Integer>() {
@@ -48,7 +48,7 @@ import il.org.spartan.*;
     };
   }
 
-  public static Iterable<Integer> asIterableLambda(final @NotNull Integer... is) {
+  @SuppressWarnings("unused") public static Iterable<Integer> asIterableLambda(final @NotNull Integer... is) {
     return () -> new Iterator<Integer>() {
       int current;
 
@@ -172,7 +172,7 @@ import il.org.spartan.*;
     return Utils.cantBeNull($.toArray(new String @NotNull [$.size()]));
   }
 
-  static Iterable<Integer> asIterableEssence(final @NotNull Integer... is) {
+  @SuppressWarnings("unused") static Iterable<Integer> asIterableEssence(final @NotNull Integer... is) {
     return () -> new Iterator<Integer>() {
       int current;
 

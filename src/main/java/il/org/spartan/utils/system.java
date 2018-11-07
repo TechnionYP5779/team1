@@ -109,12 +109,14 @@ public interface system {
           if ($.isEmpty() || $.pop() != '{')
             return false;
           continue;
+        default:
+          continue;
       }
     return $.isEmpty();
   }
 
-  /** @return if called from a (potentially static) method m in class A, gives the
-   *         full name of the class B != A, such that a method in B, made a
+  /** @return if called from a (potentially static) method m in class A, gives
+   *         the full name of the class B != A, such that a method in B, made a
    *         sequence of calls through methods in A, which ended in the call to
    *         m. */
   static String myCallerFullClassName() {
