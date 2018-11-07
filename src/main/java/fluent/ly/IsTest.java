@@ -23,5 +23,22 @@ import org.junit.*;
     assertTrue(is.intIsIn(5, 5, 6, 7, 8, 9));
   }
   
+  @Test public void testIsEmptyStringNull() {
+    assertTrue(is.empty((String)null));
+  }
+  
+  @Test public void testIsEmptyString() {
+    assertTrue(is.empty(""));
+  }
+  
+  @Test public void testIsEmptyArrayNull() {
+    assertTrue(is.empty((Integer[])null));
+  }
+  
+  @Test public void testIsEmptyArray() {
+    assertTrue(is.empty(new Integer[0]));
+  }
+  
+  
   
 }
