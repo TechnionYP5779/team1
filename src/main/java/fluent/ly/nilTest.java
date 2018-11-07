@@ -1,16 +1,14 @@
 package fluent.ly;
 
-import static org.junit.Assert.*;
-
 import java.util.*;
 import org.junit.*;
 import fluent.ly.nil.*;
 
 public class nilTest {
   @Test @SuppressWarnings("static-method") public void testForgetting() {
-    assertNull(nil.forgetting(Integer.valueOf(1), Integer.valueOf(2)));
-    assertNull(nil.forgetting(Integer.valueOf(1), "abc"));
-    assertNull(
+    azzert.assertNull(nil.forgetting(Integer.valueOf(1), Integer.valueOf(2)));
+    azzert.assertNull(nil.forgetting(Integer.valueOf(1), "abc"));
+    azzert.assertNull(
         nil.forgetting(Integer.valueOf(1), Double.valueOf(2.5), "abc", Arrays.asList(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))));
   }
 
@@ -18,25 +16,25 @@ public class nilTest {
     return ¢ + "";
   }
   
-  @Test @SuppressWarnings("static-method") public void testGuardingly() {
+  @Test @SuppressWarnings({ "static-method", "static-access" }) public void testGuardingly() {
     On<Integer, String> ff = nil.guardingly(nilTest::helperF);
-    assertNull(ff.on(null));
-    assertNotNull(ff.on(Integer.valueOf(1)));
-    assertEquals("1", ff.on(Integer.valueOf(1)));
+    azzert.assertNull(ff.on(null));
+    azzert.assertNotNull(ff.on(Integer.valueOf(1)));
+    azzert.assertEquals("1", ff.on(Integer.valueOf(1)));
   }
 
   @Test @SuppressWarnings("static-method") public void testIgnoringBoolean() {
-    assertNull(nil.ignoring(true));
-    assertNull(nil.ignoring(false));
+    azzert.assertNull(nil.ignoring(true));
+    azzert.assertNull(nil.ignoring(false));
   }
 
   @Test @SuppressWarnings("static-method") public void testIgnoringDouble() {
-    assertNull(nil.ignoring(1.5));
-    assertNull(nil.ignoring(2.0));
+    azzert.assertNull(nil.ignoring(1.5));
+    azzert.assertNull(nil.ignoring(2.0));
   }
 
   @Test @SuppressWarnings("static-method") public void testIgnoringLong() {
-    assertNull(nil.ignoring(7034567L));
-    assertNull(nil.ignoring(2L));
+    azzert.assertNull(nil.ignoring(7034567L));
+    azzert.assertNull(nil.ignoring(2L));
   }
 }
