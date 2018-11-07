@@ -360,11 +360,7 @@ import il.org.spartan.*;
     }
     
     @Test public void strings() {
-      List<String> stringList = as.list("Hello", "Hi");
-      Iterable<Integer> justANull = null;
-      List<Integer> emptyList = as.list(justANull);
-      assertEquals(0, emptyList.size());
-      String[] stringArray = as.strings(stringList), stringArray2 = as.strings(null);
+      String[] stringArray = as.strings(as.list("Hello", "Hi")), stringArray2 = as.strings(null);
       ArrayList<String> checkNullObject = new ArrayList<>();
       checkNullObject.add("Hello");
       checkNullObject.add(null);
