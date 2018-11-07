@@ -1,10 +1,8 @@
-package il.org.spartan.utils;
+package il.org.spartan.etc;
+
+import il.org.spartan.utils.*;
 
 public class Rectangle {
-
-  @SuppressWarnings("serial") public class IllegalParameters extends Exception {
-    //for when the points actually create a line or a point
-  }
   
   private Pair<Double, Double> p1;
   private Pair<Double, Double> p2;
@@ -12,8 +10,8 @@ public class Rectangle {
   public double length;
   public double width;
 
-  public Rectangle(Pair<Double, Double> p1, Pair<Double, Double> p2) throws IllegalParameters {
-    if(p1.first.equals(p2.first) || p1.second.equals(p2.second)) throw new IllegalParameters();
+  public Rectangle(Pair<Double, Double> p1, Pair<Double, Double> p2) throws IllegalArgumentException {
+    if(p1.first.equals(p2.first) || p1.second.equals(p2.second)) throw new IllegalArgumentException();
     
     this.p1 = p1;
     this.p2 = p2;
@@ -41,7 +39,7 @@ public class Rectangle {
     
     try {
       newRec =  new Rectangle(p1_new, p2_new);
-    } catch (@SuppressWarnings("unused") IllegalParameters ignore) {
+    } catch (@SuppressWarnings("unused") IllegalArgumentException ignore) {
       throw new AssertionError();
     }
   
