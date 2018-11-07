@@ -10,6 +10,7 @@ public class Rectangle {
   public double length;
   public double width;
 
+  
   public Rectangle(Pair<Double, Double> p1, Pair<Double, Double> p2) throws IllegalArgumentException {
     if(p1.first.equals(p2.first) || p1.second.equals(p2.second)) throw new IllegalArgumentException();
     
