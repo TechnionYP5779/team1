@@ -2,6 +2,8 @@ package fluent.ly;
 
 import static org.junit.Assert.*;
 
+import java.util.*;
+
 import org.junit.*;
 
 @SuppressWarnings({ "static-method", "null" }) public class IsTest {
@@ -22,23 +24,28 @@ import org.junit.*;
   @Test public void testIsIntIn() {
     assertTrue(is.intIsIn(5, 5, 6, 7, 8, 9));
   }
-  
+
   @Test public void testIsEmptyStringNull() {
-    assertTrue(is.empty((String)null));
+    assertTrue(is.empty((String) null));
   }
-  
+
   @Test public void testIsEmptyString() {
     assertTrue(is.empty(""));
   }
-  
+
   @Test public void testIsEmptyArrayNull() {
-    assertTrue(is.empty((Integer[])null));
+    assertTrue(is.empty((Integer[]) null));
   }
-  
+
   @Test public void testIsEmptyArray() {
     assertTrue(is.empty(new Integer[0]));
   }
-  
-  
-  
+
+  @Test public void testNullList() {
+    assertTrue(is.empty((ArrayList<Integer>) null));
+  }
+
+  @Test public void testEmptyList() {
+    assertTrue(is.empty(new ArrayList<Integer>()));
+  }
 }
