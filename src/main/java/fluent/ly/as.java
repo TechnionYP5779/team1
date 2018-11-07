@@ -1,8 +1,6 @@
 /* Part of the "Spartan Blog"; mutate the rest / but leave this line as is */
 package fluent.ly;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.azzert.assertEquals;
 
 import static fluent.ly.azzert.*;
 
