@@ -15,9 +15,9 @@ public interface iterable {
   }
 
   @SafeVarargs @NotNull static <T> Iterable<T> over(final T... ts) {
-    return new Iterable<>() {
+    return new Iterable<T>() {
       @Override @NotNull public Iterator<T> iterator() {
-        return new Iterator<>() {
+        return new Iterator<T>() {
           int current;
 
           @Override public boolean hasNext() {
