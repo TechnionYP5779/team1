@@ -1,7 +1,7 @@
-package il.org.spartan.etc;
+package il.org.spartan.utils;
 
 import org.junit.*;
-import il.org.spartan.utils.*;
+
 import fluent.ly.*;
 
 public class RectangleTest {

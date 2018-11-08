@@ -1,6 +1,5 @@
-package il.org.spartan.etc;
+package il.org.spartan.utils;
 
-import il.org.spartan.utils.*;
 
 public class Rectangle {
   
