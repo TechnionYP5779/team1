@@ -45,4 +45,9 @@ import fluent.ly.*;
     azzert.assertEquals(BigInteger.ONE.neg().intValue(), BigInteger.valueOf(-1).intValue());
     azzert.assertEquals(BigInteger.ONE.neg().neg().intValue(), BigInteger.ONE.intValue());
   }
+  
+  @Test public void canExtendIntBoundaries() {
+    this.bigInteger = BigInteger.valueOf(Integer.MAX_VALUE);
+    azzert.assertTrue(this.bigInteger.step(BigInteger.ONE).intValue() > 0);
+  }
 }
