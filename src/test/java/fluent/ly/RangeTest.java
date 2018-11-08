@@ -6,7 +6,7 @@ import org.junit.*;
 import il.org.spartan.utils.*;
 
 @SuppressWarnings({"static-method","static-access"})
-public class rangeTest {
+public class RangeTest {
   @Test public void testHashCode() {
     azzert.assertEquals(7, (new Range(1, 2)).hashCode());
   }
