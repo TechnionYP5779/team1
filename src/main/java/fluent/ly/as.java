@@ -193,7 +193,7 @@ import il.org.spartan.*;
    * begin with the name of the method they check.
    * @author Yossi Gil
    * @since 2014-05-31 */
-  @SuppressWarnings("static-method") public static class TEST {
+  @SuppressWarnings({"static-method","static-access"}) public static class TEST {
     @Test public void testAsIterable() {
       int count = 1;
       for (Iterator<Integer> ¢ = as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)).iterator(); ¢.hasNext();) {
@@ -381,7 +381,7 @@ import il.org.spartan.*;
       azzert.assertEquals(stringSet.size(), 2);
     }
     
-    @SuppressWarnings("static-access") @Test public void string() {
+    @Test public void string() {
       String nullString = as.string(null), helloString = as.string("hello");
       azzert.assertEquals("a", as.string('a'));
       azzert.assertEquals("null", nullString);
