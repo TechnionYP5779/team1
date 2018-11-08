@@ -381,7 +381,7 @@ import il.org.spartan.*;
       azzert.assertEquals(stringSet.size(), 2);
     }
     
-    @Test public void string() {
+    @SuppressWarnings("static-access") @Test public void string() {
       String nullString = as.string(null), helloString = as.string("hello");
       azzert.assertEquals("a", as.string('a'));
       azzert.assertEquals("null", nullString);
