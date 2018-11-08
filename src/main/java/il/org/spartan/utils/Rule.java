@@ -68,7 +68,7 @@ public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
    * @return a lambda of type {@link OnApplicator}
    * @author Yossi Gil
    * @since 2017-03-10 */
-  @SuppressWarnings("unused") static <@Nullable T, @Nullable R> @Nullable OnApplicator<T, R> on(final Predicate<T> p) {
+  static <@Nullable T, @Nullable R> @Nullable OnApplicator<T, R> on(final Predicate<T> p) {
     return c -> new Rule.Stateful<T, R>() {
       @Override public R fire() {
         c.accept(current());
@@ -101,7 +101,7 @@ public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
     });
   }
 
-  @Check @SuppressWarnings("unused") default Rule<T, R> afterCheck(final Predicate<T> p) {
+  @Check default Rule<T, R> afterCheck(final Predicate<T> p) {
     return new Interceptor<T, R>(this) {
       @Override public boolean check(final T ¢) {
         return inner.check(¢) && p.test(¢);
@@ -135,7 +135,7 @@ public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
     });
   }
 
-  @SuppressWarnings("unused") default Rule<T, R> beforeCheck(final Predicate<T> p) {
+  default Rule<T, R> beforeCheck(final Predicate<T> p) {
     return new Interceptor<T, R>(this) {
       @Override public boolean check(final T ¢) {
         return p.test(¢) && inner.check(¢);

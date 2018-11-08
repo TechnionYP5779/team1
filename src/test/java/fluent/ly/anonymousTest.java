@@ -8,8 +8,8 @@ import org.junit.*;
 public class anonymousTest {
   @Test @SuppressWarnings("static-method") public void testLyBooleanSupplier() {
     BooleanSupplier supFalse = () -> false;
-    azzert.assertTrue(anonymous.ly(() -> true));
-    azzert.assertFalse(anonymous.ly(supFalse));
+    assert anonymous.ly(() -> true);
+    assert !anonymous.ly(supFalse);
   }
 
   @Test @SuppressWarnings("static-method") public void testLyDoubleSupplier() {

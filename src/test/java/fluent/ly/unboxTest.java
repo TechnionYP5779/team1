@@ -187,7 +187,7 @@ public class unboxTest {
 
   @Test public void testUnboxLong() {
     Long tested = new Random().nextLong();
-    azzert.assertEquals((long)tested, unbox.unbox(tested));
+    azzert.assertEquals(1L * tested, unbox.unbox(tested));
   }
 
   @Test public void testUnboxLongArray() {
