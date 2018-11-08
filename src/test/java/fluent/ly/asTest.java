@@ -1,12 +1,7 @@
 package fluent.ly;
 
-
-import static org.junit.Assert.*;
-
 import static fluent.ly.azzert.*;
-
 import java.util.*;
-
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
@@ -14,7 +9,7 @@ import org.junit.*;
   @Test public void testAsIterable() {
     int count = 1;
     for (Iterator<Integer> ¢ = as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)).iterator(); ¢.hasNext();) {
-      assert ¢.next().equals(Integer.valueOf(count));
+      azzert.assertTrue(¢.next().equals(Integer.valueOf(count)));
       ++count;
     }
   }
@@ -22,7 +17,7 @@ import org.junit.*;
   @Test public void testAsIterableLambda() {
     int count = 1;
     for (Iterator<Integer> ¢ = as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)).iterator(); ¢.hasNext();) {
-      assert ¢.next().equals(Integer.valueOf(count));
+      azzert.assertTrue(¢.next().equals(Integer.valueOf(count)));
       ++count;
     }
   }
@@ -63,16 +58,16 @@ import org.junit.*;
 
   @Test public void testListTArray() {
     List<Integer> x = as.ingeterList(1, 2, 3);
-    assert x.contains(Integer.valueOf(1));
-    assert x.contains(Integer.valueOf(2));
-    assert x.contains(Integer.valueOf(3));
+    azzert.assertTrue(x.contains(Integer.valueOf(1)));
+    azzert.assertTrue(x.contains(Integer.valueOf(2)));
+    azzert.assertTrue(x.contains(Integer.valueOf(3)));
   }
 
   @Test @SuppressWarnings({ "unlikely-arg-type" }) public void testSet() {
     Set<? extends Integer> x = as.set(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3));
-    assert x.contains(Integer.valueOf(1));
-    assert x.contains(Integer.valueOf(2));
-    assert x.contains(Integer.valueOf(3));
+     x.contains(Integer.valueOf(1));
+     azzert.assertTrue(x.contains(Integer.valueOf(2)));
+     azzert.assertTrue(x.contains(Integer.valueOf(3)));
   }
 
   @Test public void testStringObject() {
@@ -91,15 +86,15 @@ import org.junit.*;
     List<String> x = new ArrayList<>();
     x.add("Hello");
     x.add("World");
-    assertNotNull(as.strings(x));
+    azzert.assertNotNull(as.strings(x));
   }
 
   @Test public void testAsIterableEssence() {
-    assert Integer.valueOf(1).equals(as.iterator(Integer.valueOf(1)).next());
+    azzert.assertTrue(Integer.valueOf(1).equals(as.iterator(Integer.valueOf(1)).next()));
   }
 
   @Test public void testArray() {
-    assert as.array(Integer.valueOf(1))[0].equals(Integer.valueOf(1));
+    azzert.assertTrue(as.array(Integer.valueOf(1))[0].equals(Integer.valueOf(1)));
   }
   
   @Test public void asBitOfFalse() {

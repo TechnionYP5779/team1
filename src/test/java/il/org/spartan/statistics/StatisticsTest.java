@@ -1,11 +1,10 @@
 package il.org.spartan.statistics;
 
 import static org.junit.Assert.*;
-
 import java.util.*;
-
 import org.jetbrains.annotations.*;
 import org.junit.*;
+import fluent.ly.*;
 
  public class StatisticsTest {
    //========== CLASS VARIABLES - FOR TESTING ==========
@@ -39,20 +38,20 @@ import org.junit.*;
  //=====================================================
  
  @Test public void testMad() {
-   assert Statistics.mad(second_integer_sample) == 0;
+   azzert.assertTrue(Statistics.mad(second_integer_sample) == 0);
    
    //========== ANOTHER TEST ==========
      double mad3 = Statistics.mad(third_integer_sample);
-     assert mad3 >= 1 && mad3 <= 2;
+     azzert.assertTrue(mad3 >= 1 && mad3 <= 2);
     
    }
  
    @Test public void testMedian() {
-   assert Statistics.median(first_integers_sample) == 16.0;
+   azzert.assertTrue(Statistics.median(first_integers_sample) == 16.0);
      
-   assert Statistics.median(second_integer_sample) == second_median;
+   azzert.assertTrue(Statistics.median(second_integer_sample) == second_median);
      
-   assert Statistics.median(third_integer_sample) == third_median;
+   azzert.assertTrue(Statistics.median(third_integer_sample) == third_median);
    }
  
  //  @Test public void testPrune() {
@@ -60,33 +59,33 @@ import org.junit.*;
  //  }
  
    @Test public void testSampleMean() {
-   assert Statistics.sampleMean(first_integers_sample) == first_mean;
+   azzert.assertTrue(Statistics.sampleMean(first_integers_sample) == first_mean);
    
-     assert Statistics.sampleMean(second_integer_sample) == second_mean;
+     azzert.assertTrue(Statistics.sampleMean(second_integer_sample) == second_mean);
    
-     assert Statistics.sampleMean(third_integer_sample) == third_mean;
+     azzert.assertTrue(Statistics.sampleMean(third_integer_sample) == third_mean);
    }
  
    @Test public void testSampleVariance() {
    //========== ANOTHER TEST ==========
      double firstVariance = Statistics.sampleVariance(first_integers_sample);
-     assert firstVariance >= 13 && firstVariance <= 14;
+     azzert.assertTrue(firstVariance >= 13 && firstVariance <= 14);
      
-   assert Statistics.sampleVariance(second_integer_sample) == second_variance;
+   azzert.assertTrue(Statistics.sampleVariance(second_integer_sample) == second_variance);
      
-   assert Statistics.sampleVariance(third_integer_sample) == third_variance;
+   azzert.assertTrue(Statistics.sampleVariance(third_integer_sample) == third_variance);
    }
  
    @Test public void testIsEmpty() {
-   assert my_statistics.isEmpty();
+   azzert.assertTrue(my_statistics.isEmpty());
      
    //========== ANOTHER TEST ==========
    my_statistics.n = 7;
-   assert !my_statistics.isEmpty();
+   azzert.assertFalse(my_statistics.isEmpty());
    
    //========== ANOTHER TEST ==========
      my_statistics.n = 0;
-     assert my_statistics.isEmpty();
+     azzert.assertTrue(my_statistics.isEmpty());
    }
  
    @Test public void testMax() {
@@ -97,13 +96,13 @@ import org.junit.*;
      fail("you should have not got here");
    }
    catch(@SuppressWarnings("unused") ArithmeticException e) {
-     assert true;
+     azzert.assertTrue(true);
    }
    
    //========== ANOTHER TEST ==========
      my_statistics.n = 3;
      my_statistics.max = 15;
-     assert my_statistics.max() == 15;
+     azzert.assertTrue(my_statistics.max() == 15);
    }
  
    @Test public void testMean() {
@@ -112,22 +111,22 @@ import org.junit.*;
      my_statistics.mean();
    }
    catch(@SuppressWarnings("unused") ArithmeticException e) {
-     assert true;
+     azzert.assertTrue(true);
    }
    
    //========== ANOTHER TEST ==========
    my_statistics.n = 6;
    my_statistics.moments[1] = Arrays.stream(first_integers_sample).sum();
-   assert my_statistics.mean() == first_mean;
+   azzert.assertTrue(my_statistics.mean() == first_mean);
    
    //========== ANOTHER TEST ==========
    my_statistics.moments[1] = Arrays.stream(second_integer_sample).sum();
-   assert my_statistics.mean() == second_mean;
+   azzert.assertTrue(my_statistics.mean() == second_mean);
    
    //========== ANOTHER TEST ==========
      my_statistics.n = 5;
      my_statistics.moments[1] = Arrays.stream(third_integer_sample).sum();
-     assert my_statistics.mean() == third_mean;
+     azzert.assertTrue(my_statistics.mean() == third_mean);
    }
  
    @Test public void testMin() {
@@ -136,31 +135,31 @@ import org.junit.*;
      my_statistics.min();
    }
    catch(@SuppressWarnings("unused") ArithmeticException e) {
-     assert true;
+     azzert.assertTrue(true);
    }
    
    //========== ANOTHER TEST ==========
      my_statistics.n = 3;
      my_statistics.min = 15;
-     assert my_statistics.min() == 15;
+     azzert.assertTrue(my_statistics.min() == 15);
    }
  
    @Test public void testMissing() {
-     assert my_statistics.missing() == 0;
+     azzert.assertTrue(my_statistics.missing() == 0);
    
      //========== ANOTHER TEST ==========
      int missing_value = 5;
      my_statistics.missing = missing_value;
-     assert my_statistics.missing() == missing_value;
+     azzert.assertTrue(my_statistics.missing() == missing_value);
    }
  
    @Test public void testN() {
-     assert my_statistics.n == 0;
+     azzert.assertTrue(my_statistics.n == 0);
    
      //========== ANOTHER TEST ==========
      int nth_value = 7;
      my_statistics.n = nth_value;
-     assert my_statistics.n == nth_value;
+     azzert.assertTrue(my_statistics.n == nth_value);
    }
  
  //  @Test public void testRelativeError() {
@@ -169,7 +168,7 @@ import org.junit.*;
  
    @Test public void testSd() {
      testVariance();
-     assert my_statistics.sd() == 2;
+     azzert.assertTrue(my_statistics.sd() == 2);
    }
  
    @Test public void testSum() {
@@ -188,7 +187,7 @@ import org.junit.*;
      //========== ANOTHER TEST ==========
      my_statistics.moments[2] = 55;
      my_statistics.moments[1] = my_statistics.n = 11;
-     assert my_statistics.variance() == 4;
+     azzert.assertTrue(my_statistics.variance() == 4);
    }
  
    @Test public void testCheckEmpty() {
@@ -199,14 +198,14 @@ import org.junit.*;
      fail("YOU SHOULD HAVE RAISED EXCEPTION");
    }
    catch(@SuppressWarnings("unused") ArithmeticException e) {
-     assert true;
+     azzert.assertTrue(true);
    }
    
    //========== ANOTHER TEST ==========
    try{
      my_statistics.n = 7;
      my_statistics.checkEmpty();
-     assert true;
+     azzert.assertTrue(true);
    }
    catch (ArithmeticException ¢) {
      fail("YOU SHOULD HAVE NOT RAISED EXCEPTION"+¢.getMessage());
@@ -219,6 +218,7 @@ import org.junit.*;
    private void checkSum(int index) {
      my_statistics.moments[index] = 5;
      my_statistics.n = 1;
-     assert (index == 1 ? my_statistics.sum() : my_statistics.sum2()) == 5;
+     double test_res = index == 1 ? my_statistics.sum() : my_statistics.sum2();
+     azzert.assertTrue(test_res == 5);
    }
  }

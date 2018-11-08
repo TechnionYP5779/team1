@@ -1,51 +1,48 @@
 package fluent.ly;
 
-import static org.junit.Assert.*;
-
 import java.util.*;
-
 import org.junit.*;
 
 @SuppressWarnings({ "static-method", "null" }) public class IsTest {
   @Test public void testIsNotInAndOut() {
-    assertFalse(is.in(Integer.valueOf(1), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2)));
-    assertTrue(is.out(Integer.valueOf(1), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2)));
+    azzert.assertFalse(is.in(Integer.valueOf(1), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2)));
+    azzert.assertTrue(is.out(Integer.valueOf(1), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2)));
   }
 
   @Test public void testIsInNotOut() {
-    assertTrue(is.in(Integer.valueOf(8), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2)));
-    assertFalse(is.out(Integer.valueOf(8), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2)));
+    azzert.assertTrue(is.in(Integer.valueOf(8), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2)));
+    azzert.assertFalse(is.out(Integer.valueOf(8), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2)));
   }
 
   @Test public void testIsIntInNotIn() {
-    assertFalse(is.intIsIn(1, 2, 3, 4, 5, 6, 7));
+    azzert.assertFalse(is.intIsIn(1, 2, 3, 4, 5, 6, 7));
   }
 
   @Test public void testIsIntIn() {
-    assertTrue(is.intIsIn(5, 5, 6, 7, 8, 9));
+    azzert.assertTrue(is.intIsIn(5, 5, 6, 7, 8, 9));
   }
 
   @Test public void testIsEmptyStringNull() {
-    assertTrue(is.empty((String) null));
+    azzert.assertTrue(is.empty((String) null));
   }
 
   @Test public void testIsEmptyString() {
-    assertTrue(is.empty(""));
+    azzert.assertTrue(is.empty(""));
   }
 
   @Test public void testIsEmptyArrayNull() {
-    assertTrue(is.empty((Integer[]) null));
+    azzert.assertTrue(is.empty((Integer[]) null));
   }
 
   @Test public void testIsEmptyArray() {
-    assertTrue(is.empty(new Integer[0]));
+    azzert.assertTrue(is.empty(new Integer[0]));
   }
 
   @Test public void testNullList() {
-    assertTrue(is.empty((ArrayList<Integer>) null));
+    azzert.assertTrue(is.empty((ArrayList<Integer>) null));
   }
 
   @Test public void testEmptyList() {
-    assertTrue(is.empty(new ArrayList<Integer>()));
+    azzert.assertTrue(is.empty(new ArrayList<Integer>()));
   }
 }

@@ -4,6 +4,8 @@ import java.util.*;
 
 import org.junit.*;
 
+import fluent.ly.*;
+
 @SuppressWarnings("static-method") public class PairTest {
   private Pair<Integer, Integer> samplePair;
   private Integer first;
@@ -19,16 +21,16 @@ import org.junit.*;
   }
 
   @Test public void testSymmetricFunctions() {
-    assert samplePair.hashCode() == Pair.newPair(first, second).hashCode();
-    assert samplePair.equals(Pair.newPair(first, second));
-    assert (samplePair + "").equals(Pair.newPair(first, second) + "");
+    azzert.assertTrue(samplePair.hashCode() == Pair.newPair(first, second).hashCode());
+    azzert.assertTrue(samplePair.equals(Pair.newPair(first, second)));
+    azzert.assertTrue((samplePair + "").equals(Pair.newPair(first, second) + ""));
   }
 
   @Test public void testMakePairsInt() {
-    assert Pair.makePairs(5).length == 5;
+    azzert.assertTrue(Pair.makePairs(5).length == 5);
   }
 
   @Test public void testMakePairsIntInt() {
-    assert Pair.makePairs(5, 5).length == 25;
+    azzert.assertTrue(Pair.makePairs(5, 5).length == 25);
   }
 }
