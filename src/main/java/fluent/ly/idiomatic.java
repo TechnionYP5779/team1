@@ -45,8 +45,7 @@ public interface idiomatic {
   static <@Nullable T> @Nullable T katching(final @NotNull Producer<T> $) {
     try {
       return $.λ();
-    } catch (final Exception ¢) {
-      ¢.printStackTrace();
+    } catch (@SuppressWarnings("unused") final Exception ¢) {
       return null;
     }
   }
