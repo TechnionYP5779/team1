@@ -9,7 +9,7 @@ import org.junit.*;
   @Test public void testAsIterable() {
     int count = 1;
     for (Iterator<Integer> ¢ = as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)).iterator(); ¢.hasNext();) {
-      azzert.assertTrue(¢.next().equals(Integer.valueOf(count)));
+      assert ¢.next().equals(Integer.valueOf(count));
       ++count;
     }
   }
@@ -17,7 +17,7 @@ import org.junit.*;
   @Test public void testAsIterableLambda() {
     int count = 1;
     for (Iterator<Integer> ¢ = as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)).iterator(); ¢.hasNext();) {
-      azzert.assertTrue(¢.next().equals(Integer.valueOf(count)));
+      assert ¢.next().equals(Integer.valueOf(count));
       ++count;
     }
   }
@@ -58,16 +58,16 @@ import org.junit.*;
 
   @Test public void testListTArray() {
     List<Integer> x = as.ingeterList(1, 2, 3);
-    azzert.assertTrue(x.contains(Integer.valueOf(1)));
-    azzert.assertTrue(x.contains(Integer.valueOf(2)));
-    azzert.assertTrue(x.contains(Integer.valueOf(3)));
+    assert x.contains(Integer.valueOf(1));
+    assert x.contains(Integer.valueOf(2));
+    assert x.contains(Integer.valueOf(3));
   }
 
-  @Test @SuppressWarnings({ "unlikely-arg-type" }) public void testSet() {
+  @Test @SuppressWarnings("unlikely-arg-type") public void testSet() {
     Set<? extends Integer> x = as.set(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3));
      x.contains(Integer.valueOf(1));
-     azzert.assertTrue(x.contains(Integer.valueOf(2)));
-     azzert.assertTrue(x.contains(Integer.valueOf(3)));
+     assert x.contains(Integer.valueOf(2));
+     assert x.contains(Integer.valueOf(3));
   }
 
   @Test public void testStringObject() {
@@ -90,11 +90,11 @@ import org.junit.*;
   }
 
   @Test public void testAsIterableEssence() {
-    azzert.assertTrue(Integer.valueOf(1).equals(as.iterator(Integer.valueOf(1)).next()));
+    assert Integer.valueOf(1).equals(as.iterator(Integer.valueOf(1)).next());
   }
 
   @Test public void testArray() {
-    azzert.assertTrue(as.array(Integer.valueOf(1))[0].equals(Integer.valueOf(1)));
+    assert as.array(Integer.valueOf(1))[0].equals(Integer.valueOf(1));
   }
   
   @Test public void asBitOfFalse() {

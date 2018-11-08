@@ -4,19 +4,18 @@ import static org.junit.Assert.*;
 import java.util.*;
 import org.junit.*;
 
-import fluent.ly.*;
 
 public class IntTest {
   @Test @SuppressWarnings("static-method") public void testGet() {
     int i = new Random().nextInt();
-    azzert.assertTrue(Int.valueOf(i).inner().equals(Integer.valueOf(i)));
+    assert Int.valueOf(i).inner().equals(Integer.valueOf(i));
   }
   
   @Test @SuppressWarnings("static-method") public void testStep() {
     int i = new Random().nextInt();
     Int int1 = Int.valueOf(i);
     int1.step();
-    azzert.assertTrue(int1.inner().equals(Integer.valueOf(i + 1)));
+    assert int1.inner().equals(Integer.valueOf(i + 1));
   }
 
   @Test @SuppressWarnings("static-method") public void testAddRegularInt() {
@@ -24,7 +23,7 @@ public class IntTest {
     int i1 = random.nextInt(), i2 = random.nextInt();
     Int int1 = Int.valueOf(i1);
     int1.add(i2);
-    azzert.assertTrue(int1.inner().equals(Integer.valueOf(i1 + i2)));
+    assert int1.inner().equals(Integer.valueOf(i1 + i2));
   }
   
   @Test @SuppressWarnings("static-method") public void testAddOtherInt() {

@@ -21,8 +21,8 @@ public class idiomaticTest {
   idiomatic.Producer<Integer> thrower = () -> {throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");};
   try {
     assertNull(idiomatic.katching(thrower));
-  } catch(Exception e) {
-    e.printStackTrace();
+  } catch(Exception ¢) {
+    ¢.printStackTrace();
     fail("Exception uncaught by katching");
   }
 }
@@ -60,11 +60,11 @@ public class idiomaticTest {
 
   @Test public void testTake() {
     Storer<Boolean> sto = idiomatic.take(Boolean.TRUE);
-    azzert.assertTrue(sto.get().booleanValue());
+    assert sto.get().booleanValue();
     azzert.assertNull(sto.when(false));
-    azzert.assertTrue(sto.when(true).booleanValue());
+    assert sto.when(true).booleanValue();
     azzert.assertNull(sto.unless(true));
-    azzert.assertTrue(sto.unless(false).booleanValue());
+    assert sto.unless(false).booleanValue();
   }
 
   @Test public void testUnlessBoolean() {
@@ -83,7 +83,7 @@ public class idiomaticTest {
   }
   
   @Test public void use0() {
-    azzert.assertTrue(new Storer<>(this) != null);
+    assert new Storer<>(this) != null;
   }
 
   @Test public void use08() {
@@ -91,16 +91,16 @@ public class idiomaticTest {
   }
 
   @Test public void use09() {
-    azzert.assertTrue(idiomatic.unless(false).eval(() -> new Object()) != null);
+    assert idiomatic.unless(false).eval(() -> new Object()) != null;
   }
 
   @Test public void use1() {
-    azzert.assertTrue(new Storer<>(Integer.valueOf(5)) != null);
+    assert new Storer<>(Integer.valueOf(5)) != null;
     new Storer<>(Integer.valueOf(5)).when(true);
   }
 
   @Test public void use10() {
-    azzert.assertTrue(idiomatic.when(true).eval(() -> new Object()) != null);
+    assert idiomatic.when(true).eval(() -> new Object()) != null;
   }
 
   @Test public void use11() {
@@ -108,7 +108,7 @@ public class idiomaticTest {
   }
 
   @Test public void use2() {
-    azzert.assertTrue(idiomatic.take(this) != null);
+    assert idiomatic.take(this) != null;
     azzert.isNull(idiomatic.take(this).when(false));
   }
 
