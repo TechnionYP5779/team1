@@ -29,9 +29,18 @@ public class BigInteger {
     }
     return value * signum;
   }
+  
+  public long longValue() {
+    long value = 0;
+    for (int i = innerDigits.length - 1; i >= 0; i--) {
+      value *= 10;
+      value += innerDigits[i].intValue();
+    }
+    return value * signum;
+  }
 
   public static BigInteger valueOf(int i) {
-    return new BigInteger(convertIntToDigitArray(abs(i)), signum(d));
+    return new BigInteger(convertIntToDigitArray(abs(i)), signum(i));
   }
 
   public BigInteger step() {
@@ -59,7 +68,8 @@ public class BigInteger {
   }
 
   public BigInteger sub(BigInteger other) {
-    
+    if(other.signum == this.signum)
+      return this.step(other);
   }
 
   public BigInteger neg() {

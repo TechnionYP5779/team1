@@ -48,6 +48,6 @@ import fluent.ly.*;
   
   @Test public void canExtendIntBoundaries() {
     this.bigInteger = BigInteger.valueOf(Integer.MAX_VALUE);
-    azzert.assertTrue(this.bigInteger.step(BigInteger.ONE).intValue() > 0);
+    azzert.assertTrue(this.bigInteger.step(BigInteger.ONE).longValue() > 0);
   }
 }
