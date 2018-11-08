@@ -85,7 +85,7 @@ public class range {
     }
 
     @Override public Iterator<Integer> iterator() {
-      return new Iterator<>() {
+      return new Iterator<Integer>() {
         int next = from;
 
         @Override public boolean hasNext() {

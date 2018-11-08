@@ -30,7 +30,7 @@ import il.org.spartan.*;
   public static Iterable<Integer> asIterable(final @NotNull Integer... is) {
     // Create an object of a new <em>anonymous</em> class that
     // <code><b>implements</b></code> {@link Iterable}
-    return () -> new Iterator<>() {
+    return () -> new Iterator<Integer>() {
       int current;
 
       @Override public boolean hasNext() {
@@ -44,7 +44,7 @@ import il.org.spartan.*;
   }
 
   public static Iterable<Integer> asIterableLambda(final @NotNull Integer... is) {
-    return () -> new Iterator<>() {
+    return () -> new Iterator<Integer>() {
       int current;
 
       @Override public boolean hasNext() {
@@ -170,7 +170,7 @@ import il.org.spartan.*;
   }
 
   public static Iterable<Integer> asIterableEssence(final @NotNull Integer... is) {
-    return () -> new Iterator<>() {
+    return () -> new Iterator<Integer>() {
       int current;
 
       @Override public boolean hasNext() {

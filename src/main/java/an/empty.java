@@ -14,7 +14,7 @@ public enum empty {
   }
 
   public static <@Nullable T> Iterable<T> iterable() {
-    return () -> new Iterator<>() {
+    return () -> new Iterator<T>() {
       @Override public boolean hasNext() {
         return false;
       }
