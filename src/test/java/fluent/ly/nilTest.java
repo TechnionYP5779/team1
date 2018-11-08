@@ -6,7 +6,7 @@ import org.junit.*;
 
 import fluent.ly.nil.*;
 
-public class NilTest {
+public class nilTest {
   @Test @SuppressWarnings("static-method") public void testForgetting() {
     azzert.assertNull(nil.forgetting(Integer.valueOf(1), Integer.valueOf(2)));
     azzert.assertNull(nil.forgetting(Integer.valueOf(1), "abc"));
@@ -19,7 +19,7 @@ public class NilTest {
   }
   
   @Test @SuppressWarnings({ "static-method", "static-access" }) public void testGuardingly() {
-    On<Integer, String> ff = nil.guardingly(NilTest::helperF);
+    On<Integer, String> ff = nil.guardingly(nilTest::helperF);
     azzert.assertNull(ff.on(null));
     azzert.assertNotNull(ff.on(Integer.valueOf(1)));
     azzert.assertEquals("1", ff.on(Integer.valueOf(1)));

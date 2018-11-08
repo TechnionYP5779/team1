@@ -3,7 +3,7 @@ package fluent.ly;
 import java.util.*;
 import org.junit.*;
 
-@SuppressWarnings({ "static-method", "null" }) public class IsTest {
+@SuppressWarnings({ "static-method", "null" }) public class isTest {
   @Test public void testIsNotInAndOut() {
     azzert.assertFalse(is.in(Integer.valueOf(1), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2)));
     azzert.assertTrue(is.out(Integer.valueOf(1), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2)));

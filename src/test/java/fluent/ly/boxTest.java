@@ -4,7 +4,7 @@ import java.util.*;
 
 import org.junit.*;
 
-@SuppressWarnings({ "boxing", "static-method", "static-access" })  public class BoxTest {
+@SuppressWarnings({ "boxing", "static-method", "static-access" })  public class boxTest {
   @Test public void testBoxBoolean() {
     boolean tested = new Random().nextBoolean();
     azzert.assertEquals(tested, box.box(tested));

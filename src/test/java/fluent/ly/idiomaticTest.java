@@ -7,7 +7,7 @@ import org.junit.*;
 import fluent.ly.idiomatic.*;
 
 @SuppressWarnings({ "static-method", "static-access" ,"null"}) 
-public class IdiomaticTest {
+public class idiomaticTest {
   @Test public void testEval() {
     azzert.assertEquals(Integer.valueOf(1), idiomatic.eval(() -> Integer.valueOf(1)).get());
   }
