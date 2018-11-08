@@ -14,13 +14,13 @@ import org.jetbrains.annotations.*;
 public interface PureIterable<T> extends Iterable<T> {
   @Override @SuppressWarnings("null") @Nullable PureIterator<@NotNull T> iterator();
 
-  /** A kind of {@link PureIterable} which provides an additional {@link #size()}
-   * service.
+  /** A kind of {@link PureIterable} which provides an additional
+   * {@link #size()} service.
    * <p>
    * For the size service to be meaningful, there is an underlying contract
-   * arranging the mutual expectations between two parties: the customer, and the
-   * supplier. (Customers are clients of this class, a supplier is a non-abstract
-   * class which extends this class):
+   * arranging the mutual expectations between two parties: the customer, and
+   * the supplier. (Customers are clients of this class, a supplier is a
+   * non-abstract class which extends this class):
    * <ol>
    * <li>The <i>size</i> of an instance is the number of elements it yields. It
    * should be clear that the size can never be negative.

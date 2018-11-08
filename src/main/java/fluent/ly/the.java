@@ -116,7 +116,7 @@ public interface the {
   }
 
   /** Computes the maximum of two or more integers.
-   * @param a  some integer
+   * @param a some integer
    * @param is additional integers
    * @return largest of the parameters */
   static int max(final int a, final int... is) {
@@ -127,7 +127,7 @@ public interface the {
   }
 
   /** Computes the minimum of two or more integers
-   * @param a  some integer
+   * @param a some integer
    * @param is additional
    * @return smallest of the parameters */
   static int min(final int a, final int... is) {

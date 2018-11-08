@@ -40,8 +40,8 @@ import fluent.ly.*;
   }
 
   /** Instantiate this class with a specified tabulation {@link String}.
-   * @param tab a {@link String} by which indentation should be increased at each
-   *            {@link #more()} action. */
+   * @param tab a {@link String} by which indentation should be increased at
+   *        each {@link #more()} action. */
   public Tab(final @NotNull String tab) {
     this.tab = tab;
   }
@@ -76,10 +76,10 @@ import fluent.ly.*;
 
   /** Send a formatted, indented by this instance, line to {@link System#out}.
    * @param format A format string as described in {@link PrintStream#printf}.
-   *               This format string should not include the terminating
-   *               <code>'\n'</code> character.
-   * @param os     Arguments, referenced by the format specifiers in the format
-   *               string */
+   *        This format string should not include the terminating
+   *        <code>'\n'</code> character.
+   * @param os Arguments, referenced by the format specifiers in the format
+   *        string */
   public void linef(final @NotNull String format, final Object... os) {
     System.out.printf(toString() + format + "\n", os);
   }

@@ -39,5 +39,4 @@ public final class Bool {
     inner = ¢;
     return this;
   }
-  
 }

@@ -17,7 +17,7 @@ public class nilTest {
   static String helperF(Integer ¢) {
     return ¢ + "";
   }
-  
+
   @Test @SuppressWarnings({ "static-method", "static-access" }) public void testGuardingly() {
     On<Integer, String> ff = nil.guardingly(nilTest::helperF);
     azzert.assertNull(ff.on(null));

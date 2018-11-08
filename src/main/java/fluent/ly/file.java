@@ -32,7 +32,7 @@ public class file {
   public static void renameToCSV(final @NotNull String old) {
     file.rename(old, old + ".csv");
   }
-  
+
   @NotNull @SuppressWarnings("null") public static String read(final @NotNull File f) throws IOException {
     final @NotNull String ls = System.getProperty("line.separator");
     System.err.println(ls.compareTo("\n"));

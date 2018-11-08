@@ -298,7 +298,7 @@ public enum string {
 
   /** Strip the first and last character of a string.
    * @param ¢ a non-<code><b>null</b></code> string of length at least two to
-   *          strip
+   *        strip
    * @return <code>s</code> but without its first and last character. */
   public static String strip(final @NotNull String ¢) {
     nonnull(¢);

@@ -4,8 +4,7 @@ import java.util.*;
 import java.util.function.*;
 import org.junit.*;
 
-@SuppressWarnings("static-access")
-public class anonymousTest {
+@SuppressWarnings("static-access") public class anonymousTest {
   @Test @SuppressWarnings("static-method") public void testLyBooleanSupplier() {
     BooleanSupplier supFalse = () -> false;
     assert anonymous.ly(() -> true);

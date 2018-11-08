@@ -4,8 +4,7 @@ import org.junit.*;
 
 import fluent.ly.*;
 
-@SuppressWarnings({ "static-method", "static-access" }) 
-public class BoolTest {
+@SuppressWarnings({ "static-method", "static-access" }) public class BoolTest {
   @Test public void testValueOf() {
     assert Bool.valueOf(true).get();
     assert !Bool.valueOf(false).get();

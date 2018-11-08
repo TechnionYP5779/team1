@@ -11,13 +11,13 @@ import org.jetbrains.annotations.*;
  * @since 2016 */
 public interface accumulate<T, C extends Collection<T>> {
   /** @param <T> JD
-   * @param   <C> JD
+   * @param <C> JD
    * @param c JD */
   static <T, C extends Collection<T>> @NotNull accumulate<T, C> to(final @NotNull C c) {
     return new accumulate<T, C>() {
       @Override @NotNull public accumulate<T, C> add(final @Nullable T ¢) {
         if (¢ != null)
-            c.add(¢);
+          c.add(¢);
         return this;
       }
 

@@ -18,7 +18,7 @@ import fluent.ly.*;
 public enum iterables {
   ;
   /** Counts the number of items in an {@link Iterable}.
-   * @param    <T> some arbitrary type
+   * @param <T> some arbitrary type
    * @param ts some iterable over items whose type is the type parameter
    * @return number of items the given iterable yields. */
   public static <T> int count(final @Nullable Iterable<T> ts) {
@@ -44,7 +44,7 @@ public enum iterables {
   }
 
   /** wraps a value in a singleton iterator form
-   * @param   <T> JD
+   * @param <T> JD
    * @param $ JD
    * @return parameter, but in a singleton iterator form */
   public static <T> Iterator<T> singletonIterator(final T $) {
@@ -52,10 +52,10 @@ public enum iterables {
   }
 
   //
-  /** A static nested class hosting unit tests for the nesting class Unit test for
-   * the containing class. Note the naming convention: a) names of test methods do
-   * not use are not prefixed by "test". This prefix is redundant. b) test methods
-   * begin with the name of the method they check.
+  /** A static nested class hosting unit tests for the nesting class Unit test
+   * for the containing class. Note the naming convention: a) names of test
+   * methods do not use are not prefixed by "test". This prefix is redundant. b)
+   * test methods begin with the name of the method they check.
    * @author Yossi Gil
    * @since 2014-05-31 */
   @SuppressWarnings("static-method") public static class TEST {

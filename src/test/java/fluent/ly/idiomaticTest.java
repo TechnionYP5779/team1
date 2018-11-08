@@ -6,8 +6,7 @@ import org.junit.*;
 
 import fluent.ly.idiomatic.*;
 
-@SuppressWarnings({ "static-method", "static-access" ,"null"}) 
-public class idiomaticTest {
+@SuppressWarnings({ "static-method", "static-access", "null" }) public class idiomaticTest {
   @Test public void testEval() {
     azzert.assertEquals(Integer.valueOf(1), idiomatic.eval(() -> Integer.valueOf(1)).get());
   }
@@ -18,15 +17,17 @@ public class idiomaticTest {
   }
 
   @Test public void testKatching1() {
-  idiomatic.Producer<Integer> thrower = () -> {throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");};
-  try {
-    assertNull(idiomatic.katching(thrower));
-  } catch(Exception ¢) {
-    ¢.printStackTrace();
-    fail("Exception uncaught by katching");
+    idiomatic.Producer<Integer> thrower = () -> {
+      throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");
+    };
+    try {
+      assertNull(idiomatic.katching(thrower));
+    } catch (Exception ¢) {
+      ¢.printStackTrace();
+      fail("Exception uncaught by katching");
+    }
   }
-}
-  
+
   @Test public void testKatching2() {
     idiomatic.Producer<Integer> notThrower = () -> Integer.valueOf(1);
     try {
@@ -81,7 +82,7 @@ public class idiomaticTest {
     azzert.assertNull(idiomatic.when(false).eval(Integer.valueOf(1)));
     azzert.assertEquals(Integer.valueOf(1), idiomatic.when(true).eval(Integer.valueOf(1)));
   }
-  
+
   @Test public void use0() {
     assert new Storer<>(this) != null;
   }
@@ -133,5 +134,4 @@ public class idiomaticTest {
     azzert.isNull(idiomatic.take(null).unless(true));
     azzert.isNull(idiomatic.take(null).unless(false));
   }
-
 }

@@ -62,8 +62,8 @@ public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
 
   /** Gives the ability to perform an action on object {@code T} t, only if
    * predicate(t) takes place.
-   * @param   <T> __ of elements for which the rule is applicable
-   * @param   <R> __ of result of applying this rule
+   * @param <T> __ of elements for which the rule is applicable
+   * @param <R> __ of result of applying this rule
    * @param p a predicate
    * @return a lambda of type {@link OnApplicator}
    * @author Yossi Gil

@@ -5,15 +5,14 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
-//import src.main.java.il.org.spartan.*;
-
+// import src.main.java.il.org.spartan.*;
 /** @author Yossi Gil <tt>yogi@cs.technion.ac.il</tt>
  * @since 2017-04-23 */
 public interface is {
   /** Determine if an item can be found in a list of values
-   * @param           <T> JD
+   * @param <T> JD
    * @param candidate what to search for
-   * @param ts        where to search
+   * @param ts where to search
    * @return true if the the item is found in the list */
   @SafeVarargs static <T> boolean in(final T candidate, final @NotNull T... ts) {
     for (final T ¢ : ts)
@@ -24,7 +23,7 @@ public interface is {
 
   /** Determine if an integer can be found in a list of values
    * @param candidate what to search for
-   * @param is        where to search
+   * @param is where to search
    * @return true if the the item is found in the list */
   @SafeVarargs @Contract(pure = true) static boolean intIsIn(final int candidate, final int... is) {
     for (final int ¢ : is)
@@ -41,9 +40,9 @@ public interface is {
   }
 
   /** Determine if an item is not included in a list of values
-   * @param           <T> JD
+   * @param <T> JD
    * @param candidate what to search for
-   * @param ts        where to search
+   * @param ts where to search
    * @return true if the the item is not found in the list */
   @SafeVarargs static <T> boolean out(final T candidate, final @NotNull T... ts) {
     return !in(candidate, ts);

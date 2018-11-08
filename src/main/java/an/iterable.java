@@ -6,7 +6,7 @@ import org.jetbrains.annotations.*;
 
 public interface iterable {
   /** <code>singleton</code>
-   * @param   <T> JD
+   * @param <T> JD
    * @param ¢ JD
    * @return PureIterable.Sized<T> for returned value of method
    *         <code>singleton</code> */

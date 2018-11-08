@@ -60,9 +60,9 @@ import il.org.spartan.etc.*;
 
   /** Appends an element to an array, by reallocating an array whose size is
    * greater by one and placing the element at the last position.
-   * @param    <T> JD
+   * @param <T> JD
    * @param ts an arbitrary array
-   * @param t  an element
+   * @param t an element
    * @return newly created array */
   @NotNull static <T> T[] append(final @NotNull T[] ts, final T t) {
     final T @NotNull [] $ = Arrays.copyOf(ts, 1 + ts.length);
@@ -71,7 +71,7 @@ import il.org.spartan.etc.*;
   }
 
   /** @param <F> JD
-   * @param   <T> JD
+   * @param <T> JD
    * @param ¢ JD */
   static <F, T> Applicator<F, T> apply(final Function<F, T> ¢) {
     return new Applicator<>(¢);
@@ -90,8 +90,8 @@ import il.org.spartan.etc.*;
    * <p>
    * The function returns the same instance it received as a parameter, except
    * that this instance is returned as an instance of the type T <i>without</i>
-   * the @Nullable annotation. Execution is aborted with an {@link AssertionError}
-   * if the parameter is null.
+   * the @Nullable annotation. Execution is aborted with an
+   * {@link AssertionError} if the parameter is null.
    * <p>
    * As it turns out, this function is a (slow) logical no-op, but still
    * applicable to arguments of type T, where T does not have the @Nullable
@@ -100,10 +100,10 @@ import il.org.spartan.etc.*;
    * For reasons related to the way non-nullability is managed in Java, the
    * compiler will not warn you from doing applying this function to a
    * {@link NotNull} type. However, there is absolutely no point in removing
-   * a @Nullable annotation if the type that does not have it. Doing so a is plain
-   * clutter. Since the compiler cannot assist you, you will have to be on the
-   * guard.
-   * @param   <T> an arbitrary type
+   * a @Nullable annotation if the type that does not have it. Doing so a is
+   * plain clutter. Since the compiler cannot assist you, you will have to be on
+   * the guard.
+   * @param <T> an arbitrary type
    * @param $ an instance of the type parameter
    * @return its parameter, after verifying that it is not
    *         <code><b>null</b></code>
@@ -138,10 +138,10 @@ import il.org.spartan.etc.*;
   }
 
   /** Determine whether a string contains any of a list of patterns.
-   * @param text     string to be tested
+   * @param text string to be tested
    * @param patterns a list of substrings
-   * @return tree iff the the first parameter contains any of the substrings found
-   *         in the second parameter */
+   * @return tree iff the the first parameter contains any of the substrings
+   *         found in the second parameter */
   static boolean contains(final @NotNull String text, final @Nullable String... patterns) {
     for (final @NotNull String pattern : patterns)
       if (pattern != null && text.contains(pattern))
@@ -151,9 +151,9 @@ import il.org.spartan.etc.*;
 
   /** Deletes a specified element from an array, by reallocating an array whose
    * size is smaller by one and shifting the other elements down.
-   * @param    <T> JD
+   * @param <T> JD
    * @param ts an arbitrary array
-   * @param i  position of element to be deleted
+   * @param i position of element to be deleted
    * @return newly created array */
   @NotNull static <T> T[] delete(final @NotNull T[] ts, final int i) {
     final T @NotNull [] $ = Arrays.copyOf(ts, ts.length - 1);
@@ -172,7 +172,8 @@ import il.org.spartan.etc.*;
     return new FoundHandleForT<>(¢);
   }
 
-  /** Determine whether a <code><b>null</b></code> occurs in a sequence of objects
+  /** Determine whether a <code><b>null</b></code> occurs in a sequence of
+   * objects
    * @param os an unknown number of objects
    * @return <code><b>null</b></code> <i>iff</i> one of the parameters is
    *         <code><b>null</b></code> */
@@ -184,18 +185,18 @@ import il.org.spartan.etc.*;
   }
 
   /** Determine whether an integer is a valid list index
-   * @param    <T> JD
-   * @param i  some integer
+   * @param <T> JD
+   * @param i some integer
    * @param ts a list of things
-   * @return <code><b>true</b></code> <i>iff</i> the index is valid index into the
-   *         list. and it is the last one in it. */
+   * @return <code><b>true</b></code> <i>iff</i> the index is valid index into
+   *         the list. and it is the last one in it. */
   static <T> boolean inRange(final int i, final List<T> ts) {
     return i >= 0 && i < ts.size();
   }
 
   /** Determine if an integer can be found in a list of values
    * @param candidate what to search for
-   * @param is        where to search
+   * @param is where to search
    * @return true if the the item is found in the list */
   @SafeVarargs static boolean intIsIn(final int candidate, final int... is) {
     for (final int ¢ : is)
@@ -205,7 +206,7 @@ import il.org.spartan.etc.*;
   }
 
   /** Determine whether an {@link Object} is the last in a {@link List} .
-   * @param o  JD
+   * @param o JD
    * @param os JD
    * @return <code><b>true</b></code> <i>iff</i> the {@link Object} parameter is
    *         the same as the last element of the {@link List} parameter */
@@ -216,9 +217,9 @@ import il.org.spartan.etc.*;
   /** Aborts in case a given value is <code><b>null</b></code>.
    * <p>
    * This function is the lesser used dual of {@link #cantBeNull(Object)} .
-   * @param   <T> some arbitrary type
+   * @param <T> some arbitrary type
    * @param $ an instance of the type parameter which is required to be
-   *          <code><b>null</b></code>.
+   *        <code><b>null</b></code>.
    * @return parameter */
   static <@Nullable T> @Nullable Void mustBeNull(final @Nullable T $) {
     assert $ == null;
@@ -226,20 +227,21 @@ import il.org.spartan.etc.*;
   }
 
   /** @param ¢ JD
-   * @return name of the parameter, which must not be <code><b>null</b></code> */
+   * @return name of the parameter, which must not be
+   *         <code><b>null</b></code> */
   static String name(final File ¢) {
     return cantBeNull(¢.getName());
   }
 
-
-  /** Determine whether an {@link Object} is the penultimate in its {@link List} .
-   * An object is the penultimate if and only if it is the element before the last.
-   * @param    <T> JD
-   * @param o  JD
+  /** Determine whether an {@link Object} is the penultimate in its {@link List}
+   * . An object is the penultimate if and only if it is the element before the
+   * last.
+   * @param <T> JD
+   * @param o JD
    * @param os JD
    * @return <code><b>true</b></code> <i>iff</i> the an {@link Object} parameter
-   *         occurs as the penultimate element of the {@link List} parameter 
-   *         (meaning, one before the last element of the list)*/
+   *         occurs as the penultimate element of the {@link List} parameter
+   *         (meaning, one before the last element of the list) */
   static <@Nullable T> boolean penultimateIn(final T o, final @Nullable List<T> os) {
     assert os != null;
     return list.penultimate(os) == o;
@@ -271,7 +273,7 @@ import il.org.spartan.etc.*;
   }
 
   /** Remove any duplicates that may be present in a given {@link List}
-   * @param    <T> JD
+   * @param <T> JD
    * @param ts JD */
   static <T> void removeDuplicates(final List<T> ts) {
     final Set<T> noDuplicates = new LinkedHashSet<>(ts);
@@ -280,7 +282,7 @@ import il.org.spartan.etc.*;
   }
 
   /** Remove all occurrences of a given prefix from a given {@link String} .
-   * @param s      JD
+   * @param s JD
    * @param prefix what should be removed
    * @return parameter after all such occurrences are removed. */
   static String removePrefix(final @NotNull String s, final @NotNull String prefix) {
@@ -290,7 +292,7 @@ import il.org.spartan.etc.*;
   }
 
   /** Remove all occurrences of a given suffix from a given string.
-   * @param s      JD
+   * @param s JD
    * @param suffix what should be removed
    * @return parameter after all such occurrences are removed. */
   static String removeSuffix(final @NotNull String s, final @NotNull String suffix) {
@@ -321,26 +323,28 @@ import il.org.spartan.etc.*;
     return ¢ * ¢;
   }
 
-  /** Determine whether a file name ends with any one of the supplied extensions.
-   * @param f        a file to examine
+  /** Determine whether a file name ends with any one of the supplied
+   * extensions.
+   * @param f a file to examine
    * @param suffixes a list of potential extensions.
-   * @return <code><b>true</b></code> <em>iff</em>the file name ends with any one
-   *         of the supplied extensions. */
+   * @return <code><b>true</b></code> <em>iff</em>the file name ends with any
+   *         one of the supplied extensions. */
   static boolean suffixedBy(final File f, final Iterable<String> suffixes) {
     return suffixedBy(name(f), suffixes);
   }
 
-  /** Determine whether a file name ends with any one of the supplied extensions.
-   * @param f        a file to examine
+  /** Determine whether a file name ends with any one of the supplied
+   * extensions.
+   * @param f a file to examine
    * @param suffixes a list of potential extensions.
-   * @return <code><b>true</b></code> <em>iff</em>the file name ends with any one
-   *         of the supplied extensions. */
+   * @return <code><b>true</b></code> <em>iff</em>the file name ends with any
+   *         one of the supplied extensions. */
   static boolean suffixedBy(final File f, final @NotNull String @NotNull... suffixes) {
     return suffixedBy(name(f), suffixes);
   }
 
   /** Determine whether a string ends with any one of the supplied suffixes.
-   * @param s        a string to examine
+   * @param s a string to examine
    * @param suffixes a list of potential suffixes
    * @return <code><b>true</b></code> <em>iff</em> <code>s</code> ends with any
    *         one of the supplied suffixes. */
@@ -352,7 +356,7 @@ import il.org.spartan.etc.*;
   }
 
   /** Determine whether a string ends with any one of the supplied suffixes.
-   * @param s        a string to examine
+   * @param s a string to examine
    * @param suffixes a list of potential suffixes
    * @return <code><b>true</b></code> <em>iff</em> <code>s</code> ends with any
    *         one of the supplied suffixes. */
@@ -364,10 +368,10 @@ import il.org.spartan.etc.*;
   }
 
   /** Swap the contents of two cells in a given array
-   * @param    <T> type of array elements
+   * @param <T> type of array elements
    * @param ts the given array
-   * @param i  index of one cell
-   * @param j  index of another cell */
+   * @param i index of one cell
+   * @param j index of another cell */
   static <T> void swap(final T[] ts, final int i, final int j) {
     final T t = ts[i];
     ts[i] = ts[j];
@@ -441,10 +445,10 @@ import il.org.spartan.etc.*;
     }
   }
 
-  /** A static nested class hosting unit tests for the nesting class Unit test for
-   * the containing class. Note the naming convention: a) names of test methods do
-   * not use are not prefixed by "test". This prefix is redundant. b) test methods
-   * begin with the name of the method they check.
+  /** A static nested class hosting unit tests for the nesting class Unit test
+   * for the containing class. Note the naming convention: a) names of test
+   * methods do not use are not prefixed by "test". This prefix is redundant. b)
+   * test methods begin with the name of the method they check.
    * @author Yossi Gil
    * @since 2014-05-31 */
   @SuppressWarnings("static-method") class TEST {

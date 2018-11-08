@@ -480,7 +480,7 @@ public class azzert extends org.junit.Assert {
   }
 
   /** @param message what to print
-   * @param o       what to examine */
+   * @param o what to examine */
   @Contract("_, !null -> fail") public static void isNull(final @NotNull String message, final @Nullable Object o) {
     azzert.assertNull(message, o);
   }

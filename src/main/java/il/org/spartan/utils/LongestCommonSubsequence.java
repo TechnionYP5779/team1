@@ -39,8 +39,8 @@ public class LongestCommonSubsequence {
 
   /** Returns the length of the LCS of two prefixes of the current strings,
    * <code>as[0]...as[i]</code>, and <code>as[0]...as[i]</code>, i (respectively
-   * j) must be a valid index of array a (respectively b), or else, the substring
-   * of a (respectively b) are empty.
+   * j) must be a valid index of array a (respectively b), or else, the
+   * substring of a (respectively b) are empty.
    * @param i
    * @param j
    * @return */

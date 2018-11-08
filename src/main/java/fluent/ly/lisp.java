@@ -30,7 +30,7 @@ public interface lisp {
   }
 
   /** Retrieve previous item in a list
-   * @param i  an index of specific item in a list
+   * @param i an index of specific item in a list
    * @param ts the indexed list
    * @return previous item in the list, if such an item exists, otherwise, the
    *         last node */

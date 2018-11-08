@@ -4,8 +4,7 @@ import java.util.*;
 
 import org.junit.*;
 
-@SuppressWarnings({"boxing","static-method","static-access","null"}) 
-public class unboxTest {
+@SuppressWarnings({ "boxing", "static-method", "static-access", "null" }) public class unboxTest {
   @Test public void testItDoubleArray() {
     Random random = new Random();
     int len = 100;
@@ -33,7 +32,7 @@ public class unboxTest {
 
   @Test public void testItInteger() {
     Integer tested = new Random().nextInt();
-    azzert.assertEquals((int)tested, unbox.it(tested));
+    azzert.assertEquals((int) tested, unbox.it(tested));
   }
 
   @Test public void testItIntegerArray() {
@@ -63,7 +62,7 @@ public class unboxTest {
 
   @Test public void testUnboxBoolean() {
     Integer tested = new Random().nextInt();
-    azzert.assertEquals((int)tested, unbox.unbox(tested));
+    azzert.assertEquals((int) tested, unbox.unbox(tested));
   }
 
   @Test public void testUnboxBooleanArray() {
@@ -101,7 +100,7 @@ public class unboxTest {
 
   @Test public void testUnboxCharacter() {
     Character tested = ((char) new Random().nextInt(Character.MAX_VALUE + 1));
-    azzert.assertEquals((int)tested, unbox.unbox(tested));
+    azzert.assertEquals((int) tested, unbox.unbox(tested));
   }
 
   @Test public void testUnboxCharacterArray() {
@@ -170,7 +169,7 @@ public class unboxTest {
 
   @Test public void testUnboxInteger() {
     Integer tested = new Random().nextInt();
-    azzert.assertEquals((int)tested, unbox.unbox(tested));
+    azzert.assertEquals((int) tested, unbox.unbox(tested));
   }
 
   @Test public void testUnboxIntegerArray() {
@@ -204,7 +203,7 @@ public class unboxTest {
 
   @Test public void testUnboxShort() {
     Short tested = Short.valueOf((short) new Random().nextInt(Short.MAX_VALUE + 1));
-    azzert.assertEquals((short)tested, unbox.unbox(tested));
+    azzert.assertEquals((short) tested, unbox.unbox(tested));
   }
 
   @Test public void testUnboxShortArray() {

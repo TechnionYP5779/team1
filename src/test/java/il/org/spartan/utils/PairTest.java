@@ -4,7 +4,6 @@ import java.util.*;
 
 import org.junit.*;
 
-
 @SuppressWarnings("static-method") public class PairTest {
   private Pair<Integer, Integer> samplePair;
   private Integer first;

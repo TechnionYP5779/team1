@@ -11,8 +11,8 @@ import il.org.spartan.bench.*;
 /** @author Yossi Gil
  * @since 30/04/2011 */
 public abstract class ImmutableStatistics extends Statistics implements java.io.Serializable {
-  /** A field for identifying a streamed version of objects of this class; we use
-   * the values of <code>1L</code> to maintain upward compatibility. */
+  /** A field for identifying a streamed version of objects of this class; we
+   * use the values of <code>1L</code> to maintain upward compatibility. */
   private static final long serialVersionUID = 1;
 
   private static StringBuilder appendValue(final @NotNull StringBuilder b, final @NotNull String name, final double v, final @NotNull Unit u) {

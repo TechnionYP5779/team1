@@ -37,7 +37,7 @@ import il.org.spartan.utils.Separate.*;
 
   /** Instantiate {@link CSVLine}.
    * @param renderer
-   * @param map      which implementation should we use for storing values */
+   * @param map which implementation should we use for storing values */
   CSVLine(final Renderer renderer, final Map<String, String> map) {
     super(renderer);
     this.map = map;
@@ -61,7 +61,7 @@ import il.org.spartan.utils.Separate.*;
 
   /** Adds all {@link External} properties in a given object.
    * @param t an arbitrary object, usually with some of its fields and methods
-   *          marked {@link External}
+   *        marked {@link External}
    * @return the parameter */
   public <T> T extract(final T $) {
     for (@NotNull final Entry<String, String> ¢ : External.Introspector.toOrderedMap($).entrySet())
@@ -103,7 +103,7 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and a <code><b>boolean</b></code> value to this instance
-   * @param key   The key to be added; must not be <code><b>null</b></code>
+   * @param key The key to be added; must not be <code><b>null</b></code>
    * @param value The value associated with the key
    * @return this */
   public final CSVLine put(final @NotNull String key, final boolean value) {
@@ -111,7 +111,7 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and a <code><b>char</b></code> value to this instance
-   * @param key   The key to be added; must not be <code><b>null</b></code>
+   * @param key The key to be added; must not be <code><b>null</b></code>
    * @param value The value associated with the key
    * @return this */
   public final CSVLine put(final @NotNull String key, final char value) {
@@ -119,9 +119,9 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and a <code><b>double</b><code> value to this instance
-                           *
-                           * &#64;param key
-                           *          The key to be added; must not be <code><b>null</b></code>
+                            *
+                            * &#64;param key
+                            *          The key to be added; must not be <code><b>null</b></code>
    * @param value The value associated with the key
    * @return this */
   public CSVLine put(final @NotNull String key, final double value) {
@@ -129,12 +129,12 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and a <code><b>double</b><code> value to this instance
-                           *
-                           * &#64;param key
-                           *          The key to be added; must not be <code><b>null</b></code>
+                            *
+                            * &#64;param key
+                            *          The key to be added; must not be <code><b>null</b></code>
    * @param value The value associated with the key
-   * @param ss    Which (if any) aggregate statistics should be produced for this
-   *              column
+   * @param ss Which (if any) aggregate statistics should be produced for this
+   *        column
    * @return this */
   public CSVLine put(final @NotNull String key, final double value, final FormatSpecifier... ss) {
     aggregator.record(key, value, ss);
@@ -142,13 +142,13 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and a <code><b>double</b><code> value to this instance
-                           *
-                           * &#64;param key
-                           *          The key to be added; must not be <code><b>null</b></code>
-   * @param value  The value associated with the key
+                            *
+                            * &#64;param key
+                            *          The key to be added; must not be <code><b>null</b></code>
+   * @param value The value associated with the key
    * @param format How should the value be formatted
-   * @param ss     Which (if any) aggregate statistics should be produced for this
-   *               column
+   * @param ss Which (if any) aggregate statistics should be produced for this
+   *        column
    * @return this */
   public CSVLine put(final @NotNull String key, final double value, final @NotNull String format, @NotNull final FormatSpecifier... ss) {
     aggregator.record(key, value, ss);
@@ -157,9 +157,9 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and a general <code><b>float</b><code> value to this instance
-                           *
-                           * &#64;param key
-                           *          The key to be added; must not be <code><b>null</b></code>
+                            *
+                            * &#64;param key
+                            *          The key to be added; must not be <code><b>null</b></code>
    * @param value The value associated with the key
    * @return this */
   public final CSVLine put(final @NotNull String key, final float value) {
@@ -167,7 +167,7 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and an <code><b>int</b></code> value to this instance
-   * @param key   The key to be added; must not be <code><b>null</b></code>
+   * @param key The key to be added; must not be <code><b>null</b></code>
    * @param value The value associated with the key
    * @return this */
   public CSVLine put(final @NotNull String key, final int value) {
@@ -175,11 +175,11 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and an <code><b>int</b></code> value to this instance
-   * @param key    The key to be added; must not be <code><b>null</b></code>
-   * @param value  The value associated with the key
+   * @param key The key to be added; must not be <code><b>null</b></code>
+   * @param value The value associated with the key
    * @param format How should this value be formatted?
-   * @param ss     List of aggregations to collect on this column and their
-   *               respective formatting
+   * @param ss List of aggregations to collect on this column and their
+   *        respective formatting
    * @return this */
   public CSVLine put(final @NotNull String key, final int value, final @NotNull String format, @NotNull final FormatSpecifier... ss) {
     aggregator.record(key, value, ss);
@@ -188,8 +188,8 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and a general {@link Object} value to this instance
-   * @param key   The key to be added; must not be <code><b>null</b></code>; must
-   *              not be <code><b>null</b></code>
+   * @param key The key to be added; must not be <code><b>null</b></code>; must
+   *        not be <code><b>null</b></code>
    * @param value The value associated with the key
    * @return this */
   public final CSVLine put(final @NotNull String key, @Nullable final Integer value) {
@@ -197,7 +197,7 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and a <code><b>long</b></code> value to this instance
-   * @param key   The key to be added; must not be <code><b>null</b></code>
+   * @param key The key to be added; must not be <code><b>null</b></code>
    * @param value The value associated with the key
    * @return this */
   public CSVLine put(final @NotNull String key, final long value) {
@@ -205,8 +205,8 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and a general {@link Object} value to this instance
-   * @param key   The key to be added; must not be <code><b>null</b></code>; must
-   *              not be <code><b>null</b></code>
+   * @param key The key to be added; must not be <code><b>null</b></code>; must
+   *        not be <code><b>null</b></code>
    * @param value The value associated with the key
    * @return this */
   public final CSVLine put(final @NotNull String key, @Nullable final Object value) {
@@ -222,7 +222,7 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** Add a key and a <code><b>short</b></code> value to this instance
-   * @param key   The key to be added; must not be <code><b>null</b></code>
+   * @param key The key to be added; must not be <code><b>null</b></code>
    * @param value The value associated with the key
    * @return this */
   public CSVLine put(final @NotNull String key, final short value) {
@@ -235,7 +235,7 @@ import il.org.spartan.utils.Separate.*;
   }
 
   /** A mutator to add a key and a general {@link String} value to this instance
-   * @param key   The key to be added; must not be <code><b>null</b></code>
+   * @param key The key to be added; must not be <code><b>null</b></code>
    * @param value The value associated with the key
    * @return this */
   public final CSVLine putAggregatorColumn(final @NotNull String key, final @NotNull String value) {

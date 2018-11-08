@@ -66,7 +66,8 @@ import org.jetbrains.annotations.*;
     return ¢.byteValue();
   }
 
-  /** unbox an array of {@link Byte}s into an array of <code><b>byte</b></code> s.
+  /** unbox an array of {@link Byte}s into an array of <code><b>byte</b></code>
+   * s.
    * @param bs an array of {@link Byte}s
    * @return an equivalent array of <code><b>byte</b></code>s. */
   public static byte @NotNull [] unbox(final @NotNull Byte[] bs) {
@@ -122,8 +123,8 @@ import org.jetbrains.annotations.*;
     return ¢.floatValue();
   }
 
-  /** unbox an array of {@link Float}s into an array of <code><b>float</b></code>
-   * s.
+  /** unbox an array of {@link Float}s into an array of
+   * <code><b>float</b></code> s.
    * @param fs an array of {@link Float}s
    * @return an equivalent array of <code><b>float</b></code>s. */
   public static float @NotNull [] unbox(final Float[] fs) {
@@ -137,8 +138,8 @@ import org.jetbrains.annotations.*;
     return ¢.intValue();
   }
 
-  /** unbox an array of {@link Integer}s into an array of <code><b>int</b></code>
-   * s.
+  /** unbox an array of {@link Integer}s into an array of
+   * <code><b>int</b></code> s.
    * @param is an array of {@link Integer}s
    * @return an equivalent array of <code><b>int</b></code>s. */
   public static int @NotNull [] unbox(final @NotNull Integer[] is) {
@@ -152,7 +153,8 @@ import org.jetbrains.annotations.*;
     return ¢.longValue();
   }
 
-  /** unbox an array of {@link Long}s into an array of <code><b>long</b></code> s.
+  /** unbox an array of {@link Long}s into an array of <code><b>long</b></code>
+   * s.
    * @param ls an array of {@link Long}s
    * @return an equivalent array of <code><b>long</b></code>s. */
   public static long @NotNull [] unbox(final @NotNull Long[] ls) {
@@ -166,8 +168,8 @@ import org.jetbrains.annotations.*;
     return ¢.shortValue();
   }
 
-  /** unbox an array of {@link Short}s into an array of <code><b>short</b></code>
-   * s.
+  /** unbox an array of {@link Short}s into an array of
+   * <code><b>short</b></code> s.
    * @param ss an array of {@link Integer}s
    * @return an equivalent array of <code><b>short</b></code>s. */
   public static short @NotNull [] unbox(final @NotNull Short[] ss) {

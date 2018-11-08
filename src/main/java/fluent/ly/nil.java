@@ -34,5 +34,4 @@ import fluent.ly.nil.*;
   static <T> T ignoring(final long __) {
     return null;
   }
-  
 }

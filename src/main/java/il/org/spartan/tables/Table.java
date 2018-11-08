@@ -33,8 +33,8 @@ import il.org.spartan.utils.*;
   }
 
   /** @param name output file name
-   * @param rs   {@code TableRenderer}'s to use when writing to files (e.g. CSV,
-   *             TEX, TXT).
+   * @param rs {@code TableRenderer}'s to use when writing to files (e.g. CSV,
+   *        TEX, TXT).
    * @author oran1248
    * @since 2017-04-21 */
   @SuppressWarnings("resource") public Table(final @NotNull String name, final TableRenderer... rs) {

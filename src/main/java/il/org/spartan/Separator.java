@@ -28,7 +28,7 @@ public final class Separator {
   }
 
   /** <code>separateBy</code>
-   * @param is      JD
+   * @param is JD
    * @param between what to put between the items
    * @return String value of method <code>separateBy</code> */
   public static String separateBy(final int @NotNull [] is, final @NotNull String between) {
@@ -42,28 +42,28 @@ public final class Separator {
   }
 
   /** <code>separateBy</code> returning String
-   * @param         <T> JD
+   * @param <T> JD
    * @param between what to put between the items
-   * @param ts      JD
+   * @param ts JD
    * @return the parameters separated */
   public static <T> String separateBy(final @NotNull String between, final @NotNull T[] ts) {
     return wrap("", "", ts, between);
   }
 
   /** <code>wrap</code>
-   * @param         <T> JD
-   * @param wrap    what to wrap the characters with
-   * @param ts      JD
+   * @param <T> JD
+   * @param wrap what to wrap the characters with
+   * @param ts JD
    * @param between what to put between the items
    * @return String value of method <code>wrap</code> */
   public static <T> String wrap(final @NotNull String wrap, final Iterable<T> ts, final @NotNull String between) {
     return wrap(wrap, wrap, ts, between);
   }
 
-  /** @param     <T> JD
-   * @param begin   what to place before the items
-   * @param end     what to place after the items
-   * @param ts      JD
+  /** @param <T> JD
+   * @param begin what to place before the items
+   * @param end what to place after the items
+   * @param ts JD
    * @param between what to put between the items
    * @return String <code>wrap</code> */
   public static <T> String wrap(final @NotNull String begin, final @NotNull String end, final Iterable<T> ts, final @NotNull String between) {
@@ -76,10 +76,10 @@ public final class Separator {
     return as.string($.append(end));
   }
 
-  /** @param     <T> JD
-   * @param begin   what to place before the items
-   * @param end     what to place after the items
-   * @param ts      JD
+  /** @param <T> JD
+   * @param begin what to place before the items
+   * @param end what to place after the items
+   * @param ts JD
    * @param between what to put between the items */
   public static <T> String wrap(final @NotNull String begin, final @NotNull String end, final @NotNull T[] ts, final @NotNull String between) {
     if (ts.length == 0)

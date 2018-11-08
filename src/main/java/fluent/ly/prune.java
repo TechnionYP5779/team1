@@ -56,7 +56,7 @@ import org.junit.*;
   }
 
   /** Shrink an array size to zero.
-   * @param   <T> type of elements in the input array.
+   * @param <T> type of elements in the input array.
    * @param ¢ an array of values.
    * @return an array of size 0 of elements of type <code>T</code>. */
   private static <T> T[] shrink(final T @NotNull [] ¢) {
