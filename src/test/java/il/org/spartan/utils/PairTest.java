@@ -10,7 +10,7 @@ import org.junit.*;
   private Integer second;
 
   @Before public void beforeFunction() {
-    Random r = new Random();
+    final Random r = new Random();
     int nextInt = r.nextInt();
     first = Integer.valueOf(nextInt);
     nextInt = r.nextInt();

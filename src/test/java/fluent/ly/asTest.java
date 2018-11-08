@@ -1,23 +1,27 @@
 package fluent.ly;
 
+import static org.junit.Assert.*;
+
 import static fluent.ly.azzert.*;
+
 import java.util.*;
+
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-@SuppressWarnings({ "static-method", "static-access", "null" }) public class asTest {
+@SuppressWarnings({ "static-method",  "null" }) public class asTest {
   @Test public void testAsIterable() {
     int count = 1;
-    for (Iterator<Integer> ¢ = as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)).iterator(); ¢.hasNext();) {
-      assert ¢.next().equals(Integer.valueOf(count));
+    for (final Integer integer : as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))) {
+      assert integer.equals(Integer.valueOf(count));
       ++count;
     }
   }
 
   @Test public void testAsIterableLambda() {
     int count = 1;
-    for (Iterator<Integer> ¢ = as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)).iterator(); ¢.hasNext();) {
-      assert ¢.next().equals(Integer.valueOf(count));
+    for (final Integer integer : as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))) {
+      assert integer.equals(Integer.valueOf(count));
       ++count;
     }
   }
@@ -37,55 +41,55 @@ import org.junit.*;
   }
 
   @Test public void testIntArrayIntArray() {
-    int[] x = as.intArray(0, 1, 2, 3, 4);
+    final int[] x = as.intArray(0, 1, 2, 3, 4);
     for (int ¢ = 0; ¢ < 5; ++¢)
       azzert.assertEquals(¢, x[¢]);
   }
 
   @Test public void testIntArrayListOfInteger() {
-    List<Integer> y = new ArrayList<>();
+    final List<Integer> y = new ArrayList<>();
     for (int ¢ = 0; ¢ < 5; ++¢)
       y.add(Integer.valueOf(¢));
-    int[] x = as.intArray(0, 1, 2, 3, 4);
+    final int[] x = as.intArray(0, 1, 2, 3, 4);
     for (int ¢ = 0; ¢ < 5; ++¢)
       azzert.assertEquals(¢, x[¢]);
   }
 
   @Test public void testListIterableOfQextendsT() {
-    azzert.assertEquals(an.empty.list(), as.list(new ArrayList<>()));
+    Assert.assertEquals(an.empty.list(), as.list(new ArrayList<>()));
   }
 
   @Test public void testListTArray() {
-    List<Integer> x = as.ingeterList(1, 2, 3);
+    final List<Integer> x = as.ingeterList(1, 2, 3);
     assert x.contains(Integer.valueOf(1));
     assert x.contains(Integer.valueOf(2));
     assert x.contains(Integer.valueOf(3));
   }
 
   @Test @SuppressWarnings("unlikely-arg-type") public void testSet() {
-    Set<? extends Integer> x = as.set(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3));
+    final Set<? extends Integer> x = as.set(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3));
     x.contains(Integer.valueOf(1));
     assert x.contains(Integer.valueOf(2));
     assert x.contains(Integer.valueOf(3));
   }
 
   @Test public void testStringObject() {
-    azzert.assertEquals(as.string((Object) null), "null");
+    Assert.assertEquals(as.string((Object) null), "null");
   }
 
   @Test public void testStringChar() {
-    azzert.assertEquals(as.string('g'), "g");
+    Assert.assertEquals(as.string('g'), "g");
   }
 
   @Test public void testStringString() {
-    azzert.assertEquals(as.string(null), "null");
+    Assert.assertEquals(as.string(null), "null");
   }
 
   @Test public void testStrings() {
-    List<String> x = new ArrayList<>();
+    final List<String> x = new ArrayList<>();
     x.add("Hello");
     x.add("World");
-    azzert.assertNotNull(as.strings(x));
+    Assert.assertNotNull(as.strings(x));
   }
 
   @Test public void testAsIterableEssence() {
@@ -131,22 +135,22 @@ import org.junit.*;
   }
 
   @Test public void asIterable() {
-    Iterable<Integer> iter1 = as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5)),
+    final Iterable<Integer> iter1 = as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5)),
         iter2 = as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5)),
         iter3 = as.asIterableEssence(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5));
-    Iterator<Integer> iter4 = as.iterator(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5));
+    final Iterator<Integer> iter4 = as.iterator(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5));
     int j = 1;
-    for (int ¢ : iter1) {
+    for (final int ¢ : iter1) {
       azzert.assertEquals(j, ¢);
       ++j;
     }
     j = 1;
-    for (int ¢ : iter2) {
+    for (final int ¢ : iter2) {
       azzert.assertEquals(j, ¢);
       ++j;
     }
     j = 1;
-    for (int ¢ : iter3) {
+    for (final int ¢ : iter3) {
       azzert.assertEquals(j, ¢);
       ++j;
     }
@@ -156,46 +160,46 @@ import org.junit.*;
   }
 
   @Test public void bit() {
-    Object obj = new Object();
+    final Object obj = new Object();
     azzert.assertEquals(0, as.bit(null));
     azzert.assertEquals(1, as.bit(obj));
   }
 
   @Test public void array() {
-    Integer[] array = as.array(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3));
+    final Integer[] array = as.array(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3));
     azzert.assertEquals(array[0], 1);
     azzert.assertEquals(array[1], 2);
     azzert.assertEquals(array[2], 3);
   }
 
   @Test public void strings() {
-    String[] stringArray = as.strings(as.list("Hello", "Hi")), stringArray2 = as.strings(null);
-    ArrayList<String> checkNullObject = new ArrayList<>();
+    final String[] stringArray = as.strings(as.list("Hello", "Hi")), stringArray2 = as.strings(null);
+    final ArrayList<String> checkNullObject = new ArrayList<>();
     checkNullObject.add("Hello");
     checkNullObject.add(null);
     checkNullObject.add("Hi");
-    String[] stringArray3 = as.strings(checkNullObject);
-    azzert.assertEquals(stringArray[0], "Hello");
-    azzert.assertEquals(stringArray[1], "Hi");
+    final String[] stringArray3 = as.strings(checkNullObject);
+    Assert.assertEquals(stringArray[0], "Hello");
+    Assert.assertEquals(stringArray[1], "Hi");
     azzert.assertEquals(0, stringArray2.length);
-    azzert.assertEquals(stringArray3[0], "Hello");
-    azzert.assertEquals(stringArray3[1], "Hi");
+    Assert.assertEquals(stringArray3[0], "Hello");
+    Assert.assertEquals(stringArray3[1], "Hi");
   }
 
   @Test public void listAndSet() {
-    ArrayList<String> stringArrayList = new ArrayList<>();
+    final ArrayList<String> stringArrayList = new ArrayList<>();
     stringArrayList.add("Hello");
     stringArrayList.add("Hi");
-    List<String> stringList = as.list(stringArrayList);
-    Set<?> stringSet = as.set("Hello", "Hi");
+    final List<String> stringList = as.list(stringArrayList);
+    final Set<?> stringSet = as.set("Hello", "Hi");
     assertCollectionsEqual(stringArrayList, stringList);
     azzert.assertEquals(stringSet.size(), 2);
   }
 
   @Test public void string() {
-    String nullString = as.string(null), helloString = as.string("hello");
-    azzert.assertEquals("a", as.string('a'));
-    azzert.assertEquals("null", nullString);
-    azzert.assertEquals("hello", helloString);
+    final String nullString = as.string(null), helloString = as.string("hello");
+    Assert.assertEquals("a", as.string('a'));
+    Assert.assertEquals("null", nullString);
+    Assert.assertEquals("hello", helloString);
   }
 }

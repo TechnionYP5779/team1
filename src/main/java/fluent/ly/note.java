@@ -2,6 +2,7 @@ package fluent.ly;
 
 import static java.lang.String.*;
 import static java.util.stream.Collectors.*;
+
 import java.io.*;
 import java.util.*;
 import java.util.logging.*;

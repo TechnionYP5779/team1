@@ -1,11 +1,6 @@
 package fluent.ly;
 
-import java.util.*;
 import java.util.function.*;
-
-import org.junit.*;
-
-import fluent.ly.nil.*;
 
 /** TODO Yossi Gil: document class
  * @author Yossi Gil

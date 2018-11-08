@@ -15,6 +15,7 @@ import org.junit.*;
 import an.*;
 import il.org.spartan.*;
 
+
 /** A utility class providing library functions that take an array or a
  * collection, and return a {@link String} composed by the elements of this
  * collection, separated by a given {@link String} or <code><b>char</b></code>.

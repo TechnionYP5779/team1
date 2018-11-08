@@ -1,7 +1,9 @@
 package il.org.spartan.statistics;
 
 import static org.junit.Assert.*;
+
 import java.util.*;
+
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
@@ -33,7 +35,7 @@ public class statisticsTest {
   @Test public void testMad() {
     assert Statistics.mad(second_integer_sample) == 0;
     // ========== ANOTHER TEST ==========
-    double mad3 = Statistics.mad(third_integer_sample);
+    final double mad3 = Statistics.mad(third_integer_sample);
     assert mad3 >= 1 && mad3 <= 2;
   }
 
@@ -54,7 +56,7 @@ public class statisticsTest {
 
   @Test public void testSampleVariance() {
     // ========== ANOTHER TEST ==========
-    double firstVariance = Statistics.sampleVariance(first_integers_sample);
+    final double firstVariance = Statistics.sampleVariance(first_integers_sample);
     assert firstVariance >= 13 && firstVariance <= 14;
     assert Statistics.sampleVariance(second_integer_sample) == second_variance;
     assert Statistics.sampleVariance(third_integer_sample) == third_variance;
@@ -76,7 +78,7 @@ public class statisticsTest {
       my_statistics.n = 0;
       my_statistics.max();
       fail("you should have not got here");
-    } catch (@SuppressWarnings("unused") ArithmeticException e) {
+    } catch (@SuppressWarnings("unused") final ArithmeticException e) {
       assert true;
     }
     // ========== ANOTHER TEST ==========
@@ -89,7 +91,7 @@ public class statisticsTest {
     // ========== ANOTHER TEST ==========
     try {
       my_statistics.mean();
-    } catch (@SuppressWarnings("unused") ArithmeticException e) {
+    } catch (@SuppressWarnings("unused") final ArithmeticException e) {
       assert true;
     }
     // ========== ANOTHER TEST ==========
@@ -109,7 +111,7 @@ public class statisticsTest {
     // ========== ANOTHER TEST ==========
     try {
       my_statistics.min();
-    } catch (@SuppressWarnings("unused") ArithmeticException e) {
+    } catch (@SuppressWarnings("unused") final ArithmeticException e) {
       assert true;
     }
     // ========== ANOTHER TEST ==========
@@ -121,7 +123,7 @@ public class statisticsTest {
   @Test public void testMissing() {
     assert my_statistics.missing() == 0;
     // ========== ANOTHER TEST ==========
-    int missing_value = 5;
+    final int missing_value = 5;
     my_statistics.missing = missing_value;
     assert my_statistics.missing() == missing_value;
   }
@@ -129,7 +131,7 @@ public class statisticsTest {
   @Test public void testN() {
     assert my_statistics.n == 0;
     // ========== ANOTHER TEST ==========
-    int nth_value = 7;
+    final int nth_value = 7;
     my_statistics.n = nth_value;
     assert my_statistics.n == nth_value;
   }
@@ -166,7 +168,7 @@ public class statisticsTest {
       my_statistics.n = 0;
       my_statistics.checkEmpty();
       fail("YOU SHOULD HAVE RAISED EXCEPTION");
-    } catch (@SuppressWarnings("unused") ArithmeticException e) {
+    } catch (@SuppressWarnings("unused") final ArithmeticException e) {
       assert true;
     }
     // ========== ANOTHER TEST ==========
@@ -174,7 +176,7 @@ public class statisticsTest {
       my_statistics.n = 7;
       my_statistics.checkEmpty();
       assert true;
-    } catch (ArithmeticException ¢) {
+    } catch (final ArithmeticException ¢) {
       fail("YOU SHOULD HAVE NOT RAISED EXCEPTION" + ¢.getMessage());
     }
   }

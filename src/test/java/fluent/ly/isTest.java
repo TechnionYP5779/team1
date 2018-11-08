@@ -1,6 +1,7 @@
 package fluent.ly;
 
 import java.util.*;
+
 import org.junit.*;
 
 @SuppressWarnings({ "static-method", "null" }) public class isTest {

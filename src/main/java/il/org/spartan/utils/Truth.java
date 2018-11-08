@@ -3,6 +3,7 @@ package il.org.spartan.utils;
 import java.util.function.*;
 
 import org.jetbrains.annotations.*;
+
 import il.org.spartan.etc.*;
 
 public enum Truth {
