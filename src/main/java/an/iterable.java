@@ -14,7 +14,7 @@ public interface iterable {
     return iterable.over(¢);
   }
 
-  @SafeVarargs @NotNull static <T> Iterable<T> over(final T... ts) {
+  @SuppressWarnings("unused") @SafeVarargs @NotNull static <T> Iterable<T> over(final T... ts) {
     return new Iterable<T>() {
       @Override @NotNull public Iterator<T> iterator() {
         return new Iterator<T>() {
