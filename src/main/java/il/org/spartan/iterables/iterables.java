@@ -50,6 +50,18 @@ public enum iterables {
   public static <T> Iterator<T> singletonIterator(final T $) {
     return iterable.singleton($).iterator();
   }
+  
+  public static <T> Iterable<T> alternate(Iterable<T> nums1, Iterable<T> nums2) {
+    List<T> $ = new ArrayList<>();
+    Iterator<T> itePrime = nums1.iterator(), iteAlt = nums2.iterator(), tmp = null;
+    while(itePrime.hasNext()) {
+      $.add(itePrime.next());
+      tmp = itePrime;
+      itePrime = iteAlt;
+      iteAlt = tmp;
+     }
+    return $;    
+  }
 
   //
   /** A static nested class hosting unit tests for the nesting class Unit test
@@ -95,4 +107,6 @@ public enum iterables {
       assertEquals(3, count(iterable.over("One", "Two", "Three")));
     }
   }
+
+
 }
