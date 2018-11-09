@@ -1,10 +1,7 @@
 package il.org.spartan.iterables;
 
 import java.util.*;
-
-
 import org.junit.*;
-
 import fluent.ly.*;
 
 @SuppressWarnings({"static-method" , "boxing"}) public class iterablesTest {
@@ -93,8 +90,4 @@ import fluent.ly.*;
      first = !first;
     }
   }
-  
-  
-  
-  
 }
