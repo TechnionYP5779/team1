@@ -15,7 +15,7 @@ public class Outer<Inner> {
     if (inner == null || inner == this)
       throw new IllegalArgumentException();
   }
-  
+
   @Override @NotNull @SuppressWarnings("unchecked") public Outer<Inner> clone() throws CloneNotSupportedException {
     return (Outer<Inner>) Utils.cantBeNull(super.clone());
   }

@@ -5,9 +5,9 @@ import java.util.*;
 import org.junit.*;
 
 import fluent.ly.nil.*;
-
-public class NilTest {
-  @Test @SuppressWarnings("static-method") public void testForgetting() {
+@SuppressWarnings("static-method")
+public class nilTest {
+  @Test  public void testForgetting() {
     azzert.assertNull(nil.forgetting(Integer.valueOf(1), Integer.valueOf(2)));
     azzert.assertNull(nil.forgetting(Integer.valueOf(1), "abc"));
     azzert.assertNull(
@@ -17,25 +17,25 @@ public class NilTest {
   static String helperF(Integer ¢) {
     return ¢ + "";
   }
-  
-  @Test @SuppressWarnings({ "static-method", "static-access" }) public void testGuardingly() {
-    On<Integer, String> ff = nil.guardingly(NilTest::helperF);
+
+  @Test  public void testGuardingly() {
+    final On<Integer, String> ff = nil.guardingly(nilTest::helperF);
     azzert.assertNull(ff.on(null));
-    azzert.assertNotNull(ff.on(Integer.valueOf(1)));
-    azzert.assertEquals("1", ff.on(Integer.valueOf(1)));
+    Assert.assertNotNull(ff.on(Integer.valueOf(1)));
+    Assert.assertEquals("1", ff.on(Integer.valueOf(1)));
   }
 
-  @Test @SuppressWarnings("static-method") public void testIgnoringBoolean() {
+  @Test public void testIgnoringBoolean() {
     azzert.assertNull(nil.ignoring(true));
     azzert.assertNull(nil.ignoring(false));
   }
 
-  @Test @SuppressWarnings("static-method") public void testIgnoringDouble() {
+  @Test public void testIgnoringDouble() {
     azzert.assertNull(nil.ignoring(1.5));
     azzert.assertNull(nil.ignoring(2.0));
   }
 
-  @Test @SuppressWarnings("static-method") public void testIgnoringLong() {
+  @Test public void testIgnoringLong() {
     azzert.assertNull(nil.ignoring(7034567L));
     azzert.assertNull(nil.ignoring(2L));
   }

@@ -88,5 +88,4 @@ public interface list {
   static <T> @Nullable T penultimate(final List<T> ¢) {
     return eval(() -> ¢.get(¢.size() - 2)).unless(¢ == null || ¢.size() < 2);
   }
-
 }

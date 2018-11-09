@@ -4,6 +4,7 @@ package fluent.ly;
 import java.util.function.*;
 
 import org.jetbrains.annotations.*;
+
 /** An empty <code><b>enum</b></code> with a variety of <code>public
  * static</code> utility functions of reasonably wide use.
  * @author Yossi Gil <code><yossi.gil [at] gmail.com></code>
@@ -25,7 +26,7 @@ public interface idiomatic {
   };
 
   /** <code>yield</code>
-   * @param   <T> JD
+   * @param <T> JD
    * @param $ result
    * @return an identical supplier which is also a {@link Holder} */
   static <T> Holder<T> eval(final @NotNull Supplier<@Nullable T> $) {
@@ -38,15 +39,14 @@ public interface idiomatic {
 
   /** A filter, which prints an appropriate log message and returns null in case
    * of {@link Exception} thrown by {@link Producer#λ()}
-   * @param   <T> JD
+   * @param <T> JD
    * @param $ JD
    * @return result of invoking the parameter, or <code><b>null</b></code> if an
    *         exception occurred. */
   static <@Nullable T> @Nullable T katching(final @NotNull Producer<T> $) {
     try {
       return $.λ();
-    } catch (final Exception ¢) {
-      ¢.printStackTrace();
+    } catch (@SuppressWarnings("unused") final Exception ¢) {
       return null;
     }
   }
@@ -65,7 +65,7 @@ public interface idiomatic {
   }
 
   /** <code>yield</code>
-   * @param   <T> JD
+   * @param <T> JD
    * @param ¢ JD
    * @return Yielder<T> value of method <code>yield</code> */
   @NotNull static <T> Storer<T> take(final T ¢) {
@@ -108,8 +108,8 @@ public interface idiomatic {
   }
 
   /** A class which is just like {@link Supplier} , except that it uses the
-   * shorter name ( {@link #λ()} and that it allows for {@link Exception} s to be
-   * thrown by the getters.
+   * shorter name ( {@link #λ()} and that it allows for {@link Exception} s to
+   * be thrown by the getters.
    * @author Yossi Gil
    * @param <T> JD
    * @since 2016` */
@@ -166,7 +166,6 @@ public interface idiomatic {
       return inner;
     }
   }
-
 
   /** @author Yossi Gil <Yossi.Gil@GMail.COM>
    * @since 2016 */

@@ -9,6 +9,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
+import il.org.spartan.etc.*;
 
 /** Not such a good name for a bunch of static functions
  * @author Yossi Gil
@@ -49,7 +50,7 @@ public interface system {
   }
 
   static Extension ephemeral(final @Nullable String stem) {
-    return (stem == null) ? ephemeral(new Random() + "")
+    return stem == null ? ephemeral(new Random() + "")
         : λ -> new File(system.tmp + stem + new SimpleDateFormat("-yyyy-MM-dd-HH-mm-ss").format(new Date()) + "." + λ);
   }
 

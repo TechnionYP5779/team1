@@ -11,7 +11,7 @@ public enum all {
   ;
   /** Determine whether all elements in an {@link Iterable} collection are not
    * null.
-   * @param    <T> type of elements in the collection
+   * @param <T> type of elements in the collection
    * @param ts an {@link Iterable} collection of elements to be tested
    * @return <code><b>true</b></code> <i>iff</i> <code>ts</code> is not
    *         <code><b>null</b></code> and all elements in it is not are not
@@ -26,7 +26,7 @@ public enum all {
   }
 
   /** Determine whether all elements in an array are not null.
-   * @param    <T> type of elements in the array
+   * @param <T> type of elements in the array
    * @param ts an array of elements to be tested
    * @return <code><b>true</b></code> <i>iff</i> <code>ts</code> is not
    *         <code><b>null</b></code> and all elements in it are not

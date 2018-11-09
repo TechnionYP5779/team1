@@ -73,7 +73,7 @@ public abstract class Statistics {
 
   /** @return the largest value of the elements in the sequence
    * @throws ArithmeticException in case this function was called prior to
-   *                             recording any elements in the sequence */
+   *         recording any elements in the sequence */
   public final double max() throws ArithmeticException {
     checkEmpty();
     return max;
@@ -81,7 +81,7 @@ public abstract class Statistics {
 
   /** @return the average value of the elements in the sequence
    * @throws ArithmeticException in case this function was called prior to
-   *                             recording any elements in the sequence */
+   *         recording any elements in the sequence */
   public final double mean() throws ArithmeticException {
     checkEmpty();
     return sum() / n();
@@ -89,14 +89,14 @@ public abstract class Statistics {
 
   /** @return the smallest value of the elements in the sequence
    * @throws ArithmeticException in case this function was called prior to
-   *                             recording any elements in the sequence */
+   *         recording any elements in the sequence */
   public final double min() throws ArithmeticException {
     checkEmpty();
     return min;
   }
 
-  /** @return a non-negative integer, giving the number of ''missing'' elements in
-   *         the sequence */
+  /** @return a non-negative integer, giving the number of ''missing'' elements
+   *         in the sequence */
   public final int missing() {
     return missing;
   }
@@ -111,14 +111,14 @@ public abstract class Statistics {
   /** @return the relative error of the elements in the sequence, defined as the
    *         standard deviation divided by the mean.
    * @throws ArithmeticException in case this function was called prior to
-   *                             recording any elements in the sequence */
+   *         recording any elements in the sequence */
   public final double relativeError() {
     return mean() == 0 ? sd() : sd() / Math.abs(mean());
   }
 
   /** @return the standard deviation of the elements in the sequence
    * @throws ArithmeticException in case this function was called prior to
-   *                             recording any elements in the sequence */
+   *         recording any elements in the sequence */
   public final double sd() {
     return Math.sqrt(sum2() / n() - sqr(mean()));
   }
@@ -137,7 +137,7 @@ public abstract class Statistics {
    *         "http://en.wikipedia.org/wiki/Variance#Population_variance_and_sample_variance"
    *         >sample variance</a> f the elements in the sequence
    * @throws ArithmeticException in case this function was called prior to
-   *                             recording any elements in the sequence */
+   *         recording any elements in the sequence */
   public final double v() {
     return sum2() / (n - 1) - sqr(sum()) / (sqr(n) - n);
   }
@@ -147,8 +147,8 @@ public abstract class Statistics {
   }
 
   /** Provides the degrees of freedom offered by this instance.
-   * @return a non-negative integer, giving the degree of freedom in the sequence,
-   *         i.e., the number of elements - 1.
+   * @return a non-negative integer, giving the degree of freedom in the
+   *         sequence, i.e., the number of elements - 1.
    * @see #n() */
   public final int ν() {
     return n() - 1;

@@ -25,23 +25,25 @@ import org.jetbrains.annotations.*;
     return $;
   }
 
-//  @NotNull public static String read(final @NotNull File f) throws IOException {
-//    final @NotNull String ls = System.getProperty("line.separator");
-//    System.err.println(ls.compareTo("\n"));
-//    final @NotNull StringBuilder $ = new StringBuilder();
-//    try (@NotNull BufferedReader reader = new BufferedReader(new FileReader(f))) {
-//      for (String line = reader.readLine(); line != null; line = reader.readLine())
-//        $.append(line).append(ls);
-//    }
-//    return $ + "";
-//  }
-
+  // @NotNull public static String read(final @NotNull File f) throws
+  // IOException {
+  // final @NotNull String ls = System.getProperty("line.separator");
+  // System.err.println(ls.compareTo("\n"));
+  // final @NotNull StringBuilder $ = new StringBuilder();
+  // try (@NotNull BufferedReader reader = new BufferedReader(new
+  // FileReader(f))) {
+  // for (String line = reader.readLine(); line != null; line =
+  // reader.readLine())
+  // $.append(line).append(ls);
+  // }
+  // return $ + "";
+  // }
   @NotNull public static String readFromFile(final @NotNull String fileName) throws IOException {
     return read(Paths.get(fileName));
   }
 
   /** @param fileName where to write
-   * @param text     what to write
+   * @param text what to write
    * @throws FileNotFoundException in case the file could not be found */
   public static void writeToFile(final @NotNull String fileName, final @NotNull String text) throws FileNotFoundException {
     try (@NotNull PrintWriter p = new PrintWriter(fileName)) {

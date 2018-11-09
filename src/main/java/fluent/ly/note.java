@@ -3,8 +3,6 @@ package fluent.ly;
 import static java.lang.String.*;
 import static java.util.stream.Collectors.*;
 
-import static fluent.ly.English.*;
-
 import java.io.*;
 import java.util.*;
 import java.util.logging.*;
@@ -12,6 +10,7 @@ import java.util.stream.*;
 
 import org.jetbrains.annotations.*;
 
+import il.org.spartan.etc.*;
 import il.org.spartan.utils.*;
 
 /** Our way of dealing with logs, exceptions, NPE, Eclipse bugs, and other
@@ -77,7 +76,7 @@ import il.org.spartan.utils.*;
 
   static <T> T bug(final Throwable ¢) {
     return nulling.ly(() -> logger.info(//
-        "A static method was hit by " + indefinite(¢) + " exception.\n" + //
+        "A static method was hit by " + English.indefinite(¢) + " exception.\n" + //
             "This is an indication of a bug.\n" + //
             format("%s = '%s'\n", English.name(¢), ¢) + //
             format("trace(%s) = '%s'\n", English.name(¢), __.trace(¢)) //
@@ -100,7 +99,7 @@ import il.org.spartan.utils.*;
   static <T> T cancel(final Object o, final Exception x) {
     return nulling.ly(() -> logger.info(//
         "An instance of " + English.name(o) + //
-            "\n was hit by " + indefinite(x) + //
+            "\n was hit by " + English.indefinite(x) + //
             " (probably cancellation) exception." + //
             "\n x = '" + x + "'" + //
             "\n o = " + o + "'"));
@@ -109,7 +108,7 @@ import il.org.spartan.utils.*;
   static <T> T ignore(final Class<?> o, final Throwable t) {
     return info(//
         "A static method of " + English.name(o) + //
-            "was hit by " + indefinite(t) + "\n" + //
+            "was hit by " + English.indefinite(t) + "\n" + //
             "exception. This is expected and printed only for the purpose of debugging" + //
             "x = '" + t + "'" + //
             "o = " + o + "'");
@@ -118,7 +117,7 @@ import il.org.spartan.utils.*;
   static <T> T ignore(final Object o, final Throwable t) {
     return info(//
         "An instance of " + English.name(o) + //
-            "\n was hit by " + indefinite(t) + //
+            "\n was hit by " + English.indefinite(t) + //
             " exception. This is expected and printed only for the purpose of debugging" + //
             "\n x = '" + t + "'" + //
             "\n o = " + o + "'");

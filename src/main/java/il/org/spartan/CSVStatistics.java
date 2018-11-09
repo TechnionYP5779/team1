@@ -29,11 +29,10 @@ import il.org.spartan.statistics.*;
 
   /** Instantiate this class, setting the names of the main and secondary CSV
    * files.
-   * @param baseName   the name of the files into which statistics should be
-   *                   written; if this name ends with ".csv", this extension is
-   *                   removed.
-   * @param keysHeader the name of the column in which the names of the numerical
-   *                   columns in the principal file
+   * @param baseName the name of the files into which statistics should be
+   *        written; if this name ends with ".csv", this extension is removed.
+   * @param keysHeader the name of the column in which the names of the
+   *        numerical columns in the principal file
    * @throws IOException */
   public CSVStatistics(final @NotNull String baseName, final @NotNull String keysHeader) {
     assert baseName != null;

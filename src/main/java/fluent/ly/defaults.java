@@ -19,9 +19,9 @@ import org.jetbrains.annotations.*;
 public enum defaults {
   ;
   /** Return a default value for an {@link Integer} type.
-   * @param v            a possibly <code><b>null</b></code> value
+   * @param v a possibly <code><b>null</b></code> value
    * @param defaultValue a value to be used in case <code>v</code> is
-   *                     <code><b>null</b></code>
+   *        <code><b>null</b></code>
    * @return <code>v</code> if it is not <code><b>null</b></code>, otherwise
    *         <code>defaultValue</code> */
   public static int to(final @Nullable Integer v, final int defaultValue) {
@@ -29,9 +29,9 @@ public enum defaults {
   }
 
   /** Return a default value for an {@link Integer} type.
-   * @param v            a possibly <code><b>null</b></code> value
+   * @param v a possibly <code><b>null</b></code> value
    * @param defaultValue a value to be used in case <code>v</code> is
-   *                     <code><b>null</b></code>
+   *        <code><b>null</b></code>
    * @return <code>v</code> if it is not <code><b>null</b></code>, otherwise
    *         <code>defaultValue</code> */
   public static int to(final @Nullable Integer v, final Integer defaultValue) {

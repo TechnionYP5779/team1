@@ -6,8 +6,7 @@ import org.junit.*;
 
 import fluent.ly.idiomatic.*;
 
-@SuppressWarnings({ "static-method", "static-access" ,"null"}) 
-public class IdiomaticTest {
+@SuppressWarnings({ "static-method", "static-access", "null" }) public class idiomaticTest {
   @Test public void testEval() {
     azzert.assertEquals(Integer.valueOf(1), idiomatic.eval(() -> Integer.valueOf(1)).get());
   }
@@ -17,7 +16,18 @@ public class IdiomaticTest {
     azzert.assertEquals(Integer.valueOf(1), idiomatic.incase(true, Integer.valueOf(1)));
   }
 
-  
+  @Test public void testKatching1() {
+    idiomatic.Producer<Integer> thrower = () -> {
+      throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");
+    };
+    try {
+      assertNull(idiomatic.katching(thrower));
+    } catch (Exception ¢) {
+      ¢.printStackTrace();
+      fail("Exception uncaught by katching");
+    }
+  }
+
   @Test public void testKatching2() {
     idiomatic.Producer<Integer> notThrower = () -> Integer.valueOf(1);
     try {
@@ -51,11 +61,11 @@ public class IdiomaticTest {
 
   @Test public void testTake() {
     Storer<Boolean> sto = idiomatic.take(Boolean.TRUE);
-    azzert.assertTrue(sto.get().booleanValue());
+    assert sto.get().booleanValue();
     azzert.assertNull(sto.when(false));
-    azzert.assertTrue(sto.when(true).booleanValue());
+    assert sto.when(true).booleanValue();
     azzert.assertNull(sto.unless(true));
-    azzert.assertTrue(sto.unless(false).booleanValue());
+    assert sto.unless(false).booleanValue();
   }
 
   @Test public void testUnlessBoolean() {
@@ -72,9 +82,9 @@ public class IdiomaticTest {
     azzert.assertNull(idiomatic.when(false).eval(Integer.valueOf(1)));
     azzert.assertEquals(Integer.valueOf(1), idiomatic.when(true).eval(Integer.valueOf(1)));
   }
-  
+
   @Test public void use0() {
-    azzert.assertTrue(new Storer<>(this) != null);
+    assert new Storer<>(this) != null;
   }
 
   @Test public void use08() {
@@ -82,16 +92,16 @@ public class IdiomaticTest {
   }
 
   @Test public void use09() {
-    azzert.assertTrue(idiomatic.unless(false).eval(() -> new Object()) != null);
+    assert idiomatic.unless(false).eval(() -> new Object()) != null;
   }
 
   @Test public void use1() {
-    azzert.assertTrue(new Storer<>(Integer.valueOf(5)) != null);
+    assert new Storer<>(Integer.valueOf(5)) != null;
     new Storer<>(Integer.valueOf(5)).when(true);
   }
 
   @Test public void use10() {
-    azzert.assertTrue(idiomatic.when(true).eval(() -> new Object()) != null);
+    assert idiomatic.when(true).eval(() -> new Object()) != null;
   }
 
   @Test public void use11() {
@@ -99,7 +109,7 @@ public class IdiomaticTest {
   }
 
   @Test public void use2() {
-    azzert.assertTrue(idiomatic.take(this) != null);
+    assert idiomatic.take(this) != null;
     azzert.isNull(idiomatic.take(this).when(false));
   }
 
@@ -124,5 +134,4 @@ public class IdiomaticTest {
     azzert.isNull(idiomatic.take(null).unless(true));
     azzert.isNull(idiomatic.take(null).unless(false));
   }
-
 }

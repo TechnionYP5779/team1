@@ -26,11 +26,11 @@ public interface lisp {
   }
 
   static <T> @Nullable T get(final List<@Nullable T> ts, final int i) {
-    return (ts == null) ? null : ts.get(i + 1);
+    return ts == null ? null : ts.get(i + 1);
   }
 
   /** Retrieve previous item in a list
-   * @param i  an index of specific item in a list
+   * @param i an index of specific item in a list
    * @param ts the indexed list
    * @return previous item in the list, if such an item exists, otherwise, the
    *         last node */

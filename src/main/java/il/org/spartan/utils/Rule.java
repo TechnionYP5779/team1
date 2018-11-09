@@ -9,6 +9,7 @@ import java.util.function.*;
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
+import il.org.spartan.etc.*;
 
 /** An abstract interface defining tippers, bloaters, and light weight pattern
  * search, logging, computing statistics, etc.
@@ -61,14 +62,14 @@ public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
 
   /** Gives the ability to perform an action on object {@code T} t, only if
    * predicate(t) takes place.
-   * @param   <T> __ of elements for which the rule is applicable
-   * @param   <R> __ of result of applying this rule
+   * @param <T> __ of elements for which the rule is applicable
+   * @param <R> __ of result of applying this rule
    * @param p a predicate
    * @return a lambda of type {@link OnApplicator}
    * @author Yossi Gil
    * @since 2017-03-10 */
-  @SuppressWarnings("unused") static <@Nullable T, @Nullable R> @Nullable OnApplicator<T, R> on(final Predicate<T> p) {
-    return c -> new Rule.Stateful<T, R>() {
+  static <@Nullable T, @Nullable R> @Nullable OnApplicator<T, R> on(final Predicate<T> p) {
+    return c -> new Rule.Stateful<>() {
       @Override public R fire() {
         c.accept(current());
         return null;
@@ -100,8 +101,8 @@ public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
     });
   }
 
-  @Check @SuppressWarnings("unused") default Rule<T, R> afterCheck(final Predicate<T> p) {
-    return new Interceptor<T, R>(this) {
+  @Check default Rule<T, R> afterCheck(final Predicate<T> p) {
+    return new Interceptor<>(this) {
       @Override public boolean check(final T ¢) {
         return inner.check(¢) && p.test(¢);
       }
@@ -134,8 +135,8 @@ public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
     });
   }
 
-  @SuppressWarnings("unused") default Rule<T, R> beforeCheck(final Predicate<T> p) {
-    return new Interceptor<T, R>(this) {
+  default Rule<T, R> beforeCheck(final Predicate<T> p) {
+    return new Interceptor<>(this) {
       @Override public boolean check(final T ¢) {
         return p.test(¢) && inner.check(¢);
       }

@@ -6,7 +6,7 @@ import org.jetbrains.annotations.*;
 
 public interface iterable {
   /** <code>singleton</code>
-   * @param   <T> JD
+   * @param <T> JD
    * @param ¢ JD
    * @return PureIterable.Sized<T> for returned value of method
    *         <code>singleton</code> */
@@ -14,10 +14,10 @@ public interface iterable {
     return iterable.over(¢);
   }
 
-  @SafeVarargs @NotNull @SuppressWarnings("unused") static <T> Iterable<T> over(final T... ts) {
-    return new Iterable<T>() {
+  @SafeVarargs @NotNull static <T> Iterable<T> over(final T... ts) {
+    return new Iterable<>() {
       @Override @NotNull public Iterator<T> iterator() {
-        return new Iterator<T>() {
+        return new Iterator<>() {
           int current;
 
           @Override public boolean hasNext() {

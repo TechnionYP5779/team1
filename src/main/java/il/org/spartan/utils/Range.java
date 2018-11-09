@@ -21,7 +21,7 @@ public class Range {
 
   /** Instantiates from beginning and end locations
    * @param from JD
-   * @param to   JD */
+   * @param to JD */
   public Range(final int from, final int to) {
     this.from = from;
     this.to = to;
@@ -67,8 +67,8 @@ public class Range {
 
   /** Determine whether overlaps in any part another range
    * @param ¢ arbitrary
-   * @return <code><b>true</b></code> <i>iff</i> <code><b>this</b></code> overlaps
-   *         the parameter. */
+   * @return <code><b>true</b></code> <i>iff</i> <code><b>this</b></code>
+   *         overlaps the parameter. */
   public boolean overlapping(final @NotNull Range ¢) {
     return from >= ¢.from || to <= ¢.to;
   }

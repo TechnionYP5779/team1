@@ -25,5 +25,4 @@ public interface anonymous {
   static <T> T ly(final Supplier<T> $) {
     return $.get();
   }
-  
 }

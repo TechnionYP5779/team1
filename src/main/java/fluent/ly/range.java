@@ -84,8 +84,8 @@ public class range {
       return self();
     }
 
-    @Override @SuppressWarnings("unused") public Iterator<Integer> iterator() {
-      return new Iterator<Integer>() {
+    @Override public Iterator<Integer> iterator() {
+      return new Iterator<>() {
         int next = from;
 
         @Override public boolean hasNext() {

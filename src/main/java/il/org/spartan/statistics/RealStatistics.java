@@ -8,8 +8,8 @@ import fluent.ly.*;
  * and the standard deviation, of a sequence of real numbers.
  * @author Yossi Gil, */
 public class RealStatistics extends ImmutableStatistics {
-  /** A field for identifying a streamed version of objects of this class; we use
-   * the values of <code>1L</code> to maintain upward compatibility. */
+  /** A field for identifying a streamed version of objects of this class; we
+   * use the values of <code>1L</code> to maintain upward compatibility. */
   private static final long serialVersionUID = 1;
 
   public static double[] increase(final double @NotNull [] ¢) {

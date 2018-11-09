@@ -12,7 +12,7 @@ import fluent.ly.*;
 public enum iterables {
   ;
   /** Counts the number of items in an {@link Iterable}.
-   * @param    <T> some arbitrary type
+   * @param <T> some arbitrary type
    * @param ts some iterable over items whose type is the type parameter
    * @return number of items the given iterable yields. */
   public static <T> int count(final @Nullable Iterable<T> ts) {
@@ -38,11 +38,22 @@ public enum iterables {
   }
 
   /** wraps a value in a singleton iterator form
-   * @param   <T> JD
+   * @param <T> JD
    * @param $ JD
    * @return parameter, but in a singleton iterator form */
   public static <T> Iterator<T> singletonIterator(final T $) {
     return iterable.singleton($).iterator();
   }
-
+  
+  public static <T> Iterable<T> alternate(Iterable<T> nums1, Iterable<T> nums2) {
+    List<T> $ = new ArrayList<>();
+    Iterator<T> itePrime = nums1.iterator(), iteAlt = nums2.iterator(), tmp = null;
+    while(itePrime.hasNext()) {
+      $.add(itePrime.next());
+      tmp = itePrime;
+      itePrime = iteAlt;
+      iteAlt = tmp;
+     }
+    return $;    
+  }
 }

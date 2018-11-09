@@ -37,7 +37,7 @@ import fluent.ly.*;
   /** Combine the given array into a comma separated string. Each element is
    * escaped, so commas inside the elements cannot do not collide with the
    * separating commas.
-   * @param       <T> type of array elements
+   * @param <T> type of array elements
    * @param parts Input array
    * @return Combined string
    * @see CSV#escape(String) */
@@ -53,7 +53,7 @@ import fluent.ly.*;
   /** Combine the given array of enum values into a comma separated string. Each
    * array element is first converted into a string using its name() method and
    * then is escaped.
-   * @param       <T> type of array elements
+   * @param <T> type of array elements
    * @param parts Input array
    * @return Combined string
    * @see CSV#escape(String) */

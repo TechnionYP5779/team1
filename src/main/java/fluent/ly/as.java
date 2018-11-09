@@ -1,7 +1,6 @@
 /* Part of the "Spartan Blog"; mutate the rest / but leave this line as is */
 package fluent.ly;
 
-
 import java.util.*;
 
 import org.jetbrains.annotations.*;
@@ -14,9 +13,9 @@ import il.org.spartan.*;
  * @since Jul 8, 2014 */
 @SuppressWarnings("null") public enum as {
   ;
-  /** Convert an array of {@link Integer}s into an {@link Iterable}. For example,
-   * to print the first Fibonacci numbers multiplied by the first prime numbers,
-   * write:
+  /** Convert an array of {@link Integer}s into an {@link Iterable}. For
+   * example, to print the first Fibonacci numbers multiplied by the first prime
+   * numbers, write:
    *
    * <pre>
    * for (Integer f: asIterable(1,1,2,3,5,8,13)
@@ -25,13 +24,13 @@ import il.org.spartan.*;
    * </pre>
    *
    * @param is what to iterate on (recall that a list of arguments of the same
-   *           type is isomorphic to array parameters in Java
+   *        type is isomorphic to array parameters in Java
    * @return an {@link Iterable} over the array, which can then be used to to
    *         iterate over the parameter(s) */
-  @SuppressWarnings("unused") public static Iterable<Integer> asIterable(final @NotNull Integer... is) {
+  public static Iterable<Integer> asIterable(final @NotNull Integer... is) {
     // Create an object of a new <em>anonymous</em> class that
     // <code><b>implements</b></code> {@link Iterable}
-    return () -> new Iterator<Integer>() {
+    return () -> new Iterator<>() {
       int current;
 
       @Override public boolean hasNext() {
@@ -44,8 +43,8 @@ import il.org.spartan.*;
     };
   }
 
-  @SuppressWarnings("unused") public static Iterable<Integer> asIterableLambda(final @NotNull Integer... is) {
-    return () -> new Iterator<Integer>() {
+  public static Iterable<Integer> asIterableLambda(final @NotNull Integer... is) {
+    return () -> new Iterator<>() {
       int current;
 
       @Override public boolean hasNext() {
@@ -83,16 +82,16 @@ import il.org.spartan.*;
 
   /** Converts a sequence of integer values into an array.
    * @param $ some sequence of values of the type parameter
-   * @return parameters, organized as an array with entries whose type is the type
-   *         parameter */
+   * @return parameters, organized as an array with entries whose type is the
+   *         type parameter */
   public static int @NotNull [] intArray(final int... $) {
     return $;
   }
 
-  /** Return a compact representation of a list of {@link Integer}s as an array of
-   * type <code><b>int</b></code>.
+  /** Return a compact representation of a list of {@link Integer}s as an array
+   * of type <code><b>int</b></code>.
    * @param is the list to be converted, none of the elements in it can be
-   *           <code><b>null</b></code>
+   *        <code><b>null</b></code>
    * @return an array of <code><b>int</b></code>. representing the input. */
   public static int @NotNull [] intArray(final @NotNull List<Integer> is) {
     final int @NotNull [] $ = new int @NotNull [is.size()];
@@ -102,7 +101,7 @@ import il.org.spartan.*;
   }
 
   /** Creates an iterable for an array of objects
-   * @param   <T> an arbitrary type
+   * @param <T> an arbitrary type
    * @param ¢ what to iterate on
    * @return an {@link Iterable} over the parameter */
   @SafeVarargs public static <T> Iterator<T> iterator(final T... ¢) {
@@ -112,31 +111,33 @@ import il.org.spartan.*;
   /** Converts a list of <code><b>int</b></code>s into a {@link List} of
    * {@link Integer}s
    * @param ¢ what to convert
-   * @return a {@link List} of of all <code><b>int</b></code>s in the parameter */
+   * @return a {@link List} of of all <code><b>int</b></code>s in the
+   *         parameter */
   public static List<Integer> list(final int... ¢) {
     return as.list(box.it(¢));
   }
 
   /** Converts an {@link Iterable} of a given type into a {@link List} of values
    * of this type.
-   * @param   <T> type of items to be converted
+   * @param <T> type of items to be converted
    * @param $ what to convert
    * @return parameter, converted to the {@link List} of the given type */
   public static <T> @NotNull List<T> list(final @Nullable Iterable<? extends T> $) {
     return $ == null ? an.empty.list() : accumulate.to(new ArrayList<T>()).add($).elements();
   }
 
-  /** Converts a sequence of objects of some common type T into a {@link List} of
-   * values
-   * @param   <T> type of objects to be converted
+  /** Converts a sequence of objects of some common type T into a {@link List}
+   * of values
+   * @param <T> type of objects to be converted
    * @param $ what to covert
    * @return result parameter, converted into a {@link List} */
   @SafeVarargs public static <T> @NotNull List<T> list(final T... $) {
     return accumulate.to(new ArrayList<@Nullable T>()).add($).elements();
   }
 
-  /** Converts a sequence of objects of a given type into a {@link Set} of values
-   * @param   <T> type of objects to be converted
+  /** Converts a sequence of objects of a given type into a {@link Set} of
+   * values
+   * @param <T> type of objects to be converted
    * @param ¢ what to covert
    * @return parameter, converted into a {@link Set} */
   @SafeVarargs public static <T> Set<? extends T> set(final @Nullable T... ¢) {
@@ -168,8 +169,8 @@ import il.org.spartan.*;
     return Utils.cantBeNull($.toArray(new String @NotNull [$.size()]));
   }
 
-  @SuppressWarnings("unused") public static Iterable<Integer> asIterableEssence(final @NotNull Integer... is) {
-    return () -> new Iterator<Integer>() {
+  public static Iterable<Integer> asIterableEssence(final @NotNull Integer... is) {
+    return () -> new Iterator<>() {
       int current;
 
       @Override public boolean hasNext() {
@@ -184,17 +185,17 @@ import il.org.spartan.*;
 
   // No values in an 'enum' which serves as a name space for a collection of
   // 'static' functions.
-  /** A static nested class hosting unit tests for the nesting class Unit test for
-   * the containing class. Note the naming convention: a) names of test methods do
-   * not use are not prefixed by "test". This prefix is redundant. b) test methods
-   * begin with the name of the method they check.
+  /** A static nested class hosting unit tests for the nesting class Unit test
+   * for the containing class. Note the naming convention: a) names of test
+   * methods do not use are not prefixed by "test". This prefix is redundant. b)
+   * test methods begin with the name of the method they check.
    * @author Yossi Gil
    * @since 2014-05-31 */
   /** Converts a sequence of values into an array.
-   * @param   <T> some arbitrary type
+   * @param <T> some arbitrary type
    * @param $ some sequence of values of the type parameter
-   * @return parameter, organized as an array with entries whose type is the type
-   *         parameter */
+   * @return parameter, organized as an array with entries whose type is the
+   *         type parameter */
   @SafeVarargs public static <T> T[] array(final T... $) {
     return $;
   }
