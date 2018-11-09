@@ -56,10 +56,9 @@ import fluent.ly.*;
     azzert.assertEquals(BigInteger.valueOf(-15).step(BigInteger.ONE).intValue(), BigInteger.valueOf(-14).intValue());
     azzert.assertEquals(BigInteger.ONE.step(BigInteger.valueOf(-15)).intValue(), BigInteger.valueOf(-14).intValue());
     azzert.assertEquals(BigInteger.valueOf(-15).step(BigInteger.valueOf(-15)).intValue(), BigInteger.valueOf(-30).intValue());
-    
     azzert.assertEquals(BigInteger.ONE.sub(BigInteger.TEN).intValue(), BigInteger.valueOf(-9).intValue());
-    azzert.assertEquals(BigInteger.TEN.sub(BigInteger.valueOf(15)).intValue(),BigInteger.valueOf(-5).intValue());
-    azzert.assertEquals(BigInteger.valueOf(-20).sub(BigInteger.valueOf(45)).intValue(),BigInteger.valueOf(-65).intValue());
-    azzert.assertEquals(BigInteger.valueOf(-100).sub(BigInteger.valueOf(-150)).intValue(),BigInteger.valueOf(50).intValue());
+    azzert.assertEquals(BigInteger.TEN.sub(BigInteger.valueOf(15)).intValue(), BigInteger.valueOf(-5).intValue());
+    azzert.assertEquals(BigInteger.valueOf(-20).sub(BigInteger.valueOf(45)).intValue(), BigInteger.valueOf(-65).intValue());
+    azzert.assertEquals(BigInteger.valueOf(-100).sub(BigInteger.valueOf(-150)).intValue(), BigInteger.valueOf(50).intValue());
   }
 }
