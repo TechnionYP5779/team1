@@ -1,7 +1,5 @@
 package il.org.spartan.utils;
 
-import static org.junit.Assume.*;
-
 import java.util.*;
 
 public class BigInteger {
