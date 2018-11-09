@@ -7,9 +7,10 @@ import static fluent.ly.azzert.*;
 
 import java.util.*;
 import java.util.stream.*;
-import org.jetbrains.annotations.*;
-import il.org.spartan.*;
 
+import org.jetbrains.annotations.*;
+
+import il.org.spartan.*;
 
 /** A utility class providing library functions that take an array or a
  * collection, and return a {@link String} composed by the elements of this
@@ -27,8 +28,8 @@ import il.org.spartan.*;
     return separateBySpaces(as.list($));
   }
 
-  /** A simple program demonstrating the use of this class. This program prints
-   * a comma separated list of its arguments, where special characters in each
+  /** A simple program demonstrating the use of this class. This program prints a
+   * comma separated list of its arguments, where special characters in each
    * argument are escaped prior to printing.
    * @param args list of the command line arguments. */
   public static void main(final @NotNull String[] args) {
@@ -120,7 +121,7 @@ import il.org.spartan.*;
     azzert.aye(reason, b);
   }
 
-  @SuppressWarnings("unused") @NotNull private static SeparationSubject these(final int @NotNull [] ¢) {
+  @NotNull public static SeparationSubject these(final int @NotNull [] ¢) {
     return these(box.it(¢));
   }
 
@@ -130,8 +131,9 @@ import il.org.spartan.*;
   public static class SeparationSubject {
     /** Separate elements of a given {@link Iterable} collection by a given
      * {{@link String}}
-     * @param ts an {@link Iterable} collection of elements to be separated
-     * @param <T> type of elements in the {@link Iterable} collection parameter
+     * @param ts      an {@link Iterable} collection of elements to be separated
+     * @param         <T> type of elements in the {@link Iterable} collection
+     *                parameter
      * @param between what should be used for separating these elements
      * @return a {{@link String}} obtained by concatenating the textual
      *         representation of the elements in <code>ts</code> separated by
@@ -145,7 +147,7 @@ import il.org.spartan.*;
     }
 
     /** Separate a list of elements by a given {{@link String}}
-     * @param os what needs to be separated
+     * @param os      what needs to be separated
      * @param between what should be used for separating these elements
      * @return a {{@link String}} obtained by concatenating the textual
      *         representation of the elements in <code>ts</code> separated by
