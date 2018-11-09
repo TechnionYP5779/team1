@@ -13,8 +13,8 @@ public enum empty {
     return new ArrayList<>();
   }
 
-  public static <@Nullable T> Iterable<T> iterable() {
-    return () -> new Iterator<>() {
+  @SuppressWarnings("unused") public static <@Nullable T> Iterable<T> iterable() {
+    return () -> new Iterator<T>() {
       @Override public boolean hasNext() {
         return false;
       }
