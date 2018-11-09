@@ -1,6 +1,10 @@
 package il.org.spartan.utils;
 
 public class RealNumbersPairList {
+  public class EOL extends Exception {
+    // End of list exception
+  }
+
   private class Node{
     public Node(double d, double e) {
       x = d;
@@ -13,9 +17,11 @@ public class RealNumbersPairList {
   }
   
   Node head;
+  Node iterator;
   int size;
   RealNumbersPairList(){
     head = null;
+    iterator = null;
     size = 0;
   }
   public void record(double x, double y) {
@@ -45,6 +51,14 @@ public class RealNumbersPairList {
   }
   
   public Pair<Double, Double> getFirst() {
+    iterator = head;
     return new Pair<>(Double.valueOf(head.x), Double.valueOf(head.y));
+  }
+  
+  public Pair<Double, Double> getNext() throws EOL {
+    if(iterator == null) throw new EOL();
+    iterator = iterator.next;
+    if(iterator == null) return null;
+    return new Pair<>(Double.valueOf(iterator.x), Double.valueOf(iterator.y));
   }
 }
