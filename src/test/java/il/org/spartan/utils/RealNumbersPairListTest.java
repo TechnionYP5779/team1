@@ -62,6 +62,7 @@ public class RealNumbersPairListTest {
     
   }
   
+  
   @Test public void iteratorNullBehaviour() {
     RealNumbersPairList list = new RealNumbersPairList();
     list.record(3.5, 2.5);
