@@ -50,6 +50,4 @@ package il.org.spartan.utils;
     double intercept = yAvg - slope * xAvg;
     return new LinearFunction(slope, intercept);
   }
-  
-  
 }

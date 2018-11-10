@@ -51,9 +51,23 @@ public class LinearRegressionTest {
     list.record(3.0, 7.0);
     LinearRegression regression = new LinearRegression(list);
     try {
-      System.out.println(regression.getLine().slope + " " + regression.getLine().intercept);
       azzert.assertTrue(regression.getLine().slope >= 2.0 && regression.getLine().slope <= 4.0 );
       azzert.assertTrue(regression.getLine().intercept <= 1.0 && regression.getLine().intercept >= -3.0 );
+    } catch (@SuppressWarnings("unused") NotEnoughDots e) {
+      // TODO Auto-generated catch block
+      azzert.assertTrue(false);
+    }
+  }
+  
+  @Test public void linearRegressionTwoSameX() {
+    RealNumbersPairList list = new RealNumbersPairList();
+    list.record(1.0, 1.0);
+    list.record(1.0, 5.0);
+    list.record(3.0, 7.0);
+    LinearRegression regression = new LinearRegression(list);
+    try {
+      azzert.assertTrue(regression.getLine().slope >= 1.0 && regression.getLine().slope <= 3.0 );
+      azzert.assertTrue(regression.getLine().intercept <= 4.0 && regression.getLine().intercept >= -2.0 );
     } catch (@SuppressWarnings("unused") NotEnoughDots e) {
       // TODO Auto-generated catch block
       azzert.assertTrue(false);
