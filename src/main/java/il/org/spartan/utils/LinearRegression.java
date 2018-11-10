@@ -3,6 +3,7 @@ package il.org.spartan.utils;
 @SuppressWarnings("boxing") public class LinearRegression {
   double[] xVals;
   double[] yVals;
+  double R2;
   
   public class NotEnoughDots extends Exception {
     private static final long serialVersionUID = 1L;
@@ -25,6 +26,7 @@ package il.org.spartan.utils;
       yVals[index] = point.second;
       index++;
     }
+    R2 = 0.0;
   }
   
   LinearRegression(double[] x, double[] y){
@@ -45,17 +47,19 @@ package il.org.spartan.utils;
     }
     
     // Compute the average of the dots
-    double xSum = 0.0, ySum = 0.0, xSquaredSum = 0.0;
+    double xSum = 0.0;
+    double ySum = 0.0;
     for (int i = 0; i < xVals.length; i++) {
       xSum += xVals[i];
       ySum += yVals[i];
-      xSquaredSum += xVals[i] * xVals[i];
     }
     double xAvg = xSum / xVals.length;
     double yAvg = ySum / yVals.length;
     
     // Compute the squared distance from the average
-    double xxAvgDistance = 0.0, yyAvgDistance = 0.0, pointsAvgDistance = 0.0;
+    double xxAvgDistance = 0.0;
+    double yyAvgDistance = 0.0;
+    double pointsAvgDistance = 0.0;
     for (int i = 0; i < xVals.length; i++) {
       xxAvgDistance += (xVals[i] - xAvg) * (xVals[i] - xAvg);
       yyAvgDistance += (yVals[i] - yAvg) * (yVals[i] - yAvg);
@@ -64,7 +68,19 @@ package il.org.spartan.utils;
     
     double slope = pointsAvgDistance / xxAvgDistance;
     double intercept = yAvg - slope * xAvg;
+    
+    double ssr = 0.0;      // regression sum of squares
+    for (int i = 0; i < xVals.length; i++) {
+        double fit = slope*xVals[i] + intercept;
+        ssr += (fit - yAvg) * (fit - yAvg);
+    }
+    R2 = ssr / yyAvgDistance;
+    
     return new LinearFunction(slope, intercept);
+  }
+  
+  public double getR2Measurement() {
+    return R2;
   }
 
   private boolean allDotsHaveTheSameX() {

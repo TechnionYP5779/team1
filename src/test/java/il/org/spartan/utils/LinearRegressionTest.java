@@ -118,4 +118,43 @@ public class LinearRegressionTest {
       azzert.assertTrue(false);
     }
   }
+  
+  @Test public void checkR2MeasurmentBadFit() {
+    double xVals[] = {1.0, 1.0, 4.0};
+    double yVals[] = {1.0, 5.0, 7.0};
+    LinearRegression regression = new LinearRegression(xVals, yVals);
+    try {
+      regression.getLine();
+      double R2 = regression.getR2Measurement();
+      azzert.assertTrue(R2 <= 0.6 && R2 >= 0.5);
+    } catch (@SuppressWarnings("unused") Exception e) {
+      azzert.assertTrue(false);
+    }
+  }
+  
+  @Test public void checkR2MeasurmentGoodFit() {
+    double xVals[] = {1.0, 2.0, 3.0};
+    double yVals[] = {1.0, 5.0, 9.0};
+    LinearRegression regression = new LinearRegression(xVals, yVals);
+    try {
+      regression.getLine();
+      double R2 = regression.getR2Measurement();
+      azzert.assertTrue(R2 <= 1.0 && R2 >= 0.9);
+    } catch (@SuppressWarnings("unused") Exception e) {
+      azzert.assertTrue(false);
+    }
+  }
+  
+  @Test public void checkR2MeasurmentVeryBadFit() {
+    double xVals[] = {1.0, 1.0, 3.0, 4.0};
+    double yVals[] = {1.0, 1000.0, -500.0, 1700.9};
+    LinearRegression regression = new LinearRegression(xVals, yVals);
+    try {
+      regression.getLine();
+      double R2 = regression.getR2Measurement();
+      azzert.assertTrue(R2 <= 0.1 && R2 >= 0.0);
+    } catch (@SuppressWarnings("unused") Exception e) {
+      azzert.assertTrue(false);
+    }
+  }
 }

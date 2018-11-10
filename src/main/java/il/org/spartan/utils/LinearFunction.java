@@ -19,4 +19,8 @@ public class LinearFunction {
     LinearFunction line = (LinearFunction)o;
     return line.slope == slope && line.intercept == intercept;
   }
+
+  @Override public int hashCode() {
+    return super.hashCode();
+  }
 }
