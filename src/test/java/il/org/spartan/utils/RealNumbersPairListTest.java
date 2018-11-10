@@ -95,7 +95,7 @@ public class RealNumbersPairListTest {
     for(Pair<Double, Double> p : list) {
       Assert.assertNotNull(p);
       azzert.assertTrue(p.first >= 1.3 && p.first <= 93.5);
-      azzert.assertTrue(p.second >= 2.5 && p.first <= 22.2);
+      azzert.assertTrue(p.second >= 2.5 && p.second <= 22.2);
     }
   }
 }

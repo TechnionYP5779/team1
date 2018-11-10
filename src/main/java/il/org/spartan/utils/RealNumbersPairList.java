@@ -27,14 +27,31 @@ public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {
     }
     
     @Override public boolean hasNext() {
-      if(iter == null) return false;
-      return iter.next != null;
+      return iter != null;
     }
 
     @Override public Pair<Double, Double> next() {
-      return new Pair<>(Double.valueOf(iter.x), Double.valueOf(iter.y));
+      if(iter == null) return null;
+      Pair<Double, Double> p = new Pair<>(Double.valueOf(iter.x), Double.valueOf(iter.y));
+      iter = iter.next;
+      return p;
     }
     
+  }
+  
+  @SuppressWarnings("boxing") public class LinearRegression {
+    double[] xVals;
+    double[] yVals;
+     LinearRegression(RealNumbersPairList list){
+      xVals = new double[list.size()];
+      yVals = new double[list.size()];
+      int index = 0;
+      for(Pair<Double, Double> point : list) {
+        xVals[index] = point.first;
+        yVals[index] = point.second;
+        index++;
+      }
+    }
   }
   
   Node head;
@@ -85,7 +102,8 @@ public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {
     if(iterator == null) return null;
     return new Pair<>(Double.valueOf(iterator.x), Double.valueOf(iterator.y));
   }
+  
   @Override public Iterator<Pair<Double, Double>> iterator() {
-    return new ListIterator(iterator);
+    return new ListIterator(head);
   }
 }
