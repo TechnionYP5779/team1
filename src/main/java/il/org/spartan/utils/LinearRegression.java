@@ -41,7 +41,7 @@ package il.org.spartan.utils;
   public LinearFunction getLine() throws NotEnoughDots, InfiniteSlopeFunction {
     if(xVals.length <= 1) throw new NotEnoughDots();
     
-    if(allDotsHaveTheSameX())
+    if(allPointsHaveTheSameX())
       throw new InfiniteSlopeFunction(xVals[0]);
     
     double xSum = 0.0, ySum = 0.0;
@@ -70,7 +70,7 @@ package il.org.spartan.utils;
     return R2;
   }
 
-  private boolean allDotsHaveTheSameX() {
+  private boolean allPointsHaveTheSameX() {
     if(xVals.length <= 1) return true;
     double value = xVals[0];
     for(double x : xVals)
