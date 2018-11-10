@@ -2,7 +2,6 @@ package il.org.spartan.utils;
 
 import org.junit.*;
 
-import fluent.ly.*;
 import il.org.spartan.utils.LinearRegression.*;
 
 @SuppressWarnings("static-method")
@@ -13,9 +12,9 @@ public class LinearRegressionTest {
     list.record(5.0, 5.0);
     LinearRegression regression = new LinearRegression(list);
     try {
-      azzert.assertTrue(regression.getLine().equals(new LinearFunction(1.0, 0.0)));
+      assert regression.getLine().equals(new LinearFunction(1.0, 0.0));
     } catch (@SuppressWarnings("unused") Exception e) {
-      azzert.assertTrue(false);
+      assert false;
     }
   }
   
@@ -26,9 +25,9 @@ public class LinearRegressionTest {
     try {
       regression.getLine();
     } catch (@SuppressWarnings("unused") NotEnoughDots e) {
-      azzert.assertTrue(true);
+      assert true;
     } catch (@SuppressWarnings("unused") InfiniteSlopeFunction e) {
-      azzert.assertTrue(false);
+      assert false;
     }
   }
   
@@ -39,9 +38,9 @@ public class LinearRegressionTest {
     list.record(3.0, 7.0);
     LinearRegression regression = new LinearRegression(list);
     try {
-      azzert.assertTrue(regression.getLine().equals(new LinearFunction(3.0, -2.0)));
+      assert regression.getLine().equals(new LinearFunction(3.0, -2.0));
     } catch (@SuppressWarnings("unused") Exception e) {
-      azzert.assertTrue(false);
+      assert false;
     }
   }
   
@@ -52,10 +51,10 @@ public class LinearRegressionTest {
     list.record(3.0, 7.0);
     LinearRegression regression = new LinearRegression(list);
     try {
-      azzert.assertTrue(regression.getLine().slope >= 2.0 && regression.getLine().slope <= 4.0 );
-      azzert.assertTrue(regression.getLine().intercept <= 1.0 && regression.getLine().intercept >= -3.0 );
+      assert regression.getLine().slope >= 2.0 && regression.getLine().slope <= 4.0;
+      assert regression.getLine().intercept <= 1.0 && regression.getLine().intercept >= -3.0;
     } catch (@SuppressWarnings("unused") Exception e) {
-      azzert.assertTrue(false);
+      assert false;
     }
   }
   
@@ -66,10 +65,10 @@ public class LinearRegressionTest {
     list.record(3.0, 7.0);
     LinearRegression regression = new LinearRegression(list);
     try {
-      azzert.assertTrue(regression.getLine().slope >= 1.0 && regression.getLine().slope <= 3.0 );
-      azzert.assertTrue(regression.getLine().intercept <= 4.0 && regression.getLine().intercept >= -2.0 );
+      assert regression.getLine().slope >= 1.0 && regression.getLine().slope <= 3.0;
+      assert regression.getLine().intercept <= 4.0 && regression.getLine().intercept >= -2.0;
     } catch (@SuppressWarnings("unused") Exception e) {
-      azzert.assertTrue(false);
+      assert false;
     }
   }
   
@@ -80,10 +79,10 @@ public class LinearRegressionTest {
     LinearRegression regression = new LinearRegression(list);
     try {
       regression.getLine();
-    } catch (InfiniteSlopeFunction e) {
-      azzert.assertTrue(e.xVal == 1.0);
+    } catch (InfiniteSlopeFunction ¢) {
+      assert ¢.xVal == 1.0;
     } catch (@SuppressWarnings("unused") NotEnoughDots e) {
-      azzert.assertTrue(false);
+      assert false;
     }
   }
   
@@ -98,63 +97,57 @@ public class LinearRegressionTest {
     LinearRegression regression = new LinearRegression(list);
     try {
       regression.getLine();
-    } catch (InfiniteSlopeFunction e) {
-      azzert.assertTrue(e.xVal == 7.0);
+    } catch (InfiniteSlopeFunction ¢) {
+      assert ¢.xVal == 7.0;
     } catch (@SuppressWarnings("unused") NotEnoughDots e) {
-      azzert.assertTrue(false);
+      assert false;
     }
   }
   
   @Test public void linearRegressionBuildFromArrays() {
-    /* This test was made in order to increase the loose coupling 
-     * of the classes 'RealNumbersPairList' and 'LinearRegression' */
-    double xVals[] = {1.0, 3.0, 4.0};
-    double yVals[] = {1.0, 9.0, 13.0};
+    double xVals[] = { 1.0, 3.0, 4.0 }, yVals[] = { 1.0, 9.0, 13.0 };
     LinearRegression regression = new LinearRegression(xVals, yVals);
     try {
-      azzert.assertTrue(regression.getLine().slope >= 3.5 && regression.getLine().slope <= 4.5 );
-      azzert.assertTrue(regression.getLine().intercept <= -2.5 && regression.getLine().intercept >= -3.5 );
+      assert regression.getLine().slope >= 3.5 && regression.getLine().slope <= 4.5;
+      assert regression.getLine().intercept <= -2.5 && regression.getLine().intercept >= -3.5;
     } catch (@SuppressWarnings("unused") Exception e) {
-      azzert.assertTrue(false);
+      assert false;
     }
   }
   
   @Test public void checkR2MeasurmentBadFit() {
-    double xVals[] = {1.0, 1.0, 4.0};
-    double yVals[] = {1.0, 5.0, 7.0};
+    double xVals[] = { 1.0, 1.0, 4.0 }, yVals[] = { 1.0, 5.0, 7.0 };
     LinearRegression regression = new LinearRegression(xVals, yVals);
     try {
       regression.getLine();
       double R2 = regression.getR2Measurement();
-      azzert.assertTrue(R2 <= 0.6 && R2 >= 0.5);
+      assert R2 <= 0.6 && R2 >= 0.5;
     } catch (@SuppressWarnings("unused") Exception e) {
-      azzert.assertTrue(false);
+      assert false;
     }
   }
   
   @Test public void checkR2MeasurmentGoodFit() {
-    double xVals[] = {1.0, 2.0, 3.0};
-    double yVals[] = {1.0, 5.0, 9.0};
+    double xVals[] = { 1.0, 2.0, 3.0 }, yVals[] = { 1.0, 5.0, 9.0 };
     LinearRegression regression = new LinearRegression(xVals, yVals);
     try {
       regression.getLine();
       double R2 = regression.getR2Measurement();
-      azzert.assertTrue(R2 <= 1.0 && R2 >= 0.9);
+      assert R2 <= 1.0 && R2 >= 0.9;
     } catch (@SuppressWarnings("unused") Exception e) {
-      azzert.assertTrue(false);
+      assert false;
     }
   }
   
   @Test public void checkR2MeasurmentVeryBadFit() {
-    double xVals[] = {1.0, 1.0, 3.0, 4.0};
-    double yVals[] = {1.0, 1000.0, -500.0, 1700.9};
+    double xVals[] = { 1.0, 1.0, 3.0, 4.0 }, yVals[] = { 1.0, 1000.0, -500.0, 1700.9 };
     LinearRegression regression = new LinearRegression(xVals, yVals);
     try {
       regression.getLine();
       double R2 = regression.getR2Measurement();
-      azzert.assertTrue(R2 <= 0.1 && R2 >= 0.0);
+      assert R2 <= 0.1 && R2 >= 0.0;
     } catch (@SuppressWarnings("unused") Exception e) {
-      azzert.assertTrue(false);
+      assert false;
     }
   }
 }

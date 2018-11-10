@@ -10,12 +10,10 @@ public class LinearFunction {
   }
   
   @Override public boolean equals(Object o) {
-    if (o == this) {
+    if (o == this)
       return true;
-    }
-    if (!(o instanceof LinearFunction)) {
+    if (!(o instanceof LinearFunction)) 
       return false;
-    }
     LinearFunction line = (LinearFunction)o;
     return line.slope == slope && line.intercept == intercept;
   }
