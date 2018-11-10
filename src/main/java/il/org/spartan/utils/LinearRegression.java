@@ -22,12 +22,6 @@ package il.org.spartan.utils;
   
   public LinearFunction getLine() throws NotEnoughDots {
     if(xVals.length <= 1) throw new NotEnoughDots();
-    if(xVals.length == 2) {
-      double slope = (yVals[1] - yVals[0])/(xVals[1] - xVals[0]);
-      double intercept = yVals[0] - slope*xVals[0];
-      return new LinearFunction(slope, intercept);
-    }
-    
     // Compute the average of the dots
     double xSum = 0.0, ySum = 0.0, xSquaredSum = 0.0;
     for (int i = 0; i < xVals.length; i++) {
