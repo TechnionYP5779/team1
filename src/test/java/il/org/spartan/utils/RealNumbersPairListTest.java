@@ -98,4 +98,19 @@ public class RealNumbersPairListTest {
       azzert.assertTrue(p.second >= 2.5 && p.second <= 22.2);
     }
   }
+  
+  @SuppressWarnings("boxing") @Test public void iteratorOverListCheckAllValsExist() {
+    RealNumbersPairList list = new RealNumbersPairList();
+    double xVals[] = {1.3, 3.5, 93.5};
+    double yVals[] = {22.2, 2.58, 9.9};
+    for(int i = 0; i< xVals.length; i++) {
+      list.record(xVals[i], yVals[i]);
+    }
+    int i = 0;
+    for(Pair<Double, Double> p : list) {
+      azzert.assertTrue(p.first == xVals[i]);
+      azzert.assertTrue(p.second == yVals[i]);
+      i++;
+    }
+  }
 }
