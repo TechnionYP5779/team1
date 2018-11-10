@@ -20,6 +20,16 @@ package il.org.spartan.utils;
     }
   }
   
+  LinearRegression(double[] x, double[] y){
+    int length = x.length <= y.length ? x.length : y.length;
+    xVals = new double[length];
+    yVals = new double[length];
+    for(int i = 0; i < length; i++) {
+      xVals[i] = x[i];
+      yVals[i] = y[i];
+    }
+  }
+  
   public LinearFunction getLine() throws NotEnoughDots {
     if(xVals.length <= 1) throw new NotEnoughDots();
     // Compute the average of the dots

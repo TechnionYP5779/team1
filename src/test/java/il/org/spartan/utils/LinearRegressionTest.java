@@ -73,4 +73,18 @@ public class LinearRegressionTest {
       azzert.assertTrue(false);
     }
   }
+  
+  @Test public void linearRegressionBuildFromArrays() {
+    /* This test was made in order to increase the loose coupling 
+     * of the classes 'RealNumbersPairList' and 'LinearRegression' */
+    double xVals[] = {1.0, 3.0, 4.0};
+    double yVals[] = {1.0, 9.0, 13.0};
+    LinearRegression regression = new LinearRegression(xVals, yVals);
+    try {
+      azzert.assertTrue(regression.getLine().slope >= 3.5 && regression.getLine().slope <= 4.5 );
+      azzert.assertTrue(regression.getLine().intercept <= -2.5 && regression.getLine().intercept >= -3.5 );
+    } catch (@SuppressWarnings("unused") Exception e) {
+      azzert.assertTrue(false);
+    }
+  }
 }
