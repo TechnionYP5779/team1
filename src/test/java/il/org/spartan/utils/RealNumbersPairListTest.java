@@ -73,4 +73,30 @@ public class RealNumbersPairListTest {
       azzert.assertTrue(false);
     }
   }
+  
+  @Test public void iteratorEmptyList() {
+    RealNumbersPairList list = new RealNumbersPairList();
+    try {
+      azzert.assertNull(list.getFirst());
+    } catch (@SuppressWarnings("unused") Exception e) {
+      azzert.assertTrue(false);
+    }
+  }
+  
+  @SuppressWarnings("boxing") @Test public void iteratorOverList() {
+    RealNumbersPairList list = new RealNumbersPairList();
+    list.record(3.5, 2.5);
+    list.record(1.7, 2.58);
+    list.record(8.9, 3.2);
+    list.record(1.3, 22.2);
+    list.record(4.2, 9.9);
+    list.record(93.5, 3.10);
+    list.record(12.88, 17.1);
+    list.record(41.30, 12.3);
+    for(Pair<Double, Double> p : list) {
+      Assert.assertNotNull(p);
+      azzert.assertTrue(p.first >= 1.3 && p.first <= 93.5);
+      azzert.assertTrue(p.second >= 2.5 && p.first <= 22.2);
+    }
+  }
 }
