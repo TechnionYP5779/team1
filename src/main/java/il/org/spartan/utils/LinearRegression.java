@@ -27,6 +27,29 @@ package il.org.spartan.utils;
       double intercept = yVals[0] - slope*xVals[0];
       return new LinearFunction(slope, intercept);
     }
-    return null;
+    
+    // Compute the average of the dots
+    double xSum = 0.0, ySum = 0.0, xSquaredSum = 0.0;
+    for (int i = 0; i < xVals.length; i++) {
+      xSum += xVals[i];
+      ySum += yVals[i];
+      xSquaredSum += xVals[i] * xVals[i];
+    }
+    double xAvg = xSum / xVals.length;
+    double yAvg = ySum / yVals.length;
+    
+    // Compute the squared distance from the average
+    double xxAvgDistance = 0.0, yyAvgDistance = 0.0, pointsAvgDistance = 0.0;
+    for (int i = 0; i < xVals.length; i++) {
+      xxAvgDistance += (xVals[i] - xAvg) * (xVals[i] - xAvg);
+      yyAvgDistance += (yVals[i] - yAvg) * (yVals[i] - yAvg);
+      pointsAvgDistance += (xVals[i] - xAvg) * (yVals[i] - yAvg);
+    }
+    
+    double slope = pointsAvgDistance / xxAvgDistance;
+    double intercept = yAvg - slope * xAvg;
+    return new LinearFunction(slope, intercept);
   }
+  
+  
 }
