@@ -3,7 +3,6 @@ package il.org.spartan.utils;
 import org.junit.*;
 
 import fluent.ly.*;
-import il.org.spartan.utils.RealNumbersPairList.*;
 
 @SuppressWarnings("static-method")
 public class RealNumbersPairListTest {

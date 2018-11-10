@@ -1,10 +1,10 @@
 package il.org.spartan.utils;
 
 import java.util.*;
-import java.util.Iterator;
 
 public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {
   public class EOL extends Exception {
+    private static final long serialVersionUID = 1L;
     // End of list exception
   }
 
