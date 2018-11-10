@@ -6,7 +6,14 @@ package il.org.spartan.utils;
   
   public class NotEnoughDots extends Exception {
     private static final long serialVersionUID = 1L;
-    // End of list exception
+  }
+  
+  public class InfiniteSlopeFunction extends Exception {
+    private static final long serialVersionUID = 1L;
+    double xVal;
+    InfiniteSlopeFunction(double x){
+      xVal = x;
+    }
   }
   
   LinearRegression(RealNumbersPairList list){
@@ -30,8 +37,13 @@ package il.org.spartan.utils;
     }
   }
   
-  public LinearFunction getLine() throws NotEnoughDots {
+  public LinearFunction getLine() throws NotEnoughDots, InfiniteSlopeFunction {
     if(xVals.length <= 1) throw new NotEnoughDots();
+    
+    if(allDotsHaveTheSameX()) {
+      throw new InfiniteSlopeFunction(xVals[0]);
+    }
+    
     // Compute the average of the dots
     double xSum = 0.0, ySum = 0.0, xSquaredSum = 0.0;
     for (int i = 0; i < xVals.length; i++) {
@@ -53,5 +65,14 @@ package il.org.spartan.utils;
     double slope = pointsAvgDistance / xxAvgDistance;
     double intercept = yAvg - slope * xAvg;
     return new LinearFunction(slope, intercept);
+  }
+
+  private boolean allDotsHaveTheSameX() {
+    if(xVals.length <= 1) return true;
+    double value = xVals[0];
+    for(double x : xVals) {
+      if(x != value) return false;
+    }
+    return true;
   }
 }
