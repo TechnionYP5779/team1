@@ -48,4 +48,18 @@ public class RangeTest2 {
       count++;
     }
   }
+  
+  @Test @SuppressWarnings("static-method") public void numbersRange() {
+//    int count =Integer.MIN_VALUE;
+    int count =Integer.MIN_VALUE;
+    for (final Integer $ : range.numbers) {
+//      System.out.println($);
+      azzert.assertEquals( count,$);
+      ++count;
+      if( count == Integer.MIN_VALUE+5) {
+        break;
+      }
+  }
+}
+  
 }

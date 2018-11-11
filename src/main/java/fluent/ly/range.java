@@ -5,6 +5,8 @@ import java.util.*;
 
 public class range {
 
+  public static DidTo numbers=  range.from(Integer.MIN_VALUE).to(Integer.MAX_VALUE);
+  
   boolean empty = false;
   int from = -1;
   int to = -1;
