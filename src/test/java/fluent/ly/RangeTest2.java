@@ -20,8 +20,5 @@ public class RangeTest2 {
       ++count;
     }
   }
-<<<<<<< HEAD
 
-=======
->>>>>>> 6ae3e018967bc8d7b5c7a9405c6d79a7a3760e77
 }
