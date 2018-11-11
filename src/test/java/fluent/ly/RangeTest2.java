@@ -9,9 +9,9 @@ public class RangeTest2 {
   }
   
   
-//  @SuppressWarnings("static-method") @Test public void from2fromReturnOrigin() {
-//    azzert.assertTrue(range.from(2).from() == 2);
-//  }
+  @SuppressWarnings("static-method") @Test public void from2fromReturnOrigin() {
+    azzert.assertTrue(range.from(2).from() == 2);
+  }
 //  
 //  @SuppressWarnings("static-method") @Test public void fromTo() {
 //    int count =2;
