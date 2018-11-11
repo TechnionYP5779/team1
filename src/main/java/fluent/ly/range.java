@@ -65,5 +65,10 @@ public class range {
 //    };
   }
 
+  public int from() {
+    // TODO Auto-generated method stub
+    return from;
+  }
+
 
 }
