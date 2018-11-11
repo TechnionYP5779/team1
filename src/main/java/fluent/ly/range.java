@@ -42,7 +42,7 @@ public class range {
 
 
   public Iterable<Integer> to(int to) {
-    return new Iterable<>() {
+    return new Iterable<Integer>() {
 
       @Override public Iterator<Integer> iterator() {
         return new Iterator<>() {
