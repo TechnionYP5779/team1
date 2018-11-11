@@ -16,15 +16,9 @@ public class RangeTest2 {
   @SuppressWarnings("static-method") @Test public void fromTo() {
     int count =2;
     for (final Integer $ : range.from(2).to(6)) {
-      azzert.assertEquals($, count);
+      azzert.assertEquals( count,$);
       ++count;
     }
   }
-//  @SuppressWarnings("static-method") @Test public void fromTo() {
-//    int count =1;
-//    for (final Integer $ : range.to(2)) {
-//      azzert.assertEquals($, count);
-//      --count;
-//    }
-//  }
+
 }
