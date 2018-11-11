@@ -94,8 +94,8 @@ public class BigInteger {
     return new BigInteger(this.innerDigits, -this.signum);
   }
 
-  private static Integer[] convertIntToDigitArray(int n) {
-    String stringNumber = String.valueOf(n);
+  private static Integer[] convertIntToDigitArray(int i) {
+    String stringNumber = String.valueOf(i);
     Integer[] $ = new Integer[stringNumber.length()];
     for (int ¢ = $.length - 1; ¢ >= 0; --¢)
       $[¢] = Integer.valueOf(stringNumber.charAt($.length - ¢ - 1) - '0');

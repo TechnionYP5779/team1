@@ -14,7 +14,7 @@ public interface accumulate<T, C extends Collection<T>> {
    * @param <C> JD
    * @param c JD */
   @SuppressWarnings("unused") static <T, C extends Collection<T>> @NotNull accumulate<T, C> to(final @NotNull C c) {
-    return new accumulate<T,C>() {
+    return new accumulate<T, C>() {
       @Override @NotNull public accumulate<T, C> add(final @Nullable T ¢) {
         if (¢ != null)
           c.add(¢);
