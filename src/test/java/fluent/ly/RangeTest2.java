@@ -38,4 +38,14 @@ public class RangeTest2 {
   @Test @SuppressWarnings("static-method") public void toFromFunc() {
     assert range.to(2).from() == null;
   }
+  
+  //range.to(2).from(-5) is the range -5, -4, ...,0,1
+  @Test @SuppressWarnings("static-method") public void toFromRange() {
+    int count =-5;
+    for (final Integer $ : range.to(2).from(-5)) {
+//      System.out.println($);
+      azzert.assertEquals( count,$);
+      count++;
+    }
+  }
 }

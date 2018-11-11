@@ -62,6 +62,8 @@ public class range {
 
   }
   
+  
+  
   public class DidTo extends RangeIter<DidTo>{
 
     @Override DidTo This() {
@@ -85,8 +87,22 @@ public class range {
       }
       return from;
     }
-    
+
+    public DidTo from(int i) {
+      int j = to;
+      return new DidTo() {
+        {
+          delta = 1;
+          to = j+1;
+          from = i;
+          empty = false;
+          infinite= false;
+        }
+      };
+    }
   }
+    
+ 
   
   public class DidFrom extends RangeIter<DidFrom>{
     public DidTo to(final int t) {
