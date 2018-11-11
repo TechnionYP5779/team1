@@ -42,32 +42,27 @@ public class range {
 
 
   public Iterable<Integer> to(int to) {
-    return new Iterable<Integer>() {
-
-      @Override public Iterator<Integer> iterator() {
-        return new Iterator<>() {
-          int current = from;
-
-          @Override
-          public boolean hasNext() {
-            // validate if there is a next object
-            return current < to;
-          }
-
-          @Override
-          public Integer next() {
-            // get the next object and return it, throw an exception if there is no next object
-            return Integer.valueOf(current++);
-          }
-        };
-      }
-    };
-
-
-  }
-
-  public int from() {
-    return from;
+    return null;
+//    return new Iterable<Integer>() {
+//
+//      @Override public Iterator<Integer> iterator() {
+//        return new Iterator<>() {
+//          int current = from;
+//
+//          @Override
+//          public boolean hasNext() {
+//            // validate if there is a next object
+//            return current < to;
+//          }
+//
+//          @Override
+//          public Integer next() {
+//            // get the next object and return it, throw an exception if there is no next object
+//            return Integer.valueOf(current++);
+//          }
+//        };
+//      }
+//    };
   }
 
 
