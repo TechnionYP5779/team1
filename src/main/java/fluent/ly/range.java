@@ -108,6 +108,11 @@ public class range {
       int j = to;
       return range.from(f.from()).to(j);
     }
+
+    public boolean includes(int i) {
+      // TODO Auto-generated method stub
+      return (i < to && i >= from);
+    }
   }
     
  

@@ -72,5 +72,13 @@ public class RangeTest2 {
       count++;
     }
   }
+  
+  //range.from(x).to(y).includes(z) specifiy by yourself.
+  @Test @SuppressWarnings("static-method") public void includestest() {
+    //    int count =Integer.MIN_VALUE;
+    azzert.assertTrue(range.from(1).to(3).includes(2));
+    azzert.assertFalse(range.from(0).to(3).includes(7));
+
+  }
 }
 
