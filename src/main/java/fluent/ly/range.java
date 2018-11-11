@@ -9,7 +9,7 @@ public class range {
   int from = -1;
   int to = -1;
   boolean infinite = false;
-
+  int delta = 1;
 
   public int from() {
     return from;
@@ -52,7 +52,7 @@ public class range {
           if (!hasNext())
             throw new NoSuchElementException();
           final int $ = current;
-          current++;
+          current+=delta;
           return Integer.valueOf($);
         }
       };
@@ -67,6 +67,16 @@ public class range {
     @Override DidTo This() {
       // TODO Auto-generated method stub
       return this;
+    }
+
+    public boolean isInfinite() {
+      // TODO Auto-generated method stub
+      return infinite;
+    }
+
+    public boolean isEmpty() {
+      // TODO Auto-generated method stub
+      return empty;
     }
     
   }
@@ -110,7 +120,9 @@ public class range {
     // TODO Auto-generated method stub
     return new range() {
       {
-        to = i;
+        from = i-1;
+        infinite = true;
+        delta =-1;
       }
     }. new DidTo();
   }

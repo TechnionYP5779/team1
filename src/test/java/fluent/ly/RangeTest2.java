@@ -20,5 +20,19 @@ public class RangeTest2 {
       ++count;
     }
   }
+  
+  @Test @SuppressWarnings("static-method") public void onlyTo() {
+    assert !range.to(2).isEmpty();
+    assert range.to(2).isInfinite();
+    int count =1;
+    for (final Integer $ : range.to(2)) {
+//      System.out.println($);
+      azzert.assertEquals( count,$);
+      --count;
+      if( count == -5) {
+        break;
+      }
+    }
+  }
 
 }
