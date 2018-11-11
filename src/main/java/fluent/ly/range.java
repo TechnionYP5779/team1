@@ -1,167 +1,74 @@
 package fluent.ly;
 
 import java.util.*;
-import java.util.stream.*;
+//import java.util.stream.*;
 
-/** A fluent API implementation for range
- * @author Dor Ma'ayan
- * @since 26-11-2016 */
 public class range {
-  public class AfterTo extends RangeIterator<AfterTo> {
-    public AfterTo from(final int ¢) {
-      to = ¢;
-      return this;
-    }
 
-    public Iterable<Integer> infinite() {
-      return range.infiniteFrom(from, step);
-    }
+  boolean empty = false;
+  int from = -1;
+  boolean infinite = false;
 
-    public AfterTo step(final int ¢) {
-      step = ¢;
-      return this;
-    }
-
-    public Stream<Integer> stream() {
-      return StreamSupport.stream(spliterator(), false);
-    }
-
-    @Override AfterTo self() {
-      return this;
-    }
-  }
-
-  public class BeforeTo extends RangeIterator<BeforeTo> {
-    public Infinite infinite() {
-      return range.infiniteFrom(from, step);
-    }
-
-    public AfterTo step(final int ¢) {
-      step = ¢;
-      return new AfterTo();
-    }
-
-    public AfterTo to(final int ¢) {
-      to = ¢;
-      return new AfterTo();
-    }
-
-    @Override BeforeTo self() {
-      return this;
-    }
-  }
-
-  public class Infinite extends RangeIterator<Infinite> {
-    public Infinite from(final int ¢) {
-      from = ¢;
-      step = 1;
-      return this;
-    }
-
-    public Iterable<Integer> step(final int ¢) {
-      step = ¢;
-      return this;
-    }
-
-    @Override Infinite self() {
-      return this;
-    }
-  }
-
-  abstract class RangeIterator<Self extends RangeIterator<Self>> implements Iterable<Integer> {
-    public final Self exclusive() {
-      inclusive = false;
-      return self();
-    }
-
-    public final Self inclusive() {
-      inclusive = true;
-      return self();
-    }
-
-    public final Self infiniteRange() {
-      infinite = true;
-      return self();
-    }
-
-    @SuppressWarnings("unused") @Override public Iterator<Integer> iterator() {
-      return new Iterator<Integer>() {
-        int next = from;
-
-        @Override public boolean hasNext() {
-          return infinite || (inclusive ? next <= to : next < to);
-        }
-
-        @Override public Integer next() {
-          if (!hasNext())
-            throw new NoSuchElementException();
-          final int $ = next;
-          next += step;
-          return Integer.valueOf($);
-        }
-      };
-    }
-
-    abstract Self self();
-  }
-
-  public static BeforeTo from(final int ¢) {
-    return makeFrom(¢).new BeforeTo();
-  }
-
-  public static Infinite infinite() {
-    return infiniteFrom(0, 1);
-  }
-
-  public static Iterable<Integer> infinite(final int ¢) {
-    return from(¢).to(¢).step(0).inclusive();
-  }
-
-  public static RangeIterator<?> naturals() {
-    return from(0).to(-1).step(1);
-  }
-
-  public static RangeIterator<?> numerals() {
-    return from(1).to(-1).step(1);
-  }
-
-  public static RangeIterator<?> odds() {
-    return from(1).to(-1).step(2);
-  }
-
-  public static <T> RangeIterator<?> of(final T[] ¢) {
-    return from(0).to(¢.length);
-  }
-
-  public static AfterTo to(final int to) {
-    return makeTo(to).new AfterTo();
-  }
-
-  private static range makeFrom(final int ¢) {
+  public static range from(int i) {
+    // TODO Auto-generated method stub
     return new range() {
       {
-        from = ¢;
+        from = i;
+        empty = false;
+        infinite= true;
       }
     };
   }
 
-  private static range makeTo(final int ¢) {
-    return new range() {
-      {
-        to = ¢;
-      }
-    };
+  public boolean isEmpty() {
+    // TODO Auto-generated method stub
+    return empty;
   }
 
-  static Infinite infiniteFrom(final int ¢, final int ¢2) {
-    final Infinite $ = makeFrom(¢).new Infinite().infiniteRange();
-    $.step(¢2);
-    return $;
+  public boolean isInfinite() {
+    // TODO Auto-generated method stub
+    return infinite;
   }
 
-  int from;
-  boolean inclusive;
-  boolean infinite;
-  int step = 1;
-  int to = -1;
+
+  static class RangeIterator<Self extends RangeIterator<Self>> implements Iterable<Integer> {
+
+    @Override public Iterator<Integer> iterator() {
+      // TODO Auto-generated method stub
+      return null;
+    }
+
+  }
+
+
+  public Iterable<Integer> to(int to) {
+    return null;
+//    return new Iterable<Integer>() {
+//
+//      @Override public Iterator<Integer> iterator() {
+//        return new Iterator<>() {
+//          int current = from;
+//
+//          @Override
+//          public boolean hasNext() {
+//            // validate if there is a next object
+//            return current < to;
+//          }
+//
+//          @Override
+//          public Integer next() {
+//            // get the next object and return it, throw an exception if there is no next object
+//            return Integer.valueOf(current++);
+//          }
+//        };
+//      }
+//    };
+  }
+
+  public int from() {
+    // TODO Auto-generated method stub
+    return from;
+  }
+
+
 }
