@@ -22,25 +22,25 @@ public class BigInteger {
   }
 
   public int intValue() {
-    int value = 0;
-    for (int i = innerDigits.length - 1; i >= 0; i--) {
-      value *= 10;
-      value += innerDigits[i].intValue();
+    int $ = 0;
+    for (int ¢ = innerDigits.length - 1; ¢ >= 0; --¢) {
+      $ *= 10;
+      $ += innerDigits[¢].intValue();
     }
-    return value * signum;
+    return $ * signum;
   }
 
   public long longValue() {
-    long value = 0;
-    for (int i = innerDigits.length - 1; i >= 0; i--) {
-      value *= 10;
-      value += innerDigits[i].intValue();
+    long $ = 0;
+    for (int ¢ = innerDigits.length - 1; ¢ >= 0; --¢) {
+      $ *= 10;
+      $ += innerDigits[¢].intValue();
     }
-    return value * signum;
+    return $ * signum;
   }
 
-  public static BigInteger valueOf(int i) {
-    return new BigInteger(convertIntToDigitArray(abs(i)), signum(i));
+  public static BigInteger valueOf(int ¢) {
+    return new BigInteger(convertIntToDigitArray(abs(¢)), signum(¢));
   }
 
   public BigInteger step() {
@@ -50,70 +50,60 @@ public class BigInteger {
   public BigInteger step(BigInteger other) {
     if (this.signum == 1 && other.signum == -1)
       return this.sub(other.neg());
-    else if (this.signum == -1 && other.signum == 1)
+    if (this.signum == -1 && other.signum == 1)
       return other.sub(this.neg());
     ArrayList<Integer> resultList = new ArrayList<>();
-    int maxLength = this.innerDigits.length > other.innerDigits.length ? this.innerDigits.length : other.innerDigits.length;
-    int carry = 0;
-    for (int i = 0; i < maxLength; i++) {
-      int thisDig = this.innerDigits.length <= i ? 0 : innerDigits[i].intValue();
-      int otherDig = other.innerDigits.length <= i ? 0 : other.innerDigits[i].intValue();
-      int immResult = carry + thisDig + otherDig;
+    int maxLength = this.innerDigits.length > other.innerDigits.length ? this.innerDigits.length : other.innerDigits.length, carry = 0;
+    for (int i = 0; i < maxLength; ++i) {
+      int thisDig = this.innerDigits.length <= i ? 0 : innerDigits[i].intValue(),
+          otherDig = other.innerDigits.length <= i ? 0 : other.innerDigits[i].intValue(), immResult = carry + thisDig + otherDig;
       resultList.add(Integer.valueOf(immResult % 10));
       carry = immResult / 10;
     }
     if (carry != 0)
       resultList.add(Integer.valueOf(carry));
-    Integer[] resultArray = new Integer[resultList.size()];
-    resultList.toArray(resultArray);
-    return new BigInteger(resultArray, this.signum != 0 ? this.signum : other.signum);
+    Integer[] $ = new Integer[resultList.size()];
+    resultList.toArray($);
+    return new BigInteger($, this.signum != 0 ? this.signum : other.signum);
   }
 
   public BigInteger sub(BigInteger other) {
-    if (this.signum == 1 && other.signum == -1)
-      return this.step(other.neg());
-    else if (this.signum == -1 && other.signum == 1)
+    if (this.signum == 1 && other.signum == -1 || this.signum == -1 && other.signum == 1)
       return this.step(other.neg());
     ArrayList<Integer> resultList = new ArrayList<>();
-    int maxLength = this.innerDigits.length > other.innerDigits.length ? this.innerDigits.length : other.innerDigits.length;
-    int borrow = 0;
-    for (int i = 0; i < maxLength; i++) {
-      int thisDig = this.innerDigits.length <= i ? 0 : innerDigits[i].intValue();
-      int otherDig = other.innerDigits.length <= i ? 0 : other.innerDigits[i].intValue();
-      int immResult = thisDig - otherDig - borrow;
-      if (immResult < 0) {
+    int maxLength = this.innerDigits.length > other.innerDigits.length ? this.innerDigits.length : other.innerDigits.length, borrow = 0;
+    for (int i = 0; i < maxLength; ++i) {
+      int thisDig = this.innerDigits.length <= i ? 0 : innerDigits[i].intValue(),
+          otherDig = other.innerDigits.length <= i ? 0 : other.innerDigits[i].intValue(), immResult = thisDig - borrow - otherDig;
+      if (immResult >= 0)
+        borrow = 0;
+      else {
         immResult += 10;
         borrow = 1;
-      } else {
-        borrow = 0;
       }
       resultList.add(Integer.valueOf(immResult));
     }
-    if (borrow != 0) {
+    if (borrow != 0)
       return other.sub(this).neg();
-    }
-    Integer[] resultArray = new Integer[resultList.size()];
-    resultList.toArray(resultArray);
-    return new BigInteger(resultArray, this.signum != 0 ? this.signum : other.signum);
+    Integer[] $ = new Integer[resultList.size()];
+    resultList.toArray($);
+    return new BigInteger($, this.signum != 0 ? this.signum : other.signum);
   }
 
   public BigInteger neg() {
-    return new BigInteger(this.innerDigits, this.signum * -1);
+    return new BigInteger(this.innerDigits, -this.signum);
   }
 
   private static Integer[] convertIntToDigitArray(int n) {
     String stringNumber = String.valueOf(n);
-    Integer[] digits = new Integer[stringNumber.length()];
-    for (int i = digits.length - 1; i >= 0; i--) {
-      digits[i] = Integer.valueOf(stringNumber.charAt(digits.length - 1 - i) - '0');
-    }
-    return digits;
+    Integer[] $ = new Integer[stringNumber.length()];
+    for (int ¢ = $.length - 1; ¢ >= 0; --¢)
+      $[¢] = Integer.valueOf(stringNumber.charAt($.length - ¢ - 1) - '0');
+    return $;
   }
 
   private static int signum(int num) {
-    if (num == 0)
-      return 0;
-    return num > 0 ? 1 : -1;
+    return num == 0 ? 0 : num > 0 ? 1 : -1;
   }
 
   private static int abs(int num) {

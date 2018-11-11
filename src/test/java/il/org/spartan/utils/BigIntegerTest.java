@@ -5,7 +5,7 @@ import org.junit.*;
 import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class BigIntegerTest {
-  private BigInteger bigInteger = null;
+  private BigInteger bigInteger;
 
   @Before public void setupBigInteger() {
     this.bigInteger = new BigInteger();
@@ -48,7 +48,7 @@ import fluent.ly.*;
 
   @Test public void canExtendIntBoundaries() {
     this.bigInteger = BigInteger.valueOf(Integer.MAX_VALUE);
-    azzert.assertTrue(this.bigInteger.step(BigInteger.ONE).longValue() > 0);
+    assert this.bigInteger.step(BigInteger.ONE).longValue() > 0;
   }
 
   @Test public void mixAddAndSub() {
