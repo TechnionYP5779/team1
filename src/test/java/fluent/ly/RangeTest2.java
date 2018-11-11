@@ -34,5 +34,8 @@ public class RangeTest2 {
       }
     }
   }
-
+    // range.to(2).from() should return a null pointer
+  @Test @SuppressWarnings("static-method") public void toFromFunc() {
+    assert range.to(2).from() == null;
+  }
 }

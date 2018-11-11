@@ -39,7 +39,7 @@ public class range {
 
     @Override public Iterator<Integer> iterator() {
       // TODO Auto-generated method stub
-      return new Iterator<>() {
+      return new Iterator<Integer>() {
         int current = from;
 
         @Override public boolean hasNext() {
@@ -77,6 +77,13 @@ public class range {
     public boolean isEmpty() {
       // TODO Auto-generated method stub
       return empty;
+    }
+
+    public Integer from() {
+      if (to == from) {
+          return null;
+      }
+      return from;
     }
     
   }
@@ -120,7 +127,7 @@ public class range {
     // TODO Auto-generated method stub
     return new range() {
       {
-        from = i-1;
+        from = to = i-1;
         infinite = true;
         delta =-1;
       }
