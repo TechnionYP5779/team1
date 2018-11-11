@@ -87,7 +87,7 @@ public class range {
       if (to == from) {
           return null;
       }
-      return from;
+      return Integer.valueOf(from);
     }
 
     public DidTo from(int i) {
@@ -101,6 +101,12 @@ public class range {
           infinite= false;
         }
       };
+    }
+
+    public DidTo interset(DidFrom f) {
+      // TODO Auto-generated method stub
+      int j = to;
+      return range.from(f.from()).to(j);
     }
   }
     
