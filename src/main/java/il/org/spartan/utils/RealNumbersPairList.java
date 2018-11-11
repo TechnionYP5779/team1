@@ -4,7 +4,7 @@ import java.util.*;
 
 public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {
   public class EOL extends Exception {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1;
     // End of list exception
   }
 
@@ -32,9 +32,9 @@ public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {
 
     @Override public Pair<Double, Double> next() {
       if(iter == null) return null;
-      Pair<Double, Double> p = new Pair<>(Double.valueOf(iter.x), Double.valueOf(iter.y));
+      Pair<Double, Double> $ = new Pair<>(Double.valueOf(iter.x), Double.valueOf(iter.y));
       iter = iter.next;
-      return p;
+      return $;
     }
     
   }
@@ -50,8 +50,7 @@ public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {
   }
   
   public void record(double x, double y) {
-    Node ins = new Node(x, y);
-    Node cur = head;
+    Node ins = new Node(x, y), cur = head;
     if(cur == null) {
       head = ins;
       size = 1;
@@ -60,15 +59,14 @@ public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {
     if(cur.x > x) {
       ins.next = cur;
       head = ins;
-      size++;
+      ++size;
       return;
     }
-    while(cur.next != null && cur.next.x < x) {
-        cur = cur.next;
-    }
+    while(cur.next != null && cur.next.x < x)
+      cur = cur.next;
     ins.next = cur.next;
     cur.next = ins;
-    size++;
+    ++size;
   }
   
   public int size() {
@@ -82,10 +80,10 @@ public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {
   }
   
   public Pair<Double, Double> getNext() throws EOL {
-    if(iterator == null) throw new EOL();
+    if (iterator == null)
+      throw new EOL();
     iterator = iterator.next;
-    if(iterator == null) return null;
-    return new Pair<>(Double.valueOf(iterator.x), Double.valueOf(iterator.y));
+    return iterator == null ? null : new Pair<>(Double.valueOf(iterator.x), Double.valueOf(iterator.y));
   }
   
   @Override public Iterator<Pair<Double, Double>> iterator() {

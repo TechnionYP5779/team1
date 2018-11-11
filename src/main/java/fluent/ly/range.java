@@ -5,15 +5,15 @@ import java.util.*;
 
 public class range {
 
-  boolean empty = false;
+  boolean empty;
   int from = -1;
-  boolean infinite = false;
+  boolean infinite;
 
-  public static range from(int i) {
+  public static range from(int ¢) {
     // TODO Auto-generated method stub
     return new range() {
       {
-        from = i;
+        from = ¢;
         empty = false;
         infinite= true;
       }
@@ -41,7 +41,7 @@ public class range {
   }
 
 
-  public Iterable<Integer> to(int to) {
+  @SuppressWarnings("static-method") public Iterable<Integer> to(@SuppressWarnings("unused") int to) {
     return null;
 //    return new Iterable<Integer>() {
 //

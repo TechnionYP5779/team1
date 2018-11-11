@@ -3,28 +3,21 @@ package fluent.ly;
 import org.junit.*;
 
 public class RangeTest2 {
-  @SuppressWarnings("static-method") @Test public void createInfiniteSequence() {
-    azzert.assertFalse(range.from(2).isEmpty());
-    azzert.assertTrue(range.from(2).isInfinite());
+  @Test @SuppressWarnings("static-method") public void createInfiniteSequence() {
+    assert !range.from(2).isEmpty();
+    assert range.from(2).isInfinite();
   }
   
   
-  @SuppressWarnings("static-method") @Test public void from2fromReturnOrigin() {
-    azzert.assertTrue(range.from(2).from() == 2);
+  @Test @SuppressWarnings("static-method") public void from2fromReturnOrigin() {
+    assert range.from(2).from() == 2;
   }
   
-  @SuppressWarnings("static-method") @Test public void fromTo() {
-    int count =2;
+  @Test @SuppressWarnings("static-method") public void fromTo() {
+    int count = 2;
     for (final Integer $ : range.from(2).to(6)) {
       azzert.assertEquals($, count);
       ++count;
     }
   }
-//  @SuppressWarnings("static-method") @Test public void fromTo() {
-//    int count =1;
-//    for (final Integer $ : range.to(2)) {
-//      azzert.assertEquals($, count);
-//      --count;
-//    }
-//  }
 }
