@@ -14,10 +14,10 @@ public interface iterable {
     return iterable.over(¢);
   }
 
-  @SuppressWarnings("unused") @SafeVarargs @NotNull static <T> Iterable<T> over(final T... ts) {
-    return new Iterable<T>() {
+  @SafeVarargs @NotNull static <T> Iterable<T> over(final T... ts) {
+    return new Iterable<>() {
       @Override @NotNull public Iterator<T> iterator() {
-        return new Iterator<T>() {
+        return new Iterator<>() {
           int current;
 
           @Override public boolean hasNext() {

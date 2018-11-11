@@ -90,8 +90,8 @@ public interface the {
     return s.charAt(s.length() - i - 1);
   }
 
-  @SuppressWarnings("unused") @NotNull static <T> Iterable<T> lastOf(final @NotNull Iterable<T> ¢) {
-    return () -> new Iterator<T>() {
+  @NotNull static <T> Iterable<T> lastOf(final @NotNull Iterable<T> ¢) {
+    return () -> new Iterator<>() {
       Iterator<T> $ = ¢.iterator();
       {
         $.next();
