@@ -8,6 +8,7 @@ public class RangeTest2 {
     azzert.assertTrue(range.from(2).isInfinite());
   }
   
+  
 //  @SuppressWarnings("static-method") @Test public void from2fromReturnOrigin() {
 //    azzert.assertTrue(range.from(2).from() == 2);
 //  }
