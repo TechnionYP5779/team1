@@ -29,9 +29,8 @@ public class RangeTest2 {
       //      System.out.println($);
       azzert.assertEquals( count,$);
       --count;
-      if( count == -5) {
+      if( count == -5)
         break;
-      }
     }
   }
   // range.to(2).from() should return a null pointer
@@ -45,7 +44,7 @@ public class RangeTest2 {
     for (final Integer $ : range.to(2).from(-5)) {
       //      System.out.println($);
       azzert.assertEquals( count,$);
-      count++;
+      ++count;
     }
   }
 
@@ -56,9 +55,8 @@ public class RangeTest2 {
       //      System.out.println($);
       azzert.assertEquals( count,$);
       ++count;
-      if( count == Integer.MIN_VALUE+5) {
+      if( count == Integer.MIN_VALUE+5)
         break;
-      }
     }
   }
   // range.to(10).interset(range.from(3)) crate the intersection range
@@ -69,15 +67,14 @@ public class RangeTest2 {
     for (final Integer $ : range.to(10).interset(range.from(3))) {
       //      System.out.println($);
       azzert.assertEquals( count,$);
-      count++;
+      ++count;
     }
   }
   
   //range.from(x).to(y).includes(z) specifiy by yourself.
   @Test @SuppressWarnings("static-method") public void includestest() {
-    //    int count =Integer.MIN_VALUE;
-    azzert.assertTrue(range.from(1).to(3).includes(2));
-    azzert.assertFalse(range.from(0).to(3).includes(7));
+    assert range.from(1).to(3).includes(2);
+    assert !range.from(0).to(3).includes(7);
 
   }
 }
