@@ -18,8 +18,13 @@ public class range {
   int delta = 1;
   
   public range() {
-    return;
   }
+  
+  @Override public int hashCode() {
+    // Cantor pairing function
+    return (int) (from + 0.5 * (to + from) * (to + from + 1));
+  }
+
   
   /** Instantiates from beginning and end locations
    * @param from JD

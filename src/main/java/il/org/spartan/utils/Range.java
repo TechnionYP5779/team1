@@ -39,7 +39,7 @@ public class Range {
   @Override public boolean equals(final Object ¢) {
     return ¢ instanceof Range && from == ((Range) ¢).from && to == ((Range) ¢).to;
   }
-  
+//MOVED THIS
   @Override public int hashCode() {
     // Cantor pairing function
     return (int) (from + 0.5 * (to + from) * (to + from + 1));
