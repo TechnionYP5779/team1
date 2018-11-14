@@ -136,7 +136,7 @@ import il.org.spartan.etc.*;
   }
 
   default Rule<T, R> beforeCheck(final Predicate<T> p) {
-    return new Interceptor<>(this) {
+    return new Interceptor<T, R>(this) {
       @Override public boolean check(final T ¢) {
         return p.test(¢) && inner.check(¢);
       }
