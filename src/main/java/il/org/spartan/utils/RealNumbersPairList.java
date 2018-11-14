@@ -2,6 +2,8 @@ package il.org.spartan.utils;
 
 import java.util.*;
 
+import fluent.ly.*;
+
 public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {
   public class EOL extends Exception {
     private static final long serialVersionUID = 1;
@@ -32,7 +34,7 @@ public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {
 
     @Override public Pair<Double, Double> next() {
       if(iter == null) return null;
-      Pair<Double, Double> $ = new Pair<>(Double.valueOf(iter.x), Double.valueOf(iter.y));
+      Pair<Double, Double> $ = new Pair<>(box.box(iter.x), box.box(iter.y));
       iter = iter.next;
       return $;
     }
@@ -76,14 +78,14 @@ public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {
   public Pair<Double, Double> getFirst() {
     if(head == null) return null;
     iterator = head;
-    return new Pair<>(Double.valueOf(head.x), Double.valueOf(head.y));
+    return new Pair<>(box.box(head.x), box.box(head.y));
   }
   
   public Pair<Double, Double> getNext() throws EOL {
     if (iterator == null)
       throw new EOL();
     iterator = iterator.next;
-    return iterator == null ? null : new Pair<>(Double.valueOf(iterator.x), Double.valueOf(iterator.y));
+    return iterator == null ? null : new Pair<>(box.box(iterator.x), box.box(iterator.y));
   }
   
   @Override public Iterator<Pair<Double, Double>> iterator() {
