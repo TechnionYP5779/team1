@@ -11,7 +11,7 @@ import fluent.ly.*;
  * @since 2017-04-16 */
 public interface singleton {
   /** Singleton list. */
-  static <T> @NotNull List<T> list(final T ¢) {
+  static <T> @NotNull List<T> list(@NotNull final T ¢) {
     return as.list(¢);
   }
 

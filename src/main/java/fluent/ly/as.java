@@ -11,7 +11,7 @@ import il.org.spartan.*;
  * aggregate type to another.
  * @author Yossi Gil
  * @since Jul 8, 2014 */
-@SuppressWarnings({"null","unused"}) public enum as {
+@SuppressWarnings({ "unused", "null" }) public enum as {
   ;
   /** Convert an array of {@link Integer}s into an {@link Iterable}. For
    * example, to print the first Fibonacci numbers multiplied by the first prime
@@ -93,7 +93,7 @@ import il.org.spartan.*;
    * @param is the list to be converted, none of the elements in it can be
    *        <code><b>null</b></code>
    * @return an array of <code><b>int</b></code>. representing the input. */
-  public static int @NotNull [] intArray(final @NotNull List<Integer> is) {
+  public static int @NotNull [] intArray(final @NotNull List<@NotNull Integer> is) {
     final int @NotNull [] $ = new int @NotNull [is.size()];
     for (int ¢ = 0; ¢ < $.length; ++¢)
       $[¢] = unbox.unbox(is.get(¢));
@@ -104,7 +104,7 @@ import il.org.spartan.*;
    * @param <T> an arbitrary type
    * @param ¢ what to iterate on
    * @return an {@link Iterable} over the parameter */
-  @SafeVarargs public static <T> Iterator<T> iterator(final T... ¢) {
+  @SafeVarargs public static <T> Iterator<T> iterator(final @NotNull T... ¢) {
     return as.list(¢).iterator();
   }
 
@@ -131,8 +131,8 @@ import il.org.spartan.*;
    * @param <T> type of objects to be converted
    * @param $ what to covert
    * @return result parameter, converted into a {@link List} */
-  @SafeVarargs public static <T> @NotNull List<T> list(final T... $) {
-    return accumulate.to(new ArrayList<@Nullable T>()).add($).elements();
+  @SafeVarargs public static <T> @NotNull List<T> list(@NotNull final T... $) {
+    return accumulate.to(new ArrayList<T>()).add($).elements();
   }
 
   /** Converts a sequence of objects of a given type into a {@link Set} of
@@ -140,7 +140,7 @@ import il.org.spartan.*;
    * @param <T> type of objects to be converted
    * @param ¢ what to covert
    * @return parameter, converted into a {@link Set} */
-  @SafeVarargs public static <T> Set<? extends T> set(final @Nullable T... ¢) {
+  @SafeVarargs public static <T> Set<? extends T> set(final @NotNull T... ¢) {
     return accumulate.to(new HashSet<T>()).add(¢).elements();
   }
 
