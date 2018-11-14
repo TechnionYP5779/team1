@@ -25,10 +25,6 @@ public abstract class ___ {
    * function, and to suppress the warning.
    * @param __ the unused parameter
    * @param ____ more unused parameters */
-  public static void ______unused(final long l, final Object... os) {
-    forget.it(l);
-    forget.all(os);
-  }
 
   /** Exercise the {@link Invariantable#check()}
    * @param v a Invariantable object whose invariant should be checked */
