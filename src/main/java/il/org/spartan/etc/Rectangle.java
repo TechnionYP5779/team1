@@ -1,6 +1,7 @@
 package il.org.spartan.etc;
 
 import il.org.spartan.utils.*;
+import static fluent.ly.unbox.*;
 
 public class Rectangle {
   private final Pair<Double, Double> p1;
@@ -8,13 +9,13 @@ public class Rectangle {
   public double length;
   public double width;
 
-  public Rectangle(Pair<Double, Double> p1, Pair<Double, Double> p2) throws IllegalArgumentException {
+  @SuppressWarnings("null") public Rectangle(Pair<Double, Double> p1, Pair<Double, Double> p2) throws IllegalArgumentException {
     if (p1.first.equals(p2.first) || p1.second.equals(p2.second))
       throw new IllegalArgumentException();
     this.p1 = p1;
     this.p2 = p2;
-    length = Math.abs(p1.first.doubleValue() - p2.first.doubleValue());
-    width = Math.abs(p1.second.doubleValue() - p2.second.doubleValue());
+    length = Math.abs(unbox(p1.first) - unbox(p2.first));
+    width = Math.abs(unbox(p1.second) - unbox(p2.second));
   }
 
   public double area() {

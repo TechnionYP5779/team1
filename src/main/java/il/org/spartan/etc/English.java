@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
+import static fluent.ly.unbox.*;
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
@@ -102,7 +103,7 @@ import il.org.spartan.utils.*;
    * @param i count
    * @return fixed string */
   static String plurales(final @NotNull String s, final Integer i) {
-    return i == null ? UNKNOWN + " " + s + "es" : i.intValue() != 1 ? i + " " + s + "es" : "one " + s;
+    return i == null ? UNKNOWN + " " + s + "es" : unbox(i) != 1 ? i + " " + s + "es" : "one " + s;
   }
 
   /** Get the plural form of the word if needed, by adding an 's' to its end.
@@ -126,7 +127,7 @@ import il.org.spartan.utils.*;
    * @param i count
    * @return fixed string */
   static String plurals(final @NotNull String s, final Integer i) {
-    return i == null ? UNKNOWN + " " + s + "s" : i.intValue() != 1 ? i + " " + s + "s" : "one " + s;
+    return i == null ? UNKNOWN + " " + s + "s" : unbox(i) != 1 ? i + " " + s + "s" : "one " + s;
   }
 
   static String pronounce(final char ¢) {

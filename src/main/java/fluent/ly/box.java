@@ -170,8 +170,8 @@ import il.org.spartan.*;
     return $;
   }
   
-  public static String itToString(final char cs[]) {
-    return String.valueOf(cs);
+  public static String itToString(final char ¢[]) {
+    return String.valueOf(¢);
   }
   
   /** box a <code><b>double</b></code> into a {@link Double} object.

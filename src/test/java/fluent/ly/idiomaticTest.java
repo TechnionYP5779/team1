@@ -61,11 +61,11 @@ import fluent.ly.idiomatic.*;
 
   @Test public void testTake() {
     Storer<Boolean> sto = idiomatic.take(Boolean.TRUE);
-    assert sto.get().booleanValue();
+    assert unbox.unbox(sto.get());
     azzert.assertNull(sto.when(false));
-    assert sto.when(true).booleanValue();
+    assert unbox.unbox(sto.when(true));
     azzert.assertNull(sto.unless(true));
-    assert sto.unless(false).booleanValue();
+    assert unbox.unbox(sto.unless(false));
   }
 
   @Test public void testUnlessBoolean() {
