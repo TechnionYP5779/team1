@@ -3,6 +3,7 @@ package il.org.spartan.utils;
 import org.junit.*;
 
 import fluent.ly.*;
+import il.org.spartan.utils.RealNumbersPairList.*;
 
 @SuppressWarnings("static-method")
 public class RealNumbersPairListTest {
@@ -68,6 +69,18 @@ public class RealNumbersPairListTest {
       azzert.assertNull(list.getNext());
     } catch (@SuppressWarnings("unused") Exception e) {
       assert false;
+    }
+  }
+  
+  @Test public void iteratorEOL() {
+    RealNumbersPairList list = new RealNumbersPairList();
+    list.record(3.5, 2.5);
+    list.getFirst();
+    try {
+      list.getNext();
+      list.getNext();
+    } catch (@SuppressWarnings("unused") EOL e) {
+      assert true;
     }
   }
   
