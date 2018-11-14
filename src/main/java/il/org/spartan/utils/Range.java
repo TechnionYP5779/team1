@@ -19,6 +19,7 @@ public class Range {
   /** the end of the range (exclusive) */
   public final int to;
 
+  // MOVED THIS
   /** Instantiates from beginning and end locations
    * @param from JD
    * @param to JD */
