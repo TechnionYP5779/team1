@@ -189,7 +189,7 @@ import il.org.spartan.utils.*;
   }
 
   static String repeat(final int i, final char c) {
-    return String.valueOf(new char[i]).replace('\0', c);
+    return box.itToString(new char[i]).replace('\0', c);
   }
 
   static String selfName(final Class<?> ¢) {
