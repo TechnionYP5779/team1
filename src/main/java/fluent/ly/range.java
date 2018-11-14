@@ -3,6 +3,10 @@ package fluent.ly;
 import java.util.*;
 //import java.util.stream.*;
 
+import org.jetbrains.annotations.*;
+
+//import il.org.spartan.utils.*;
+
 public class range {
 
   public static DidTo numbers=  range.from(Integer.MIN_VALUE).to(Integer.MAX_VALUE);
@@ -12,7 +16,31 @@ public class range {
   int to = -1;
   boolean infinite;
   int delta = 1;
+  
+  public range() {
+    return;
+  }
+  
+  /** Instantiates from beginning and end locations
+   * @param from JD
+   * @param to JD */
+  public range(final int from, final int to) {
+    this.from = from;
+    this.to = to;
+  }
 
+  /** Instantiates using values found in another intance
+   * @param other other */
+  public range(final @NotNull range other) {
+    this(other.from, other.to);
+  }
+  
+  
+  @Override public boolean equals(final Object ¢) {
+    return ¢ instanceof range && from == ((range) ¢).from && to == ((range) ¢).to;
+  }
+
+  
   public int from() {
     return from;
   }
