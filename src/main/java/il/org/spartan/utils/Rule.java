@@ -69,7 +69,7 @@ import il.org.spartan.etc.*;
    * @author Yossi Gil
    * @since 2017-03-10 */
   static <@Nullable T, @Nullable R> @Nullable OnApplicator<T, R> on(final Predicate<T> p) {
-    return c -> new Rule.Stateful<>() {
+    return c -> new Rule.Stateful<T, R>() {
       @Override public R fire() {
         c.accept(current());
         return null;
@@ -102,7 +102,7 @@ import il.org.spartan.etc.*;
   }
 
   @Check default Rule<T, R> afterCheck(final Predicate<T> p) {
-    return new Interceptor<>(this) {
+    return new Interceptor<T, R>(this) {
       @Override public boolean check(final T ¢) {
         return inner.check(¢) && p.test(¢);
       }

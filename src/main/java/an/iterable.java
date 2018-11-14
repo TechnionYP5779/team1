@@ -4,6 +4,7 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
+@SuppressWarnings("unused")
 public interface iterable {
   /** <code>singleton</code>
    * @param <T> JD
@@ -15,7 +16,7 @@ public interface iterable {
   }
 
   @SafeVarargs @NotNull static <T> Iterable<T> over(final T... ts) {
-    return new Iterable<>() {
+    return new Iterable<T>() {
       @Override @NotNull public Iterator<T> iterator() {
         return new Iterator<>() {
           int current;

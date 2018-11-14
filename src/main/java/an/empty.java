@@ -7,6 +7,7 @@ import org.jetbrains.annotations.*;
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
  * @since 2017-04-01 */
+@SuppressWarnings("unused")
 public enum empty {
   ;
   public static <T> @NotNull List<T> list() {
@@ -14,7 +15,7 @@ public enum empty {
   }
 
   public static <@Nullable T> Iterable<T> iterable() {
-    return () -> new Iterator<>() {
+    return () -> new Iterator<T>() {
       @Override public boolean hasNext() {
         return false;
       }

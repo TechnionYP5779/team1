@@ -10,6 +10,7 @@ import org.jetbrains.annotations.*;
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
  * @since 2017-04-12 */
+@SuppressWarnings("unused")
 public interface the {
   @SuppressWarnings("boxing") static int index(final int i, final int... is) {
     for (final Integer $ : range.from(0).to(is.length))
@@ -91,7 +92,7 @@ public interface the {
   }
 
   @NotNull static <T> Iterable<T> lastOf(final @NotNull Iterable<T> ¢) {
-    return () -> new Iterator<>() {
+    return () -> new Iterator<T>() {
       Iterator<T> $ = ¢.iterator();
       {
         $.next();

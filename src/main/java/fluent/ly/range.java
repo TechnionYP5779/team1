@@ -6,6 +6,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 
 // import il.org.spartan.utils.*;
+@SuppressWarnings("unused")
 public class range {
   public static DidTo numbers = range.from(Integer.MIN_VALUE).to(Integer.MAX_VALUE);
   boolean empty;
@@ -65,7 +66,7 @@ public class range {
 
   abstract class RangeIter<T extends RangeIter<T>> implements Iterable<Integer> {
     @Override public Iterator<Integer> iterator() {
-      return new Iterator<>() {
+      return new Iterator<Integer>() {
         int current = from;
 
         @Override public boolean hasNext() {
