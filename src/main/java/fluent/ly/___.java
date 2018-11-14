@@ -2,7 +2,9 @@ package fluent.ly;
 
 import static fluent.ly.box.*;
 import static fluent.ly.string.*;
+
 import org.jetbrains.annotations.*;
+
 import fluent.ly.___.Bug.*;
 import fluent.ly.___.Bug.Assertion.*;
 import fluent.ly.___.Bug.Assertion.Value.*;
@@ -896,7 +898,6 @@ public abstract class ___ {
      * exception aborts execution. */
     void check();
   }
-
 
   /** A class to emulate Eiffel's <code>variant</code> construct. To use, create
    * an object of this type, initializing it with the variant's first value ,

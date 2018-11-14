@@ -14,20 +14,20 @@ public class ArithProgressionBuilder {
     return this;
   }
 
-  public ArithProgressionBuilder bound(BigInteger count) {
-    if(count.compareTo(BigInteger.ZERO) < 0)
+  public ArithProgressionBuilder bound(final BigInteger count) {
+    if (count.compareTo(BigInteger.ZERO) < 0)
       throw new ArithmeticException();
     this.size = count;
     this.bound = true;
     return this;
   }
 
-  public ArithProgressionBuilder step(BigInteger step) {
+  public ArithProgressionBuilder step(final BigInteger step) {
     this.diff = step;
     return this;
   }
 
-  public ArithProgressionBuilder startsWith(BigInteger start) {
+  public ArithProgressionBuilder startsWith(final BigInteger start) {
     this.startValue = start;
     return this;
   }
@@ -39,10 +39,10 @@ public class ArithProgressionBuilder {
   class ArithProgression implements Iterator<BigInteger> {
     private BigInteger currentValue = BigInteger.ZERO;
     private BigInteger step = BigInteger.ZERO;
-    private boolean isBounded;
+    private final boolean isBounded;
     private BigInteger count = BigInteger.ZERO;
 
-    protected ArithProgression(BigInteger currentValue, BigInteger step, boolean isBounded, BigInteger count) {
+    protected ArithProgression(final BigInteger currentValue, final BigInteger step, final boolean isBounded, final BigInteger count) {
       this.currentValue = currentValue;
       this.step = step;
       this.isBounded = isBounded;
@@ -54,11 +54,11 @@ public class ArithProgressionBuilder {
     }
 
     @Override public BigInteger next() {
-      if (isBounded && (count.compareTo(BigInteger.ZERO) == 0))
+      if (isBounded && count.compareTo(BigInteger.ZERO) == 0)
         return null;
       if (isBounded)
         count.subtract(BigInteger.ONE);
-      BigInteger $ = currentValue;
+      final BigInteger $ = currentValue;
       currentValue = currentValue.add(this.step);
       return $;
     }

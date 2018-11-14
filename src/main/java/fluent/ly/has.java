@@ -2,7 +2,9 @@
 package fluent.ly;
 
 import static il.org.spartan.Utils.*;
+
 import java.util.*;
+
 import org.jetbrains.annotations.*;
 
 /** A collection of <code><b>static</b></code> functions for converting from one
@@ -46,5 +48,4 @@ public enum has {
         return true;
     return false;
   }
-
 }

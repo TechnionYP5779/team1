@@ -1,31 +1,27 @@
 package fluent.ly;
 
 import java.util.*;
-//import java.util.stream.*;
+// import java.util.stream.*;
 
 import org.jetbrains.annotations.*;
 
-//import il.org.spartan.utils.*;
-
+// import il.org.spartan.utils.*;
 public class range {
-
-  public static DidTo numbers=  range.from(Integer.MIN_VALUE).to(Integer.MAX_VALUE);
-  
+  public static DidTo numbers = range.from(Integer.MIN_VALUE).to(Integer.MAX_VALUE);
   boolean empty;
   int from = -1;
   int to = -1;
   boolean infinite;
   int delta = 1;
-  
+
   public range() {
   }
-  
+
   @Override public int hashCode() {
     // Cantor pairing function
     return (int) (from + 0.5 * (to + from) * (to + from + 1));
   }
 
-  
   /** Instantiates from beginning and end locations
    * @param from JD
    * @param to JD */
@@ -39,25 +35,23 @@ public class range {
   public range(final @NotNull range other) {
     this(other.from, other.to);
   }
-  
-  
+
   @Override public boolean equals(final Object ¢) {
     return ¢ instanceof range && from == ((range) ¢).from && to == ((range) ¢).to;
   }
 
-  
   public int from() {
     return from;
   }
 
-  public static DidFrom from(int ¢) {
+  public static DidFrom from(final int ¢) {
     return new range() {
       {
         from = ¢;
         empty = false;
-        infinite= true;
+        infinite = true;
       }
-    }. new DidFrom();
+    }.new DidFrom();
   }
 
   public boolean isEmpty() {
@@ -69,15 +63,13 @@ public class range {
     return infinite;
   }
 
-
   abstract class RangeIter<T extends RangeIter<T>> implements Iterable<Integer> {
-
-    @Override @SuppressWarnings("unused") public Iterator<Integer> iterator() {
-      return new Iterator<Integer>() {
+    @Override public Iterator<Integer> iterator() {
+      return new Iterator<>() {
         int current = from;
 
         @Override public boolean hasNext() {
-          return infinite || (current < to);
+          return infinite || current < to;
         }
 
         @Override public Integer next() {
@@ -89,15 +81,11 @@ public class range {
         }
       };
     }
-    
+
     abstract T This();
-
   }
-  
-  
-  
-  public class DidTo extends RangeIter<DidTo>{
 
+  public class DidTo extends RangeIter<DidTo> {
     @Override DidTo This() {
       // TODO Auto-generated method stub
       return this;
@@ -117,7 +105,7 @@ public class range {
       return to == from ? null : box.box(from);
     }
 
-    public DidTo from(int ¢) {
+    public DidTo from(final int ¢) {
       return new DidTo() {
         {
           delta = 1;
@@ -128,19 +116,17 @@ public class range {
       };
     }
 
-    public DidTo interset(DidFrom ¢) {
+    public DidTo interset(final DidFrom ¢) {
       return range.from(¢.from()).to(to);
     }
 
-    public boolean includes(int ¢) {
+    public boolean includes(final int ¢) {
       // TODO Auto-generated method stub
-      return (¢ < to && ¢ >= from);
+      return ¢ < to && ¢ >= from;
     }
   }
-    
- 
-  
-  public class DidFrom extends RangeIter<DidFrom>{
+
+  public class DidFrom extends RangeIter<DidFrom> {
     public DidTo to(final int ¢) {
       to = ¢;
       return new DidTo() {
@@ -150,7 +136,7 @@ public class range {
         }
       };
     }
-    
+
     @Override DidFrom This() {
       // TODO Auto-generated method stub
       return this;
@@ -170,12 +156,9 @@ public class range {
       // TODO Auto-generated method stub
       return from;
     }
-    
   }
-  
 
-
-  public static DidTo to(int ¢) {
+  public static DidTo to(final int ¢) {
     return new range() {
       {
         from = to = ¢ - 1;
@@ -184,6 +167,4 @@ public class range {
       }
     }.new DidTo();
   }
-
-
 }

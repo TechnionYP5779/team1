@@ -1,7 +1,9 @@
 package fluent.ly;
 
 import static il.org.spartan.Utils.*;
+
 import static fluent.ly.box.*;
+
 import java.util.*;
 
 import org.hamcrest.*;
@@ -20,7 +22,6 @@ import il.org.spartan.utils.*;
 //
 @SuppressWarnings("null")
 public class azzert extends org.junit.Assert {
-  
   public static <T> Matcher<T> allOf(final java.lang.Iterable<Matcher<? super T>> ¢) {
     return AllOf.allOf(¢);
   }

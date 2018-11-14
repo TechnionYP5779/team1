@@ -90,8 +90,8 @@ public interface the {
     return s.charAt(s.length() - i - 1);
   }
 
-  @NotNull @SuppressWarnings("unused") static <T> Iterable<T> lastOf(final @NotNull Iterable<T> ¢) {
-    return () -> new Iterator<T>() {
+  @NotNull static <T> Iterable<T> lastOf(final @NotNull Iterable<T> ¢) {
+    return () -> new Iterator<>() {
       Iterator<T> $ = ¢.iterator();
       {
         $.next();
@@ -165,7 +165,7 @@ public interface the {
     return ¢.substring(1);
   }
 
-  static <T> T[] tailOf(T[] ¢) {
+  static <T> T[] tailOf(final T[] ¢) {
     return Arrays.copyOfRange(¢, 1, ¢.length);
   }
 }

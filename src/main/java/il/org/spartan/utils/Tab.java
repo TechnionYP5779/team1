@@ -2,6 +2,7 @@
 package il.org.spartan.utils;
 
 import static fluent.ly.___.*;
+
 import org.jetbrains.annotations.*;
 
 /** Prefix text with varying indentation level. Class can be used for an

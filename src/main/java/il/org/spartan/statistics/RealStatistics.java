@@ -1,7 +1,9 @@
 package il.org.spartan.statistics;
 
 import java.util.*;
+
 import org.jetbrains.annotations.*;
+
 import fluent.ly.*;
 
 /** A class to compute statistics, e.g., the minimal and maximal value, the mean

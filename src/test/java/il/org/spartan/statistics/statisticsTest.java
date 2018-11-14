@@ -1,6 +1,6 @@
 package il.org.spartan.statistics;
 
-import static fluent.ly.azzert.fail;
+import static fluent.ly.azzert.*;
 
 import java.util.*;
 
@@ -184,7 +184,7 @@ public class statisticsTest {
   // =======================================
   // Auxiliary function - check sum functions
   // =======================================
-  private void checkSum(int index) {
+  private void checkSum(final int index) {
     my_statistics.moments[index] = 5;
     my_statistics.n = 1;
     assert (index == 1 ? my_statistics.sum() : my_statistics.sum2()) == 5;

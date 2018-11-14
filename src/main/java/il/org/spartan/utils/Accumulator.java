@@ -1,6 +1,7 @@
 package il.org.spartan.utils;
 
 import org.jetbrains.annotations.*;
+
 import fluent.ly.*;
 
 public abstract class Accumulator {
@@ -95,5 +96,4 @@ public abstract class Accumulator {
       return v;
     }
   }
-  
 }

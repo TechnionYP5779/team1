@@ -1,15 +1,19 @@
 package fluent.ly;
 
 import static il.org.spartan.Utils.*;
+
 import static fluent.ly.azzert.*;
+
 import java.util.*;
 import java.util.function.*;
+
 import org.jetbrains.annotations.*;
 import org.junit.*;
+
 import an.*;
 import fluent.ly.separate.*;
 
-@SuppressWarnings({ "static-method", "null"}) //
+@SuppressWarnings({ "static-method", "null" }) //
 public class separateTest {
   private static final Function<String, String> quote = λ -> "'" + λ + "'";
 
