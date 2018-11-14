@@ -80,7 +80,7 @@ public class range {
             throw new NoSuchElementException();
           final int $ = current;
           current += delta;
-          return Integer.valueOf($);
+          return box.box($);
         }
       };
     }
@@ -109,7 +109,7 @@ public class range {
     }
 
     public Integer from() {
-      return to == from ? null : Integer.valueOf(from);
+      return to == from ? null : box.box(from);
     }
 
     public DidTo from(int ¢) {
