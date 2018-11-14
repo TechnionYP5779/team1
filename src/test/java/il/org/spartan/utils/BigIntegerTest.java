@@ -30,7 +30,7 @@ import fluent.ly.*;
   }
 
   @Test public void operationsDoNotAffectInstance() {
-    BigInteger other = this.bigInteger.step(BigInteger.ONE);
+    final BigInteger other = this.bigInteger.step(BigInteger.ONE);
     azzert.assertEquals(this.bigInteger.intValue(), 0);
     azzert.assertEquals(other.intValue(), 1);
   }

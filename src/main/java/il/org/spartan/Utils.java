@@ -546,7 +546,7 @@ import il.org.spartan.etc.*;
     }
   }
 
-  static int hash(Object ¢) {
+  static int hash(final Object ¢) {
     return ¢ == null ? 0 : ¢.hashCode();
   }
 }

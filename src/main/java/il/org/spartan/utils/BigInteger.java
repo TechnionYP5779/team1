@@ -16,7 +16,7 @@ public class BigInteger {
     this.signum = 0;
   }
 
-  private BigInteger(Integer[] inner, int signum) {
+  private BigInteger(final Integer[] inner, final int signum) {
     this.innerDigits = inner;
     this.signum = signum;
   }
@@ -39,7 +39,7 @@ public class BigInteger {
     return $ * signum;
   }
 
-  public static BigInteger valueOf(int ¢) {
+  public static BigInteger valueOf(final int ¢) {
     return new BigInteger(convertIntToDigitArray(abs(¢)), signum(¢));
   }
 
@@ -47,34 +47,36 @@ public class BigInteger {
     return this;
   }
 
-  public BigInteger step(BigInteger other) {
+  public BigInteger step(final BigInteger other) {
     if (this.signum == 1 && other.signum == -1)
       return this.sub(other.neg());
     if (this.signum == -1 && other.signum == 1)
       return other.sub(this.neg());
-    ArrayList<Integer> resultList = new ArrayList<>();
-    int maxLength = this.innerDigits.length > other.innerDigits.length ? this.innerDigits.length : other.innerDigits.length, carry = 0;
+    final ArrayList<Integer> resultList = new ArrayList<>();
+    final int maxLength = this.innerDigits.length > other.innerDigits.length ? this.innerDigits.length : other.innerDigits.length;
+    int carry = 0;
     for (int i = 0; i < maxLength; ++i) {
-      int thisDig = this.innerDigits.length <= i ? 0 : innerDigits[i].intValue(),
+      final int thisDig = this.innerDigits.length <= i ? 0 : innerDigits[i].intValue(),
           otherDig = other.innerDigits.length <= i ? 0 : other.innerDigits[i].intValue(), immResult = carry + thisDig + otherDig;
       resultList.add(Integer.valueOf(immResult % 10));
       carry = immResult / 10;
     }
     if (carry != 0)
       resultList.add(Integer.valueOf(carry));
-    Integer[] $ = new Integer[resultList.size()];
+    final Integer[] $ = new Integer[resultList.size()];
     resultList.toArray($);
     return new BigInteger($, this.signum != 0 ? this.signum : other.signum);
   }
 
-  public BigInteger sub(BigInteger other) {
+  public BigInteger sub(final BigInteger other) {
     if (this.signum == 1 && other.signum == -1 || this.signum == -1 && other.signum == 1)
       return this.step(other.neg());
-    ArrayList<Integer> resultList = new ArrayList<>();
-    int maxLength = this.innerDigits.length > other.innerDigits.length ? this.innerDigits.length : other.innerDigits.length, borrow = 0;
+    final ArrayList<Integer> resultList = new ArrayList<>();
+    final int maxLength = this.innerDigits.length > other.innerDigits.length ? this.innerDigits.length : other.innerDigits.length;
+    int borrow = 0;
     for (int i = 0; i < maxLength; ++i) {
-      int thisDig = this.innerDigits.length <= i ? 0 : innerDigits[i].intValue(),
-          otherDig = other.innerDigits.length <= i ? 0 : other.innerDigits[i].intValue(), immResult = thisDig - borrow - otherDig;
+      int immResult = this.innerDigits.length <= i ? 0
+          : innerDigits[i].intValue() - borrow - other.innerDigits.length <= i ? 0 : other.innerDigits[i].intValue();
       if (immResult >= 0)
         borrow = 0;
       else {
@@ -85,7 +87,7 @@ public class BigInteger {
     }
     if (borrow != 0)
       return other.sub(this).neg();
-    Integer[] $ = new Integer[resultList.size()];
+    final Integer[] $ = new Integer[resultList.size()];
     resultList.toArray($);
     return new BigInteger($, this.signum != 0 ? this.signum : other.signum);
   }
@@ -94,19 +96,19 @@ public class BigInteger {
     return new BigInteger(this.innerDigits, -this.signum);
   }
 
-  private static Integer[] convertIntToDigitArray(int i) {
-    String stringNumber = String.valueOf(i);
-    Integer[] $ = new Integer[stringNumber.length()];
+  private static Integer[] convertIntToDigitArray(final int i) {
+    final String stringNumber = String.valueOf(i);
+    final Integer[] $ = new Integer[stringNumber.length()];
     for (int ¢ = $.length - 1; ¢ >= 0; --¢)
       $[¢] = Integer.valueOf(stringNumber.charAt($.length - ¢ - 1) - '0');
     return $;
   }
 
-  private static int signum(int num) {
+  private static int signum(final int num) {
     return num == 0 ? 0 : num > 0 ? 1 : -1;
   }
 
-  private static int abs(int num) {
+  private static int abs(final int num) {
     return num > 0 ? num : -num;
   }
 }

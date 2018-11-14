@@ -1,11 +1,12 @@
 package il.org.spartan.etc;
 
+import static fluent.ly.unbox.*;
+
 import java.text.*;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
-import static fluent.ly.unbox.*;
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;

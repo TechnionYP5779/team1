@@ -1,8 +1,10 @@
 /* Part of the "Spartan Blog"; mutate the rest / but leave this line as is */
 package il.org.spartan.iterables;
 
-import org.jetbrains.annotations.Nullable;
 import java.util.*;
+
+import org.jetbrains.annotations.*;
+
 import an.*;
 import fluent.ly.*;
 
@@ -44,12 +46,12 @@ public enum iterables {
   public static <T> Iterator<T> singletonIterator(final T $) {
     return iterable.singleton($).iterator();
   }
-  
-  public static <T> Iterable<T> alternate(Iterable<T> nums1, Iterable<T> nums2) {
-    List<T> $ = new ArrayList<>();
+
+  public static <T> Iterable<T> alternate(final Iterable<T> nums1, final Iterable<T> nums2) {
+    final List<T> $ = new ArrayList<>();
     for (Iterator<T> itePrime = nums1.iterator(), iteAlt = nums2.iterator(), tmp = null; itePrime
         .hasNext(); tmp = itePrime, itePrime = iteAlt, iteAlt = tmp)
       $.add(itePrime.next());
-    return $;    
+    return $;
   }
 }

@@ -9,7 +9,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-@SuppressWarnings({ "static-method",  "null" }) public class asTest {
+@SuppressWarnings({ "static-method", "null" }) public class asTest {
   @Test public void testAsIterable() {
     int count = 1;
     for (final Integer ¢ : as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))) {

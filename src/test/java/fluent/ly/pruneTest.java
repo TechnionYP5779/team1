@@ -1,11 +1,13 @@
 package fluent.ly;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
+
 import java.util.*;
+
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-@SuppressWarnings({"static-method","null"}) //
+@SuppressWarnings({ "static-method", "null" }) //
 public class pruneTest {
   @Nullable final String[] alternatingArray = new @Nullable String[] { null, "A", null, null, "B", null, null, null, "C", null };
   @NotNull final String[] nonNullArray = { "1", "2", "4" };

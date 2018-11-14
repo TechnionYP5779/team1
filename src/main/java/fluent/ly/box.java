@@ -169,11 +169,11 @@ import il.org.spartan.*;
       $[¢] = it(cs[¢]);
     return $;
   }
-  
+
   public static String itToString(final char ¢[]) {
     return String.valueOf(¢);
   }
-  
+
   /** box a <code><b>double</b></code> into a {@link Double} object.
    * @param ¢ some <code><b>double</b></code> value
    * @return a non-<code><b>null</b></code> {@link Double} with the value of

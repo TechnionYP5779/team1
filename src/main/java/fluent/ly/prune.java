@@ -2,7 +2,9 @@
 package fluent.ly;
 
 import static il.org.spartan.Utils.*;
+
 import java.util.*;
+
 import org.jetbrains.annotations.*;
 
 /** A <b>Utility class</b> providing functions to remove

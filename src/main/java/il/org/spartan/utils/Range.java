@@ -27,7 +27,7 @@ public class Range {
     this.from = from;
     this.to = to;
   }
-  
+
   // MOVED THIS
   /** Instantiates using values found in another intance
    * @param other other */
@@ -35,11 +35,12 @@ public class Range {
     this(other.from, other.to);
   }
 
-  //MOVED THIS
+  // MOVED THIS
   @Override public boolean equals(final Object ¢) {
     return ¢ instanceof Range && from == ((Range) ¢).from && to == ((Range) ¢).to;
   }
-//MOVED THIS
+
+  // MOVED THIS
   @Override public int hashCode() {
     // Cantor pairing function
     return (int) (from + 0.5 * (to + from) * (to + from + 1));
@@ -52,8 +53,6 @@ public class Range {
           return $;
     return null;
   }
-
-  
 
   /** @param ¢ arbitrary
    * @return <code><b>true</b></code> <i>iff</i> <code><b>this</b></code> is

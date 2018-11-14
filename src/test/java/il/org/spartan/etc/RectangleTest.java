@@ -4,25 +4,22 @@ import org.junit.*;
 
 import fluent.ly.*;
 import il.org.spartan.utils.*;
-@SuppressWarnings("static-method")
-public class RectangleTest {
+
+@SuppressWarnings("static-method") public class RectangleTest {
   @Test public void creationFromPairs() throws Exception {
     azzert.notNull(new Rectangle(new Pair<>(Double.valueOf(1), Double.valueOf(1)), new Pair<>(Double.valueOf(2), Double.valueOf(2))));
   }
 
-  @Test(expected = IllegalArgumentException.class) @SuppressWarnings("unused") public void illegalCreationOfPoint()
-      throws IllegalArgumentException {
+  @Test(expected = IllegalArgumentException.class) @SuppressWarnings("unused") public void illegalCreationOfPoint() throws IllegalArgumentException {
     final Pair<Double, Double> p1 = new Pair<>(Double.valueOf(1), Double.valueOf(1));
     new Rectangle(p1, p1);
   }
 
-  @Test(expected = IllegalArgumentException.class) @SuppressWarnings("unused") public void illegalCreationOfLineX()
-      throws IllegalArgumentException {
+  @Test(expected = IllegalArgumentException.class) @SuppressWarnings("unused") public void illegalCreationOfLineX() throws IllegalArgumentException {
     new Rectangle(new Pair<>(Double.valueOf(1), Double.valueOf(1)), new Pair<>(Double.valueOf(3), Double.valueOf(1)));
   }
 
-  @Test(expected = IllegalArgumentException.class) @SuppressWarnings("unused") public void illegalCreationOfLineY()
-      throws IllegalArgumentException {
+  @Test(expected = IllegalArgumentException.class) @SuppressWarnings("unused") public void illegalCreationOfLineY() throws IllegalArgumentException {
     new Rectangle(new Pair<>(Double.valueOf(1), Double.valueOf(1)), new Pair<>(Double.valueOf(1), Double.valueOf(3)));
   }
 
