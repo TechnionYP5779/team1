@@ -6,20 +6,20 @@ import java.util.*;
 
 import org.junit.*;
 
-public class IntTest {
-  @Test @SuppressWarnings("static-method") public void testGet() {
+@SuppressWarnings("static-method") public class IntTest {
+  @Test public void testGet() {
     final int i = new Random().nextInt();
     assert Int.valueOf(i).inner().equals(Integer.valueOf(i));
   }
 
-  @Test @SuppressWarnings("static-method") public void testStep() {
+  @Test public void testStep() {
     final int i = new Random().nextInt();
     final Int int1 = Int.valueOf(i);
     int1.step();
     assert int1.inner().equals(Integer.valueOf(i + 1));
   }
 
-  @Test @SuppressWarnings("static-method") public void testAddRegularInt() {
+  @Test public void testAddRegularInt() {
     final Random random = new Random();
     final int i1 = random.nextInt(), i2 = random.nextInt();
     final Int int1 = Int.valueOf(i1);
@@ -27,7 +27,7 @@ public class IntTest {
     assert int1.inner().equals(Integer.valueOf(i1 + i2));
   }
 
-  @Test @SuppressWarnings("static-method") public void testAddOtherInt() {
+  @Test public void testAddOtherInt() {
     final Random random = new Random();
     final int i1 = random.nextInt(), i2 = random.nextInt();
     final Int int1 = Int.valueOf(i1);
@@ -35,12 +35,12 @@ public class IntTest {
     assertEquals(int1.inner(), Integer.valueOf(i1 + i2));
   }
 
-  @Test @SuppressWarnings("static-method") public void testToString() {
+  @Test public void testToString() {
     final int i1 = new Random().nextInt();
     assertEquals(Int.valueOf(i1) + "", Integer.valueOf(i1) + "");
   }
 
-  @Test @SuppressWarnings("static-method") public void testSet() {
+  @Test public void testSet() {
     final Random random = new Random();
     final int i1 = random.nextInt(), i2 = random.nextInt();
     final Int int1 = Int.valueOf(i1);
@@ -49,14 +49,14 @@ public class IntTest {
     assertEquals(int1.inner(), Integer.valueOf(i2));
   }
 
-  @Test @SuppressWarnings("static-method") public void testNext() {
+  @Test public void testNext() {
     final int i1 = new Random().nextInt();
     final Int int1 = Int.valueOf(i1);
     assertEquals(int1.next(), i1 + 1);
     assertEquals(int1.inner(), Integer.valueOf(i1 + 1));
   }
 
-  @Test @SuppressWarnings("static-method") public void testClear() {
+  @Test public void testClear() {
     final Int int1 = Int.valueOf(new Random().nextInt());
     int1.clear();
     assertEquals(int1.inner(), Integer.valueOf(0));
