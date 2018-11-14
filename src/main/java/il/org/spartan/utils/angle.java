@@ -20,7 +20,7 @@ public class angle {
     return new angle(1.0/degToRad);
   }
   
-  @SuppressWarnings("static-method") public angle add(@SuppressWarnings("unused") angle a) {
+  @SuppressWarnings("static-method") public angle add(@SuppressWarnings("unused") angle __) {
     return new angle((halfPi.radians+20)/degToRad);
   }
   

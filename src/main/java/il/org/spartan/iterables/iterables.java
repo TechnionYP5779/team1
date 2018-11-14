@@ -47,13 +47,9 @@ public enum iterables {
   
   public static <T> Iterable<T> alternate(Iterable<T> nums1, Iterable<T> nums2) {
     List<T> $ = new ArrayList<>();
-    Iterator<T> itePrime = nums1.iterator(), iteAlt = nums2.iterator(), tmp = null;
-    while(itePrime.hasNext()) {
+    for (Iterator<T> itePrime = nums1.iterator(), iteAlt = nums2.iterator(), tmp = null; itePrime
+        .hasNext(); tmp = itePrime, itePrime = iteAlt, iteAlt = tmp)
       $.add(itePrime.next());
-      tmp = itePrime;
-      itePrime = iteAlt;
-      iteAlt = tmp;
-     }
     return $;    
   }
 }

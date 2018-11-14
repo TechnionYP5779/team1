@@ -6,11 +6,7 @@ import fluent.ly.*;
 @SuppressWarnings("static-method")
 public class RectangleTest {
   @Test public void creationFromPairs() throws Exception {
-    final Pair<Double, Double> p1 = new Pair<>(Double.valueOf(1), Double.valueOf(1));
-    final Pair<Double, Double> p2 = new Pair<>(Double.valueOf(2), Double.valueOf(2));
-    Rectangle rec;
-    rec = new Rectangle(p1, p2);
-    azzert.notNull(rec);
+    azzert.notNull(new Rectangle(new Pair<>(Double.valueOf(1), Double.valueOf(1)), new Pair<>(Double.valueOf(2), Double.valueOf(2))));
   }
 
   @Test(expected = IllegalArgumentException.class) @SuppressWarnings("unused") public void illegalCreationOfPoint()

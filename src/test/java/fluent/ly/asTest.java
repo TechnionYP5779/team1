@@ -12,16 +12,16 @@ import org.junit.*;
 @SuppressWarnings({ "static-method",  "null" }) public class asTest {
   @Test public void testAsIterable() {
     int count = 1;
-    for (final Integer integer : as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))) {
-      assert integer.equals(Integer.valueOf(count));
+    for (final Integer ¢ : as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))) {
+      assert ¢.equals(Integer.valueOf(count));
       ++count;
     }
   }
 
   @Test public void testAsIterableLambda() {
     int count = 1;
-    for (final Integer integer : as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))) {
-      assert integer.equals(Integer.valueOf(count));
+    for (final Integer ¢ : as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))) {
+      assert ¢.equals(Integer.valueOf(count));
       ++count;
     }
   }

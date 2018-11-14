@@ -6,30 +6,24 @@ import fluent.ly.*;
 
 public class RectangleTest {
 
-  @SuppressWarnings({ "static-method", "unused" }) @Test public void creationFromPairs() throws Exception {
-    Pair<Double, Double> p1 = new Pair<Double, Double>(Double.valueOf(1),Double.valueOf(1));
-    Pair<Double, Double> p2 = new Pair<Double, Double>(Double.valueOf(2),Double.valueOf(2));
-    Rectangle rec;
-    
-    rec = new Rectangle(p1, p2);
-    azzert.notNull(rec);
-    
+  @Test @SuppressWarnings({ "static-method", "unused" }) public void creationFromPairs() throws Exception {
+    azzert.notNull(new Rectangle(new Pair<Double, Double>(Double.valueOf(1), Double.valueOf(1)), new Pair<Double, Double>(Double.valueOf(2), Double.valueOf(2))));
   }
   
-  @SuppressWarnings({ "static-method", "unused" }) @Test(expected = IllegalArgumentException.class) 
-  public void illegalCreationOfPoint() throws IllegalArgumentException {
-    Pair<Double, Double> p1 = new Pair<Double, Double>(Double.valueOf(1),Double.valueOf(1));
-    Rectangle rec = new Rectangle(p1, p1);
+  @Test(expected = IllegalArgumentException.class) @SuppressWarnings({ "static-method", "unused" }) public void illegalCreationOfPoint()
+      throws IllegalArgumentException {
+    Pair<Double, Double> p1 = new Pair<Double, Double>(Double.valueOf(1), Double.valueOf(1));
+    new Rectangle(p1, p1);
   }
   
-  @SuppressWarnings({ "static-method", "unused" }) @Test(expected = IllegalArgumentException.class) 
-  public void illegalCreationOfLineX() throws IllegalArgumentException {
-    Rectangle rec = new Rectangle(new Pair<Double, Double>(Double.valueOf(1),Double.valueOf(1)), new Pair<Double, Double>(Double.valueOf(3),Double.valueOf(1)));
+  @Test(expected = IllegalArgumentException.class) @SuppressWarnings({ "static-method", "unused" }) public void illegalCreationOfLineX()
+      throws IllegalArgumentException {
+    new Rectangle(new Pair<Double, Double>(Double.valueOf(1), Double.valueOf(1)), new Pair<Double, Double>(Double.valueOf(3), Double.valueOf(1)));
   }
   
-  @SuppressWarnings({ "static-method", "unused" }) @Test(expected = IllegalArgumentException.class) 
-  public void illegalCreationOfLineY() throws IllegalArgumentException {
-    Rectangle rec = new Rectangle(new Pair<Double, Double>(Double.valueOf(1),Double.valueOf(1)), new Pair<Double, Double>(Double.valueOf(1),Double.valueOf(3)));
+  @Test(expected = IllegalArgumentException.class) @SuppressWarnings({ "static-method", "unused" }) public void illegalCreationOfLineY()
+      throws IllegalArgumentException {
+    new Rectangle(new Pair<Double, Double>(Double.valueOf(1), Double.valueOf(1)), new Pair<Double, Double>(Double.valueOf(1), Double.valueOf(3)));
   }
 
   

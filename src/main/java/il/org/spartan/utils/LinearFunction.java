@@ -9,13 +9,8 @@ public class LinearFunction {
     this.intercept = intercept;
   }
   
-  @Override public boolean equals(Object o) {
-    if (o == this)
-      return true;
-    if (!(o instanceof LinearFunction)) 
-      return false;
-    LinearFunction line = (LinearFunction)o;
-    return line.slope == slope && line.intercept == intercept;
+  @Override public boolean equals(Object ¢) {
+    return ¢ == this || (¢ instanceof LinearFunction && ((LinearFunction) ¢).slope == slope && ((LinearFunction) ¢).intercept == intercept);
   }
 
   @Override public int hashCode() {
