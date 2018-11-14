@@ -27,15 +27,22 @@ public class Range {
     this.from = from;
     this.to = to;
   }
-
+  
+  // MOVED THIS
   /** Instantiates using values found in another intance
    * @param other other */
   public Range(final @NotNull Range other) {
     this(other.from, other.to);
   }
 
+  //MOVED THIS
   @Override public boolean equals(final Object ¢) {
     return ¢ instanceof Range && from == ((Range) ¢).from && to == ((Range) ¢).to;
+  }
+  
+  @Override public int hashCode() {
+    // Cantor pairing function
+    return (int) (from + 0.5 * (to + from) * (to + from + 1));
   }
 
   @Nullable public Range findIncludedIn(final @Nullable Iterable<? extends Range> ¢) {
@@ -46,10 +53,7 @@ public class Range {
     return null;
   }
 
-  @Override public int hashCode() {
-    // Cantor pairing function
-    return (int) (from + 0.5 * (to + from) * (to + from + 1));
-  }
+  
 
   /** @param ¢ arbitrary
    * @return <code><b>true</b></code> <i>iff</i> <code><b>this</b></code> is
