@@ -45,7 +45,7 @@ import fluent.ly.idiomatic.*;
 
   @Test public void testRunDoesNotThrow_SanityCheck() {
     final idiomatic.Runner runner = idiomatic.run(() -> {
-      //TODO: Documentation should be inserted here
+      // TODO: Documentation should be inserted here
     });
     try {
       runner.run();

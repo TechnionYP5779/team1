@@ -10,8 +10,7 @@ import org.jetbrains.annotations.*;
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
  * @since 2017-04-12 */
-@SuppressWarnings("unused")
-public interface the {
+@SuppressWarnings("unused") public interface the {
   @SuppressWarnings("boxing") static int index(final int i, final int... is) {
     for (final Integer $ : range.from(0).to(is.length))
       if (is[$] == i)

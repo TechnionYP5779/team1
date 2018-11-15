@@ -6,7 +6,7 @@ import java.util.*;
 
 import org.junit.*;
 
-@SuppressWarnings({ "null", "static-method" }) public class BoxUnboxTest {
+@SuppressWarnings("static-method") public class BoxUnboxTest {
   @Test public void testBoolean() {
     final boolean expected = new Random().nextBoolean();
     assert expected == unbox.unbox(box.box(expected));
