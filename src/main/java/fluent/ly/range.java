@@ -8,9 +8,13 @@ import org.jetbrains.annotations.*;
 import il.org.spartan.utils.*;
 
 // import il.org.spartan.utils.*;
+<<<<<<< HEAD
 @SuppressWarnings("unused")
 public class range {
   
+=======
+@SuppressWarnings("unused") public class range {
+>>>>>>> a7908fbe5b751e44b5425845ddfbf97a06851bd4
   public static DidTo numbers = range.from(Integer.MIN_VALUE).to(Integer.MAX_VALUE);
   boolean empty;
   int from = -1;

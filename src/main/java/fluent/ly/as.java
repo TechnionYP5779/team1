@@ -11,8 +11,7 @@ import il.org.spartan.*;
  * aggregate type to another.
  * @author Yossi Gil
  * @since Jul 8, 2014 */
-
-@SuppressWarnings({"unused","null"}) public enum as {
+@SuppressWarnings({ "unused", "null" }) public enum as {
   ;
   /** Convert an array of {@link Integer}s into an {@link Iterable}. For
    * example, to print the first Fibonacci numbers multiplied by the first prime
