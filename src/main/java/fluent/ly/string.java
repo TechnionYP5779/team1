@@ -17,19 +17,19 @@ public enum string {
   static final int MAX_FIRST = 20;
   static final int MAX_LAST = 10;
 
-  @SuppressWarnings("null") public static double atod(final @NotNull String ¢) {
+  public static double atod(final @NotNull String ¢) {
     return unbox.unbox(Double.valueOf(¢));
   }
 
-  @SuppressWarnings("null") public static float atof(final @NotNull String ¢) {
+  public static float atof(final @NotNull String ¢) {
     return unbox.unbox(Float.valueOf(¢));
   }
 
-  @SuppressWarnings("null") public static int atoi(final @NotNull String ¢) {
+  public static int atoi(final @NotNull String ¢) {
     return unbox.unbox(Integer.valueOf(¢));
   }
 
-  @SuppressWarnings("null") public static long atol(final @NotNull String ¢) {
+  public static long atol(final @NotNull String ¢) {
     return unbox.unbox(Long.valueOf(¢));
   }
 

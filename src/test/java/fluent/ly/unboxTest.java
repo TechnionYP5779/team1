@@ -4,7 +4,7 @@ import java.util.*;
 
 import org.junit.*;
 
-@SuppressWarnings({ "boxing", "static-method", "null" }) public class unboxTest {
+@SuppressWarnings({ "boxing", "static-method" }) public class unboxTest {
   @Test public void testItDoubleArray() {
     final Random random = new Random();
     final int len = 100;

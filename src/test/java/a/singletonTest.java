@@ -6,7 +6,7 @@ import org.junit.*;
 
 import fluent.ly.*;
 
-@SuppressWarnings({"static-method", "static-access"}) public class singletonTest {
+@SuppressWarnings({ "static-method", "static-access" }) public class singletonTest {
   @Test public void testToList() {
     azzert.assertEquals(Arrays.asList("hello"), singleton.list("hello"));
   }

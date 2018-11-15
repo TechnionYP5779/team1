@@ -34,7 +34,7 @@ public enum defaults {
    *        <code><b>null</b></code>
    * @return <code>v</code> if it is not <code><b>null</b></code>, otherwise
    *         <code>defaultValue</code> */
-  @SuppressWarnings("null") public static int to(final @Nullable Integer v, final Integer defaultValue) {
+  public static int to(final @Nullable Integer v, final Integer defaultValue) {
     return unbox.unbox(v != null ? v : defaultValue);
   }
 

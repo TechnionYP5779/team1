@@ -24,7 +24,6 @@ public abstract class ___ {
    * function, and to suppress the warning.
    * @param __ the unused parameter
    * @param ____ more unused parameters */
-
   /** Exercise the {@link Invariantable#check()}
    * @param v a Invariantable object whose invariant should be checked */
   public static void check(final ___.Invariantable ¢) {
