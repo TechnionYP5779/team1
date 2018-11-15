@@ -1,36 +1,49 @@
 package il.org.spartan.utils;
 
-import static fluent.ly.azzert.*;
-
-import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
-import il.org.spartan.utils.Accumulator.*;
 
-@SuppressWarnings("static-method") public class AccumulatorTest {
-  @Test public void booleanAdds() {
-    final @NotNull Last c = new Last();
-    azzert.that(as.bit(false), is(0));
-    azzert.that(c.value(), is(0));
-    c.add(true);
-    azzert.that(c.value(), is(1));
-    azzert.that(as.bit(false), is(0));
-    c.add(false);
-    azzert.that(c.value(), is(0));
-    c.add(false);
-    azzert.that(c.value(), is(0));
-    c.add(true);
-    azzert.that(c.value(), is(1));
-    c.add(true);
-    azzert.that(c.value(), is(1));
+import static il.org.spartan.utils.Accumulator.Counter;
+import static il.org.spartan.utils.Accumulator.Last;
+
+@SuppressWarnings({ "static-method", "static-access" }) public class AccumulatorTest {
+  @Test public void verifyName() {
+    azzert.assertEquals("My First Counter", (new Counter("My First Counter")).name());
+    azzert.assertEquals("My First Register", (new Last("My First Register")).name());
   }
 
-  @Test public void emptyAdds() {
-    final @NotNull Last c = new Last();
-    for (int ¢ = 0; ¢ < 19; ++¢)
-      c.add(¢);
-    c.add(11);
-    azzert.that(c.value(), is(11));
+  @Test public void checkDefaultWeight() {
+    azzert.assertEquals(1, (new Counter()).weight());
+  }
+
+  @Test public void addIsStepOne() {
+    Accumulator accumulator = new Counter();
+    accumulator.add(8);
+    accumulator.add("Hello");
+    accumulator.add(true);
+    azzert.assertEquals(3, accumulator.value());
+  }
+
+  @Test public void doubleWeight() {
+    Counter counter = new Counter();
+    counter.weight(2);
+    counter.add();
+    azzert.assertEquals(2, counter.value());
+    azzert.assertEquals(4, counter.next());
+    azzert.assertEquals(4, counter.value());
+  }
+  
+  @Test public void valueNotChange() {
+    Counter counter = new Counter();
+    counter.add(false);
+    azzert.assertEquals(new Counter() + "", counter + "");
+  }
+  
+  @Test public void lastValueIsKept() {
+    Last last = new Last();
+    last.add(10);
+    last.add(80);
+    azzert.assertEquals(80, last.value());
   }
 }
