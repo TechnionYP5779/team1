@@ -3,6 +3,7 @@ package il.org.spartan.etc;
 import java.util.*;
 import java.util.function.*;
 
+import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
@@ -40,7 +41,7 @@ import fluent.ly.*;
   }
 
   @Test public void testLySupplierOfR() {
-    Supplier<String> strSupplier = () -> {
+    Supplier<@Nullable String> strSupplier = () -> {
       Random r = new Random();
       return "foo" + box.box(Math.round(100 * r.nextDouble()));
     };
