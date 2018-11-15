@@ -13,12 +13,10 @@ import fluent.ly.*;
     String s1 = "Hello";
     String s2 = "Hello";
     assert tide.eq(s1, s2);
-    s1 = null;
-    assert !tide.eq(s1,s2);
-    s1 = "Boy";
-    assert !tide.eq(s1, s2);
-    s2 = null;
-    assert !tide.eq(s1, s2);
+    assert !tide.eq(null,s2);
+    assert !tide.eq("Boy", s2);
+    assert !tide.eq(s1, null);
+    assert tide.eq(null, null);
   }
 
 }
