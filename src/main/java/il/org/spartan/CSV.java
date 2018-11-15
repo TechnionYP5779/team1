@@ -18,7 +18,7 @@ import fluent.ly.*;
  * single line. Within are some other useful auxiliary functions for string
  * manipulations.
  * @author Oren Rubin */
-@SuppressWarnings("null") public enum CSV {
+@SuppressWarnings({ "null", "unchecked" }) public enum CSV {
   ;
   @NotNull private static final String NULL = "\\0";
 
@@ -27,7 +27,7 @@ import fluent.ly.*;
    * @param cs Input array
    * @return Combined string
    * @see #splitToClasses(String) */
-  public static String combine(final Class<?>[] cs) {
+  public static String combine(final Class<?> @NotNull [] cs) {
     final String @NotNull [] $ = new String[cs.length];
     for (int ¢ = 0; ¢ < $.length; ++¢)
       $[¢] = cs[¢] == null ? null : Utils.cantBeNull(cs[¢].getName());
@@ -41,7 +41,7 @@ import fluent.ly.*;
    * @param parts Input array
    * @return Combined string
    * @see CSV#escape(String) */
-  public static <T> String combine(final @NotNull T @NotNull [] parts) {
+  public static <T> String combine(final T @NotNull [] parts) {
     nonnull(parts);
     final @NotNull StringBuilder $ = new StringBuilder(10 * parts.length);
     final @NotNull Separator sep = new Separator(",");
@@ -92,7 +92,7 @@ import fluent.ly.*;
   public static String[][] load(final Reader r) {
     final @NotNull ArrayList<String[]> $ = new ArrayList<>(20);
     for (final @NotNull Scanner ¢ = new Scanner(r); ¢.hasNext();)
-      $.add(split(¢.nextLine()));
+      $.add(split(Utils.cantBeNull(¢.nextLine())));
     return $.toArray(new String[$.size()][]);
   }
 
@@ -104,7 +104,7 @@ import fluent.ly.*;
 
   @NotNull public static <T extends Enum<T>> T[] split(final Class<T> clazz, final @NotNull String s) {
     final String @NotNull [] ss = split(s);
-    @SuppressWarnings("unchecked") final T @NotNull [] $ = (T[]) Array.newInstance(clazz, ss.length);
+    final T @NotNull [] $ = (T[]) Array.newInstance(clazz, ss.length);
     for (int ¢ = 0; ¢ < $.length; ++¢)
       $[¢] = ss[¢] == null ? null : Enum.valueOf(clazz, ss[¢]);
     return $;
@@ -117,20 +117,20 @@ import fluent.ly.*;
     for (int from = 0;;) {
       final int to = s.indexOf(',', from);
       if (to < 0) {
-        $.add(unescape(s.substring(from, s.length())));
-        return $.toArray(new String[$.size()]);
+        $.add(unescape(Utils.cantBeNull(s.substring(from, s.length()))));
+        return Utils.cantBeNull($.toArray(new String[$.size()]));
       }
-      $.add(unescape(s.substring(from, to)));
+      $.add(unescape(Utils.cantBeNull(s.substring(from, to))));
       from = to + 1;
     }
   }
 
   @NotNull public static Class<?>[] splitToClasses(final @NotNull String s) {
     final String @NotNull [] names = split(s);
-    final Class<?> @NotNull [] $ = new Class<?>[names.length];
+    final @NotNull Class<?>[] $ = new @NotNull Class<?>[names.length];
     for (int i = 0; i < $.length; ++i)
       try {
-        $[i] = names[i] == null ? null : Class.forName(names[i]);
+        $[i] = names[i] == null ? null : Utils.cantBeNull(Class.forName(names[i]));
       } catch (final ClassNotFoundException ¢) {
         throw new RuntimeException("s=" + s, ¢);
       }

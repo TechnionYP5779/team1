@@ -56,7 +56,7 @@ import fluent.ly.*;
     @NotNull private final List<String> keys = new ArrayList<>();
     @NotNull private final List<String> values = new ArrayList<>();
 
-    @Override @Nullable public String get(final @NotNull String key) {
+    @Override @Nullable public String get(final String key) {
       final int $ = keys.lastIndexOf(key);
       return $ < 0 ? null : values.get($);
     }
@@ -65,7 +65,7 @@ import fluent.ly.*;
       return keys;
     }
 
-    @Override @NotNull public ListProperties put(final @NotNull String key, final @NotNull String value) {
+    @Override @NotNull public ListProperties put(final String key, final String value) {
       keys.add(key);
       values.add(value);
       return this;
@@ -189,7 +189,7 @@ import fluent.ly.*;
 
     abstract String allTop();
 
-    abstract String delimiter();
+    @NotNull abstract String delimiter();
 
     abstract String headerEnd();
 
@@ -197,6 +197,6 @@ import fluent.ly.*;
 
     abstract String lineEnd();
 
-    abstract String makeField(String s);
+    abstract String makeField(@NotNull String s);
   }
 }

@@ -4,7 +4,7 @@ import org.junit.*;
 
 import fluent.ly.*;
 
-@SuppressWarnings({"static-access" , "static-method"}) public class faultTest {
+@SuppressWarnings("static-method") public class faultTest {
     @Test public void nullTest() {
       azzert.notNull(fault.done());
       azzert.notNull(fault.trace());

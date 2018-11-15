@@ -10,7 +10,7 @@ import org.jetbrains.annotations.*;
 
 import il.org.spartan.etc.*;
 
-public final class CSVWriter {
+@SuppressWarnings("null") public final class CSVWriter {
   @Nullable private static FileWriter open(final File $) {
     try {
       return new FileWriter($);
@@ -30,7 +30,7 @@ public final class CSVWriter {
     fileName = "";
   }
 
-  @SuppressWarnings("null") public CSVWriter(final @NotNull String fileName) {
+  public CSVWriter(final @NotNull String fileName) {
     this.fileName = fileName;
     file = new File(fileName);
     inner = open(file);

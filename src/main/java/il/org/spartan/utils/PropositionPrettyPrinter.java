@@ -7,7 +7,7 @@ import org.jetbrains.annotations.*;
 import il.org.spartan.etc.*;
 import il.org.spartan.utils.Proposition.*;
 
-public class PropositionPrettyPrinter {
+@SuppressWarnings("null") public class PropositionPrettyPrinter {
   static class PropositionTreeTraversal {
     private final Listener<BooleanSupplier> listener;
 

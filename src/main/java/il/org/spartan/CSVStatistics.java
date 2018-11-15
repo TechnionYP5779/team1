@@ -19,7 +19,7 @@ import il.org.spartan.statistics.*;
   @NotNull private static final String SUMMARY_EXTENSION = ".summary";
 
   @NotNull private static String removeExtension(final @NotNull String baseName) {
-    return baseName.replaceFirst("\\.csv$", "");
+    return Utils.cantBeNull(baseName.replaceFirst("\\.csv$", ""));
   }
 
   @NotNull private final String keysHeader;

@@ -133,7 +133,7 @@ import il.org.spartan.etc.*;
       azzert.assertEquals(Utils.addAll(y,(Iterable<Integer>)x),y);
       azzert.assertFalse(Utils.hasNull(yy));
       azzert.assertTrue(Utils.hasNull(Integer.valueOf(1),null));
-      azzert.assertNotNull(Utils.append(new @NotNull Integer[0], Integer.valueOf(4))[0]);
+      azzert.assertNotNull(Utils.append(new @NotNull Integer[0], box.box(4))[0]);
 //      azzert.assertEquals(,);
       azzert.assertNotNull(Utils.delete(new @NotNull Integer[4],3));
       azzert.assertTrue(Utils.inRange(0, y));

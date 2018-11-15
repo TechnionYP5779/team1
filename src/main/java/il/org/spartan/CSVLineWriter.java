@@ -8,7 +8,7 @@ import org.jetbrains.annotations.*;
  * a CSV file.
  * @author Yossi Gil
  * @since Dec 25, 2009 */
-public class CSVLineWriter extends CSVLine.Ordered {
+@SuppressWarnings("static-method") public class CSVLineWriter extends CSVLine.Ordered {
   protected final CSVWriter writer;
   private int count;
 
@@ -65,7 +65,7 @@ public class CSVLineWriter extends CSVLine.Ordered {
     ++count;
   }
 
-  @SuppressWarnings("static-method") protected String extension() {
+  protected String extension() {
     return ".csv";
   }
 }

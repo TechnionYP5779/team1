@@ -1,16 +1,13 @@
 package il.org.spartan;
 
-
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
 
 import org.jetbrains.annotations.*;
 
-
 import fluent.ly.*;
 import il.org.spartan.Utils.FoundHandleForT.*;
-
 
 /** An empty <code><b>interface</b></code> with a variety of <code>public
  * static</code> utility functions of reasonably wide use.
@@ -62,8 +59,8 @@ import il.org.spartan.Utils.FoundHandleForT.*;
    * @param ts an arbitrary array
    * @param t an element
    * @return newly created array */
-  @NotNull static <T> T[] append(final @NotNull T[] ts, final T t) {
-    final T @NotNull [] $ = Arrays.copyOf(ts, 1 + ts.length);
+  @NotNull static <T> T[] append(final @NotNull T[] ts, final @NotNull T t) {
+    final @NotNull T[] $ = Arrays.copyOf(ts, 1 + ts.length);
     $[ts.length] = t;
     return $;
   }
@@ -154,7 +151,7 @@ import il.org.spartan.Utils.FoundHandleForT.*;
    * @param i position of element to be deleted
    * @return newly created array */
   @NotNull static <T> T[] delete(final @NotNull T[] ts, final int i) {
-    final T @NotNull [] $ = Arrays.copyOf(ts, ts.length - 1);
+    final @NotNull T[] $ = Arrays.copyOf(ts, ts.length - 1);
     System.arraycopy(ts, i + 1, $, i, $.length - i);
     return $;
   }
@@ -227,7 +224,7 @@ import il.org.spartan.Utils.FoundHandleForT.*;
   /** @param ¢ JD
    * @return name of the parameter, which must not be
    *         <code><b>null</b></code> */
-  static String name(final File ¢) {
+  @NotNull static String name(final File ¢) {
     return cantBeNull(¢.getName());
   }
 
@@ -443,7 +440,6 @@ import il.org.spartan.Utils.FoundHandleForT.*;
     }
   }
 
- 
   static int hash(final Object ¢) {
     return ¢ == null ? 0 : ¢.hashCode();
   }

@@ -2,6 +2,7 @@ package il.org.spartan.utils;
 
 import java.util.function.*;
 
+import il.org.spartan.etc.*;
 import il.org.spartan.utils.Proposition.*;
 
 /** TODO Yossi Gil: document class
@@ -59,37 +60,45 @@ public abstract class PropositionReducer<R> extends Reduce<R> {
     return reduce($, post(o));
   }
 
-  protected R ante(@SuppressWarnings("unused") final Proposition.Not __) {
+  protected R ante(final Proposition.Not __) {
+    forget.it(__);
     return reduce();
   }
 
-  protected R ante(@SuppressWarnings("unused") final Proposition.Singleton __) {
+  protected R ante(final Proposition.Singleton __) {
+    forget.it(__);
     return reduce();
   }
 
-  protected R ante(@SuppressWarnings("unused") final Some __) {
+  protected R ante(final Some __) {
+    forget.it(__);
     return reduce();
   }
 
-  protected R inter(@SuppressWarnings("unused") final And __) {
+  protected R inter(final And __) {
+    forget.it(__);
     return reduce();
   }
 
-  protected R inter(@SuppressWarnings("unused") final Or __) {
+  protected R inter(final Or __) {
+    forget.it(__);
     return reduce();
   }
 
   protected abstract R map(BooleanSupplier ¢);
 
-  protected R post(@SuppressWarnings("unused") final Proposition.Not __) {
+  protected R post(final Proposition.Not __) {
+    forget.it(__);
     return reduce();
   }
 
-  protected R post(@SuppressWarnings("unused") final Proposition.Singleton __) {
+  protected R post(final Proposition.Singleton __) {
+    forget.it(__);
     return reduce();
   }
 
-  protected R post(@SuppressWarnings("unused") final Some __) {
+  protected R post(final Some __) {
+    forget.it(__);
     return reduce();
   }
 

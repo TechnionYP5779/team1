@@ -7,7 +7,7 @@ import il.org.spartan.*;
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
  * @since 2017-03-21 */
-@SuppressWarnings("unchecked") public class Outer<Inner> {
+@SuppressWarnings({ "unchecked", "null" }) public class Outer<Inner> {
   public Inner inner;
 
   public Outer(final Inner inner) {
@@ -21,12 +21,7 @@ import il.org.spartan.*;
   }
 
   @Override public boolean equals(final Object ¢) {
-    if (¢ == this)
-      return true;
-    if (¢ == null || getClass() != ¢.getClass())
-      return false;
-    final Outer<Inner> $ = (Outer<Inner>) ¢;
-    return equals($);
+    return ¢ == this || (¢ != null && getClass() == ¢.getClass() && equals((Outer<Inner>) ¢));
   }
 
   protected boolean equals(final Outer<Inner> other) {
