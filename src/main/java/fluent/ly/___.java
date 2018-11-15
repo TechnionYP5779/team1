@@ -11,10 +11,6 @@ import fluent.ly.___.Bug.Assertion.Value.*;
 import fluent.ly.___.Bug.Assertion.Value.Numerical.*;
 import fluent.ly.___.Bug.Assertion.Variant.*;
 import fluent.ly.___.Bug.Contract.*;
-<<<<<<< HEAD
-//import il.org.spartan.etc.*;
-=======
->>>>>>> a7908fbe5b751e44b5425845ddfbf97a06851bd4
 
 /** A simple implementation of design by contract services. Violations are
  * reported to <code>System.err</code>. Error descriptions are passed by a

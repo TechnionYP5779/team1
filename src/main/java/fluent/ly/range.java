@@ -5,16 +5,8 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
-import il.org.spartan.utils.*;
-
 // import il.org.spartan.utils.*;
-<<<<<<< HEAD
-@SuppressWarnings("unused")
 public class range {
-  
-=======
-@SuppressWarnings("unused") public class range {
->>>>>>> a7908fbe5b751e44b5425845ddfbf97a06851bd4
   public static DidTo numbers = range.from(Integer.MIN_VALUE).to(Integer.MAX_VALUE);
   boolean empty;
   int from = -1;
@@ -125,7 +117,7 @@ public class range {
 
   //Fluent API - Public class that will allow range iteration
   abstract class rangeIter<T extends rangeIter<T>> implements Iterable<Integer> {
-    @Override public Iterator<Integer> iterator() {
+    @SuppressWarnings("unused") @Override public Iterator<Integer> iterator() {
       return new Iterator<Integer>() {
         int current = from;
 
