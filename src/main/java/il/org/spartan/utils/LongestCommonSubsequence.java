@@ -11,12 +11,12 @@ import il.org.spartan.*;
  * The LCS is computed after removing all spaces from both strings.
  * @author Yossi Gil
  * @since 2015-09-23 */
-public class LongestCommonSubsequence {
+@SuppressWarnings("null") public class LongestCommonSubsequence {
   private final char @NotNull [] as;
   private final char @NotNull [] bs;
   private final int @NotNull [][] length;
 
-  @SuppressWarnings("null") public LongestCommonSubsequence(final @NotNull String a, final @NotNull String b) {
+  public LongestCommonSubsequence(final @NotNull String a, final @NotNull String b) {
     as = tide.clean(a).toCharArray();
     bs = tide.clean(b).toCharArray();
     length = new int[as.length][];

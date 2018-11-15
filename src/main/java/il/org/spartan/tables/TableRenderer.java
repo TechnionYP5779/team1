@@ -139,7 +139,7 @@ import il.org.spartan.*;
     return "";
   }
 
-  static String tab() {
+  @NotNull static String tab() {
     return "\t";
   }
 
@@ -171,7 +171,7 @@ import il.org.spartan.*;
     return empty();
   }
 
-  default String cellArray(final Object[] ¢) {
+  default String cellArray(final @NotNull Object @NotNull [] ¢) {
     return separate.these(¢).by(arraySeparator());
   }
 
@@ -219,7 +219,7 @@ import il.org.spartan.*;
     return NL;
   }
 
-  default String recordSeparator() {
+  @NotNull default String recordSeparator() {
     return tab();
   }
 

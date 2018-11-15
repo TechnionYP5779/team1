@@ -4,8 +4,7 @@ import org.jetbrains.annotations.*;
 
 import il.org.spartan.*;
 
-public class Pair<First, Second> {
-  @SuppressWarnings("unchecked") //
+@SuppressWarnings("unchecked") public class Pair<First, Second> {
   public static <First, Second> Pair<First, Second> @NotNull [] makePairs(final int ¢) {
     return new Pair[¢];
   }

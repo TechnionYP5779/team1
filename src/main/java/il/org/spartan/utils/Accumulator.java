@@ -29,7 +29,7 @@ public abstract class Accumulator {
     add(as.bit(¢));
   }
 
-  public String name() {
+  @NotNull public String name() {
     return name;
   }
 

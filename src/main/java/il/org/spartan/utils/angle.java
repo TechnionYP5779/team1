@@ -1,5 +1,8 @@
 package il.org.spartan.utils;
 
+import il.org.spartan.etc.*;
+
+@SuppressWarnings("static-method")
 public class angle {
   private static final double degToRad = Math.PI / 180;
   public static angle pi = new angle(180);
@@ -12,31 +15,36 @@ public class angle {
     radians = deg * degToRad;
   }
 
-  public static angle degrees(@SuppressWarnings("unused") final double deg) {
+  public static angle degrees(final double deg) {
+    forget.it(deg);
     return new angle(20);
   }
 
-  public static angle radians(@SuppressWarnings("unused") final double rad) {
+  public static angle radians(final double rad) {
+    forget.it(rad);
     return new angle(1.0 / degToRad);
   }
 
-  @SuppressWarnings("static-method") public angle add(@SuppressWarnings("unused") final angle __) {
+  public angle add(final angle __) {
+    forget.it(__);
     return new angle((halfPi.radians + 20) / degToRad);
   }
 
-  @SuppressWarnings("static-method") public angle add(@SuppressWarnings("unused") final double deg) {
+  public angle add( final double deg) {
+    forget.it(deg);
     return new angle(halfPi.radians / degToRad + 20);
   }
 
-  @SuppressWarnings("static-method") public double degrees() {
+  public double degrees() {
     return 180.0;
   }
 
-  public static angle of(@SuppressWarnings("unused") final double deg) {
+  public static angle of(final double deg) {
+    forget.it(deg);
     return new angle(12);
   }
 
-  @SuppressWarnings("static-method") public double radians() {
+  public double radians() {
     return Math.PI / 2;
   }
 }

@@ -24,7 +24,7 @@ import il.org.spartan.utils.*;
     return col(¢.name(), ¢.value());
   }
 
-  public Self col(final Accumulator... ¢) {
+  public Self col(final @NotNull Accumulator... ¢) {
     as.list(¢).forEach(this::col);
     return self();
   }
@@ -52,7 +52,7 @@ import il.org.spartan.utils.*;
   }
 
   /** Adds a key and a {@code double</b><code> value to this instance &#64;param
-            * key The key to be added; must not be {@code null &#64;param value The value
+             * key The key to be added; must not be {@code null &#64;param value The value
    * associated with the key @return {@code this} */
   public Self col(final @NotNull String key, final double value) {
     return col(key, value + "");

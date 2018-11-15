@@ -7,6 +7,7 @@ import org.jetbrains.annotations.*;
 
 import an.*;
 import fluent.ly.*;
+import il.org.spartan.*;
 import il.org.spartan.etc.*;
 import il.org.spartan.statistics.*;
 import il.org.spartan.utils.*;
@@ -16,7 +17,7 @@ import il.org.spartan.utils.*;
  * including aggregation information.
  * @author Yossi Gil
  * @since 2016-12-25 */
-@SuppressWarnings("null") public class Table extends Row<Table> implements Closeable {
+@SuppressWarnings({ "resource", "null" }) public class Table extends Row<Table> implements Closeable {
   private static final long serialVersionUID = 0x4AA7BE471985E874L;
   String path;
 
@@ -37,27 +38,29 @@ import il.org.spartan.utils.*;
    *        TEX, TXT).
    * @author oran1248
    * @since 2017-04-21 */
-  @SuppressWarnings("resource") public Table(final @NotNull String name, final TableRenderer... rs) {
-    this.name = name.toLowerCase();
+  public Table(final @NotNull String name, final @NotNull TableRenderer... rs) {
+    this.name = Utils.cantBeNull(name.toLowerCase());
     as.list(rs).forEach(r -> {
       try {
         writers.add(new RecordWriter(r, path()));
       } catch (final IOException ¢) {
-        close();
         throw new RuntimeException(¢);
+      } finally {
+        close();
       }
     });
   }
 
-  @SuppressWarnings("resource") public Table(final @NotNull String name, final @NotNull String outputFolder) {
-    this.name = name.toLowerCase();
+  public Table(final @NotNull String name, final @NotNull String outputFolder) {
+    this.name = Utils.cantBeNull(name.toLowerCase());
     path = outputFolder.lastIndexOf('/') == outputFolder.length() ? outputFolder : outputFolder + System.getProperty("file.separator", "/");
     as.list(TableRenderer.builtin.values()).forEach(r -> {
       try {
         writers.add(new RecordWriter(r, path()));
       } catch (final IOException ¢) {
-        close();
         throw new RuntimeException(¢);
+      } finally {
+        close();
       }
     });
   }
@@ -68,7 +71,7 @@ import il.org.spartan.utils.*;
 
   private int length;
   @NotNull public final String name;
-  Statistic[] statisics = Statistic.values();
+  @NotNull Statistic[] statisics = Statistic.values();
   final Map<String, RealStatistics> stats = new LinkedHashMap<>();
   private final List<RecordWriter> writers = an.empty.list();
 
@@ -95,7 +98,7 @@ import il.org.spartan.utils.*;
     writers.forEach(RecordWriter::close);
   }
 
-  private String lastEmptyColumn() {
+  @Nullable private String lastEmptyColumn() {
     String $ = null;
     for (final @NotNull String key : keySet()) {
       final RealStatistics r = getRealStatistics(key);
@@ -155,13 +158,13 @@ import il.org.spartan.utils.*;
     return this;
   }
 
-  public Table remove(final Statistic... ¢) {
+  public Table remove(@NotNull final Statistic... ¢) {
     final List<Statistic> $ = as.list(statisics);
     $.removeAll(as.list(¢));
     return set($);
   }
 
-  public Table add(final Statistic... ¢) {
+  public Table add(@NotNull final Statistic... ¢) {
     final List<Statistic> $ = as.list(statisics);
     $.addAll(as.list(¢));
     return set($);
@@ -178,19 +181,19 @@ import il.org.spartan.utils.*;
    protected Table self() { return this; } /*@formatter:on*/
 
   private Table set(final List<Statistic> ¢) {
-    return set(¢.toArray(new Statistic[¢.size()]));
+    return set(¢.toArray(new @NotNull Statistic[¢.size()]));
   }
 
-  Table set(final Statistic... ¢) {
+  Table set(final @NotNull Statistic... ¢) {
     statisics = ¢;
     return this;
   }
 
-  public static String classToNormalizedFileName(final Class<?> ¢) {
-    return classToNormalizedFileName(¢.getSimpleName());
+  @NotNull public static String classToNormalizedFileName(final Class<?> ¢) {
+    return classToNormalizedFileName(Utils.cantBeNull(¢.getSimpleName()));
   }
 
-  static String classToNormalizedFileName(final @NotNull String className) {
-    return separate.these(the.lastOf(iterable.over(cCamelCase.components(className)))).by('-').toLowerCase();
+  @NotNull static String classToNormalizedFileName(final @NotNull String className) {
+    return Utils.cantBeNull(separate.these(the.lastOf(iterable.over(cCamelCase.components(className)))).by('-').toLowerCase());
   }
 }

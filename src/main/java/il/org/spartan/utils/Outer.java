@@ -7,7 +7,7 @@ import il.org.spartan.*;
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
  * @since 2017-03-21 */
-public class Outer<Inner> {
+@SuppressWarnings("unchecked") public class Outer<Inner> {
   public Inner inner;
 
   public Outer(final Inner inner) {
@@ -16,7 +16,7 @@ public class Outer<Inner> {
       throw new IllegalArgumentException();
   }
 
-  @Override @NotNull @SuppressWarnings("unchecked") public Outer<Inner> clone() throws CloneNotSupportedException {
+  @Override @NotNull public Outer<Inner> clone() throws CloneNotSupportedException {
     return (Outer<Inner>) Utils.cantBeNull(super.clone());
   }
 
@@ -25,11 +25,11 @@ public class Outer<Inner> {
       return true;
     if (¢ == null || getClass() != ¢.getClass())
       return false;
-    @SuppressWarnings("unchecked") final Outer<Inner> $ = (Outer<Inner>) ¢;
+    final Outer<Inner> $ = (Outer<Inner>) ¢;
     return equals($);
   }
 
-  @SuppressWarnings("null") protected boolean equals(final Outer<Inner> other) {
+  protected boolean equals(final Outer<Inner> other) {
     if (inner == null) {
       if (other.inner != null)
         return false;
@@ -43,7 +43,7 @@ public class Outer<Inner> {
     return inner;
   }
 
-  @Override @SuppressWarnings("null") public int hashCode() {
+  @Override public int hashCode() {
     return inner == null ? 0 : inner.hashCode();
   }
 
