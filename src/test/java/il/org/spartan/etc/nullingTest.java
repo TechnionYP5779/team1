@@ -22,13 +22,12 @@ import fluent.ly.*;
   }
 
   @Test public void testLyIntSupplier() {
-    Random r = new Random();
-    DoubleSupplier iSupplier = () -> Math.round(100*r.nextDouble());
+    IntSupplier iSupplier = () -> 7;
     azzert.isNull(nulling.ly(iSupplier));
   }
 
   @Test public void testLyLongSupplier() {
-    DoubleSupplier lSupplier = () -> 777L;
+    LongSupplier lSupplier = () -> 777L;
     azzert.isNull(nulling.ly(lSupplier));
   }
 
