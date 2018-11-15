@@ -33,7 +33,8 @@ import org.junit.*;
     x.add(Integer.valueOf(5));
     @Nullable List< @Nullable Integer> y = new ArrayList<>();
     y.add(Integer.valueOf(5));
-    
+    azzert.assertTrue(the.last(null)==null);
+    azzert.assertTrue(the.last(new ArrayList<>())==null);
     azzert.assertEquals(the.last(x), Integer.valueOf(5));
     azzert.assertEquals(the.lastOf(x), Integer.valueOf(5));
     azzert.assertEquals(the.tailOf(x), y);
@@ -73,6 +74,8 @@ import org.junit.*;
      List<Integer> x = new ArrayList<>();
      x.add(Integer.valueOf(4));
      azzert.assertEquals(the.onlyOneOf(x), Integer.valueOf(4));
+     azzert.assertTrue(the.onlyOneOf(null)== null);
+
 
      x.add(Integer.valueOf(5));
      azzert.assertEquals(the.onlyOneOf(x), null);
@@ -85,9 +88,20 @@ import org.junit.*;
      @Nullable List< @Nullable Integer> y = new ArrayList<>();
      y.add(Integer.valueOf(5));
      azzert.assertTrue(the.penultimateOf(null)==null);
+     azzert.assertTrue(the.penultimateOf(y)==null);
+     azzert.assertEquals(the.penultimateOf(x), Integer.valueOf(4));
      azzert.assertTrue(the.previous(Integer.valueOf(5),null)==null);
+     azzert.assertTrue(the.previous(Integer.valueOf(4),x)==null);
+     azzert.assertTrue(the.previous(Integer.valueOf(5),x)!=null);
+     azzert.assertTrue(the.headOf(null)==null);
+     azzert.assertTrue(the.headOf(new ArrayList<>())==null);
+     azzert.assertTrue(the.lastOf(new ArrayList<>())==null);
+     azzert.assertTrue(the.lastOf((List<Object>)null)==null);
+     azzert.assertEquals(the.lastOf(y),Integer.valueOf(5));
      azzert.assertEquals(the.previous(Integer.valueOf(5),x),Integer.valueOf(4));
      azzert.assertEquals(the.secondOf(x),Integer.valueOf(5));
+     azzert.assertTrue(the.secondOf(null)==null);
+     azzert.assertTrue(the.secondOf(y)==null);
      azzert.assertEquals(the.rest(Integer.valueOf(3), x),  an.empty.list());
      azzert.assertEquals(the.rest(Integer.valueOf(4), x), y );
      
