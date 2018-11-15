@@ -5,9 +5,12 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
+import il.org.spartan.utils.*;
+
 // import il.org.spartan.utils.*;
 @SuppressWarnings("unused")
 public class range {
+  
   public static DidTo numbers = range.from(Integer.MIN_VALUE).to(Integer.MAX_VALUE);
   boolean empty;
   int from = -1;
@@ -15,36 +18,97 @@ public class range {
   boolean infinite;
   int delta = 1;
 
-  public range() {
-  }
-
-  @Override public int hashCode() {
-    // Cantor pairing function
-    return (int) (from + 0.5 * (to + from) * (to + from + 1));
-  }
-
   /** Instantiates from beginning and end locations
    * @param from JD
    * @param to JD */
   public range(final int from, final int to) {
     this.from = from;
     this.to = to;
+    this.infinite = false;
+    this.empty = from > to;
   }
-
+  
   /** Instantiates using values found in another intance
    * @param other other */
   public range(final @NotNull range other) {
     this(other.from, other.to);
   }
 
-  @Override public boolean equals(final Object ¢) {
-    return ¢ instanceof range && from == ((range) ¢).from && to == ((range) ¢).to;
+  //Default c'tor for fluent API
+  public range() {
   }
 
   public int from() {
     return from;
   }
+  
+  @Override public int hashCode() {
+    // Cantor pairing function
+    return (int) (from + 0.5 * (to + from) * (to + from + 1));
+  }
 
+  @Override public boolean equals(final Object ¢) {
+    return ¢ instanceof range && from == ((range) ¢).from && to == ((range) ¢).to;
+  }
+  
+  public boolean isInfinite() {
+    // TODO Auto-generated method stub
+    return infinite;
+  }
+  
+  @Nullable public range findIncludedIn(final @Nullable Iterable<? extends range> ¢) {
+    if (¢ != null)
+      for (final @Nullable range $ : ¢)
+        if ($ != null && includedIn($))
+          return $;
+    return null;
+  }
+
+  /** @param ¢ arbitrary
+   * @return <code><b>true</b></code> <i>iff</i> <code><b>this</b></code> is
+   *         included in the parameter. */
+  public boolean includedIn(final @NotNull range ¢) {
+    return from >= ¢.from && to <= ¢.to;
+  }
+  
+  public boolean isEmpty() {
+    return size() <= 0;
+  }
+
+  @NotNull public range merge(final @NotNull range ¢) {
+    return new range(Math.min(from, ¢.from), Math.max(to, ¢.to));
+  }
+
+  /** Determine whether overlaps in any part another range
+   * @param ¢ arbitrary
+   * @return <code><b>true</b></code> <i>iff</i> <code><b>this</b></code>
+   *         overlaps the parameter. */
+  public boolean overlapping(final @NotNull range ¢) {
+    return from >= ¢.from || to <= ¢.to;
+  }
+
+  /** Prune all ranges in a given list that include this object.
+   * @param rs JD */
+  public void pruneIncluders(final @NotNull List<range> rs) {
+    for (;;) {
+      final @Nullable range r = findIncludedIn(rs);
+      if (r == null)
+        return;
+      rs.remove(r);
+    }
+  }
+
+  /** The number of integers in the range
+   * @return a non-negative integer, computed as {@link #to} -{@link #from} */
+  public int size() {
+    return to - from;
+  }
+
+  @Override public String toString() {
+    return String.format("[%d, %d]", fluent.ly.box.it(from), fluent.ly.box.it(to));
+  }
+
+  //Fluent API - after from (range.from(x) product) c'tor
   public static DidFrom from(final int ¢) {
     return new range() {
       {
@@ -55,16 +119,8 @@ public class range {
     }.new DidFrom();
   }
 
-  public boolean isEmpty() {
-    return empty;
-  }
-
-  public boolean isInfinite() {
-    // TODO Auto-generated method stub
-    return infinite;
-  }
-
-  abstract class RangeIter<T extends RangeIter<T>> implements Iterable<Integer> {
+  //Fluent API - Public class that will allow range iteration
+  abstract class rangeIter<T extends rangeIter<T>> implements Iterable<Integer> {
     @Override public Iterator<Integer> iterator() {
       return new Iterator<Integer>() {
         int current = from;
@@ -86,7 +142,8 @@ public class range {
     abstract T This();
   }
 
-  public class DidTo extends RangeIter<DidTo> {
+  //Fluent API - Represents a creation using range.to(x) or range.to(x).from(y) or range.from(x).to(y)
+  public class DidTo extends rangeIter<DidTo> {
     @Override DidTo This() {
       // TODO Auto-generated method stub
       return this;
@@ -127,7 +184,8 @@ public class range {
     }
   }
 
-  public class DidFrom extends RangeIter<DidFrom> {
+  //Fluent API - Represents a creation using range.from(x) 
+  public class DidFrom extends rangeIter<DidFrom> {
     public DidTo to(final int ¢) {
       to = ¢;
       return new DidTo() {
@@ -158,7 +216,8 @@ public class range {
       return from;
     }
   }
-
+  
+  //Fluent API - Represents a creation using range.to(x)
   public static DidTo to(final int ¢) {
     return new range() {
       {
