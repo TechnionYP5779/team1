@@ -90,7 +90,7 @@ import il.org.spartan.utils.RealNumbersPairList.*;
     }
   }
 
-  @Test @SuppressWarnings("boxing") public void iteratorOverList() {
+  @Test public void iteratorOverList() {
     final RealNumbersPairList list = new RealNumbersPairList();
     list.record(3.5, 2.5);
     list.record(1.7, 2.58);
@@ -102,20 +102,20 @@ import il.org.spartan.utils.RealNumbersPairList.*;
     list.record(41.30, 12.3);
     for (final Pair<Double, Double> ¢ : list) {
       Assert.assertNotNull(¢);
-      assert ¢.first >= 1.3 && ¢.first <= 93.5;
-      assert ¢.second >= 2.5 && ¢.second <= 22.2;
+      assert unbox.unbox(¢.first) >= 1.3 && unbox.unbox(¢.first) <= 93.5;
+      assert unbox.unbox(¢.second) >= 2.5 && unbox.unbox(¢.second) <= 22.2;
     }
   }
 
-  @Test @SuppressWarnings("boxing") public void iteratorOverListCheckAllValsExist() {
+  @Test public void iteratorOverListCheckAllValsExist() {
     final RealNumbersPairList list = new RealNumbersPairList();
     final double xVals[] = { 1.3, 3.5, 93.5 }, yVals[] = { 22.2, 2.58, 9.9 };
     for (int ¢ = 0; ¢ < xVals.length; ++¢)
       list.record(xVals[¢], yVals[¢]);
     int i = 0;
     for (final Pair<Double, Double> ¢ : list) {
-      assert ¢.first == xVals[i];
-      assert ¢.second == yVals[i++];
+      assert unbox.unbox(¢.first) == xVals[i];
+      assert unbox.unbox(¢.second) == yVals[i++];
     }
   }
 }
