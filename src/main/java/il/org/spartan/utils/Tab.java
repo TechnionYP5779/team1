@@ -46,7 +46,7 @@ public class Tab {
 
   /** Increase indentation but returns the previous tabulation string.
    * @return the previous tabulation string. */
-  public String begin() {
+  @NotNull public String begin() {
     final @NotNull String $ = toString();
     more();
     return $;
@@ -54,7 +54,7 @@ public class Tab {
 
   /** Decrease indentation level and returns the new tabulation string.
    * @return the new tabulation string. */
-  public String end() {
+  @NotNull public String end() {
     less();
     return toString();
   }

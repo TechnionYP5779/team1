@@ -12,9 +12,9 @@ import org.junit.*;
 
 import an.*;
 import fluent.ly.separate.*;
+import il.org.spartan.*;
 
-@SuppressWarnings({ "static-method", "null" }) //
-public class separateTest {
+@SuppressWarnings({ "static-method", "null" }) public class separateTest {
   private static final Function<String, String> quote = λ -> "'" + λ + "'";
 
   static <T> void assertEquals(final @NotNull String reason, final T t1, final T t2) {
@@ -22,15 +22,15 @@ public class separateTest {
   }
 
   @Test public final void asArrayBetweenChar() {
-    azzert.that(separate.these(as.array("Hello", "World")).by(','), is("Hello,World"));
+    azzert.that(separate.these(Utils.cantBeNull(as.array("Hello", "World"))).by(','), is("Hello,World"));
   }
 
   @Test public final void byArrayString() {
-    azzert.that(separate.these(new String[] { "Hello", "World" }).by(", "), is("Hello, World"));
+    azzert.that(separate.these(new @NotNull String[] { "Hello", "World" }).by(", "), is("Hello, World"));
   }
 
   @Test public final void byArrayStringUsingLiterals() {
-    azzert.that(separate.these(as.array("Hello", "World")).by(", "), is("Hello, World"));
+    azzert.that(separate.these(Utils.cantBeNull(as.array("Hello", "World"))).by(", "), is("Hello, World"));
   }
 
   @Test public final void byBooleanArrayChar() {
@@ -78,11 +78,12 @@ public class separateTest {
   }
 
   @Test public final void byFOfTIterableOfTChar() {
-    azzert.that(separate.these(apply(λ -> "<" + λ + ">").to("A", "B")).by(' '), is("<A> <B>"));
+    azzert.that(separate.these(Utils.cantBeNull(apply(λ -> "<" + λ + ">").to("A", "B"))).by(' '), is("<A> <B>"));
   }
 
   @Test public final void byFOfTIterableOfTString() {
-    azzert.that(separate.these(new Applicator<>(quote).to(as.list("Hello", "World"))).by(", "), is("'Hello', 'World'"));
+    azzert.that(separate.these(Utils.cantBeNull(new Applicator<>(quote).to(Utils.cantBeNull(as.list("Hello", "World"))))).by(", "),
+        is("'Hello', 'World'"));
   }
 
   @Test public final void byFOfTTArrayChar() {
@@ -96,7 +97,7 @@ public class separateTest {
   }
 
   @Test public final void byFOfTTArrayString() {
-    azzert.that(separate.these(apply(quote).to("Hello", "World")).by(", "), is("'Hello', 'World'"));
+    azzert.that(separate.these(Utils.cantBeNull(apply(quote).to("Hello", "World"))).by(", "), is("'Hello', 'World'"));
   }
 
   @Test public final void byIntArrayChar() {
@@ -108,7 +109,7 @@ public class separateTest {
   }
 
   @Test public final void byIterableOfChar() {
-    azzert.that(separate.these(as.array("Hello", "World")).by(','), is("Hello,World"));
+    azzert.that(separate.these(Utils.cantBeNull(as.array("Hello", "World"))).by(','), is("Hello,World"));
   }
 
   @Test public final void byIterableOfString() {
@@ -157,7 +158,7 @@ public class separateTest {
   }
 
   @Test public final void byTArrayChar() {
-    azzert.that(separate.these(new String[] { "Hello", "World" }).by(','), is("Hello,World"));
+    azzert.that(separate.these(new @NotNull String[] { "Hello", "World" }).by(','), is("Hello,World"));
   }
 
   @Test public final void nlIterableOfString() {
@@ -174,7 +175,7 @@ public class separateTest {
     final Iterable<?> os = these.os;
     assert os != null : null;
     azzert.aye(is.empty(os));
-    final @NotNull String[] ss = as.strings(os);
+    final String @NotNull [] ss = as.strings(os);
     assert ss != null : null;
     azzert.zero(ss.length);
     final @NotNull String[] noWhites = prune.whites(ss);
@@ -183,7 +184,7 @@ public class separateTest {
   }
 
   @Test public final void separateByNoItemslSpaceSeparated() {
-    azzert.that(SeparationSubject.separateBy(separate.these().os, " "), is(""));
+    azzert.that(SeparationSubject.separateBy(Utils.cantBeNull(separate.these().os), " "), is(""));
   }
 
   @Test public void separateBySpaceEmpty() {
@@ -195,11 +196,11 @@ public class separateTest {
   }
 
   @Test public void separateBySpaceMultipleIterator() {
-    azzert.that(separate.separateBySpaces(as.list(new String[] { "X", "Y", "Z" })), is("X Y Z"));
+    azzert.that(separate.separateBySpaces(as.list(new @Nullable String[] { "X", "Y", "Z" })), is("X Y Z"));
   }
 
   @Test public void separateBySpaceOnIteator() {
-    azzert.that(separate.separateBySpaces(as.list(new String[] { "Hello", "World " })), is("Hello World "));
+    azzert.that(separate.separateBySpaces(as.list(new @Nullable String[] { "Hello", "World " })), is("Hello World "));
   }
 
   @Test public void separateBySpaceOnSingletonIteator() {
@@ -255,10 +256,10 @@ public class separateTest {
   }
 
   @Test public final void theseOfNoItemsl() {
-    azzert.aye(is.empty(separate.these(new String[] {}).os));
+    azzert.aye(is.empty(separate.these(new @NotNull String[] {}).os));
   }
 
   @Test public final void theseOfNoItemslSpaceSeparated() {
-    azzert.that(separate.these(new String[] {}).bySpaces(), is(""));
+    azzert.that(separate.these(new @NotNull String[] {}).bySpaces(), is(""));
   }
 }

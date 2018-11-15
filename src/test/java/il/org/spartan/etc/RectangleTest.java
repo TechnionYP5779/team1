@@ -10,17 +10,17 @@ import il.org.spartan.utils.*;
     azzert.notNull(new Rectangle(new Pair<>(Double.valueOf(1), Double.valueOf(1)), new Pair<>(Double.valueOf(2), Double.valueOf(2))));
   }
 
-  @Test(expected = IllegalArgumentException.class) @SuppressWarnings("unused") public void illegalCreationOfPoint() throws IllegalArgumentException {
+  @Test(expected = IllegalArgumentException.class) public void illegalCreationOfPoint() throws IllegalArgumentException {
     final Pair<Double, Double> p1 = new Pair<>(Double.valueOf(1), Double.valueOf(1));
-    new Rectangle(p1, p1);
+    forget.it(new Rectangle(p1, p1));
   }
 
-  @Test(expected = IllegalArgumentException.class) @SuppressWarnings("unused") public void illegalCreationOfLineX() throws IllegalArgumentException {
-    new Rectangle(new Pair<>(Double.valueOf(1), Double.valueOf(1)), new Pair<>(Double.valueOf(3), Double.valueOf(1)));
+  @Test(expected = IllegalArgumentException.class) public void illegalCreationOfLineX() throws IllegalArgumentException {
+    forget.it(new Rectangle(new Pair<>(Double.valueOf(1), Double.valueOf(1)), new Pair<>(Double.valueOf(3), Double.valueOf(1))));
   }
 
-  @Test(expected = IllegalArgumentException.class) @SuppressWarnings("unused") public void illegalCreationOfLineY() throws IllegalArgumentException {
-    new Rectangle(new Pair<>(Double.valueOf(1), Double.valueOf(1)), new Pair<>(Double.valueOf(1), Double.valueOf(3)));
+  @Test(expected = IllegalArgumentException.class) public void illegalCreationOfLineY() throws IllegalArgumentException {
+    forget.it(new Rectangle(new Pair<>(Double.valueOf(1), Double.valueOf(1)), new Pair<>(Double.valueOf(1), Double.valueOf(3))));
   }
 
   @Test public void areaOfRealRect() throws IllegalArgumentException {

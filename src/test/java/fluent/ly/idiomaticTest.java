@@ -2,11 +2,13 @@ package fluent.ly;
 
 import static fluent.ly.azzert.*;
 
+import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.idiomatic.*;
+import il.org.spartan.*;
 
-@SuppressWarnings({ "static-method", "null" }) public class idiomaticTest {
+@SuppressWarnings("static-method") public class idiomaticTest {
   @Test public void testEval() {
     Assert.assertEquals(Integer.valueOf(1), idiomatic.eval(() -> Integer.valueOf(1)).get());
   }
@@ -17,7 +19,7 @@ import fluent.ly.idiomatic.*;
   }
 
   @Test public void testKatching1() {
-    final idiomatic.Producer<Integer> thrower = () -> {
+    final idiomatic.Producer<@Nullable Integer> thrower = () -> {
       throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");
     };
     try {
@@ -29,7 +31,7 @@ import fluent.ly.idiomatic.*;
   }
 
   @Test public void testKatching2() {
-    final idiomatic.Producer<Integer> notThrower = () -> Integer.valueOf(1);
+    final idiomatic.Producer<@Nullable Integer> notThrower = () -> Utils.cantBeNull(Integer.valueOf(1));
     try {
       Assert.assertNotNull(idiomatic.katching(notThrower));
     } catch (final Exception ¢) {

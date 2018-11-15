@@ -7,6 +7,8 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
+import il.org.spartan.etc.*;
+
 public class statisticsTest {
   // ========== CLASS VARIABLES - FOR TESTING ==========
   double @NotNull [] first_integers_sample = new double[] { 10.0, 15.0, 15.0, 17.0, 18.0, 21.0 };
@@ -78,7 +80,8 @@ public class statisticsTest {
       my_statistics.n = 0;
       my_statistics.max();
       fail("you should have not got here");
-    } catch (@SuppressWarnings("unused") final ArithmeticException e) {
+    } catch (final ArithmeticException __) {
+      forget.it(__);
       assert true;
     }
     // ========== ANOTHER TEST ==========
@@ -91,7 +94,8 @@ public class statisticsTest {
     // ========== ANOTHER TEST ==========
     try {
       my_statistics.mean();
-    } catch (@SuppressWarnings("unused") final ArithmeticException e) {
+    } catch (final ArithmeticException __) {
+      forget.it(__);
       assert true;
     }
     // ========== ANOTHER TEST ==========
@@ -111,7 +115,8 @@ public class statisticsTest {
     // ========== ANOTHER TEST ==========
     try {
       my_statistics.min();
-    } catch (@SuppressWarnings("unused") final ArithmeticException e) {
+    } catch (final ArithmeticException __) {
+      forget.it(__);
       assert true;
     }
     // ========== ANOTHER TEST ==========
@@ -168,7 +173,8 @@ public class statisticsTest {
       my_statistics.n = 0;
       my_statistics.checkEmpty();
       fail("YOU SHOULD HAVE RAISED EXCEPTION");
-    } catch (@SuppressWarnings("unused") final ArithmeticException e) {
+    } catch (final ArithmeticException __) {
+      forget.it(__);
       assert true;
     }
     // ========== ANOTHER TEST ==========

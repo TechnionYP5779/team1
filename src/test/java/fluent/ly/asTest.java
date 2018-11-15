@@ -66,11 +66,8 @@ import org.junit.*;
     assert x.contains(Integer.valueOf(3));
   }
 
-  @Test @SuppressWarnings("unlikely-arg-type") public void testSet() {
-    final Set<? extends Integer> x = as.set(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3));
-    x.contains(Integer.valueOf(1));
-    assert x.contains(Integer.valueOf(2));
-    assert x.contains(Integer.valueOf(3));
+  @Test public void testSet() {
+    azzert.assertEquals(as.set(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)).size(), 3);
   }
 
   @Test public void testStringObject() {

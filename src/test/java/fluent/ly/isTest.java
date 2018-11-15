@@ -1,18 +1,20 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import java.util.*;
 
 import org.junit.*;
 
-@SuppressWarnings({ "static-method", "null" }) public class isTest {
+@SuppressWarnings("static-method") public class isTest {
   @Test public void testIsNotInAndOut() {
-    assert !is.in(Integer.valueOf(1), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2));
-    assert is.out(Integer.valueOf(1), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2));
+    assert !is.in(Integer.valueOf(1), cantBeNull(Integer.valueOf(8)), cantBeNull(Integer.valueOf(100)), cantBeNull(Integer.valueOf(2)));
+    assert is.out(Integer.valueOf(1), cantBeNull(Integer.valueOf(8)), cantBeNull(Integer.valueOf(100)), cantBeNull(Integer.valueOf(2)));
   }
 
   @Test public void testIsInNotOut() {
-    assert is.in(Integer.valueOf(8), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2));
-    assert !is.out(Integer.valueOf(8), Integer.valueOf(8), Integer.valueOf(100), Integer.valueOf(2));
+    assert is.in(Integer.valueOf(8), cantBeNull(Integer.valueOf(8)), cantBeNull(Integer.valueOf(100)), cantBeNull(Integer.valueOf(2)));
+    assert !is.out(Integer.valueOf(8), cantBeNull(Integer.valueOf(8)), cantBeNull(Integer.valueOf(100)), cantBeNull(Integer.valueOf(2)));
   }
 
   @Test public void testIsIntInNotIn() {

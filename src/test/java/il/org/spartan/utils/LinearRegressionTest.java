@@ -2,6 +2,7 @@ package il.org.spartan.utils;
 
 import org.junit.*;
 
+import il.org.spartan.etc.*;
 import il.org.spartan.utils.LinearRegression.*;
 
 @SuppressWarnings("static-method") public class LinearRegressionTest {
@@ -12,7 +13,8 @@ import il.org.spartan.utils.LinearRegression.*;
     final LinearRegression regression = new LinearRegression(list);
     try {
       assert regression.getLine().equals(new LinearFunction(1.0, 0.0));
-    } catch (@SuppressWarnings("unused") final Exception e) {
+    } catch (final Exception __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -23,9 +25,11 @@ import il.org.spartan.utils.LinearRegression.*;
     final LinearRegression regression = new LinearRegression(list);
     try {
       regression.getLine();
-    } catch (@SuppressWarnings("unused") final NotEnoughDots e) {
+    } catch (final NotEnoughDots __) {
+      forget.it(__);
       assert true;
-    } catch (@SuppressWarnings("unused") final InfiniteSlopeFunction e) {
+    } catch ( final InfiniteSlopeFunction __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -38,7 +42,8 @@ import il.org.spartan.utils.LinearRegression.*;
     final LinearRegression regression = new LinearRegression(list);
     try {
       assert regression.getLine().equals(new LinearFunction(3.0, -2.0));
-    } catch (@SuppressWarnings("unused") final Exception e) {
+    } catch (final Exception __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -52,7 +57,8 @@ import il.org.spartan.utils.LinearRegression.*;
     try {
       assert regression.getLine().slope >= 2.0 && regression.getLine().slope <= 4.0;
       assert regression.getLine().intercept <= 1.0 && regression.getLine().intercept >= -3.0;
-    } catch (@SuppressWarnings("unused") final Exception e) {
+    } catch (final Exception __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -66,7 +72,8 @@ import il.org.spartan.utils.LinearRegression.*;
     try {
       assert regression.getLine().slope >= 1.0 && regression.getLine().slope <= 3.0;
       assert regression.getLine().intercept <= 4.0 && regression.getLine().intercept >= -2.0;
-    } catch (@SuppressWarnings("unused") final Exception e) {
+    } catch (final Exception __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -80,7 +87,8 @@ import il.org.spartan.utils.LinearRegression.*;
       regression.getLine();
     } catch (final InfiniteSlopeFunction ¢) {
       assert ¢.xVal == 1.0;
-    } catch (@SuppressWarnings("unused") final NotEnoughDots e) {
+    } catch (final NotEnoughDots __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -98,7 +106,8 @@ import il.org.spartan.utils.LinearRegression.*;
       regression.getLine();
     } catch (final InfiniteSlopeFunction ¢) {
       assert ¢.xVal == 7.0;
-    } catch (@SuppressWarnings("unused") final NotEnoughDots e) {
+    } catch (final NotEnoughDots __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -109,7 +118,8 @@ import il.org.spartan.utils.LinearRegression.*;
     try {
       assert regression.getLine().slope >= 3.5 && regression.getLine().slope <= 4.5;
       assert regression.getLine().intercept <= -2.5 && regression.getLine().intercept >= -3.5;
-    } catch (@SuppressWarnings("unused") final Exception e) {
+    } catch (final Exception __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -121,7 +131,8 @@ import il.org.spartan.utils.LinearRegression.*;
       regression.getLine();
       final double R2 = regression.getR2Measurement();
       assert R2 <= 0.6 && R2 >= 0.5;
-    } catch (@SuppressWarnings("unused") final Exception e) {
+    } catch (final Exception __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -133,7 +144,8 @@ import il.org.spartan.utils.LinearRegression.*;
       regression.getLine();
       final double R2 = regression.getR2Measurement();
       assert R2 <= 1.0 && R2 >= 0.9;
-    } catch (@SuppressWarnings("unused") final Exception e) {
+    } catch (final Exception __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -145,7 +157,8 @@ import il.org.spartan.utils.LinearRegression.*;
       regression.getLine();
       final double R2 = regression.getR2Measurement();
       assert R2 <= 0.1 && R2 >= 0.0;
-    } catch (@SuppressWarnings("unused") final Exception e) {
+    } catch (final Exception __) {
+      forget.it(__);
       assert false;
     }
   }

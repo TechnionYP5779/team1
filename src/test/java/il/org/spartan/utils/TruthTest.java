@@ -2,51 +2,55 @@ package il.org.spartan.utils;
 
 import java.util.function.*;
 
-
 import org.junit.*;
 
 import fluent.ly.*;
 
-@SuppressWarnings("static-access") // to use azzert without warnings
+@SuppressWarnings({ "static-access", "static-method" }) // to use azzert without
+                                                        // warnings
 public class TruthTest {
-  class Mock implements BooleanSupplier{
+  class Mock implements BooleanSupplier {
     boolean val;
+
     public Mock(boolean flag) {
       val = flag;
     }
+
     @Override public boolean getAsBoolean() {
       return val;
     }
   }
-  
-  class MockAssertionError implements BooleanSupplier{
+
+  class MockAssertionError implements BooleanSupplier {
     boolean val;
+
     @Override public boolean getAsBoolean() {
       throw new AssertionError();
     }
   }
-  
-  class MockRunTimeError implements BooleanSupplier{
+
+  class MockRunTimeError implements BooleanSupplier {
     boolean val;
+
     @Override public boolean getAsBoolean() {
       throw new RuntimeException();
     }
   }
-  
-  class MockUnknownError implements BooleanSupplier{
+
+  class MockUnknownError implements BooleanSupplier {
     boolean val;
+
     @Override public boolean getAsBoolean() {
       throw new OutOfMemoryError();
     }
   }
-  
+
   Mock mockTrue = new Mock(true);
   Mock mockFalse = new Mock(false);
   MockAssertionError mockAssertionError = new MockAssertionError();
   MockRunTimeError mockRunTimeError = new MockRunTimeError();
   MockUnknownError mockUnknownError = new MockUnknownError();
 
-  
   @Test public void truthOf() {
     azzert.assertEquals(Truth.truthOf(mockTrue), Truth.T);
     azzert.assertEquals(Truth.truthOf(mockFalse), Truth.F);
@@ -55,14 +59,14 @@ public class TruthTest {
     azzert.assertEquals(Truth.truthOf(mockRunTimeError), Truth.R);
     azzert.assertEquals(Truth.truthOf(mockUnknownError), Truth.Ħ);
   }
-  
-  @Test @SuppressWarnings("static-method") public void not() {
+
+  @Test public void not() {
     azzert.assertEquals(Truth.T.not(), Truth.F);
     azzert.assertEquals(Truth.F.not(), Truth.T);
     azzert.assertEquals(Truth.N.not(), Truth.N);
   }
-  
-  @Test @SuppressWarnings("static-method") public void or() {
+
+  @Test public void or() {
     azzert.assertEquals(Truth.T.or(Truth.F), Truth.T);
     azzert.assertEquals(Truth.F.or(Truth.T), Truth.T);
     azzert.assertEquals(Truth.F.or(Truth.F), Truth.F);
@@ -70,8 +74,8 @@ public class TruthTest {
     azzert.assertEquals(Truth.N.or(Truth.T), Truth.T);
     azzert.assertEquals(Truth.N.or(Truth.R), Truth.R);
   }
-  
-  @Test @SuppressWarnings("static-method") public void and() {
+
+  @Test public void and() {
     azzert.assertEquals(Truth.T.and(Truth.F), Truth.F);
     azzert.assertEquals(Truth.F.and(Truth.T), Truth.F);
     azzert.assertEquals(Truth.F.and(Truth.F), Truth.F);
@@ -79,7 +83,7 @@ public class TruthTest {
     azzert.assertEquals(Truth.N.and(Truth.T), Truth.T);
     azzert.assertEquals(Truth.N.and(Truth.R), Truth.R);
   }
-  
+
   @Test public void letterOf() {
     azzert.assertEquals(Truth.letterOf(mockTrue), "true");
     azzert.assertEquals(Truth.letterOf(mockFalse), "false");

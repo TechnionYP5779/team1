@@ -8,8 +8,8 @@ import java.util.function.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-@SuppressWarnings({ "static-method", "null" }) public class prunteTest2 {
-  @NotNull final String @NotNull [] alternatingArray = new String[] { null, "A", null, null, "B", null, null, null, "C", null };
+@SuppressWarnings("static-method") public class prunteTest2 {
+  @Nullable final String @NotNull [] alternatingArray = new @Nullable String @NotNull[] { null, "A", null, null, "B", null, null, null, "C", null };
   @NotNull final String @NotNull [] nonNullArray = { "1", "2", "4" };
   @NotNull final Supplier<List<String>> x = () -> {
     final List<String> $ = an.empty.list();
@@ -75,7 +75,7 @@ import org.junit.*;
   }
 
   @Test public void testPruneSparseCollectionContents() {
-    final @NotNull String[] a = prune.nulls(sparseCollection).toArray(new String[3]);
+    final @NotNull String[] a = prune.nulls(sparseCollection).toArray(new @NotNull String[3]);
     azzert.that(a[0], is("A"));
     azzert.that(a[1], is("B"));
     azzert.that(a[2], is("C"));

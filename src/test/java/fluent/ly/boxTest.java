@@ -4,7 +4,7 @@ import java.util.*;
 
 import org.junit.*;
 
-@SuppressWarnings({ "boxing", "static-method" }) public class boxTest {
+@SuppressWarnings("static-method") public class boxTest {
   @Test public void testBoxBoolean() {
     final boolean tested = new Random().nextBoolean();
     azzert.assertEquals(tested, box.box(tested));
@@ -17,7 +17,7 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextBoolean();
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.box(tested));
   }
@@ -26,7 +26,7 @@ import org.junit.*;
     final Random random = new Random();
     final byte[] arr = new byte[1];
     random.nextBytes(arr);
-    Assert.assertEquals((Byte) arr[0], box.box(arr[0]));
+    Assert.assertEquals(box.box(arr[0]), box.box(arr[0]));
   }
 
   @Test public void testBoxByteArray() {
@@ -36,13 +36,13 @@ import org.junit.*;
     final Byte[] expected = new Byte[len];
     random.nextBytes(tested);
     for (int ¢ = 0; ¢ < len; ++¢)
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     Assert.assertArrayEquals(expected, box.box(tested));
   }
 
   @Test public void testBoxChar() {
-    final Character expected = (char) new Random().nextInt(Character.MAX_VALUE + 1);
-    Assert.assertEquals(expected, box.box(expected));
+    final Character expected = box.box((char) new Random().nextInt(Character.MAX_VALUE + 1));
+    Assert.assertEquals(box.box(expected.charValue()), expected);
   }
 
   @Test public void testBoxCharArray() {
@@ -52,14 +52,14 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = (char) random.nextInt(Character.MAX_VALUE + 1);
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.box(tested));
   }
 
   @Test public void testBoxDouble() {
-    final Double expected = new Random().nextDouble();
-    Assert.assertEquals(expected, box.box(expected));
+    final Double expected = box.box(new Random().nextDouble());
+    Assert.assertEquals(expected, box.box(expected.doubleValue()));
   }
 
   @Test public void testBoxDoubleArray() {
@@ -69,14 +69,14 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextDouble();
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.box(tested));
   }
 
   @Test public void testBoxFloat() {
-    final Float expected = new Random().nextFloat();
-    Assert.assertEquals(expected, box.box(expected));
+    final Float expected = box.box(new Random().nextFloat());
+    Assert.assertEquals(expected, box.box(expected.floatValue()));
   }
 
   @Test public void testBoxFloatArray() {
@@ -86,14 +86,14 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextFloat();
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.box(tested));
   }
 
   @Test public void testBoxInt() {
-    final Integer expected = new Random().nextInt();
-    Assert.assertEquals(expected, box.box(expected));
+    final Integer expected = box.box(new Random().nextInt());
+    Assert.assertEquals(expected, box.box(expected.intValue()));
   }
 
   @Test public void testBoxIntArray() {
@@ -103,14 +103,14 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextInt();
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.box(tested));
   }
 
   @Test public void testBoxLong() {
-    final Long expected = new Random().nextLong();
-    Assert.assertEquals(expected, box.box(expected));
+    final Long expected = box.box(new Random().nextLong());
+    Assert.assertEquals(expected, box.box(expected.longValue()));
   }
 
   @Test public void testBoxLongArray() {
@@ -120,14 +120,14 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextLong();
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.box(tested));
   }
 
   @Test public void testBoxShort() {
-    final Short expected = (short) new Random().nextInt(Short.MAX_VALUE + 1);
-    Assert.assertEquals(expected, box.box(expected));
+    final Short expected = box.box((short) new Random().nextInt(Short.MAX_VALUE + 1));
+    Assert.assertEquals(expected, box.box(expected.shortValue()));
   }
 
   @Test public void testBoxShortArray() {
@@ -137,7 +137,7 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = (short) random.nextInt(Short.MAX_VALUE + 1);
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.box(tested));
   }
@@ -154,7 +154,7 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextBoolean();
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.box(tested));
   }
@@ -163,7 +163,7 @@ import org.junit.*;
     final Random random = new Random();
     final byte[] arr = new byte[1];
     random.nextBytes(arr);
-    Assert.assertEquals((Byte) arr[0], box.it(arr[0]));
+    Assert.assertEquals(box.box(arr[0]), box.it(arr[0]));
   }
 
   @Test public void testItByteArray() {
@@ -173,13 +173,13 @@ import org.junit.*;
     final Byte[] expected = new Byte[len];
     random.nextBytes(tested);
     for (int ¢ = 0; ¢ < len; ++¢)
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     Assert.assertArrayEquals(expected, box.box(tested));
   }
 
   @Test public void testItChar() {
-    final Character expected = (char) new Random().nextInt(Character.MAX_VALUE + 1);
-    Assert.assertEquals(expected, box.it(expected));
+    final Character expected = box.box((char) new Random().nextInt(Character.MAX_VALUE + 1));
+    Assert.assertEquals(expected, box.it(expected.charValue()));
   }
 
   @Test public void testItCharArray() {
@@ -189,14 +189,14 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = (char) random.nextInt(Character.MAX_VALUE + 1);
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.it(tested));
   }
 
   @Test public void testItDouble() {
-    final Double expected = new Random().nextDouble();
-    Assert.assertEquals(expected, box.it(expected));
+    final Double expected = box.box(new Random().nextDouble());
+    Assert.assertEquals(expected, box.it(expected.doubleValue()));
   }
 
   @Test public void testItDoubleArray() {
@@ -206,14 +206,14 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextDouble();
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.it(tested));
   }
 
   @Test public void testItFloat() {
-    final Float expected = new Random().nextFloat();
-    Assert.assertEquals(expected, box.it(expected));
+    final Float expected = box.box(new Random().nextFloat());
+    Assert.assertEquals(expected, box.it(expected.floatValue()));
   }
 
   @Test public void testItFloatArray() {
@@ -223,14 +223,14 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextFloat();
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.it(tested));
   }
 
   @Test public void testItInt() {
-    final Integer expected = new Random().nextInt();
-    Assert.assertEquals(expected, box.it(expected));
+    final Integer expected = box.box(new Random().nextInt());
+    Assert.assertEquals(expected, box.it(expected.intValue()));
   }
 
   @Test public void testItIntArray() {
@@ -240,14 +240,14 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextInt();
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.it(tested));
   }
 
   @Test public void testItLong() {
-    final Long expected = new Random().nextLong();
-    Assert.assertEquals(expected, box.it(expected));
+    final Long expected = box.box(new Random().nextLong());
+    Assert.assertEquals(expected, box.it(expected.longValue()));
   }
 
   @Test public void testItLongArray() {
@@ -257,14 +257,14 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextLong();
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.it(tested));
   }
 
   @Test public void testItShort() {
-    final Short expected = (short) new Random().nextInt(Short.MAX_VALUE + 1);
-    Assert.assertEquals(expected, box.it(expected));
+    final Short expected = box.box((short) new Random().nextInt(Short.MAX_VALUE + 1));
+    Assert.assertEquals(expected, box.it(expected.shortValue()));
   }
 
   @Test public void testItShortArray() {
@@ -274,7 +274,7 @@ import org.junit.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = (short) random.nextInt(Short.MAX_VALUE + 1);
-      expected[¢] = tested[¢];
+      expected[¢] = box.box(tested[¢]);
     }
     Assert.assertArrayEquals(expected, box.it(tested));
   }

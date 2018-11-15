@@ -10,7 +10,7 @@ import il.org.spartan.etc.English.*;
 import il.org.spartan.iterables.*;
 import il.org.spartan.utils.*;
 
-@SuppressWarnings("static-method")
+@SuppressWarnings({"static-method", "static-access"})
 public class EnglishTest {
   class Mock{
     class EnclosedMock{
@@ -19,7 +19,7 @@ public class EnglishTest {
     EnclosedMock enclosedMock;
   }
   
-  @Test @SuppressWarnings("static-access") public void inflection() {
+  @Test public void inflection() {
     Inflection jump = English.Inflection.stem("Jump");
     azzert.assertEquals(jump.get(), "Jump");
     azzert.assertEquals(jump.getEd(), "Jumped");
@@ -31,7 +31,7 @@ public class EnglishTest {
     assert !English.isAcronym("AtM");
   }
   
-  @Test @SuppressWarnings("static-access") public void list() {
+  @Test public void list() {
     ArrayList<@NotNull String> strings = new ArrayList<>();
     azzert.assertEquals(English.list(strings), "nothing");
     strings.add("Hello");
@@ -40,15 +40,15 @@ public class EnglishTest {
     azzert.assertEquals(English.list(strings), "Hello and Bye");
   }
   
-  @Test @SuppressWarnings("static-access") public void lowerFirstLetter() {
+  @Test public void lowerFirstLetter() {
     azzert.assertEquals(English.lowerFirstLetter("Hello"), "hello");
   }
   
-  @Test @SuppressWarnings("static-access") public void upperFirstLetter() {
+  @Test public void upperFirstLetter() {
     azzert.assertEquals(English.upperFirstLetter("hello"), "Hello");
   }
   
-  @Test @SuppressWarnings("static-access") public void plurales() {
+  @Test public void plurales() {
     azzert.assertEquals(English.plurales("dog", 1), "one dog");
     azzert.assertEquals(English.plurales("dog", 2), "2 doges");
     azzert.assertEquals(English.plurales("dog", new Int(1)), "one dog");
@@ -62,7 +62,7 @@ public class EnglishTest {
     azzert.assertEquals(English.plurales("dog", nullInteger), "??? doges");
   }
   
-  @Test @SuppressWarnings("static-access") public void plurals() {
+  @Test public void plurals() {
     azzert.assertEquals(English.plurals("dog", 1), "one dog");
     azzert.assertEquals(English.plurals("dog", 2), "2 dogs");
     azzert.assertEquals(English.plurals("dog", new Int(1)), "one dog");
@@ -76,7 +76,7 @@ public class EnglishTest {
     azzert.assertEquals(English.plurals("dog", nullInteger), "??? dogs");
   }
   
-  @Test @SuppressWarnings("static-access") public void pronounce() {
+  @Test public void pronounce() {
     azzert.assertEquals(English.pronounce('A'), "aey");
     azzert.assertEquals(English.pronounce('b'), "bee");
     azzert.assertEquals(English.pronounce('c'), "see");
@@ -107,33 +107,33 @@ public class EnglishTest {
     azzert.assertEquals(English.pronounce('3'), "some character");
   }
   
-  @Test @SuppressWarnings("static-access") public void repeat() {
+  @Test public void repeat() {
     azzert.assertEquals(English.repeat(3, 'd'), "ddd");
   }
   
-  @Test @SuppressWarnings("static-access") public void selfName() {
+  @Test public void selfName() {
     azzert.assertEquals(English.selfName(Object.class), "Object");
     azzert.assertEquals(English.selfName(PureIterable.Sized.class), "Sized");
   }
   
-  @Test @SuppressWarnings("static-access") public void time() {
+  @Test public void time() {
     azzert.assertEquals(English.time(123456789), "0.12");
   }
   
-  @Test @SuppressWarnings("static-access") public void trim() {
+  @Test public void trim() {
     azzert.assertNull(English.trim(null));
     azzert.assertEquals(English.trim("Hello how are you doing?\nI'm doing fine"), "Hello how are you doing?\nI'm doing fine");
     azzert.assertEquals(English.trim("Hello how are you you you you you you you you doing?\nI'm doing fine"), "Hello how are you you you you you you you you d...\nI'm doing fine");
   }
   
-  @Test @SuppressWarnings("static-access") public void unknownIfNull() {
+  @Test public void unknownIfNull() {
     azzert.assertEquals(English.unknownIfNull(null), "???");
     azzert.assertEquals(English.unknownIfNull("Hello how are you doing?\nI'm doing fine"), "Hello how are you doing?\nI'm doing fine");
     azzert.assertEquals(English.unknownIfNull(null, λ -> λ + "a"), "???");
     azzert.assertEquals(English.unknownIfNull("Hello", λ -> λ + "a"), "Helloa");
   }
   
-  @Test @SuppressWarnings("static-access") public void name() {
+  @Test public void name() {
     Mock m = new Mock();
     azzert.assertEquals(English.name(Integer.class), "Integer");
     azzert.assertEquals(English.name(Mock.EnclosedMock.class), "EnclosedMock.Mock.EnglishTest");

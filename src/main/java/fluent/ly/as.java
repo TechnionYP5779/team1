@@ -131,7 +131,7 @@ import il.org.spartan.*;
    * @param <T> type of objects to be converted
    * @param $ what to covert
    * @return result parameter, converted into a {@link List} */
-  @SafeVarargs public static <T> @NotNull List<T> list(@NotNull final T... $) {
+  @SafeVarargs public static <T> @NotNull List<T> list(@Nullable final T... $) {
     return accumulate.to(new ArrayList<T>()).add($).elements();
   }
 

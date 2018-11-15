@@ -396,7 +396,7 @@ import il.org.spartan.Utils.FoundHandleForT.*;
 
     /** @param <FS> JD
      * @param s JD */
-    public <FS extends Iterable<? extends F>> Iterable<T> to(final @NotNull FS s) {
+    public <FS extends Iterable<? extends F>> @NotNull Iterable<T> to(final @NotNull FS s) {
       final List<T> $ = new ArrayList<>();
       for (final @Nullable F ¢ : s)
         if (¢ != null)

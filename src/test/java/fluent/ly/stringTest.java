@@ -1,5 +1,6 @@
 package fluent.ly;
 
+import org.jetbrains.annotations.*;
 import org.junit.*;
 import static fluent.ly.string.*;
 
@@ -39,9 +40,9 @@ import static fluent.ly.string.*;
         cat("a ", "rose ", "by ", "any ", "other ", "name."));
   }
 
-  @Test @SuppressWarnings("null") public void testCatStringArrayArray() {
-    azzert.assertEquals("12345", cat(new String[] {"1", "2", "3"},
-        new String[] {}, new String[] { "4", "5" }));
+  @Test public void testCatStringArrayArray() {
+    azzert.assertEquals("12345", cat(new @NotNull String[] {"1", "2", "3"},
+        new @NotNull String[] {}, new @NotNull String[] { "4", "5" }));
   }
 
   @Test public void testDelta() {

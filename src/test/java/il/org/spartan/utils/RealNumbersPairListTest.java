@@ -3,6 +3,7 @@ package il.org.spartan.utils;
 import org.junit.*;
 
 import fluent.ly.*;
+import il.org.spartan.etc.*;
 import il.org.spartan.utils.RealNumbersPairList.*;
 
 @SuppressWarnings("static-method") public class RealNumbersPairListTest {
@@ -53,7 +54,8 @@ import il.org.spartan.utils.RealNumbersPairList.*;
       assert list.getNext().first.equals(Double.valueOf(12.88));
       assert list.getNext().first.equals(Double.valueOf(41.30));
       assert list.getNext().first.equals(Double.valueOf(93.5));
-    } catch (@SuppressWarnings("unused") final Exception e) {
+    } catch (final Exception __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -64,7 +66,8 @@ import il.org.spartan.utils.RealNumbersPairList.*;
     assert list.getFirst().first.equals(Double.valueOf(3.5));
     try {
       azzert.assertNull(list.getNext());
-    } catch (@SuppressWarnings("unused") final Exception e) {
+    } catch (final Exception __) {
+      forget.it(__);
       assert false;
     }
   }
@@ -76,7 +79,8 @@ import il.org.spartan.utils.RealNumbersPairList.*;
     try {
       list.getNext();
       list.getNext();
-    } catch (@SuppressWarnings("unused") final EOL e) {
+    } catch (final EOL __) {
+      forget.it(__);
       assert true;
     }
   }
@@ -85,7 +89,8 @@ import il.org.spartan.utils.RealNumbersPairList.*;
     final RealNumbersPairList list = new RealNumbersPairList();
     try {
       azzert.assertNull(list.getFirst());
-    } catch (@SuppressWarnings("unused") final Exception e) {
+    } catch (final Exception __) {
+      forget.it(__);
       assert false;
     }
   }
