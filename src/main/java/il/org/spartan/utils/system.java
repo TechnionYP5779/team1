@@ -89,25 +89,25 @@ public interface system {
     ;
   }
 
-  @SuppressWarnings("boxing") static boolean isBalanced(final @NotNull String s) {
+  static boolean isBalanced(final @NotNull String s) {
     final Stack<Character> $ = new Stack<>();
     for (final char ¢ : s.toCharArray())
       switch (¢) {
         case '(':
         case '[':
         case '{':
-          $.push(¢);
+          $.push(box.box(¢));
           continue;
         case ')':
-          if ($.isEmpty() || $.pop() != '(')
+          if ($.isEmpty() || unbox.unbox($.pop()) != '(')
             return false;
           continue;
         case ']':
-          if ($.isEmpty() || $.pop() != '[')
+          if ($.isEmpty() || unbox.unbox($.pop()) != '[')
             return false;
           continue;
         case '}':
-          if ($.isEmpty() || $.pop() != '{')
+          if ($.isEmpty() || unbox.unbox($.pop()) != '{')
             return false;
           continue;
         default:

@@ -1,6 +1,8 @@
 package il.org.spartan.utils;
 
-@SuppressWarnings("boxing") public class LinearRegression {
+import fluent.ly.*;
+
+public class LinearRegression {
   double[] xVals;
   double[] yVals;
   double R2;
@@ -23,8 +25,8 @@ package il.org.spartan.utils;
     yVals = new double[list.size()];
     int index = 0;
     for (final Pair<Double, Double> point : list) {
-      xVals[index] = point.first;
-      yVals[index++] = point.second;
+      xVals[index] = unbox.unbox(point.first);
+      yVals[index++] = unbox.unbox(point.second);
     }
     R2 = 0.0;
   }
