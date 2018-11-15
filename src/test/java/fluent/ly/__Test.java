@@ -1,7 +1,5 @@
 package fluent.ly;
 
-import static fluent.ly.box.*;
-
 import static org.junit.Assert.*;
 
 import org.junit.*;
@@ -12,7 +10,7 @@ import fluent.ly.___.Bug.Assertion.Variant.*;
 import fluent.ly.___.Bug.Contract.*;
 import fluent.ly.___.Variant;
 
-@SuppressWarnings({ "static-method", "static-access" }) public class __Test {
+@SuppressWarnings("static-method") public class __Test {
   @Test public void ensure() {
     ___.ensure(true);
     try {

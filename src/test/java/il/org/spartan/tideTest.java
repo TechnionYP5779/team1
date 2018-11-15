@@ -10,8 +10,7 @@ import fluent.ly.*;
   }
   
    @Test public void eq(){
-    String s1 = "Hello";
-    String s2 = "Hello";
+    String s1 = "Hello", s2 = "Hello";
     assert tide.eq(s1, s2);
     s1 = null;
     assert !tide.eq(s1,s2);
