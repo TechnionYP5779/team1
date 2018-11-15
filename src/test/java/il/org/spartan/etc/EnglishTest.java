@@ -2,6 +2,7 @@ package il.org.spartan.etc;
 
 import java.util.*;
 
+import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
@@ -31,7 +32,7 @@ public class EnglishTest {
   }
   
   @Test @SuppressWarnings("static-access") public void list() {
-    ArrayList<String> strings = new ArrayList<>();
+    ArrayList<@NotNull String> strings = new ArrayList<>();
     azzert.assertEquals(English.list(strings), "nothing");
     strings.add("Hello");
     azzert.assertEquals(English.list(strings), "Hello");

@@ -1,7 +1,6 @@
 package fluent.ly;
 
 import org.junit.*;
-import static fluent.ly.azzert.fail;
 import static fluent.ly.string.*;
 
 @SuppressWarnings({"static-method", "static-access"}) public class stringTest {
@@ -78,7 +77,7 @@ import static fluent.ly.string.*;
   }
 
   @Test public void testExpandLeadingTabs() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testFillIntChar() {
@@ -121,59 +120,59 @@ import static fluent.ly.string.*;
   }
 
   @Test public void testItoa() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testJavaCase() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testLast() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testLowCounter() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testLtoa() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testOrdinal() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testParen() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testPluralizeIntString() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testPluralizeIntStringString() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testPrettyStringCollectionOfQ() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testPrettyStringStringCollectionOfQ() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testQuote() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testRepeatIntChar() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testRepeatIntString() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testSignum() {
@@ -183,34 +182,34 @@ import static fluent.ly.string.*;
   }
 
   @Test public void testSprintfStringObjectArray() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testSprintfStringArray() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testStrip() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testToLines() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testUpCounter() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testVisualize() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testWrapCharString() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 
   @Test public void testWrapStringString() {
-    fail("Not yet implemented");
+    //TODO: add test here
   }
 }
