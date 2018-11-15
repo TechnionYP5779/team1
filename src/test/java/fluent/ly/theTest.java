@@ -2,6 +2,7 @@ package fluent.ly;
 
 import java.util.*;
 
+import org.jetbrains.annotations.*;
 import org.junit.*;
 
 @SuppressWarnings({"static-method" ,"static-access"}) public class theTest {
@@ -26,20 +27,18 @@ import org.junit.*;
      azzert.assertEquals(the.rest("a"),"");
    }
    
-   @Test @SuppressWarnings({ "null", "deprecation" }) public void lastTailTest() {
-    List<Integer> x = new ArrayList<>();
+   @Test public void lastTailTest() {
+     @Nullable List< @Nullable Integer> x = new ArrayList<>();
     x.add(Integer.valueOf(4));
     x.add(Integer.valueOf(5));
-    List<Integer> y = new ArrayList<>();
-//    x.add(Integer.valueOf(4));
+    @Nullable List< @Nullable Integer> y = new ArrayList<>();
     y.add(Integer.valueOf(5));
     
     azzert.assertEquals(the.last(x), Integer.valueOf(5));
     azzert.assertEquals(the.lastOf(x), Integer.valueOf(5));
     azzert.assertEquals(the.tailOf(x), y);
     azzert.assertEquals(the.lastOf(new Integer[] { Integer.valueOf(5), Integer.valueOf(2) }), 2);
-    azzert.assertEquals(the.tailOf(new Integer[] { Integer.valueOf(5), Integer.valueOf(2) }), 
-        new Integer[] { Integer.valueOf(2) });
+    azzert.assertEquals(the.tailOf(new Integer[] { Integer.valueOf(5), Integer.valueOf(2) })[0],  Integer.valueOf(2) );
     azzert.assertEquals(the.lastOf("Hello"), 'o');
     azzert.assertEquals(the.tailOf("Hello"), "ello");
     }
@@ -51,7 +50,7 @@ import org.junit.*;
    }
    
    @Test public void nilTest() {
-     assert (the.nil() == null);
+     azzert.assertTrue(the.nil()==null); 
    }
    
    @Test public void nthTest() {
@@ -65,9 +64,9 @@ import org.junit.*;
      List<Integer> x = new ArrayList<>();
 //     x.add(Integer.valueOf(4));
      x.add(Integer.valueOf(5));
+     x.add(Integer.valueOf(5));
      for (Integer ¢ : the.lastOf((Iterable<Integer>) x)) 
        azzert.assertEquals( ¢,Integer.valueOf(5) );
-     
    }
    
    @Test public void onlyOneOfTest() {
@@ -78,4 +77,25 @@ import org.junit.*;
      x.add(Integer.valueOf(5));
      azzert.assertEquals(the.onlyOneOf(x), null);
    }
+   
+   @Test public void listTest() {
+     @Nullable List< @Nullable Integer> x = new ArrayList<>();
+     x.add(Integer.valueOf(4));
+     x.add(Integer.valueOf(5));
+     @Nullable List< @Nullable Integer> y = new ArrayList<>();
+     y.add(Integer.valueOf(5));
+     azzert.assertTrue(the.penultimateOf(null)==null);
+     azzert.assertTrue(the.previous(Integer.valueOf(5),null)==null);
+     azzert.assertEquals(the.previous(Integer.valueOf(5),x),Integer.valueOf(4));
+     azzert.assertEquals(the.secondOf(x),Integer.valueOf(5));
+     azzert.assertEquals(the.rest(Integer.valueOf(3), x),  an.empty.list());
+     azzert.assertEquals(the.rest(Integer.valueOf(4), x), y );
+     
+   }
+   
+   @Test public void charTest() {
+     azzert.assertEquals(the.characterOf("hello"),'o');
+     azzert.assertEquals(the.ith("hello",2),'l');
+   }
+   
 }

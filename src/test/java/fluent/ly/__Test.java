@@ -10,7 +10,7 @@ import fluent.ly.___.Bug.Assertion.Variant.*;
 import fluent.ly.___.Bug.Contract.*;
 import fluent.ly.___.Variant;
 
-@SuppressWarnings({ "static-method", "unused" }) public class __Test {
+@SuppressWarnings("static-method") public class __Test {
   @Test public void ensure() {
     ___.ensure(true);
     try {
@@ -214,7 +214,7 @@ import fluent.ly.___.Variant;
       assertEquals(0, v.value());
     }
     try {
-      new Variant(-1);
+      new Variant(-1).check(0);
     } catch (final Initial e) {
       assertEquals("Initial variant value (-1) is negative", e.getMessage());
     }
@@ -232,5 +232,67 @@ import fluent.ly.___.Variant;
     } catch (final Underflow ¢) {
       assertEquals("New variant value (-2) is negative", ¢.getMessage());
     }
+  }
+
+  @Test public void primitiveDoubleIsANumberNotThrow() {
+    ___.nonNaN(0.5);
+  }
+
+  @Test public void primitiveDoubleArrayIsANumberNotThrow() {
+    ___.nonNaN(new double[] { 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0 });
+  }
+
+  @Test public void positiveNotThrow() {
+    ___.nonnegativ(2);
+  }
+
+  @Test(expected = NonNegative.class) public void negativeThrows() {
+    ___.nonnegativ(-2);
+  }
+
+  @Test public void positiveArrayNotThrow() {
+    ___.nonnegative(new double[] { 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0 });
+  }
+
+  @Test public void positiveNotThrowNonNegative() {
+    ___.nonnegative(Integer.MAX_VALUE, "Should not be thrown!");
+  }
+
+  @Test(expected = NonNegative.class) public void negativeThrowsNonNegative() {
+    ___.nonnegative(Integer.MIN_VALUE, "Should be thrown!");
+  }
+
+  @Test public void positiveIntArrayNotThrows() {
+    ___.nonnegative(new int[] { 1, 2, 3, 4, 5 });
+  }
+
+  @Test(expected = NonPositive.class) public void positiveIntegerThrows() {
+    ___.nonpositive(2, "Should be thrown");
+  }
+
+  @Test(expected = NonPositive.class) public void positiveDoubleThrows() {
+    ___.nonpositive(0.5, "Should be thrown");
+  }
+
+  @Test public void negativeNotThrows() {
+    ___.nonpositive(-2, "Should not be thrown");
+  }
+
+  @Test(expected = Reachability.class) public void reachableCodeMarkedAsUnreachable() {
+    ___.unreachable();
+  }
+
+  @Test(expected = Reachability.class) public void shouldBeReachable() {
+    ___.unreachable("Should Be Thrown");
+  }
+
+  @Test public void invariantKept() {
+    ___.check(new ___.Invariantable() {
+      @Override public void check() {
+        // TODO Auto-generated method stub
+        ___.nothing();
+        assert true;
+      }
+    });
   }
 }
