@@ -9,8 +9,7 @@ import org.junit.*;
 @SuppressWarnings("static-method") public class RangeTest {
   @Test public void testHashCode() {
     int i1;
-    range r1;
-    r1 = new range(1, 2);
+    range r1 = new range(1, 2);
     i1 = r1.hashCode();
     azzert.assertEquals(7, i1);
     azzert.assertEquals(1, r1.from());
@@ -18,18 +17,8 @@ import org.junit.*;
   }
 
   @Test public void equalsObject() {
-    final range range;
-    range = new range(3, 10);
-    final range range2;
-    range2 = new range(5, 10);
-    final range range3;
-    range3 = new range(3, 8);
-    final range range4;
-    range4 = new range(2, 4);
-    final range equal;
-    equal = new range(3, 10);
-    final range copy;
-    copy = new range(range);
+    range range = new range(3, 10), range2 = new range(5, 10), range3 = new range(3, 8), range4 = new range(2, 4), equal = new range(3, 10),
+        copy = new range(range);
     assert !range.equals(new Object());
     assert !range.equals(range2);
     assert !range.equals(range3);
