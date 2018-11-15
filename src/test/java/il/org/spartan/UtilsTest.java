@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import static fluent.ly.azzert.*;
 
+import java.io.*;
 import java.util.*;
 
 import org.jetbrains.annotations.*;
@@ -12,6 +13,9 @@ import org.junit.*;
 import fluent.ly.*;
 import il.org.spartan.etc.*;
 
+/**
+ * [[SuppressWarningsSpartan]]
+ */
 @SuppressWarnings({ "static-access", "static-method"})public class UtilsTest {
     @NotNull public static Integer[] intToIntegers(final  int... is) {
       final  @NotNull Integer @NotNull [] $ = new  @NotNull Integer @NotNull [is.length];
@@ -113,7 +117,12 @@ import il.org.spartan.etc.*;
       y.add(Integer.valueOf(5));
        List< Integer> yy = new ArrayList<>();
       yy.add(null);
-      
+      azzert.assertNotNull(Utils.apply(λ->λ).to(y));
+      azzert.assertNotNull(Utils.apply(λ->λ).to(yy));
+      azzert.assertNotNull(Utils.apply(λ->λ).to(new Object()));
+      azzert.xassertEquals(0, Utils.hash(null));
+      Object o = new Object();
+      azzert.xassertEquals(Utils.hash(o), o.hashCode());
        List<List< Integer>> X = new ArrayList<>();
       azzert.assertEquals(Utils.add(X,x),X);
       x.add(null);
@@ -127,22 +136,59 @@ import il.org.spartan.etc.*;
       azzert.assertNotNull(Utils.append(new @NotNull Integer[0], Integer.valueOf(4))[0]);
 //      azzert.assertEquals(,);
       azzert.assertNotNull(Utils.delete(new @NotNull Integer[4],3));
-      
+      azzert.assertTrue(Utils.inRange(0, y));
+      azzert.assertFalse(Utils.inRange(-70, y));
+      azzert.assertFalse(Utils.inRange(5, y));
+      azzert.assertTrue(Utils.intIsIn(1,1, 2,3));
+      azzert.assertFalse(Utils.intIsIn(606,1, 2,3));
+      azzert.assertTrue(Utils.lastIn(Integer.valueOf(5),x));
+      azzert.assertFalse(Utils.lastIn(Integer.valueOf(2),x));
+      azzert.assertTrue(Utils.lastIn(Integer.valueOf(5),x));
+      @Nullable List<@Nullable Integer> z = new ArrayList<>();
+      z.add(Integer.valueOf(4));
+      z.add(Integer.valueOf(5));
+      Utils.removeDuplicates(z);
+      azzert.assertFalse(Utils.penultimateIn(Integer.valueOf(5),z));
+      azzert.assertTrue(Utils.penultimateIn(Integer.valueOf(4),z));
     }
     
     @Test public void utilTesting() {
       
       azzert.assertNotNull(Utils.canBeNull(Integer.valueOf(3)));
-      azzert.assertNotNull(Utils.apply(null));
+//      azzert.assertNotNull(Utils.apply(λ->λ).to(Integer.valueOf(1),));
       azzert.assertEquals(0,Utils.compare(true, true));
       azzert.assertEquals(-1,Utils.compare(false, true));
       azzert.assertEquals(1,Utils.compare(true, false));
-      azzert.assertEquals(Utils.compressSpaces("HHH            HHH"), "HHH HHH");
+      azzert.assertEquals(Utils.sqr(1.0),1.0,0);
+      azzert.assertTrue(Utils.found(5).in(1,2,3,4,5));
+      azzert.assertFalse(Utils.found(6).in(1,2,3,4,5));
+      azzert.assertNotNull(Utils.found(Integer.valueOf(5)));
+    
+     azzert.assertNotNull(Utils.sort(new int @NotNull [] { 1, 2, 3, 4 }));
       
+    }
+    
+    @Test public void stringTesting() {
+      azzert.assertEquals(Utils.compressSpaces("HHH            HHH"), "HHH HHH");
       azzert.assertTrue(Utils.contains("HHH            HHH", "HHH"));
       azzert.assertFalse(Utils.contains("HHH            HHH", "HgHH"));
-      azzert.assertNotNull(Utils.found(5));
-      azzert.assertNotNull(Utils.found(Integer.valueOf(5)));
+      azzert.assertEquals(Utils.name(new File("Hi")), new File("Hi").getName());
+      List< String> X = new ArrayList<>();
+      azzert.assertFalse(Utils.suffixedBy(new File("Hi"), X));
+      azzert.assertFalse(Utils.suffixedBy(new File("Hi"), "HHH"));
+      X.add("Hi");
+      azzert.assertTrue(Utils.suffixedBy(new File("Hi"), X));
+      azzert.assertTrue(Utils.suffixedBy(new File("Hi"), "Hi"));
+      azzert.assertEquals(Utils.prepend(new StringBuilder(), 'c') + "","c");
+      azzert.assertEquals(Utils.prepend(new StringBuilder(), "ac") + "","ac");
+      azzert.assertEquals(Utils.prepend(new StringBuilder(), "ac") + "","ac");
+      azzert.assertEquals(Utils.quote("ac"),"'ac'");
+      azzert.assertEquals(Utils.quote(null),"<null reference>");
+      azzert.assertEquals(Utils.removePrefix("Maaaaaaaa", "M"),"aaaaaaaa");
+      azzert.assertEquals(Utils.removeSuffix("Maaaaaaaa", "aaaaaaaa"),"M");
+      azzert.assertEquals(Utils.removeWhites("  "),"");
+      
+     
     }
 
 }
