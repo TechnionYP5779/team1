@@ -5,6 +5,8 @@ import java.util.function.*;
 
 import org.jetbrains.annotations.*;
 
+import il.org.spartan.etc.*;
+
 /** An empty <code><b>enum</b></code> with a variety of <code>public
  * static</code> utility functions of reasonably wide use.
  * @author Yossi Gil <code><yossi.gil [at] gmail.com></code>
@@ -46,7 +48,8 @@ public interface idiomatic {
   static <@Nullable T> @Nullable T katching(final @NotNull Producer<T> $) {
     try {
       return $.λ();
-    } catch (@SuppressWarnings("unused") final Exception ¢) {
+    } catch (final Exception ¢) {
+      forget.it(¢);
       return null;
     }
   }

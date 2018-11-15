@@ -23,7 +23,7 @@ import org.jetbrains.annotations.*;
 @SuppressWarnings("null") public enum prune {
   ;
   @NotNull private static String @NotNull [] asArrray(final @NotNull List<String> $) {
-    return cantBeNull($.toArray(new String[0]));
+    return cantBeNull($.toArray(new @NotNull String[0]));
   }
 
   @NotNull public static <T, C extends Collection<T>> C nulls(final @NotNull C $) {

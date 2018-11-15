@@ -41,18 +41,18 @@ import il.org.spartan.utils.*;
     return $;
   });
 
-  static <T> T bug() {
+  static <T> @Nullable T bug() {
     return bug("");
   }
 
-  static <T> T bug(final Object instance) {
+  static <T> @Nullable T bug(final Object instance) {
     return bug(//
         "Instance involved is %s\n" + //
             "toString() = \n",
         English.indefinite(instance), instance);
   }
 
-  static <T> T bug(final Object o, final Throwable t) {
+  static <T> @Nullable T bug(final Object o, final Throwable t) {
     return nulling.ly(() -> logger.info(format(//
         "An instance of %s was hit by %s exception.\n" + //
             "This is an indication of a bug.\n", //
@@ -63,10 +63,10 @@ import il.org.spartan.utils.*;
         format(" trace(%s) = '%s'\n", English.name(t), __.trace(t)) //
     ));
   }
-  static <T> T bug(final @NotNull String format, final String... os) {
+  static <T> @Nullable T bug(final @NotNull String format, final String... os) {
     return bug(format, (Object[]) os);
   }
-  static <T> T bug(final @NotNull String format, final Object... os) {
+  static <T> @Nullable T bug(final @NotNull String format, final Object... os) {
     return nulling.ly(() -> logger.info(format(//
         "A bug was detected in the vicinty of %s; trace =%s\n",
         __.trace(),//
@@ -74,7 +74,7 @@ import il.org.spartan.utils.*;
         format(format, os)));
   }
 
-  static <T> T bug(final Throwable ¢) {
+  static <T> @Nullable T bug(final Throwable ¢) {
     return nulling.ly(() -> logger.info(//
         "A static method was hit by " + English.indefinite(¢) + " exception.\n" + //
             "This is an indication of a bug.\n" + //
@@ -85,7 +85,7 @@ import il.org.spartan.utils.*;
   /** To be invoked whenever you do not know what to do with an exception
    * @param o JD
    * @param ¢ JD */
-  static <T> T cancel(final Exception ¢) {
+  static <T> @Nullable T cancel(final Exception ¢) {
     return nulling.ly(() -> logger.info(//
         " " + English.name(¢) + //
             " (probably cancellation) exception." + //
@@ -96,7 +96,7 @@ import il.org.spartan.utils.*;
   /** To be invoked whenever you do not know what to do with an exception
    * @param o JD
    * @param x JD */
-  static <T> T cancel(final Object o, final Exception x) {
+  static <T> @Nullable T cancel(final Object o, final Exception x) {
     return nulling.ly(() -> logger.info(//
         "An instance of " + English.name(o) + //
             "\n was hit by " + English.indefinite(x) + //
@@ -105,7 +105,7 @@ import il.org.spartan.utils.*;
             "\n o = " + o + "'"));
   }
 
-  static <T> T ignore(final Class<?> o, final Throwable t) {
+  static <T> @Nullable T ignore(final Class<?> o, final Throwable t) {
     return info(//
         "A static method of " + English.name(o) + //
             "was hit by " + English.indefinite(t) + "\n" + //
@@ -114,7 +114,7 @@ import il.org.spartan.utils.*;
             "o = " + o + "'");
   }
 
-  static <T> T ignore(final Object o, final Throwable t) {
+  static <T> @Nullable T ignore(final Object o, final Throwable t) {
     return info(//
         "An instance of " + English.name(o) + //
             "\n was hit by " + English.indefinite(t) + //
@@ -123,11 +123,11 @@ import il.org.spartan.utils.*;
             "\n o = " + o + "'");
   }
 
- static <T> T info(final @NotNull String message) {
+ static <T> @Nullable T info(final @NotNull String message) {
     return nulling.ly(() -> logger.info(message));
   }
 
-  static <T> T io(final Exception ¢) {
+  static <T> @Nullable T io(final Exception ¢) {
     return nulling.ly(() -> logger.config(//
         "   Got an exception of __ : " + English.name(¢) + //
             "\n      (probably I/O exception)" //
@@ -135,7 +135,7 @@ import il.org.spartan.utils.*;
     ));
   }
 
-  static <T> T io(final Exception x, final @NotNull String message) {
+  static <T> @Nullable T io(final Exception x, final @NotNull String message) {
     return nulling.ly(() -> logger.info(//
         "   Got an exception of __ : " + English.name(x) + //
             "\n      (probably I/O exception)" + //
@@ -145,7 +145,7 @@ import il.org.spartan.utils.*;
     ));
   }
 
-  static <T> T io(final IOException ¢) {
+  static <T> @Nullable T io(final IOException ¢) {
     return nulling.ly(() -> logger.info(//
         "   Got an exception of __ : " + English.name(¢) + //
             "\n      (probably I/O exception)\n   The exception says: '" + ¢ + "'" //
@@ -154,7 +154,7 @@ import il.org.spartan.utils.*;
 
   /** logs an error in the plugin into an external file
    * @param tipper an error */
-  static <T> T logToFile(final Throwable t, final Object... os) {
+  static <T> @Nullable T logToFile(final Throwable t, final Object... os) {
     final @NotNull StringWriter w = new StringWriter();
     t.printStackTrace(new PrintWriter(w));
     final Object[] nos = new Object[os.length + 2];

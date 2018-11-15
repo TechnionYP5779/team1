@@ -55,7 +55,7 @@ import il.org.spartan.etc.*;
  * @param <R> __ of result of applying this rule
  * @author Yossi Gil
  * @since 2017-03-10 */
-@SuppressWarnings("unused") public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
+@SuppressWarnings({ "unused", "null" }) public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
   @Override default Rule<T, R> self() {
     return this;
   }
@@ -295,16 +295,10 @@ import il.org.spartan.etc.*;
       return $;
     }
 
-    private R badTypeState(final @NotNull String reason, final Object... os) {
-      return note.bug(this, new IllegalStateException(//
-          format(//
-              "Invalid order of method calls on a %s (dynamic __ %):\n", //
-              English.name(Rule.class), //
-              English.name(this)) //
-              + //
-              format("  REASON: %s\n", format(reason, os))//
-      )//
-      );
+    @Nullable private R badTypeState(final @NotNull String reason, final Object... os) {
+      return note.bug(this,
+          new IllegalStateException(format("Invalid order of method calls on a %s (dynamic __ %):\n", English.name(Rule.class), English.name(this))
+              + format("  REASON: %s\n", format(reason, os))));
     }
 
     @Override public final boolean check(final T ¢) {

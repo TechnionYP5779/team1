@@ -112,17 +112,17 @@ import il.org.spartan.etc.*;
       try {
         final Object $ = m.invoke(o);
         if ($ == null) {
-          out.out(name, "null");
+          out.out(Utils.cantBeNull(name), "null");
           continue;
         }
         if ($ instanceof Object[])
-          out.out(name, (Object[]) $);
-        out.out(name, !($ instanceof Collection) ? $ : (Collection<?>) $);
+          out.out(Utils.cantBeNull(name), (Object[]) $);
+        out.out(Utils.cantBeNull(name), !($ instanceof Collection) ? $ : (Collection<?>) $);
       } catch (final Throwable ¢) {
         // For some reason, a reflection call to method
         // getContent() in URL objects throws this exception.
         // We do not have much to do in this and other similar cases.
-        out.out(name, m.getName() + " THROWS " + ¢);
+        out.out(Utils.cantBeNull(name), m.getName() + " THROWS " + ¢);
       }
     }
     out.out("--END OBJECT--\n\n");
@@ -141,9 +141,9 @@ import il.org.spartan.etc.*;
     System.out.println(b.getName());
     System.out.println(b.isCompilationTimeMonitoringSupported());
     System.exit(1);
-    dump.go(ManagementFactory.getGarbageCollectorMXBeans());
-    dump.go(ManagementFactory.getMemoryManagerMXBeans());
-    dump.go(ManagementFactory.getMemoryPoolMXBeans());
+    dump.go(Utils.cantBeNull(ManagementFactory.getGarbageCollectorMXBeans()));
+    dump.go(Utils.cantBeNull(ManagementFactory.getMemoryManagerMXBeans()));
+    dump.go(Utils.cantBeNull(ManagementFactory.getMemoryPoolMXBeans()));
     dump.go(ManagementFactory.getOperatingSystemMXBean());
     dump.go(ManagementFactory.getPlatformMBeanServer());
     dump.go(ManagementFactory.getRuntimeMXBean());
