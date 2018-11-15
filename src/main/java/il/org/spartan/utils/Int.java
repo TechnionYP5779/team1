@@ -10,7 +10,6 @@ public final class Int {
   public int inner;
 
   public Int() {
-    forget.all(this);
   }
 
   public Int(final int inner) {
