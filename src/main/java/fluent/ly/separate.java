@@ -37,7 +37,7 @@ import il.org.spartan.*;
   }
 
   @NotNull public static String separateBySpaces(final Iterable<String> $) {
-    return as.string(separateBySpaces($.iterator()));
+    return as.string(separateBySpaces(Utils.cantBeNull($.iterator())));
   }
 
   @NotNull public static String separateBySpaces(final @NotNull Iterator<String> s) {
@@ -48,7 +48,7 @@ import il.org.spartan.*;
   }
 
   @NotNull public static SeparationSubject these() {
-    return new SeparationSubject(new String[] {});
+    return new SeparationSubject(new @NotNull String[] {});
   }
 
   @NotNull public static SeparationSubject these(final boolean @NotNull [] ¢) {
@@ -89,7 +89,7 @@ import il.org.spartan.*;
     return these(box.it(¢));
   }
 
-  @SafeVarargs @NotNull public static <T> SeparationSubject these(final T... ¢) {
+  @SafeVarargs @NotNull public static <T> SeparationSubject these(final @NotNull T... ¢) {
     return new SeparationSubject(¢);
   }
 
@@ -173,7 +173,7 @@ import il.org.spartan.*;
       this.os = os;
     }
 
-    public SeparationSubject(final Object[] os) {
+    public SeparationSubject(final @NotNull Object[] os) {
       this.os = as.list(os);
     }
 
@@ -182,7 +182,7 @@ import il.org.spartan.*;
     }
 
     @NotNull public String by(final @NotNull String between) {
-      return separateBy(os, between);
+      return separateBy(Utils.cantBeNull(os), between);
     }
 
     @NotNull public String byCommas() {

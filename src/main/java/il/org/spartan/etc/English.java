@@ -16,7 +16,8 @@ import il.org.spartan.utils.*;
 /** Utility class for linguistic issues. Used by GUI dialogs.
  * @author Ori Roth
  * @since 2.6 */
-@SuppressWarnings("null") public interface English {
+@SuppressWarnings("null")
+public interface English {
   interface Inflection {
     static Inflection stem(final @NotNull String base) {
       return new Inflection() {
@@ -43,7 +44,7 @@ import il.org.spartan.utils.*;
 
   @NotNull String DOUBLE_FORMAT = "0.00";
   @NotNull String SEPARATOR = ", ";
-  String TRIM_SUFFIX = "...";
+  @NotNull String TRIM_SUFFIX = "...";
   int TRIM_THRESHOLD = 50;
   /** Error string, replacing null/error value. */
   String UNKNOWN = "???";
@@ -53,7 +54,7 @@ import il.org.spartan.utils.*;
   }
 
   @NotNull static String indefinite(final @NotNull String className) {
-    final @NotNull String $ = cCamelCase.components(className)[0];
+    final @NotNull String $ = Utils.cantBeNull(cCamelCase.components(className)[0]);
     final char openingLetter = the.characterOf($);
     return isAcronym($) ? indefinite(pronounce(openingLetter)) : //
         (Utils.intIsIn(openingLetter, 'i', 'e', 'o', 'u', 'y') ? "an" : "a") + " " + className;
@@ -66,9 +67,9 @@ import il.org.spartan.utils.*;
   /** Constructs linguistic list of items: [i1, i2, i3] --> "i1, i2 and i3"
    * @param ¢ list of items
    * @return a linguistic list of the items */
-  @NotNull static String list(final List<String> ¢) {
+  @NotNull static String list(final @Nullable List<@NotNull String> ¢) {
     return ¢ == null || ¢.isEmpty() ? "nothing"
-        : ¢.size() == 1 ? the.headOf(¢) : separate.these(¢.subList(0, ¢.size() - 1)).by(SEPARATOR) + " and " + the.lastOf(¢);
+        : ¢.size() == 1 ? the.headOf(¢) : separate.these(Utils.cantBeNull(¢.subList(0, ¢.size() - 1))).by(SEPARATOR) + " and " + the.lastOf(¢);
   }
 
   @NotNull static String lowerFirstLetter(final @NotNull String input) {
@@ -131,7 +132,7 @@ import il.org.spartan.utils.*;
     return i == null ? UNKNOWN + " " + s + "s" : unbox(i) != 1 ? i + " " + s + "s" : "one " + s;
   }
 
-  static String pronounce(final char ¢) {
+  @NotNull static String pronounce(final char ¢) {
     if (Character.isUpperCase(¢))
       return pronounce(Character.toLowerCase(¢));
     switch (¢) {
@@ -194,7 +195,7 @@ import il.org.spartan.utils.*;
     return box.itToString(new char[i]).replace('\0', c);
   }
 
-  static String selfName(final Class<?> ¢) {
+  @NotNull static String selfName(final Class<?> ¢) {
     return ¢ == null ? English.name(¢)
         : ¢.isAnonymousClass() ? "{}"
             : ¢.isAnnotation() ? "@" + ¢.getSimpleName() : !¢.getSimpleName().isEmpty() ? ¢.getSimpleName() : ¢.getCanonicalName();
@@ -210,8 +211,8 @@ import il.org.spartan.utils.*;
   static String trim(final @Nullable String s) {
     if (s == null)
       return null;
-    final @NotNull String @NotNull [] $ = s.split("\n");
-    IntStream.range(0, $.length).forEach(λ -> $[λ] = trimAbsolute($[λ], TRIM_THRESHOLD, TRIM_SUFFIX));
+    final String @NotNull [] $ = Utils.cantBeNull(s.split("\n"));
+    IntStream.range(0, $.length).forEach(λ -> $[λ] = trimAbsolute(Utils.cantBeNull($[λ]), TRIM_THRESHOLD, TRIM_SUFFIX));
     return String.join("\n", $);
   }
 
@@ -220,7 +221,7 @@ import il.org.spartan.utils.*;
    * @param l JD
    * @param x replacement suffix string
    * @return cut string */
-  static String trimAbsolute(final @NotNull String s, final int l, final @NotNull String x) {
+  @NotNull static String trimAbsolute(final @NotNull String s, final int l, final @NotNull String x) {
     return s.length() <= l ? s : s.substring(0, l - x.length()) + x;
   }
 

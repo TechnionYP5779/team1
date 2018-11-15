@@ -6,6 +6,7 @@ import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
 
+@SuppressWarnings("null")
 public class out {
   static final int MAX_FIRST = 20;
   static final int MAX_LAST = 10;

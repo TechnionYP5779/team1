@@ -5,6 +5,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
+import il.org.spartan.*;
 
 /** A class to compute statistics, e.g., the minimal and maximal value, the mean
  * and the standard deviation, of a sequence of real numbers.
@@ -14,8 +15,8 @@ public class RealStatistics extends ImmutableStatistics {
    * use the values of <code>1L</code> to maintain upward compatibility. */
   private static final long serialVersionUID = 1;
 
-  public static double[] increase(final double @NotNull [] ¢) {
-    return Arrays.copyOf(¢, 2 * ¢.length + 1);
+  public static double @NotNull[] increase(final double @NotNull [] ¢) {
+    return Utils.cantBeNull(Arrays.copyOf(¢, 2 * ¢.length + 1));
   }
 
   @NotNull public RealStatistics record(final double... vs) {
@@ -37,7 +38,7 @@ public class RealStatistics extends ImmutableStatistics {
     return this;
   }
 
-  @NotNull @SuppressWarnings("null") protected RealStatistics recordValue(final double v) {
+  @NotNull protected RealStatistics recordValue(final double v) {
     if (n() == 0) {
       min = max = v;
       flips = 2;

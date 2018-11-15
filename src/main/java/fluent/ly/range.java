@@ -24,7 +24,7 @@ import org.jetbrains.annotations.*;
     this.empty = from > to;
   }
   
-  /** Instantiates using values found in another intance
+  /** Instantiates using values found in another instance
    * @param other other */
   public range(final @NotNull range other) {
     this(other.from, other.to);

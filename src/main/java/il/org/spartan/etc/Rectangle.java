@@ -32,7 +32,8 @@ public class Rectangle {
     Rectangle $ = null;
     try {
       $ = new Rectangle(p1_new, p2_new);
-    } catch (@SuppressWarnings("unused") final IllegalArgumentException ignore) {
+    } catch (final IllegalArgumentException __) {
+      forget.it(__);
       throw new AssertionError();
     }
     return $;
