@@ -26,7 +26,7 @@ public enum has {
   /** Determine whether a <code><b>null</b></code> occurs in a sequence of
    * objects
    * @param os JD
-   * @return <code><b>null</b></code> <i>iff</i> one of the parameters is
+   * @return <code><b>true</b></code> <i>iff</i> one of the parameters is
    *         <code><b>null</b></code> */
   public static boolean nulls(final @NotNull Iterable<@Nullable Object> os) {
     for (final Object ¢ : os)
@@ -38,7 +38,7 @@ public enum has {
   /** Determine whether a <code><b>null</b></code> occurs in a sequence of
    * objects
    * @param os JD
-   * @return <code><b>null</b></code> <i>iff</i> one of the parameters is
+   * @return <code><b>true</b></code> <i>iff</i> one of the parameters is
    *         <code><b>null</b></code> */
   public static boolean nulls(final @Nullable Object @Nullable... os) {
     if (os == null)
