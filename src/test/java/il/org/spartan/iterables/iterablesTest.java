@@ -6,6 +6,7 @@ import java.util.*;
 
 import org.junit.*;
 
+import an.*;
 import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class iterablesTest {
@@ -83,6 +84,7 @@ import fluent.ly.*;
   }
 
   @Test public void testCount() {
+    assert iterables.count(null) == 0;
     final List<Integer> nums = new ArrayList<>();
     nums.add(box(1));
     nums.add(box(2));
@@ -96,7 +98,14 @@ import fluent.ly.*;
   @Test public void testIsEmpty() {
     final List<Integer> nums = new ArrayList<>();
     nums.add(box(1));
+    final List<Integer> nums2 = new ArrayList<>();
+    nums2.add(null);
+    azzert.assertEquals(iterables.isEmpty(nums2), true);
     azzert.assertEquals(iterables.isEmpty(nums), false);
     azzert.assertEquals(iterables.isEmpty(new ArrayList<Integer>()), true);
+  }
+  
+  @Test public void singletonIteratorTest() {
+    azzert.assertEquals(iterables.singletonIterator(box(1)).next(),1);
   }
 }
