@@ -13,7 +13,7 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested);
-    Assert.assertEquals(tested, outContent + "");
+    azzert.assertEquals(tested, outContent + "");
   }
 
   @Test public void testOutBoolean() {
@@ -22,7 +22,7 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, pred);
-    Assert.assertEquals(tested + " = " + pred + "\n", outContent + "");
+    azzert.assertEquals(tested + " = " + pred + "\n", outContent + "");
   }
 
   @Test public void testOutNullCollection() {
@@ -31,7 +31,7 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, lst);
-    Assert.assertEquals("No " + tested + "\n", outContent + "");
+    azzert.assertEquals("No " + tested + "\n", outContent + "");
   }
 
   @Test public void testOutEmptyCollectionOfObjects() {
@@ -40,7 +40,7 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, lst);
-    Assert.assertEquals("No " + tested + "\n", outContent + "");
+    azzert.assertEquals("No " + tested + "\n", outContent + "");
   }
 
   @Test public void testOutCollectionOfOneObject() {
@@ -51,7 +51,7 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, lst);
-    Assert.assertEquals("Only 1 " + tested + ": " + num + "\n", outContent + "");
+    azzert.assertEquals("Only 1 " + tested + ": " + num + "\n", outContent + "");
   }
 
   @Test public void testOutCollectionOfMultipleObjects() {
@@ -63,7 +63,19 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, lst);
-    Assert.assertEquals("Total of " + lst.size() + " " + tested + ":\n\t 1) " + num + "\n\t 2) " + num + "\n", outContent + "");
+    azzert.assertEquals("Total of " + lst.size() + " " + tested + ":\n\t 1) " + num + "\n\t 2) " + num + "\n", outContent + "");
+  }
+  
+  @Test public void testOutCollectionOfMoreThan30Objects() {
+    final String tested = "I am a Test String";
+    final List<Object> lst = new ArrayList<>();
+    final Integer num = box.box(3);
+    for(int ¢ =0; ¢< 40; ++¢) 
+      lst.add(num);
+    final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outContent));
+    out.out(tested, lst);
+    azzert.assertNotEquals((outContent + "").indexOf("..."), -1);
   }
 
   @Test public void testOutInt() {
@@ -72,7 +84,7 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, num);
-    Assert.assertEquals(tested + " = " + num + "\n", outContent + "");
+    azzert.assertEquals(tested + " = " + num + "\n", outContent + "");
   }
 
   @Test public void testOutNullObject() {
@@ -81,7 +93,7 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, str);
-    Assert.assertEquals("No " + tested + "\n", outContent + "");
+    azzert.assertEquals("No " + tested + "\n", outContent + "");
   }
 
   @Test public void testOutObject() {
@@ -90,7 +102,7 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, str);
-    Assert.assertEquals(tested + " = " + str + "\n", outContent + "");
+    azzert.assertEquals(tested + " = " + str + "\n", outContent + "");
   }
 
   @Test public void testOutNullObjectArray() {
@@ -99,7 +111,7 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, arr);
-    Assert.assertEquals("No " + tested + "\n", outContent + "");
+    azzert.assertEquals("No " + tested + "\n", outContent + "");
   }
 
   @Test public void testOutEmptyObjectArrayOfObjects() {
@@ -108,7 +120,7 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, arr);
-    Assert.assertEquals("No " + tested + "\n", outContent + "");
+    azzert.assertEquals("No " + tested + "\n", outContent + "");
   }
 
   @Test public void testOutObjectArrayOfOneObject() {
@@ -119,7 +131,7 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, arr);
-    Assert.assertEquals("Only one " + tested + ": " + num + "\n", outContent + "");
+    azzert.assertEquals("Only one " + tested + ": " + num + "\n", outContent + "");
   }
 
   @Test public void testOutObjectArrayOfMultipleObjects() {
@@ -130,6 +142,8 @@ import fluent.ly.*;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
     out.out(tested, arr);
-    Assert.assertEquals("Total of " + arr.length + " " + tested + ":\n\t" + num + "\n\t" + num + "\n", outContent + "");
+    azzert.assertEquals("Total of " + arr.length + " " + tested + ":\n\t" + num + "\n\t" + num + "\n", outContent + "");
   }
+  
+
 }
