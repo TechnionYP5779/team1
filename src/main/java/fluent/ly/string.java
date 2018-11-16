@@ -167,6 +167,7 @@ public enum string {
     return ¢ + "";
   }
 
+  //lower case the first letter
   @NotNull public static String javaCase(final @NotNull String ¢) {
     return ¢.length() == 0 ? ¢ : (first(¢) + "").toLowerCase() + the.rest(¢);
   }
@@ -199,6 +200,8 @@ public enum string {
         return ¢ + (¢ == 11 ? "th" : "st");
       case 2:
         return ¢ + (¢ == 12 ? "th" : "nd");
+      case 3:
+        return ¢ + (¢ == 13 ? "th" : "rd");
       default:
         return ¢ + "th";
     }
@@ -329,7 +332,7 @@ public enum string {
   }
 
   public static String visualize(final @NotNull String ¢) {
-    return esc(¢).replaceAll(" ", "\\s");
+    return esc(¢).replaceAll(" ", "\\\\s");
   }
 
   @NotNull public static String wrap(final char with, final @NotNull String s) {
