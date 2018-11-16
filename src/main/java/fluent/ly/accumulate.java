@@ -14,7 +14,7 @@ import org.jetbrains.annotations.*;
    * @param <C> JD
    * @param c JD */
   static <T, C extends Collection<T>> @NotNull accumulate<T, C> to(final @NotNull C c) {
-    return new accumulate<T, C>() {
+    return new accumulate<>() {
       @Override @NotNull public accumulate<T, C> add(final @Nullable T ¢) {
         if (¢ != null)
           c.add(¢);

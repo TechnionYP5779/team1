@@ -14,7 +14,7 @@ import org.jetbrains.annotations.*;
   }
 
   public static <@Nullable T> Iterable<T> iterable() {
-    return () -> new Iterator<T>() {
+    return () -> new Iterator<>() {
       @Override public boolean hasNext() {
         return false;
       }

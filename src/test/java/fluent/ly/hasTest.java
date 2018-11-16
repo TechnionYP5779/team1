@@ -9,7 +9,7 @@ import org.junit.*;
 
 import il.org.spartan.*;
 
-@SuppressWarnings({ "static-access", "static-method" }) public class hasTest {
+@SuppressWarnings("static-method") public class hasTest {
   List<@Nullable Object> list;
 
   @Before public void initList() {
@@ -22,11 +22,11 @@ import il.org.spartan.*;
   }
 
   @Test public void getItemInRange() {
-    azzert.assertEquals(has.next(2, Utils.cantBeNull(list)), box(4));
+    Assert.assertEquals(has.next(2, Utils.cantBeNull(list)), box(4));
   }
 
   @Test public void getItemOutOfRange() {
-    azzert.assertEquals(has.next(1000, Utils.cantBeNull(list)), box(5));
+    Assert.assertEquals(has.next(1000, Utils.cantBeNull(list)), box(5));
   }
 
   @Test public void iterableHasNoNulls() {

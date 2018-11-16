@@ -3,22 +3,21 @@ package il.org.spartan.utils;
 import org.junit.*;
 
 import fluent.ly.*;
-
-import static il.org.spartan.utils.Accumulator.Counter;
-import static il.org.spartan.utils.Accumulator.Last;
+import il.org.spartan.utils.Accumulator.*;
+import il.org.spartan.utils.Accumulator.Counter;
 
 @SuppressWarnings({ "static-method", "static-access" }) public class AccumulatorTest {
   @Test public void verifyName() {
-    azzert.assertEquals("My First Counter", (new Counter("My First Counter")).name());
-    azzert.assertEquals("My First Register", (new Last("My First Register")).name());
+    Assert.assertEquals("My First Counter", new Counter("My First Counter").name());
+    Assert.assertEquals("My First Register", new Last("My First Register").name());
   }
 
   @Test public void checkDefaultWeight() {
-    azzert.assertEquals(1, (new Counter()).weight());
+    azzert.assertEquals(1, new Counter().weight());
   }
 
   @Test public void addIsStepOne() {
-    Accumulator accumulator = new Counter();
+    final Accumulator accumulator = new Counter();
     accumulator.add(8);
     accumulator.add("Hello");
     accumulator.add(true);
@@ -26,7 +25,7 @@ import static il.org.spartan.utils.Accumulator.Last;
   }
 
   @Test public void doubleWeight() {
-    Counter counter = new Counter();
+    final Counter counter = new Counter();
     counter.weight(2);
     counter.add();
     azzert.assertEquals(2, counter.value());
@@ -35,13 +34,13 @@ import static il.org.spartan.utils.Accumulator.Last;
   }
 
   @Test public void valueNotChange() {
-    Counter counter = new Counter();
+    final Counter counter = new Counter();
     counter.add(false);
-    azzert.assertEquals(new Counter() + "", counter + "");
+    Assert.assertEquals(new Counter() + "", counter + "");
   }
 
   @Test public void lastValueIsKept() {
-    Last last = new Last();
+    final Last last = new Last();
     last.add(10);
     last.add(80);
     azzert.assertEquals(80, last.value());

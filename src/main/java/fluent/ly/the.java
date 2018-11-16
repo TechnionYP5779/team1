@@ -91,7 +91,7 @@ import org.jetbrains.annotations.*;
   }
 
   @NotNull static <T> Iterable<T> lastOf(final @NotNull Iterable<T> ¢) {
-    return () -> new Iterator<T>() {
+    return () -> new Iterator<>() {
       Iterator<T> $ = ¢.iterator();
       {
         $.next();

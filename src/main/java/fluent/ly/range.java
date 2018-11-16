@@ -118,7 +118,7 @@ import org.jetbrains.annotations.*;
   // Fluent API - Public class that will allow range iteration
   abstract class rangeIter<T extends rangeIter<T>> implements Iterable<Integer> {
     @Override public Iterator<Integer> iterator() {
-      return new Iterator<Integer>() {
+      return new Iterator<>() {
         int current = from;
 
         @Override public boolean hasNext() {

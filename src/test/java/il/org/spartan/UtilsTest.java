@@ -14,7 +14,7 @@ import fluent.ly.*;
 import il.org.spartan.etc.*;
 
 /** [[SuppressWarningsSpartan]] */
-@SuppressWarnings({ "static-access", "static-method" }) public class UtilsTest {
+@SuppressWarnings("static-method") public class UtilsTest {
   @NotNull public static Integer[] intToIntegers(final int... is) {
     final @NotNull Integer @NotNull [] $ = new @NotNull Integer @NotNull [is.length];
     for (int ¢ = 0; ¢ < is.length; ++¢)
@@ -108,32 +108,32 @@ import il.org.spartan.etc.*;
   }
 
   @Test public void collectionTesting() {
-    List<Integer> x = new ArrayList<>();
+    final List<Integer> x = new ArrayList<>();
     x.add(Integer.valueOf(4));
     x.add(Integer.valueOf(5));
-    List<Integer> y = new ArrayList<>();
+    final List<Integer> y = new ArrayList<>();
     y.add(Integer.valueOf(5));
-    List<Integer> yy = new ArrayList<>();
+    final List<Integer> yy = new ArrayList<>();
     yy.add(null);
-    azzert.assertNotNull(Utils.apply(λ -> λ).to(y));
-    azzert.assertNotNull(Utils.apply(λ -> λ).to(yy));
-    azzert.assertNotNull(Utils.apply(λ -> λ).to(new Object()));
+    Assert.assertNotNull(Utils.apply(λ -> λ).to(y));
+    Assert.assertNotNull(Utils.apply(λ -> λ).to(yy));
+    Assert.assertNotNull(Utils.apply(λ -> λ).to(new Object()));
     azzert.xassertEquals(0, Utils.hash(null));
-    Object o = new Object();
+    final Object o = new Object();
     azzert.xassertEquals(Utils.hash(o), o.hashCode());
-    List<List<Integer>> X = new ArrayList<>();
-    azzert.assertEquals(Utils.add(X, x), X);
+    final List<List<Integer>> X = new ArrayList<>();
+    Assert.assertEquals(Utils.add(X, x), X);
     x.add(null);
-    azzert.assertEquals(Utils.add(X, yy), X);
-    azzert.assertEquals(Utils.add(x, y), x);
-    azzert.assertEquals(Utils.addAll(X, yy), X);
-    azzert.assertEquals(Utils.addAll(y, yy), y);
-    azzert.assertEquals(Utils.addAll(y, (Iterable<Integer>) x), y);
+    Assert.assertEquals(Utils.add(X, yy), X);
+    Assert.assertEquals(Utils.add(x, y), x);
+    Assert.assertEquals(Utils.addAll(X, yy), X);
+    Assert.assertEquals(Utils.addAll(y, yy), y);
+    Assert.assertEquals(Utils.addAll(y, (Iterable<Integer>) x), y);
     azzert.assertFalse(Utils.hasNull(yy));
     azzert.assertTrue(Utils.hasNull(Integer.valueOf(1), null));
-    azzert.assertNotNull(Utils.append(new @NotNull Integer[0], box.box(4))[0]);
+    Assert.assertNotNull(Utils.append(new @NotNull Integer[0], box.box(4))[0]);
     // azzert.assertEquals(,);
-    azzert.assertNotNull(Utils.delete(new @NotNull Integer[4], 3));
+    Assert.assertNotNull(Utils.delete(new @NotNull Integer[4], 3));
     azzert.assertTrue(Utils.inRange(0, y));
     azzert.assertFalse(Utils.inRange(-70, y));
     azzert.assertFalse(Utils.inRange(5, y));
@@ -142,7 +142,7 @@ import il.org.spartan.etc.*;
     azzert.assertTrue(Utils.lastIn(Integer.valueOf(5), x));
     azzert.assertFalse(Utils.lastIn(Integer.valueOf(2), x));
     azzert.assertTrue(Utils.lastIn(Integer.valueOf(5), x));
-    @Nullable List<@Nullable Integer> z = new ArrayList<>();
+    @Nullable final List<@Nullable Integer> z = new ArrayList<>();
     z.add(Integer.valueOf(4));
     z.add(Integer.valueOf(5));
     Utils.removeDuplicates(z);
@@ -151,36 +151,36 @@ import il.org.spartan.etc.*;
   }
 
   @Test public void utilTesting() {
-    azzert.assertNotNull(Utils.canBeNull(Integer.valueOf(3)));
+    Assert.assertNotNull(Utils.canBeNull(Integer.valueOf(3)));
     // azzert.assertNotNull(Utils.apply(λ->λ).to(Integer.valueOf(1),));
     azzert.assertEquals(0, Utils.compare(true, true));
     azzert.assertEquals(-1, Utils.compare(false, true));
     azzert.assertEquals(1, Utils.compare(true, false));
-    azzert.assertEquals(Utils.sqr(1.0), 1.0, 0);
+    Assert.assertEquals(Utils.sqr(1.0), 1.0, 0);
     azzert.assertTrue(Utils.found(5).in(1, 2, 3, 4, 5));
     azzert.assertFalse(Utils.found(6).in(1, 2, 3, 4, 5));
-    azzert.assertNotNull(Utils.found(Integer.valueOf(5)));
-    azzert.assertNotNull(Utils.sort(new int @NotNull [] { 1, 2, 3, 4 }));
+    Assert.assertNotNull(Utils.found(Integer.valueOf(5)));
+    Assert.assertNotNull(Utils.sort(new int @NotNull [] { 1, 2, 3, 4 }));
   }
 
   @Test public void stringTesting() {
-    azzert.assertEquals(Utils.compressSpaces("HHH            HHH"), "HHH HHH");
+    Assert.assertEquals(Utils.compressSpaces("HHH            HHH"), "HHH HHH");
     azzert.assertTrue(Utils.contains("HHH            HHH", "HHH"));
     azzert.assertFalse(Utils.contains("HHH            HHH", "HgHH"));
-    azzert.assertEquals(Utils.name(new File("Hi")), new File("Hi").getName());
-    List<String> X = new ArrayList<>();
+    Assert.assertEquals(Utils.name(new File("Hi")), new File("Hi").getName());
+    final List<String> X = new ArrayList<>();
     azzert.assertFalse(Utils.suffixedBy(new File("Hi"), X));
     azzert.assertFalse(Utils.suffixedBy(new File("Hi"), "HHH"));
     X.add("Hi");
     azzert.assertTrue(Utils.suffixedBy(new File("Hi"), X));
     azzert.assertTrue(Utils.suffixedBy(new File("Hi"), "Hi"));
-    azzert.assertEquals(Utils.prepend(new StringBuilder(), 'c') + "", "c");
-    azzert.assertEquals(Utils.prepend(new StringBuilder(), "ac") + "", "ac");
-    azzert.assertEquals(Utils.prepend(new StringBuilder(), "ac") + "", "ac");
-    azzert.assertEquals(Utils.quote("ac"), "'ac'");
-    azzert.assertEquals(Utils.quote(null), "<null reference>");
-    azzert.assertEquals(Utils.removePrefix("Maaaaaaaa", "M"), "aaaaaaaa");
-    azzert.assertEquals(Utils.removeSuffix("Maaaaaaaa", "aaaaaaaa"), "M");
-    azzert.assertEquals(Utils.removeWhites("  "), "");
+    Assert.assertEquals(Utils.prepend(new StringBuilder(), 'c') + "", "c");
+    Assert.assertEquals(Utils.prepend(new StringBuilder(), "ac") + "", "ac");
+    Assert.assertEquals(Utils.prepend(new StringBuilder(), "ac") + "", "ac");
+    Assert.assertEquals(Utils.quote("ac"), "'ac'");
+    Assert.assertEquals(Utils.quote(null), "<null reference>");
+    Assert.assertEquals(Utils.removePrefix("Maaaaaaaa", "M"), "aaaaaaaa");
+    Assert.assertEquals(Utils.removeSuffix("Maaaaaaaa", "aaaaaaaa"), "M");
+    Assert.assertEquals(Utils.removeWhites("  "), "");
   }
 }

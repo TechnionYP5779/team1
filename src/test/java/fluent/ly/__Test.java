@@ -287,12 +287,10 @@ import fluent.ly.___.Variant;
   }
 
   @Test public void invariantKept() {
-    ___.check(new ___.Invariantable() {
-      @Override public void check() {
-        // TODO Auto-generated method stub
-        ___.nothing();
-        assert true;
-      }
+    ___.check(() -> {
+      // TODO Auto-generated method stub
+      ___.nothing();
+      assert true;
     });
   }
 }

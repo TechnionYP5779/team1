@@ -6,10 +6,8 @@ import org.junit.*;
 // that the methods can be static although it won't compile
 @SuppressWarnings("static-method") public class YesTest {
   @Test public void forgettingRunnableTest() {
-    assert yes.forgetting(new Runnable() {
-      @Override public void run() {
-        /* redundant */ }
-    });
+    assert yes.forgetting(() -> {
+      /* redundant */ });
   }
 
   @Test public void forgettingObjectTest() {

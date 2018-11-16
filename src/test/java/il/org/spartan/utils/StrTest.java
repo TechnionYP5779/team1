@@ -1,8 +1,9 @@
 package il.org.spartan.utils;
 
 import org.junit.*;
+
 import fluent.ly.*;
-import il.org.spartan.Utils;
+import il.org.spartan.*;
 
 @SuppressWarnings("static-access") // to use azzert without warnings
 public class StrTest {
@@ -14,12 +15,12 @@ public class StrTest {
     azzert.assertNotEquals(Utils.cantBeNull(valued_Str.inner()), "newValue");
     valued_Str.set("newValue");
     assert !valued_Str.isEmptyx();
-    azzert.assertEquals(valued_Str.inner(), "newValue");
+    Assert.assertEquals(valued_Str.inner(), "newValue");
   }
 
   @Test public void innerTest() {
-    azzert.assertEquals(valued_Str.inner(), "Hello world!");
-    azzert.assertEquals(empty_str.inner(), null);
+    Assert.assertEquals(valued_Str.inner(), "Hello world!");
+    Assert.assertEquals(empty_str.inner(), null);
   }
 
   @Test public void isEmptyTest() {

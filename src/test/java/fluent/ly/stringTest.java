@@ -1,55 +1,56 @@
 package fluent.ly;
 
+import static fluent.ly.string.*;
+
 import org.jetbrains.annotations.*;
 import org.junit.*;
-import static fluent.ly.string.*;
 
 @SuppressWarnings({ "static-method", "static-access" }) public class stringTest {
   @Test(expected = NumberFormatException.class) public void testAtod() {
-    azzert.assertEquals(2.5, atod("2.5"), 1E-10);
+    Assert.assertEquals(2.5, atod("2.5"), 1E-10);
     // will throw
-    azzert.assertEquals(2.5, atod("abcde"), 1E-10);
+    Assert.assertEquals(2.5, atod("abcde"), 1E-10);
   }
 
   @Test(expected = NumberFormatException.class) public void testAtof() {
-    azzert.assertEquals(2.5, atof("2.5"), 1E-10);
+    Assert.assertEquals(2.5, atof("2.5"), 1E-10);
     // will throw
-    azzert.assertEquals(2.5, atof("abcde"), 1E-10);
+    Assert.assertEquals(2.5, atof("abcde"), 1E-10);
   }
 
   @Test(expected = NumberFormatException.class) public void testAtoi() {
     azzert.assertEquals(-25, atoi("-25"));
     // will throw
-    azzert.assertEquals(2, atoi("abcde"), 1E-10);
+    Assert.assertEquals(2, atoi("abcde"), 1E-10);
   }
 
   @Test(expected = NumberFormatException.class) public void testAtol() {
-    azzert.assertEquals(100000L, atol("100000"));
+    Assert.assertEquals(100000L, atol("100000"));
     // will throw
-    azzert.assertEquals(2L, atol("abcde"));
+    Assert.assertEquals(2L, atol("abcde"));
   }
 
   @Test public void testCapitalize() {
-    azzert.assertEquals("Camel", capitalize("cAMEL"));
-    azzert.assertEquals("", capitalize(""));
+    Assert.assertEquals("Camel", capitalize("cAMEL"));
+    Assert.assertEquals("", capitalize(""));
   }
 
   @Test public void testCatStringArray() {
-    azzert.assertEquals("a rose by any other name.", cat("a ", "rose ", "by ", "any ", "other ", "name."));
+    Assert.assertEquals("a rose by any other name.", cat("a ", "rose ", "by ", "any ", "other ", "name."));
   }
 
   @Test public void testCatStringArrayArray() {
-    azzert.assertEquals("12345", cat(new @NotNull String[] { "1", "2", "3" }, new @NotNull String[] {}, new @NotNull String[] { "4", "5" }));
+    Assert.assertEquals("12345", cat(new @NotNull String[] { "1", "2", "3" }, new @NotNull String[] {}, new @NotNull String[] { "4", "5" }));
   }
 
   @Test public void testDelta() {
-    azzert.assertEquals(0, delta(12.3, 12.3), 1E-10);
-    azzert.assertEquals(1, delta(1, 3), 1E-10);
-    azzert.assertEquals(Double.NaN, delta(-1, 2), 1E-10);
+    Assert.assertEquals(0, delta(12.3, 12.3), 1E-10);
+    Assert.assertEquals(1, delta(1, 3), 1E-10);
+    Assert.assertEquals(Double.NaN, delta(-1, 2), 1E-10);
   }
 
   @Test public void testDtoa() {
-    azzert.assertEquals("12.3", dtoa(12.3));
+    Assert.assertEquals("12.3", dtoa(12.3));
   }
 
   @Test public void testEq() {
@@ -60,18 +61,18 @@ import static fluent.ly.string.*;
   }
 
   @Test public void testEscChar() {
-    azzert.assertEquals("\\n", esc('\n'));
-    azzert.assertEquals("\\r", esc('\r'));
-    azzert.assertEquals("\\t", esc('\t'));
-    azzert.assertEquals("\\f", esc('\f'));
-    azzert.assertEquals("\\b", esc('\b'));
-    azzert.assertEquals("\\\\", esc('\\'));
-    azzert.assertEquals("a", esc('a'));
+    Assert.assertEquals("\\n", esc('\n'));
+    Assert.assertEquals("\\r", esc('\r'));
+    Assert.assertEquals("\\t", esc('\t'));
+    Assert.assertEquals("\\f", esc('\f'));
+    Assert.assertEquals("\\b", esc('\b'));
+    Assert.assertEquals("\\\\", esc('\\'));
+    Assert.assertEquals("a", esc('a'));
   }
 
   @Test public void testEscString() {
-    azzert.assertEquals("(null)", esc(null));
-    azzert.assertEquals("hello\\n", esc("hello\n"));
+    Assert.assertEquals("(null)", esc(null));
+    Assert.assertEquals("hello\\n", esc("hello\n"));
   }
 
   @Test public void testExpandLeadingTabs() {
@@ -79,13 +80,13 @@ import static fluent.ly.string.*;
   }
 
   @Test public void testFillIntChar() {
-    azzert.assertEquals("", fill(0, 'a'));
-    azzert.assertEquals("aaa", fill(3, 'a'));
+    Assert.assertEquals("", fill(0, 'a'));
+    Assert.assertEquals("aaa", fill(3, 'a'));
   }
 
   @Test public void testFillIntString() {
-    azzert.assertEquals("", fill(0, "abc"));
-    azzert.assertEquals("abcabcabc", fill(3, "abc"));
+    Assert.assertEquals("", fill(0, "abc"));
+    Assert.assertEquals("abcabcabc", fill(3, "abc"));
   }
 
   @Test public void testFirst() {
@@ -93,7 +94,7 @@ import static fluent.ly.string.*;
   }
 
   @Test public void testFtoa() {
-    azzert.assertEquals("0.0", ftoa(0));
+    Assert.assertEquals("0.0", ftoa(0));
   }
 
   @Test public void testIsDouble() {
