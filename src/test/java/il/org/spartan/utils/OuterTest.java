@@ -1,10 +1,11 @@
 package il.org.spartan.utils;
 
 import static fluent.ly.box.*;
-
 import org.junit.*;
 import static fluent.ly.azzert.is;
 import fluent.ly.*;
+import il.org.spartan.etc.*;
+
 public class OuterTest {
   //===========================================
   //            CLASS VARIABLES
@@ -12,6 +13,17 @@ public class OuterTest {
   Outer<Integer> outer = new Outer<>(box(5));
   Outer<Integer> outer2 = new Outer<>(box(6));
   Outer<Integer> null_outer = new Outer<>(box(7));
+  
+ @Test @SuppressWarnings("static-method") public void testConstructor() {
+    try {
+      Outer<Integer> should_throw = new Outer<>(null);
+      forget.it(should_throw);
+      assert false;
+    } catch (IllegalArgumentException __) {
+      forget.it(__);
+      assert true;
+    }
+  }
 //===========================================
   @Before public void setNullOuter(){
     null_outer.set(null);
