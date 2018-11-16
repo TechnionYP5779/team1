@@ -1,9 +1,11 @@
 package il.org.spartan.utils;
 
 import static fluent.ly.box.*;
+
 import org.junit.*;
 import static fluent.ly.azzert.is;
 import fluent.ly.*;
+import il.org.spartan.etc.*;
 
 public class OuterTest {
   //===========================================
@@ -12,9 +14,11 @@ public class OuterTest {
   Outer<Integer> outer = new Outer<>(box(5));
   Outer<Integer> outer2 = new Outer<>(box(6));
   Outer<Integer> null_outer = new Outer<>(box(7));
+//===========================================
   @Before public void setNullOuter(){
     null_outer.set(null);
   }
+//===========================================
   @Test @SuppressWarnings("unlikely-arg-type") public void equalsTest() {
     // the warning is because we want to check on two different objects
     assert null_outer.equals(null_outer);
