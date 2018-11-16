@@ -19,21 +19,21 @@ import static fluent.ly.box.*;
 
 @SuppressWarnings("static-method") public class stringTest {
   @Test(expected = NumberFormatException.class) public void testAtod() {
-    Assert.assertEquals(2.5, atod("2.5"), 1E-10);
+    azzert.that(atod("2.5"), is(2.5));
     // will throw
-    Assert.assertEquals(2.5, atod("abcde"), 1E-10);
+    azzert.notNull(box(atod("abcde")));
   }
 
   @Test(expected = NumberFormatException.class) public void testAtof() {
-    Assert.assertEquals(2.5, atof("2.5"), 1E-10);
+    azzert.that(atof("2.5"), is(2.5));
     // will throw
-    Assert.assertEquals(2.5, atof("abcde"), 1E-10);
+    azzert.notNull(box(atof("abcde")));
   }
 
   @Test(expected = NumberFormatException.class) public void testAtoi() {
     azzert.that(-25, is(atoi("-25")));
     // will throw
-    Assert.assertEquals(2, atoi("abcde"), 1E-10);
+    azzert.notNull(box(atoi("abcde")));
   }
 
   @Test(expected = NumberFormatException.class) public void testAtol() {
@@ -52,13 +52,14 @@ import static fluent.ly.box.*;
   }
 
   @Test public void testCatStringArrayArray() {
-    Assert.assertEquals("12345", cat(new @NotNull String[] { "1", "2", "3" }, new @NotNull String[] {}, new @NotNull String[] { "4", "5" }));
+    azzert.that(cat(new @NotNull String[] { "1", "2", "3" }, new @NotNull String[] {}, new @NotNull String[] { "4", "5" })
+        , is("12345"));
   }
 
   @Test public void testDelta() {
-    Assert.assertEquals(0, delta(12.3, 12.3), 1E-10);
-    Assert.assertEquals(1, delta(1, 3), 1E-10);
-    Assert.assertEquals(Double.NaN, delta(-1, 2), 1E-10);
+    azzert.that(delta(12.3, 12.3), is(0.0));
+    azzert.that(delta(1, 3), is(1.0));
+    azzert.that(delta(-1, 2), is(Double.NaN));
   }
 
   @Test public void testDtoa() {
@@ -85,10 +86,6 @@ import static fluent.ly.box.*;
   @Test public void testEscString() {
     azzert.that("(null)", is(esc(null)));
     azzert.that("hello\\n", is(esc("hello\n")));
-  }
-
-  @Test public void testExpandLeadingTabs() {
-    // TODO: add test here
   }
 
   @Test public void testFillIntChar() {
