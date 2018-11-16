@@ -4,7 +4,7 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
-@SuppressWarnings("unused") public interface iterable {
+public interface iterable {
   /** <code>singleton</code>
    * @param <T> JD
    * @param ¢ JD

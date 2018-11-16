@@ -4,7 +4,7 @@ import org.junit.*;
 
 import fluent.ly.*;
 
-@SuppressWarnings({ "static-method", "static-access" }) public class LongestCommonSubsequenceTest {
+@SuppressWarnings("static-method") public class LongestCommonSubsequenceTest {
   @Test public void testLongestCommonSubsequenceNotNull() {
     azzert.assertNotEquals(new LongestCommonSubsequence("abc", "abc"), null);
   }

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.*;
  * @param <T> JD
  * @param <C> JD
  * @since 2016 */
-@SuppressWarnings("unused") public interface accumulate<T, C extends Collection<T>> {
+public interface accumulate<T, C extends Collection<T>> {
   /** @param <T> JD
    * @param <C> JD
    * @param c JD */

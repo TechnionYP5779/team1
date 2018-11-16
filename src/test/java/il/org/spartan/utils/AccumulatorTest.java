@@ -6,7 +6,7 @@ import fluent.ly.*;
 import il.org.spartan.utils.Accumulator.*;
 import il.org.spartan.utils.Accumulator.Counter;
 
-@SuppressWarnings({ "static-method", "static-access" }) public class AccumulatorTest {
+@SuppressWarnings("static-method") public class AccumulatorTest {
   @Test public void verifyName() {
     Assert.assertEquals("My First Counter", new Counter("My First Counter").name());
     Assert.assertEquals("My First Register", new Last("My First Register").name());

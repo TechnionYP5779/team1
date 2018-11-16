@@ -10,7 +10,7 @@ import il.org.spartan.etc.English.*;
 import il.org.spartan.iterables.*;
 import il.org.spartan.utils.*;
 
-@SuppressWarnings({ "static-method", "static-access" }) public class EnglishTest {
+@SuppressWarnings("static-method") public class EnglishTest {
   class Mock {
     class EnclosedMock {
       int x;

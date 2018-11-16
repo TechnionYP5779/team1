@@ -2,7 +2,7 @@ package il.org.spartan.etc;
 
 import org.junit.*;
 
-@SuppressWarnings("static-access") public class safeTest {
+public class safeTest {
   private final double delta = 0.0000000001;
 
   @Test public void testDivByNonZero() {

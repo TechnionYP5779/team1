@@ -55,7 +55,7 @@ import il.org.spartan.etc.*;
  * @param <R> __ of result of applying this rule
  * @author Yossi Gil
  * @since 2017-03-10 */
-@SuppressWarnings({ "static-method", "unused", "null" }) public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
+@SuppressWarnings({ "static-method", "null" }) public interface Rule<T, R> extends Function<T, R>, Recursive<Rule<T, R>> {
   @Override default Rule<T, R> self() {
     return this;
   }

@@ -1,11 +1,15 @@
 package il.org.spartan.utils;
 
+import static fluent.ly.azzert.*;
+
 import java.util.function.*;
 
 import org.junit.*;
 
-@SuppressWarnings({ "static-access", "static-method" }) // to use azzert without
-                                                        // warnings
+import fluent.ly.*;
+
+@SuppressWarnings("static-method")
+// warnings
 public class TruthTest {
   class Mock implements BooleanSupplier {
     boolean val;
@@ -50,44 +54,44 @@ public class TruthTest {
   MockUnknownError mockUnknownError = new MockUnknownError();
 
   @Test public void truthOf() {
-    Assert.assertEquals(Truth.truthOf(mockTrue), Truth.T);
-    Assert.assertEquals(Truth.truthOf(mockFalse), Truth.F);
-    Assert.assertEquals(Truth.truthOf(null), Truth.N);
-    Assert.assertEquals(Truth.truthOf(mockAssertionError), Truth.X);
-    Assert.assertEquals(Truth.truthOf(mockRunTimeError), Truth.R);
-    Assert.assertEquals(Truth.truthOf(mockUnknownError), Truth.Ħ);
+    azzert.that(Truth.truthOf(mockTrue), is(Truth.T));
+    azzert.that(Truth.truthOf(mockFalse), is(Truth.F));
+    azzert.that(Truth.truthOf(null), is(Truth.N));
+    azzert.that(Truth.truthOf(mockAssertionError), is(Truth.X));
+    azzert.that(Truth.truthOf(mockRunTimeError), is(Truth.R));
+    azzert.that(Truth.truthOf(mockUnknownError), is(Truth.Ħ));
   }
 
   @Test public void not() {
-    Assert.assertEquals(Truth.T.not(), Truth.F);
-    Assert.assertEquals(Truth.F.not(), Truth.T);
-    Assert.assertEquals(Truth.N.not(), Truth.N);
+    azzert.that(Truth.T.not(), is(Truth.F));
+    azzert.that(Truth.F.not(), is(Truth.T));
+    azzert.that(Truth.N.not(), is(Truth.N));
   }
 
   @Test public void or() {
-    Assert.assertEquals(Truth.T.or(Truth.F), Truth.T);
-    Assert.assertEquals(Truth.F.or(Truth.T), Truth.T);
-    Assert.assertEquals(Truth.F.or(Truth.F), Truth.F);
-    Assert.assertEquals(Truth.T.or(Truth.T), Truth.T);
-    Assert.assertEquals(Truth.N.or(Truth.T), Truth.T);
-    Assert.assertEquals(Truth.N.or(Truth.R), Truth.R);
+    azzert.that(Truth.T.or(Truth.F), is(Truth.T));
+    azzert.that(Truth.F.or(Truth.T), is(Truth.T));
+    azzert.that(Truth.F.or(Truth.F), is(Truth.F));
+    azzert.that(Truth.T.or(Truth.T), is(Truth.T));
+    azzert.that(Truth.N.or(Truth.T), is(Truth.T));
+    azzert.that(Truth.N.or(Truth.R), is(Truth.R));
   }
 
   @Test public void and() {
-    Assert.assertEquals(Truth.T.and(Truth.F), Truth.F);
-    Assert.assertEquals(Truth.F.and(Truth.T), Truth.F);
-    Assert.assertEquals(Truth.F.and(Truth.F), Truth.F);
-    Assert.assertEquals(Truth.T.and(Truth.T), Truth.T);
-    Assert.assertEquals(Truth.N.and(Truth.T), Truth.T);
-    Assert.assertEquals(Truth.N.and(Truth.R), Truth.R);
+    azzert.that(Truth.T.and(Truth.F), is(Truth.F));
+    azzert.that(Truth.F.and(Truth.T), is(Truth.F));
+    azzert.that(Truth.F.and(Truth.F), is(Truth.F));
+    azzert.that(Truth.T.and(Truth.T), is(Truth.T));
+    azzert.that(Truth.N.and(Truth.T), is(Truth.T));
+    azzert.that(Truth.N.and(Truth.R), is(Truth.R));
   }
 
   @Test public void letterOf() {
-    Assert.assertEquals(Truth.letterOf(mockTrue), "true");
-    Assert.assertEquals(Truth.letterOf(mockFalse), "false");
-    Assert.assertEquals(Truth.letterOf(mockRunTimeError), "Runtime exception");
-    Assert.assertEquals(Truth.letterOf(mockAssertionError), "Assertion exception");
-    Assert.assertEquals(Truth.letterOf(mockUnknownError), "Throwable of some other kind");
-    Assert.assertEquals(Truth.letterOf(null), "Null pointer exception");
+    azzert.that(Truth.letterOf(mockTrue), is("true"));
+    azzert.that(Truth.letterOf(mockFalse), is("false"));
+    azzert.that(Truth.letterOf(mockRunTimeError), is("Runtime exception"));
+    azzert.that(Truth.letterOf(mockAssertionError), is("Assertion exception"));
+    azzert.that(Truth.letterOf(mockUnknownError), is("Throwable of some other kind"));
+    azzert.that(Truth.letterOf(null), is("Null pointer exception"));
   }
 }

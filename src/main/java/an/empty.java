@@ -7,7 +7,7 @@ import org.jetbrains.annotations.*;
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
  * @since 2017-04-01 */
-@SuppressWarnings("unused") public enum empty {
+public enum empty {
   ;
   public static <T> @NotNull List<T> list() {
     return new ArrayList<>();

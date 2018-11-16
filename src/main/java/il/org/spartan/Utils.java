@@ -8,7 +8,6 @@ import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
 import il.org.spartan.Utils.FoundHandleForT.*;
-import static org.junit.Assert.*;
 
 /** An empty <code><b>interface</b></code> with a variety of <code>public
  * static</code> utility functions of reasonably wide use.

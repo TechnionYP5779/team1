@@ -1,26 +1,27 @@
 package il.org.spartan.utils;
 
+import static fluent.ly.azzert.*;
+
 import org.junit.*;
 
 import fluent.ly.*;
 import il.org.spartan.*;
 
-@SuppressWarnings("static-access") // to use azzert without warnings
 public class StrTest {
   Str empty_str = new Str();
   Str valued_Str = new Str("Hello world!");
 
   @Test public void setTest() {
     assert !valued_Str.isEmptyx();
-    azzert.assertNotEquals(Utils.cantBeNull(valued_Str.inner()), "newValue");
+    azzert.that(Utils.cantBeNull(valued_Str.inner()), is("newValue"));
     valued_Str.set("newValue");
     assert !valued_Str.isEmptyx();
-    Assert.assertEquals(valued_Str.inner(), "newValue");
+    azzert.that(valued_Str.inner(), is("newValue"));
   }
 
   @Test public void innerTest() {
-    Assert.assertEquals(valued_Str.inner(), "Hello world!");
-    Assert.assertEquals(empty_str.inner(), null);
+    azzert.that(valued_Str.inner(), is("Hello world!"));
+    azzert.that(empty_str.inner(), is(Utils.canBeNull((String)null)));
   }
 
   @Test public void isEmptyTest() {

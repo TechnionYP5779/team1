@@ -6,7 +6,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 
 // import il.org.spartan.utils.*;
-@SuppressWarnings("unused") public class range {
+public class range {
   public static DidTo numbers = range.from(Integer.MIN_VALUE).to(Integer.MAX_VALUE);
   boolean empty;
   int from = -1;
