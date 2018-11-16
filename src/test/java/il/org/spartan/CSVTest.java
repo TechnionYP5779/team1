@@ -1,5 +1,6 @@
 package il.org.spartan;
 
+import org.jetbrains.annotations.*;
 import org.junit.*;
 import static fluent.ly.azzert.is;
 import java.io.*;
@@ -33,24 +34,22 @@ import il.org.spartan.etc.*;
 
   @Test public void loadTest() {
     try {
-      String[][] data = new String[2][2];
+      @NotNull String[][] data = new @NotNull String[2][2];
       data[0][0] = "0";
       data[0][1] = "1";
       data[1][0] = "2";
       data[1][1] = "3";
       File my_file = new File("some_file_name.csv");
-      CSV.save(my_file, Utils.cantBeNull(data));
+      CSV.save(my_file, data);
       CSV.load(my_file);
     } catch (IOException __) {
       forget.it(__);
       assert false;
     }
     try {
-      if (new File("some_file_name.csv").delete()) {
+      if (new File("some_file_name.csv").delete())
         CSV.load(new File("some_file_name.csv"));
-        assert false;
-      } else
-        assert false;
+      assert false;
     } catch (IOException __) {
       forget.it(__);
       assert true;
@@ -65,20 +64,18 @@ import il.org.spartan.etc.*;
     azzert.that(CSV.unescape(Utils.cantBeNull(CSV.escape("\ta"))), is("\ta"));
     azzert.that(CSV.unescape(Utils.cantBeNull(CSV.escape(",a"))), is(",a"));
   }
-  
+
   @Test public void splitToClasses() {
     Class<?>[] array = new Class<?>[2];
     array[0] = String.class;
     array[1] = Integer.class;
-    
-    Class<?> [] classes = CSV.splitToClasses(Utils.cantBeNull(CSV.combine(array)));
+    Class<?>[] classes = CSV.splitToClasses(Utils.cantBeNull(CSV.combine(array)));
     azzert.that(classes[0], is(array[0]));
     azzert.that(classes[1], is(array[1]));
     try {
       forget.it(CSV.splitToClasses("noSuchClass"));
       assert false;
-    }
-    catch(RuntimeException __) {
+    } catch (RuntimeException __) {
       forget.it(__);
       assert true;
     }
