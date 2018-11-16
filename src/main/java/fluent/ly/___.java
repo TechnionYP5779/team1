@@ -19,11 +19,7 @@ import fluent.ly.___.Bug.Contract.*;
  * @author Yossi Gil (
  * @since 11/01/2006) */
 public abstract class ___ {
-  /** A do nothing method to document the fact that a <code><b>long</b></code>
-   * parameter, along with a optional list of {@link Object}s are not used by a
-   * function, and to suppress the warning.
-   * @param __ the unused parameter
-   * @param ____ more unused parameters */
+  
   /** Exercise the {@link Invariantable#check()}
    * @param v a Invariantable object whose invariant should be checked */
   public static void check(final ___.Invariantable ¢) {
