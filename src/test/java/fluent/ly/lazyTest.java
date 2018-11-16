@@ -4,7 +4,7 @@ import java.util.function.*;
 
 import org.jetbrains.annotations.*;
 import org.junit.*;
-
+import static fluent.ly.azzert.is;
 @SuppressWarnings("static-method") public class lazyTest {
   @Test public void testGet() {
     final lazy<@Nullable String> lzy = lazy.get(new Supplier<@Nullable String>() {
@@ -16,8 +16,8 @@ import org.junit.*;
       }
     });
     // make sure the computation only happens once
-    Assert.assertEquals("foo1", lzy.get());
-    Assert.assertEquals("foo1", lzy.get());
-    Assert.assertEquals("foo1", lzy.get());
+    azzert.that(lzy.get(), is("foo1"));
+    azzert.that(lzy.get(), is("foo1"));
+    azzert.that(lzy.get(), is("foo1"));
   }
 }
