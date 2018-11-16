@@ -2,6 +2,9 @@ package il.org.spartan.utils;
 
 import org.junit.*;
 
+import fluent.ly.*;
+import static fluent.ly.azzert.is;
+
 @SuppressWarnings("static-method") public class BoolTest {
   @Test public void testValueOf() {
     assert Bool.valueOf(true).get();
@@ -28,8 +31,8 @@ import org.junit.*;
   }
 
   @Test public void testInner() {
-    Assert.assertEquals(new Bool(true).inner(), Boolean.TRUE);
-    Assert.assertEquals(new Bool(false).inner(), Boolean.FALSE);
-    Assert.assertEquals(new Bool().inner(), Boolean.FALSE);
+    azzert.that(new Bool(true).inner(), is(Boolean.TRUE));
+    azzert.that(new Bool(false).inner(), is(Boolean.FALSE));
+    azzert.that(new Bool().inner(), is(Boolean.FALSE));
   }
 }

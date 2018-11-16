@@ -1,7 +1,8 @@
 package fluent.ly;
 
 import static fluent.ly.azzert.*;
-
+import static fluent.ly.azzert.is;
+import static fluent.ly.box.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
@@ -10,12 +11,12 @@ import il.org.spartan.*;
 
 @SuppressWarnings("static-method") public class idiomaticTest {
   @Test public void testEval() {
-    Assert.assertEquals(Integer.valueOf(1), idiomatic.eval(() -> Integer.valueOf(1)).get());
+    azzert.that(idiomatic.eval(() -> Integer.valueOf(1)).get(), is(box(1)));
   }
 
   @Test public void testIncase() {
-    Assert.assertEquals(null, idiomatic.incase(false, Integer.valueOf(1)));
-    Assert.assertEquals(Integer.valueOf(1), idiomatic.incase(true, Integer.valueOf(1)));
+    azzert.isNull(idiomatic.incase(false, Integer.valueOf(1)));
+    azzert.that(idiomatic.incase(true, Integer.valueOf(1)), is(box(1)));
   }
 
   @Test public void testKatching1() {
@@ -23,7 +24,7 @@ import il.org.spartan.*;
       throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");
     };
     try {
-      assertNull(idiomatic.katching(thrower));
+      azzert.isNull(idiomatic.katching(thrower));
     } catch (final Exception ¢) {
       ¢.printStackTrace();
       fail("Exception uncaught by katching");
@@ -33,7 +34,7 @@ import il.org.spartan.*;
   @Test public void testKatching2() {
     final idiomatic.Producer<@Nullable Integer> notThrower = () -> Utils.cantBeNull(Integer.valueOf(1));
     try {
-      Assert.assertNotNull(idiomatic.katching(notThrower));
+      azzert.notNull(idiomatic.katching(notThrower));
     } catch (final Exception ¢) {
       ¢.printStackTrace();
       fail("there should not have been an Exception");
@@ -41,20 +42,20 @@ import il.org.spartan.*;
   }
 
   @Test public void testQuote() {
-    Assert.assertEquals("<null reference>", idiomatic.quote(null));
-    Assert.assertEquals("'abc'", idiomatic.quote("abc"));
+    azzert.that(idiomatic.quote(null), is("<null reference>"));
+    azzert.that(idiomatic.quote("abc"), is("'abc'"));
   }
 
   @Test public void testRunDoesNotThrow_SanityCheck() {
-    final idiomatic.Runner runner = idiomatic.run(() -> {
-      // TODO: Documentation should be inserted here
+    final idiomatic.Runner empty = idiomatic.run(() -> {
+      // empty runner
     });
     try {
-      runner.run();
-      runner.when(false);
-      runner.when(true);
-      runner.unless(false);
-      runner.unless(true);
+      empty.run();
+      empty.when(false);
+      empty.when(true);
+      empty.unless(false);
+      empty.unless(true);
     } catch (final Exception ¢) {
       ¢.printStackTrace();
       fail("Should not throw");
@@ -64,25 +65,25 @@ import il.org.spartan.*;
   @Test public void testTake() {
     final Storer<Boolean> sto = idiomatic.take(Boolean.TRUE);
     assert unbox.unbox(sto.get());
-    azzert.assertNull(sto.when(false));
+    azzert.isNull(sto.when(false));
     assert unbox.unbox(sto.when(true));
-    azzert.assertNull(sto.unless(true));
+    azzert.isNull(sto.unless(true));
     assert unbox.unbox(sto.unless(false));
   }
 
   @Test public void testUnlessBoolean() {
-    azzert.assertNull(idiomatic.unless(true).eval(Integer.valueOf(1)));
-    Assert.assertEquals(Integer.valueOf(1), idiomatic.unless(false).eval(Integer.valueOf(1)));
+    azzert.isNull(idiomatic.unless(true).eval(Integer.valueOf(1)));
+    azzert.that(idiomatic.unless(false).eval(Integer.valueOf(1)), is(box(1)));
   }
 
   @Test public void testUnlessBooleanT() {
-    azzert.assertNull(idiomatic.unless(true, Integer.valueOf(2)));
-    Assert.assertEquals(Integer.valueOf(2), idiomatic.unless(false, Integer.valueOf(2)));
+    azzert.isNull(idiomatic.unless(true, Integer.valueOf(2)));
+    azzert.that(idiomatic.unless(false, Integer.valueOf(2)), is(box(2)));
   }
 
   @Test public void testWhen() {
-    azzert.assertNull(idiomatic.when(false).eval(Integer.valueOf(1)));
-    Assert.assertEquals(Integer.valueOf(1), idiomatic.when(true).eval(Integer.valueOf(1)));
+    azzert.isNull(idiomatic.when(false).eval(Integer.valueOf(1)));
+    azzert.that(idiomatic.when(true).eval(Integer.valueOf(1)), is(box(1)));
   }
 
   @Test public void use0() {
@@ -90,7 +91,7 @@ import il.org.spartan.*;
   }
 
   @Test public void use08() {
-    isNull(idiomatic.unless(true).eval(() -> new Object()));
+    azzert.isNull(idiomatic.unless(true).eval(() -> new Object()));
   }
 
   @Test public void use09() {
@@ -107,12 +108,12 @@ import il.org.spartan.*;
   }
 
   @Test public void use11() {
-    isNull(idiomatic.when(false).eval(() -> new Object()));
+    azzert.isNull(idiomatic.when(false).eval(() -> new Object()));
   }
 
   @Test public void use2() {
     assert idiomatic.take(this) != null;
-    isNull(idiomatic.take(this).when(false));
+    azzert.isNull(idiomatic.take(this).when(false));
   }
 
   @Test public void use3() {
@@ -120,7 +121,7 @@ import il.org.spartan.*;
   }
 
   @Test public void use4() {
-    isNull(idiomatic.take(this).when(false));
+    azzert.isNull(idiomatic.take(this).when(false));
   }
 
   @Test public void use5() {
@@ -128,12 +129,12 @@ import il.org.spartan.*;
   }
 
   @Test public void use6() {
-    isNull(idiomatic.take(this).unless(true));
+    azzert.isNull(idiomatic.take(this).unless(true));
   }
 
   @Test public void use7() {
-    isNull(idiomatic.take(this).unless(true));
-    isNull(idiomatic.take(null).unless(true));
-    isNull(idiomatic.take(null).unless(false));
+    azzert.isNull(idiomatic.take(this).unless(true));
+    azzert.isNull(idiomatic.take(null).unless(true));
+    azzert.isNull(idiomatic.take(null).unless(false));
   }
 }
