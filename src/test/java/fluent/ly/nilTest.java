@@ -6,12 +6,15 @@ import org.junit.*;
 
 import fluent.ly.nil.*;
 
+import static fluent.ly.azzert.is;
+import static fluent.ly.box.*;
+
 @SuppressWarnings("static-method") public class nilTest {
   @Test public void testForgetting() {
-    azzert.assertNull(nil.forgetting(Integer.valueOf(1), Integer.valueOf(2)));
-    azzert.assertNull(nil.forgetting(Integer.valueOf(1), "abc"));
-    azzert.assertNull(
-        nil.forgetting(Integer.valueOf(1), Double.valueOf(2.5), "abc", Arrays.asList(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))));
+    azzert.isNull(nil.forgetting(box(1), box(2)));
+    azzert.isNull(nil.forgetting(box(1), "abc"));
+    azzert.isNull(
+        nil.forgetting(box(1), box(2.5), "abc", Arrays.asList(box(1), box(2), box(3))));
   }
 
   static String helperF(final Integer ¢) {
@@ -20,23 +23,23 @@ import fluent.ly.nil.*;
 
   @Test public void testGuardingly() {
     final On<Integer, String> ff = nil.guardingly(nilTest::helperF);
-    azzert.assertNull(ff.on(null));
-    Assert.assertNotNull(ff.on(Integer.valueOf(1)));
-    Assert.assertEquals("1", ff.on(Integer.valueOf(1)));
+    azzert.isNull(ff.on(null));
+    azzert.notNull(ff.on(box(1)));
+    azzert.that(ff.on(box(11)), is("11"));
   }
 
   @Test public void testIgnoringBoolean() {
-    azzert.assertNull(nil.ignoring(true));
-    azzert.assertNull(nil.ignoring(false));
+    azzert.isNull(nil.ignoring(true));
+    azzert.isNull(nil.ignoring(false));
   }
 
   @Test public void testIgnoringDouble() {
-    azzert.assertNull(nil.ignoring(1.5));
-    azzert.assertNull(nil.ignoring(2.0));
+    azzert.isNull(nil.ignoring(1.5));
+    azzert.isNull(nil.ignoring(2.0));
   }
 
   @Test public void testIgnoringLong() {
-    azzert.assertNull(nil.ignoring(7034567L));
-    azzert.assertNull(nil.ignoring(2L));
+    azzert.isNull(nil.ignoring(7034567L));
+    azzert.isNull(nil.ignoring(2L));
   }
 }
