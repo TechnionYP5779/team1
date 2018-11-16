@@ -25,7 +25,7 @@ import static fluent.ly.box.*;
     final On<Integer, String> ff = nil.guardingly(nilTest::helperF);
     azzert.isNull(ff.on(null));
     azzert.notNull(ff.on(box(1)));
-    azzert.that(ff.on(box(1)), is("11"));
+    azzert.that(ff.on(box(11)), is("11"));
   }
 
   @Test public void testIgnoringBoolean() {

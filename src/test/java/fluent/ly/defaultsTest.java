@@ -1,20 +1,23 @@
 package fluent.ly;
 
 import org.junit.*;
+import static fluent.ly.azzert.is;
+import static fluent.ly.box.*;
+import static fluent.ly.unbox.*;
 
 @SuppressWarnings("static-method") public class defaultsTest {
   @Test public void testToIntegerInt() {
-    azzert.assertEquals(7, defaults.to(box.box(7), 0));
-    azzert.assertEquals(0, defaults.to(null, 0));
+    azzert.that(defaults.to(box(7), 0), is(7));
+    azzert.that(defaults.to(null, 0), is(0));
   }
 
   @Test public void testToIntegerInteger() {
-    azzert.assertEquals(7, defaults.to(box.box(7), box.box(0)));
-    azzert.assertEquals(0, defaults.to(null, box.box(0)));
+    azzert.that(defaults.to(box(7), box(0)), is(7));
+    azzert.that(defaults.to(null, box(0)), is(0));
   }
 
   @Test public void testToTT() {
-    azzert.assertTrue(unbox.unbox(defaults.to(box.box(true), box.box(false))));
-    azzert.assertFalse(unbox.unbox(defaults.to(null, box.box(false))));
+    assert unbox(defaults.to(box(true), box(false)));
+    assert !unbox(defaults.to(null, box(false)));
   }
 }
