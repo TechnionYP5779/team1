@@ -2,10 +2,13 @@ package il.org.spartan.utils;
 
 import org.junit.*;
 
+import fluent.ly.*;
+import static fluent.ly.azzert.is;
+
 @SuppressWarnings("static-method") public class BoolTest {
   @Test public void testValueOf() {
-    assert Bool.valueOf(true).get();
-    assert !Bool.valueOf(false).get();
+    azzert.that(Bool.valueOf(true).get(), is(true));
+    azzert.that(Bool.valueOf(false).get(), is(false));
   }
 
   @Test public void testClear() {
