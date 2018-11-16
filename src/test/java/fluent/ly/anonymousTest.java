@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.function.*;
 
 import org.junit.*;
+import static fluent.ly.azzert.is;
 
 @SuppressWarnings("static-method") public class anonymousTest {
   @Test public void testLyBooleanSupplier() {
@@ -14,20 +15,20 @@ import org.junit.*;
 
   @Test public void testLyDoubleSupplier() {
     final double d = Math.random();
-    Assert.assertEquals(anonymous.ly(() -> d), d, 0.001);
+    azzert.that(anonymous.ly(() -> d), is(d));
   }
 
   @Test public void testLyIntSupplier() {
     final int i = new Random().nextInt(100);
-    azzert.assertEquals(i, anonymous.ly(() -> i));
+    azzert.that(anonymous.ly(() -> i), is(i));
   }
 
   @Test public void testLyLongSupplier() {
     final long l = new Random().nextLong();
-    Assert.assertEquals(l, anonymous.ly(() -> l));
+    azzert.that(anonymous.ly(() -> l), is(l));
   }
 
   @Test public void testLySupplierOfT() {
-    Assert.assertEquals("abc", anonymous.ly(() -> "abc"));
+    azzert.that(anonymous.ly(() -> "abc"), is("abc"));
   }
 }
