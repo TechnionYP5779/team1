@@ -7,8 +7,8 @@ import static fluent.ly.azzert.is;
 
 @SuppressWarnings("static-method") public class BoolTest {
   @Test public void testValueOf() {
-    azzert.that(Bool.valueOf(true).get(), is(true));
-    azzert.that(Bool.valueOf(false).get(), is(false));
+    assert Bool.valueOf(true).get();
+    assert !Bool.valueOf(false).get();
   }
 
   @Test public void testClear() {
@@ -31,8 +31,8 @@ import static fluent.ly.azzert.is;
   }
 
   @Test public void testInner() {
-    Assert.assertEquals(new Bool(true).inner(), Boolean.TRUE);
-    Assert.assertEquals(new Bool(false).inner(), Boolean.FALSE);
-    Assert.assertEquals(new Bool().inner(), Boolean.FALSE);
+    azzert.that(new Bool(true).inner(), is(Boolean.TRUE));
+    azzert.that(new Bool(false).inner(), is(Boolean.FALSE));
+    azzert.that(new Bool().inner(), is(Boolean.FALSE));
   }
 }
