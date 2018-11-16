@@ -48,10 +48,12 @@ import il.org.spartan.*;
    * @param text what to write
    * @throws FileNotFoundException in case the file could not be found */
   public static void writeToFile(final @NotNull String fileName, final @NotNull String text) throws FileNotFoundException {
-    try (@NotNull PrintWriter p = new PrintWriter(fileName)) {
-      p.write(text);
-      p.flush();
+    if(!new File(fileName).isFile()) {
+      throw new FileNotFoundException();
     }
+    @NotNull PrintWriter p = new PrintWriter(fileName);
+    p.write(text);
+    p.flush();
   }
 
   private static void iterateFiles(final @Nullable File dir, final @NotNull List<String> files) {
