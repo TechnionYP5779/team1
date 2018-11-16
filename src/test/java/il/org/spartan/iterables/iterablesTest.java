@@ -34,7 +34,7 @@ import fluent.ly.*;
     final List<Integer> nums1 = new ArrayList<>(), nums2 = new ArrayList<>();
     nums1.add(box(1));
     nums2.add(box(2));
-    azzert.that(iterables.alternate(nums1, nums2).iterator().next(),is(1));
+    azzert.that(iterables.alternate(nums1, nums2).iterator().next(), is(1));
   }
 
   @Test public void testSecondIsFromSecondIterable() {
@@ -81,7 +81,7 @@ import fluent.ly.*;
   }
 
   @Test public void testCount() {
-    azzert.that(iterables.count(null),is(0));
+    azzert.that(iterables.count(null), is(0));
     final List<Integer> nums = new ArrayList<>();
     nums.add(box(1));
     nums.add(box(2));
@@ -97,7 +97,6 @@ import fluent.ly.*;
     nums.add(box(1));
     final List<Integer> nums2 = new ArrayList<>();
     nums2.add(null);
-    
     assert iterables.isEmpty(nums2);
     assert !iterables.isEmpty(nums);
     assert iterables.isEmpty(new ArrayList<Integer>());
