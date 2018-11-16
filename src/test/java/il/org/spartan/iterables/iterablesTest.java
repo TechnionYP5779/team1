@@ -1,12 +1,9 @@
 package il.org.spartan.iterables;
 
 import static fluent.ly.box.*;
-
+import static fluent.ly.azzert.is;
 import java.util.*;
-
 import org.junit.*;
-
-import an.*;
 import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class iterablesTest {
@@ -37,7 +34,7 @@ import fluent.ly.*;
     final List<Integer> nums1 = new ArrayList<>(), nums2 = new ArrayList<>();
     nums1.add(box(1));
     nums2.add(box(2));
-    azzert.assertEquals(1, iterables.alternate(nums1, nums2).iterator().next());
+    azzert.that(iterables.alternate(nums1, nums2).iterator().next(),is(1));
   }
 
   @Test public void testSecondIsFromSecondIterable() {
@@ -46,7 +43,7 @@ import fluent.ly.*;
     nums2.add(box(2));
     final Iterator<Integer> ite = iterables.alternate(nums1, nums2).iterator();
     ite.next();
-    azzert.assertEquals(2, ite.next());
+    azzert.that(ite.next(), is(2));
   }
 
   @Test public void testEmptyFirstListResultsInEmptyIterable() {
@@ -80,19 +77,19 @@ import fluent.ly.*;
     nums2.add(box(6));
     final Iterator<Integer> ite1 = nums1.iterator(), ite2 = nums2.iterator(), ite = iterables.alternate(nums1, nums2).iterator();
     for (boolean first = true; ite.hasNext(); first = !first)
-      Assert.assertEquals(ite.next(), (first ? ite1 : ite2).next());
+      azzert.that(ite.next(), is((first ? ite1 : ite2).next()));
   }
 
   @Test public void testCount() {
-    assert iterables.count(null) == 0;
+    azzert.that(iterables.count(null),is(0));
     final List<Integer> nums = new ArrayList<>();
     nums.add(box(1));
     nums.add(box(2));
-    azzert.assertEquals(iterables.count(nums), nums.size());
+    azzert.that(iterables.count(nums), is(nums.size()));
     nums.add(box(3));
-    azzert.assertEquals(iterables.count(nums), nums.size());
+    azzert.that(iterables.count(nums), is(nums.size()));
     nums.remove(box(1));
-    azzert.assertEquals(iterables.count(nums), nums.size());
+    azzert.that(iterables.count(nums), is(nums.size()));
   }
 
   @Test public void testIsEmpty() {
@@ -100,12 +97,13 @@ import fluent.ly.*;
     nums.add(box(1));
     final List<Integer> nums2 = new ArrayList<>();
     nums2.add(null);
-    azzert.assertEquals(iterables.isEmpty(nums2), true);
-    azzert.assertEquals(iterables.isEmpty(nums), false);
-    azzert.assertEquals(iterables.isEmpty(new ArrayList<Integer>()), true);
+    
+    assert iterables.isEmpty(nums2);
+    assert !iterables.isEmpty(nums);
+    assert iterables.isEmpty(new ArrayList<Integer>());
   }
-  
+
   @Test public void singletonIteratorTest() {
-    azzert.assertEquals(iterables.singletonIterator(box(1)).next(),1);
+    azzert.that(iterables.singletonIterator(box(1)).next(), is(1));
   }
 }
