@@ -4,29 +4,28 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 import static fluent.ly.string.*;
 
-@SuppressWarnings({"static-method", "static-access"}) public class stringTest {
- 
+@SuppressWarnings({ "static-method", "static-access" }) public class stringTest {
   @Test(expected = NumberFormatException.class) public void testAtod() {
     azzert.assertEquals(2.5, atod("2.5"), 1E-10);
-    //will throw
-    azzert.assertEquals(2.5, atod("abcde"), 1E-10); 
+    // will throw
+    azzert.assertEquals(2.5, atod("abcde"), 1E-10);
   }
 
   @Test(expected = NumberFormatException.class) public void testAtof() {
     azzert.assertEquals(2.5, atof("2.5"), 1E-10);
-    //will throw
-    azzert.assertEquals(2.5, atof("abcde"), 1E-10); 
+    // will throw
+    azzert.assertEquals(2.5, atof("abcde"), 1E-10);
   }
 
   @Test(expected = NumberFormatException.class) public void testAtoi() {
     azzert.assertEquals(-25, atoi("-25"));
-    //will throw
+    // will throw
     azzert.assertEquals(2, atoi("abcde"), 1E-10);
   }
 
   @Test(expected = NumberFormatException.class) public void testAtol() {
     azzert.assertEquals(100000L, atol("100000"));
-    //will throw
+    // will throw
     azzert.assertEquals(2L, atol("abcde"));
   }
 
@@ -36,19 +35,17 @@ import static fluent.ly.string.*;
   }
 
   @Test public void testCatStringArray() {
-    azzert.assertEquals("a rose by any other name.",
-        cat("a ", "rose ", "by ", "any ", "other ", "name."));
+    azzert.assertEquals("a rose by any other name.", cat("a ", "rose ", "by ", "any ", "other ", "name."));
   }
 
   @Test public void testCatStringArrayArray() {
-    azzert.assertEquals("12345", cat(new @NotNull String[] {"1", "2", "3"},
-        new @NotNull String[] {}, new @NotNull String[] { "4", "5" }));
+    azzert.assertEquals("12345", cat(new @NotNull String[] { "1", "2", "3" }, new @NotNull String[] {}, new @NotNull String[] { "4", "5" }));
   }
 
   @Test public void testDelta() {
-    azzert.assertEquals(0, delta(12.3,12.3), 1E-10);
-    azzert.assertEquals(1, delta(1,3), 1E-10);
-    azzert.assertEquals(Double.NaN, delta(-1,2), 1E-10);
+    azzert.assertEquals(0, delta(12.3, 12.3), 1E-10);
+    azzert.assertEquals(1, delta(1, 3), 1E-10);
+    azzert.assertEquals(Double.NaN, delta(-1, 2), 1E-10);
   }
 
   @Test public void testDtoa() {
@@ -69,16 +66,16 @@ import static fluent.ly.string.*;
     azzert.assertEquals("\\f", esc('\f'));
     azzert.assertEquals("\\b", esc('\b'));
     azzert.assertEquals("\\\\", esc('\\'));
-    azzert.assertEquals("a",esc('a'));
+    azzert.assertEquals("a", esc('a'));
   }
 
   @Test public void testEscString() {
-    azzert.assertEquals("(null)",esc(null));
-    azzert.assertEquals("hello\\n",esc("hello\n"));
+    azzert.assertEquals("(null)", esc(null));
+    azzert.assertEquals("hello\\n", esc("hello\n"));
   }
 
   @Test public void testExpandLeadingTabs() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testFillIntChar() {
@@ -121,59 +118,59 @@ import static fluent.ly.string.*;
   }
 
   @Test public void testItoa() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testJavaCase() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testLast() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testLowCounter() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testLtoa() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testOrdinal() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testParen() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testPluralizeIntString() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testPluralizeIntStringString() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testPrettyStringCollectionOfQ() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testPrettyStringStringCollectionOfQ() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testQuote() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testRepeatIntChar() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testRepeatIntString() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testSignum() {
@@ -183,34 +180,34 @@ import static fluent.ly.string.*;
   }
 
   @Test public void testSprintfStringObjectArray() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testSprintfStringArray() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testStrip() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testToLines() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testUpCounter() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testVisualize() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testWrapCharString() {
-    //TODO: add test here
+    // TODO: add test here
   }
 
   @Test public void testWrapStringString() {
-    //TODO: add test here
+    // TODO: add test here
   }
 }

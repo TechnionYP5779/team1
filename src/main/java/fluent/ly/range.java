@@ -23,21 +23,21 @@ import org.jetbrains.annotations.*;
     this.infinite = false;
     this.empty = from > to;
   }
-  
+
   /** Instantiates using values found in another instance
    * @param other other */
   public range(final @NotNull range other) {
     this(other.from, other.to);
   }
 
-  //Default c'tor for fluent API
+  // Default c'tor for fluent API
   public range() {
   }
 
   public int from() {
     return from;
   }
-  
+
   @Override public int hashCode() {
     // Cantor pairing function
     return (int) (from + 0.5 * (to + from) * (to + from + 1));
@@ -46,12 +46,12 @@ import org.jetbrains.annotations.*;
   @Override public boolean equals(final Object ¢) {
     return ¢ instanceof range && from == ((range) ¢).from && to == ((range) ¢).to;
   }
-  
+
   public boolean isInfinite() {
     // TODO Auto-generated method stub
     return infinite;
   }
-  
+
   @Nullable public range findIncludedIn(final @Nullable Iterable<? extends range> ¢) {
     if (¢ != null)
       for (final @Nullable range $ : ¢)
@@ -66,7 +66,7 @@ import org.jetbrains.annotations.*;
   public boolean includedIn(final @NotNull range ¢) {
     return from >= ¢.from && to <= ¢.to;
   }
-  
+
   public boolean isEmpty() {
     return size() <= 0;
   }
@@ -104,7 +104,7 @@ import org.jetbrains.annotations.*;
     return String.format("[%d, %d]", fluent.ly.box.it(from), fluent.ly.box.it(to));
   }
 
-  //Fluent API - after from (range.from(x) product) c'tor
+  // Fluent API - after from (range.from(x) product) c'tor
   public static DidFrom from(final int ¢) {
     return new range() {
       {
@@ -115,7 +115,7 @@ import org.jetbrains.annotations.*;
     }.new DidFrom();
   }
 
-  //Fluent API - Public class that will allow range iteration
+  // Fluent API - Public class that will allow range iteration
   abstract class rangeIter<T extends rangeIter<T>> implements Iterable<Integer> {
     @Override public Iterator<Integer> iterator() {
       return new Iterator<Integer>() {
@@ -138,7 +138,8 @@ import org.jetbrains.annotations.*;
     abstract T This();
   }
 
-  //Fluent API - Represents a creation using range.to(x) or range.to(x).from(y) or range.from(x).to(y)
+  // Fluent API - Represents a creation using range.to(x) or range.to(x).from(y)
+  // or range.from(x).to(y)
   public class DidTo extends rangeIter<DidTo> {
     @Override DidTo This() {
       // TODO Auto-generated method stub
@@ -180,7 +181,7 @@ import org.jetbrains.annotations.*;
     }
   }
 
-  //Fluent API - Represents a creation using range.from(x) 
+  // Fluent API - Represents a creation using range.from(x)
   public class DidFrom extends rangeIter<DidFrom> {
     public DidTo to(final int ¢) {
       to = ¢;
@@ -212,8 +213,8 @@ import org.jetbrains.annotations.*;
       return from;
     }
   }
-  
-  //Fluent API - Represents a creation using range.to(x)
+
+  // Fluent API - Represents a creation using range.to(x)
   public static DidTo to(final int ¢) {
     return new range() {
       {

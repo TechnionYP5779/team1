@@ -4,8 +4,7 @@ import java.util.*;
 
 import org.junit.*;
 
-//import il.org.spartan.utils.*;
-
+// import il.org.spartan.utils.*;
 @SuppressWarnings("static-method") public class RangeTest {
   @Test public void testHashCode() {
     int i1;
@@ -90,7 +89,7 @@ import org.junit.*;
   @Test public void tostring() {
     Assert.assertEquals(new range(2, 10) + "", "[2, 10]");
   }
-  
+
   @Test public void createInfiniteSequence() {
     assert !range.from(2).isEmpty();
     assert range.from(2).isInfinite();

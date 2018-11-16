@@ -20,8 +20,7 @@ import il.org.spartan.utils.*;
  * @param <T> JD
  * @author Yossi Gil
  * @since 2017-03-10 */
-@SuppressWarnings("unused") 
-public interface lazy<@Nullable T> extends Supplier<@Nullable T> {
+@SuppressWarnings("unused") public interface lazy<@Nullable T> extends Supplier<@Nullable T> {
   static <@Nullable T> lazy<@Nullable T> get(@¢ final Supplier<@Nullable T> ¢) {
     return new lazy<@Nullable T>() {
       /** Cached value; invalid cache if {@code null} */

@@ -16,8 +16,7 @@ import il.org.spartan.utils.*;
 /** Utility class for linguistic issues. Used by GUI dialogs.
  * @author Ori Roth
  * @since 2.6 */
-@SuppressWarnings("null")
-public interface English {
+@SuppressWarnings("null") public interface English {
   interface Inflection {
     static Inflection stem(final @NotNull String base) {
       return new Inflection() {

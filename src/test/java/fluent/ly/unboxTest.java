@@ -77,7 +77,6 @@ import org.junit.*;
     for (int ¢ = 0; ¢ < len; ++¢) {
       expected[¢] = random.nextBoolean();
       tested[¢] = box.box(expected[¢]);
-      
     }
     Assert.assertArrayEquals(expected, unbox.unbox(tested));
   }

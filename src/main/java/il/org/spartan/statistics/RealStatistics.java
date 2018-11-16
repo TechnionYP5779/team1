@@ -15,7 +15,7 @@ public class RealStatistics extends ImmutableStatistics {
    * use the values of <code>1L</code> to maintain upward compatibility. */
   private static final long serialVersionUID = 1;
 
-  public static double @NotNull[] increase(final double @NotNull [] ¢) {
+  public static double @NotNull [] increase(final double @NotNull [] ¢) {
     return Utils.cantBeNull(Arrays.copyOf(¢, 2 * ¢.length + 1));
   }
 

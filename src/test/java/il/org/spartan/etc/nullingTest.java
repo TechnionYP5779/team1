@@ -9,10 +9,10 @@ import org.junit.*;
 import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class nullingTest {
- @Test public void testLyBooleanSupplier() {
-   BooleanSupplier tSupplier = () -> true, fSupplier = () -> false;
-   azzert.isNull(nulling.ly(tSupplier));
-   azzert.isNull(nulling.ly(fSupplier));
+  @Test public void testLyBooleanSupplier() {
+    BooleanSupplier tSupplier = () -> true, fSupplier = () -> false;
+    azzert.isNull(nulling.ly(tSupplier));
+    azzert.isNull(nulling.ly(fSupplier));
   }
 
   @Test public void testLyDoubleSupplier() {
@@ -32,11 +32,11 @@ import fluent.ly.*;
   }
 
   @Test public void testLyRunnable() {
-    Runnable r = () -> { 
-      String x = "abc"; 
+    Runnable r = () -> {
+      String x = "abc";
       x.replace('a', 'd');
-     };
-     azzert.isNull(nulling.ly(r));
+    };
+    azzert.isNull(nulling.ly(r));
   }
 
   @Test public void testLySupplierOfR() {

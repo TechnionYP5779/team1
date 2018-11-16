@@ -33,13 +33,13 @@ import static il.org.spartan.utils.Accumulator.Last;
     azzert.assertEquals(4, counter.next());
     azzert.assertEquals(4, counter.value());
   }
-  
+
   @Test public void valueNotChange() {
     Counter counter = new Counter();
     counter.add(false);
     azzert.assertEquals(new Counter() + "", counter + "");
   }
-  
+
   @Test public void lastValueIsKept() {
     Last last = new Last();
     last.add(10);

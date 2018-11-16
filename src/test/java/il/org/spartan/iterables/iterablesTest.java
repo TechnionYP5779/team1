@@ -81,23 +81,22 @@ import fluent.ly.*;
     for (boolean first = true; ite.hasNext(); first = !first)
       Assert.assertEquals(ite.next(), (first ? ite1 : ite2).next());
   }
-  
+
   @Test public void testCount() {
     final List<Integer> nums = new ArrayList<>();
     nums.add(box(1));
     nums.add(box(2));
-    azzert.assertEquals(iterables.count(nums) , nums.size());
+    azzert.assertEquals(iterables.count(nums), nums.size());
     nums.add(box(3));
-    azzert.assertEquals(iterables.count(nums) , nums.size());
+    azzert.assertEquals(iterables.count(nums), nums.size());
     nums.remove(box(1));
-    azzert.assertEquals(iterables.count(nums) , nums.size());
+    azzert.assertEquals(iterables.count(nums), nums.size());
   }
 
   @Test public void testIsEmpty() {
     final List<Integer> nums = new ArrayList<>();
     nums.add(box(1));
     azzert.assertEquals(iterables.isEmpty(nums), false);
-    azzert.assertEquals(iterables.isEmpty(new ArrayList<Integer>()),true);
+    azzert.assertEquals(iterables.isEmpty(new ArrayList<Integer>()), true);
   }
-  
 }

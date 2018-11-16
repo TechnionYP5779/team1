@@ -15,8 +15,7 @@ import org.junit.*;
         return "foo" + cnt;
       }
     });
-    
-    //make sure the computation only happens once
+    // make sure the computation only happens once
     azzert.assertEquals("foo1", lzy.get());
     azzert.assertEquals("foo1", lzy.get());
     azzert.assertEquals("foo1", lzy.get());

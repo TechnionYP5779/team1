@@ -9,7 +9,7 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 @SuppressWarnings("static-method") public class prunteTest2 {
-  @Nullable final String @NotNull [] alternatingArray = new @Nullable String @NotNull[] { null, "A", null, null, "B", null, null, null, "C", null };
+  @Nullable final String @NotNull [] alternatingArray = new @Nullable String @NotNull [] { null, "A", null, null, "B", null, null, null, "C", null };
   @NotNull final String @NotNull [] nonNullArray = { "1", "2", "4" };
   @NotNull final Supplier<List<String>> x = () -> {
     final List<String> $ = an.empty.list();

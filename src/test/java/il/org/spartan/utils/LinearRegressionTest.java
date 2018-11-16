@@ -28,7 +28,7 @@ import il.org.spartan.utils.LinearRegression.*;
     } catch (final NotEnoughDots __) {
       forget.it(__);
       assert true;
-    } catch ( final InfiniteSlopeFunction __) {
+    } catch (final InfiniteSlopeFunction __) {
       forget.it(__);
       assert false;
     }
