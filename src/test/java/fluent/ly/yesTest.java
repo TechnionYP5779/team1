@@ -4,7 +4,7 @@ import org.junit.*;
 
 // Added suppress warning cause eclipse claims
 // that the methods can be static although it won't compile
-@SuppressWarnings("static-method") public class YesTest {
+@SuppressWarnings("static-method") public class yesTest {
   @Test public void forgettingRunnableTest() {
     assert yes.forgetting(() -> {
       /* redundant */ });
