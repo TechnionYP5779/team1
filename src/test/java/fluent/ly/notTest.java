@@ -1,9 +1,6 @@
 package fluent.ly;
 
-import java.util.*;
-
 import org.junit.*;
-
 import il.org.spartan.*;
 
 // This suppress is here because
@@ -11,7 +8,9 @@ import il.org.spartan.*;
 // although they shouldn't
 @SuppressWarnings("static-method") public class notTest {
   @Test public void inTest() {
-    assert not.in(Utils.cantBeNull(Integer.valueOf(2)), new ArrayList<Integer>());
+    Integer two = Integer.valueOf(2), three = Integer.valueOf(3);
+    assert not.in(Utils.cantBeNull(two), Utils.cantBeNull(three));
+    assert !not.in(Utils.cantBeNull(two), Utils.cantBeNull(two),Utils.cantBeNull(three));
   }
 
   @Test public void nilTest() {
