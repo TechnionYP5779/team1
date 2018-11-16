@@ -15,24 +15,14 @@ public class OuterTest {
   @Before public void setNullOuter(){
     null_outer.set(null);
   }
-  //===========================================
-//  @Test public void cloneTest() {
-//    try {
-//      assert outer.equals(outer.clone());
-//      assert !outer.clone().equals(outer2);
-//    }
-//    catch(final CloneNotSupportedException __) {
-//      forget.it(__);
-//      assert false;
-//    }
-//  }
-  //===========================================
-  @Test public void equalsTest() {
-    // check on null Outer
+  @Test @SuppressWarnings("unlikely-arg-type") public void equalsTest() {
+    // the warning is because we want to check on two different objects
     assert null_outer.equals(null_outer);
     assert !null_outer.equals(outer);
-    // check on not-null outer
+    Object null_obj = null;
     assert outer.equals(outer);
+    assert !outer.equals(null_obj);
+    assert !outer.equals(box(5));
     assert !outer.equals(outer2);
     Object outer3 = outer;
     assert outer.equals(outer3);
