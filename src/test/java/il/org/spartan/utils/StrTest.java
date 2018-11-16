@@ -13,7 +13,7 @@ public class StrTest {
 
   @Test public void setTest() {
     assert !valued_Str.isEmptyx();
-    azzert.that(Utils.cantBeNull(valued_Str.inner()), is("newValue"));
+    azzert.that(Utils.cantBeNull(valued_Str.inner()), is("Hello world!"));
     valued_Str.set("newValue");
     assert !valued_Str.isEmptyx();
     azzert.that(valued_Str.inner(), is("newValue"));
