@@ -5,8 +5,6 @@ import static fluent.ly.box.*;
 import org.junit.*;
 import static fluent.ly.azzert.is;
 import fluent.ly.*;
-import il.org.spartan.etc.*;
-
 public class OuterTest {
   //===========================================
   //            CLASS VARIABLES
