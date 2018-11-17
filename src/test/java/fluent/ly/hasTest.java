@@ -1,6 +1,7 @@
 package fluent.ly;
 
 import static fluent.ly.box.*;
+import static fluent.ly.azzert.*;
 
 import java.util.*;
 
@@ -22,11 +23,11 @@ import il.org.spartan.*;
   }
 
   @Test public void getItemInRange() {
-    Assert.assertEquals(has.next(2, Utils.cantBeNull(list)), box(4));
+    azzert.that(has.next(2, Utils.cantBeNull(list)), is(box(4)));
   }
 
   @Test public void getItemOutOfRange() {
-    Assert.assertEquals(has.next(1000, Utils.cantBeNull(list)), box(5));
+    azzert.that(has.next(1000, Utils.cantBeNull(list)), is(box(5)));
   }
 
   @Test public void iterableHasNoNulls() {

@@ -1,7 +1,8 @@
 package fluent.ly;
 
 import java.util.*;
-
+import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
 import org.junit.*;
 
 // import il.org.spartan.utils.*;
@@ -10,9 +11,9 @@ import org.junit.*;
     int i1;
     final range r1 = new range(1, 2);
     i1 = r1.hashCode();
-    azzert.assertEquals(7, i1);
-    azzert.assertEquals(1, r1.from());
-    azzert.assertFalse(r1.isInfinite());
+    azzert.that(7, is(i1));
+    azzert.that(1, is(r1.from()));
+    assert !r1.isInfinite();
   }
 
   @Test public void equalsObject() {
@@ -32,11 +33,11 @@ import org.junit.*;
     rangeList.add(range1);
     rangeList.add(range2);
     azzert.assertNotEquals(null, toFindSucc.findIncludedIn(rangeList));
-    Assert.assertEquals(range1, toFindSucc.findIncludedIn(rangeList));
+    azzert.that(range1, is(toFindSucc.findIncludedIn(rangeList)));
     Assert.assertEquals(null, toFindFail.findIncludedIn(rangeList));
     Assert.assertEquals(null, toFindFail.findIncludedIn(null));
     rangeList.add(null);
-    Assert.assertEquals(range1, toFindSucc.findIncludedIn(rangeList));
+    azzert.that(range1, is(toFindSucc.findIncludedIn(rangeList)));
   }
 
   @Test public void includedIn() {
@@ -72,22 +73,22 @@ import org.junit.*;
     final ArrayList<range> rangeList = new ArrayList<>();
     rangeList.add(range1);
     rangeList.add(range2);
-    azzert.assertEquals(2, rangeList.size());
+    azzert.that(2, is(rangeList.size()));
     toFindSucc.pruneIncluders(rangeList);
-    azzert.assertEquals(1, rangeList.size());
+    azzert.that(1, is(rangeList.size()));
     toFindFail.pruneIncluders(rangeList);
-    azzert.assertEquals(1, rangeList.size());
+    azzert.that(1, is(rangeList.size()));
   }
 
   @Test public void size() {
     final range range2 = new range(2, 2), range3 = new range(5, 4);
-    azzert.assertEquals(8, new range(2, 10).size());
-    azzert.assertEquals(0, range2.size());
-    azzert.assertEquals(-1, range3.size());
+    azzert.that(8, is(new range(2, 10).size()));
+    azzert.that(0, is(range2.size()));
+    azzert.that(-1, is(range3.size()));
   }
 
   @Test public void tostring() {
-    Assert.assertEquals(new range(2, 10) + "", "[2, 10]");
+    azzert.that(new range(2, 10) + "", is("[2, 10]"));
   }
 
   @Test public void createInfiniteSequence() {
@@ -102,7 +103,7 @@ import org.junit.*;
   @Test public void fromTo() {
     int count = 2;
     for (final Integer $ : range.from(2).to(6)) {
-      azzert.assertEquals(count, $);
+      azzert.that(box(count), is($));
       ++count;
     }
   }
@@ -113,7 +114,7 @@ import org.junit.*;
     int count = 1;
     for (final Integer $ : range.to(2)) {
       // System.out.println($);
-      azzert.assertEquals(count, $);
+      azzert.that(box(count), is($));
       --count;
       if (count == -5)
         break;
@@ -130,7 +131,7 @@ import org.junit.*;
     int count = -5;
     for (final Integer $ : range.to(2).from(-5)) {
       // System.out.println($);
-      azzert.assertEquals(count, $);
+      azzert.that(box(count), is($));
       ++count;
     }
   }
@@ -140,7 +141,7 @@ import org.junit.*;
     int count = Integer.MIN_VALUE;
     for (final Integer $ : range.numbers) {
       // System.out.println($);
-      azzert.assertEquals(count, $);
+      azzert.that(box(count), is($));
       ++count;
       if (count == Integer.MIN_VALUE + 5)
         break;
@@ -153,7 +154,7 @@ import org.junit.*;
     int count = 3;
     for (final Integer $ : range.to(10).interset(range.from(3))) {
       // System.out.println($);
-      azzert.assertEquals(count, $);
+      azzert.that(box(count), is($));
       ++count;
     }
   }

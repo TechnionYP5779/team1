@@ -1,10 +1,13 @@
 package il.org.spartan;
 
 import org.junit.*;
+import static fluent.ly.azzert.*;
+
+import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class tideTest {
   @Test public void clean() {
-    Assert.assertEquals(tide.clean("  Hello  "), "Hello");
+    azzert.that(tide.clean("  Hello  "), is("Hello"));
   }
 
   @Test public void eq() {

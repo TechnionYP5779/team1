@@ -1,7 +1,7 @@
 package il.org.spartan.utils;
 
-import static org.junit.Assert.*;
-
+import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
 import org.junit.*;
 
 import fluent.ly.*;
@@ -42,8 +42,8 @@ import fluent.ly.*;
     try {
       Binary.T.equals(Binary.T);
     } catch (final IllegalArgumentException ¢) {
-      assertEquals("il.org.spartan.utils.Binary@1", ¢.getMessage());
+      azzert.that("il.org.spartan.utils.Binary@1", is(¢.getMessage()));
     }
-    azzert.assertEquals(Integer.valueOf(1), Binary.T.clone().hashCode());
+    azzert.that(box(1), is(Binary.T.clone().hashCode()));
   }
 }

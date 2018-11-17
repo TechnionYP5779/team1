@@ -1,6 +1,7 @@
 package il.org.spartan.etc;
 
 import java.math.*;
+import static fluent.ly.azzert.*;
 
 import org.junit.*;
 
@@ -10,9 +11,9 @@ import il.org.spartan.etc.ArithProgressionBuilder.*;
 @SuppressWarnings("static-method") public class ArithProgressionTest {
   @Test public void setupDefualtSeq() {
     final ArithProgression seq = new ArithProgressionBuilder().build();
-    azzert.assertEquals(seq.next().intValue(), 0);
-    azzert.assertEquals(seq.next().intValue(), 0);
-    azzert.assertEquals(seq.next().intValue(), 0);
+    azzert.that(seq.next().intValue(), is(0));
+    azzert.that(seq.next().intValue(), is(0));
+    azzert.that(seq.next().intValue(), is(0));
   }
 
   @Test public void emptySeq() {
@@ -26,7 +27,7 @@ import il.org.spartan.etc.ArithProgressionBuilder.*;
     builder.startsWith(BigInteger.ONE).step(BigInteger.ONE);
     final ArithProgression seq = builder.build();
     for (int ¢ = 1; ¢ < 100; ++¢)
-      azzert.assertEquals(seq.next().intValue(), ¢);
+      azzert.that(seq.next().intValue(), is(¢));
   }
 
   @Test public void basicBoundedArithmeticSeq() {
@@ -34,7 +35,7 @@ import il.org.spartan.etc.ArithProgressionBuilder.*;
     builder.startsWith(BigInteger.ONE).step(BigInteger.ONE).bound(BigInteger.TEN);
     final ArithProgression seq = builder.build();
     for (int ¢ = 1; ¢ < 11; ++¢)
-      azzert.assertEquals(seq.next().intValue(), ¢);
+      azzert.that(seq.next().intValue(), is(¢));
     assert seq.hasNext();
   }
 
@@ -47,7 +48,7 @@ import il.org.spartan.etc.ArithProgressionBuilder.*;
     builder.startsWith(BigInteger.valueOf(Integer.MAX_VALUE)).step(BigInteger.ONE).unbound();
     final ArithProgression seq = builder.build();
     for (long ¢ = Integer.MAX_VALUE; ¢ < Integer.MAX_VALUE + 100; ++¢)
-      Assert.assertEquals(seq.next().longValue(), ¢);
+      azzert.that(seq.next().longValue(), is(¢));
     assert seq.hasNext();
   }
 }

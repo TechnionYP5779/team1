@@ -1,8 +1,7 @@
 package fluent.ly;
 
-import static org.junit.Assert.*;
-
 import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
 
 import java.util.*;
 
@@ -12,74 +11,74 @@ import org.junit.*;
 @SuppressWarnings({ "static-method", "null" }) public class asTest {
   @Test public void testAsIterable() {
     int count = 1;
-    for (final Integer ¢ : as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))) {
-      assert ¢.equals(Integer.valueOf(count));
+    for (final Integer ¢ : as.asIterable(box(1), box(2), box(3))) {
+      assert ¢.equals(box(count));
       ++count;
     }
   }
 
   @Test public void testAsIterableLambda() {
     int count = 1;
-    for (final Integer ¢ : as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3))) {
-      assert ¢.equals(Integer.valueOf(count));
+    for (final Integer ¢ : as.asIterableLambda(box(1), box(2), box(3))) {
+      assert ¢.equals(box(count));
       ++count;
     }
   }
 
   @Test public void testBitBoolean() {
-    azzert.assertEquals(as.bit(true), 1);
-    azzert.assertEquals(as.bit(false), 0);
+    azzert.that(as.bit(true), is(1));
+    azzert.that(as.bit(false), is(0));
   }
 
   @Test public void testBitObject() {
-    azzert.assertEquals(as.bit(Boolean.TRUE), 1);
-    azzert.assertEquals(as.bit(null), 0);
+    azzert.that(as.bit(Boolean.TRUE), is(1));
+    azzert.that(as.bit(null), is(0));
   }
 
   @Test public void testIngeterList() {
-    azzert.assertEquals(as.ingeterList(1, 23, 3, 44, 5).size(), 5);
+    azzert.that(as.ingeterList(1, 23, 3, 44, 5).size(), is(5));
   }
 
   @Test public void testIntArrayIntArray() {
     final int[] x = as.intArray(0, 1, 2, 3, 4);
     for (int ¢ = 0; ¢ < 5; ++¢)
-      azzert.assertEquals(¢, x[¢]);
+      azzert.that(¢, is(x[¢]));
   }
 
   @Test public void testIntArrayListOfInteger() {
     final List<Integer> y = new ArrayList<>();
     for (int ¢ = 0; ¢ < 5; ++¢)
-      y.add(Integer.valueOf(¢));
+      y.add(box(¢));
     final int[] x = as.intArray(0, 1, 2, 3, 4);
     for (int ¢ = 0; ¢ < 5; ++¢)
-      azzert.assertEquals(¢, x[¢]);
+      azzert.that(¢, is(x[¢]));
   }
 
   @Test public void testListIterableOfQextendsT() {
-    Assert.assertEquals(an.empty.list(), as.list(new ArrayList<>()));
+    azzert.that(an.empty.list(), is(as.list(new ArrayList<>())));
   }
 
   @Test public void testListTArray() {
     final List<Integer> x = as.ingeterList(1, 2, 3);
-    assert x.contains(Integer.valueOf(1));
-    assert x.contains(Integer.valueOf(2));
-    assert x.contains(Integer.valueOf(3));
+    assert x.contains(box(1));
+    assert x.contains(box(2));
+    assert x.contains(box(3));
   }
 
   @Test public void testSet() {
-    azzert.assertEquals(as.set(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3)).size(), 3);
+    azzert.that(as.set(box(1), box(2), box(3)).size(), is(3));
   }
 
   @Test public void testStringObject() {
-    Assert.assertEquals(as.string((Object) null), "null");
+    azzert.that(as.string((Object) null), is("null"));
   }
 
   @Test public void testStringChar() {
-    Assert.assertEquals(as.string('g'), "g");
+    azzert.that(as.string('g'), is("g"));
   }
 
   @Test public void testStringString() {
-    Assert.assertEquals(as.string(null), "null");
+    azzert.that(as.string(null), is("null"));
   }
 
   @Test public void testStrings() {
@@ -90,11 +89,11 @@ import org.junit.*;
   }
 
   @Test public void testAsIterableEssence() {
-    assert Integer.valueOf(1).equals(as.iterator(Integer.valueOf(1)).next());
+    assert box(1).equals(as.iterator(box(1)).next());
   }
 
   @Test public void testArray() {
-    assert as.array(Integer.valueOf(1))[0].equals(Integer.valueOf(1));
+    assert as.array(box(1))[0].equals(box(1));
   }
 
   @Test public void asBitOfFalse() {
@@ -113,9 +112,9 @@ import org.junit.*;
   @Test public void asListSimple() {
     // direct call `as.list(12, 13, 14)` kills Travis --or
     final @NotNull List<Integer> is = as.list(new int @NotNull [] { 12, 13, 14 });
-    azzert.that(is.get(0), is(fluent.ly.box.it(12)));
-    azzert.that(is.get(1), is(fluent.ly.box.it(13)));
-    azzert.that(is.get(2), is(fluent.ly.box.it(14)));
+    azzert.that(is.get(0), is(box(12)));
+    azzert.that(is.get(1), is(box(13)));
+    azzert.that(is.get(2), is(box(14)));
     azzert.that(is.size(), is(3));
   }
 
