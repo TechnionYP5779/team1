@@ -12,4 +12,8 @@ import static fluent.ly.azzert.*;
   @Test public void testDivByZero() {
     azzert.that(safe.div(1, 0), is(1.0));
   }
+  
+  @Test public void testErrorMarginsNotIgnoredSanityCheck() {
+    azzert.that(safe.div(1, 0), not(is(1.000000000000001)));
+  }
 }
