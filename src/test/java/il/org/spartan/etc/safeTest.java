@@ -1,15 +1,15 @@
 package il.org.spartan.etc;
 
 import org.junit.*;
+import fluent.ly.*;
+import static fluent.ly.azzert.*;
 
-public class safeTest {
-  private final double delta = 0.0000000001;
-
+@SuppressWarnings("static-method") public class safeTest {
   @Test public void testDivByNonZero() {
-    Assert.assertEquals(safe.div(1, 2), 0.5, delta);
+    azzert.that(safe.div(1, 2), is(0.5));
   }
 
   @Test public void testDivByZero() {
-    Assert.assertEquals(safe.div(1, 0), 1, delta);
+    azzert.that(safe.div(1, 0), is(1.0));
   }
 }
