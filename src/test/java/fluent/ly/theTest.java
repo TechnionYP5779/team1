@@ -3,8 +3,6 @@ package fluent.ly;
 import static fluent.ly.box.*;
 import java.util.*;
 import static fluent.ly.azzert.*;
-import static fluent.ly.box.*;
-
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
