@@ -1,7 +1,7 @@
 package il.org.spartan.iterables;
 
 import org.junit.*;
-
+import static fluent.ly.azzert.*;
 import fluent.ly.*;
 
 public class PureIterableTest {
@@ -12,7 +12,7 @@ public class PureIterableTest {
   }
 
   @Test public void size() {
-    azzert.assertEquals(new Mock().size(), 0);
+    azzert.that(new Mock().size(), is(0));
     azzert.assertNull(new Mock().iterator());
   }
 }

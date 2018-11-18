@@ -1,5 +1,6 @@
 package il.org.spartan.etc;
 
+import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
 import java.util.*;
 
@@ -22,9 +23,9 @@ import il.org.spartan.utils.*;
 
   @Test public void inflection() {
     final Inflection jump = English.Inflection.stem("Jump");
-    Assert.assertEquals(jump.get(), "Jump");
-    Assert.assertEquals(jump.getEd(), "Jumped");
-    Assert.assertEquals(jump.getIng(), "Jumping");
+    azzert.that(jump.get(), is("Jump"));
+    azzert.that(jump.getEd(), is("Jumped"));
+    azzert.that(jump.getIng(), is("Jumping"));
   }
 
   @Test public void isAcronym() {
@@ -34,111 +35,111 @@ import il.org.spartan.utils.*;
 
   @Test public void list() {
     final ArrayList<@NotNull String> strings = new ArrayList<>();
-    Assert.assertEquals(English.list(strings), "nothing");
+    azzert.that(English.list(strings), is("nothing"));
     strings.add("Hello");
-    Assert.assertEquals(English.list(strings), "Hello");
+    azzert.that(English.list(strings), is("Hello"));
     strings.add("Bye");
-    Assert.assertEquals(English.list(strings), "Hello and Bye");
+    azzert.that(English.list(strings), is("Hello and Bye"));
   }
 
   @Test public void lowerFirstLetter() {
-    Assert.assertEquals(English.lowerFirstLetter("Hello"), "hello");
+    azzert.that(English.lowerFirstLetter("Hello"), is("hello"));
   }
 
   @Test public void upperFirstLetter() {
-    Assert.assertEquals(English.upperFirstLetter("hello"), "Hello");
+    azzert.that(English.upperFirstLetter("hello"), is("Hello"));
   }
 
   @Test public void plurales() {
-    Assert.assertEquals(English.plurales("dog", 1), "one dog");
-    Assert.assertEquals(English.plurales("dog", 2), "2 doges");
-    Assert.assertEquals(English.plurales("dog", new Int(1)), "one dog");
-    Assert.assertEquals(English.plurales("dog", new Int(2)), "2 doges");
-    Assert.assertEquals(English.plurales("dog", new Int(2)), "2 doges");
-    Assert.assertEquals(English.plurales("dog", box(1)), "one dog");
-    Assert.assertEquals(English.plurales("dog", box(2)), "2 doges");
+    azzert.that(English.plurales("dog", 1), is("one dog"));
+    azzert.that(English.plurales("dog", 2), is("2 doges"));
+    azzert.that(English.plurales("dog", new Int(1)), is("one dog"));
+    azzert.that(English.plurales("dog", new Int(2)), is("2 doges"));
+    azzert.that(English.plurales("dog", new Int(2)), is("2 doges"));
+    azzert.that(English.plurales("dog", box(1)), is("one dog"));
+    azzert.that(English.plurales("dog", box(2)), is("2 doges"));
     final Int nullInt = null;
     final Integer nullInteger = null;
-    Assert.assertEquals(English.plurales("dog", nullInt), "??? doges");
-    Assert.assertEquals(English.plurales("dog", nullInteger), "??? doges");
+    azzert.that(English.plurales("dog", nullInt), is("??? doges"));
+    azzert.that(English.plurales("dog", nullInteger), is("??? doges"));
   }
 
   @Test public void plurals() {
-    Assert.assertEquals(English.plurals("dog", 1), "one dog");
-    Assert.assertEquals(English.plurals("dog", 2), "2 dogs");
-    Assert.assertEquals(English.plurals("dog", new Int(1)), "one dog");
-    Assert.assertEquals(English.plurals("dog", new Int(2)), "2 dogs");
-    Assert.assertEquals(English.plurals("dog", new Int(2)), "2 dogs");
-    Assert.assertEquals(English.plurals("dog", box(1)), "one dog");
-    Assert.assertEquals(English.plurals("dog", box(2)), "2 dogs");
+    azzert.that(English.plurals("dog", 1), is("one dog"));
+    azzert.that(English.plurals("dog", 2), is("2 dogs"));
+    azzert.that(English.plurals("dog", new Int(1)), is("one dog"));
+    azzert.that(English.plurals("dog", new Int(2)), is("2 dogs"));
+    azzert.that(English.plurals("dog", new Int(2)), is("2 dogs"));
+    azzert.that(English.plurals("dog", box(1)), is("one dog"));
+    azzert.that(English.plurals("dog", box(2)), is("2 dogs"));
     final Int nullInt = null;
     final Integer nullInteger = null;
-    Assert.assertEquals(English.plurals("dog", nullInt), "??? dogs");
-    Assert.assertEquals(English.plurals("dog", nullInteger), "??? dogs");
+    azzert.that(English.plurals("dog", nullInt), is("??? dogs"));
+    azzert.that(English.plurals("dog", nullInteger), is("??? dogs"));
   }
 
   @Test public void pronounce() {
-    Assert.assertEquals(English.pronounce('A'), "aey");
-    Assert.assertEquals(English.pronounce('b'), "bee");
-    Assert.assertEquals(English.pronounce('c'), "see");
-    Assert.assertEquals(English.pronounce('d'), "dee");
-    Assert.assertEquals(English.pronounce('e'), "eae");
-    Assert.assertEquals(English.pronounce('f'), "eff");
-    Assert.assertEquals(English.pronounce('g'), "gee");
-    Assert.assertEquals(English.pronounce('h'), "eitch");
-    Assert.assertEquals(English.pronounce('i'), "eye");
-    Assert.assertEquals(English.pronounce('j'), "jay");
-    Assert.assertEquals(English.pronounce('k'), "kay");
-    Assert.assertEquals(English.pronounce('l'), "ell");
-    Assert.assertEquals(English.pronounce('m'), "em");
-    Assert.assertEquals(English.pronounce('n'), "en");
-    Assert.assertEquals(English.pronounce('o'), "oh");
-    Assert.assertEquals(English.pronounce('p'), "pee");
-    Assert.assertEquals(English.pronounce('q'), "queue");
-    Assert.assertEquals(English.pronounce('r'), "ar");
-    Assert.assertEquals(English.pronounce('s'), "ess");
-    Assert.assertEquals(English.pronounce('t'), "tee");
-    Assert.assertEquals(English.pronounce('u'), "you");
-    Assert.assertEquals(English.pronounce('v'), "vee");
+    azzert.that(English.pronounce('A'), is("aey"));
+    azzert.that(English.pronounce('b'), is("bee"));
+    azzert.that(English.pronounce('c'), is("see"));
+    azzert.that(English.pronounce('d'), is("dee"));
+    azzert.that(English.pronounce('e'), is("eae"));
+    azzert.that(English.pronounce('f'), is("eff"));
+    azzert.that(English.pronounce('g'), is("gee"));
+    azzert.that(English.pronounce('h'), is("eitch"));
+    azzert.that(English.pronounce('i'), is("eye"));
+    azzert.that(English.pronounce('j'), is("jay"));
+    azzert.that(English.pronounce('k'), is("kay"));
+    azzert.that(English.pronounce('l'), is("ell"));
+    azzert.that(English.pronounce('m'), is("em"));
+    azzert.that(English.pronounce('n'), is("en"));
+    azzert.that(English.pronounce('o'), is("oh"));
+    azzert.that(English.pronounce('p'), is("pee"));
+    azzert.that(English.pronounce('q'), is("queue"));
+    azzert.that(English.pronounce('r'), is("ar"));
+    azzert.that(English.pronounce('s'), is("ess"));
+    azzert.that(English.pronounce('t'), is("tee"));
+    azzert.that(English.pronounce('u'), is("you"));
+    azzert.that(English.pronounce('v'), is("vee"));
     // For some reason no 'w'
-    // azzert.assertEquals(English.pronounce('w'), "exx");
-    Assert.assertEquals(English.pronounce('x'), "exx");
-    Assert.assertEquals(English.pronounce('y'), "why");
-    Assert.assertEquals(English.pronounce('z'), "zee");
-    Assert.assertEquals(English.pronounce('3'), "some character");
+    // azzert.assertEquals(English.pronounce('w'), is("exx"));
+    azzert.that(English.pronounce('x'), is("exx"));
+    azzert.that(English.pronounce('y'), is("why"));
+    azzert.that(English.pronounce('z'), is("zee"));
+    azzert.that(English.pronounce('3'), is("some character"));
   }
 
   @Test public void repeat() {
-    Assert.assertEquals(English.repeat(3, 'd'), "ddd");
+    azzert.that(English.repeat(3, 'd'), is("ddd"));
   }
 
   @Test public void selfName() {
-    Assert.assertEquals(English.selfName(Object.class), "Object");
-    Assert.assertEquals(English.selfName(PureIterable.Sized.class), "Sized");
+    azzert.that(English.selfName(Object.class), is("Object"));
+    azzert.that(English.selfName(PureIterable.Sized.class), is("Sized"));
   }
 
   @Test public void time() {
-    Assert.assertEquals(English.time(123456789), "0.12");
+    azzert.that(English.time(123456789), is("0.12"));
   }
 
   @Test public void trim() {
     azzert.assertNull(English.trim(null));
-    Assert.assertEquals(English.trim("Hello how are you doing?\nI'm doing fine"), "Hello how are you doing?\nI'm doing fine");
-    Assert.assertEquals(English.trim("Hello how are you you you you you you you you doing?\nI'm doing fine"),
-        "Hello how are you you you you you you you you d...\nI'm doing fine");
+    azzert.that(English.trim("Hello how are you doing?\nI'm doing fine"), is("Hello how are you doing?\nI'm doing fine"));
+    azzert.that(English.trim("Hello how are you you you you you you you you doing?\nI'm doing fine"),
+        is("Hello how are you you you you you you you you d...\nI'm doing fine"));
   }
 
   @Test public void unknownIfNull() {
-    Assert.assertEquals(English.unknownIfNull(null), "???");
-    Assert.assertEquals(English.unknownIfNull("Hello how are you doing?\nI'm doing fine"), "Hello how are you doing?\nI'm doing fine");
-    Assert.assertEquals(English.unknownIfNull(null, λ -> λ + "a"), "???");
-    Assert.assertEquals(English.unknownIfNull("Hello", λ -> λ + "a"), "Helloa");
+    azzert.that(English.unknownIfNull(null), is("???"));
+    azzert.that(English.unknownIfNull("Hello how are you doing?\nI'm doing fine"), is("Hello how are you doing?\nI'm doing fine"));
+    azzert.that(English.unknownIfNull(null, λ -> λ + "a"), is("???"));
+    azzert.that(English.unknownIfNull("Hello", λ -> λ + "a"), is("Helloa"));
   }
 
   @Test public void name() {
     final Mock m = new Mock();
-    Assert.assertEquals(English.name(Integer.class), "Integer");
-    Assert.assertEquals(English.name(Mock.EnclosedMock.class), "EnclosedMock.Mock.EnglishTest");
-    Assert.assertEquals(English.name(m.getClass()), "Mock.EnglishTest");
+    azzert.that(English.name(Integer.class), is("Integer"));
+    azzert.that(English.name(Mock.EnclosedMock.class), is("EnclosedMock.Mock.EnglishTest"));
+    azzert.that(English.name(m.getClass()), is("Mock.EnglishTest"));
   }
 }

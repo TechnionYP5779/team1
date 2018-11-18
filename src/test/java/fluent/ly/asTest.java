@@ -132,40 +132,39 @@ import org.junit.*;
 
   @Test public void asIterable() {
     final Iterable<Integer> iter1 = as.asIterable(box(1), box(2), box(3), box(4), box(5)),
-        iter2 = as.asIterableLambda(box(1), box(2), box(3), box(4), box(5)),
-        iter3 = as.asIterableEssence(box(1), box(2), box(3), box(4), box(5));
+        iter2 = as.asIterableLambda(box(1), box(2), box(3), box(4), box(5)), iter3 = as.asIterableEssence(box(1), box(2), box(3), box(4), box(5));
     final Iterator<Integer> iter4 = as.iterator(box(1), box(2), box(3), box(4), box(5));
     int j = 1;
     for (final int ¢ : iter1) {
-      azzert.assertEquals(j, ¢);
+      azzert.that(j, is(¢));
       ++j;
     }
     j = 1;
     for (final int ¢ : iter2) {
-      azzert.assertEquals(j, ¢);
+      azzert.that(j, is(¢));
       ++j;
     }
     j = 1;
     for (final int ¢ : iter3) {
-      azzert.assertEquals(j, ¢);
+      azzert.that(j, is(¢));
       ++j;
     }
     j = 1;
     for (; iter4.hasNext(); ++j)
-      azzert.assertEquals(j, iter4.next());
+      azzert.that(box(j), is(iter4.next()));
   }
 
   @Test public void bit() {
     final Object obj = new Object();
-    azzert.assertEquals(0, as.bit(null));
-    azzert.assertEquals(1, as.bit(obj));
+    azzert.that(0, is(as.bit(null)));
+    azzert.that(1, is(as.bit(obj)));
   }
 
   @Test public void array() {
     final Integer[] array = as.array(box(1), box(2), box(3));
-    azzert.assertEquals(array[0], 1);
-    azzert.assertEquals(array[1], 2);
-    azzert.assertEquals(array[2], 3);
+    azzert.that(array[0], is(1));
+    azzert.that(array[1], is(2));
+    azzert.that(array[2], is(3));
   }
 
   @Test public void strings() {
@@ -175,11 +174,11 @@ import org.junit.*;
     checkNullObject.add(null);
     checkNullObject.add("Hi");
     final String[] stringArray3 = as.strings(checkNullObject);
-    Assert.assertEquals(stringArray[0], "Hello");
-    Assert.assertEquals(stringArray[1], "Hi");
-    azzert.assertEquals(0, stringArray2.length);
-    Assert.assertEquals(stringArray3[0], "Hello");
-    Assert.assertEquals(stringArray3[1], "Hi");
+    azzert.that(stringArray[0], is("Hello"));
+    azzert.that(stringArray[1], is("Hi"));
+    azzert.that(stringArray2.length, is(0));
+    azzert.that(stringArray3[0], is("Hello"));
+    azzert.that(stringArray3[1], is("Hi"));
   }
 
   @Test public void listAndSet() {
@@ -189,13 +188,13 @@ import org.junit.*;
     final List<String> stringList = as.list(stringArrayList);
     final Set<?> stringSet = as.set("Hello", "Hi");
     assertCollectionsEqual(stringArrayList, stringList);
-    azzert.assertEquals(stringSet.size(), 2);
+    azzert.that(stringSet.size(), is(2));
   }
 
   @Test public void string() {
     final String nullString = as.string(null), helloString = as.string("hello");
-    Assert.assertEquals("a", as.string('a'));
-    Assert.assertEquals("null", nullString);
-    Assert.assertEquals("hello", helloString);
+    azzert.that("a", is(as.string('a')));
+    azzert.that("null", is(nullString));
+    azzert.that("hello", is(helloString));
   }
 }

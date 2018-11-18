@@ -1,5 +1,6 @@
 package il.org.spartan.utils;
 
+import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
 import org.junit.*;
 
@@ -13,13 +14,13 @@ import il.org.spartan.utils.RealNumbersPairList.*;
   }
 
   @Test public void size() {
-    azzert.assertEquals(new RealNumbersPairList().size(), 0);
+    azzert.that(new RealNumbersPairList().size(), is(0));
   }
 
   @Test public void addingValue() {
     final RealNumbersPairList list = new RealNumbersPairList();
     list.record(3.5, 2.5);
-    azzert.assertEquals(list.size(), 1);
+    azzert.that(list.size(), is(1));
   }
 
   @Test public void valuesOrder() {
