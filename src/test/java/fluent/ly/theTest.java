@@ -1,5 +1,6 @@
 package fluent.ly;
 
+import static fluent.ly.box.*;
 import java.util.*;
 import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
@@ -64,7 +65,7 @@ import org.junit.*;
 
   @Test public void lastOfTest() {
     final List<Integer> x = new ArrayList<>();
-    // x.add(Integer.valueOf(4));
+    // x.add(box(4));
     x.add(box(5));
     x.add(box(5));
     for (final Integer ¢ : the.lastOf((Iterable<Integer>) x))
@@ -73,7 +74,7 @@ import org.junit.*;
 
   @Test public void onlyOneOfTest() {
     final List<Integer> x = new ArrayList<>();
-    x.add(Integer.valueOf(4));
+    x.add(box(4));
     azzert.that(the.onlyOneOf(x), is(box(4)));
     assert the.onlyOneOf(null) == null;
     x.add(box(5));
@@ -89,9 +90,9 @@ import org.junit.*;
     assert (the.penultimateOf(null) == null);
     assert (the.penultimateOf(y) == null);
     azzert.that(the.penultimateOf(x), is(box(4)));
-    assert the.previous(Integer.valueOf(5), null) == null;
-    assert (the.previous(Integer.valueOf(4), x) == null);
-    assert (the.previous(Integer.valueOf(5), x) != null);
+    assert the.previous(box(5), null) == null;
+    assert (the.previous(box(4), x) == null);
+    assert (the.previous(box(5), x) != null);
     assert (the.headOf(null) == null);
     assert (the.headOf(new ArrayList<>()) == null);
     assert (the.lastOf(new ArrayList<>()) == null);

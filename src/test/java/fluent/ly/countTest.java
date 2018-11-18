@@ -1,5 +1,6 @@
 package fluent.ly;
 
+import static fluent.ly.box.*;
 import java.util.*;
 
 import org.junit.*;
@@ -10,7 +11,7 @@ import org.junit.*;
   }
 
   @Test public void testWithList() {
-    final List<Integer> list = Arrays.asList(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5));
+    final List<Integer> list = Arrays.asList(box(1), box(2), box(3), box(4), box(5));
     azzert.assertEquals(list.size(), count.of(list));
   }
 }

@@ -1,5 +1,6 @@
 package il.org.spartan.utils;
 
+import static fluent.ly.box.*;
 import java.util.*;
 
 import org.junit.*;
@@ -12,9 +13,9 @@ import org.junit.*;
   @Before public void beforeFunction() {
     final Random r = new Random();
     int nextInt = r.nextInt();
-    first = Integer.valueOf(nextInt);
+    first = box(nextInt);
     nextInt = r.nextInt();
-    second = Integer.valueOf(nextInt);
+    second = box(nextInt);
     samplePair = new Pair<>(first, second);
   }
 

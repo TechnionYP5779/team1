@@ -1,5 +1,6 @@
 package fluent.ly;
 
+import static fluent.ly.box.*;
 import static il.org.spartan.Utils.*;
 
 import java.util.*;
@@ -8,13 +9,13 @@ import org.junit.*;
 
 @SuppressWarnings("static-method") public class isTest {
   @Test public void testIsNotInAndOut() {
-    assert !is.in(Integer.valueOf(1), cantBeNull(Integer.valueOf(8)), cantBeNull(Integer.valueOf(100)), cantBeNull(Integer.valueOf(2)));
-    assert is.out(Integer.valueOf(1), cantBeNull(Integer.valueOf(8)), cantBeNull(Integer.valueOf(100)), cantBeNull(Integer.valueOf(2)));
+    assert !is.in(box(1), cantBeNull(box(8)), cantBeNull(box(100)), cantBeNull(box(2)));
+    assert is.out(box(1), cantBeNull(box(8)), cantBeNull(box(100)), cantBeNull(box(2)));
   }
 
   @Test public void testIsInNotOut() {
-    assert is.in(Integer.valueOf(8), cantBeNull(Integer.valueOf(8)), cantBeNull(Integer.valueOf(100)), cantBeNull(Integer.valueOf(2)));
-    assert !is.out(Integer.valueOf(8), cantBeNull(Integer.valueOf(8)), cantBeNull(Integer.valueOf(100)), cantBeNull(Integer.valueOf(2)));
+    assert is.in(box(8), cantBeNull(box(8)), cantBeNull(box(100)), cantBeNull(box(2)));
+    assert !is.out(box(8), cantBeNull(box(8)), cantBeNull(box(100)), cantBeNull(box(2)));
   }
 
   @Test public void testIsIntInNotIn() {

@@ -131,10 +131,10 @@ import org.junit.*;
   }
 
   @Test public void asIterable() {
-    final Iterable<Integer> iter1 = as.asIterable(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5)),
-        iter2 = as.asIterableLambda(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5)),
-        iter3 = as.asIterableEssence(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5));
-    final Iterator<Integer> iter4 = as.iterator(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5));
+    final Iterable<Integer> iter1 = as.asIterable(box(1), box(2), box(3), box(4), box(5)),
+        iter2 = as.asIterableLambda(box(1), box(2), box(3), box(4), box(5)),
+        iter3 = as.asIterableEssence(box(1), box(2), box(3), box(4), box(5));
+    final Iterator<Integer> iter4 = as.iterator(box(1), box(2), box(3), box(4), box(5));
     int j = 1;
     for (final int ¢ : iter1) {
       azzert.assertEquals(j, ¢);
@@ -162,7 +162,7 @@ import org.junit.*;
   }
 
   @Test public void array() {
-    final Integer[] array = as.array(Integer.valueOf(1), Integer.valueOf(2), Integer.valueOf(3));
+    final Integer[] array = as.array(box(1), box(2), box(3));
     azzert.assertEquals(array[0], 1);
     azzert.assertEquals(array[1], 2);
     azzert.assertEquals(array[2], 3);

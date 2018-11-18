@@ -1,5 +1,6 @@
 package il.org.spartan.etc;
 
+import static fluent.ly.box.*;
 import java.util.*;
 
 import org.jetbrains.annotations.*;
@@ -54,8 +55,8 @@ import il.org.spartan.utils.*;
     Assert.assertEquals(English.plurales("dog", new Int(1)), "one dog");
     Assert.assertEquals(English.plurales("dog", new Int(2)), "2 doges");
     Assert.assertEquals(English.plurales("dog", new Int(2)), "2 doges");
-    Assert.assertEquals(English.plurales("dog", Integer.valueOf(1)), "one dog");
-    Assert.assertEquals(English.plurales("dog", Integer.valueOf(2)), "2 doges");
+    Assert.assertEquals(English.plurales("dog", box(1)), "one dog");
+    Assert.assertEquals(English.plurales("dog", box(2)), "2 doges");
     final Int nullInt = null;
     final Integer nullInteger = null;
     Assert.assertEquals(English.plurales("dog", nullInt), "??? doges");
@@ -68,8 +69,8 @@ import il.org.spartan.utils.*;
     Assert.assertEquals(English.plurals("dog", new Int(1)), "one dog");
     Assert.assertEquals(English.plurals("dog", new Int(2)), "2 dogs");
     Assert.assertEquals(English.plurals("dog", new Int(2)), "2 dogs");
-    Assert.assertEquals(English.plurals("dog", Integer.valueOf(1)), "one dog");
-    Assert.assertEquals(English.plurals("dog", Integer.valueOf(2)), "2 dogs");
+    Assert.assertEquals(English.plurals("dog", box(1)), "one dog");
+    Assert.assertEquals(English.plurals("dog", box(2)), "2 dogs");
     final Int nullInt = null;
     final Integer nullInteger = null;
     Assert.assertEquals(English.plurals("dog", nullInt), "??? dogs");

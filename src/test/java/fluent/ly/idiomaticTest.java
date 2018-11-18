@@ -11,12 +11,12 @@ import il.org.spartan.*;
 
 @SuppressWarnings("static-method") public class idiomaticTest {
   @Test public void testEval() {
-    azzert.that(idiomatic.eval(() -> Integer.valueOf(1)).get(), is(box(1)));
+    azzert.that(idiomatic.eval(() -> box(1)).get(), is(box(1)));
   }
 
   @Test public void testIncase() {
-    azzert.isNull(idiomatic.incase(false, Integer.valueOf(1)));
-    azzert.that(idiomatic.incase(true, Integer.valueOf(1)), is(box(1)));
+    azzert.isNull(idiomatic.incase(false, box(1)));
+    azzert.that(idiomatic.incase(true, box(1)), is(box(1)));
   }
 
   @Test public void testKatching1() {
@@ -32,7 +32,7 @@ import il.org.spartan.*;
   }
 
   @Test public void testKatching2() {
-    final idiomatic.Producer<@Nullable Integer> notThrower = () -> Utils.cantBeNull(Integer.valueOf(1));
+    final idiomatic.Producer<@Nullable Integer> notThrower = () -> Utils.cantBeNull(box(1));
     try {
       azzert.notNull(idiomatic.katching(notThrower));
     } catch (final Exception ¢) {
@@ -72,18 +72,18 @@ import il.org.spartan.*;
   }
 
   @Test public void testUnlessBoolean() {
-    azzert.isNull(idiomatic.unless(true).eval(Integer.valueOf(1)));
-    azzert.that(idiomatic.unless(false).eval(Integer.valueOf(1)), is(box(1)));
+    azzert.isNull(idiomatic.unless(true).eval(box(1)));
+    azzert.that(idiomatic.unless(false).eval(box(1)), is(box(1)));
   }
 
   @Test public void testUnlessBooleanT() {
-    azzert.isNull(idiomatic.unless(true, Integer.valueOf(2)));
-    azzert.that(idiomatic.unless(false, Integer.valueOf(2)), is(box(2)));
+    azzert.isNull(idiomatic.unless(true, box(2)));
+    azzert.that(idiomatic.unless(false, box(2)), is(box(2)));
   }
 
   @Test public void testWhen() {
-    azzert.isNull(idiomatic.when(false).eval(Integer.valueOf(1)));
-    azzert.that(idiomatic.when(true).eval(Integer.valueOf(1)), is(box(1)));
+    azzert.isNull(idiomatic.when(false).eval(box(1)));
+    azzert.that(idiomatic.when(true).eval(box(1)), is(box(1)));
   }
 
   @Test public void use0() {
@@ -99,8 +99,8 @@ import il.org.spartan.*;
   }
 
   @Test public void use1() {
-    assert new Storer<>(Integer.valueOf(5)) != null;
-    new Storer<>(Integer.valueOf(5)).when(true);
+    assert new Storer<>(box(5)) != null;
+    new Storer<>(box(5)).when(true);
   }
 
   @Test public void use10() {

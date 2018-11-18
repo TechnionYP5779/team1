@@ -1,5 +1,6 @@
 package il.org.spartan;
 
+import static fluent.ly.box.*;
 import static org.junit.Assert.*;
 
 import static fluent.ly.azzert.*;
@@ -108,18 +109,18 @@ import il.org.spartan.etc.*;
 
   @Test public void collectionTesting() {
     final List<Integer> x = new ArrayList<>();
-    x.add(Integer.valueOf(4));
-    x.add(Integer.valueOf(5));
+    x.add(box(4));
+    x.add(box(5));
     final List<Integer> y = new ArrayList<>();
-    y.add(Integer.valueOf(5));
+    y.add(box(5));
     final List<Integer> yy = new ArrayList<>();
     yy.add(null);
     Assert.assertNotNull(Utils.apply(λ -> λ).to(y));
     Assert.assertNotNull(Utils.apply(λ -> λ).to(yy));
     Assert.assertNotNull(Utils.apply(λ -> λ).to(new Object()));
-    azzert.that(Utils.hash(null),is(0));
+    azzert.that(Utils.hash(null), is(0));
     final Object o = new Object();
-    azzert.that(Utils.hash(o),is(o.hashCode()));
+    azzert.that(Utils.hash(o), is(o.hashCode()));
     final List<List<Integer>> X = new ArrayList<>();
     azzert.that(Utils.add(X, x), is(X));
     x.add(null);
@@ -129,36 +130,36 @@ import il.org.spartan.etc.*;
     azzert.that(Utils.addAll(y, yy), is(y));
     azzert.that(Utils.addAll(y, (Iterable<Integer>) x), is(y));
     assert !Utils.hasNull(yy);
-    assert(Utils.hasNull(Integer.valueOf(1), null));
+    assert (Utils.hasNull(box(1), null));
     Assert.assertNotNull(Utils.append(new @NotNull Integer[0], box.box(4))[0]);
     // azzert.assertEquals(,);
     Assert.assertNotNull(Utils.delete(new @NotNull Integer[4], 3));
-    assert(Utils.inRange(0, y));
+    assert (Utils.inRange(0, y));
     azzert.assertFalse(Utils.inRange(-70, y));
     azzert.assertFalse(Utils.inRange(5, y));
-    assert(Utils.intIsIn(1, 1, 2, 3));
+    assert (Utils.intIsIn(1, 1, 2, 3));
     azzert.assertFalse(Utils.intIsIn(606, 1, 2, 3));
-    assert(Utils.lastIn(Integer.valueOf(5), x));
-    azzert.assertFalse(Utils.lastIn(Integer.valueOf(2), x));
-    assert(Utils.lastIn(Integer.valueOf(5), x));
+    assert (Utils.lastIn(box(5), x));
+    azzert.assertFalse(Utils.lastIn(box(2), x));
+    assert (Utils.lastIn(box(5), x));
     @Nullable final List<@Nullable Integer> z = new ArrayList<>();
-    z.add(Integer.valueOf(4));
-    z.add(Integer.valueOf(5));
+    z.add(box(4));
+    z.add(box(5));
     Utils.removeDuplicates(z);
-    azzert.assertFalse(Utils.penultimateIn(Integer.valueOf(5), z));
-    assert(Utils.penultimateIn(Integer.valueOf(4), z));
+    azzert.assertFalse(Utils.penultimateIn(box(5), z));
+    assert (Utils.penultimateIn(box(4), z));
   }
 
   @Test public void utilTesting() {
-    Assert.assertNotNull(Utils.canBeNull(Integer.valueOf(3)));
-    // azzert.assertNotNull(Utils.apply(λ->λ).to(Integer.valueOf(1),));
-    azzert.that(Utils.compare(true, true),is(0));
-    azzert.that(Utils.compare(false, true),is(-1));
-    azzert.that(Utils.compare(true, false),is(1));
+    Assert.assertNotNull(Utils.canBeNull(box(3)));
+    // azzert.assertNotNull(Utils.apply(λ->λ).to(box(1),));
+    azzert.that(Utils.compare(true, true), is(0));
+    azzert.that(Utils.compare(false, true), is(-1));
+    azzert.that(Utils.compare(true, false), is(1));
     Assert.assertEquals(Utils.sqr(1.0), 1.0, 0);
     assert Utils.found(5).in(1, 2, 3, 4, 5);
     assert !Utils.found(6).in(1, 2, 3, 4, 5);
-    Assert.assertNotNull(Utils.found(Integer.valueOf(5)));
+    Assert.assertNotNull(Utils.found(box(5)));
     Assert.assertNotNull(Utils.sort(new int @NotNull [] { 1, 2, 3, 4 }));
   }
 
@@ -166,7 +167,7 @@ import il.org.spartan.etc.*;
     azzert.that(Utils.compressSpaces("HHH            HHH"), is("HHH HHH"));
     assert Utils.contains("HHH            HHH", "HHH");
     assert !(Utils.contains("HHH            HHH", "HgHH"));
-    azzert.that(Utils.name(new File("Hi")),is(new File("Hi").getName()));
+    azzert.that(Utils.name(new File("Hi")), is(new File("Hi").getName()));
     final List<String> X = new ArrayList<>();
     assert !(Utils.suffixedBy(new File("Hi"), X));
     assert !(Utils.suffixedBy(new File("Hi"), "HHH"));

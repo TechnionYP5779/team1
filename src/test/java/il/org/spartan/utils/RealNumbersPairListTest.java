@@ -1,5 +1,6 @@
 package il.org.spartan.utils;
 
+import static fluent.ly.box.*;
 import org.junit.*;
 
 import fluent.ly.*;
@@ -31,8 +32,8 @@ import il.org.spartan.utils.RealNumbersPairList.*;
     list.record(93.5, 3.10);
     list.record(12.88, 17.1);
     list.record(41.30, 12.3);
-    assert list.getFirst().first.equals(Double.valueOf(1.3));
-    assert list.getFirst().second.equals(Double.valueOf(22.2));
+    assert list.getFirst().first.equals(box(1.3));
+    assert list.getFirst().second.equals(box(22.2));
   }
 
   @Test public void iteratingOrderedByXval() {
@@ -45,15 +46,15 @@ import il.org.spartan.utils.RealNumbersPairList.*;
     list.record(93.5, 3.10);
     list.record(12.88, 17.1);
     list.record(41.30, 12.3);
-    assert list.getFirst().first.equals(Double.valueOf(1.3));
+    assert list.getFirst().first.equals(box(1.3));
     try {
-      assert list.getNext().first.equals(Double.valueOf(1.7));
-      assert list.getNext().first.equals(Double.valueOf(3.5));
-      assert list.getNext().first.equals(Double.valueOf(4.2));
-      assert list.getNext().first.equals(Double.valueOf(8.9));
-      assert list.getNext().first.equals(Double.valueOf(12.88));
-      assert list.getNext().first.equals(Double.valueOf(41.30));
-      assert list.getNext().first.equals(Double.valueOf(93.5));
+      assert list.getNext().first.equals(box(1.7));
+      assert list.getNext().first.equals(box(3.5));
+      assert list.getNext().first.equals(box(4.2));
+      assert list.getNext().first.equals(box(8.9));
+      assert list.getNext().first.equals(box(12.88));
+      assert list.getNext().first.equals(box(41.30));
+      assert list.getNext().first.equals(box(93.5));
     } catch (final Exception __) {
       forget.it(__);
       assert false;
@@ -63,7 +64,7 @@ import il.org.spartan.utils.RealNumbersPairList.*;
   @Test public void iteratorNullBehaviour() {
     final RealNumbersPairList list = new RealNumbersPairList();
     list.record(3.5, 2.5);
-    assert list.getFirst().first.equals(Double.valueOf(3.5));
+    assert list.getFirst().first.equals(box(3.5));
     try {
       azzert.assertNull(list.getNext());
     } catch (final Exception __) {
