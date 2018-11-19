@@ -62,7 +62,7 @@ public abstract class Statistics {
     final long length_squared = length_in_long * length_in_long;
     forget.it(length_squared);
     return sum2 / ds.length - $ * $ / length_squared;
-  }
+    }
 
   protected int n;
   protected int missing;
