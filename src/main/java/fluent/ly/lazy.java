@@ -22,7 +22,7 @@ import il.org.spartan.utils.*;
  * @since 2017-03-10 */
 @SuppressWarnings("unused") public interface lazy<@Nullable T> extends Supplier<@Nullable T> {
   static <@Nullable T> lazy<@Nullable T> get(@¢ final Supplier<@Nullable T> ¢) {
-    return new lazy<>() {
+    return new lazy<@Nullable T>() {
       /** Cached value; invalid cache if {@code null} */
       @Nullable T $;
 
@@ -34,7 +34,7 @@ import il.org.spartan.utils.*;
         return $;
       }
 
-      void set(@Nullable final T value) {
+      void set(@Nullable T value) {
         $ = value;
       }
     };

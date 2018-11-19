@@ -33,18 +33,11 @@ import static fluent.ly.box.*;
   }
 
   @Test public void testLyRunnable() {
-    final Runnable r = () -> {
-      final String x = "abc";
-      x.replace('a', 'd');
-    }
-    azzert.isNull(nulling.ly(r));
+    azzert.isNull(nulling.ly(() -> "abc".replace('a', 'd')));
   }
 
   @Test public void testLySupplierOfR() {
-    final Supplier<@Nullable String> strSupplier = () -> {
-      final Random r = new Random();
-      return "foo" + box(Math.round(100 * r.nextDouble()));
-    }
+    final Supplier<@Nullable String> strSupplier = () -> "foo" + box(Math.round(100 * new Random().nextDouble()));
     azzert.isNull(nulling.ly(strSupplier));
   }
 }

@@ -57,11 +57,7 @@ public class statisticsTest {
   }
 
   @Test public void testSampleVariance() {
-<<<<<<< HEAD
-    Statistics.sampleVariance(first_integers_sample);
-=======
     forget.it(Statistics.sampleVariance(first_integers_sample));
->>>>>>> branch 'master' of https://github.com/TechnionYP5779/team1.git
   }
 
   @Test public void testIsEmpty() {
