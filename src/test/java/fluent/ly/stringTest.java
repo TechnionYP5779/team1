@@ -52,8 +52,7 @@ import static fluent.ly.box.*;
   }
 
   @Test public void testCatStringArrayArray() {
-    azzert.that(cat(new @NotNull String[] { "1", "2", "3" }, new @NotNull String[] {}, new @NotNull String[] { "4", "5" })
-        , is("12345"));
+    azzert.that(cat(new @NotNull String[] { "1", "2", "3" }, new @NotNull String[] {}, new @NotNull String[] { "4", "5" }), is("12345"));
   }
 
   @Test public void testDelta() {

@@ -1,4 +1,5 @@
 package il.org.spartan.utils;
+
 import static fluent.ly.azzert.*;
 import org.junit.*;
 
@@ -21,7 +22,7 @@ import fluent.ly.*;
   }
 
   @Test public void halfPi() {
-    azzert.that(angle.halfPi.radians, is(Math.PI/2));
+    azzert.that(angle.halfPi.radians, is(Math.PI / 2));
     azzert.that(angle.halfPi.degrees, is(90.0));
   }
 
@@ -31,14 +32,14 @@ import fluent.ly.*;
     azzert.that(angle.halfPi.add(angle.halfPi).degrees, is(180.0));
     azzert.that(angle.halfPi.add(90).degrees, is(180.0));
   }
-  
+
   @Test public void sub() {
     azzert.that(angle.halfPi.sub(angle.degrees(20)).degrees, is(70.0));
     azzert.that(angle.halfPi.sub(20).degrees, is(70.0));
     azzert.that(angle.halfPi.sub(angle.halfPi).degrees, is(0.0));
     azzert.that(angle.halfPi.sub(90).degrees, is(0.0));
   }
-  
+
   @Test public void negate() {
     azzert.that(angle.halfPi.negate().degrees, is(-90.0));
     azzert.that(angle.negate(angle.halfPi).degrees, is(-90.0));
@@ -48,7 +49,7 @@ import fluent.ly.*;
 
   @Test public void degrees() {
     azzert.that(angle.pi.degrees(), is(180.0));
-    azzert.that(angle.radians(2*Math.PI).degrees(), is(360.0));
+    azzert.that(angle.radians(2 * Math.PI).degrees(), is(360.0));
   }
 
   @Test public void of() {
@@ -58,6 +59,6 @@ import fluent.ly.*;
 
   @Test public void radians2() {
     azzert.that(angle.pi.radians(), is(Math.PI));
-    azzert.that(angle.halfPi.radians(), is(Math.PI/2));
+    azzert.that(angle.halfPi.radians(), is(Math.PI / 2));
   }
 }

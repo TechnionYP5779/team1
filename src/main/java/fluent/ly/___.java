@@ -19,7 +19,6 @@ import fluent.ly.___.Bug.Contract.*;
  * @author Yossi Gil (
  * @since 11/01/2006) */
 public abstract class ___ {
-  
   /** Exercise the {@link Invariantable#check()}
    * @param v a Invariantable object whose invariant should be checked */
   public static void check(final ___.Invariantable ¢) {

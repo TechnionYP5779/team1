@@ -763,13 +763,13 @@ import il.org.spartan.utils.*;
     @NotNull public Asserter andAye(final boolean claim) {
       return andAye("", claim);
     }
-    
+
     @NotNull private static void andGeneral(final @NotNull String reason, final boolean claim, final boolean b) {
       azzert.that(reason, claim, is(b));
     }
 
     @NotNull public Asserter andAye(final @NotNull String reason, final boolean claim) {
-      andGeneral(reason, claim,true);
+      andGeneral(reason, claim, true);
       return this;
     }
 

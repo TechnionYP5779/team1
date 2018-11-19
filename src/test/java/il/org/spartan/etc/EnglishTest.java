@@ -115,7 +115,8 @@ import il.org.spartan.utils.*;
   }
 
   @Test public void selfName() {
-    azzert.that(English.selfName(new Example(){/*EMPTY*/}.getClass()), is("{}"));
+    azzert.that(English.selfName(new Example() {
+      /* EMPTY */}.getClass()), is("{}"));
     azzert.that(English.selfName(Test.class), is("@Test"));
     azzert.that(English.selfName(Object.class), is("Object"));
     azzert.that(English.selfName(PureIterable.Sized.class), is("Sized"));
@@ -145,12 +146,10 @@ import il.org.spartan.utils.*;
     azzert.that(English.name(Mock.EnclosedMock.class), is("EnclosedMock.Mock.EnglishTest"));
     azzert.that(English.name(m.getClass()), is("Mock.EnglishTest"));
   }
-  
+
   @Test public void indefinite() {
     azzert.that(English.indefinite("object"), is("a object"));
     azzert.that(English.indefinite("double"), is("an double"));
     azzert.that(English.indefinite("INT"), is("an tee"));
-
   }
-  
 }
