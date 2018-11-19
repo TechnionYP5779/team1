@@ -34,10 +34,12 @@ public class OuterTest {
     assert null_outer.equals(null_outer);
     assert !null_outer.equals(outer);
     Object null_obj = null;
-    assert outer.equals(outer);
+    Object my_outer = outer;
+    Object my_outer2 = outer2;
+    assert outer.equals(my_outer);
     assert !outer.equals(null_obj);
     assert !outer.equals(box(5));
-    assert !outer.equals(outer2);
+    assert !outer.equals(my_outer2);
     Object outer3 = outer;
     assert outer.equals(outer3);
     outer3 = new Outer<>(box(5));
