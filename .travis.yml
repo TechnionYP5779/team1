@@ -3,6 +3,9 @@ install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true 
 jdk:
   - openjdk10
 
+env:
+  CODECOV_TOKEN="b5cbfc25-9e2b-4d83-922b-6c31c17d27f7"
+
 script: "mvn cobertura:cobertura"
 
 after_success:
