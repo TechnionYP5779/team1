@@ -23,7 +23,7 @@ import static fluent.ly.unbox.*;
   @Test public void testKatching1() {
     final idiomatic.Producer<@Nullable Integer> thrower = () -> {
       throw new Exception("EVERYTHING IS OK, IT SHOULD BE THROWN");
-    };
+    }
     try {
       azzert.isNull(idiomatic.katching(thrower));
     } catch (final Exception ¢) {

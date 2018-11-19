@@ -1,9 +1,12 @@
 package il.org.spartan;
 
+import static fluent.ly.azzert.*;
+
+import java.io.*;
+
 import org.jetbrains.annotations.*;
 import org.junit.*;
-import static fluent.ly.azzert.is;
-import java.io.*;
+
 import fluent.ly.*;
 import il.org.spartan.etc.*;
 
@@ -13,11 +16,11 @@ import il.org.spartan.etc.*;
   }
 
   @Test public void combineTest() {
-    Class<?>[] array = new Class<?>[2];
+    final Class<?>[] array = new Class<?>[2];
     array[0] = null;
     array[1] = Integer.class;
     azzert.that(CSV.combine(array), is("null,java.lang.Integer"));
-    someEnum[] enum_array = new someEnum[2];
+    final someEnum[] enum_array = new someEnum[2];
     enum_array[0] = someEnum.A;
     enum_array[1] = null;
     azzert.that(CSV.combine(enum_array), is("A,null"));
@@ -34,15 +37,15 @@ import il.org.spartan.etc.*;
 
   @Test public void loadTest() {
     try {
-      @NotNull String[][] data = new @NotNull String[2][2];
+      @NotNull final String[][] data = new @NotNull String[2][2];
       data[0][0] = "0";
       data[0][1] = "1";
       data[1][0] = "2";
       data[1][1] = "3";
-      File my_file = new File("some_file_name.csv");
+      final File my_file = new File("some_file_name.csv");
       CSV.save(my_file, data);
       CSV.load(my_file);
-    } catch (IOException __) {
+    } catch (final IOException __) {
       forget.it(__);
       assert false;
     }
@@ -50,7 +53,7 @@ import il.org.spartan.etc.*;
       if (new File("some_file_name.csv").delete())
         CSV.load(new File("some_file_name.csv"));
       assert false;
-    } catch (IOException __) {
+    } catch (final IOException __) {
       forget.it(__);
       assert true;
     }
@@ -66,16 +69,16 @@ import il.org.spartan.etc.*;
   }
 
   @Test public void splitToClasses() {
-    Class<?>[] array = new Class<?>[2];
+    final Class<?>[] array = new Class<?>[2];
     array[0] = String.class;
     array[1] = Integer.class;
-    Class<?>[] classes = CSV.splitToClasses(Utils.cantBeNull(CSV.combine(array)));
+    final Class<?>[] classes = CSV.splitToClasses(Utils.cantBeNull(CSV.combine(array)));
     azzert.that(classes[0], is(array[0]));
     azzert.that(classes[1], is(array[1]));
     try {
       forget.it(CSV.splitToClasses("noSuchClass"));
       assert false;
-    } catch (RuntimeException __) {
+    } catch (final RuntimeException __) {
       forget.it(__);
       assert true;
     }
@@ -86,7 +89,7 @@ import il.org.spartan.etc.*;
   }
 
   @Test public void enumSplitTest() {
-    someEnum[] enum_array = new someEnum[1];
+    final someEnum[] enum_array = new someEnum[1];
     enum_array[0] = someEnum.A;
     azzert.that(CSV.split(someEnum.class, Utils.cantBeNull(CSV.combine(enum_array)))[0] + "", is("A"));
   }

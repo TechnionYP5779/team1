@@ -1,7 +1,8 @@
 package il.org.spartan.etc;
 
-import java.math.*;
 import static fluent.ly.azzert.*;
+
+import java.math.*;
 
 import org.junit.*;
 

@@ -1,7 +1,9 @@
 package il.org.spartan.utils;
 
-import java.io.*;
 import static fluent.ly.azzert.*;
+
+import java.io.*;
+
 import org.junit.*;
 
 import fluent.ly.*;

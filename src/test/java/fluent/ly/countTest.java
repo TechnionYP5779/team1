@@ -1,6 +1,7 @@
 package fluent.ly;
 
 import static fluent.ly.box.*;
+
 import java.util.*;
 
 import org.junit.*;

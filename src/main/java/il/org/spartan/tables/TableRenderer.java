@@ -1,13 +1,14 @@
 package il.org.spartan.tables;
 
+import static fluent.ly.box.*;
+import static fluent.ly.unbox.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
 import il.org.spartan.*;
-import static fluent.ly.box.*;
-import static fluent.ly.unbox.*;
 
 @FunctionalInterface @SuppressWarnings("null") public interface TableRenderer {
   enum builtin implements TableRenderer {
@@ -124,9 +125,9 @@ import static fluent.ly.unbox.*;
         return " | ";
       }
     };
-    static int lastSize;
+    int lastSize;
 
-    @Override public void setHeaderCount(final int size) {
+    @Override void setHeaderCount(final int size) {
       builtin.lastSize = size;
     }
   }

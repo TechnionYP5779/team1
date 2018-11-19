@@ -1,12 +1,13 @@
 package il.org.spartan.statistics;
 
+import static fluent.ly.unbox.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
 import il.org.spartan.*;
-import static fluent.ly.unbox.*;
 
 /** A class to compute statistics, e.g., the minimal and maximal value, the mean
  * and the standard deviation, of a sequence of real numbers.

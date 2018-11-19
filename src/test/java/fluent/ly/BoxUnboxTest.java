@@ -2,11 +2,12 @@ package fluent.ly;
 
 import static org.junit.Assert.*;
 
+import static fluent.ly.box.*;
+import static fluent.ly.unbox.*;
+
 import java.util.*;
 
 import org.junit.*;
-import static fluent.ly.box.*;
-import static fluent.ly.unbox.*;
 
 @SuppressWarnings("static-method") public class BoxUnboxTest {
   @Test public void testBoolean() {

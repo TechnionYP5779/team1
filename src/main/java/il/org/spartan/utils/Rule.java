@@ -1,7 +1,9 @@
 package il.org.spartan.utils;
 
 import static java.lang.String.*;
+
 import static fluent.ly.box.*;
+
 import java.lang.annotation.*;
 import java.util.*;
 import java.util.function.*;

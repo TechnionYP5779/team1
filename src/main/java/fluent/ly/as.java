@@ -1,12 +1,13 @@
 /* Part of the "Spartan Blog"; mutate the rest / but leave this line as is */
 package fluent.ly;
 
+import static fluent.ly.unbox.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
 
 import il.org.spartan.*;
-import static fluent.ly.unbox.*;
 
 /** A collection of <code><b>static</b></code> functions for converting from one
  * aggregate type to another.

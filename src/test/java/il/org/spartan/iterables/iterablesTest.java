@@ -1,9 +1,12 @@
 package il.org.spartan.iterables;
 
+import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
-import static fluent.ly.azzert.is;
+
 import java.util.*;
+
 import org.junit.*;
+
 import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class iterablesTest {

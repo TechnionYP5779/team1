@@ -1,8 +1,10 @@
 package fluent.ly;
 
-import static fluent.ly.box.*;
-import java.util.*;
 import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
+
+import java.util.*;
+
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
@@ -85,21 +87,21 @@ import org.junit.*;
     x.add(box(5));
     @Nullable final List<@Nullable Integer> y = new ArrayList<>();
     y.add(box(5));
-    assert (the.penultimateOf(null) == null);
-    assert (the.penultimateOf(y) == null);
+    assert the.penultimateOf(null) == null;
+    assert the.penultimateOf(y) == null;
     azzert.that(the.penultimateOf(x), is(box(4)));
     assert the.previous(box(5), null) == null;
-    assert (the.previous(box(4), x) == null);
-    assert (the.previous(box(5), x) != null);
-    assert (the.headOf(null) == null);
-    assert (the.headOf(new ArrayList<>()) == null);
-    assert (the.lastOf(new ArrayList<>()) == null);
-    assert (the.lastOf((List<Object>) null) == null);
+    assert the.previous(box(4), x) == null;
+    assert the.previous(box(5), x) != null;
+    assert the.headOf(null) == null;
+    assert the.headOf(new ArrayList<>()) == null;
+    assert the.lastOf(new ArrayList<>()) == null;
+    assert the.lastOf((List<Object>) null) == null;
     azzert.that(the.lastOf(y), is(box(5)));
     azzert.that(the.previous(box(5), x), is(box(4)));
     azzert.that(the.secondOf(x), is(box(5)));
-    assert (the.secondOf(null) == null);
-    assert (the.secondOf(y) == null);
+    assert the.secondOf(null) == null;
+    assert the.secondOf(y) == null;
     azzert.that(the.rest(box(3), x), is(an.empty.list()));
     azzert.that(the.rest(box(4), x), is(y));
   }

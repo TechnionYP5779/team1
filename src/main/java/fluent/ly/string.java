@@ -1,6 +1,7 @@
 package fluent.ly;
 
 import static fluent.ly.___.*;
+import static fluent.ly.unbox.*;
 
 import java.io.*;
 import java.util.*;
@@ -9,7 +10,6 @@ import org.jetbrains.annotations.*;
 
 import il.org.spartan.*;
 import il.org.spartan.etc.*;
-import static fluent.ly.unbox.*;
 
 /** A bunch of string functions.
  * @author Yossi Gil */

@@ -1,14 +1,18 @@
 package il.org.spartan.utils;
 
 import static il.org.spartan.utils.Proposition.*;
+import static il.org.spartan.utils.Proposition.not;
+import static il.org.spartan.utils.Proposition.that;
+
+import static fluent.ly.azzert.*;
+
+import java.util.function.*;
 
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
-
-import java.util.function.*;
-import static fluent.ly.azzert.*;
+import il.org.spartan.utils.Proposition.*;
 
 @SuppressWarnings("static-method") public class PropositionTest {
   @Test public void staticAndLogic() {
@@ -58,7 +62,7 @@ import static fluent.ly.azzert.*;
   }
 
   @Test public void and() {
-    assert !(new And(() -> true, new @NotNull BooleanSupplier[] {})).and(() -> true).or("Some Name", () -> false).and(() -> true, () -> false)
+    assert !new And(() -> true, new @NotNull BooleanSupplier[] {}).and(() -> true).or("Some Name", () -> false).and(() -> true, () -> false)
         .getAsBoolean();
   }
 

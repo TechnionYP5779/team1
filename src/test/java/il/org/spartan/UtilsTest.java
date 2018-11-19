@@ -1,9 +1,9 @@
 package il.org.spartan;
 
-import static fluent.ly.box.*;
 import static org.junit.Assert.*;
 
 import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
 
 import java.io.*;
 import java.util.*;
@@ -130,23 +130,23 @@ import il.org.spartan.etc.*;
     azzert.that(Utils.addAll(y, yy), is(y));
     azzert.that(Utils.addAll(y, (Iterable<Integer>) x), is(y));
     assert !Utils.hasNull(yy);
-    assert (Utils.hasNull(box(1), null));
+    assert Utils.hasNull(box(1), null);
     Assert.assertNotNull(Utils.append(new @NotNull Integer[0], box(4))[0]);
     Assert.assertNotNull(Utils.delete(new @NotNull Integer[4], 3));
-    assert (Utils.inRange(0, y));
-    assert !(Utils.inRange(-70, y));
-    assert !(Utils.inRange(5, y));
-    assert (Utils.intIsIn(1, 1, 2, 3));
-    assert !(Utils.intIsIn(606, 1, 2, 3));
-    assert (Utils.lastIn(box(5), x));
-    assert !(Utils.lastIn(box(2), x));
-    assert (Utils.lastIn(box(5), x));
+    assert Utils.inRange(0, y);
+    assert !Utils.inRange(-70, y);
+    assert !Utils.inRange(5, y);
+    assert Utils.intIsIn(1, 1, 2, 3);
+    assert !Utils.intIsIn(606, 1, 2, 3);
+    assert Utils.lastIn(box(5), x);
+    assert !Utils.lastIn(box(2), x);
+    assert Utils.lastIn(box(5), x);
     @Nullable final List<@Nullable Integer> z = new ArrayList<>();
     z.add(box(4));
     z.add(box(5));
     Utils.removeDuplicates(z);
-    assert !(Utils.penultimateIn(box(5), z));
-    assert (Utils.penultimateIn(box(4), z));
+    assert !Utils.penultimateIn(box(5), z);
+    assert Utils.penultimateIn(box(4), z);
   }
 
   @Test public void utilTesting() {
@@ -165,11 +165,11 @@ import il.org.spartan.etc.*;
   @Test public void stringTesting() {
     azzert.that(Utils.compressSpaces("HHH            HHH"), is("HHH HHH"));
     assert Utils.contains("HHH            HHH", "HHH");
-    assert !(Utils.contains("HHH            HHH", "HgHH"));
+    assert !Utils.contains("HHH            HHH", "HgHH");
     azzert.that(Utils.name(new File("Hi")), is(new File("Hi").getName()));
     final List<String> X = new ArrayList<>();
-    assert !(Utils.suffixedBy(new File("Hi"), X));
-    assert !(Utils.suffixedBy(new File("Hi"), "HHH"));
+    assert !Utils.suffixedBy(new File("Hi"), X);
+    assert !Utils.suffixedBy(new File("Hi"), "HHH");
     X.add("Hi");
     assert Utils.suffixedBy(new File("Hi"), X);
     assert Utils.suffixedBy(new File("Hi"), "Hi");

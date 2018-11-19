@@ -2,11 +2,11 @@ package fluent.ly;
 
 import static fluent.ly.___.*;
 import static fluent.ly.idiomatic.*;
+import static fluent.ly.unbox.*;
 
 import java.util.*;
 
 import org.jetbrains.annotations.*;
-import static fluent.ly.unbox.*;
 
 /** TODO Yossi Gil: document class
  * @author Yossi Gil

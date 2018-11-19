@@ -1,7 +1,9 @@
 package il.org.spartan.iterables;
 
-import org.junit.*;
 import static fluent.ly.azzert.*;
+
+import org.junit.*;
+
 import fluent.ly.*;
 
 public class PureIterableTest {

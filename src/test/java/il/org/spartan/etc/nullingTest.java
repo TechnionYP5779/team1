@@ -36,7 +36,7 @@ import static fluent.ly.box.*;
     final Runnable r = () -> {
       final String x = "abc";
       x.replace('a', 'd');
-    };
+    }
     azzert.isNull(nulling.ly(r));
   }
 
@@ -44,7 +44,7 @@ import static fluent.ly.box.*;
     final Supplier<@Nullable String> strSupplier = () -> {
       final Random r = new Random();
       return "foo" + box(Math.round(100 * r.nextDouble()));
-    };
+    }
     azzert.isNull(nulling.ly(strSupplier));
   }
 }
