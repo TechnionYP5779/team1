@@ -1,6 +1,5 @@
 package il.org.spartan.utils;
 
-import fluent.ly.*;
 import static fluent.ly.box.*;
 
 /** Boolean or reducer

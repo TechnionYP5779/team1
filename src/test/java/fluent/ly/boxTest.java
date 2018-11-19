@@ -4,11 +4,12 @@ import java.util.*;
 
 import org.junit.*;
 import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
 
 @SuppressWarnings("static-method") public class boxTest {
   @Test public void testBoxBoolean() {
     final boolean tested = new Random().nextBoolean();
-    azzert.that(tested, is(box.box(tested)));
+    azzert.that(tested, is(box(tested)));
   }
 
   @Test public void testBoxBooleanArray() {
@@ -18,16 +19,16 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextBoolean();
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testBoxByte() {
     final Random random = new Random();
     final byte[] arr = new byte[1];
     random.nextBytes(arr);
-    azzert.that(box.box(arr[0]), is(box.box(arr[0])));
+    azzert.that(box(arr[0]), is(box(arr[0])));
   }
 
   @Test public void testBoxByteArray() {
@@ -37,13 +38,13 @@ import static fluent.ly.azzert.*;
     final Byte[] expected = new Byte[len];
     random.nextBytes(tested);
     for (int ¢ = 0; ¢ < len; ++¢)
-      expected[¢] = box.box(tested[¢]);
-    azzert.that(expected, is(box.box(tested)));
+      expected[¢] = box(tested[¢]);
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testBoxChar() {
     char tested = (char) new Random().nextInt(Character.MAX_VALUE + 1);
-    azzert.that(box.box(tested), is(box.box(tested)));
+    azzert.that(box(tested), is(box(tested)));
   }
 
   @Test public void testBoxCharArray() {
@@ -53,14 +54,14 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = (char) random.nextInt(Character.MAX_VALUE + 1);
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testBoxDouble() {
-    final Double expected = box.box(new Random().nextDouble());
-    azzert.that(expected, is(box.box(expected.doubleValue())));
+    final Double expected = box(new Random().nextDouble());
+    azzert.that(expected, is(box(expected.doubleValue())));
   }
 
   @Test public void testBoxDoubleArray() {
@@ -70,14 +71,14 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextDouble();
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testBoxFloat() {
-    final Float expected = box.box(new Random().nextFloat());
-    azzert.that(expected, is(box.box(expected.floatValue())));
+    final Float expected = box(new Random().nextFloat());
+    azzert.that(expected, is(box(expected.floatValue())));
   }
 
   @Test public void testBoxFloatArray() {
@@ -87,14 +88,14 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextFloat();
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testBoxInt() {
-    final Integer expected = box.box(new Random().nextInt());
-    azzert.that(expected, is(box.box(expected.intValue())));
+    final Integer expected = box(new Random().nextInt());
+    azzert.that(expected, is(box(expected.intValue())));
   }
 
   @Test public void testBoxIntArray() {
@@ -104,14 +105,14 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextInt();
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testBoxLong() {
-    final Long expected = box.box(new Random().nextLong());
-    azzert.that(expected, is(box.box(expected.longValue())));
+    final Long expected = box(new Random().nextLong());
+    azzert.that(expected, is(box(expected.longValue())));
   }
 
   @Test public void testBoxLongArray() {
@@ -121,14 +122,14 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextLong();
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testBoxShort() {
-    final Short expected = box.box((short) new Random().nextInt(Short.MAX_VALUE + 1));
-    azzert.that(expected, is(box.box(expected.shortValue())));
+    final Short expected = box((short) new Random().nextInt(Short.MAX_VALUE + 1));
+    azzert.that(expected, is(box(expected.shortValue())));
   }
 
   @Test public void testBoxShortArray() {
@@ -138,9 +139,9 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = (short) random.nextInt(Short.MAX_VALUE + 1);
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testItBoolean() {
@@ -155,16 +156,16 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextBoolean();
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testItByte() {
     final Random random = new Random();
     final byte[] arr = new byte[1];
     random.nextBytes(arr);
-    azzert.that(box.box(arr[0]), is(box.it(arr[0])));
+    azzert.that(box(arr[0]), is(box.it(arr[0])));
   }
 
   @Test public void testItByteArray() {
@@ -174,12 +175,12 @@ import static fluent.ly.azzert.*;
     final Byte[] expected = new Byte[len];
     random.nextBytes(tested);
     for (int ¢ = 0; ¢ < len; ++¢)
-      expected[¢] = box.box(tested[¢]);
-    azzert.that(expected, is(box.box(tested)));
+      expected[¢] = box(tested[¢]);
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testItChar() {
-    final Character expected = box.box((char) new Random().nextInt(Character.MAX_VALUE + 1));
+    final Character expected = box((char) new Random().nextInt(Character.MAX_VALUE + 1));
     azzert.that(expected, is(box.it(expected.charValue())));
   }
 
@@ -190,13 +191,13 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = (char) random.nextInt(Character.MAX_VALUE + 1);
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testItDouble() {
-    final Double expected = box.box(new Random().nextDouble());
+    final Double expected = box(new Random().nextDouble());
     azzert.that(expected, is(box.it(expected.doubleValue())));
   }
 
@@ -207,13 +208,13 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextDouble();
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testItFloat() {
-    final Float expected = box.box(new Random().nextFloat());
+    final Float expected = box(new Random().nextFloat());
     azzert.that(expected, is(box.it(expected.floatValue())));
   }
 
@@ -224,13 +225,13 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextFloat();
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testItInt() {
-    final Integer expected = box.box(new Random().nextInt());
+    final Integer expected = box(new Random().nextInt());
     azzert.that(expected, is(box.it(expected.intValue())));
   }
 
@@ -241,13 +242,13 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextInt();
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testItLong() {
-    final Long expected = box.box(new Random().nextLong());
+    final Long expected = box(new Random().nextLong());
     azzert.that(expected, is(box.it(expected.longValue())));
   }
 
@@ -258,13 +259,13 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = random.nextLong();
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 
   @Test public void testItShort() {
-    final Short expected = box.box((short) new Random().nextInt(Short.MAX_VALUE + 1));
+    final Short expected = box((short) new Random().nextInt(Short.MAX_VALUE + 1));
     azzert.that(expected, is(box.it(expected.shortValue())));
   }
 
@@ -275,8 +276,8 @@ import static fluent.ly.azzert.*;
     final Random random = new Random();
     for (int ¢ = 0; ¢ < len; ++¢) {
       tested[¢] = (short) random.nextInt(Short.MAX_VALUE + 1);
-      expected[¢] = box.box(tested[¢]);
+      expected[¢] = box(tested[¢]);
     }
-    azzert.that(expected, is(box.box(tested)));
+    azzert.that(expected, is(box(tested)));
   }
 }

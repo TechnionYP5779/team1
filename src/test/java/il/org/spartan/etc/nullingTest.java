@@ -7,6 +7,7 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
+import static fluent.ly.box.*;
 
 @SuppressWarnings("static-method") public class nullingTest {
   @Test public void testLyBooleanSupplier() {
@@ -42,7 +43,7 @@ import fluent.ly.*;
   @Test public void testLySupplierOfR() {
     final Supplier<@Nullable String> strSupplier = () -> {
       final Random r = new Random();
-      return "foo" + box.box(Math.round(100 * r.nextDouble()));
+      return "foo" + box(Math.round(100 * r.nextDouble()));
     };
     azzert.isNull(nulling.ly(strSupplier));
   }
