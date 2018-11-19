@@ -40,6 +40,7 @@ import il.org.spartan.utils.*;
     azzert.that(English.list(strings), is("Hello"));
     strings.add("Bye");
     azzert.that(English.list(strings), is("Hello and Bye"));
+    azzert.that(English.list(null), is("nothing"));
   }
 
   @Test public void lowerFirstLetter() {
@@ -114,6 +115,8 @@ import il.org.spartan.utils.*;
   }
 
   @Test public void selfName() {
+    azzert.that(English.selfName(new Example(){/*EMPTY*/}.getClass()), is("{}"));
+    azzert.that(English.selfName(Test.class), is("@Test"));
     azzert.that(English.selfName(Object.class), is("Object"));
     azzert.that(English.selfName(PureIterable.Sized.class), is("Sized"));
   }
