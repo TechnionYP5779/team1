@@ -3,7 +3,6 @@ package il.org.spartan.utils;
 import org.junit.*;
 
 import fluent.ly.*;
-import static fluent.ly.azzert.is;
 
 @SuppressWarnings("static-method") public class BoolTest {
   @Test public void testValueOf() {
@@ -31,8 +30,8 @@ import static fluent.ly.azzert.is;
   }
 
   @Test public void testInner() {
-    azzert.that(new Bool(true).inner(), is(Boolean.TRUE));
-    azzert.that(new Bool(false).inner(), is(Boolean.FALSE));
-    azzert.that(new Bool().inner(), is(Boolean.FALSE));
+    assert unbox.unbox(new Bool(true).inner());
+    assert !unbox.unbox(new Bool(false).inner());
+    assert !unbox.unbox(new Bool().inner());
   }
 }
