@@ -8,6 +8,7 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
+import il.org.spartan.etc.*;
 import il.org.spatan.iteration.*;
 
 /** @author Yossi Gil
@@ -56,7 +57,11 @@ public abstract class Statistics {
       $ += ¢;
       sum2 += ¢ * ¢;
     }
-    return sum2 / (ds.length - 1) - $ * $ / ((double)ds.length *(double) ds.length - ds.length);
+    final long length_in_long = ds.length; // defined for overflow problems.
+    forget.it(length_in_long);
+    final long length_squared = length_in_long * length_in_long;
+    forget.it(length_squared);
+    return sum2 / ds.length - $ * $ / length_squared;
   }
 
   protected int n;

@@ -151,7 +151,7 @@ import il.org.spartan.etc.*;
   @Check boolean check(T n);
 
   default String description() {
-    return format("%s/[%s]%s=", //
+    return format("%s/[%s]%s=%s%s", //
         English.name(Rule.class), //
         English.name(this), //
         technicalName() == English.name(this) ? "" : technicalName(), //

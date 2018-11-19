@@ -2,6 +2,7 @@ package il.org.spartan.tables;
 
 import java.util.*;
 
+import il.org.spartan.etc.*;
 import il.org.spartan.statistics.*;
 
 /** TODO Yossi Gil Document Class
@@ -81,6 +82,12 @@ public enum Statistic {
   /** @param p percents of quartile (for q1 - 25, q3 - 75, median - 50) */
   static double quartile(final int p, final double[] ds) {
     Arrays.sort(ds);
-    return ds[Math.round(p * ds.length / 100)];
+    final long p_long = p; // stored in long to eliminate overflow
+    forget.it(p_long);
+    final long length_long = ds.length;
+    forget.it(length_long);
+    final long $ = p_long * length_long;
+    forget.it($);
+    return ds[Math.round($ / 100)];
   }
 }
