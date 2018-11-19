@@ -45,7 +45,7 @@ import il.org.spartan.utils.Proposition.*;
     default   void  down()                                    {/**/}
     default   void  up()                                      {/**/}
     default   void  next()                                    {/**/}
-    default   void  in(@SuppressWarnings("unused") final T __)      {/**/}
+    default   void  in( final T __)      {forget.it(__);}
     //@formatter:on
   }
 
