@@ -8,6 +8,7 @@ import org.junit.*;
 
 import fluent.ly.idiomatic.*;
 import il.org.spartan.*;
+import static fluent.ly.unbox.*;
 
 @SuppressWarnings("static-method") public class idiomaticTest {
   @Test public void testEval() {
@@ -64,11 +65,11 @@ import il.org.spartan.*;
 
   @Test public void testTake() {
     final Storer<Boolean> sto = idiomatic.take(Boolean.TRUE);
-    assert unbox.unbox(sto.get());
+    assert unbox(sto.get());
     azzert.isNull(sto.when(false));
-    assert unbox.unbox(sto.when(true));
+    assert unbox(sto.when(true));
     azzert.isNull(sto.unless(true));
-    assert unbox.unbox(sto.unless(false));
+    assert unbox(sto.unless(false));
   }
 
   @Test public void testUnlessBoolean() {

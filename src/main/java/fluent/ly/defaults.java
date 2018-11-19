@@ -1,6 +1,7 @@
 package fluent.ly;
 
 import org.jetbrains.annotations.*;
+import static fluent.ly.unbox.*;
 
 /** A bunch of <code><b>static</b></code> functions to manage the frequent
  * conditional of replacing a <code><b>null</b></code> value with some default.
@@ -25,7 +26,7 @@ public enum defaults {
    * @return <code>v</code> if it is not <code><b>null</b></code>, otherwise
    *         <code>defaultValue</code> */
   public static int to(final @Nullable Integer v, final int defaultValue) {
-    return v == null ? defaultValue : unbox.unbox(v);
+    return v != null ? unbox(v) : defaultValue;
   }
 
   /** Return a default value for an {@link Integer} type.
@@ -35,7 +36,7 @@ public enum defaults {
    * @return <code>v</code> if it is not <code><b>null</b></code>, otherwise
    *         <code>defaultValue</code> */
   public static int to(final @Nullable Integer v, final Integer defaultValue) {
-    return unbox.unbox(v != null ? v : defaultValue);
+    return unbox(v != null ? v : defaultValue);
   }
 
   @Nullable public static <T> T to(final @Nullable T v, final T defaultValue) {

@@ -1,7 +1,7 @@
 package il.org.spartan.utils;
 
 import static java.lang.System.*;
-
+import static fluent.ly.unbox.*;
 import java.io.*;
 import java.text.*;
 import java.util.*;
@@ -100,15 +100,15 @@ public interface system {
           $.push(box(¢));
           continue;
         case ')':
-          if ($.isEmpty() || unbox.unbox($.pop()) != '(')
+          if ($.isEmpty() || unbox($.pop()) != '(')
             return false;
           continue;
         case ']':
-          if ($.isEmpty() || unbox.unbox($.pop()) != '[')
+          if ($.isEmpty() || unbox($.pop()) != '[')
             return false;
           continue;
         case '}':
-          if ($.isEmpty() || unbox.unbox($.pop()) != '{')
+          if ($.isEmpty() || unbox($.pop()) != '{')
             return false;
           continue;
         default:

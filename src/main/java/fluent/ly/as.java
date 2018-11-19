@@ -6,6 +6,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 
 import il.org.spartan.*;
+import static fluent.ly.unbox.*;
 
 /** A collection of <code><b>static</b></code> functions for converting from one
  * aggregate type to another.
@@ -96,7 +97,7 @@ import il.org.spartan.*;
   public static int @NotNull [] intArray(final @NotNull List<@NotNull Integer> is) {
     final int @NotNull [] $ = new int @NotNull [is.size()];
     for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = unbox.unbox(is.get(¢));
+      $[¢] = unbox(is.get(¢));
     return $;
   }
 
