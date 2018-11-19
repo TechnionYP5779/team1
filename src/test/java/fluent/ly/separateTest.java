@@ -12,7 +12,6 @@ import org.junit.*;
 
 import an.*;
 import fluent.ly.separate.*;
-import il.org.spartan.*;
 
 @SuppressWarnings({ "static-method", "null" }) public class separateTest {
   private static final Function<String, String> quote = λ -> "'" + λ + "'";
@@ -22,7 +21,7 @@ import il.org.spartan.*;
   }
 
   @Test public final void asArrayBetweenChar() {
-    azzert.that(separate.these(Utils.cantBeNull(as.array("Hello", "World"))).by(','), is("Hello,World"));
+    azzert.that(separate.these(cantBeNull(as.array("Hello", "World"))).by(','), is("Hello,World"));
   }
 
   @Test public final void byArrayString() {
@@ -30,7 +29,7 @@ import il.org.spartan.*;
   }
 
   @Test public final void byArrayStringUsingLiterals() {
-    azzert.that(separate.these(Utils.cantBeNull(as.array("Hello", "World"))).by(", "), is("Hello, World"));
+    azzert.that(separate.these(cantBeNull(as.array("Hello", "World"))).by(", "), is("Hello, World"));
   }
 
   @Test public final void byBooleanArrayChar() {
@@ -78,11 +77,11 @@ import il.org.spartan.*;
   }
 
   @Test public final void byFOfTIterableOfTChar() {
-    azzert.that(separate.these(Utils.cantBeNull(apply(λ -> "<" + λ + ">").to("A", "B"))).by(' '), is("<A> <B>"));
+    azzert.that(separate.these(cantBeNull(apply(λ -> "<" + λ + ">").to("A", "B"))).by(' '), is("<A> <B>"));
   }
 
   @Test public final void byFOfTIterableOfTString() {
-    azzert.that(separate.these(Utils.cantBeNull(new Applicator<>(quote).to(Utils.cantBeNull(as.list("Hello", "World"))))).by(", "),
+    azzert.that(separate.these(cantBeNull(new Applicator<>(quote).to(cantBeNull(as.list("Hello", "World"))))).by(", "),
         is("'Hello', 'World'"));
   }
 
@@ -97,7 +96,7 @@ import il.org.spartan.*;
   }
 
   @Test public final void byFOfTTArrayString() {
-    azzert.that(separate.these(Utils.cantBeNull(apply(quote).to("Hello", "World"))).by(", "), is("'Hello', 'World'"));
+    azzert.that(separate.these(cantBeNull(apply(quote).to("Hello", "World"))).by(", "), is("'Hello', 'World'"));
   }
 
   @Test public final void byIntArrayChar() {
@@ -109,7 +108,7 @@ import il.org.spartan.*;
   }
 
   @Test public final void byIterableOfChar() {
-    azzert.that(separate.these(Utils.cantBeNull(as.array("Hello", "World"))).by(','), is("Hello,World"));
+    azzert.that(separate.these(cantBeNull(as.array("Hello", "World"))).by(','), is("Hello,World"));
   }
 
   @Test public final void byIterableOfString() {
@@ -184,7 +183,7 @@ import il.org.spartan.*;
   }
 
   @Test public final void separateByNoItemslSpaceSeparated() {
-    azzert.that(SeparationSubject.separateBy(Utils.cantBeNull(separate.these().os), " "), is(""));
+    azzert.that(SeparationSubject.separateBy(cantBeNull(separate.these().os), " "), is(""));
   }
 
   @Test public void separateBySpaceEmpty() {

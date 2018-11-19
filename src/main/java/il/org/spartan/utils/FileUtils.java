@@ -7,7 +7,7 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
-import il.org.spartan.*;
+import static il.org.spartan.Utils.*;
 
 /** A class for utility methods when working with files and directories
  * @author Daniel Mittelman <code><mittelmania [at] gmail.com></code>
@@ -41,7 +41,7 @@ import il.org.spartan.*;
   // return $ + "";
   // }
   @NotNull public static String readFromFile(final @NotNull String fileName) throws IOException {
-    return read(Utils.cantBeNull(Paths.get(fileName)));
+    return read(cantBeNull(Paths.get(fileName)));
   }
 
   /** @param fileName where to write

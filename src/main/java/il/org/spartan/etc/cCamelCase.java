@@ -1,9 +1,9 @@
 package il.org.spartan.etc;
 
 import org.jetbrains.annotations.*;
+import static il.org.spartan.Utils.*;
 
 import fluent.ly.*;
-import il.org.spartan.*;
 
 /** An empty {@code interface} for fluent programming. The name should say it
  * all: The name, followed by a dot, followed by a method name, should read like
@@ -12,11 +12,11 @@ import il.org.spartan.*;
  * @since 2016 */
 public interface cCamelCase {
   static String @NotNull [] components(final @NotNull String javaName) {
-    return Utils.cantBeNull(javaName.split(JAVA_CAMEL_CASE_SEPARATOR));
+    return cantBeNull(javaName.split(JAVA_CAMEL_CASE_SEPARATOR));
   }
 
   static String lastComponent(final Class<?> ¢) {
-    return lastComponent(Utils.cantBeNull(¢.getCanonicalName()));
+    return lastComponent(cantBeNull(¢.getCanonicalName()));
   }
 
   static String lastComponent(final @NotNull String fullClassName) {

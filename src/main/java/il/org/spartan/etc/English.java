@@ -1,6 +1,7 @@
 package il.org.spartan.etc;
 
 import static fluent.ly.unbox.*;
+import static il.org.spartan.Utils.*;
 
 import java.text.*;
 import java.util.*;
@@ -53,7 +54,7 @@ import il.org.spartan.utils.*;
   }
 
   @NotNull static String indefinite(final @NotNull String className) {
-    final @NotNull String $ = Utils.cantBeNull(cCamelCase.components(className)[0]);
+    final @NotNull String $ = cantBeNull(cCamelCase.components(className)[0]);
     final char openingLetter = the.characterOf($);
     return isAcronym($) ? indefinite(pronounce(openingLetter)) : //
         (Utils.intIsIn(openingLetter, 'i', 'e', 'o', 'u', 'y') ? "an" : "a") + " " + className;
@@ -68,7 +69,7 @@ import il.org.spartan.utils.*;
    * @return a linguistic list of the items */
   @NotNull static String list(final @Nullable List<@NotNull String> ¢) {
     return ¢ == null || ¢.isEmpty() ? "nothing"
-        : ¢.size() == 1 ? the.headOf(¢) : separate.these(Utils.cantBeNull(¢.subList(0, ¢.size() - 1))).by(SEPARATOR) + " and " + the.lastOf(¢);
+        : ¢.size() == 1 ? the.headOf(¢) : separate.these(cantBeNull(¢.subList(0, ¢.size() - 1))).by(SEPARATOR) + " and " + the.lastOf(¢);
   }
 
   @NotNull static String lowerFirstLetter(final @NotNull String input) {
@@ -210,8 +211,8 @@ import il.org.spartan.utils.*;
   static String trim(final @Nullable String s) {
     if (s == null)
       return null;
-    final String @NotNull [] $ = Utils.cantBeNull(s.split("\n"));
-    IntStream.range(0, $.length).forEach(λ -> $[λ] = trimAbsolute(Utils.cantBeNull($[λ]), TRIM_THRESHOLD, TRIM_SUFFIX));
+    final String @NotNull [] $ = cantBeNull(s.split("\n"));
+    IntStream.range(0, $.length).forEach(λ -> $[λ] = trimAbsolute(cantBeNull($[λ]), TRIM_THRESHOLD, TRIM_SUFFIX));
     return String.join("\n", $);
   }
 

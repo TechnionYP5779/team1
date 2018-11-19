@@ -1,6 +1,7 @@
 package il.org.spartan;
 
 import static fluent.ly.___.*;
+import static il.org.spartan.Utils.*;
 
 import java.io.*;
 import java.lang.reflect.*;
@@ -30,7 +31,7 @@ import fluent.ly.*;
   public static String combine(final Class<?> @NotNull [] cs) {
     final String @NotNull [] $ = new String[cs.length];
     for (int ¢ = 0; ¢ < $.length; ++¢)
-      $[¢] = cs[¢] == null ? null : Utils.cantBeNull(cs[¢].getName());
+      $[¢] = cs[¢] == null ? null : cantBeNull(cs[¢].getName());
     return combine($);
   }
 
@@ -92,7 +93,7 @@ import fluent.ly.*;
   public static String[][] load(final Reader r) {
     final @NotNull ArrayList<String[]> $ = new ArrayList<>(20);
     for (final @NotNull Scanner ¢ = new Scanner(r); ¢.hasNext();)
-      $.add(split(Utils.cantBeNull(¢.nextLine())));
+      $.add(split(cantBeNull(¢.nextLine())));
     return $.toArray(new String[$.size()][]);
   }
 
@@ -117,10 +118,10 @@ import fluent.ly.*;
     for (int from = 0;;) {
       final int to = s.indexOf(',', from);
       if (to < 0) {
-        $.add(unescape(Utils.cantBeNull(s.substring(from, s.length()))));
-        return Utils.cantBeNull($.toArray(new String[$.size()]));
+        $.add(unescape(cantBeNull(s.substring(from, s.length()))));
+        return cantBeNull($.toArray(new String[$.size()]));
       }
-      $.add(unescape(Utils.cantBeNull(s.substring(from, to))));
+      $.add(unescape(cantBeNull(s.substring(from, to))));
       from = to + 1;
     }
   }
@@ -130,7 +131,7 @@ import fluent.ly.*;
     final @NotNull Class<?>[] $ = new @NotNull Class<?>[names.length];
     for (int i = 0; i < $.length; ++i)
       try {
-        $[i] = names[i] == null ? null : Utils.cantBeNull(Class.forName(names[i]));
+        $[i] = names[i] == null ? null : cantBeNull(Class.forName(names[i]));
       } catch (final ClassNotFoundException ¢) {
         throw new RuntimeException("s=" + s, ¢);
       }

@@ -37,7 +37,7 @@ import il.org.spartan.*;
   }
 
   @NotNull public static String separateBySpaces(final Iterable<String> $) {
-    return as.string(separateBySpaces(Utils.cantBeNull($.iterator())));
+    return as.string(separateBySpaces(cantBeNull($.iterator())));
   }
 
   @NotNull public static String separateBySpaces(final @NotNull Iterator<String> s) {
@@ -182,7 +182,7 @@ import il.org.spartan.*;
     }
 
     @NotNull public String by(final @NotNull String between) {
-      return separateBy(Utils.cantBeNull(os), between);
+      return separateBy(cantBeNull(os), between);
     }
 
     @NotNull public String byCommas() {

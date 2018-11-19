@@ -2,12 +2,13 @@
 package fluent.ly;
 
 import static fluent.ly.unbox.*;
+import static il.org.spartan.Utils.*;
+
 
 import java.util.*;
 
 import org.jetbrains.annotations.*;
 
-import il.org.spartan.*;
 
 /** A collection of <code><b>static</b></code> functions for converting from one
  * aggregate type to another.
@@ -168,7 +169,7 @@ import il.org.spartan.*;
       for (final @Nullable Object ¢ : os)
         if (¢ != null)
           $.add(¢ + "");
-    return Utils.cantBeNull($.toArray(new String @NotNull [$.size()]));
+    return cantBeNull($.toArray(new String @NotNull [$.size()]));
   }
 
   public static Iterable<Integer> asIterableEssence(final @NotNull Integer... is) {
