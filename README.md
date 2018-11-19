@@ -7,6 +7,17 @@
 
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team1.svg?maxAge=2592000)]()
 
+[Visit our wiki page for more information](https://github.com/TechnionYP5779/team1/wiki)
+
+# Contributors
+* **Yoav Zuriel** - [Yoav's Git](https://github.com/yoavz1997/)
+* **Shai Zeevi** - [Shai's Git](https://github.com/shaizeevi/)
+* **Saifun Naveh** - [Saifun's Git](https://github.com/saifun)
+* **Ofir Alexi** - [Ofir's Git](https://github.com/ofiralexi/)
+* **Matan Pugach** - [Matan's Git](https://github.com/matanpugach/)
+* **Yarin Shlafir** - [Yarin's Git](https://github.com/yarinsh/)
+* **Itamar Ordani** - [Itamar's Git](https://github.com/itamaror/)
+
 # About the spartanizer
 The Spartanizer is an Eclipse plugin that offers tips for simplifying your code and make it shorter.
 
@@ -19,15 +30,6 @@ This project was conceived as an academic project in the 'Technion - Israel Inst
 # We used these tools to build the project
 * [Travis](https://travis-ci.org/) - Farmework for continuous integration
 * [Maven](https://maven.apache.org/) - Dependency Management
-
-# Contributors
-* **Yoav Zuriel** - [Yoav's Git](https://github.com/yoavz1997/)
-* **Shai Zeevi** - [Shai's Git](https://github.com/shaizeevi/)
-* **Saifun Naveh** - [Saifun's Git](https://github.com/saifun)
-* **Ofir Alexi** - [Ofir's Git](https://github.com/ofiralexi/)
-* **Matan Pugach** - [Matan's Git](https://github.com/matanpugach/)
-* **Yarin Shlafir** - [Yarin's Git](https://github.com/yarinsh/)
-* **Itamar Ordani** - [Itamar's Git](https://github.com/itamaror/)
 
 # License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
