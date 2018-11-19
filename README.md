@@ -7,6 +7,8 @@
 
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team1.svg?maxAge=2592000)]()
 
+[![codecov.io](http://codecov.io/github/TechnionYP5779/team1/coverage.svg?branch=master)](http://codecov.io/github/TechnionYP5779/team1?branch=master)
+
 [Visit our wiki page for more information](https://github.com/TechnionYP5779/team1/wiki)
 
 # Contributors
