@@ -1,4 +1,4 @@
-package il.org.spartan.etc;
+package fluent.ly;
 
 import java.util.*;
 import java.util.function.*;
@@ -6,7 +6,6 @@ import java.util.function.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-import fluent.ly.*;
 import static fluent.ly.box.*;
 
 @SuppressWarnings("static-method") public class nullingTest {
