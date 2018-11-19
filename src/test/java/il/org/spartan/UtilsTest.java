@@ -131,7 +131,7 @@ import il.org.spartan.etc.*;
     azzert.that(Utils.addAll(y, (Iterable<Integer>) x), is(y));
     assert !Utils.hasNull(yy);
     assert (Utils.hasNull(box(1), null));
-    Assert.assertNotNull(Utils.append(new @NotNull Integer[0], box.box(4))[0]);
+    Assert.assertNotNull(Utils.append(new @NotNull Integer[0], box(4))[0]);
     Assert.assertNotNull(Utils.delete(new @NotNull Integer[4], 3));
     assert (Utils.inRange(0, y));
     assert !(Utils.inRange(-70, y));
