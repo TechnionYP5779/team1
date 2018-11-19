@@ -2,7 +2,7 @@ package il.org.spartan.utils;
 
 import org.junit.*;
 
-import il.org.spartan.etc.*;
+import fluent.ly.*;
 import il.org.spartan.utils.LinearRegression.*;
 
 @SuppressWarnings("static-method") public class LinearRegressionTest {

@@ -4,6 +4,7 @@ import java.util.function.*;
 
 import org.jetbrains.annotations.*;
 
+import fluent.ly.*;
 import il.org.spartan.etc.*;
 import il.org.spartan.utils.Proposition.*;
 

@@ -7,7 +7,7 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
-import il.org.spartan.etc.*;
+import fluent.ly.*;
 
 public class statisticsTest {
   // ========== CLASS VARIABLES - FOR TESTING ==========

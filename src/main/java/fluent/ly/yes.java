@@ -1,7 +1,5 @@
 package fluent.ly;
 
-import il.org.spartan.etc.*;
-
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
  * @since 2017-04-10 */

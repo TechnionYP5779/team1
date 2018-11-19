@@ -7,7 +7,6 @@ import static fluent.ly.unbox.*;
 import org.junit.*;
 
 import fluent.ly.*;
-import il.org.spartan.etc.*;
 import il.org.spartan.utils.RealNumbersPairList.*;
 
 @SuppressWarnings("static-method") public class RealNumbersPairListTest {

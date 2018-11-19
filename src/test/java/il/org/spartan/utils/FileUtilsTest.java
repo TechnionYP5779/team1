@@ -15,7 +15,7 @@ import il.org.spartan.*;
   }
 
   @Test public void testFindAllJavaFilesCountIsCorrect() {
-    azzert.that(FileUtils.findAllJavaFiles("src/main/java/fluent").size(), is(32));
+    azzert.that(FileUtils.findAllJavaFiles("src/main/java/fluent").size(), is(34));
   }
 
   @Test public void testFindAllJavaFilesCanDealWithNull() {

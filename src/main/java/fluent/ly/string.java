@@ -9,7 +9,6 @@ import java.util.*;
 import org.jetbrains.annotations.*;
 
 import il.org.spartan.*;
-import il.org.spartan.etc.*;
 
 /** A bunch of string functions.
  * @author Yossi Gil */

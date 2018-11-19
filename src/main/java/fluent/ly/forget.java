@@ -1,4 +1,4 @@
-package il.org.spartan.etc;
+package fluent.ly;
 
 /** TODO Yossi Gil: document class
  * @author Yossi Gil

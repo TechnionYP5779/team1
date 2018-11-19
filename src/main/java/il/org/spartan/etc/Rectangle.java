@@ -2,6 +2,7 @@ package il.org.spartan.etc;
 
 import static fluent.ly.unbox.*;
 
+import fluent.ly.*;
 import il.org.spartan.utils.*;
 
 public class Rectangle {

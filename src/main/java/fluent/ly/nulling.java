@@ -1,10 +1,8 @@
-package il.org.spartan.etc;
+package fluent.ly;
 
 import java.util.function.*;
 
 import org.jetbrains.annotations.*;
-
-import fluent.ly.*;
 
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
