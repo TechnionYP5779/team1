@@ -27,6 +27,22 @@ public class angle {
   public angle add(final double deg) {
     return new angle(this.degrees + deg);
   }
+  
+  public angle sub(final angle ¢) {
+    return new angle(this.degrees - ¢.degrees);
+  }
+  
+  public angle sub(final double deg) {
+    return new angle(this.degrees - deg);
+  }
+  
+  public static angle negate(final angle ¢) {
+    return new angle(-¢.degrees);
+  }
+  
+  public angle negate() {
+    return new angle(-this.degrees);
+  }
 
   public double degrees() {
     return degrees;

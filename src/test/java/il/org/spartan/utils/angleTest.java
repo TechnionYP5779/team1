@@ -31,6 +31,20 @@ import fluent.ly.*;
     azzert.that(angle.halfPi.add(angle.halfPi).degrees, is(180.0));
     azzert.that(angle.halfPi.add(90).degrees, is(180.0));
   }
+  
+  @Test public void sub() {
+    azzert.that(angle.halfPi.sub(angle.degrees(20)).degrees, is(70.0));
+    azzert.that(angle.halfPi.sub(20).degrees, is(70.0));
+    azzert.that(angle.halfPi.sub(angle.halfPi).degrees, is(0.0));
+    azzert.that(angle.halfPi.sub(90).degrees, is(0.0));
+  }
+  
+  @Test public void negate() {
+    azzert.that(angle.halfPi.negate().degrees, is(-90.0));
+    azzert.that(angle.negate(angle.halfPi).degrees, is(-90.0));
+    azzert.that(angle.pi.negate().degrees, is(-180.0));
+    azzert.that(angle.negate(angle.pi).degrees, is(-180.0));
+  }
 
   @Test public void degrees() {
     azzert.that(angle.pi.degrees(), is(180.0));
