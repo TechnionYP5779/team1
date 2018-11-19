@@ -13,8 +13,7 @@ import static fluent.ly.box.*;
   @Test public void testForgetting() {
     azzert.isNull(nil.forgetting(box(1), box(2)));
     azzert.isNull(nil.forgetting(box(1), "abc"));
-    azzert.isNull(
-        nil.forgetting(box(1), box(2.5), "abc", Arrays.asList(box(1), box(2), box(3))));
+    azzert.isNull(nil.forgetting(box(1), box(2.5), "abc", Arrays.asList(box(1), box(2), box(3))));
   }
 
   static String helperF(final Integer ¢) {

@@ -167,7 +167,7 @@ public enum string {
     return ¢ + "";
   }
 
-  //lower case the first letter
+  // lower case the first letter
   @NotNull public static String javaCase(final @NotNull String ¢) {
     return ¢.length() == 0 ? ¢ : (first(¢) + "").toLowerCase() + the.rest(¢);
   }

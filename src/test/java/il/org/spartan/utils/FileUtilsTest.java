@@ -15,7 +15,7 @@ import il.org.spartan.*;
   @Test public void testFindAllJavaFilesCountIsCorrect() {
     azzert.that(FileUtils.findAllJavaFiles("src/main/java/fluent").size(), is(32));
   }
-  
+
   @Test public void testFindAllJavaFilesCanDealWithNull() {
     azzert.that(FileUtils.findAllJavaFiles(null, "src/main/java/an").size(), is(2));
   }
@@ -24,11 +24,11 @@ import il.org.spartan.*;
     azzert.that(FileUtils.readFromFile(".gitignore"), Utils.cantBeNull(containsString("/target/")));
   }
 
-  @Test(expected = IOException.class) public void testReadFromNonExistantFile() throws IOException{
+  @Test(expected = IOException.class) public void testReadFromNonExistantFile() throws IOException {
     FileUtils.readFromFile("IDontExist");
   }
 
   @Test(expected = FileNotFoundException.class) public void testWriteToNonExistantFile() throws FileNotFoundException {
-    FileUtils.writeToFile("IDontExist","Some Random String");
+    FileUtils.writeToFile("IDontExist", "Some Random String");
   }
 }

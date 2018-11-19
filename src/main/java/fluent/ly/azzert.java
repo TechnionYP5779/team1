@@ -764,8 +764,12 @@ import il.org.spartan.utils.*;
       return andAye("", claim);
     }
 
+    @NotNull private static void andGeneral(final @NotNull String reason, final boolean claim, final boolean b) {
+      azzert.that(reason, claim, is(b));
+    }
+
     @NotNull public Asserter andAye(final @NotNull String reason, final boolean claim) {
-      azzert.that(reason, claim, is(true));
+      andGeneral(reason, claim, true);
       return this;
     }
 
@@ -774,7 +778,7 @@ import il.org.spartan.utils.*;
     }
 
     @NotNull public Asserter andNay(final @NotNull String reason, final boolean claim) {
-      azzert.that(reason, claim, is(false));
+      andGeneral(reason, claim, false);
       return this;
     }
   }

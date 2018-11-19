@@ -21,7 +21,7 @@ public class StrTest {
 
   @Test public void innerTest() {
     azzert.that(valued_Str.inner(), is("Hello world!"));
-    azzert.that(empty_str.inner(), is(Utils.canBeNull((String)null)));
+    azzert.that(empty_str.inner(), is(Utils.canBeNull((String) null)));
   }
 
   @Test public void isEmptyTest() {

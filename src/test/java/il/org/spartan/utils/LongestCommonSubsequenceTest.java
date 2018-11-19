@@ -26,6 +26,6 @@ import fluent.ly.*;
   @Test public void testSimilarityWithSimilarity() {
     // that number is the ratio between the len of the LCS (4) and the average
     // len of the strings (7)
-    azzert.that(new LongestCommonSubsequence("aHbHbHa", "aKKKbba").similarity(), is(4.0/7));
+    azzert.that(new LongestCommonSubsequence("aHbHbHa", "aKKKbba").similarity(), is(4.0 / 7));
   }
 }

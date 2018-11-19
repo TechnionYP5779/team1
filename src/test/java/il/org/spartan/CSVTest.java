@@ -80,4 +80,14 @@ import il.org.spartan.etc.*;
       assert true;
     }
   }
+
+  @Test public void splitTest() {
+    azzert.that(CSV.split(Utils.cantBeNull(String.valueOf(""))).length, is(0));
+  }
+
+  @Test public void enumSplitTest() {
+    someEnum[] enum_array = new someEnum[1];
+    enum_array[0] = someEnum.A;
+    azzert.that(CSV.split(someEnum.class, Utils.cantBeNull(CSV.combine(enum_array)))[0] + "", is("A"));
+  }
 }

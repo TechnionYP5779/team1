@@ -6,7 +6,7 @@ import static fluent.ly.box.*;
 import org.junit.*;
 
 // import il.org.spartan.utils.*;
-@SuppressWarnings("static-method") public class RangeTest {
+@SuppressWarnings("static-method") public class rangeTest {
   @Test public void testHashCode() {
     int i1;
     final range r1 = new range(1, 2);
