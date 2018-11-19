@@ -1,6 +1,7 @@
 package il.org.spartan.utils;
 
 import static fluent.ly.box.*;
+
 import java.util.*;
 
 public class RealNumbersPairList implements Iterable<Pair<Double, Double>> {

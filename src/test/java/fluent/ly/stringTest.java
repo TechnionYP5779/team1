@@ -1,11 +1,14 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
+import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
 import static fluent.ly.string.*;
+import static fluent.ly.string.quote;
 
 import java.io.*;
 import java.util.*;
-
-import static fluent.ly.azzert.is;
 
 import org.jetbrains.annotations.*;
 import org.junit.*;
@@ -13,9 +16,6 @@ import org.junit.*;
 import fluent.ly.___.Bug.Assertion.Value.*;
 import fluent.ly.___.Bug.Assertion.Value.Numerical.*;
 import fluent.ly.___.Bug.Contract.*;
-
-import static il.org.spartan.Utils.*;
-import static fluent.ly.box.*;
 
 @SuppressWarnings("static-method") public class stringTest {
   @Test(expected = NumberFormatException.class) public void testAtod() {
@@ -106,24 +106,24 @@ import static fluent.ly.box.*;
   }
 
   @Test public void testIsDouble() {
-    assert (isDouble("2.5"));
-    assert !(isDouble("abc"));
+    assert isDouble("2.5");
+    assert !isDouble("abc");
   }
 
   @Test public void testIsFloat() {
-    assert (isFloat("2.5"));
-    assert !(isFloat("abc"));
+    assert isFloat("2.5");
+    assert !isFloat("abc");
   }
 
   @Test public void testIsInt() {
-    assert (isInt("2"));
-    assert !(isInt("2.5"));
-    assert !(isInt("abc"));
+    assert isInt("2");
+    assert !isInt("2.5");
+    assert !isInt("abc");
   }
 
   @Test public void testIsLong() {
-    assert (isLong("20000"));
-    assert !(isLong("abc"));
+    assert isLong("20000");
+    assert !isLong("abc");
   }
 
   @Test public void testItoa() {

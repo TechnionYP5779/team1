@@ -3,11 +3,11 @@ package il.org.spartan.utils;
 import java.io.*;
 import java.nio.charset.*;
 import java.util.stream.*;
+import static il.org.spartan.Utils.*;
 
 import org.jetbrains.annotations.*;
 
-import il.org.spartan.*;
-import il.org.spartan.etc.*;
+import fluent.ly.*;
 
 /** Fluent API
  * @author Yossi Gil
@@ -48,7 +48,7 @@ public interface fault {
   }
 
   @NotNull static String specifically(final @NotNull String explanation, final Object... os) {
-    return dump("\n " + explanation) + Stream.of(os).map(λ -> dump(Utils.cantBeNull(λ.getClass().getSimpleName()), λ)).reduce((x, y) -> x + y).get()
+    return dump("\n " + explanation) + Stream.of(os).map(λ -> dump(cantBeNull(λ.getClass().getSimpleName()), λ)).reduce((x, y) -> x + y).get()
         + done();
   }
 

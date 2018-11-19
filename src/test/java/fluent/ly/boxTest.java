@@ -1,10 +1,11 @@
 package fluent.ly;
 
+import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
+
 import java.util.*;
 
 import org.junit.*;
-import static fluent.ly.azzert.*;
-import static fluent.ly.box.*;
 
 @SuppressWarnings("static-method") public class boxTest {
   @Test public void testBoxBoolean() {
@@ -43,7 +44,7 @@ import static fluent.ly.box.*;
   }
 
   @Test public void testBoxChar() {
-    char tested = (char) new Random().nextInt(Character.MAX_VALUE + 1);
+    final char tested = (char) new Random().nextInt(Character.MAX_VALUE + 1);
     azzert.that(box(tested), is(box(tested)));
   }
 

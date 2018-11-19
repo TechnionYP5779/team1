@@ -1,12 +1,13 @@
 package il.org.spartan.statistics;
 
+import static fluent.ly.unbox.*;
+import static il.org.spartan.Utils.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
-import il.org.spartan.*;
-import static fluent.ly.unbox.*;
 
 /** A class to compute statistics, e.g., the minimal and maximal value, the mean
  * and the standard deviation, of a sequence of real numbers.
@@ -17,7 +18,7 @@ public class RealStatistics extends ImmutableStatistics {
   private static final long serialVersionUID = 1;
 
   public static double @NotNull [] increase(final double @NotNull [] ¢) {
-    return Utils.cantBeNull(Arrays.copyOf(¢, 2 * ¢.length + 1));
+    return cantBeNull(Arrays.copyOf(¢, 2 * ¢.length + 1));
   }
 
   @NotNull public RealStatistics record(final double... vs) {

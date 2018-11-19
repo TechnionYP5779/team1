@@ -1,12 +1,14 @@
 /* Part of the "Spartan Blog"; mutate the rest / but leave this line as is */
 package fluent.ly;
 
+import static fluent.ly.unbox.*;
+import static il.org.spartan.Utils.*;
+
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
 
-import il.org.spartan.*;
-import static fluent.ly.unbox.*;
 
 /** A collection of <code><b>static</b></code> functions for converting from one
  * aggregate type to another.
@@ -167,7 +169,7 @@ import static fluent.ly.unbox.*;
       for (final @Nullable Object ¢ : os)
         if (¢ != null)
           $.add(¢ + "");
-    return Utils.cantBeNull($.toArray(new String @NotNull [$.size()]));
+    return cantBeNull($.toArray(new String @NotNull [$.size()]));
   }
 
   public static Iterable<Integer> asIterableEssence(final @NotNull Integer... is) {

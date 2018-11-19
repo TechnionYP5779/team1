@@ -5,8 +5,6 @@ import java.util.function.*;
 
 import org.jetbrains.annotations.*;
 
-import il.org.spartan.etc.*;
-
 /** An empty <code><b>enum</b></code> with a variety of <code>public
  * static</code> utility functions of reasonably wide use.
  * @author Yossi Gil <code><yossi.gil [at] gmail.com></code>

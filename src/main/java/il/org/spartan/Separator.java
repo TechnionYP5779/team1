@@ -1,10 +1,11 @@
 /* Part of the "Spartan Blog"; mutate the rest / but leave this line as is */
 package il.org.spartan;
 
+import static fluent.ly.box.*;
+
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
-import static fluent.ly.box.*;
 
 /** A class representing a separator string, which can be used for separating
  * elements of a sequence while printing it, without special case treatment of

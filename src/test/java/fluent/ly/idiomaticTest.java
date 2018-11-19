@@ -3,11 +3,11 @@ package fluent.ly;
 import static fluent.ly.azzert.*;
 import static fluent.ly.azzert.is;
 import static fluent.ly.box.*;
+import static il.org.spartan.Utils.*;
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.idiomatic.*;
-import il.org.spartan.*;
 import static fluent.ly.unbox.*;
 
 @SuppressWarnings("static-method") public class idiomaticTest {
@@ -33,7 +33,7 @@ import static fluent.ly.unbox.*;
   }
 
   @Test public void testKatching2() {
-    final idiomatic.Producer<@Nullable Integer> notThrower = () -> Utils.cantBeNull(box(1));
+    final idiomatic.Producer<@Nullable Integer> notThrower = () -> cantBeNull(box(1));
     try {
       azzert.notNull(idiomatic.katching(notThrower));
     } catch (final Exception ¢) {

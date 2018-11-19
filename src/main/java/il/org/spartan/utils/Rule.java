@@ -1,7 +1,9 @@
 package il.org.spartan.utils;
 
 import static java.lang.String.*;
+
 import static fluent.ly.box.*;
+
 import java.lang.annotation.*;
 import java.util.*;
 import java.util.function.*;
@@ -151,7 +153,7 @@ import il.org.spartan.etc.*;
   @Check boolean check(T n);
 
   default String description() {
-    return format("%s/[%s]%s=", //
+    return format("%s/[%s]%s=%s%s", //
         English.name(Rule.class), //
         English.name(this), //
         technicalName() == English.name(this) ? "" : technicalName(), //

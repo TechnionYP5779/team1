@@ -1,9 +1,10 @@
 package fluent.ly;
 
-import org.junit.*;
-import static fluent.ly.azzert.is;
+import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
 import static fluent.ly.unbox.*;
+
+import org.junit.*;
 
 @SuppressWarnings("static-method") public class defaultsTest {
   @Test public void testToIntegerInt() {

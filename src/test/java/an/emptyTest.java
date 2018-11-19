@@ -1,9 +1,10 @@
 package an;
 
+import static fluent.ly.azzert.*;
+
 import org.junit.*;
 
 import fluent.ly.*;
-import static fluent.ly.azzert.is;
 
 @SuppressWarnings("static-method") public class emptyTest {
   @Test public void testList() {

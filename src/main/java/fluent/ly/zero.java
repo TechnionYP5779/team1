@@ -1,7 +1,5 @@
 package fluent.ly;
 
-import il.org.spartan.etc.*;
-
 /** Fluent API, see usage
  * @author Yossi Gil
  * @since 2017-04-10 */

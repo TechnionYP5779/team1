@@ -1,13 +1,13 @@
 package fluent.ly;
 
+import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
+
 import java.util.*;
 
 import org.junit.*;
 
 import fluent.ly.nil.*;
-
-import static fluent.ly.azzert.is;
-import static fluent.ly.box.*;
 
 @SuppressWarnings("static-method") public class nilTest {
   @Test public void testForgetting() {

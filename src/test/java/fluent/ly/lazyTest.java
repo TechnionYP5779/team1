@@ -1,10 +1,11 @@
 package fluent.ly;
 
+import static fluent.ly.azzert.*;
+
 import java.util.function.*;
 
 import org.jetbrains.annotations.*;
 import org.junit.*;
-import static fluent.ly.azzert.is;
 
 @SuppressWarnings("static-method") public class lazyTest {
   @Test public void testGet() {

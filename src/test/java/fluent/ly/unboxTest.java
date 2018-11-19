@@ -1,11 +1,12 @@
 package fluent.ly;
 
-import java.util.*;
-
-import org.junit.*;
 import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
 import static fluent.ly.unbox.*;
+
+import java.util.*;
+
+import org.junit.*;
 
 @SuppressWarnings("static-method") public class unboxTest {
   @Test public void testItDoubleArray() {

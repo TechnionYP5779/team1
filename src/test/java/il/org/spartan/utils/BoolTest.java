@@ -1,7 +1,8 @@
 package il.org.spartan.utils;
 
-import org.junit.*;
 import static fluent.ly.unbox.*;
+
+import org.junit.*;
 
 @SuppressWarnings("static-method") public class BoolTest {
   @Test public void testValueOf() {

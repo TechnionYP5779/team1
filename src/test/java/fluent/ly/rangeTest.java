@@ -1,8 +1,10 @@
 package fluent.ly;
 
-import java.util.*;
 import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
+
+import java.util.*;
+
 import org.junit.*;
 
 // import il.org.spartan.utils.*;

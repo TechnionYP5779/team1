@@ -1,8 +1,10 @@
 package il.org.spartan.etc;
 
-import org.junit.*;
-import fluent.ly.*;
 import static fluent.ly.azzert.*;
+
+import org.junit.*;
+
+import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class safeTest {
   @Test public void testDivByNonZero() {

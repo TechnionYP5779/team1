@@ -8,6 +8,7 @@ import org.jetbrains.annotations.*;
 // import static il.org.spartan.utils.___.*;
 import il.org.spartan.Aggregator.Aggregation.*;
 import il.org.spartan.statistics.*;
+import static il.org.spartan.Utils.*;
 
 /** Similar to {@link CSVWriter}, except that in addition to the production of
  * output to the main CSV file, this class generates a secondary CSV file,
@@ -19,7 +20,7 @@ import il.org.spartan.statistics.*;
   @NotNull private static final String SUMMARY_EXTENSION = ".summary";
 
   @NotNull private static String removeExtension(final @NotNull String baseName) {
-    return Utils.cantBeNull(baseName.replaceFirst("\\.csv$", ""));
+    return cantBeNull(baseName.replaceFirst("\\.csv$", ""));
   }
 
   @NotNull private final String keysHeader;

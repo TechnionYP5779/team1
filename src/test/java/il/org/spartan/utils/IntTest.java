@@ -2,7 +2,6 @@ package il.org.spartan.utils;
 
 import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
-import static org.junit.Assert.*;
 
 import java.util.*;
 

@@ -2,12 +2,12 @@ package il.org.spartan.utils;
 
 import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
+import static fluent.ly.unbox.*;
+
 import org.junit.*;
 
 import fluent.ly.*;
-import il.org.spartan.etc.*;
 import il.org.spartan.utils.RealNumbersPairList.*;
-import static fluent.ly.unbox.*;
 
 @SuppressWarnings("static-method") public class RealNumbersPairListTest {
   @Test public void creationEmptyList() {

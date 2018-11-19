@@ -1,11 +1,13 @@
 package il.org.spartan.utils;
 
-import java.io.*;
 import static fluent.ly.azzert.*;
+import static il.org.spartan.Utils.*;
+
+import java.io.*;
+
 import org.junit.*;
 
 import fluent.ly.*;
-import il.org.spartan.*;
 
 @SuppressWarnings("static-method") public class FileUtilsTest {
   @Test public void testFindAllJavaFilesWithNoArgsReturnsEmptyList() {
@@ -13,7 +15,7 @@ import il.org.spartan.*;
   }
 
   @Test public void testFindAllJavaFilesCountIsCorrect() {
-    azzert.that(FileUtils.findAllJavaFiles("src/main/java/fluent").size(), is(32));
+    azzert.that(FileUtils.findAllJavaFiles("src/main/java/fluent").size(), is(34));
   }
 
   @Test public void testFindAllJavaFilesCanDealWithNull() {
@@ -21,7 +23,7 @@ import il.org.spartan.*;
   }
 
   @Test public void testReadFromFile() throws IOException {
-    azzert.that(FileUtils.readFromFile(".gitignore"), Utils.cantBeNull(containsString("/target/")));
+    azzert.that(FileUtils.readFromFile(".gitignore"), cantBeNull(containsString("/target/")));
   }
 
   @Test(expected = IOException.class) public void testReadFromNonExistantFile() throws IOException {

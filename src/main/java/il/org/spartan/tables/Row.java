@@ -1,6 +1,8 @@
 // <a href=http://ssdl-linux.cs.technion.ac.il/wiki/index.php>SSDLPedia</a>
 package il.org.spartan.tables;
 
+import static fluent.ly.unbox.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;
@@ -8,7 +10,6 @@ import org.jetbrains.annotations.*;
 import fluent.ly.*;
 import il.org.spartan.external.*;
 import il.org.spartan.utils.*;
-import static fluent.ly.unbox.*;
 
 /** Represents a row of a {@link Table}
  * @param <Self> uses for fluent API, __ of subclass
@@ -53,7 +54,7 @@ import static fluent.ly.unbox.*;
   }
 
   /** Adds a key and a {@code double</b><code> value to this instance &#64;param
-                 * key The key to be added; must not be {@code null &#64;param value The value
+                  * key The key to be added; must not be {@code null &#64;param value The value
    * associated with the key @return {@code this} */
   public Self col(final @NotNull String key, final double value) {
     return col(key, value + "");

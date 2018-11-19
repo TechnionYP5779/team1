@@ -1,6 +1,7 @@
 package il.org.spartan.utils;
 
 import static fluent.ly.azzert.*;
+import static il.org.spartan.Utils.*;
 
 import org.junit.*;
 
@@ -13,7 +14,7 @@ public class StrTest {
 
   @Test public void setTest() {
     assert !valued_Str.isEmptyx();
-    azzert.that(Utils.cantBeNull(valued_Str.inner()), is("Hello world!"));
+    azzert.that(cantBeNull(valued_Str.inner()), is("Hello world!"));
     valued_Str.set("newValue");
     assert !valued_Str.isEmptyx();
     azzert.that(valued_Str.inner(), is("newValue"));

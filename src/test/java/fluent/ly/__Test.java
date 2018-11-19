@@ -1,7 +1,8 @@
 package fluent.ly;
 
-import org.junit.*;
 import static fluent.ly.azzert.*;
+
+import org.junit.*;
 
 import fluent.ly.___.Bug.Assertion.*;
 import fluent.ly.___.Bug.Assertion.Value.Numerical.*;

@@ -1,6 +1,7 @@
 package il.org.spartan.etc;
 
 import static fluent.ly.box.*;
+
 import java.util.*;
 
 import org.jetbrains.annotations.*;

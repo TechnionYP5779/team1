@@ -1,10 +1,12 @@
 package fluent.ly;
 
+import static fluent.ly.box.*;
+
 import java.util.*;
 // import java.util.stream.*;
 
 import org.jetbrains.annotations.*;
-import static fluent.ly.box.*;
+
 // import il.org.spartan.utils.*;
 public class range {
   public static DidTo numbers = range.from(Integer.MIN_VALUE).to(Integer.MAX_VALUE);

@@ -1,14 +1,14 @@
 package il.org.spartan.etc;
 
-import java.io.*;
+import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
 
+import java.io.*;
 import java.util.*;
 
 import org.junit.*;
 
 import fluent.ly.*;
-import static fluent.ly.azzert.*;
-import static fluent.ly.box.*;
 
 @SuppressWarnings("static-method") public class outTest {
   @Test public void testOutString() {
