@@ -4,7 +4,7 @@ import java.util.*;
 // import java.util.stream.*;
 
 import org.jetbrains.annotations.*;
-
+import static fluent.ly.box.*;
 // import il.org.spartan.utils.*;
 public class range {
   public static DidTo numbers = range.from(Integer.MIN_VALUE).to(Integer.MAX_VALUE);
@@ -130,7 +130,7 @@ public class range {
             throw new NoSuchElementException();
           final int $ = current;
           current += delta;
-          return box.box($);
+          return box($);
         }
       };
     }
@@ -157,7 +157,7 @@ public class range {
     }
 
     public Integer from() {
-      return to == from ? null : box.box(from);
+      return to == from ? null : box(from);
     }
 
     public DidTo from(final int ¢) {
