@@ -1,6 +1,7 @@
 package il.org.spartan;
 
 import static fluent.ly.azzert.*;
+import static il.org.spartan.Utils.*;
 
 import java.io.*;
 
@@ -61,18 +62,18 @@ import il.org.spartan.etc.*;
 
   @Test public void unescapeTest() {
     assert CSV.unescape("\\0") == null;
-    azzert.that(CSV.unescape(Utils.cantBeNull(CSV.escape("\\a"))), is("\\a"));
-    azzert.that(CSV.unescape(Utils.cantBeNull(CSV.escape("\na"))), is("\na"));
-    azzert.that(CSV.unescape(Utils.cantBeNull(CSV.escape("\ra"))), is("\ra"));
-    azzert.that(CSV.unescape(Utils.cantBeNull(CSV.escape("\ta"))), is("\ta"));
-    azzert.that(CSV.unescape(Utils.cantBeNull(CSV.escape(",a"))), is(",a"));
+    azzert.that(CSV.unescape(cantBeNull(CSV.escape("\\a"))), is("\\a"));
+    azzert.that(CSV.unescape(cantBeNull(CSV.escape("\na"))), is("\na"));
+    azzert.that(CSV.unescape(cantBeNull(CSV.escape("\ra"))), is("\ra"));
+    azzert.that(CSV.unescape(cantBeNull(CSV.escape("\ta"))), is("\ta"));
+    azzert.that(CSV.unescape(cantBeNull(CSV.escape(",a"))), is(",a"));
   }
 
   @Test public void splitToClasses() {
     final Class<?>[] array = new Class<?>[2];
     array[0] = String.class;
     array[1] = Integer.class;
-    final Class<?>[] classes = CSV.splitToClasses(Utils.cantBeNull(CSV.combine(array)));
+    final Class<?>[] classes = CSV.splitToClasses(cantBeNull(CSV.combine(array)));
     azzert.that(classes[0], is(array[0]));
     azzert.that(classes[1], is(array[1]));
     try {
@@ -85,12 +86,12 @@ import il.org.spartan.etc.*;
   }
 
   @Test public void splitTest() {
-    azzert.that(CSV.split(Utils.cantBeNull(String.valueOf(""))).length, is(0));
+    azzert.that(CSV.split(cantBeNull(String.valueOf(""))).length, is(0));
   }
 
   @Test public void enumSplitTest() {
     final someEnum[] enum_array = new someEnum[1];
     enum_array[0] = someEnum.A;
-    azzert.that(CSV.split(someEnum.class, Utils.cantBeNull(CSV.combine(enum_array)))[0] + "", is("A"));
+    azzert.that(CSV.split(someEnum.class, cantBeNull(CSV.combine(enum_array)))[0] + "", is("A"));
   }
 }

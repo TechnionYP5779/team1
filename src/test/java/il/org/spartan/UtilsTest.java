@@ -1,6 +1,7 @@
 package il.org.spartan;
 
 import static org.junit.Assert.*;
+import static il.org.spartan.Utils.*;
 
 import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
@@ -45,7 +46,7 @@ import il.org.spartan.etc.*;
 
   @Test public void cantBeNullOfNull() {
     try {
-      Utils.cantBeNull(null);
+      cantBeNull(null);
       azzert.fail("AssertionError expected prior to this line.");
     } catch (final AssertionError ¢) {
       forget.it(¢);
@@ -54,7 +55,7 @@ import il.org.spartan.etc.*;
   }
 
   @Test public void cantBeNullTypical() {
-    assert Utils.cantBeNull(new Object()) != null;
+    assert cantBeNull(new Object()) != null;
   }
 
   @Test public void isNullTypical() {

@@ -2,10 +2,9 @@
 package il.org.spartan.utils;
 
 import static fluent.ly.___.*;
+import static il.org.spartan.Utils.*;
 
 import org.jetbrains.annotations.*;
-
-import il.org.spartan.*;
 
 /** Prefix text with varying indentation level. Class can be used for an
  * indented printout of a hierarchical tree data structure, e.g.,:
@@ -69,7 +68,7 @@ public class Tab {
   /** Decrease indentation level. */
   public void less() {
     require(!isEmpty());
-    indentation = Utils.cantBeNull(indentation.substring(0, indentation.length() - tab.length()));
+    indentation = cantBeNull(indentation.substring(0, indentation.length() - tab.length()));
   }
 
   /** Send a formatted, indented by this instance, line to {@link System#out}.

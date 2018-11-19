@@ -2,13 +2,12 @@ package fluent.ly;
 
 import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
+import static il.org.spartan.Utils.*;
 
 import java.util.*;
 
 import org.jetbrains.annotations.*;
 import org.junit.*;
-
-import il.org.spartan.*;
 
 @SuppressWarnings("static-method") public class hasTest {
   List<@Nullable Object> list;
@@ -23,21 +22,21 @@ import il.org.spartan.*;
   }
 
   @Test public void getItemInRange() {
-    azzert.that(has.next(2, Utils.cantBeNull(list)), is(box(4)));
+    azzert.that(has.next(2, cantBeNull(list)), is(box(4)));
   }
 
   @Test public void getItemOutOfRange() {
-    azzert.that(has.next(1000, Utils.cantBeNull(list)), is(box(5)));
+    azzert.that(has.next(1000, cantBeNull(list)), is(box(5)));
   }
 
   @Test public void iterableHasNoNulls() {
-    final @NotNull Iterable<@Nullable Object> it = Utils.cantBeNull(list);
+    final @NotNull Iterable<@Nullable Object> it = cantBeNull(list);
     assert !has.nulls(it);
   }
 
   @Test public void iterableHasNulls() {
     list.add(null);
-    final @NotNull Iterable<@Nullable Object> it = Utils.cantBeNull(list);
+    final @NotNull Iterable<@Nullable Object> it = cantBeNull(list);
     assert has.nulls(it);
   }
 

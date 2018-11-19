@@ -4,10 +4,10 @@ import java.io.*;
 import java.util.*;
 
 import org.jetbrains.annotations.*;
+import static il.org.spartan.Utils.*;
 
 import an.*;
 import fluent.ly.*;
-import il.org.spartan.*;
 import il.org.spartan.etc.*;
 import il.org.spartan.statistics.*;
 import il.org.spartan.utils.*;
@@ -39,7 +39,7 @@ import il.org.spartan.utils.*;
    * @author oran1248
    * @since 2017-04-21 */
   public Table(final @NotNull String name, final @NotNull TableRenderer... rs) {
-    this.name = Utils.cantBeNull(name.toLowerCase());
+    this.name = cantBeNull(name.toLowerCase());
     as.list(rs).forEach(r -> {
       try {
         writers.add(new RecordWriter(r, path()));
@@ -52,7 +52,7 @@ import il.org.spartan.utils.*;
   }
 
   public Table(final @NotNull String name, final @NotNull String outputFolder) {
-    this.name = Utils.cantBeNull(name.toLowerCase());
+    this.name = cantBeNull(name.toLowerCase());
     path = outputFolder.lastIndexOf('/') == outputFolder.length() ? outputFolder : outputFolder + System.getProperty("file.separator", "/");
     as.list(TableRenderer.builtin.values()).forEach(r -> {
       try {
@@ -190,10 +190,10 @@ import il.org.spartan.utils.*;
   }
 
   @NotNull public static String classToNormalizedFileName(final Class<?> ¢) {
-    return classToNormalizedFileName(Utils.cantBeNull(¢.getSimpleName()));
+    return classToNormalizedFileName(cantBeNull(¢.getSimpleName()));
   }
 
   @NotNull static String classToNormalizedFileName(final @NotNull String className) {
-    return Utils.cantBeNull(separate.these(the.lastOf(iterable.over(cCamelCase.components(className)))).by('-').toLowerCase());
+    return cantBeNull(separate.these(the.lastOf(iterable.over(cCamelCase.components(className)))).by('-').toLowerCase());
   }
 }
