@@ -6,6 +6,8 @@ import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
 import il.org.spartan.*;
+import static fluent.ly.box.*;
+import static fluent.ly.unbox.*;
 
 @FunctionalInterface @SuppressWarnings("null") public interface TableRenderer {
   enum builtin implements TableRenderer {
@@ -132,7 +134,7 @@ import il.org.spartan.*;
   String NL = System.getProperty("line.separator");
 
   default String cellReal(final Double ¢) {
-    return ¢.longValue() != unbox.unbox(¢) ? ¢ + "" : cellInt(box.box(¢.longValue()));
+    return ¢.longValue() != unbox(¢) ? ¢ + "" : cellInt(box(¢.longValue()));
   }
 
   static String empty() {
@@ -232,7 +234,7 @@ import il.org.spartan.*;
     final Separator s = new Separator(recordSeparator());
     values.forEach(λ -> $.append(s)
         .append(λ instanceof Object[] ? cellArray((Object[]) λ)
-            : λ instanceof Integer ? cellInt(Long.valueOf(unbox.unbox((Integer) λ)))
+            : λ instanceof Integer ? cellInt(Long.valueOf(unbox((Integer) λ)))
                 : λ instanceof Long ? cellInt((Long) λ) : λ instanceof Double ? cellReal((Double) λ) : λ));
     return $ + recordEnd();
   }

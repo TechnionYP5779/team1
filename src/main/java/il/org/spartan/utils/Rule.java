@@ -1,7 +1,7 @@
 package il.org.spartan.utils;
 
 import static java.lang.String.*;
-
+import static fluent.ly.box.*;
 import java.lang.annotation.*;
 import java.util.*;
 import java.util.function.*;
@@ -205,7 +205,7 @@ import il.org.spartan.etc.*;
     }
 
     @Override public Void before(final @NotNull String key, final Object... arguments) {
-      count.putIfAbsent(key, box.box(0));
+      count.putIfAbsent(key, box(0));
       count.put(key, box.it(count.get(key).intValue() + 1));
       return super.before(key, arguments);
     }

@@ -7,6 +7,7 @@ import org.junit.*;
 import fluent.ly.*;
 import il.org.spartan.etc.*;
 import il.org.spartan.utils.RealNumbersPairList.*;
+import static fluent.ly.unbox.*;
 
 @SuppressWarnings("static-method") public class RealNumbersPairListTest {
   @Test public void creationEmptyList() {
@@ -109,8 +110,8 @@ import il.org.spartan.utils.RealNumbersPairList.*;
     list.record(41.30, 12.3);
     for (final Pair<Double, Double> ¢ : list) {
       Assert.assertNotNull(¢);
-      assert unbox.unbox(¢.first) >= 1.3 && unbox.unbox(¢.first) <= 93.5;
-      assert unbox.unbox(¢.second) >= 2.5 && unbox.unbox(¢.second) <= 22.2;
+      assert unbox(¢.first) >= 1.3 && unbox(¢.first) <= 93.5;
+      assert unbox(¢.second) >= 2.5 && unbox(¢.second) <= 22.2;
     }
   }
 
@@ -121,8 +122,8 @@ import il.org.spartan.utils.RealNumbersPairList.*;
       list.record(xVals[¢], yVals[¢]);
     int i = 0;
     for (final Pair<Double, Double> ¢ : list) {
-      assert unbox.unbox(¢.first) == xVals[i];
-      assert unbox.unbox(¢.second) == yVals[i++];
+      assert unbox(¢.first) == xVals[i];
+      assert unbox(¢.second) == yVals[i++];
     }
   }
 }

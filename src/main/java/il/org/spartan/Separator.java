@@ -4,6 +4,7 @@ package il.org.spartan;
 import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
+import static fluent.ly.box.*;
 
 /** A class representing a separator string, which can be used for separating
  * elements of a sequence while printing it, without special case treatment of
@@ -37,7 +38,7 @@ public final class Separator {
     @NotNull String $ = "";
     final @NotNull Separator s = new Separator(between);
     for (final int ¢ : is)
-      $ += s + (box.box(¢) + "");
+      $ += s + (box(¢) + "");
     return $;
   }
 

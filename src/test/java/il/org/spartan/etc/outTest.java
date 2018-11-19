@@ -8,6 +8,7 @@ import org.junit.*;
 
 import fluent.ly.*;
 import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
 
 @SuppressWarnings("static-method") public class outTest {
   @Test public void testOutString() {
@@ -48,7 +49,7 @@ import static fluent.ly.azzert.*;
   @Test public void testOutCollectionOfOneObject() {
     final String tested = "I am a Test String";
     final List<Object> lst = new ArrayList<>();
-    final Integer num = box.box(3);
+    final Integer num = box(3);
     lst.add(num);
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
@@ -59,7 +60,7 @@ import static fluent.ly.azzert.*;
   @Test public void testOutCollectionOfMultipleObjects() {
     final String tested = "I am a Test String";
     final List<Object> lst = new ArrayList<>();
-    final Integer num = box.box(3);
+    final Integer num = box(3);
     lst.add(num);
     lst.add(num);
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -71,7 +72,7 @@ import static fluent.ly.azzert.*;
   @Test public void testOutCollectionOfMoreThan30Objects() {
     final String tested = "I am a Test String";
     final List<Object> lst = new ArrayList<>();
-    final Integer num = box.box(3);
+    final Integer num = box(3);
     for (int ¢ = 0; ¢ < 40; ++¢)
       lst.add(num);
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -128,7 +129,7 @@ import static fluent.ly.azzert.*;
   @Test public void testOutObjectArrayOfOneObject() {
     final String tested = "I am a Test String";
     final Object[] arr = new Object[1];
-    final Integer num = box.box(3);
+    final Integer num = box(3);
     arr[0] = num;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));
@@ -139,7 +140,7 @@ import static fluent.ly.azzert.*;
   @Test public void testOutObjectArrayOfMultipleObjects() {
     final String tested = "I am a Test String";
     final Object[] arr = new Object[2];
-    final Integer num = box.box(3);
+    final Integer num = box(3);
     arr[1] = arr[0] = num;
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outContent));

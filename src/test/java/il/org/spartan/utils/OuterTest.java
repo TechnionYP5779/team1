@@ -35,9 +35,7 @@ public class OuterTest {
     // the warning is because we want to check on two different objects
     assert null_outer.equals(null_outer);
     assert !null_outer.equals(outer);
-    Object null_obj = null;
-    Object my_outer = outer;
-    Object my_outer2 = outer2;
+    Object null_obj = null, my_outer = outer, my_outer2 = outer2;
     assert outer.equals(my_outer);
     assert !outer.equals(null_obj);
     assert !outer.equals(box(5));

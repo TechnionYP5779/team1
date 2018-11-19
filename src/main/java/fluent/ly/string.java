@@ -9,6 +9,7 @@ import org.jetbrains.annotations.*;
 
 import il.org.spartan.*;
 import il.org.spartan.etc.*;
+import static fluent.ly.unbox.*;
 
 /** A bunch of string functions.
  * @author Yossi Gil */
@@ -19,19 +20,19 @@ public enum string {
   static final int MAX_LAST = 10;
 
   public static double atod(final @NotNull String ¢) {
-    return unbox.unbox(Double.valueOf(¢));
+    return unbox(Double.valueOf(¢));
   }
 
   public static float atof(final @NotNull String ¢) {
-    return unbox.unbox(Float.valueOf(¢));
+    return unbox(Float.valueOf(¢));
   }
 
   public static int atoi(final @NotNull String ¢) {
-    return unbox.unbox(Integer.valueOf(¢));
+    return unbox(Integer.valueOf(¢));
   }
 
   public static long atol(final @NotNull String ¢) {
-    return unbox.unbox(Long.valueOf(¢));
+    return unbox(Long.valueOf(¢));
   }
 
   @NotNull public static String capitalize(final @NotNull String ¢) {

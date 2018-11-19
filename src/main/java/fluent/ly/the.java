@@ -6,6 +6,7 @@ import static fluent.ly.idiomatic.*;
 import java.util.*;
 
 import org.jetbrains.annotations.*;
+import static fluent.ly.unbox.*;
 
 /** TODO Yossi Gil: document class
  * @author Yossi Gil
@@ -13,8 +14,8 @@ import org.jetbrains.annotations.*;
 public interface the {
   static int index(final int i, final int... is) {
     for (final Integer $ : range.from(0).to(is.length))
-      if (is[unbox.unbox($)] == i)
-        return unbox.unbox($);
+      if (is[unbox($)] == i)
+        return unbox($);
     return -1;
   }
 

@@ -6,6 +6,7 @@ import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
 import il.org.spartan.*;
+import static fluent.ly.unbox.*;
 
 /** A class to compute statistics, e.g., the minimal and maximal value, the mean
  * and the standard deviation, of a sequence of real numbers.
@@ -30,7 +31,7 @@ public class RealStatistics extends ImmutableStatistics {
   }
 
   @NotNull public Statistics record(final @Nullable Double v) {
-    return v == null ? recordMissing() : record(unbox.unbox(v));
+    return v == null ? recordMissing() : record(unbox(v));
   }
 
   @NotNull public RealStatistics recordMissing() {

@@ -8,6 +8,7 @@ import org.jetbrains.annotations.*;
 import fluent.ly.*;
 import il.org.spartan.external.*;
 import il.org.spartan.utils.*;
+import static fluent.ly.unbox.*;
 
 /** Represents a row of a {@link Table}
  * @param <Self> uses for fluent API, __ of subclass
@@ -70,7 +71,7 @@ import il.org.spartan.utils.*;
    *        {@code null @param value The value associated with the key @return
    *        {@code this} */
   public final Self col(final @NotNull String key, final Integer value) {
-    return value == null ? col(key) : col(key, unbox.unbox(value));
+    return value == null ? col(key) : col(key, unbox(value));
   }
 
   /** Add a key and a {@code long} value to this instance
