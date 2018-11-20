@@ -1,7 +1,6 @@
 package il.org.spartan;
 
 import static il.org.spartan.Utils.*;
-import static org.junit.Assert.*;
 
 import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
@@ -43,18 +42,14 @@ import fluent.ly.*;
     azzert.aye(ss.contains("A"));
   }
 
-  @Test public void cantBeNullOfNull() {
-    try {
+  @Test(expected = AssertionError.class) public void cantBeNullOfNull() {
       cantBeNull(null);
       azzert.fail("AssertionError expected prior to this line.");
-    } catch (final AssertionError ¢) {
-      forget.it(¢);
-      azzert.aye("", true);
-    }
+    
   }
 
   @Test public void cantBeNullTypical() {
-    assert cantBeNull(new Object()) != null;
+    azzert.notNull(cantBeNull(new Object()));  
   }
 
   @Test public void isNullTypical() {
@@ -92,19 +87,19 @@ import fluent.ly.*;
   @Test public void swapDegenerate() {
     final @NotNull String[] ss = as.array("A", "B", "C", "D");
     Utils.swap(ss, 1, 1);
-    assertArrayEquals(as.array("A", "B", "C", "D"), ss);
+    azzert.that(as.array("A", "B", "C", "D"), is (ss));
   }
 
   @Test public void swapTypical() {
     final @NotNull String[] ss = as.array("A", "B", "C", "D");
     Utils.swap(ss, 1, 2);
-    assertArrayEquals(as.array("A", "C", "B", "D"), ss);
+    azzert.that(as.array("A", "C", "B", "D"), is(ss));
   }
 
   @Test public void swapTypicalCase() {
     final @NotNull Integer[] $ = intToIntegers(29, 1, 60);
     Utils.swap($, 0, 1);
-    assertArrayEquals(intToIntegers(1, 29, 60), $);
+    azzert.that(intToIntegers(1, 29, 60), is($));
   }
 
   @Test public void collectionTesting() {
@@ -115,9 +110,9 @@ import fluent.ly.*;
     y.add(box(5));
     final List<Integer> yy = new ArrayList<>();
     yy.add(null);
-    Assert.assertNotNull(Utils.apply(λ -> λ).to(y));
-    Assert.assertNotNull(Utils.apply(λ -> λ).to(yy));
-    Assert.assertNotNull(Utils.apply(λ -> λ).to(new Object()));
+    azzert.notNull(Utils.apply(λ -> λ).to(y));
+    azzert.notNull(Utils.apply(λ -> λ).to(yy));
+    azzert.notNull(Utils.apply(λ -> λ).to(new Object()));
     azzert.that(Utils.hash(null), is(0));
     final Object o = new Object();
     azzert.that(Utils.hash(o), is(o.hashCode()));
