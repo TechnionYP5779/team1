@@ -38,7 +38,7 @@ import org.junit.*;
   }
   
   @Test public void robustlyTrueBoolNoException() {
-    assert robust.lyFalse(() -> true, λ -> {
+    assert robust.lyTrue(() -> true, λ -> {
       /*it's a Consumer, so it returns nothing*/
     });
   }
@@ -61,5 +61,71 @@ import org.junit.*;
     assert robust.lyTrue(robustTest::throwRunnableException, λ -> {
       /*it's a Consumer, so it returns nothing*/
     });
+  }
+  
+  @Test public void robustlyNull() {
+    azzert.that(robust.<Integer>lyNull(()->(box(2))), is(2));
+  }
+  
+//  @Test public void robustlyNullException() {
+//    azzert.that(robust.<Integer>lyNull(robustTest::throwException), is(null));
+//  }
+
+  @Test public void robustlyNullWithConsumer() {
+    azzert.that(robust.<Integer>lyNull(()->(box(2)), λ -> {
+      /*it's a Consumer, so it returns nothing*/
+    }), is(2));
+  }
+  
+//  @Test public void robustlyNullWithConsumerException() {
+//    azzert.that(robust.<Integer>lyNull(robustTest::throwException, λ -> {
+//      /*it's a Consumer, so it returns nothing*/
+//    }), is(the.nil()));
+//  }
+  
+  @Test public void robustlyNullWithRunnable() {
+    azzert.that(robust.<Integer>lyNull(() -> box(2), () -> {
+      // I'm just an empty block
+    }), is(2));
+  }
+  
+//  @Test public void robustlyNullWithRunnableException() {
+//    azzert.that(robust.<Integer>lyNull(robustTest::throwException, () -> {
+//      // I'm just an empty block
+//    }), is(the.nil()));
+//  }
+  
+  @Test public void robustlyTwoRunnablesNoException() {
+    try{
+      robust.ly(() -> {
+        // I'm just an empty block
+      }, () -> {
+        // I'm just an empty block
+      });
+    }catch(Exception ¢) {
+      ¢.getStackTrace();
+    }
+  }
+  
+  @Test public void robustlyConsumerNoException() {
+    try{
+      robust.ly(() -> {
+        // I'm just an empty block
+      }, (Exception e) -> {
+        // empty block!
+      });
+    }catch(Exception ¢) {
+      ¢.getStackTrace();
+    }
+  }
+  
+  @Test public void robustlyConsumerException() {
+    try{
+      robust.ly(robustTest::throwRunnableException, () -> {
+        // I'm just an empty block
+      });
+    }catch(Exception ¢) {
+      ¢.getStackTrace();
+    }
   }
 }
