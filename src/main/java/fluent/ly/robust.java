@@ -41,7 +41,7 @@ public interface robust {
   }
   
   /**
-   * runs robustlyNull with a supplier that runs r and returns null. If there is am exception, the consumer deals with it.
+   * runs robustlyNull with a supplier that runs r and returns null. If there is an exception, the consumer deals with it.
    * @param r - the runnable
    * @param c - the consumer
    */
