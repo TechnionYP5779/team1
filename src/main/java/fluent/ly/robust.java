@@ -2,7 +2,7 @@ package fluent.ly;
 
 import java.util.function.*;
 
-/** TODO saifun: document class
+/**
  * @author Yossi Gil
  * @since 2017-04-08 */
 /**
@@ -15,18 +15,6 @@ import java.util.function.*;
  *
  */
 public interface robust {
-  static void ly(final Runnable r, final Consumer<Exception> c) {
-    robust.lyNull(() -> nulling.ly(r::run), c);
-  }
-
-  /**
-   * The function calls robustly with the two runnables as the second is wrapped as a consumer
-   * @param r - the first runnable (this would be the runnable for the robustly)
-   * @param x - the second runnable (this would be the consumer for the robustly)
-   */
-  static void ly(final Runnable r, final Runnable x) {
-    robust.ly(r, __ -> x.run());
-  }
 
   /**
    * Returns the result of the supplier run, and if it failed, runs the function and returns its result
@@ -41,6 +29,24 @@ public interface robust {
     } catch (final Exception $) {
       return f.apply($);
     }
+  }
+  
+  /**
+   * The function calls robustly with the two runnables as the second is wrapped as a consumer
+   * @param r - the first runnable (this would be the runnable for the robustly)
+   * @param x - the second runnable (this would be the consumer for the robustly)
+   */
+  static void ly(final Runnable r, final Runnable x) {
+    robust.ly(r, __ -> x.run());
+  }
+  
+  /**
+   * runs robustlyNull with a supplier that runs r and returns null. If there is am exception, the consumer deals with it.
+   * @param r - the runnable
+   * @param c - the consumer
+   */
+  static void ly(final Runnable r, final Consumer<Exception> c) {
+    robust.lyNull(() -> nulling.ly(r::run), c);
   }
 
   /**
