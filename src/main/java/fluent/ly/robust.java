@@ -2,7 +2,7 @@ package fluent.ly;
 
 import java.util.function.*;
 
-/** TODO Yossi Gil: document class
+/** TODO saifun: document class
  * @author Yossi Gil
  * @since 2017-04-08 */
 public interface robust {
