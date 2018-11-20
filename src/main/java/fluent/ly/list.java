@@ -9,44 +9,44 @@ import org.jetbrains.annotations.*;
 
 import il.org.spartan.utils.*;
 
-/** TODO Yossi Gil: document class
+/**
  * @author Yossi Gil
  * @since 2017-04-28 */
 public interface list {
   
   /**
+   * This class is a representation of a unary operator over a list
+   * e.g.: max of a list is a unary operator over a list
+   * 
    * @author shai
    *
    * @param <T>
    * 
-   * This class is a representation of a unary operator over a list
-   * e.g.: max of a list is a unary operator over a list
    */
   interface Operator<T> extends UnaryOperator<List<T>> {
     /**/}
 
   /**
+   * This class is a convenient representation of a List of unary list operators. It allows
+   * construction via a list of Operators or a copy c'tor.
+   * The empty c'tor builds an empty list of operators.
    * 
    * @author shai
    *
    * @param <T>
-   * 
-   * This class is a convenient representation of a List of unary list operators, it allows
-   * construction via a list of Operators or a copy c'tor.
-   * The empty c'tor builds an empty list of operators.
    */
   class Operators<T> extends Outer<List<Operator<T>>> {
-    //construction of an empty list of operators
+    /* Construction of an empty list of operators*/
     public Operators() {
       super(an.empty.list());
     }
     
-    //construction via a list of operators
+    /* Construction via a list of operators*/
     public Operators(final List<Operator<T>> inner) {
       super(inner);
     }
 
-    //construction via the same type - copying
+    /* Construction via the same type - copying*/
     public Operators(final Operators<T> other) {
       this(other != null ? other.inner : an.empty.list());
     }
@@ -69,7 +69,7 @@ public interface list {
       super(other);
     }
 
-    //registers the append operator
+    /* Register the append operator*/
     public ToCallExpected<T> append(final T x) {
       inner.add(λ -> {
         λ.add(x);
@@ -78,7 +78,7 @@ public interface list {
       return new ToCallExpected<>(this);
     }
 
-    //registers the prepend operator
+    /* Register the prepend operator*/
     public ToCallExpected<T> prepend(final T t) {
       inner.add(λ -> {
         λ.add(0, t);
@@ -91,6 +91,7 @@ public interface list {
   /**
    * A class extending Operators with extended functionality 
    * such as applying and basic operator creation
+   * 
    * @author shai
    *
    * @param <T>
@@ -100,7 +101,8 @@ public interface list {
       super(other);
     }
 
-   /** a function transforming this instance to an 'Prepend or Append'.
+   /**
+     *  A function transforming this instance to an 'Prepend or Append'.
      * 
      * @return an instance which will only allow the addition of a new operator,
      *  this operator is 'append' or 'prepend' - two unary functions on  a list.
@@ -110,7 +112,7 @@ public interface list {
     }
 
     /**
-     * applying the operators
+     * Applying the operators stored on a list
      * 
      * @param xs - a list of elements
      * @return a new list, which is the combined results of applying all the operators on xs
