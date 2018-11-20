@@ -67,9 +67,9 @@ import org.junit.*;
     azzert.that(robust.<Integer>lyNull(()->(box(2))), is(2));
   }
   
-//  @Test public void robustlyNullException() {
-//    azzert.that(robust.<Integer>lyNull(robustTest::throwException), is(null));
-//  }
+  @Test public void robustlyNullException() {
+    azzert.isNull(robust.<Integer>lyNull(robustTest::throwException));
+  }
 
   @Test public void robustlyNullWithConsumer() {
     azzert.that(robust.<Integer>lyNull(()->(box(2)), λ -> {
@@ -77,11 +77,11 @@ import org.junit.*;
     }), is(2));
   }
   
-//  @Test public void robustlyNullWithConsumerException() {
-//    azzert.that(robust.<Integer>lyNull(robustTest::throwException, λ -> {
-//      /*it's a Consumer, so it returns nothing*/
-//    }), is(the.nil()));
-//  }
+  @Test public void robustlyNullWithConsumerException() {
+    azzert.isNull(robust.<Integer>lyNull(robustTest::throwException, λ -> {
+      /*it's a Consumer, so it returns nothing*/
+    }));
+  }
   
   @Test public void robustlyNullWithRunnable() {
     azzert.that(robust.<Integer>lyNull(() -> box(2), () -> {
@@ -89,11 +89,11 @@ import org.junit.*;
     }), is(2));
   }
   
-//  @Test public void robustlyNullWithRunnableException() {
-//    azzert.that(robust.<Integer>lyNull(robustTest::throwException, () -> {
-//      // I'm just an empty block
-//    }), is(the.nil()));
-//  }
+  @Test public void robustlyNullWithRunnableException() {
+    azzert.isNull(robust.<Integer>lyNull(robustTest::throwException, () -> {
+      // I'm just an empty block
+    }));
+  }
   
   @Test public void robustlyTwoRunnablesNoException() {
     try{
