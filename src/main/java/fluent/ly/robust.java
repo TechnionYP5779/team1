@@ -5,6 +5,15 @@ import java.util.function.*;
 /** TODO saifun: document class
  * @author Yossi Gil
  * @since 2017-04-08 */
+/**
+ * This interface can be used to get a supplier or a runnable object and deal with it in case of an exception.
+ * This interface can wrap such classes run. In case everything went well, it returns the output value.
+ * In case something went wrong, and a non-checked exception was thrown - something such as NullPointerException() 
+ * or RuntimeException(), it runs the consumer it got to deal with the exception.
+ * 
+ * @author saifu
+ *
+ */
 public interface robust {
   static void ly(final Runnable r, final Consumer<Exception> c) {
     robust.lyNull(() -> nulling.ly(r::run), c);
