@@ -58,14 +58,34 @@ public interface robust {
     }
   }
 
+  /**
+   * Returns the supplier result, and in case of an exception returns null
+   * @param <T> - the type of the supplier result
+   * @param t - the supplier
+   * @return the supplier result, and null in case of an exception
+   */
   static <T> T lyNull(final Supplier<T> t) {
     return robust.ly(t, __ -> null);
   }
 
+  /**
+   * Runs the supplier, returns its result, and in case of an exception, runs the consumer to deal with the exception and returns the.nil()
+   * @param <T> - the result type
+   * @param t - the supplier
+   * @param c - the consumer 
+   * @return - the supplier result, and the.nil() in case of an exception
+   */
   static <T> T lyNull(final Supplier<T> t, final Consumer<Exception> c) {
     return robust.ly(t, λ -> nulling.ly(() -> c.accept(λ)));
   }
 
+  /**
+   * Runs the supplier, returns its result, and in case of an exception runs the runnable and returns the.nil()
+   * @param <T> - the result type
+   * @param t - the supplier
+   * @param r - the runnable
+   * @return - the supplier result, and in case of an exception the.nil()
+   */
   static <T> T lyNull(final Supplier<T> t, final Runnable r) {
     return robust.ly(t, __ -> nulling.ly(r));
   }
