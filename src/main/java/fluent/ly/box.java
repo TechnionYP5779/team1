@@ -5,7 +5,6 @@ import static il.org.spartan.Utils.*;
 
 import org.jetbrains.annotations.*;
 
-import il.org.spartan.*;
 
 /** A utility class, with a collection of function to box primitive types in
  * their reference type equivalent representation. Similarly, this class offers
@@ -33,7 +32,7 @@ public enum box {
   }
 
   @Nullable public static Byte box(final byte ¢) {
-    return Utils.canBeNull(Byte.valueOf(¢));
+    return canBeNull(Byte.valueOf(¢));
   }
 
   public static Byte @NotNull [] box(final byte bs[]) {

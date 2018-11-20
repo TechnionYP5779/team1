@@ -145,7 +145,7 @@ import fluent.ly.*;
   }
 
   @Test public void utilTesting() {
-    Assert.assertNotNull(Utils.canBeNull(box(3)));
+    Assert.assertNotNull(canBeNull(box(3)));
     // azzert.assertNotNull(Utils.apply(λ->λ).to(box(1),));
     azzert.that(Utils.compare(true, true), is(0));
     azzert.that(Utils.compare(false, true), is(-1));
