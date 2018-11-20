@@ -1,7 +1,8 @@
 package fluent.ly;
 
-import static fluent.ly.box.*;
 import static il.org.spartan.Utils.*;
+
+import static fluent.ly.box.*;
 
 import org.junit.*;
 

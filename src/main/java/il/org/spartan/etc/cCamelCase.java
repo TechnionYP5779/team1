@@ -1,7 +1,8 @@
 package il.org.spartan.etc;
 
-import org.jetbrains.annotations.*;
 import static il.org.spartan.Utils.*;
+
+import org.jetbrains.annotations.*;
 
 import fluent.ly.*;
 

@@ -1,14 +1,15 @@
 package fluent.ly;
 
-import static fluent.ly.azzert.*;
-import static fluent.ly.azzert.is;
-import static fluent.ly.box.*;
 import static il.org.spartan.Utils.*;
+
+import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
+import static fluent.ly.unbox.*;
+
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.idiomatic.*;
-import static fluent.ly.unbox.*;
 
 @SuppressWarnings("static-method") public class idiomaticTest {
   @Test public void testEval() {
