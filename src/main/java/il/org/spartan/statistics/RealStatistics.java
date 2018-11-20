@@ -1,7 +1,8 @@
 package il.org.spartan.statistics;
 
-import static fluent.ly.unbox.*;
 import static il.org.spartan.Utils.*;
+
+import static fluent.ly.unbox.*;
 
 import java.util.*;
 

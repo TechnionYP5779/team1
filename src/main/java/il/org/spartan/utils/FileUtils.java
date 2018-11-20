@@ -1,13 +1,13 @@
 package il.org.spartan.utils;
 
+import static il.org.spartan.Utils.*;
+
 import java.io.*;
 import java.nio.charset.*;
 import java.nio.file.*;
 import java.util.*;
 
 import org.jetbrains.annotations.*;
-
-import static il.org.spartan.Utils.*;
 
 /** A class for utility methods when working with files and directories
  * @author Daniel Mittelman <code><mittelmania [at] gmail.com></code>

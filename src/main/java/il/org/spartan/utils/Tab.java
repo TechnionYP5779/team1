@@ -1,8 +1,9 @@
 // <a href=http://ssdl-linux.cs.technion.ac.il/wiki/index.php>SSDLPedia</a>
 package il.org.spartan.utils;
 
-import static fluent.ly.___.*;
 import static il.org.spartan.Utils.*;
+
+import static fluent.ly.___.*;
 
 import org.jetbrains.annotations.*;
 

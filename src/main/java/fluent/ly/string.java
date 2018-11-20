@@ -1,8 +1,9 @@
 package fluent.ly;
 
+import static il.org.spartan.Utils.*;
+
 import static fluent.ly.___.*;
 import static fluent.ly.unbox.*;
-import static il.org.spartan.Utils.*;
 
 import java.io.*;
 import java.util.*;
