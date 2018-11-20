@@ -12,7 +12,6 @@ import org.jetbrains.annotations.*;
 import org.junit.*;
 
 import fluent.ly.*;
-import il.org.spartan.utils.Proposition.*;
 
 @SuppressWarnings("static-method") public class PropositionTest {
   @Test public void staticAndLogic() {
