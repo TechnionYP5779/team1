@@ -1,12 +1,12 @@
 package fluent.ly;
 
+import static fluent.ly.box.*;
+
 import java.util.*;
 import java.util.function.*;
 
 import org.jetbrains.annotations.*;
 import org.junit.*;
-
-import static fluent.ly.box.*;
 
 @SuppressWarnings("static-method") public class nullingTest {
   @Test public void testLyBooleanSupplier() {

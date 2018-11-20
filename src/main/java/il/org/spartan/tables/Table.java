@@ -1,10 +1,11 @@
 package il.org.spartan.tables;
 
+import static il.org.spartan.Utils.*;
+
 import java.io.*;
 import java.util.*;
 
 import org.jetbrains.annotations.*;
-import static il.org.spartan.Utils.*;
 
 import an.*;
 import fluent.ly.*;

@@ -1,9 +1,9 @@
 /* Part of the "Spartan Blog"; mutate the rest / but leave this line as is */
 package fluent.ly;
 
-import static fluent.ly.unbox.*;
 import static il.org.spartan.Utils.*;
 
+import static fluent.ly.unbox.*;
 
 import java.util.*;
 
