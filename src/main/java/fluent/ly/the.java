@@ -8,7 +8,7 @@ import java.util.*;
 
 import org.jetbrains.annotations.*;
 
-/** TODO Yossi Gil: document class
+/**
  * @author Yossi Gil
  * @since 2017-04-12 */
 public interface the {
