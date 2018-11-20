@@ -24,7 +24,7 @@ public interface robust {
   }
 
   /**
-   * Returns the result of the supplier run, and if it failed runs the function and returns its result
+   * Returns the result of the supplier run, and if it failed, runs the function and returns its result
    * @param <T> - the type of the returned element
    * @param t - the supplier to run
    * @param f - the function to run in case of a failure
@@ -38,6 +38,12 @@ public interface robust {
     }
   }
 
+  /**
+   * Returns the value of the boolean supplier, and if it failed, runs the consumer to deal with the exception and returns false
+   * @param s - the boolean supplier
+   * @param c - the consumer
+   * @return - the value of the boolean supplier in case of success, false in case of a failure
+   */
   static boolean lyFalse(final BooleanSupplier s, final Consumer<Exception> c) {
     try {
       return s.getAsBoolean();
@@ -59,6 +65,12 @@ public interface robust {
     return robust.ly(t, __ -> nulling.ly(r));
   }
 
+  /**
+   * Returns the value of the boolean supplier, and if it failed, runs the consumer to deal with the exception and returns true
+   * @param s - the boolean supplier
+   * @param c - the consumer
+   * @return - the value of the boolean supplier in case of success, true in case of a failure
+   */
   static boolean lyTrue(final BooleanSupplier $, final Consumer<Exception> c) {
     try {
       return $.getAsBoolean();
