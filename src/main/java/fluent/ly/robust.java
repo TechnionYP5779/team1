@@ -19,6 +19,11 @@ public interface robust {
     robust.lyNull(() -> nulling.ly(r::run), c);
   }
 
+  /**
+   * The function calls robustly with the two runnables as the second is wrapped as a consumer
+   * @param r - the first runnable (this would be the runnable for the robustly)
+   * @param x - the second runnable (this would be the consumer for the robustly)
+   */
   static void ly(final Runnable r, final Runnable x) {
     robust.ly(r, __ -> x.run());
   }
@@ -67,7 +72,7 @@ public interface robust {
 
   /**
    * Returns the value of the boolean supplier, and if it failed, runs the consumer to deal with the exception and returns true
-   * @param s - the boolean supplier
+   * @param $ - the boolean supplier
    * @param c - the consumer
    * @return - the value of the boolean supplier in case of success, true in case of a failure
    */
@@ -80,6 +85,12 @@ public interface robust {
     }
   }
 
+  /**
+   * Runs the runnable, and if it failed, runs the consumer to deal with the exception and returns true
+   * @param r - the runnable
+   * @param c - the consumer
+   * @return - always true
+   */
   static boolean lyTrue(final Runnable r, final Consumer<Exception> c) {
     try {
       r.run();

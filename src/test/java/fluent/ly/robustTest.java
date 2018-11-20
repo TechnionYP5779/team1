@@ -17,6 +17,10 @@ import org.junit.*;
     throw new NullPointerException();
   }
   
+  public static void throwRunnableException(){
+    throw new NullPointerException();
+  }
+  
   @Test public void robustlySupplierException() {
     azzert.that(robust.<Integer>ly(robustTest::throwException, (Exception e) -> (box(3))), is(3));
   }
@@ -28,9 +32,6 @@ import org.junit.*;
   }
   
   @Test public void robustlyFalseException() {
-    System.out.println(robust.lyFalse(robustTest::throwBoolException, λ -> {
-      /*it's a Consumer, so it returns nothing*/
-    }));
     assert !robust.lyFalse(robustTest::throwBoolException, λ -> {
       /*it's a Consumer, so it returns nothing*/
     });
@@ -43,10 +44,21 @@ import org.junit.*;
   }
   
   @Test public void robustlyTrueBoolException() {
-    System.out.println(robust.lyTrue(robustTest::throwBoolException, λ -> {
-      /*it's a Consumer, so it returns nothing*/
-    }));
     assert robust.lyTrue(robustTest::throwBoolException, λ -> {
+      /*it's a Consumer, so it returns nothing*/
+    });
+  }
+  
+  @Test public void robustlyTrueNoException() {
+    assert robust.lyTrue(() -> {
+      // I'm just an empty block
+    }, λ -> {
+      /*it's a Consumer, so it returns nothing*/
+    });
+  }
+  
+  @Test public void robustlyTrueException() {
+    assert robust.lyTrue(robustTest::throwRunnableException, λ -> {
       /*it's a Consumer, so it returns nothing*/
     });
   }
