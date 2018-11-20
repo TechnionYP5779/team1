@@ -35,4 +35,19 @@ import org.junit.*;
       /*it's a Consumer, so it returns nothing*/
     });
   }
+  
+  @Test public void robustlyTrueNoException() {
+    assert robust.lyFalse(() -> true, λ -> {
+      /*it's a Consumer, so it returns nothing*/
+    });
+  }
+  
+  @Test public void robustlyTrueException() {
+    System.out.println(robust.lyTrue(robustTest::throwBoolException, λ -> {
+      /*it's a Consumer, so it returns nothing*/
+    }));
+    assert robust.lyTrue(robustTest::throwBoolException, λ -> {
+      /*it's a Consumer, so it returns nothing*/
+    });
+  }
 }
