@@ -23,6 +23,13 @@ public interface robust {
     robust.ly(r, __ -> x.run());
   }
 
+  /**
+   * Returns the result of the supplier run, and if it failed runs the function and returns its result
+   * @param <T> - the type of the returned element
+   * @param t - the supplier to run
+   * @param f - the function to run in case of a failure
+   * @return - the output of the supplier in case of success, and the output of the function in case of a failure
+   */
   static <T> T ly(final Supplier<T> t, final Function<Exception, T> f) {
     try {
       return t.get();
