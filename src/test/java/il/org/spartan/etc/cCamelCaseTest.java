@@ -30,4 +30,14 @@ import il.org.spartan.etc.EnglishTest.*;
     @NotNull String s = cantBeNull(String.valueOf("Saifun"));
     assert cCamelCase.usefulTypeName(s);
   }
+  
+  @Test public void ccUsefulNameTypeSecondBranchUpperCase() {
+    @NotNull String s = cantBeNull(String.valueOf("C"));
+    assert !cCamelCase.usefulTypeName(s);
+  }
+  
+  @Test public void ccUsefulNameTypeSecondBranchNonUpperCase() {
+    @NotNull String s = cantBeNull(String.valueOf("s"));
+    assert cCamelCase.usefulTypeName(s);
+  }
 }
