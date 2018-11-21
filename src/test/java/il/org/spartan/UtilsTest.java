@@ -44,31 +44,23 @@ import fluent.ly.*;
 
   @Test(expected = AssertionError.class) public void cantBeNullOfNull() {
     cantBeNull(null);
-    azzert.fail("AssertionError expected prior to this line.");
+//    azzert.fail("AssertionError expected prior to this line.");
   }
 
   @Test public void cantBeNullTypical() {
     azzert.notNull(cantBeNull(new Object()));
   }
 
-  @Test public void isNullTypical() {
-    try {
+  @Test (expected = AssertionError.class) public void isNullTypical() {
       isNull(Utils.mustBeNull(null));
-      azzert.fail("AssertionError expected prior to this line.");
-    } catch (final AssertionError ¢) {
-      forget.it(¢);
-      azzert.aye("", true);
-    }
+     azzert.fail("AssertionError expected prior to this line.");
+
   }
 
-  @Test public void mustBeNullOfNotNull() {
-    try {
+  @Test (expected = AssertionError.class)  public void mustBeNullOfNotNull() {
       Utils.mustBeNull(new Object());
       azzert.fail("AssertionError expected prior to this line.");
-    } catch (final AssertionError ¢) {
-      forget.it(¢);
-      azzert.aye("", true);
-    }
+   
   }
 
   @Test public void quoteEmptyString() {
@@ -125,8 +117,8 @@ import fluent.ly.*;
     azzert.that(Utils.addAll(y, (Iterable<Integer>) x), is(y));
     assert !Utils.hasNull(yy);
     assert Utils.hasNull(box(1), null);
-    Assert.assertNotNull(Utils.append(new @NotNull Integer[0], box(4))[0]);
-    Assert.assertNotNull(Utils.delete(new @NotNull Integer[4], 3));
+    azzert.notNull(Utils.append(new @NotNull Integer[0], box(4))[0]);
+    azzert.notNull(Utils.delete(new @NotNull Integer[4], 3));
     assert Utils.inRange(0, y);
     assert !Utils.inRange(-70, y);
     assert !Utils.inRange(5, y);
@@ -144,7 +136,7 @@ import fluent.ly.*;
   }
 
   @Test public void utilTesting() {
-    Assert.assertNotNull(canBeNull(box(3)));
+    azzert.notNull(canBeNull(box(3)));
     // azzert.assertNotNull(Utils.apply(λ->λ).to(box(1),));
     azzert.that(Utils.compare(true, true), is(0));
     azzert.that(Utils.compare(false, true), is(-1));
@@ -152,8 +144,8 @@ import fluent.ly.*;
     azzert.that(Utils.sqr(1.0), is(1.0));
     assert Utils.found(5).in(1, 2, 3, 4, 5);
     assert !Utils.found(6).in(1, 2, 3, 4, 5);
-    Assert.assertNotNull(Utils.found(box(5)));
-    Assert.assertNotNull(Utils.sort(new int @NotNull [] { 1, 2, 3, 4 }));
+    azzert.notNull(Utils.found(box(5)));
+    azzert.notNull(Utils.sort(new int @NotNull [] { 1, 2, 3, 4 }));
   }
 
   @Test public void stringTesting() {
