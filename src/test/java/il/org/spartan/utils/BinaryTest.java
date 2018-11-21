@@ -1,7 +1,6 @@
 package il.org.spartan.utils;
 
 import static fluent.ly.azzert.*;
-import static fluent.ly.box.*;
 
 import org.junit.*;
 
@@ -39,6 +38,7 @@ import fluent.ly.*;
     azzert.notNull(Binary.not(Binary.F));
   }
 
+  
   @Test public void etcTest() {
     try {
       Binary.T.equals(Binary.T);
