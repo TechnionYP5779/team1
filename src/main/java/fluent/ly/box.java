@@ -5,7 +5,6 @@ import static il.org.spartan.Utils.*;
 
 import org.jetbrains.annotations.*;
 
-
 /** A utility class, with a collection of function to box primitive types in
  * their reference type equivalent representation. Similarly, this class offers
  * functions to box arrays of primitive types into their reference type
