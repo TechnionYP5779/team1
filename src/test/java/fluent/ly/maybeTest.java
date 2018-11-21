@@ -24,6 +24,8 @@ import org.junit.*;
   @Test public void missingPresentTest() {
     azzert.that(maybe.yes(new Object()).missing(), is(! maybe.yes(new Object()).present()));
     azzert.that(maybe.yes(null).missing(), is(! maybe.yes(null).present()));
-
+  }
+  @Test public void setTest() {
+    azzert.notNull(maybe.yes(null).set(null).clear());
   }
 }
