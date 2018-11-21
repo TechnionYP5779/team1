@@ -10,26 +10,27 @@ import org.junit.*;
 import fluent.ly.*;
 import il.org.spartan.tables.TableRenderer.*;
 @SuppressWarnings("static-method") public class TableRendererTest {
+  String NL = System.getProperty("line.separator");
   @Test public void afterHeader() {
-    azzert.that(builtin.TEX.afterHeader(), is("\\midrule\r\n"));
+    azzert.that(builtin.TEX.afterHeader(), is("\\midrule"+NL));
   }
   @Test public void afterTable() {
-    azzert.that(builtin.TEX.afterTable(), is("\\bottomrule\r\n"));
+    azzert.that(builtin.TEX.afterTable(), is("\\bottomrule"+NL));
   }
   @Test public void arraySeparator() {
     azzert.that(builtin.TEX.arraySeparator(), is(", "));
   }
   @Test public void beforeFooter() {
-    azzert.that(builtin.TEX.beforeFooter(), is("\\midrule\r\n"));
+    azzert.that(builtin.TEX.beforeFooter(), is("\\midrule"+NL));
   }
   @Test public void beforeTable() {
-    azzert.that(builtin.TEX.beforeTable(), is("\\toprule\r\n"));
+    azzert.that(builtin.TEX.beforeTable(), is("\\toprule"+NL));
   }
   @Test public void nil() {
     azzert.that(builtin.TEX.nil(), is("$\\#$"));
   }
   @Test public void recordEnd() {
-    azzert.that(builtin.TEX.recordEnd(), is(" \\\\\r\n"));
+    azzert.that(builtin.TEX.recordEnd(), is(" \\\\"+NL));
   }
   @Test public void recordSeparator() {
     azzert.that(builtin.TEX.recordSeparator(), is("\t&\t"));
@@ -43,48 +44,48 @@ import il.org.spartan.tables.TableRenderer.*;
   }
   
   @Test public void afterHeader2() {
-    azzert.that(builtin.TEX2.afterHeader(), is("\\hline\r\n"));
+    azzert.that(builtin.TEX2.afterHeader(), is("\\hline"+NL));
   }
   @Test public void afterTable2() {
-    azzert.that(builtin.TEX2.afterTable(), is("\\hline\r\n"));
+    azzert.that(builtin.TEX2.afterTable(), is("\\hline"+NL));
   }
   @Test public void arraySeparator2() {
     azzert.that(builtin.TEX2.arraySeparator(), is(", "));
   }
   @Test public void beforeFooter2() {
-    azzert.that(builtin.TEX2.beforeFooter(), is("\\hline\r\n"));
+    azzert.that(builtin.TEX2.beforeFooter(), is("\\hline"+NL));
   }
   @Test public void beforeTable2() {
-    azzert.that(builtin.TEX2.beforeTable(), is("\\hline\r\n"));
+    azzert.that(builtin.TEX2.beforeTable(), is("\\hline"+NL));
   }
   @Test public void footerEnd() {
-    azzert.that(builtin.TEX2.footerEnd(), is("\\\\\r\n"));
+    azzert.that(builtin.TEX2.footerEnd(), is("\\\\"+NL));
   }
   @Test public void recordSeparator2() {
     azzert.that(builtin.TEX2.recordSeparator(), is("\t&\t"));
   }
   @Test public void footerEnd3() {
-    azzert.that(builtin.CSV.footerEnd(), is("\r\n"));
+    azzert.that(builtin.CSV.footerEnd(), is(NL));
   }
   @Test public void recordSeparator3() {
     azzert.that(builtin.CSV.recordSeparator(), is(","));
   }
   @Test public void afterHeader3() {
-    azzert.that(builtin.MARKDOWN.afterHeader(), is("| \r\n"));
+    azzert.that(builtin.MARKDOWN.afterHeader(), is("| "+NL));
     builtin.MARKDOWN.setHeaderCount(2);
-    azzert.that(builtin.MARKDOWN.afterHeader(), is("| --- |--- |\r\n"));
+    azzert.that(builtin.MARKDOWN.afterHeader(), is("| --- |--- |"+NL));
   }
   @Test public void afterTable3() {
-    azzert.that(builtin.MARKDOWN.afterTable(), is("\r\n"));
+    azzert.that(builtin.MARKDOWN.afterTable(), is(NL));
   }
   @Test public void beforeTable3() {
-    azzert.that(builtin.MARKDOWN.beforeTable(), is("\r\n"));
+    azzert.that(builtin.MARKDOWN.beforeTable(), is(NL));
   }
   @Test public void recordBegin() {
     azzert.that(builtin.MARKDOWN.recordBegin(), is("|"));
   }
   @Test public void recordEnd2() {
-    azzert.that(builtin.MARKDOWN.recordEnd(), is(" |\r\n"));
+    azzert.that(builtin.MARKDOWN.recordEnd(), is(" |"+NL));
   }
   @Test public void recordSeparator4() {
     azzert.that(builtin.MARKDOWN.recordSeparator(), is(" | "));
@@ -133,7 +134,7 @@ import il.org.spartan.tables.TableRenderer.*;
     azzert.that(builtin.CSV.footerBegin(), is(""));
   }
   @Test public void footerEnd2() {
-    azzert.that(builtin.TXT.footerEnd(), is("\r\n"));
+    azzert.that(builtin.TXT.footerEnd(), is(NL));
   }
   @Test public void footerSeparator() {
     azzert.that(builtin.CSV.footerSeparator(), is(","));
@@ -142,7 +143,7 @@ import il.org.spartan.tables.TableRenderer.*;
     azzert.that(builtin.CSV.headerLineBegin(), is(""));
   }
   @Test public void headerLineEnd() {
-    azzert.that(builtin.CSV.headerLineEnd(), is("\r\n"));
+    azzert.that(builtin.CSV.headerLineEnd(), is(NL));
   }
   @Test public void headerSeperator() {
     azzert.that(builtin.CSV.headerSeparator(), is(","));
