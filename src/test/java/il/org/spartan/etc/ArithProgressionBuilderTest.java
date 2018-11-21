@@ -9,7 +9,7 @@ import org.junit.*;
 import fluent.ly.*;
 import il.org.spartan.etc.ArithProgressionBuilder.*;
 
-@SuppressWarnings("static-method") public class ArithProgressionTest {
+@SuppressWarnings("static-method") public class ArithProgressionBuilderTest {
   @Test public void setupDefualtSeq() {
     final ArithProgression seq = new ArithProgressionBuilder().build();
     azzert.that(seq.next().intValue(), is(0));

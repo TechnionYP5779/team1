@@ -9,7 +9,7 @@ import org.junit.*;
 
 import fluent.ly.*;
 
-public class statisticsTest {
+public class StatisticsTest {
   // ========== CLASS VARIABLES - FOR TESTING ==========
   double @NotNull [] first_integers_sample = new double[] { 10.0, 15.0, 15.0, 17.0, 18.0, 21.0 };
   double first_mean;
