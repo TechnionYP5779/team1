@@ -43,13 +43,12 @@ import fluent.ly.*;
   }
 
   @Test(expected = AssertionError.class) public void cantBeNullOfNull() {
-      cantBeNull(null);
-      azzert.fail("AssertionError expected prior to this line.");
-    
+    cantBeNull(null);
+    azzert.fail("AssertionError expected prior to this line.");
   }
 
   @Test public void cantBeNullTypical() {
-    azzert.notNull(cantBeNull(new Object()));  
+    azzert.notNull(cantBeNull(new Object()));
   }
 
   @Test public void isNullTypical() {
@@ -87,7 +86,7 @@ import fluent.ly.*;
   @Test public void swapDegenerate() {
     final @NotNull String[] ss = as.array("A", "B", "C", "D");
     Utils.swap(ss, 1, 1);
-    azzert.that(as.array("A", "B", "C", "D"), is (ss));
+    azzert.that(as.array("A", "B", "C", "D"), is(ss));
   }
 
   @Test public void swapTypical() {

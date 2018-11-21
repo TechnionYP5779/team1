@@ -26,7 +26,7 @@ import il.org.spartan.utils.*;
     static String trace() {
       return trace(new Throwable());
     }
-}
+  }
 
   @NotNull String FILE_SEPARATOR = "\n**\n";
   @NotNull String FILE_SUB_SEPARATOR = "\n********\n";

@@ -45,8 +45,8 @@ public abstract class AbstractStringProperties {
   public abstract AbstractStringProperties put(String key, String value);
 
   public abstract int size();
-  @NotNull
-  public abstract Iterable<String> values();
+
+  @NotNull public abstract Iterable<String> values();
 
   @NotNull protected String makeLine(final @NotNull Iterable<String> ¢) {
     return renderer.makeLine(¢);
