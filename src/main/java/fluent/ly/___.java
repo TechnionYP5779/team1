@@ -94,7 +94,7 @@ public abstract class ___ {
 
   /** A possibly non-returning method to be used for checking integers which
    * must be negative.
-   * @param ¢ a value which must be negative
+   * @param ¢ a value which must be negative //lgtm [java/unknown-javadoc-parameter]
    * @throws Negative in case <code>n</code> was nonnegative */
   public static void negative(final int ¢) throws Negative {
     negative(¢, "");

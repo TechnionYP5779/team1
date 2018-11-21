@@ -8,8 +8,8 @@ import il.org.spartan.*;
  * 
  * @author Matan
  *
- * @param <First> - The Pair's first value.
- * @param <Second>- The Pair's second value.
+ * @param <First> - The Pair's first type.
+ * @param <Second>- The Pair's second type.
  */
 @SuppressWarnings("unchecked") public class Pair<First, Second> {
   
