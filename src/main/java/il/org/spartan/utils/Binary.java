@@ -36,7 +36,4 @@ public class Binary {
   private Binary() {
     /**/}
 
-  @Override protected Binary clone() {
-    return this;
-  }
 }
