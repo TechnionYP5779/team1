@@ -10,7 +10,7 @@ import fluent.ly.___.Bug.Assertion.Variant.*;
 import fluent.ly.___.Bug.Contract.*;
 import fluent.ly.___.Variant;
 
-@SuppressWarnings("static-method") public class __Test {
+@SuppressWarnings("static-method") public class ___Test {
   @Test public void ensure() {
     ___.ensure(true);
     try {
