@@ -1,0 +1,152 @@
+package il.org.spartan.tables;
+import static fluent.ly.azzert.*;
+import static fluent.ly.box.*;
+
+import org.jetbrains.annotations.*;
+import org.junit.*;
+
+import fluent.ly.*;
+import il.org.spartan.tables.TableRenderer.*;
+@SuppressWarnings("static-method") public class TableRendererTest {
+  @Test public void afterHeader() {
+    azzert.that(builtin.TEX.afterHeader(), is("\\midrule\r\n"));
+  }
+  @Test public void afterTable() {
+    azzert.that(builtin.TEX.afterTable(), is("\\bottomrule\r\n"));
+  }
+  @Test public void arraySeparator() {
+    azzert.that(builtin.TEX.arraySeparator(), is(", "));
+  }
+  @Test public void beforeFooter() {
+    azzert.that(builtin.TEX.beforeFooter(), is("\\midrule\r\n"));
+  }
+  @Test public void beforeTable() {
+    azzert.that(builtin.TEX.beforeTable(), is("\\toprule\r\n"));
+  }
+  @Test public void nil() {
+    azzert.that(builtin.TEX.nil(), is("$\\#$"));
+  }
+  @Test public void recordEnd() {
+    azzert.that(builtin.TEX.recordEnd(), is(" \\\\\r\n"));
+  }
+  @Test public void recordSeparator() {
+    azzert.that(builtin.TEX.recordSeparator(), is("\t&\t"));
+  }
+  @Test public void render() {
+    azzert.that(builtin.TEX.render(Statistic.Σ), is("\\hfill$\\Sum$"));
+    azzert.that(builtin.TEX.render(Statistic.σ), is("\\hfill$\\sigma$"));
+    azzert.that(builtin.TEX.render(Statistic.max), is("\\hfill$\\max$"));
+    azzert.that(builtin.TEX.render(Statistic.min), is("\\hfill$\\min$"));
+    azzert.that(builtin.TEX.render(Statistic.median), is("\\hfillmedian"));
+  }
+  
+  @Test public void afterHeader2() {
+    azzert.that(builtin.TEX2.afterHeader(), is("\\hline\r\n"));
+  }
+  @Test public void afterTable2() {
+    azzert.that(builtin.TEX2.afterTable(), is("\\hline\r\n"));
+  }
+  @Test public void arraySeparator2() {
+    azzert.that(builtin.TEX2.arraySeparator(), is(", "));
+  }
+  @Test public void beforeFooter2() {
+    azzert.that(builtin.TEX2.beforeFooter(), is("\\hline\r\n"));
+  }
+  @Test public void beforeTable2() {
+    azzert.that(builtin.TEX2.beforeTable(), is("\\hline\r\n"));
+  }
+  @Test public void footerEnd() {
+    azzert.that(builtin.TEX2.footerEnd(), is("\\\\\r\n"));
+  }
+  @Test public void recordSeparator2() {
+    azzert.that(builtin.TEX2.recordSeparator(), is("\t&\t"));
+  }
+  @Test public void footerEnd3() {
+    azzert.that(builtin.CSV.footerEnd(), is("\r\n"));
+  }
+  @Test public void recordSeparator3() {
+    azzert.that(builtin.CSV.recordSeparator(), is(","));
+  }
+  @Test public void afterHeader3() {
+    azzert.that(builtin.MARKDOWN.afterHeader(), is("| \r\n"));
+    builtin.MARKDOWN.setHeaderCount(2);
+    azzert.that(builtin.MARKDOWN.afterHeader(), is("| --- |--- |\r\n"));
+  }
+  @Test public void afterTable3() {
+    azzert.that(builtin.MARKDOWN.afterTable(), is("\r\n"));
+  }
+  @Test public void beforeTable3() {
+    azzert.that(builtin.MARKDOWN.beforeTable(), is("\r\n"));
+  }
+  @Test public void recordBegin() {
+    azzert.that(builtin.MARKDOWN.recordBegin(), is("|"));
+  }
+  @Test public void recordEnd2() {
+    azzert.that(builtin.MARKDOWN.recordEnd(), is(" |\r\n"));
+  }
+  @Test public void recordSeparator4() {
+    azzert.that(builtin.MARKDOWN.recordSeparator(), is(" | "));
+  }
+  @Test public void cellReal() {
+    azzert.that(builtin.MARKDOWN.cellReal(box(2.0)), is("2"));
+    azzert.that(builtin.MARKDOWN.cellReal(box(22313213213123421413.0)), is("2.231321321312342E19"));
+  }
+  @Test public void empty() {
+    azzert.that(TableRenderer.empty(), is(""));
+  }
+  @Test public void tab() {
+    azzert.that(TableRenderer.tab(), is("\t"));
+  }
+  @Test public void afterFooter3() {
+    azzert.that(builtin.CSV.afterFooter(), is(""));
+  }
+  @Test public void afterHeader4() {
+    azzert.that(builtin.CSV.afterHeader(), is(""));
+  }
+  @Test public void afterTable4() {
+    azzert.that(builtin.CSV.afterTable(), is(""));
+  }
+  @Test public void beforeFooter3() {
+    azzert.that(builtin.CSV.beforeFooter(), is(""));
+  }
+  @Test public void beforeHeader2() {
+    azzert.that(builtin.CSV.beforeHeader(), is(""));
+  }
+  @Test public void beforeTable4() {
+    azzert.that(builtin.CSV.beforeTable(), is(""));
+  }
+  @Test public void arraySeparator3() {
+    azzert.that(builtin.CSV.arraySeparator(), is("; "));
+  }
+  @Test public void cellArray() {
+    @NotNull String[] strings = new @NotNull String[2];
+    strings[0] = "Hello";
+    strings[1] = "Bye";
+    azzert.that(builtin.CSV.cellArray(strings), is("Hello; Bye"));
+  }
+  @Test public void extension() {
+    azzert.that(builtin.CSV.extension(), is("csv"));
+  }
+  @Test public void footerBegin() {
+    azzert.that(builtin.CSV.footerBegin(), is(""));
+  }
+  @Test public void footerEnd2() {
+    azzert.that(builtin.TXT.footerEnd(), is("\r\n"));
+  }
+  @Test public void footerSeparator() {
+    azzert.that(builtin.CSV.footerSeparator(), is(","));
+  }
+  @Test public void headerLineBegin() {
+    azzert.that(builtin.CSV.headerLineBegin(), is(""));
+  }
+  @Test public void headerLineEnd() {
+    azzert.that(builtin.CSV.headerLineEnd(), is("\r\n"));
+  }
+  @Test public void headerSeperator() {
+    azzert.that(builtin.CSV.headerSeparator(), is(","));
+  }
+  @Test public void nil2() {
+    azzert.that(builtin.CSV.nil(), is("Nº"));
+  }
+    
+}
