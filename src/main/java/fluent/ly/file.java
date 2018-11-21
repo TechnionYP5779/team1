@@ -7,7 +7,6 @@ import java.nio.file.*;
 
 import org.jetbrains.annotations.*;
 
-
 /** File utils
  * @author Ori Marcovitch
  * @since Dec 4, 2016 */

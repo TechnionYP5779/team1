@@ -81,8 +81,7 @@ import fluent.ly.separate.*;
   }
 
   @Test public final void byFOfTIterableOfTString() {
-    azzert.that(separate.these(cantBeNull(new Applicator<>(quote).to(cantBeNull(as.list("Hello", "World"))))).by(", "),
-        is("'Hello', 'World'"));
+    azzert.that(separate.these(cantBeNull(new Applicator<>(quote).to(cantBeNull(as.list("Hello", "World"))))).by(", "), is("'Hello', 'World'"));
   }
 
   @Test public final void byFOfTTArrayChar() {

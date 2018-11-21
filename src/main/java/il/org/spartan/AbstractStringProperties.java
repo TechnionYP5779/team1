@@ -8,7 +8,7 @@ import fluent.ly.*;
 
 /** @author Yossi Gil
  * @since Apr 8, 2012 */
-@SuppressWarnings("null") public abstract class AbstractStringProperties {
+public abstract class AbstractStringProperties {
   final Renderer renderer;
 
   public AbstractStringProperties() {
@@ -36,7 +36,7 @@ import fluent.ly.*;
     return renderer.allTop() + makeLine(keys()) + renderer.headerEnd();
   }
 
-  public abstract Iterable<String> keys();
+  @NotNull public abstract Iterable<String> keys();
 
   @NotNull public final String line() {
     return makeLine(values());
@@ -46,9 +46,9 @@ import fluent.ly.*;
 
   public abstract int size();
 
-  public abstract Iterable<String> values();
+  @NotNull public abstract Iterable<String> values();
 
-  protected String makeLine(final Iterable<String> ¢) {
+  @NotNull protected String makeLine(final @NotNull Iterable<String> ¢) {
     return renderer.makeLine(¢);
   }
 
@@ -177,11 +177,11 @@ import fluent.ly.*;
         return ¢ == null ? "" : !¢.contains(delimiter()) ? ¢ : ¢.replaceAll(delimiter(), "\\" + delimiter());
       }
     };
-    public String makeLine(final Iterable<String> ¢) {
+    @NotNull public String makeLine(final @NotNull Iterable<String> ¢) {
       return lineBegin() + separate(¢) + lineEnd();
     }
 
-    public String separate(final Iterable<String> ¢) {
+    public String separate(final @NotNull Iterable<String> ¢) {
       return separate.these(¢).by(delimiter());
     }
 
