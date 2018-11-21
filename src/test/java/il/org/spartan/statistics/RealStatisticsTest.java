@@ -1,12 +1,8 @@
 package il.org.spartan.statistics;
 
-import static org.junit.Assert.assertEquals;
-
 import static fluent.ly.azzert.*;
-
 import org.jetbrains.annotations.*;
 import org.junit.*;
-
 import fluent.ly.*;
 
 @SuppressWarnings("static-method") public class RealStatisticsTest {
