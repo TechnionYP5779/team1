@@ -1,7 +1,5 @@
 package fluent.ly;
 
-import static org.junit.Assert.*;
-
 import org.junit.*;
 import static fluent.ly.box.*;
 import static fluent.ly.azzert.*;
