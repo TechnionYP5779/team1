@@ -70,7 +70,7 @@ import org.junit.*;
   }
 
   @Test public void replaceEmptyList() {
-    azzert.that(lisp.replace(new ArrayList<>(), new Object(), 100), is(new ArrayList<>()));
+    azzert.that(lisp.replace(new ArrayList<>(), new Object(), -1), is(new ArrayList<>()));
   }
 
   @Test public void replaceOutOfBounds() {
