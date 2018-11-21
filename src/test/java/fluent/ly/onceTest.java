@@ -11,4 +11,5 @@ import static fluent.ly.azzert.*;
     azzert.that(new once(cantBeNull(x)) + "", is("Hello"));
 //    azzert.that(once("hello"), is);
   }
+   
 }
