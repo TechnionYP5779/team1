@@ -2,6 +2,8 @@ package il.org.spartan.tables;
 import static fluent.ly.azzert.*;
 import static fluent.ly.box.*;
 
+import java.util.*;
+
 import org.jetbrains.annotations.*;
 import org.junit.*;
 
@@ -147,6 +149,12 @@ import il.org.spartan.tables.TableRenderer.*;
   }
   @Test public void nil2() {
     azzert.that(builtin.CSV.nil(), is("Nº"));
+  }
+  @Test public void renderRow() {
+    ArrayList<Object> list = new ArrayList<>();
+    list.add("Hello");
+    list.add("Bye");
+    //azzert.that(builtin.CSV.renderRow(list), is("Nº"));
   }
     
 }
