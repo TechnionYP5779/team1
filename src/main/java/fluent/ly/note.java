@@ -83,7 +83,6 @@ import il.org.spartan.utils.*;
     ));
   }
   /** To be invoked whenever you do not know what to do with an exception
-   * @param o JD
    * @param ¢ JD */
   static <T> @Nullable T cancel(final Exception ¢) {
     return nulling.ly(() -> logger.info(//
@@ -153,7 +152,7 @@ import il.org.spartan.utils.*;
   }
 
   /** logs an error in the plugin into an external file
-   * @param tipper an error */
+   * @param t an error */
   static <T> @Nullable T logToFile(final Throwable t, final Object... os) {
     final @NotNull StringWriter w = new StringWriter();
     t.printStackTrace(new PrintWriter(w));

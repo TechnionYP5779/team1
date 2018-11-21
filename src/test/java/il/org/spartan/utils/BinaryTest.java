@@ -45,6 +45,5 @@ import fluent.ly.*;
     } catch (final IllegalArgumentException ¢) {
       azzert.that("il.org.spartan.utils.Binary@1", is(¢.getMessage()));
     }
-    azzert.that(box(1), is(Binary.T.clone().hashCode()));
   }
 }
