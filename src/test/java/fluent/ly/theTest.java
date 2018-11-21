@@ -78,7 +78,7 @@ import org.junit.*;
     azzert.that(the.onlyOneOf(x), is(box(4)));
     assert the.onlyOneOf(null) == null;
     x.add(box(5));
-    Assert.assertEquals(the.onlyOneOf(x), null);
+    azzert.isNull(the.onlyOneOf(x));
   }
 
   @Test public void listTest() {

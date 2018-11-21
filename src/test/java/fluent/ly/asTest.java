@@ -85,7 +85,7 @@ import org.junit.*;
     final List<String> x = new ArrayList<>();
     x.add("Hello");
     x.add("World");
-    Assert.assertNotNull(as.strings(x));
+    azzert.notNull(as.string(x) );
   }
 
   @Test public void testAsIterableEssence() {

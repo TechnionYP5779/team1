@@ -36,8 +36,8 @@ import org.junit.*;
     rangeList.add(range2);
     azzert.assertNotEquals(null, toFindSucc.findIncludedIn(rangeList));
     azzert.that(range1, is(toFindSucc.findIncludedIn(rangeList)));
-    Assert.assertEquals(null, toFindFail.findIncludedIn(rangeList));
-    Assert.assertEquals(null, toFindFail.findIncludedIn(null));
+    azzert.isNull(toFindFail.findIncludedIn(rangeList));
+    azzert.isNull(toFindFail.findIncludedIn(null));
     rangeList.add(null);
     azzert.that(range1, is(toFindSucc.findIncludedIn(rangeList)));
   }

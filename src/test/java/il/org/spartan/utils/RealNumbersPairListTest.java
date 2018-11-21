@@ -109,7 +109,7 @@ import il.org.spartan.utils.RealNumbersPairList.*;
     list.record(12.88, 17.1);
     list.record(41.30, 12.3);
     for (final Pair<Double, Double> ¢ : list) {
-      Assert.assertNotNull(¢);
+      azzert.notNull(¢);
       assert unbox(¢.first) >= 1.3 && unbox(¢.first) <= 93.5;
       assert unbox(¢.second) >= 2.5 && unbox(¢.second) <= 22.2;
     }

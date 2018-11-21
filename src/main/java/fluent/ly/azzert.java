@@ -60,11 +60,15 @@ import il.org.spartan.utils.*;
   }
 
   public static <T> @Nullable AnyOf<T> anyOf(final Matcher<T> first, final Matcher<? super T> second) {
-    return AnyOf.anyOf(first, second);
+    AnyOf<T> o2;
+    o2 = AnyOf.anyOf(first, second);
+    return o2;
   }
 
   public static <T> @Nullable AnyOf<T> anyOf(final Matcher<T> first, final Matcher<? super T> second, final Matcher<? super T> third) {
-    return AnyOf.anyOf(first, second, third);
+    AnyOf<T> o1;
+    o1 = AnyOf.anyOf(first, second, third);
+    return o1;
   }
 
   public static <T> @Nullable AnyOf<T> anyOf(final Matcher<T> first, final Matcher<? super T> second, final Matcher<? super T> third,
