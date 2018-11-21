@@ -632,7 +632,7 @@ import il.org.spartan.utils.*;
     assert os != null;
     assert os != null;
     for (final @Nullable Object ¢ : os)
-      assert ¢ != null : os + "";
+      assert ¢ != null : Arrays.toString(os) + "";
   }
 
   @Contract(pure = true) @NotNull public static Matcher<@Nullable Object> nullValue() {
