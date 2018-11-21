@@ -10,6 +10,12 @@ import org.junit.*;
 import fluent.ly.*;
 import il.org.spartan.tables.TableRenderer.*;
 @SuppressWarnings("static-method") public class TableRendererTest {
+  enum Mock implements TableRenderer{
+    MOCK;
+    @Override public void setHeaderCount(int size) {
+      forget.it(size);
+    }    
+  }
   String NL = System.getProperty("line.separator");
   @Test public void afterHeader() {
     azzert.that(builtin.TEX.afterHeader(), is("\\midrule"+NL));
@@ -152,10 +158,32 @@ import il.org.spartan.tables.TableRenderer.*;
     azzert.that(builtin.CSV.nil(), is("Nº"));
   }
   @Test public void renderRow() {
+    String[] strings = {"Hi", "Bye"};
     ArrayList<Object> list = new ArrayList<>();
     list.add("Hello");
     list.add("Bye");
-    //azzert.that(builtin.CSV.renderRow(list), is("Nº"));
+    azzert.that(builtin.CSV.renderRow(list), is("Hello,Bye"+NL));
+    list = new ArrayList<>();
+    list.add(box(1));
+    list.add(box(2));
+    azzert.that(builtin.CSV.renderRow(list), is("1,2"+NL));
+    list = new ArrayList<>();
+    list.add(box((long)1));
+    list.add(box((long)2));
+    azzert.that(builtin.CSV.renderRow(list), is("1,2"+NL));
+    list = new ArrayList<>();
+    list.add(box((double)1));
+    list.add(box((double)2));
+    azzert.that(builtin.CSV.renderRow(list), is("1,2"+NL));
+    list = new ArrayList<>();
+    list.add(strings);
+    azzert.that(builtin.CSV.renderRow(list), is("Hi; Bye"+NL));
   }
-    
+  @Test public void stringField() {
+    azzert.that(builtin.CSV.stringField("Hi"), is("Hi"));
+  }
+  @Test public void   recordSeparator5() {
+    Mock.MOCK.setHeaderCount(0);
+    azzert.that(Mock.MOCK.recordSeparator(), is("\t"));
+  }
 }
