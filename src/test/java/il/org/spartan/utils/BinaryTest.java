@@ -38,6 +38,7 @@ import fluent.ly.*;
     azzert.notNull(Binary.not(Binary.F));
   }
 
+  
   @Test public void etcTest() {
     try {
       Binary.T.equals(Binary.T);
