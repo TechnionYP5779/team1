@@ -25,6 +25,6 @@ public class SimpleWebParserTest {
   }
 
   @Test public void printBusinesses() {
-    new SimpleWebParser().getListOfClasses(businessUrl, "innerBusinessDet").forEach(λ -> System.out.println(new BusinnesEntryBuilder().apply(λ)));
+    new SimpleWebParser().getListOfClasses(businessUrl, "innerBusinessDet").forEach(λ -> System.out.println(new BusinnesEntryBuilder().apply(λ) + "\n"));
   }
 }
