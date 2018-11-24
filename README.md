@@ -6,6 +6,7 @@
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team1.svg?maxAge=100)](https://github.com/TechnionYP5779/team1/issues?q=is%3Aissue+is%3Aclosed)
 [![codecov.io](http://codecov.io/github/TechnionYP5779/team1/coverage.svg?branch=master)](http://codecov.io/github/TechnionYP5779/team1?branch=master)
 [![Projects code style](https://img.shields.io/badge/code%20style-spartanized-blue.svg)]()
+[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/TechnionYP5779/team1.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team1/context:java)
 
 [Visit our wiki page for more information](https://github.com/TechnionYP5779/team1/wiki)
 
