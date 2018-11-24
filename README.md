@@ -3,7 +3,7 @@
 # Our Status
 [![Build Status](https://travis-ci.org/TechnionYP5779/team1.svg?branch=master)](https://travis-ci.org/TechnionYP5779/team1)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/TechnionYP5779/team1.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team1/alerts/)
-[![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team1.svg?maxAge=2592000)]()
+[![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team1.svg?maxAge=100)](https://github.com/TechnionYP5779/team1/issues?q=is%3Aissue+is%3Aclosed)
 [![codecov.io](http://codecov.io/github/TechnionYP5779/team1/coverage.svg?branch=master)](http://codecov.io/github/TechnionYP5779/team1?branch=master)
 [![Projects code style](https://img.shields.io/badge/code%20style-spartanized-blue.svg)]()
 
