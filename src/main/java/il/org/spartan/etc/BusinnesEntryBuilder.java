@@ -38,9 +38,8 @@ import fluent.ly.*;
       if ("".equals(line))
         continue;
       String patternString = "(\\s?(?<day1>[a-zA-Z]*?day)( ?- ?(?<day2>[a-zA-Z]*?day))? (?<hours>\\d*:\\d* ?- ?\\d*:\\d*)\\s?)+";
-      if (!line.matches(patternString)) {
+      if (!line.matches(patternString))
         throw new IllegalArgumentException();
-      }
       for (Matcher matcher = Pattern.compile(patternString).matcher(line); matcher.find();) {
         $.append(matcher.group("day1") + "|");
         String day2 = matcher.group("day2");
@@ -56,13 +55,13 @@ import fluent.ly.*;
   private String formatAsJson(String data) {
     String[] lines = data.split("\n");
     StringBuilder $ = new StringBuilder();
-    $.append("{\n\tname:\"" + lines[0] + "\"");
+    $.append("{\n\t\"name\":\"" + lines[0] + "\"");
     for (int ¢ = 1; ¢ < lines.length; ++¢) {
       if ("".equals(lines[¢]))
         continue;
       String[] params = lines[¢].split("\\|");
       if (params.length == 2)
-        $.append(",\n\t" + params[0] + ":" + params[1]);
+        $.append(",\n\t\"" + params[0] + "\":\"" + params[1] + "\"");
       else {
         boolean startedRange = false;
         for (String weekDay : daysOfTheWeek) {
@@ -72,7 +71,7 @@ import fluent.ly.*;
             continue;
           if (weekDay.startsWith(params[1]))
             startedRange = false;
-          $.append(",\n\t" + weekDay + ":" + params[2]);
+          $.append(",\n\t\"" + weekDay + "\":\"" + params[2] + "\"");
         }
       }
     }
