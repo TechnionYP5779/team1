@@ -1,19 +1,21 @@
 package a;
 
-public class Homework {
-  private final int courseNum;
-  private final String dueDate;
+import java.util.*;
 
-  public Homework(int courseNum, String dueDate) {
+public class Homework {
+  private final String courseNum;
+  private final Date dueDate;
+
+  public Homework(String courseNum, Date dueDate) {
     this.courseNum = courseNum;
     this.dueDate = dueDate;
   }
 
-  public int getCourseNum() {
+  public String getCourseNum() {
     return courseNum;
   }
 
-  public String getDueDate() {
+  public Date getDueDate() {
     return dueDate;
   }
 }
