@@ -57,7 +57,7 @@ public class HomeworkGetter {
   private static Homework parseHomeworkRow(HtmlTableRow $) {
     try {
       return $.getCell(1).asText().contains("No deadline given") ? null
-          : new Homework($.getCell(0).asText().split("=")[0].strip(), (new SimpleDateFormat("dd/MM/yyyy - hh:mm")).parse($.getCell(1).asText()));
+          : new Homework($.getCell(0).asText().split("=")[0].trim(), (new SimpleDateFormat("dd/MM/yyyy - hh:mm")).parse($.getCell(1).asText()));
     } catch (IndexOutOfBoundsException | ParseException ¢) {
       ¢.printStackTrace();
     }
