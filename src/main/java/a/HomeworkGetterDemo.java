@@ -9,8 +9,7 @@ public class HomeworkGetterDemo {
       System.out.println("Enter your username: ");
       String username = reader.next();
       System.out.println("Enter your password: ");
-      new HomeworkGetter(new LoginCredentials(username, reader.next())).getUpcomingHomework().stream()
-          .forEach(λ -> System.out.println(λ.getDueDate()));
+      System.out.println(new HomeworkGetter(new LoginCredentials(username, reader.next())).getUpcomingHomeworkAsString());
     } catch (Exception ¢) {
       ¢.printStackTrace();
     }

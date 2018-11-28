@@ -56,8 +56,9 @@ public class HomeworkGetter {
 
   private static Homework parseHomeworkRow(HtmlTableRow $) {
     try {
+      String[] courseInfo = $.getCell(0).asText().split("-");
       return $.getCell(1).asText().contains("No deadline given") ? null
-          : new Homework($.getCell(0).asText().split("=")[0].trim(), (new SimpleDateFormat("dd/MM/yyyy - hh:mm")).parse($.getCell(1).asText()));
+          : new Homework(courseInfo[0].trim(), courseInfo[1].trim(), (new SimpleDateFormat("dd/MM/yyyy - hh:mm")).parse($.getCell(1).asText()));
     } catch (IndexOutOfBoundsException | ParseException ¢) {
       ¢.printStackTrace();
     }
@@ -71,5 +72,12 @@ public class HomeworkGetter {
   public List<Homework> getUpcomingHomework() {
     Date $ = new Date();
     return homework.stream().filter(hw -> $.before(hw.getDueDate())).collect(Collectors.toList());
+  }
+
+  public String getUpcomingHomeworkAsString() {
+    StringBuilder $ = new StringBuilder();
+    $.append("The upcoming homework are:\n");
+    getUpcomingHomework().forEach(λ -> $.append(λ + "\n"));
+    return $ + "";
   }
 }
