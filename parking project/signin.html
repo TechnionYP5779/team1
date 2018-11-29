@@ -1,0 +1,59 @@
+<!--This is the skeleton all the ParkNet pages-->
+<!doctype html>
+<html lang=''>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <title>ParkNet</title>
+</head>
+
+<body>
+
+    <div id='cssmenu'>
+        <ul>
+            <li class='active'><a href='./home.html'>Home</a></li>
+            <li><a href='#'>Available Parking Spots</a></li>
+            <!--When logged in should turn to "My Profile"-->
+            <!--When adding more pages, keep this one as the last one-->
+            <li><a href='./signup.html'>Sign In/Sign up</a></li>
+        </ul>
+    </div>
+
+    <div class="page-wrapper bg-gra-02 p-t-30 font-poppins">
+        <div class="wrapper wrapper--w660">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Registration Form</h2>
+                    <form method="POST">
+                        <div class="input-group">
+                            <label class="label">Username</label>
+                            <input class="input--style-4" type="text" name="Username">
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Password</label>
+                            <input class="input--style-4" type="password" name="password">
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <button class="btn btn--radius-2 btn--blue" type="submit">Sign In</button>
+                            </div>
+                            <div class="col-2">
+                                <label class="label">Don't have an account? <a href="./signup.html">Sign Up</a>!</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <center>
+            <p>All rights reserved to Team 1 of the Yearly Technion Project©</p>
+        </center>
+    </footer>
+</body>
+<html>
