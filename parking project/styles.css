@@ -112,13 +112,10 @@
 
 #cssmenu>ul>li:hover>a, #cssmenu>ul>li>a:hover {
 	color: #ffffff;
-	-webkit-transform: rotateX(90deg) translateY(-23px);
-	-moz-transform: rotateX(90deg) translateY(-23px);
-	transform: rotateX(90deg) translateY(-23px);
-	-ms-transform: none;
+	background-color: #3db2e1;
 }
 
-#cssmenu>ul>li>a::before {
+/* #cssmenu>ul>li>a::before {
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -142,7 +139,7 @@
 	-moz-transform-origin: 50% 0;
 	transform-origin: 50% 0;
 	-ms-transform: translateY(- -18px);
-}
+} */
 
 #cssmenu>ul>li:hover>a::before, #cssmenu>ul>li>a:hover::before {
 	background: #3db2e1;
@@ -173,6 +170,14 @@
 
 #cssmenu.small-screen>ul>li>a::before {
 	display: none;
+}
+
+a {
+	color: inherit;
+}
+
+a:visited {
+	text-decoration: none;
 }
 
 #cssmenu.small-screen #menu-button {
@@ -320,7 +325,7 @@ button {
 body {
 	font-family: Raleway, sans-serif;
 	font-weight: 400;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 /* ==========================================================================
@@ -354,6 +359,10 @@ body {
 
 .wrapper--w960 {
 	max-width: 960px;
+}
+
+.wrapper--w660 {
+	max-width: 660px;
 }
 
 /* ==========================================================================
@@ -508,7 +517,7 @@ input {
    ========================================================================== */
 
 .card {
-	opacity: 0.89;
+	opacity: 0.95;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
