@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
+    <script src="./validationScript.js" type="text/javascript"></script>
     <title>ParkNet - Sign Up</title>
 </head>
 
@@ -26,19 +27,20 @@
         <div class="wrapper wrapper--w960">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Registration Form</h2>
-                    <form method="POST">
+                    <h2 class="title">Registration Form</h2>      
+                    <form method="POST" name="signupform" onsubmit="return validateSignUp()">
+                        <label class="label error" id="error_label"></label>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Username</label>
-                                    <input class="input--style-4" type="text" name="Username">
+                                    <input class="input--style-4" type="text" name="username">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
+                                    <input class="input--style-4" type="text" name="email">
                                 </div>
                             </div>
                         </div>
@@ -51,7 +53,7 @@
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Please Confirm Your Password:</label>
+                                    <label class="label">Confirm Password</label>
                                     <input class="input--style-4" type="password" name="confirm_password">
                                 </div>
                             </div>

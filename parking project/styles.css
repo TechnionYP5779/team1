@@ -25,6 +25,11 @@
 	letter-spacing: 1px;
 }
 
+.error{
+	color: red;
+	visibility: hidden;
+}
+
 #cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a, #cssmenu #menu-button {
 	margin: 0;
 	padding: 0;
