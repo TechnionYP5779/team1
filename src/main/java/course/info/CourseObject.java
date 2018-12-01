@@ -31,31 +31,106 @@ public class CourseObject {
 
   private String faculty;
   private String name;
-  private Integer id;
+  private String id;
   private Integer academicPoints;
-  private String lecturerInCharge;
-  private Optional<Integer> lectureHours;
-  private Optional<Integer> tutorialHours;
-  private Optional<Integer> labHours;
-  private Optional<Integer> projectHours;
-  private Optional<ExamDate> examA;
-  private Optional<ExamDate> examB;
-  private String semester;
-    
-  public CourseObject(String f, Integer id, String n, Integer ap, String lecturerIC,
-      Optional<Integer> lHours ,Optional<Integer> tHours, Optional<Integer> ph, Optional<Integer> labh, Optional<ExamDate> A, Optional<ExamDate> B, String semester) {
+  private Optional<Integer> lectureHours = Optional.empty();
+  private Optional<Integer> tutorialHours = Optional.empty();
+  private Optional<Integer> labHours = Optional.empty();
+  private Optional<Integer> projectHours = Optional.empty();
+  private Optional<ExamDate> examA= Optional.empty();
+  private Optional<ExamDate> examB = Optional.empty();
+  private Optional<String> preqisute = Optional.empty();
+  private Optional<String> linked = Optional.empty();
+  
+  public CourseObject() {
+    name  = id ="N\\A";
+    academicPoints = box.it(0);
+  }
+  
+  public CourseObject(String f, String id, String n, Integer ap,
+      Optional<Integer> lHours ,Optional<Integer> tHours, Optional<Integer> ph, Optional<Integer> labh, Optional<ExamDate> A, Optional<ExamDate> B) {
     this.faculty = f;
     this.id = id;
     this.name = n;
+    idToFaculty();
     this.academicPoints = ap;
-    this.lecturerInCharge = lecturerIC;
     this.lectureHours = lHours;
     this.tutorialHours = tHours;
     this.labHours = labh;
     this.projectHours = ph;
     this.examA = A;
     this.examB = B;
-    this.semester = semester;
+  }
+  
+  private void idToFaculty() {
+    switch(this.id.substring(0, 2)) {
+      case "01":
+        this.faculty="Civil and Environmental Engineering";
+        break;
+      case "03":
+        this.faculty="Mechanical Engineering";
+        break;
+      case "04":
+        this.faculty="Electrical Engineering";
+        break;
+      case "05":
+        this.faculty="Chemical Engineering";
+        break;
+      case "06":
+        this.faculty="Biotechnology and Food Engineering";
+        break;
+      case "08":
+        this.faculty="Aerospace Engineering";
+        break;
+      case "09":
+        this.faculty = "Industrial Engineering";
+        break;
+      case "10":
+        this.faculty = "Mathematics";
+        break;
+      case "11":
+        this.faculty = "Physics";
+        break;
+      case "12":
+        this.faculty = "Chemestry";
+        break;
+      case "13":
+        this.faculty = "Biology";
+        break;
+      case "20":
+        this.faculty = "Arcihetechture";
+        break;
+      case "21":
+        this.faculty = "Education in Science and Technology";
+        break;
+      case "23":
+        this.faculty = "Computer Science";
+        break;
+      case "27":
+        this.faculty = "Medicine";
+        break;
+      case "31":
+        this.faculty = "Materials Science and Engineering";
+        break;
+      case "32":
+        this.faculty = "Humanities and Arts";
+        break;
+      case "33":
+        this.faculty = "Bio-Medicine";
+        break;
+      case "19":
+        this.faculty = "Applicable Math";
+        break;
+      case "82":
+        this.faculty = "Bio-Technology";
+        break;
+      case "64":
+        this.faculty = "Nano-Science";
+        break;
+      default:
+        this.faculty="N\\A";
+        break;
+    }
   }
   
 
@@ -75,12 +150,13 @@ public class CourseObject {
     this.name = name;
   }
 
-  public Integer getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(String id) {
     this.id = id;
+    this.idToFaculty();
   }
 
   public Integer getAcademicPoints() {
@@ -91,22 +167,27 @@ public class CourseObject {
     this.academicPoints = academicPoints;
   }
 
-  public String getLecturerInCharge() {
-    return lecturerInCharge;
-  }
-
-  public void setLecturerInCharge(String lecturerInCharge) {
-    this.lecturerInCharge = lecturerInCharge;
-  }
-
   public Integer getLectureHours() {
     return handleHoursOptional(lectureHours);
   }
 
   private static Integer handleHoursOptional(Optional<Integer> h) {
-    return !h.isEmpty() ? h.get() : box.it(0);
+    return h.isPresent() ? h.get() : box.it(0);
+  }
+  
+
+  public void setPreqisute(Optional<String> preqisute) {
+    this.preqisute = preqisute;
   }
 
+  public String getPreqisute() {
+    return handleStringOptional(preqisute);
+  }
+
+
+  private static String handleStringOptional(Optional<String> preqisute2) {
+    return !preqisute2.isPresent() ? "" : preqisute2.get();
+  }
 
   public void setLectureHours(Optional<Integer> lectureHours) {
     this.lectureHours = lectureHours;
@@ -145,7 +226,7 @@ public class CourseObject {
   }
   
   private static String OptionalDateToString(Optional<ExamDate> ¢) {
-    return ¢.isEmpty() ? "" : ¢.get().getDay() + "." + ¢.get().getMonth() + "." + ¢.get().getYear();
+    return !¢.isPresent()? "" : ¢.get().getDay() + "." + ¢.get().getMonth() + "." + ¢.get().getYear();
   }
 
   public String getExamB() {
@@ -156,12 +237,12 @@ public class CourseObject {
     this.examB = examB;
   }
 
-  public String getSemester() {
-    return semester;
+  public String getLinked() {
+    return handleStringOptional(linked);
   }
 
-  public void setSemester(String semester) {
-    this.semester = semester;
+  public void setLinked(Optional<String> linked) {
+    this.linked = linked;
   }
 
 }
