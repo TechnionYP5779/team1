@@ -1,0 +1,58 @@
+<!--This is the skeleton all the ParkNet pages-->
+<!doctype html>
+<html lang=''>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles.css">
+	<title>ParkNet</title>
+</head>
+
+<body>
+
+	<div id='cssmenu'>
+		<ul>
+			<li class='active'><a href='#'>Home</a></li>
+			<li><a href='#'>Available Parking Spots</a></li>
+			<!--When logged in should turn to "My Profile"-->
+			<!--When adding more pages, keep this one as the last one-->
+			<li><a href='./signup.html'>Sign In/Sign up</a></li>
+		</ul>
+	</div>
+
+	<div class="page-wrapper bg-gra-02 p-t-30 font-poppins">
+		<div class="wrapper wrapper--w960">
+			<div class="card card-4">
+				<div class="card-body">
+					<!--Write your text here!-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<center>
+			<p>All rights reserved to Team 1 of the Yearly Technion Project©</p>
+		</center>
+	</footer>
+</body>
+<html>
+<!-- Concept code for order:
+The parameter is pasted by GET in the url (only one)
+<html>
+	<head>
+		<title>Maintaining State With The Query String</title>
+ 	</head>
+	<body>
+    	<form id="myForm" action="submit.mumps.cgi" method="POST">
+        	<textarea name="text"></textarea>
+     	</form>
+    	<script>
+        	var queryString = window.location.search;
+        	document.getElementById("myForm").getElementsByTagName("textarea")[0].value = queryString.split("?")[1].split("=")[1];
+    	</script>
+ 	</body>
+</html>
+-->
