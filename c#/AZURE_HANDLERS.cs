@@ -18,8 +18,23 @@ public static async Task<Microsoft.AspNetCore.Mvc.ContentResult> Run(HttpRequest
 {
     //===================================
     //       SOME IMPORTANT VARIABLES
-    const string BUSINESS_HOUR_BY_DAY = "technion.businesses.getSpecific";
-    const string BUSINESS_HOUR_WEEK = "technion.businesses.fullweek";
+    //              intents
+    const string BUSINESS_HOUR_BY_DAY_INTENT_NAME = "technion.businesses.getSpecific";
+    const string BUSINESS_HOUR_WEEK_INTENT_NAME = "technion.businesses.fullweek";
+	const string SUPPORT_INTENT_NAME = "technion.support";
+	const string HELP_INTENT_NAME = "technion.help";
+	const string WELCOME_INTENT_NAME = "technion.greetings.welcome";
+    //          different phrases
+	string[] FEATURES_ARRAY = new string[]{"Keep track of homework assignments\n", 
+												"Navigate around the campus\n", 
+												"Remind you to register to courses\n", 
+												"Get the opening hours of multiple businesses\n",
+												"Retrieve information about courses\n"};
+	string[] WELCOME_GREETINGS = new string[]{"Hi! I am the TechnoBot - the virtual assistant of Technion students.\n" +
+													"What can I do for you?\n For more information, type \"help\"",
+													"Hello! I am the TechnoBot - the virtual assistant of Technion students.\n" +
+													"How may I assist you?\n To see what I can do, just ask"};
+							
     var resultText = new StringBuilder();
     var cnnString ="CONNECTION_STRING";
     //===================================
@@ -30,28 +45,49 @@ public static async Task<Microsoft.AspNetCore.Mvc.ContentResult> Run(HttpRequest
     //===================================
     //         SWITCH BY INTENT
     switch(intentName){
-        case BUSINESS_HOUR_BY_DAY: 
-            goto BUSISINESS_HOURS_DAILY; // getBusinessHoursByDay
-        case BUSINESS_HOUR_WEEK: 
-            goto BUSINESS_HOURS_WEEK; //getBusinessHours
+        case BUSINESS_HOUR_BY_DAY_INTENT_NAME: 
+            goto BUSISINESS_HOURS_DAILY_HANDLER; // getBusinessHoursByDay
+        case BUSINESS_HOUR_WEEK_INTENT_NAME: 
+            goto BUSINESS_HOURS_WEEK_HANDLER; //getBusinessHours
+		case SUPPORT_INTENT_NAME:
+			goto SUPPORT_HANDLER; //support
+		case HELP_INTENT_NAME:
+			goto HELP_HANDLER;
+		case WELCOME_INTENT_NAME:
+			goto WELCOME_HANDLER;
         default:
-         resultText.Append("what is this intent ?!");
-        goto Return_Result;
+			resultText.Append("what is this intent ?!");
+			goto Return_Result;
     }
 
 
     //===================================
 	//        INTENT HANDLERS
-    BUSINESS_HOURS_WEEK:
+    BUSINESS_HOURS_WEEK_HANDLER:
         string bname = ((data.queryResult).parameters.Business).ToString();
         resultText = HandleBusinessHourWeekly(cnnString,resultText,bname);
         goto Return_Result;
 
 
-    BUSISINESS_HOURS_DAILY:
+    BUSISINESS_HOURS_DAILY_HANDLER:
         string day = ((data.queryResult).parameters.DayOfWeek).ToString();
         bname = ((data.queryResult).parameters.Business).ToString();
         resultText = HandleBussinessHourByDay(cnnString,resultText,day,bname);
+        goto Return_Result;
+
+
+    SUPPORT_HANDLER:
+    	resultText.Append("If you are having problems with the TechnoBot,\n please contact us by mail: technionbot1@gmail.com");
+		goto Return_Result;
+
+    HELP_HANDLER:
+        resultText = HandleHelpOutput(FEATURES_ARRAY);
+		goto Return_Result;
+
+    WELCOME_HANDLER:
+        Random random = new Random();
+		resultText.Append(WELCOME_GREETINGS[random.Next(0, WELCOME_GREETINGS.Length)]);
+		goto Return_Result;
 
     Return_Result:
         var jsonResponse = createWebhookResponseContent(resultText);
@@ -81,10 +117,10 @@ public static StringBuilder HandleBusinessHourWeekly(string cnnString,StringBuil
             using (SqlDataReader reader = cmd.ExecuteReader()) {
                 if (reader.HasRows){
                     while (reader.Read()){
-                        jsonResult.Append(bname+" is open at the following hours:\n");
+                        jsonResult.Append(bname+" is open on:\n");
                         for(int i=0; i<7; i++){
                             if(reader[i].ToString() != "N\\A"){
-                                jsonResult.Append(String.Format("On {1}s, between {0}.\n",reader[i], fromIntToDay(i)));
+                                jsonResult.Append(String.Format("Between {0} on {1}s",reader[i], fromIntToDay(i)));
                                 resultText = jsonResult; 
                             }
                         }
@@ -221,4 +257,19 @@ public static string fromIntToDay(int i){
     case 6: return "Saturday";
     }
     return "NO DATE";
+}
+/*  ===================================================================================
+* this function returns what can the bot do, as defined in the FEATURES_ARRAY
+    ===================================================================================
+*/
+public static StringBuilder HandleHelpOutput(String [] MyArray){
+	var jsonResult = new StringBuilder();
+	jsonResult.Append("The TechnoBot can do the following:\n");
+	Random rnd = new Random();
+	string[] MyRandomArray = MyArray.OrderBy(x => rnd.Next()).ToArray();
+	foreach(string feature in MyRandomArray){
+		jsonResult.Append(feature);
+	}
+	jsonResult.Append("If you are having problems with the TechnoBot, please type \"support\"");
+	return jsonResult;
 }
