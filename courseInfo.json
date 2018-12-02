@@ -1,0 +1,1599 @@
+[
+   {
+      "form": 0,
+      "name": "",
+      "type": "textarea",
+      "id": "txt1",
+      "elementPos": 0,
+      "namePos": 0,
+      "value": "faculty, name, id ,academicPoints, lectureHours, tutorialHours, labHours, projectHours, examA, examB, prequstite courses, linked courses\nCivil and Environmental Engineering,Statistics,14003,3,0,2,0,0,6.2.2019,6.3.2019,104004,\nCivil and Environmental Engineering,System Analysis,14004,3,0,2,0,0,28.1.2019,27.2.2019,014003&014603&234112,\nCivil and Environmental Engineering,Engineering Laboratory,14005,1,0,0,2,0,10.3.2019,,14104,\nCivil and Environmental Engineering,Introduction to Numerical Methods,14006,3,0,2,0,0,12.2.2019,8.3.2019,104004&104131&234112|104004&104131&234127,\nCivil and Environmental Engineering,Graphical and Engineering Information,14008,3,0,2,0,0,30.1.2019,7.3.2019,,\nCivil and Environmental Engineering,Introduction to Civil Engineering,14009,0,0,0,0,0,,,,\nCivil and Environmental Engineering,Project in Structures,14101,2,0,2,0,2,,,,\nCivil and Environmental Engineering,Intro.to Engineering Mechanics,14103,4,0,2,0,0,18.2.2019,14.3.2019,113013&113014,\nCivil and Environmental Engineering,Strength of Materials 1,14104,4,0,2,0,0,,,14103,\nCivil and Environmental Engineering,Introduction to the Theory of Elasticity,14107,2,0,1,0,0,17.2.2019,14.3.2019,014105&104131|014145&104131,\nCivil and Environmental Engineering,Structural Analysis,14108,3,0,2,0,0,13.2.2019,10.3.2019,14104,\nCivil and Environmental Engineering,Foundations,14113,2,0,0,0,1,11.2.2019,7.3.2019,014143&014149&014411,\nCivil and Environmental Engineering,Extended Project - Part a,14131,2,0,0,0,2,,,,\nCivil and Environmental Engineering,Extended Project Part B,14132,2,0,2,0,2,,,14131,\nCivil and Environmental Engineering,Computer Methods in Structural Analysis,14143,3,0,2,0,0,1.2.2019,1.3.2019,14108,\nCivil and Environmental Engineering,Strength of Materials 2,14145,5,0,2,0,0,18.2.2019,14.3.2019,14104,\nCivil and Environmental Engineering,Conceptual Structural Design 1,14147,4,0,3,0,1,31.1.2019,28.2.2019,014148&014149&014150|014114&014140&014141|014114&014141&014150|014141&014148&014150|014140&014148&014149|014114&014140&014149,14113\nCivil and Environmental Engineering,Concrete Structures 2,14149,4,0,3,0,2,19.2.2019,15.3.2019,14123,\nCivil and Environmental Engineering,Struct Eng Topic for Excellent Students,14151,2,0,0,0,2,,,,\nCivil and Environmental Engineering,Concrete Structures 1,14153,4,0,0,0,2,,,014008&014108&014505,\nCivil and Environmental Engineering,Water Engineering Project 1,14201,2,0,2,0,0,,,14205,\nCivil and Environmental Engineering,Hydraulics,14205,3,0,2,0,0,6.2.2019,7.3.2019,014211|054203|014214,\nCivil and Environmental Engineering,Fluid Mechanics,14211,3,0,2,0,0,28.1.2019,28.2.2019,014104&104004&104019&114051|014104&104004&104019&114071|014104&104004&104019&114077,104131&104213&104218\nCivil and Environmental Engineering,Introduction to Engin. Hydrology,14212,2,0,1,0,0,29.1.2019,27.2.2019,014003&014211|014003&014214,14205\nCivil and Environmental Engineering,Fundamental Fluid Mechanics,14214,4,0,2,0,0,28.1.2019,28.2.2019,014104&104004&104019&114051|014104&104004&104019&114077|015007&104004&104019&114051|015007&104004&104019&114077,104131\nCivil and Environmental Engineering,Meminar in Environmental Engineering,14300,1,0,2,0,0,,,14322,\nCivil and Environmental Engineering,Project in Environmental Engineering,14301,2,0,0,0,2,,,014205&014212&014315|014205&014212&014322,\nCivil and Environmental Engineering,Lab. of Water and Wastewater Treatment,14305,2,0,0,2,0,,,14322,\nCivil and Environmental Engineering,Environmental Engineering C,14309,2,0,1,0,0,,,14322,\nCivil and Environmental Engineering,Environmental Microbi. and Epidemiology,14313,3,0,0,3,0,10.2.2019,5.3.2019,64419,\nCivil and Environmental Engineering,The Environment in the Technological Era,14318,2,0,0,0,0,,,,\nCivil and Environmental Engineering,Environmental Toxicology,14321,2,0,0,0,0,17.2.2019,10.3.2019,064419&134019,\nCivil and Environmental Engineering,Water and Wastewater Treatment,14322,2,0,1,0,0,19.2.2019,14.3.2019,124120|125001,14205\nCivil and Environmental Engineering,Design of Water and Wastewater Systems,14325,3,0,1,0,1,,,014205&014322,14603\nCivil and Environmental Engineering,Engineering Geology,14405,2,0,1,0,0,,,14104,14211\nCivil and Environmental Engineering,Geomechanics,14409,4,0,1,1,0,14.2.2019,11.3.2019,014006&014104&014211&014405,\nCivil and Environmental Engineering,Project in Building Materials,14501,2,0,2,0,0,,,,016503&016504&014503&014504\nCivil and Environmental Engineering,Lab. Project in Building Materials 1,14503,0,0,0,2,0,,,014505&014506&014515|014505&014506&014508|014505&014506&014513|014505&014506&016505,\nCivil and Environmental Engineering,Lab. Project in Building Materials 2,14504,4,0,0,2,0,,,14503,\nCivil and Environmental Engineering,Building Materials,14505,3,0,1,1,0,3.3.2019,,125011|125001,125013&314535\nCivil and Environmental Engineering,Advanced Concrete Technology,14506,2,0,1,1,0,,,014123&014505,\nCivil and Environmental Engineering,Construction with Metals-Materials and Technology,14513,2,0,1,0,0,12.2.2019,12.3.2019,14505,\nCivil and Environmental Engineering,Project in Construction Management,14601,2,0,2,0,0,,,014606&014609&014610&014617,\nCivil and Environmental Engineering,Engineering Economics,14603,2,0,1,0,0,,,,\nCivil and Environmental Engineering,Intro. to Construction Management,14606,3,0,2,0,0,4.2.2019,4.3.2019,,14123\nCivil and Environmental Engineering,Mechanization and Automation in Construction,14609,2,0,1,0,0,,,014603&014606&014610,\nCivil and Environmental Engineering,Mechanization and Automation in Construction,14610,2,0,2,0,0,,,,014123&014606\nCivil and Environmental Engineering,Human Resource Management in Construct.,14613,2,0,1,0,0,15.2.2019,8.3.2019,14606,14610\nCivil and Environmental Engineering,Introduction to Financial Management in Construction,14615,2,0,1,0,0,1.3.2019,,014603&014606,\nCivil and Environmental Engineering,Planning and Control of Construction Pr.,14617,3,0,2,0,1,19.2.2019,14.3.2019,14606,\nCivil and Environmental Engineering,Principles of Structural Des.in Cons.Eng,14620,5,0,3,0,1,5.2.2019,3.3.2019,014123|014153,\nCivil and Environmental Engineering,Int. to Legal Aspects in Construction,14630,3,0,0,0,0,,,14606,\nCivil and Environmental Engineering,Infrastructure Projects#Cost Estimation,14631,3,0,0,0,0,10.2.2019,10.3.2019,014606&014610,\nCivil and Environmental Engineering,Project in Transportation Engineering,14701,2,0,2,0,0,,,014703&014707&014708&014710,\nCivil and Environmental Engineering,Transportation Planning,14702,4,0,2,1,0,1.2.2019,7.3.2019,,\nCivil and Environmental Engineering,Highway Materials Lab.,14709,2,0,0,2,0,31.1.2019,27.2.2019,14731,\nCivil and Environmental Engineering,Flexible Pavement Design,14710,2,0,1,0,0,5.2.2019,3.3.2019,014730&014731,\nCivil and Environmental Engineering,Planning and Operation of Public Transp.,14716,2,0,1,0,0,18.2.2019,15.3.2019,014730|014732|014733,\nCivil and Environmental Engineering,Air Transportation,14717,2,0,1,0,0,8.2.2019,13.3.2019,014730&014731|014718&014730|014731&014733|014718&014733|014731&014732|014718&014733,\nCivil and Environmental Engineering,Extended Project in Transportation Part1,14719,2,0,2,0,5,,,014703|014707|014708|014709,\nCivil and Environmental Engineering,Project in Transportation Planning,14721,2,0,2,0,5,,,014702|014703,\nCivil and Environmental Engineering,Project in Traffic Engineering,14722,2,0,2,0,5,,,014707|014732|014733,\nCivil and Environmental Engineering,Project in Geometric Road Design,14723,2,0,2,0,5,,,014708|014779,\nCivil and Environmental Engineering,Int. to Transportation Engineering,14730,2,0,1,0,0,8.2.2019,7.3.2019,,\nCivil and Environmental Engineering,Traffic Engineering Amd Management,14733,4,0,2,1,0,19.2.2019,15.3.2019,,\nCivil and Environmental Engineering,Survey Law,14829,2,0,0,0,0,7.2.2019,6.3.2019,14842,\nCivil and Environmental Engineering,Fundamentals of Mapping and Surveying 1,14841,3,0,2,1,0,19.2.2019,13.3.2019,104003,104004\nCivil and Environmental Engineering,Fundamentals of Mapping and Surveying 2,14842,4,0,2,3,0,19.2.2019,15.3.2019,014881&104004016826,\nCivil and Environmental Engineering,Photogrammetry 1,14843,4,0,2,3,0,18.2.2019,15.3.2019,014814&014842&014863,\nCivil and Environmental Engineering,Geospatial Databases,14846,3,0,2,0,0,28.2.2019,,014845&014881,\nCivil and Environmental Engineering,Introduction to Geodesy,14848,4,0,2,0,0,15.2.2019,10.3.2019,14881,14842\nCivil and Environmental Engineering,Geodetic Control Networks,14851,4,0,2,3,0,12.2.2019,10.3.2019,014814&014848&014863014808,\nCivil and Environmental Engineering,Special Engineering Surveys,14853,3,0,2,0,0,,,14851,\nCivil and Environmental Engineering,Image Processing for Mapping,14855,3,0,2,0,0,14.2.2019,12.3.2019,14878,\nCivil and Environmental Engineering,Digital Terrain Modelling,14856,3,0,2,0,0,,,014843&014855,\nCivil and Environmental Engineering,Hydrographic Surveying,14859,3,0,2,0,0,,,014842&014863&014877,\nCivil and Environmental Engineering,Surveying Camp 2,14864,2,0,0,8,0,,,14851,014852&014853&014822\nCivil and Environmental Engineering,Project in Geodesy and Surveying 1,14867,2,0,0,0,2,,,014851&014853&014888,\nCivil and Environmental Engineering,Project in Digital Mapping 1,14869,2,0,0,0,2,,,014856&014857&014858,\nCivil and Environmental Engineering,Introduction to Remote Sensing,14874,3,0,2,0,0,28.1.2019,27.2.2019,14877,\nCivil and Environmental Engineering,Cartography and Introduction to Gis,14877,3,0,1,2,0,,,14842,\nCivil and Environmental Engineering,Computer Aided Mapping,14878,3,0,2,2,0,,,014842&014846,\nCivil and Environmental Engineering,Measurement Systems,14935,2,0,0,3,0,10.2.2019,5.3.2019,014003&114052|094480&114052074137,\nCivil and Environmental Engineering,Transport Phenomena in Bio.and Envir.Sys,14940,3,0,2,0,0,3.2.2019,6.3.2019,014211|014214|054203,\nCivil and Environmental Engineering,Hydraulic Engi. and Reservoirs,14942,3,0,1,0,0,,,014205&014212&014977,\nCivil and Environmental Engineering,Land-Use Survey-Information Systems,14952,2,0,0,2,0,,,14956,\nCivil and Environmental Engineering,Project 2 in Env. Eng.,14966,2,0,0,0,5,,,014301|064010,\nCivil and Environmental Engineering,Ecology for Engineers,14968,2,0,0,2,0,31.1.2019,3.3.2019,,\nCivil and Environmental Engineering,Int. to Flow and Pollution in Soils,14977,3,0,1,2,0,1.2.2019,1.3.2019,014211&104218|054203&104218|014214&104218,\nCivil and Environmental Engineering,Earthmoving Equipment & Systems,15017,2,0,1,0,0,11.2.2019,5.3.2019,014409|015013,\nCivil and Environmental Engineering,Prestressed Concrete,16111,3,0,1,0,1,14.2.2019,11.3.2019,014123&014145,\nCivil and Environmental Engineering,Earthquake Engineering,16142,3,0,2,0,0,4.2.2019,3.3.2019,014123&014143&014146&014150&014411,\nCivil and Environmental Engineering,Water Resources Systems Engineering 1,16203,2,0,1,0,0,28.1.2019,27.2.2019,014004&014205&014212&014322|014004&014205&014212&014325|014004&014205&014325,\nCivil and Environmental Engineering,Environmental Fluid Mechanics,16206,3,0,2,0,0,19.2.2019,12.3.2019,14214,\nCivil and Environmental Engineering,Water Waves,16210,2,0,1,0,0,6.2.2019,8.3.2019,14205,\nCivil and Environmental Engineering,Air Pollution,16302,2,0,1,0,0,,,,\nCivil and Environmental Engineering,Advanced Topics in Atmospheric Physics,16304,2,0,1,0,0,,,014214&014954,\nCivil and Environmental Engineering,Membrane Separation in Wastewater Treatm,16328,3,0,1,1,0,31.1.2019,3.3.2019,014322|054307,\nCivil and Environmental Engineering,Hydrobiology,16329,2,0,0,0,0,12.2.2019,15.3.2019,,\nCivil and Environmental Engineering,Technologies for Airresources Management,16336,2,0,0,0,0,28.1.2019,27.2.2019,16302,\nCivil and Environmental Engineering,Quality Control and Assurance in Buildings,16504,2,0,0,0,0,28.1.2019,27.2.2019,014003&014505,\nCivil and Environmental Engineering,Design of Formwork for Concrete,16619,2,0,0,0,0,18.2.2019,,014123&014609&014610018619,\nCivil and Environmental Engineering,Cross-Border Real-Esate Entrepreneurship,16631,3,0,0,0,0,31.1.2019,,14615,\nCivil and Environmental Engineering,The Urban, Regional and National Planning and the Transportation Impact,16709,2,0,0,0,0,28.1.2019,5.3.2019,\nCivil and Environmental Engineering,Adjustment Computation 2,16801,2,0,1,0,0,29.1.2019,28.2.2019,14814,\nCivil and Environmental Engineering,Digital Photogrammetry,16815,2,0,1,1,0,15.2.2019,15.3.2019,014843&014855,\nCivil and Environmental Engineering,Advanced Marine Surveying,16819,3,0,2,0,0,10.2.2019,11.3.2019,14859,\nCivil and Environmental Engineering,Navigation and Inertial Systems,16832,2,0,1,0,0,,,14849,\nCivil and Environmental Engineering,Numerical Aspects in Image Triangulation,16835,3,0,2,0,0,,,14843,\nCivil and Environmental Engineering,Soil Chemistry,Agrochemicals/Pollutants,17008,2,0,0,0,0,,,014327&014956&124120|014327&014956&125001\nCivil and Environmental Engineering,Physics of Porous Medium,17012,2,0,1,0,0,,,014006&014977,\nCivil and Environmental Engineering,Biological Processes in Environmental Engineering,17022,2,0,1,0,0,15.2.2019,14.3.2019,14322076905,\nCivil and Environmental Engineering,Design of Multistorey Buildings 1,18101,2,0,0,0,0,,,014146&014147,\nCivil and Environmental Engineering,Principles of Structural Stability,18121,2,0,0,0,0,,,14145,\nCivil and Environmental Engineering,Advanced Seminar in Structural Engineering,18130,5,0,0,0,5,,,,\nCivil and Environmental Engineering,Advanced Seminar in Evnvironmental and Water Engineering,18310,5,0,0,0,5,,,,\nCivil and Environmental Engineering,Biofilms,Biofouling and Biocorrosion,18315,2,0,0,0,0,,,014313|134058\nCivil and Environmental Engineering,Advanced Soil Mechanics,18420,3,0,0,1,0,,,,\nCivil and Environmental Engineering,Advanced Seminar in Geotechnical Engineering,18423,5,0,0,0,5,,,,\nCivil and Environmental Engineering,Life Cycle Assessment in Civil and Environmental Engineering Systems,18501,2,0,1,0,0,,,14603,\nCivil and Environmental Engineering,Advanced Seminar in Building Sciences,18507,5,0,0,0,5,,,,\nCivil and Environmental Engineering,Management of a Construction Company,18601,2,0,1,0,0,,,14606,\nCivil and Environmental Engineering,Legal Problems and Issues in Construction,18616,2,0,0,0,0,,,,\nCivil and Environmental Engineering,Advanced Seminar in Construction Management,18623,5,0,0,0,5,,,,\nCivil and Environmental Engineering,Advanced Seminar in Transportation and Highway Engineering,18703,5,0,0,0,5,,,,\nCivil and Environmental Engineering,Traffic Simulation Modeling,18709,2,0,0,0,0,,,14707,\nCivil and Environmental Engineering,Adjustment Computation 3,18812,2,0,0,0,0,,,16801,\nCivil and Environmental Engineering,Satellite Geodesy,18823,2,0,0,0,0,,,14848,\nCivil and Environmental Engineering,Advanced Seminar in Real Estate Studies,18826,5,0,0,0,10,,,,\nCivil and Environmental Engineering,Fundamental Mathematics for Engineers,19001,3,0,2,0,0,,,104131,\nCivil and Environmental Engineering,Numerical Methods in Engineering,19003,3,0,2,0,0,,,14006,\nCivil and Environmental Engineering,Seminar in Environment and Water Engineering,19057,1,0,0,0,2,,,78804,\nCivil and Environmental Engineering,Advanced Study in Agricultural Engineering,19058,2,0,0,0,0,,,78806,\nCivil and Environmental Engineering,Mechanics of Soft Materials,19149,2,0,0,0,0,,,,\nCivil and Environmental Engineering,Advanced Wastewater Treatment,19310,3,0,1,0,0,,,19309,\nCivil and Environmental Engineering,Environmental Engineering Seminar,19315,1,0,0,0,2,,,,\nCivil and Environmental Engineering,Environmental Chemistry,19318,3,0,1,2,0,,,,\nCivil and Environmental Engineering,Chemistry of Environmental Processes,19330,2,0,0,0,0,,,14327,\nCivil and Environmental Engineering,Advanced Topics in Environmental Engineering,19340,2,0,0,0,0,,,,\nCivil and Environmental Engineering,Advanced Topics in Environmental Quality,19341,2,0,0,0,0,,,,\nCivil and Environmental Engineering,Lean Construction-Production Management in Design and Construction,19619,2,0,0,0,0,,,,\nCivil and Environmental Engineering,Advanced Topics in Construction Management,19621,2,0,0,0,0,,,,\nCivil and Environmental Engineering,Project Management in Dynamic Environmen,19625,3,0,0,0,0,,,,\nCivil and Environmental Engineering,Road Building Materials - Laboratory 2,19705,2,0,0,2,0,,,14710,\nCivil and Environmental Engineering,Transportation Network Analysis,19709,2,0,0,0,0,,,14703,\nCivil and Environmental Engineering,Demand Modelling,19710,2,0,0,0,0,,,14703,\nCivil and Environmental Engineering,Advanced Traffic Engineering,19714,2,0,0,0,0,,,14707,\nMechanical Engineering,Dynamics,34010,5,0,2,0,0,29.1.2019,27.2.2019,034028&104022&104131&114051|104013&104135&114071&334222|084505&104013&104135&114071,\nMechanical Engineering,Theory of Vibration,34011,2,0,1,0,0,3.2.2019,3.3.2019,034010&034029&034032&034033&104228|034010&034029&034032&034033&104218,\nMechanical Engineering,Fluid Mechanics 1,34013,4,0,2,0,0,14.2.2019,11.3.2019,034035&104131&104228|034035&104131&104218,\nMechanical Engineering,Mechanical Engineering Design 1,34015,3,0,2,0,0,7.2.2019,7.3.2019,034029&034030&034042&034043&314533,34030\nMechanical Engineering,Mechanical Engineering Design 2,34016,3,0,2,0,0,10.2.2019,,34015,\nMechanical Engineering,Introduction to Mechatronics,34022,2,0,1,0,0,7.2.2019,27.2.2019,034032&114052|034032&114075,\nMechanical Engineering,Solid Mechanics 1,34028,4,0,2,0,0,,,104016,104022\nMechanical Engineering,Solid Mechanics 2,34029,4,0,2,0,0,7.2.2019,14.3.2019,34028,104218\nMechanical Engineering,Manufacturing Processes,34030,3,0,1,3,0,3.2.2019,3.3.2019,034029&034043&314533,\nMechanical Engineering,Linear Systems M,34032,4,0,2,0,0,19.2.2019,14.3.2019,104016&104131,34010\nMechanical Engineering,Numerical Analysis M,34033,3,0,2,0,0,13.2.2019,5.3.2019,104131&234111|104131&234112,104218&104228\nMechanical Engineering,Thermodynamics 1,34035,4,0,2,0,0,28.1.2019,12.3.2019,104018&104022,\nMechanical Engineering,Experimental Methods Laboratory,34039,1,0,0,4,0,,,034038|034044,\nMechanical Engineering,Introduction to Control,34040,3,0,2,0,0,12.2.2019,6.3.2019,34032,34022\nMechanical Engineering,Heat Transfer,34041,4,0,2,0,0,17.2.2019,13.3.2019,034013&034035,\nMechanical Engineering,Computer Based Engineering Drawing,34043,2,0,0,2,0,,,034036|034042,\nMechanical Engineering,Int. to Experimental Methods and Meas.,34044,2,0,1,0,0,,,034010&034029&034040&034041&094481,34022\nMechanical Engineering,Turbomachinery and Jet Engines 1,34210,3,0,1,0,0,28.1.2019,27.2.2019,34013,\nMechanical Engineering,Design of a New Project 1,34353,3,0,0,0,3,,,34015,34016\nMechanical Engineering,Research Project in Mechanical Eng. 1,34355,3,0,0,0,3,,,034014&034022&034040|034022&034040&034041,\nMechanical Engineering,Design for Manufacturing Project,34371,2,0,0,0,2,,,034015&034029&034030&034043,\nMechanical Engineering,Engineerng Project 1,34379,3,0,0,0,3,,,034010&034015&034022&034033&034040&034041,\nMechanical Engineering,Advanced Laboratory in Cad/Can,34404,2,0,0,2,0,,,035003&234112|035003&234111|035003&234102,\nMechanical Engineering,Advanced Control and Automation Laboratory,34406,2,0,0,4,0,,,35188,\nMechanical Engineering,Advanced Energy Laboratory,34410,2,0,0,4,0,,,034014|034041,\nMechanical Engineering,Design and Manufacturing Laboratory,34413,2,0,0,4,0,,,34030,\nMechanical Engineering,Introduction to Robotics,35001,2,0,1,0,0,28.1.2019,14.3.2019,034010&034032,\nMechanical Engineering,Cad Systems 1,35003,3,0,2,0,0,28.1.2019,27.2.2019,234111|234112,\nMechanical Engineering,Industrial Automation,35008,2,0,1,0,0,5.2.2019,5.3.2019,34040,\nMechanical Engineering,Kinematics of Mechanisms,35010,2,0,1,0,0,3.2.2019,4.3.2019,34010,\nMechanical Engineering,The Automotive System 2,35017,2,0,1,0,0,10.2.2019,10.3.2019,35016,\nMechanical Engineering,Applied Tribology,35024,2,0,0,2,0,4.2.2019,4.3.2019,34371,\nMechanical Engineering,Creative Overview of Mechanical Engin.,35026,2,0,1,0,3,,,,\nMechanical Engineering,Fluid Mechanics 2,35035,2,0,1,0,0,7.2.2019,7.3.2019,34013,\nMechanical Engineering,Control System Design,35036,2,0,1,0,0,,,35188,36050\nMechanical Engineering,Signal Processing for Vibrations and Diagnostics,35039,3,0,0,0,0,7.2.2019,10.3.2019,34032,\nMechanical Engineering,Mechanics of Microsystems,35041,3,0,1,0,0,19.2.2019,14.3.2019,114052|034029&114075,\nMechanical Engineering,Introduction to the Theory of Elasticity,35043,3,0,0,0,0,28.1.2019,27.2.2019,34029,\nMechanical Engineering,Hydrostatics of Ships,35044,3,0,0,0,0,31.1.2019,28.2.2019,034028&034033,\nMechanical Engineering,Cryogenics#Cryocoolers and Liquefiers,35045,3,0,2,0,0,,,034014&034035|034035&034041,\nMechanical Engineering,Principles of Marine Engineering,35049,3,0,0,0,0,14.2.2019,12.3.2019,034035&034041&035044,\nMechanical Engineering,Optical Systems Design,35050,3,0,1,0,0,31.1.2019,7.3.2019,104022&114052,\nMechanical Engineering,Renewable and Sustainable Energy,35053,3,0,2,0,0,14.2.2019,12.3.2019,,\nMechanical Engineering,Analysis of Structures,35062,2,0,1,0,0,,,,34029\nMechanical Engineering,Analysis of Manufacturing Processes,35124,2,0,1,0,0,6.2.2019,6.3.2019,34029,\nMechanical Engineering,Internal Combustion Engines,35146,2,0,1,0,0,3.2.2019,3.3.2019,034014|034041,\nMechanical Engineering,Control Theory,35188,3,0,1,0,0,11.2.2019,28.2.2019,34040036056,\nMechanical Engineering,Analytical Methods in Mechanical Engineering 1,36001,4,0,2,0,0,30.1.2019,3.3.2019,104131&104228,\nMechanical Engineering,Analytical Methods in Mechanical Engineering 2,36002,3,0,0,0,0,,,36001,\nMechanical Engineering,Analytical Dynamics 1,36005,3,0,0,0,0,4.2.2019,6.3.2019,34010,\nMechanical Engineering,Compressible Flow,36008,2,0,1,0,0,19.2.2019,14.3.2019,34013,\nMechanical Engineering,Linear Control Systems,36012,3,0,0,0,0,,,35188,\nMechanical Engineering,Finite Element Methods in Mechanical Engineering 1,36015,3,0,0,0,0,11.2.2019,11.3.2019,034033&234111,\nMechanical Engineering,Computational Geometry 1,36020,2,0,1,0,0,,,,\nMechanical Engineering,Theoretical Tribology,36031,3,0,0,0,0,6.2.2019,7.3.2019,034016&034029038752,\nMechanical Engineering,Advanced Engineering Design 1,36041,3,0,1,0,1,,,34015,\nMechanical Engineering,Neural Networks for Control and Diagnostic,36049,2,0,1,0,0,31.1.2019,6.3.2019,035039|035188046195,\nMechanical Engineering,Nonlinear Control Systems,36050,3,0,0,0,0,,,35188,\nMechanical Engineering,Linear Optics and Applications 2.,36055,2,0,1,0,0,,,035052&114210,\nMechanical Engineering,Info-Gap Analysis of Risk and Reliability,36057,3,0,0,0,0,18.2.2019,13.3.2019,014004&094480|014606&094480|034032&094480|094480&094506,\nMechanical Engineering,Contact Mechanics,36062,3,0,0,0,0,17.2.2019,13.3.2019,035043|036069|086576|014107&034029,\nMechanical Engineering,Nanooptics and Periodic Structures,36070,2,0,1,0,0,,,035052&114210,\nMechanical Engineering,Advanced Topics in Mechanical Eng.  9,36075,3,0,0,0,0,,,,\nMechanical Engineering,Principles of Micro Electromecanical Systems (Mems) Design and Production,36081,2,0,0,0,0,,,034010&034015&034029,034011&035033&035021\nMechanical Engineering,Decisions# Challenges and Implications,36083,2,0,0,0,0,,,,\nMechanical Engineering,Advanced Topics in Mechanical Engineering 10,36089,2,0,0,0,0,,,,\nMechanical Engineering,Mechanics of Composite Materials 1,36093,3,0,0,0,0,,,035043|036003,\nMechanical Engineering,Electrochemical Flow Systems,36096,3,0,0,0,0,,,034013&034035&034041,\nMechanical Engineering,Viscous Flow,38504,2,0,0,0,0,,,36032,\nMechanical Engineering,Conduction Heat Transfer,38712,3,0,2,0,0,,,034041|036001,\nMechanical Engineering,Advanced Thermodynamics 1,38715,2,0,1,0,0,28.1.2019,,34035,\nMechanical Engineering,Mechanical Behavior of Engineering Materials,38746,2,0,0,0,0,,,34029,\nMechanical Engineering,Computational Fluid Dynamics,38782,3,0,0,0,0,,,035013&035035|035035&086172|035035&038727,\nMechanical Engineering,Introduction to Chaotic Dynamical System,38786,3,0,0,0,0,,,36001,\nElectrical Engineering,Research-Oriented Project for Excellent Students,44000,4,0,0,4,4,,,,\nElectrical Engineering,Introduction to Software Systems,44101,3,0,1,0,0,15.2.2019,12.3.2019,234117,\nElectrical Engineering,Safety in Ee Labs.,44102,0,0,0,0,0,,,,\nElectrical Engineering,Theory of Electronic Circuits,44105,4,0,2,0,0,7.2.2019,1.3.2019,104035&114075|104131&114052|104035&114076|104135&114075,\nElectrical Engineering,Discrete Mathematics Ee,44114,3,0,1,0,0,3.2.2019,7.3.2019,,\nElectrical Engineering,Basics of Semiconductor Devices M,44125,4,0,1,0,0,6.2.2019,4.3.2019,,44105\nElectrical Engineering,Signals and Systems,44131,5,0,2,0,0,28.1.2019,27.2.2019,044105&104214&104215|044105&104221&104223,\nElectrical Engineering,Dc-Dc Converters,44139,3,0,1,0,0,17.2.2019,14.3.2019,044130&044142,\nElectrical Engineering,Electromagnetic Fields,44140,3,0,2,0,0,11.2.2019,11.3.2019,104223,\nElectrical Engineering,Linear Electronic Circuits,44142,4,0,1,0,0,19.2.2019,13.3.2019,044125&044130,\nElectrical Engineering,Electronic Switching Circuits,44147,4,0,1,0,0,14.2.2019,8.3.2019,044125&044145|044125&234145,\nElectrical Engineering,Waves & Distributed Systems,44148,3,0,1,0,0,11.2.2019,11.3.2019,044140|114245,\nElectrical Engineering,Electrical Engineering Laboratory 1 Ch.,44151,3,0,0,4,0,,,044102&044125&044130|044102&044127&044131|044102&044125&044131,44147\nElectrical Engineering,Electrical Engineering Lab 1a,44157,2,0,0,3,3,,,044102&044252&114075|044102&044145&044262&114075|044102&114075&234145&234262|044102&044252&114076|044102&044145&044262&114076,44105\nElectrical Engineering,Electrical Engineering Lab. 1,44160,3,0,0,4,0,,,044102&044125&044130|044102&044127&044131|044102&044127&044130|044102&044125&044131,044137&044142&044147\nElectrical Engineering,Ee Lab 2,44165,3,0,0,4,0,,,044102&044160|044102&044151,\nElectrical Engineering,Ee Lab 3,44166,2,0,0,4,0,,,044159|044162|044165,\nElectrical Engineering,Lab. Project a,44167,4,0,0,4,0,,,044157|044160|044151,\nElectrical Engineering,Lab. Project B,44169,4,0,0,4,0,,,044102&044160&044167|044102&044151&044167|044102&044157&044167,\nElectrical Engineering,Special Project,44170,4,0,0,4,0,,,44102,044151&044157&044160\nElectrical Engineering,Project in Industry,44173,8,0,0,16,0,,,044160&044167|044157&044167,\nElectrical Engineering,Individual Topics for Excellent Students,44180,4,0,0,4,0,,,,\nElectrical Engineering,Advanced Topics for Excellent Students,44184,2,0,0,0,2,,,44182,\nElectrical Engineering,Special Topics for Excellent Students,44185,1,0,0,0,1,,,,\nElectrical Engineering,Control Systems 1,44191,4,0,1,0,0,10.2.2019,7.3.2019,044130|044131,\nElectrical Engineering,Control Systems 2,44192,3,0,1,0,0,10.2.2019,8.3.2019,044191&044202,\nElectrical Engineering,Linear Control Laboratory.,44193,2,0,0,2,0,,,44191,44192\nElectrical Engineering,Intro. to Digital Signal Processing,44198,3,0,1,0,0,31.1.2019,27.2.2019,044130|044131,\nElectrical Engineering,Random Signals,44202,3,0,1,0,0,4.2.2019,1.3.2019,044131&094412|044131&104222|044130&094412|044130&104222|044130&104034|044131&104034,\nElectrical Engineering,Receiving and Transmitting Techniques,44214,3,0,0,0,0,28.1.2019,3.3.2019,044130&044142|044131&044142|044131&044137,\nElectrical Engineering,Electron. Devices 1 (Mos),44231,4,0,1,2,0,17.2.2019,14.3.2019,044125|044127,044137&044142\nElectrical Engineering,Microelectronics Processing,44239,3,0,0,4,0,3.2.2019,3.3.2019,044125|044127,\nElectrical Engineering,Digital Systems and Computer Structure,44252,5,0,2,0,0,29.1.2019,4.3.2019,234114|234117,\nElectrical Engineering,Logic Design and Introduction to Computers,44262,3,0,1,0,0,19.2.2019,12.3.2019,044145&234117|234117&234145,\nElectrical Engineering,Int. to Data Structur and Algorithms,44268,3,0,1,0,0,17.2.2019,13.3.2019,234111|234112|234114|234117,\nElectrical Engineering,Computer Networks and Internet 1,44334,3,0,1,0,0,11.2.2019,10.3.2019,094412|104034,\nElectrical Engineering,Electro-Optics 1,44339,3,0,1,0,0,19.2.2019,15.3.2019,044140|114210,\nElectrical Engineering,Introductory Project in Elect.,45001,1,0,0,2,0,,,,\nElectrical Engineering,Introduction to Organic Mat. and Devices,46012,3,0,1,0,0,,,315030|046241|044127&125001|044127&124408|044125&125001|044125&124408049012,\nElectrical Engineering,Introduction to Electric Power Systems and Smart Grids,46042,3,0,1,0,0,5.2.2019,3.3.2019,044130|044131,\nElectrical Engineering,Analog Circuit Design,46187,3,0,1,0,0,14.2.2019,13.3.2019,044137|044142,44202\nElectrical Engineering,Data Analysis,46193,3,0,1,0,0,5.2.2019,3.3.2019,044130&104034|044131&104034,\nElectrical Engineering,Machine Learning,46195,3,0,1,0,0,19.2.2019,15.3.2019,044130&104034|044131&104034036049236756,\nElectrical Engineering,Image Processing and Analysis,46200,3,0,1,0,0,31.1.2019,27.2.2019,044198&104034|044198&094412|044198&104222|044198&094411099798236860,\nElectrical Engineering,Introduction to Random Signal Processes,46201,3,0,1,0,0,4.2.2019,6.3.2019,44202,44198\nElectrical Engineering,Introduction to Coding Theory in Communication,46205,3,0,1,0,0,17.2.2019,14.3.2019,46206,\nElectrical Engineering,Introduction to Digital Communication,46206,3,0,1,0,0,17.2.2019,12.3.2019,44202,\nElectrical Engineering,Structure of Operating Systems,46209,3,0,2,0,0,1.2.2019,15.3.2019,234122&234262|044101&044262|234124&234252|044262&234122|234124&234262|044101&044252|044262&234124,\nElectrical Engineering,Laboratory in Operating Systems,46210,1,0,0,4,0,,,,46209\nElectrical Engineering,Physical Principles of Semi Conductor Devices,46225,3,0,1,0,0,10.2.2019,5.3.2019,044127&114073|044125&114073|044127&115203|044125&115203046224,\nElectrical Engineering,Integrated Circuits - Introdution to Vlsi,46237,3,0,1,0,0,6.2.2019,7.3.2019,044137|044147,\nElectrical Engineering,Quantum Mechanics,46241,3,0,1,0,0,30.1.2019,1.3.2019,044140&114073,\nElectrical Engineering,Statistics Physics for Electrical Engineering,46242,3,0,1,0,0,,,104034&114073,044202&114016\nElectrical Engineering,Electro-Optic Systems,46249,3,0,1,0,0,5.2.2019,4.3.2019,044148|114210,44339\nElectrical Engineering,Antennas and Radiation,46256,3,0,1,0,0,8.2.2019,6.3.2019,44148,\nElectrical Engineering,Advanced Circuits and Architectures with Memristors,46265,3,0,1,0,0,5.2.2019,8.3.2019,044105&046237,46267\nElectrical Engineering,Formal Languages and Compilation,46266,3,0,1,0,0,19.2.2019,14.3.2019,044101&044262|044101&044252,\nElectrical Engineering,Computer Architecture,46267,3,0,1,0,0,7.2.2019,4.3.2019,044101&044262|234122&234262|044101&044252|044252&234122|234124&234262|234124&234252,\nElectrical Engineering,Constructive Computer Architecture,46268,3,0,1,0,0,,,046267|234267,\nElectrical Engineering,Object-Oriented Programming and Design,46271,3,0,1,0,0,13.2.2019,11.3.2019,044101&044268|044101&234218|234122&234218|044268&234122|234124&234218|044268&234124,\nElectrical Engineering,Principles of Reliable Distributed Systems,46272,3,0,1,0,0,3.2.2019,5.3.2019,044268&046209|046209&234218|044268&234123|234123&234218,\nElectrical Engineering,Introduction to Biological Signals and Systems,46326,3,0,1,0,0,28.1.2019,1.3.2019,,44202\nElectrical Engineering,Visual and Auditory Systems,46332,3,0,1,0,0,7.2.2019,5.3.2019,044130|044131,\nElectrical Engineering,Introduction to Fiber Optics Communication,46342,3,0,1,0,0,,,44148046341,\nElectrical Engineering,Information Theory,46733,3,0,1,0,0,11.2.2019,10.3.2019,46206048733,\nElectrical Engineering,Digital Signal Processing,46745,3,0,1,0,0,15.2.2019,10.3.2019,044198&044202048745,\nElectrical Engineering,Electrooptical Semiconductor Detecting Devices,46773,3,0,1,0,0,12.2.2019,10.3.2019,044125|044127,\nElectrical Engineering,\"Advanced Architecture of Micro- Processors\"\" Systems\",46853,3,0,1,0,0,10.2.2019,6.3.2019,046267|234267048853,\nElectrical Engineering,Logic Design Automation of Vlsi Systems,46880,3,0,1,0,0,18.2.2019,12.3.2019,046237|236354048880,\nElectrical Engineering,Rf Cmos Integrated Circuits,46903,3,0,1,0,0,1.2.2019,4.3.2019,044137&044142&044148,\nElectrical Engineering,Advanced Topics 4,47003,1,0,0,0,0,,,,\nElectrical Engineering,Advanced Topics 5,47004,2,0,0,0,0,,,,\nElectrical Engineering,Electrooptics Laboratory 2,48712,2,0,0,0,4,,,,\nElectrical Engineering,Advanced Topics in Systems, Learning and Control 1,48715,2,0,0,0,0,,,\nElectrical Engineering,Advanced Topics in Systems, Learning Control 2,48716,2,0,0,0,0,,,\nElectrical Engineering,Biolgical Signals and Systems Laboratory,48747,2,0,0,0,4,,,046326|046332,\nElectrical Engineering,Signal Processing Laboratory,48816,2,0,0,0,4,,,046745|048860,\nElectrical Engineering,The Hfic Lab,48836,2,0,0,0,4,,,,\nElectrical Engineering,Advanced Energy Conversion Laboratory,48852,2,0,0,0,4,,,,\nElectrical Engineering,Image Processing,48860,2,0,0,0,0,,,46200,\nElectrical Engineering,Developing Topics in Electrical Engineering 1,48870,1,0,2,1,0,,,,\nElectrical Engineering,Developing Topics in Electrical Engineering 2,48871,1,0,1,2,0,,,,\nElectrical Engineering,Topics in Computer Communication Networks 3,48876,2,0,0,0,0,,,,\nElectrical Engineering,Hardware and Software Laboratory,48877,2,0,0,4,0,,,046267|234218,\nElectrical Engineering,Seminar in Computer Systems Engineering,48886,2,0,0,0,0,,,046267|234267,49018\nElectrical Engineering,Blockchin and Cryptocurrency Protocols,48888,2,0,0,0,0,,,44268,\nElectrical Engineering,Advanced Topics in Diffuse Optics Approaches in Biomedical Imaging,48907,2,0,0,0,0,,,044148|114210|336533,\nElectrical Engineering,Visual Systems and Image Structure,48921,2,0,0,0,0,,,,\nElectrical Engineering,Vision Image Structure and Computer Vision Laboratory,48922,2,0,0,0,4,,,046326|048860|236502,046332&046345&236501\nElectrical Engineering,Selected Topics in Electrooptics,48930,2,0,0,0,0,,,,\nElectrical Engineering,Communications Laboratory,48933,2,0,0,0,4,,,,\nElectrical Engineering,Topics in Signal Processing 3,48939,2,0,0,0,0,,,,\nElectrical Engineering,Selected Topics in Computing 1,48961,2,0,0,0,0,,,,\nElectrical Engineering,Microelectronics Laboratory,48966,2,0,0,0,4,,,,\nElectrical Engineering,Computer Networks Laboratory,48967,2,0,0,0,4,,,,\nElectrical Engineering,Laboratory in Parallel Systems,48976,2,0,0,0,4,,,046209&046267,\nElectrical Engineering,Seminar 1,48990,3,0,0,0,6,,,,\nElectrical Engineering,Seminar 2,48991,3,0,0,0,6,,,48990,\nElectrical Engineering,Control Topics Laboratory,49005,2,0,0,0,4,,,,\nElectrical Engineering,Electromagnetic Waves Laboratory,49006,2,0,0,0,4,,,44148,\nElectrical Engineering,Universal Data Compression,49043,2,0,0,0,0,,,46733048942,\nElectrical Engineering,Advanced Topics in Nano-Electronics 1,49050,2,0,0,0,0,,,,\nElectrical Engineering,Machine Learning Laboratory,49053,2,0,0,0,4,,,46195,\nElectrical Engineering,Nanophotonics,49055,2,0,0,0,0,,,044148&044339|114210&116003|044148&116003|044339&114210048848,\nElectrical Engineering,Three Dimensional Imaging and Reconstruction,49062,2,0,0,0,0,,,046200|114210|236873048972,\nElectrical Engineering,Variational Methods in Image Processing,49064,2,0,0,0,0,,,46200,\nChemical Engineering,Overview of Chem Biochem Eng,54133,1,0,0,0,0,,,,\nChemical Engineering,Intro. to Chemical and Biochemical Eng.,54135,3,0,2,0,0,18.2.2019,5.3.2019,124120,\nChemical Engineering,Separation Processes 1 Chem-Bioche Eng,54136,3,0,2,0,0,14.2.2019,15.3.2019,014214|054203,\nChemical Engineering,Principles of Chemical Engineering 2M,54306,4,0,2,0,0,28.1.2019,28.2.2019,054203&104131,\nChemical Engineering,Int. to Process Dynamics and Control M,54314,3,0,2,0,0,29.1.2019,28.2.2019,054215&054374&104131|054215&054374&104213,\nChemical Engineering,Thermodynamics B,54315,3,0,2,0,0,3.2.2019,7.3.2019,054215&104131,\nChemical Engineering,Polymers 1,54350,2,0,1,0,0,19.2.2019,14.3.2019,124708|125801,54408\nChemical Engineering,Polymers 2,54351,2,0,1,0,0,18.2.2019,13.3.2019,54203,\nChemical Engineering,Research Project 1,54367,2,0,0,8,0,,,54203,\nChemical Engineering,Research Project 2,54368,2,0,0,8,0,,,54367,\nChemical Engineering,Polymer Engineering Laboratory,54369,2,0,0,6,0,,,054350|054351,\nChemical Engineering,Int. Solid State Chemistry for Engineers,54373,2,0,1,0,0,31.1.2019,3.3.2019,054215&114052058185,\nChemical Engineering,Chemical Engineering Laboratory 2,54400,2,0,0,3,0,,,054305&054310&054408&054409|054308&054310&054408&054409,\nChemical Engineering,Senior Thesis 1,54406,3,0,0,8,0,,,054305|054308054363,\nChemical Engineering,Senior Thesis 2,54407,3,0,0,8,0,,,54406,\nChemical Engineering,Biochemical Engineering,54412,3,0,1,0,0,,,54408,\nChemical Engineering,Integrated Chemical Process Design,54416,4,0,2,0,5,6.2.2019,10.3.2019,054215&054305&054330&054408|054308&054315&054330&054408054401054402,\nChemical Engineering,\"Int.to Chemical and Biochemcal Reactors\"\" Design\",54419,4,0,2,0,0,10.2.2019,12.3.2019,054203&054215&124114|014211&054215&124114,054403&124414\nChemical Engineering,Chemical Engineering Laboratory 2 Bc,54420,1,0,0,4,0,,,054203&054305&054306&054408&054409|054203&054306&054308&054408&054409,\nChemical Engineering,Environmental Engineering-Air Pollution,54452,2,0,1,0,0,12.2.2019,4.3.2019,,014211&054203\nChemical Engineering,Electron Microscopy in Chemical Engineering,56120,2,0,0,0,0,,,,\nChemical Engineering,Selected Engineering Subjects,56146,2,0,0,0,0,,,,\nChemical Engineering,Selected Engineering Issues 2,56386,2,0,0,0,0,,,,\nChemical Engineering,Odor Fingerprints# Introduction and Applications,56394,2,0,0,0,0,,,125001&134058|124117&124120|124120&134058,\nChemical Engineering,Colloids,56396,2,0,1,0,0,,,054203&054315,\nChemical Engineering,Membranes Principles and Materials,56397,2,0,1,0,0,,,054306|054315,\nChemical Engineering,Transport Phenomena - Fluid Flow,58127,2,0,1,0,0,,,54305,\nChemical Engineering,Polymer Processing,58162,2,0,0,0,0,10.2.2019,,58180,\nChemical Engineering,Advanced Seminar in Chemical Engineering,58174,6,0,0,0,6,,,,\nChemical Engineering,Mathematical Methods in Chemical Engineering,58177,3,0,1,0,0,,,,\nChemical Engineering,Polymer Characterization Laboratory,58184,2,0,0,6,0,,,054351|127724|315721,\nBiotechnology and Food Engineering,Undergraduate Research 1,64001,4,0,0,8,0,,,,064238&064324&064007\nBiotechnology and Food Engineering,Undergraduate Research 2,64002,4,0,0,8,0,,,64001,\nBiotechnology and Food Engineering,Practice in Food Industry,64003,1,0,0,0,1,,,64238064004,\nBiotechnology and Food Engineering,Special Project,64005,1,0,0,0,1,,,,\nBiotechnology and Food Engineering,Thermodynamics in Biotechnology and Food Engineering,64106,4,0,2,0,0,10.2.2019,3.3.2019,114051&124503,64117\nBiotechnology and Food Engineering,Heat Transfer Phenomena,64117,3,0,2,0,0,19.2.2019,11.3.2019,064115&104228,\nBiotechnology and Food Engineering,Food Plant Design,64119,2,0,2,0,0,,,64239,\nBiotechnology and Food Engineering,Selected Topics in Food Technology a,64210,2,0,0,0,0,11.2.2019,5.3.2019,64322,\nBiotechnology and Food Engineering,Food Technology,64212,2,0,0,0,0,7.2.2019,4.3.2019,64522,\nBiotechnology and Food Engineering,Bioprocess and Food Process Eng. Lab.,64239,2,0,0,5,0,,,064115&064117&064118,\nBiotechnology and Food Engineering,Food Analysis,64324,3,0,2,0,0,29.1.2019,14.3.2019,64322,\nBiotechnology and Food Engineering,Food, Biological Material Analyses Lab,64326,2,0,1,5,0,,,064322&064325\nBiotechnology and Food Engineering,Standardization Conspectus,64331,1,0,0,0,0,,,,\nBiotechnology and Food Engineering,Food Microbiology,64405,4,0,0,3,0,14.2.2019,6.3.2019,064413&064419,\nBiotechnology and Food Engineering,Molecular Biotechnology,64507,3,0,1,0,0,4.2.2019,27.2.2019,064322&064419&064523|134019&134113,\nBiotechnology and Food Engineering,Process Biotechnology,64509,3,0,1,0,0,14.2.2019,10.3.2019,064115&064419,\nBiotechnology and Food Engineering,Introduction to Biotechnology and Food Engineering,64522,2,0,2,0,0,,,,134058&064519\nBiotechnology and Food Engineering,Introduction to Molecular Biotechnology,64523,2,0,1,0,0,17.2.2019,10.3.2019,125801&134019&134058,\nBiotechnology and Food Engineering,Nutrition,64603,3,0,2,0,0,7.2.2019,28.2.2019,64322,\nBiotechnology and Food Engineering,Advanced Project in Biotechnology and Food Engineering 2,66013,3,0,0,0,6,,,66012,\nBiotechnology and Food Engineering,Packaging of Food, Drugs and Biological Products,66217,3,0,1,1,0,17.2.2019,13.3.2019,64238\nBiotechnology and Food Engineering,Technology of Winemaking,66226,2,0,0,0,0,30.1.2019,27.2.2019,064322&125801,\nBiotechnology and Food Engineering,Advanced Materials for Biotechnolgy and Food,66247,2,0,0,0,0,19.2.2019,12.3.2019,125801,\nBiotechnology and Food Engineering,Microbiology of Pathogens,66418,2,0,0,0,0,,,064507|064509|064405&064419&134082&134121,\nBiotechnology and Food Engineering,Biotechnology Enterprise,66525,2,0,0,0,1,,,,\nBiotechnology and Food Engineering,Synthetic Biology,66526,3,0,2,4,0,,,064523&234127,\nBiotechnology and Food Engineering,Functional Food, Nutraceuticals and Food Additives,66613,2,0,0,0,0,3.2.2019,4.3.2019,64322\nAerospace Engineering,Experimental Methods in Aerospace Eng.,84154,2,0,0,3,0,,,84311,\nAerospace Engineering,Thermodynamics,84213,4,0,2,0,0,29.1.2019,27.2.2019,104022,\nAerospace Engineering,Flight Mechanics 1,84220,2,0,1,0,0,4.2.2019,27.2.2019,084225&084311,\nAerospace Engineering,Dynamics,84225,4,0,2,0,0,11.2.2019,15.3.2019,084505&104019&104022&114051,\nAerospace Engineering,Incompressible Aerodynamics,84311,3,0,1,0,0,31.1.2019,5.3.2019,104215&104228&114051,\nAerospace Engineering,Compressible Flow, Inlets and Nozzles,84312,2,0,1,1,0,19.2.2019,14.3.2019,084213&084311\nAerospace Engineering,Viscous Flow and Heat Transfer,84314,3,0,1,1,0,8.2.2019,3.3.2019,84311,\nAerospace Engineering,Aerospace Engineering Design and Manufacturing,84640,4,0,1,3,0,28.1.2019,8.3.2019,084155&084513&094411&314200,\nAerospace Engineering,Design Project 51,84651,3,0,1,0,0,,,084220&084402&084636&084738&084913|084220&084401&084636&084738&084913,84221\nAerospace Engineering,Design Project 53,84653,3,0,1,0,0,,,084143&084221&084401&084636&084738|084143&084404&084636&084738&084913,\nAerospace Engineering,Design Project 55,84655,3,0,1,0,0,,,084220&084402&084636&084735|084220&084401&084636&084735&084913,84221\nAerospace Engineering,Design Project 57,84657,3,0,1,0,0,,,084220&084402&084636&084735|084220&084401&084636&084735&084913,84221\nAerospace Engineering,Design Project 59,84659,3,0,1,0,0,,,084220&084402&084636&084735|084220&084401&084636&084735&084913,84221\nAerospace Engineering,Design Project 61,84661,3,0,1,0,0,,,084220&084401&084402&084512&084636&084735&084913,\nAerospace Engineering,Design Project 63,84663,3,0,1,0,0,,,084142&084220&084401&084402&084512&084636&084735&084913,\nAerospace Engineering,Design Project 65,84665,3,0,1,0,0,,,084220&084401&084402&084512&084636&084735&084913,\nAerospace Engineering,Design Project 67,84667,3,0,1,0,0,,,084220&084401&084402&084512&084636&084735&084913,\nAerospace Engineering,Design Project 69,84669,3,0,1,0,0,,,084220&084402&084636&084735|084220&084401&084636&084735&084913,84221\nAerospace Engineering,Control Theory,84738,3,0,1,1,0,13.2.2019,11.3.2019,84737,\nAerospace Engineering,Model Airplane Construction 1,85101,1,0,0,2,0,,,,\nAerospace Engineering,Model Airplane Construction 2,85102,1,0,0,2,0,,,,\nAerospace Engineering,Laboratory Project,85156,2,0,0,3,0,,,,\nAerospace Engineering,Experimental Methods in Aerodynamics,85305,2,0,0,2,0,,,84154,\nAerospace Engineering,Workshop in Computational Aerodynamics,85326,1,0,0,2,0,,,,86376\nAerospace Engineering,Rocket and Jet Propulsion Lab,85405,2,0,0,2,0,,,084154&084401&084404,\nAerospace Engineering,Experimental Methods in Aero. Structures,85505,2,0,0,2,0,,,084154&084512|084154&084515,\nAerospace Engineering,Integrated Logistics Support,85640,2,0,0,0,0,13.2.2019,6.3.2019,84143,\nAerospace Engineering,Special Design Project 1,85681,3,0,0,0,3,,,084311&084515,\nAerospace Engineering,Preliminary Design of Aircraft,85695,3,0,0,0,0,,,84220,84221\nAerospace Engineering,Seminar in Aerodynamics,85801,1,0,2,0,0,,,084312&084314,\nAerospace Engineering,Seminar in Propulsion,85803,1,0,2,0,0,,,084401&084404|085406&085407,\nAerospace Engineering,Seminar in Control,85804,1,0,2,0,0,,,84738,\nAerospace Engineering,Selected Topics in Aerospace Engi. 1,85821,2,0,0,0,0,,,,\nAerospace Engineering,Research Project 1,85851,3,0,0,0,3,,,,\nAerospace Engineering,Research Project 2,85852,3,0,0,0,3,,,85851,\nAerospace Engineering,Space Mechanics,86287,3,0,0,0,0,10.2.2019,12.3.2019,084225&084913,\nAerospace Engineering,Advanced Problems in Aerodynamics,86311,3,0,0,0,0,,,084312&084313,\nAerospace Engineering,Heat Transfer in Aerospace Engineering,86320,3,0,0,0,0,18.2.2019,15.3.2019,84314,\nAerospace Engineering,Introduction to Turbulent Flow,86366,3,0,0,0,0,,,84314,\nAerospace Engineering,Computational Aerodynamcis,86376,3,0,0,0,0,,,084312&085135,\nAerospace Engineering,Aerodynamics of Wings and Bodies,86389,3,0,0,0,0,6.2.2019,4.3.2019,84312,\nAerospace Engineering,The Ramjet Engine,86414,3,0,0,0,0,30.1.2019,14.3.2019,084314&084402,\nAerospace Engineering,Introduction to Supersonic Combustion,86470,3,0,0,0,2,14.2.2019,11.3.2019,084402|084404,\nAerospace Engineering,Dynamics of Structures,86577,3,0,0,0,0,28.1.2019,27.2.2019,084515&084737|084513&084737,\nAerospace Engineering,Servo Systems Design,86650,2,0,0,0,0,30.1.2019,5.3.2019,044098&084314&084738,\nAerospace Engineering,Random Processes in Aerospace Systems,86733,3,0,0,0,0,12.2.2019,3.3.2019,084730&104034,\nAerospace Engineering,B Dynamics and Control of Flight Vehicles,86755,3,0,1,0,0,15.2.2019,13.3.2019,084735|084738,\nAerospace Engineering,Principles of Guidance and Homing,86760,3,0,0,0,0,28.1.2019,27.2.2019,084735|084738,\nAerospace Engineering,Vision-Aided Navigation,86761,3,0,0,0,0,4.2.2019,10.3.2019,086777&094417|086777&104034,\nAerospace Engineering,Intelligent Structural Systems,86901,3,0,0,0,0,1.2.2019,1.3.2019,084225&084512,\nAerospace Engineering,Fundamentals of Aerospace Plasma Engineering,86924,3,0,0,0,0,17.2.2019,10.3.2019,084213&114054,\nAerospace Engineering,Dynamics and Combustion of Sprays of Liquid Fuels,88413,2,0,0,0,0,,,084213&084312,\nAerospace Engineering,Initial and Boundary Problems in Finite Elements Method,88504,3,0,0,0,0,,,,\nAerospace Engineering,Distributed Spacecraft Systems,88900,3,0,0,0,0,18.2.2019,,,\nIndustrial Engineering,Intro.to Industrial Eng. and Management,94101,2,0,1,0,0,12.2.2019,8.3.2019,,\nIndustrial Engineering,Manage. Logist. System.,94139,3,0,1,0,0,11.2.2019,6.3.2019,094313&094411|094313&094412,94314\nIndustrial Engineering,Products Design and Prod. and Ser. Sys.,94141,3,0,1,0,0,10.2.2019,13.3.2019,94100,094313&094411\nIndustrial Engineering,Operation of Production Service Systems,94142,3,0,1,0,0,28.1.2019,3.3.2019,094139&094141&094334,\nIndustrial Engineering,Design Project Proposal Development in Ind. Eng.,94189,1,0,0,0,6,,,94222,094142&095140\nIndustrial Engineering,Design Project 1,94195,3,0,0,0,6,,,94189,\nIndustrial Engineering,Semester Research Project,94197,3,0,0,0,6,,,,\nIndustrial Engineering,Case Studies in Industrial Engineering,94198,3,0,2,0,0,,,094139&094142,\nIndustrial Engineering,Semesterial Project 2,94199,3,0,0,0,6,,,94197,\nIndustrial Engineering,Distributed Data and Rational Agents,94204,3,0,1,0,0,11.2.2019,7.3.2019,094323&094411|094201,\nIndustrial Engineering,Software Engineering,94219,3,0,0,2,0,28.1.2019,8.3.2019,234111|234114,\nIndustrial Engineering,Specification and Analysis of Information Systems,94222,3,0,0,2,0,,,094219|234122,\nIndustrial Engineering,Data Structures and Algorithms,94224,4,0,2,0,0,19.2.2019,15.3.2019,094344&234122|044101&094344|094219&094344,\nIndustrial Engineering,Database Management,94241,3,0,1,1,0,28.1.2019,10.3.2019,234292|094219&094345|094201&094345,\nIndustrial Engineering,Deterministic Models in Oper.Research,94313,3,0,1,0,0,3.2.2019,10.3.2019,104009&234111|104167&234111,\nIndustrial Engineering,Stochastic Models in Oper.Research,94314,3,0,1,0,0,5.2.2019,12.3.2019,094344&094411&104009&234111|094344&094412&104167&234114,94423\nIndustrial Engineering,Dynamic Models in Operations Research,94333,3,0,1,0,0,14.2.2019,7.3.2019,094344&104019&104020,94313\nIndustrial Engineering,Digital Simulation,94334,3,0,2,1,0,1.2.2019,3.3.2019,094314&094344&094423,\nIndustrial Engineering,Discrete Mathematics (for I.E),94345,4,0,2,0,0,14.2.2019,15.3.2019,,\nIndustrial Engineering,Probability (Ie),94411,4,0,2,0,0,7.2.2019,5.3.2019,104022|104020,\nIndustrial Engineering,Probability (Advanced),94412,4,0,2,0,0,7.2.2019,5.3.2019,104020|104022|104032,\nIndustrial Engineering,Introduction to Statistics,94423,3,0,1,0,0,14.2.2019,7.3.2019,094411|094412|104034,\nIndustrial Engineering,Int.to Probability and Statistics,94481,4,0,2,0,0,29.1.2019,4.3.2019,104004|104013|104022,\nIndustrial Engineering,Microeconomics 2,94504,3,0,1,0,0,28.1.2019,27.2.2019,94503,\nIndustrial Engineering,Macroeconomics,94513,3,0,1,0,0,29.1.2019,28.2.2019,094511|094591&104005&104010,\nIndustrial Engineering,Workshop in Smes 1,94520,1,0,1,0,1,,,,\nIndustrial Engineering,Introduction to Financial Management,94564,2,0,1,0,0,28.1.2019,10.3.2019,094411|094412&094591|094501&094511,\nIndustrial Engineering,Introductory Economics,94591,3,0,1,0,0,11.2.2019,6.3.2019,104003|104010,\nIndustrial Engineering,Principles of Economics for Engineers,94594,3,0,1,0,0,3.2.2019,5.3.2019,104012|104017,\nIndustrial Engineering,Legal and Financial Aspects of Technology Enterpreneurship,94814,2,0,1,0,0,31.1.2019,3.3.2019,,\nIndustrial Engineering,Introduction to Accounting,94820,2,0,0,0,0,19.2.2019,11.3.2019,,94591\nIndustrial Engineering,Advanced Managerial Accounting,94822,2,0,1,0,0,5.2.2019,4.3.2019,94821,\nIndustrial Engineering,Industrial Management Game,94851,3,0,0,0,0,,,094314&094831,\nIndustrial Engineering,Performance Measurement and Methods Impr,95112,3,0,1,0,0,13.2.2019,12.3.2019,094141&094423,96620\nIndustrial Engineering,Quality, Productivity and Maintenance,95113,3,0,1,0,0,3.2.2019,5.3.2019,94139\nIndustrial Engineering,Project Planning and Management,95140,3,0,1,0,0,3.2.2019,27.2.2019,094313&094314|104034&236330,\nIndustrial Engineering,Algebraic Methods for Data Science,95295,3,0,1,0,0,3.2.2019,27.2.2019,094345&104032&104166&234117|094345&104019&104020&234111,094223&094412\nIndustrial Engineering,Standardization Systems,95420,1,0,0,0,0,,,,\nIndustrial Engineering,Introduction to Psychology,95605,2,0,1,0,0,6.2.2019,6.3.2019,94423,\nIndustrial Engineering,Quality Engineering,96120,3,0,1,0,0,28.1.2019,27.2.2019,94423,\nIndustrial Engineering,Des. for Manufacturability and Assembly,96124,3,0,1,0,0,6.2.2019,8.3.2019,094423&096414,\nIndustrial Engineering,Applied Quality Assurance,96125,2,0,1,0,0,,,96414,\nIndustrial Engineering,Foundations and Applications of Artificial Intelligence,96210,3,0,1,0,0,19.2.2019,15.3.2019,234247|094223,\nIndustrial Engineering,Electronic Commerce Models,96211,3,0,1,0,0,19.2.2019,15.3.2019,094223&094591|094591|094591&234247|094223|234247|094594,\nIndustrial Engineering,Full Stack Web Development,96255,3,0,0,0,4,,,94222,\nIndustrial Engineering,Advanced Topic in Information Systems,96260,3,0,1,0,0,,,,\nIndustrial Engineering,Information Retrieval,96262,3,0,1,0,0,29.1.2019,1.3.2019,094219&094411&104009|094219&094412&104167,\nIndustrial Engineering,User Experience in Interactive Systems,96266,3,0,1,0,0,,,96620,\nIndustrial Engineering,The Human Factor in Data Collection,96275,3,0,1,1,1,7.2.2019,7.3.2019,094201|094219,\nIndustrial Engineering,Selected Topics in Data Science,96290,2,0,1,0,0,,,094201|096411|094223,\nIndustrial Engineering,Applied Stochastic Processes,96310,2,0,1,0,0,19.2.2019,15.3.2019,094314|094412|104222,\nIndustrial Engineering,Statisticqal Learning with Data,96411,3,0,1,0,0,12.2.2019,3.3.2019,94423,\nIndustrial Engineering,Industrial Statistics,96414,3,0,1,0,0,19.2.2019,15.3.2019,094423|094480,\nIndustrial Engineering,Economics of the Service Sector,96537,3,0,0,0,0,5.2.2019,4.3.2019,094501&094591,\nIndustrial Engineering,Environmental Economics,96553,2,0,1,0,0,13.2.2019,27.2.2019,094503|094591|094594|096520|207804,\nIndustrial Engineering,Options Markets,96556,2,0,1,0,0,14.2.2019,28.2.2019,94564098778,\nIndustrial Engineering,Auction Theory,96573,2,0,1,0,0,,,096570|096575098517,\nIndustrial Engineering,Non-Cooperative Games,96575,3,0,1,0,0,12.2.2019,11.3.2019,094323&094411|094323&094412,\nIndustrial Engineering,Learning and Complexity in Game Theory,96576,2,0,0,0,0,,,096570|096575|094411&106173|094412&106173|104034&106173,\nIndustrial Engineering,Selected Topics in Financial Engineering,96580,2,0,0,0,0,,,096425|096586,\nIndustrial Engineering,Econometrics,96586,3,0,1,0,0,1.2.2019,7.3.2019,094423&094504,\nIndustrial Engineering,Organizational Behavior,96600,3,0,1,0,0,13.2.2019,11.3.2019,95605090056,\nIndustrial Engineering,Selected Topics in Organizational Behavior,96602,2,0,1,0,0,,,95605,\nIndustrial Engineering,Cognition and Decision Making,96617,2,0,1,0,0,29.1.2019,28.2.2019,094423&095605,\nIndustrial Engineering,Introduction to Human Factors Engineering,96620,3,0,1,0,0,7.2.2019,7.3.2019,094423&095605|094423&095605,\nIndustrial Engineering,Training of Skills,96631,2,0,0,0,0,,,094423|094480|095605099631,\nIndustrial Engineering,Social Ventures,96807,3,0,1,0,0,,,,\nIndustrial Engineering,Entrepreneurship and Intellectual Property,96815,3,0,0,0,0,,,,\nIndustrial Engineering,Reliability Management,97122,3,0,1,0,0,10.2.2019,8.3.2019,094423|096414,\nIndustrial Engineering,Multidisciplinary Research in Service Engineering,97135,3,0,1,0,2,,,96324,\nIndustrial Engineering,Facilities Design,97151,3,0,1,0,0,8.2.2019,8.3.2019,094139|094334,\nIndustrial Engineering,Deep Learning,97200,3,0,2,0,3,18.2.2019,4.3.2019,094411&094423|094412&234218,\nIndustrial Engineering,Natural Language Processing,97215,3,0,1,0,0,,,094411&094423|094412&234218,\nIndustrial Engineering,Selected Topics in Information Technologies,97260,2,0,1,0,0,,,94222,\nIndustrial Engineering,Cooperative Game Theory,97317,2,0,1,0,0,28.1.2019,5.3.2019,094412&104009,94313\nIndustrial Engineering,Marketing Principles,97800,3,0,1,0,0,1.2.2019,27.2.2019,094423&094594|094423&094591,\nIndustrial Engineering,Research Seminar in Industrial Engineering,98113,3,0,0,0,0,,,,\nIndustrial Engineering,Optimization 1,98311,3,0,1,0,0,,,94313097311,\nIndustrial Engineering,Linear and Combinatorial Programming,98331,3,0,1,0,0,,,94313,\nIndustrial Engineering,Theory of Probability,98416,3,0,0,0,0,,,094412|104222,\nIndustrial Engineering,Selected Topics in Statistical Inference,98436,3,0,0,0,0,,,98414,\nIndustrial Engineering,Applied Multivariate Analysis,98460,3,0,1,0,0,,,98459,\nIndustrial Engineering,Data Collection and Research in the Behavioral Sciences,98603,2,0,1,0,0,,,96676,\nIndustrial Engineering,Consumer Psychology Seminar,98663,2,0,0,0,1,,,095605|097800,\nIndustrial Engineering,Advance Seminar in Psychological Research,99601,2,0,0,0,2,,,95605,\nIndustrial Engineering,Seminar in the Behavioral Sciences,99635,0,0,0,0,1,,,,\nMathematics,Methods in Integration,104001,1,0,0,0,0,1.2.2019,3.3.2019,,104195\nMathematics,Differential and Integral Calculus 1,104003,5,0,2,0,0,3.2.2019,3.3.2019,103015,\nMathematics,Differential and Integral Calculus 2,104004,5,0,2,0,0,4.2.2019,1.3.2019,103015&104003|103015&104012|103015&104017|103015&104018,104019\nMathematics,Differential and Integral Calculus 2T,104013,5,0,3,0,0,17.2.2019,10.3.2019,103015&104016&104031|103015&104012&104016|103015&104031&104167|103015&104012&104167|103015&104031&104166,104035\nMathematics,Algebra 1/Extended,104016,5,0,2,0,0,7.2.2019,5.3.2019,103015,\nMathematics,Calculus 1N,104017,5,0,2,0,0,30.1.2019,28.2.2019,103015,\nMathematics,Differential and Integral Calculus 1M,104018,5,0,2,0,0,3.2.2019,3.3.2019,103015,\nMathematics,Linear Algebra M,104019,4,0,2,0,0,7.2.2019,5.3.2019,103015,\nMathematics,Calculus 2N,104020,5,0,2,0,0,7.2.2019,1.3.2019,103015&104012|103015&104017|103015&104018,104009&104016&104019&104166&104167\nMathematics,Differential and Integral Calculus 2M,104022,5,0,2,0,0,3.2.2019,5.3.2019,103015&104012|103015&104017|103015&104018,104009&104016&104019&104166&104167\nMathematics,Calculus 1M,104031,5,0,3,0,0,3.2.2019,3.3.2019,103015,\nMathematics,Calculus 2M,104032,5,0,2,0,0,6.2.2019,4.3.2019,103015&104195|103015&104031,\nMathematics,Vector Analysis,104033,2,0,1,0,0,31.1.2019,11.3.2019,104016&104281|104166&104281|104167&104281|104016&104032|104032&104166|104032&104167,\nMathematics,Introduction to Probability H,104034,3,0,1,0,0,22.2.2019,17.3.2019,104013|104014|104020|104022|104032|104281,\nMathematics,Ordinary Dif.Equations and Calculus 2H,104035,5,0,2,0,0,13.2.2019,14.3.2019,103015&104031&104167|103015&104167&104195|103015&104016&104031|103015&104016&104195|103015&104031&104166|103015&104166&104195,104013\nMathematics,Geometry and Symmetry,104112,3,0,0,0,0,19.2.2019,15.3.2019,104172&104281|104032&104172|104013&104172|104022&104172|104134&104281|104032&104134|104013&104134|104022&104134,\nMathematics,Complex Function Theory 1,104122,3,0,1,0,0,14.2.2019,10.3.2019,104013|104020|104022|104281,\nMathematics,Ordinary Differential Equations/H,104131,2,0,1,0,0,11.2.2019,12.3.2019,,104004&104014&104020&104022\nMathematics,Modern Algebra H,104134,2,0,1,0,0,21.2.2019,15.3.2019,103015&104016|103015&104166|103015&104167,\nMathematics,Int. to Metric and Topological Space,104142,3,0,1,0,0,15.2.2019,11.3.2019,104195&104290|104031&104290|104012&104290,\nMathematics,Introduction to Number Theory,104157,3,0,1,0,0,8.2.2019,8.3.2019,104172&104279,\nMathematics,Real Functions,104165,3,0,1,0,0,10.2.2019,7.3.2019,104281,104142\nMathematics,Algebra a,104166,5,0,3,0,0,6.2.2019,6.3.2019,103015,\nMathematics,Introduction to the Theory of Groups,104172,2,0,1,0,0,21.2.2019,15.3.2019,104166|104167,\nMathematics,Linear Algebra 2,104173,3,0,1,0,0,10.2.2019,6.3.2019,104166|104167,\nMathematics,Linear Algebra 2M,104174,3,0,1,0,0,12.2.2019,6.3.2019,104166|104167,\nMathematics,Differential Geometry,104177,3,0,1,0,0,15.2.2019,12.3.2019,104142&104171&104282|104142&104173&104282,\nMathematics,Undergraduate Seminar in Analysis 2,104182,2,0,0,0,0,,,104122&104142&104282&104285,\nMathematics,Undergraduate Seminar in Algebra 1,104183,2,0,0,0,0,,,104171&104172,\nMathematics,Introduction to Applied Mathematics,104192,3,0,0,0,0,7.2.2019,5.3.2019,104282&104285|104013&104285|104033&104285|104135&104282|104013&104135|104033&104135|104035&104282|104013&104035|104033&104035,104122&104215\nMathematics,Infinitesimal Calculus 1,104195,5,0,3,0,0,13.2.2019,10.3.2019,,\nMathematics,Complex Functions a,104215,2,0,1,0,0,14.2.2019,12.3.2019,104004|104013|104014|104020|104022|104032|104281104122104221,\nMathematics,Complex Functions and Integral Transform,104221,4,0,2,0,0,28.1.2019,26.2.2019,104013|104014|104022|104032|104281|104013,\nMathematics,Probability Theory,104222,3,0,1,0,0,31.1.2019,27.2.2019,104032|104281,\nMathematics,Partial Differen.Equa.and Fourier Series,104223,4,0,2,0,0,11.2.2019,6.3.2019,,\nMathematics,Partial Differential Equations/M,104228,3,0,2,0,0,18.2.2019,10.3.2019,103015&104004&104131|103015&104004&104135|103015&104004&104285|103015&104022&104131|103015&104013&104135|103015&104013&104285,\nMathematics,Topics in Math.for Architecture Students,104277,3,0,0,0,0,11.2.2019,7.3.2019,,\nMathematics,Introduction to Rings and Fields,104279,2,0,1,0,0,1.2.2019,1.3.2019,104172,\nMathematics,Modules, Rings and Groups,104280,3,0,0,0,0,1.2.2019,1.3.2019,104279\nMathematics,Infinitesimal Calculus 2,104281,5,0,2,0,0,5.2.2019,3.3.2019,104195,\nMathematics,Infinitesimal Calculus 3,104282,4,0,2,0,0,7.2.2019,5.3.2019,104173&104281|104032&104173,\nMathematics,Introduction to Numerical Analysis,104283,3,0,1,0,0,4.2.2019,3.3.2019,104281|104032,\nMathematics,Ordinary Differential Equations a,104285,3,0,1,0,0,10.2.2019,7.3.2019,104167&104281|104032&104167|104166&104281|104032&104166,\nMathematics,Combinatorics,104286,2,0,1,0,0,17.2.2019,10.3.2019,,\nMathematics,Set Theory,104290,3,0,1,0,0,28.1.2019,28.2.2019,,\nMathematics,Combinatorial Algorithms,104291,3,0,1,0,0,28.1.2019,1.3.2019,104286,\nMathematics,An Introduction to Fluid Mechanics,106101,3,0,0,0,0,,,58127196101,\nMathematics,Game Theory,106173,3,0,0,0,0,30.1.2019,27.2.2019,,\nMathematics,Lie Algebras,106306,3,0,0,0,0,13.2.2019,13.3.2019,104172&104173&104279|104016&104134&104279,\nMathematics,Advanced Probability,106349,3,0,0,0,0,,,106378|104165&104222,\nMathematics,Algebraic Topology,106383,3,0,0,0,0,,,104142|104142&104172&104173,\nMathematics,Calculus of Variations,106394,3,0,0,0,0,,,104013|104020|104022|104033|104282,\nMathematics,Topics in Algebra 1,106404,2,0,0,0,0,,,,\nMathematics,Partial Differential Equations,106413,3,0,0,0,0,,,104030&104165,\nMathematics,Topics in Operator Theory,106435,3,0,0,0,0,,,104276,\nMathematics,Differentiable Manifolds,106723,3,0,0,0,0,,,104172&104173&104282|104172&104282,\nMathematics,Selected Topics in Algebra 1,106931,3,0,0,0,0,,,,\nMathematics,Selected Topics in Algebra 2,106932,3,0,0,0,0,,,,\nMathematics,Functional Analysis,106942,3,0,0,0,0,,,104276,\nMathematics,Dynamical Systems 2 - Hyperbolic Theory,106970,3,0,0,0,0,,,,\nMathematics,Elements of Modern Analysis for Electrical Engineering,108324,2,0,1,0,0,,,104013|104020|104022|104033|104281,\nApplicable Math,Selected Topics in Applied Mathematics,197008,3,0,0,0,0,,,198008,\nApplicable Math,Selected Topics in Applied Mathematics 5,198014,2,0,0,0,0,,,,\nPhysics,Introductory Physics 1,113013,0,0,0,0,0,,,,\nPhysics,Introductory Physics 2,113014,0,0,0,0,0,,,113013,\nPhysics,Physics Lab. 1M,114020,1,0,0,3,0,,,114071|114074,\nPhysics,Physics Lab. 2M,114021,1,0,0,3,0,,,044102&114020&114076|044102&114018&114075|044102&114020&114075|044102&114018&114076,114086\nPhysics,Advanced Phys. Lab. 2 Mc,114030,1,0,0,3,0,,,044102&114020&114075,114073\nPhysics,Physics Lab. 1H,114032,1,0,0,3,0,,,114051|114071114018114020114081,\nPhysics,Physics Lab 2Mp,114034,3,0,0,3,3,,,044102&114020&114075|044102&114020&114076,\nPhysics,Physics Lab 3,114035,1,0,0,3,0,,,044102&114021&114075|044102&114034&114075|044102&114030&114075|044102&114021&114076|044102&114030&114076|044102&114034&114076,\nPhysics,Physics Lab 4Mh,114037,1,0,0,3,0,,,044102&114035,116217\nPhysics,Physics Lab. 3Mp,114038,3,0,0,3,3,,,044102&114021&114086|044102&114021&114086114035,\nPhysics,Physics 1,114051,2,0,1,0,0,28.1.2019,27.2.2019,113013,104003&104010&104018\nPhysics,Physics 2,114052,3,0,1,0,0,31.1.2019,26.2.2019,113014&114051|113014&114071|113014&114077,\nPhysics,Physics 3,114054,3,0,1,0,0,3.2.2019,1.3.2019,114052|114075,\nPhysics,Physics 1M,114071,3,0,1,0,0,28.1.2019,27.2.2019,113013,104010&104012&104195\nPhysics,Physics 3M,114073,3,0,1,0,0,14.2.2019,11.3.2019,104131&114075|104131&114076|104135&114075|104135&114076|104035&114075|104035&114076,104223\nPhysics,Physics 1P,114074,5,0,2,0,0,28.1.2019,27.2.2019,113013,104010&104012&104195\nPhysics,Physics 2Mm,114075,5,0,2,0,0,4.2.2019,28.2.2019,113014&114071,104013&104032&104035\nPhysics,Physics 1L,114077,2,0,2,0,0,28.1.2019,27.2.2019,,104003&104010&104012&104018\nPhysics,Physics 2L,114078,3,0,2,0,0,31.1.2019,26.2.2019,114051|114071|114077,104004\nPhysics,Physics Lab. 1,114081,1,0,0,3,0,,,114051|114071,\nPhysics,Physics Lab. 2,114082,1,0,0,3,0,,,044102&114052&114081|044102&114075&114081,114053&114073&124408\nPhysics,Waves,114086,3,0,1,0,0,4.2.2019,8.3.2019,104135&114076|104135&114075,104223\nPhysics,Analytical Mechanics,114101,4,0,2,0,0,19.2.2019,15.3.2019,104013&104135&114076|104013&104135&114075,\nPhysics,Lab. in Optical Measurement,114208,3,0,0,8,0,,,114027,\nPhysics,Report on Research Activity 1,114226,1,0,0,0,0,,,115203,\nPhysics,Report on Research Activity 2,114227,1,0,0,0,0,,,115203,\nPhysics,Project,114229,4,0,0,0,10,,,,115211\nPhysics,Physics 1R,114248,3,0,1,0,0,30.1.2019,27.2.2019,113013,\nPhysics,Physics Lab. 5T,114250,3,0,0,8,0,,,114035&114036&115203114026114027,\nPhysics,Physics Lab. 6T,114251,3,0,0,8,0,,,114027|114250114028114029,\nPhysics,Project T,114252,3,0,0,0,6,,,1.15211E+17,\nPhysics,Quantum Physics 2,115204,5,0,2,0,0,7.2.2019,5.3.2019,115203,\nPhysics,Laser Physics,116003,3,0,1,0,0,17.2.2019,12.3.2019,114210&115203,\nPhysics,Introduction to Biophysics,116029,3,0,1,0,0,,,114036,\nPhysics,Nuclear Astrophysics,116033,2,0,0,0,0,,,115204,\nPhysics,Computational Physics,116094,2,0,0,0,0,,,118094,\nPhysics,Statistic and Numerical Methods in Physics,116105,2,0,1,0,0,30.1.2019,1.3.2019,114075|114076,\nPhysics,Solid State Physics,116217,3,0,1,0,0,28.1.2019,27.2.2019,114036&115203,115204\nPhysics,Astrophysics and Cosmology,116354,3,0,1,0,0,11.2.2019,8.3.2019,114036&115203,\nPhysics,Non-Linearity and Chaos,117002,3,0,0,0,0,,,114036&114101,115204\nPhysics,Superconductivity and Superfluidity,117021,3,0,0,0,0,28.1.2019,27.2.2019,114036&116217,\nPhysics,Many-Body Theory,118018,3,0,0,0,0,,,118122&118129&118138,\nPhysics,Advanced Laboratory,118076,4,0,0,8,0,,,114028|114229|114251|114252,\nPhysics,Geometric Methods in Physics,118092,3,0,0,0,0,,,,\nPhysics,Topic in Theoretical Physics,118093,2,0,0,0,0,,,46241,\nPhysics,Selected Topics in Quantum Field Theory,118107,2,0,0,0,0,,,,\nPhysics,Statistical Mechanics of Polymer Systems,118113,2,0,0,0,0,,,118129,\nPhysics,Selected Topics in Theoretical Physics,118114,2,0,0,0,0,,,,\nPhysics,Electrodynamics,118120,3,0,1,0,0,,,114101&114246|044140&114101,\nPhysics,Quantum Mechanics 3,118122,3,0,1,0,0,7.2.2019,,114246&115204117007,\nPhysics,Statistical Mechanics 2,118129,3,0,1,0,0,19.2.2019,,1.14036E+11,\nPhysics,Quantum Field Theory 2,118133,3,0,1,0,0,,,1.18132E+17,\nPhysics,Graduate Solid State,118138,3,0,1,0,0,,,116217&118129,\nChemestry,Introductory Chemistry,123015,0,0,0,0,0,,,,\nChemestry,Chemistry for Physicists M,124107,4,0,1,1,0,1.2.2019,15.3.2019,115203,\nChemestry,Chemistry for Physicists,124108,3,0,1,0,0,1.2.2019,15.3.2019,115203,\nChemestry,Principles of Chemistry a,124117,3,0,1,1,0,14.2.2019,10.3.2019,,\nChemestry,Principles of Chemistry,124120,5,0,2,0,0,19.2.2019,13.3.2019,123015,\nChemestry,Chemistry of Transition Metals,124210,2,0,1,0,0,31.1.2019,1.3.2019,124120&124305|124115&124116&124305|124117&124118&124305124300,\nChemestry,Analytical Chemistry 1 Lab./ Extanded,124212,2,0,0,5,0,,,124220,\nChemestry,Analytical Chemistry 2 / Extanded,124213,1,0,1,0,0,,,124220|125101124103,\nChemestry,Analytical Chemistry 2 Lab./ Extanded,124214,2,0,0,6,0,,,124212|125102,\nChemestry,Inorganic Chemistry,124305,2,0,1,0,0,17.2.2019,15.3.2019,124115&124116|124114|124117&124118124300124707,\nChemestry,Research Project in Chemistry,124353,4,0,0,9,0,,,124416&124605|124711&124911,\nChemestry,Special Research Project in Chemistry,124355,6,0,0,0,5,,,,\nChemestry,Introduction to Research in Chemistry,124356,2,0,0,0,0,,,124408&124415&124708,\nChemestry,Quantum Chemistry 1,124400,5,0,2,0,0,7.2.2019,5.3.2019,104004&104131&114052&124117&124118|104004&104131&114078&124117&124118|104004&104131&114052&124115&124116|104004&104131&114052&124120|104004&104131&114078&124120,\nChemestry,Physical Chem.-Chemical Thermodynamics,124415,4,0,2,0,0,29.1.2019,27.2.2019,104004&104131&114052&124117&124118|104004&104131&114078&124117&124118|104004&104131&114078&124120|104004&104131&114052&124120,124400&124408\nChemestry,Electromagnetism and Matter,124416,2,0,1,0,0,7.2.2019,13.3.2019,104004&114052,124400&124408&124415&127427\nChemestry,Physical Chemistry 1B,124503,2,0,1,0,0,3.2.2019,4.3.2019,104003&104004&124120|104003&104004&124114|104003&104004&125001|104003&104004&125011,\nChemestry,Physical Chemistry,124510,4,0,2,0,0,3.2.2019,1.3.2019,104090&125001|104090&125011|104090&124120,\nChemestry,Physical Chemistry Lab. 1,124601,2,0,0,5,0,,,054215|124415,\nChemestry,Physical Chemistry Lab. 2 for Chemists,124605,2,0,0,6,0,,,124408&124413&124414&124415&124417&124610|124408&124413&124414&124415&124417&124601|124400&124413&124414&124415&124417&124610|124400&124413&124414&124415&124601,\nChemestry,Phys Chem Lab for Materials Engineering,124608,2,0,0,6,0,,,124400&124413&124414&127427124601,\nChemestry,Introduction Lab. in Chemical Physics,124611,1,0,0,4,0,,,114051&114052&124118&124220|114077&114078&124118&124220,\nChemestry,Structure and Activity in Organic Chem.,124703,2,0,1,0,0,19.2.2019,15.3.2019,124414&124711&124911,\nChemestry,Organic Chemistry 1/ Extanded,124708,5,0,2,0,0,11.2.2019,12.3.2019,124114|124117|124118|124120|125001|125011,\nChemestry,Organic Chemistry 2 / Extanded,124711,4,0,2,0,0,,,124708|124801|125801124709124710125802,\nChemestry,Organic Chemistry Lab 1,124911,3,0,0,8,0,,,124708,\nChemestry,Organic Chemistry Lab. 2M,124912,3,0,0,8,0,,,124711&124911,\nChemestry,General Chemistry,125001,3,0,2,0,0,14.2.2019,11.3.2019,,\nChemestry,General Chemistry Laboratory,125013,0,0,0,3,0,,,125001,\nChemestry,Analytical Chemistry Lab.1 for Engineers,125102,2,0,0,5,0,,,125101,\nChemestry,Analytical Chem. Lab 1 for Biochem.Eng.,125105,1,0,0,3,0,,,125101,\nChemestry,Advanced Environmental Laboratory Monitoring,126302,2,0,0,4,0,,,124214,\nChemestry,Advanced Laboratory of Organometallic Chemistry,126303,3,0,0,8,0,,,124210|124305,\nChemestry,Advanced Physical Chemistry Laboratory,126600,3,0,0,8,0,,,124416&124417&124605,124414\nChemestry,Advanced Experimental Physical Chemistry,126602,3,0,0,0,0,5.2.2019,3.3.2019,124400|124408|124413&124417,\nChemestry,Advanced Organic Chemistry Laboratory,126901,3,0,0,8,0,,,124902,\nChemestry,Organic and Physical Chemistry Laboratory,126902,3,0,0,8,0,,,124601|124610&124703,\nChemestry,Solid State for Chemists (Extended),127427,3,0,1,0,0,28.1.2019,27.2.2019,124413&124416&124417,\nChemestry,Experimental Methods in Surface Sciences,127433,2,0,0,0,0,,,,\nChemestry,Structure Determination by Physical Methods,127730,2,0,1,0,0,3.2.2019,28.2.2019,124711&124911124301,\nChemestry,Carbohydrate Chemistry and Biochemistry,127731,2,0,1,0,0,8.2.2019,18.3.2019,124708&124711,\nChemestry,Organic Chemistry 3 Expanded,127738,3,0,1,0,0,13.2.2019,12.3.2019,124711,\nChemestry,Advanced Research Methods 1,128007,2,0,0,0,5,,,,\nChemestry,Advanced Research Methods 2,128008,2,0,0,0,5,,,,\nChemestry,Advanced Retrosyntetic Analysis,128718,2,0,0,0,0,30.1.2019,6.3.2019,124708&124711&126700|124708&124710&126700127732,\nChemestry,Chemistry in Drug Discovery,128719,2,0,0,0,0,,,124708|125801|125802,\nBiology,Introduction to Fauna and Flora a,134014,2,0,0,4,0,,,134040&134058&134111,\nBiology,Introduction to Biochemistry and Enzymology,134019,2,0,1,0,0,14.2.2019,11.3.2019,124114&134058|124114&134127|125011&134058|124120&134058,124708&125801\nBiology,General Genetics,134020,3,0,1,0,0,10.2.2019,6.3.2019,134058|134127,134144\nBiology,Research Project in Biology,134049,4,0,0,12,0,,,,\nBiology,Biology 1,134058,3,0,0,0,0,11.2.2019,8.3.2019,,\nBiology,Developmental Biology,134069,2,0,1,0,0,12.2.2019,13.3.2019,134116&134119|134119&134128,\nBiology,The Marine System of the Gulf of Eilat,134076,3,0,2,3,0,,,,\nBiology,Molecular Biology,134082,2,0,1,0,0,14.2.2019,18.3.2019,125801&134019&134020|124708&134020&134067|125801&134020&134067|124708&134019&134020,134113\nBiology,Zoology,134111,3,0,0,0,0,18.2.2019,11.3.2019,134058,\nBiology,Metabolic Pathways,134113,3,0,1,0,0,21.2.2019,15.3.2019,125801&134019|125801&134067|124708&134019|124708&134067,\nBiology,Seminar in Biology 1,134123,2,0,0,0,4,,,,\nBiology,Topics in Biology,134127,2,0,0,0,0,11.2.2019,13.3.2019,,\nBiology,Laborratory of the Animal Kingdom,134134,1,0,0,5,0,,,,134111\nBiology,Molecular Genetics Laboratory,134142,2,0,0,5,0,,,134020,134082&134120\nBiology,The Science of Drugs,134145,2,0,0,0,0,,,134019&134058&134082|134019&134058&134082,\nBiology,Metabolism and Human Disease,134147,2,0,0,0,0,14.2.2019,12.3.2019,134113&134117&134128,\nBiology,Endocrinology,134155,2,0,1,0,0,17.2.2019,11.3.2019,134082&134119&134128,\nBiology,Molecular Biophysics,134156,3,0,0,0,0,29.1.2019,27.2.2019,104092&114004&124510&134082|054215&104004&114052&134082|114078&124510&134082,\nBiology,Sensory Pathways of Microorganisms,136022,2,0,0,0,0,,,064419|134121|274331,\nBiology,Computational Modelling in Biology,136042,2,0,1,0,0,,,104004|104019|234127138042,\nBiology,Molecular Genetics of Man,136088,3,0,0,0,0,10.2.2019,8.3.2019,134020&134082&134119,\nBiology,Structures and Design in Biomacromolecules,136093,2,0,0,0,0,,,124510&134113|124510&134019,134020\nBiology,Biological Machines,138021,2,0,0,0,0,,,134113|134019&134028|134019&134113,\nBiology,Microbial Ecology,138023,2,0,0,0,0,,,064419|134121,\nBiology,Cellular Response to Dna Damage,138034,2,0,0,0,0,,,134020&134119&134128136036,\nBiology,Advanced Protein Structure and Function,138039,5,0,0,6,0,,,134019&134082&134113&134114&134128,\nArcihetechture,Introduction to Landscape Arch,204000,2,0,0,0,0,7.2.2019,3.3.2019,,\nArcihetechture,Landscape Construction 1,204005,3,0,3,0,0,,,,\nArcihetechture,History of Landscape Architecture 1,204090,3,0,0,0,0,19.2.2019,12.3.2019,,\nArcihetechture,Plants in Landscape 2#Basics of Design,204202,3,0,4,0,0,,,204203,\nArcihetechture,Introduction to Gis,204204,3,0,2,0,0,14.2.2019,28.2.2019,,\nArcihetechture,Landscape Construction 3 - Final Project,204403,4,0,0,0,4,,,204401,\nArcihetechture,Theory of Structure for Landscape Arch.,204406,3,0,2,0,0,,,,\nArcihetechture,Landscape Architecture Studio 20,204621,5,0,0,0,10,,,204620,\nArcihetechture,Landscape Architecture Studio 04,204623,5,0,0,0,10,,,204622,\nArcihetechture,Landscape Architecture 60,204625,5,0,0,0,10,,,204624,\nArcihetechture,Research in Landscape Architecture,204626,2,0,0,0,2,,,204403&204625,\nArcihetechture,Special Project 5 a,204714,2,0,0,0,3,,,,\nArcihetechture,Selected Topics/Special Project in Landscape Architecture 55B,204720,2,0,1,0,0,3.2.2019,28.2.2019,,\nArcihetechture,Field Trip in Landscape Architecture 2,204723,1,0,2,0,0,,,,\nArcihetechture,Introduction to Conservation,205000,2,0,0,0,0,,,,\nArcihetechture,Int.to Arch.and Cultural His.of Mankind,205012,3,0,2,0,0,19.2.2019,14.3.2019,,\nArcihetechture,Intro to the Disciplines of Space,205013,2,0,0,0,0,,,,\nArcihetechture,Special Project 5a,205014,2,0,2,0,0,,,,\nArcihetechture,History of Architecture in Modern Times,205017,3,0,2,0,0,6.2.2019,28.2.2019,205102,\nArcihetechture,Morphology 1,205071,3,0,2,0,0,,,,\nArcihetechture,Arch.as Related to the Hist. of Art,205096,2,0,0,0,0,,,,\nArcihetechture,Architec. History and Theory Ww2-Present,205104,4,0,2,0,0,,,205103,\nArcihetechture,Issues in Urban Sociology,205152,2,0,0,0,0,19.2.2019,12.3.2019,,\nArcihetechture,Erudition# Space and Text,205162,3,0,2,0,0,,,,\nArcihetechture,Introduction to Urban Design,205257,3,0,2,0,0,,,,205667\nArcihetechture,Mini Design Studio a,205304,3,0,4,0,0,,,,\nArcihetechture,Building Technologies 2,205427,3,0,2,0,0,,,205426,\nArcihetechture,Technology and Structures Workshop 2a,205435,2,0,3,0,0,,,205427&205460,\nArcihetechture,Structural Design 1,205458,3,0,2,0,0,14.2.2019,7.3.2019,,\nArcihetechture,Structural Design 2,205459,3,0,2,0,0,13.2.2019,7.3.2019,205458,\nArcihetechture,Climate and Energy in Architecture,205492,3,0,2,0,0,,,114014,\nArcihetechture,Light and Lighting,205501,2,0,2,0,0,,,114014|205652,\nArcihetechture,Safety and Accessibility in Built Env.,205510,2,0,0,0,0,,,2.0549E+11,\nArcihetechture,Spatial and Building Economics,205571,2,0,2,0,0,19.2.2019,12.3.2019,,\nArcihetechture,Special Project 1a,205616,5,0,0,0,8,,,,\nArcihetechture,Special Project 3B,205621,3,0,0,0,5,,,,\nArcihetechture,Special Project 3C,205622,3,0,0,0,5,,,,\nArcihetechture,Special Project 4C,205625,2,0,0,0,4,,,,\nArcihetechture,Interior Design & Furniture 2,205627,2,0,4,0,0,,,205251,\nArcihetechture,Comprehensive Design 7,205659,5,0,0,0,10,,,205658,205301\nArcihetechture,Design Studio 1,205665,5,0,0,0,10,,,,\nArcihetechture,Design Studio 3,205667,5,0,0,0,10,,,205666,\nArcihetechture,Topics Related to Architecture Design,205701,2,0,2,0,0,,,,\nArcihetechture,Topics Related to Computer Aided Design,205718,2,0,2,0,0,,,,\nArcihetechture,Special Topics in Architecture 3G,205720,1,0,0,0,0,,,,\nArcihetechture,Special Topics in Architecture 3J,205726,1,0,2,0,0,,,,\nArcihetechture,Architectural Graphics,205813,2,0,2,0,0,,,205641,\nArcihetechture,Media Workshops 1C,205819,1,0,2,0,0,,,205922,\nArcihetechture,Media Workshops 2a,205824,1,0,2,0,0,,,205923,\nArcihetechture,Media Workshops 2C,205826,1,0,2,0,0,,,205923,\nArcihetechture,Media Workshops 2E,205828,1,0,2,0,0,,,205923,\nArcihetechture,Basic Design 4,205873,3,0,0,0,4,,,205884,\nArcihetechture,Experimental Art 1,205874,2,0,0,0,3,,,,\nArcihetechture,Basic Design 5,205877,3,0,0,0,4,,,205884,\nArcihetechture,Basic Design 1a,205878,3,0,4,0,0,,,,\nArcihetechture,Observing, Modeling and Representing 1,205922,2,0,2,0,0,,,\nArcihetechture,Construction Project Management,205930,2,0,0,0,0,,,205456,\nArcihetechture,Seminar in Creative Design Methods,206001,3,0,0,0,0,,,,\nArcihetechture,Interactive Media in Design,206060,3,0,2,0,0,,,207930,\nArcihetechture,Critical Perspectives in Post Wwii Architecture,206100,3,0,0,0,0,,,,\nArcihetechture,Thematic Studio - Integrative,206171,5,0,0,0,10,,,205654,\nArcihetechture,Thematic Studio-Sustainable Architecture,206172,5,0,0,0,10,,,205654,\nArcihetechture,Thematic Studio - Conservation,206173,5,0,0,0,10,,,205654,\nArcihetechture,Thematic Studio - Urban Design,206174,5,0,0,0,10,,,205654,\nArcihetechture,Thematic Studio - Htc,206175,5,0,0,0,10,,,205654,\nArcihetechture,Thematic Studio Digital Architecture,206176,5,0,0,0,10,,,205654,\nArcihetechture,Climatological Aspects of Building Design,206564,3,0,0,0,0,,,,\nArcihetechture,Seminar in Evaluation of Sustainable Architectural Design.,206570,3,0,0,0,0,,,,\nArcihetechture,Project in Green Architecture,206573,4,0,2,0,0,,,,\nArcihetechture,Theories of Digital Architecture,206808,3,0,0,0,0,,,,\nArcihetechture,The History of Industrial Design 1,206820,3,0,0,0,0,,,,\nArcihetechture,History and Theory in Industrial Design2,206825,3,0,0,0,0,,,208341,\nArcihetechture,Design of the Virtual Space,206830,3,0,0,0,0,,,,\nArcihetechture,Selected Topics in Industrial Design 6,206832,3,0,0,0,0,,,,\nArcihetechture,Parametric Design in Digital Architectur,206841,3,0,0,0,0,,,,\nArcihetechture,Computer Aided Design 2,206911,3,0,0,2,0,,,206910,\nArcihetechture,Philosophical Topics in Architectural Context,206940,3,0,0,0,0,,,,\nArcihetechture,Technology and Wood and Metal Conservation,206946,3,0,0,0,0,,,,\nArcihetechture,Legal and Policy Tools in Planning,206963,2,0,0,0,0,13.2.2019,10.3.2019,205301,\nArcihetechture,Sepcial Topics in Conservation 1,206991,3,0,0,0,0,,,,\nArcihetechture,Planning Theories,207001,3,0,0,0,0,19.2.2019,4.3.2019,,\nArcihetechture,Introduction to Gis for Planners,207020,3,0,2,0,0,14.2.2019,6.3.2019,209020,\nArcihetechture,Ecological Principles in City and Regional Planning,207041,3,0,0,0,0,,,209270,\nArcihetechture,Land Use Planning - Principles and Quantification,207070,3,0,0,0,0,6.2.2019,5.3.2019,,\nArcihetechture,Regional and Metropolitan Planning# Selected Topics,207080,2,0,0,0,0,,,,\nArcihetechture,Introduction to Environmental Planning,207090,2,0,0,0,0,,,208090,\nArcihetechture,Urban and Regional Geography,207342,2,0,0,0,0,12.2.2019,14.3.2019,,\nArcihetechture,Fundamentals of Urban Design,207343,3,0,0,0,0,,,,\nArcihetechture,Housing Planning and Design,207420,3,0,0,0,0,,,,\nArcihetechture,Planning with the Community# Concepts, Tools and Strategies for Action,207440,3,0,0,0,0,,,\nArcihetechture,Landscape Architecture in Israel,207457,3,0,0,0,0,,,204000|204002,\nArcihetechture,Selected Topics in Landscape Architecture 3,207464,3,0,2,0,0,,,,\nArcihetechture,Transportation Planning for Planners,207600,3,0,2,0,0,,,,\nArcihetechture,Studio 1: Urban Planning,207700,4,0,4,0,0,,,,\nArcihetechture,Quantitative Thinking and Statistics,207800,3,0,2,0,0,10.2.2019,13.3.2019,,\nArcihetechture,Economic Thinking for Planners,207804,3,0,2,0,0,,,,\nArcihetechture,Green Infrastructures,207830,2,0,1,0,0,,,,\nArcihetechture,Industrial Design Studio 1,208310,3,0,4,0,0,,,,\nArcihetechture,Special Project in Industrial Design 2,208348,2,0,0,0,0,,,,\nArcihetechture,Advancefd Topics in Urban and Regional Planning 5,209032,3,0,0,0,0,,,,\nArcihetechture,The Outline Plan as a Spatial Tool,209037,2,0,0,0,0,,,,\nArcihetechture,Urban Economics,209050,3,0,2,0,0,29.1.2019,3.3.2019,,\nArcihetechture,General and Urban Sociology,209100,2,0,0,0,0,4.2.2019,11.3.2019,207200,\nArcihetechture,Spatial Planning and Social Policies,209250,3,0,0,0,0,,,207950,\nArcihetechture,Advanced Seminar for Urban and Regional Planning,209300,2,0,0,0,2,,,,\nEducation in Science and Technology,Educational-Scientific Clinic 1,214094,1,0,3,0,0,,,3.20101E+11,\nEducation in Science and Technology,Teaching Skills,214103,3,0,2,0,0,,,,\nEducation in Science and Technology,Learning in Hi-Tech and Academia,214115,2,0,0,0,0,,,104003&104004&104167&234111|104003&104004&104167&234112,\nEducation in Science and Technology,Exposure to Sci-Tech Education Research,214116,1,0,0,0,0,,,,\nEducation in Science and Technology,Int. to Education in Science and Tech.1,214117,4,0,3,0,0,29.1.2019,11.3.2019,,\nEducation in Science and Technology,Algebra in Junior High Schools,214206,3,0,2,0,0,,,104010|104195,\nEducation in Science and Technology,Methods of Teaching Env. Science 1,214216,3,0,2,0,0,,,,\nEducation in Science and Technology,Practicum in Mathmatics Teaching,214235,4,0,0,0,0,,,214103&214208|214103&214209,\nEducation in Science and Technology,School Practicum - Physics,214300,2,0,1,6,6,,,214301|214302,\nEducation in Science and Technology,School Practicum-Chemistry,214410,2,0,1,6,6,,,214401|214402,\nEducation in Science and Technology,\"School Prac.-Teaching Sc.and Technol\"\"\",214411,2,0,1,0,6,,,214301|214302|214401|214402|214501|214502|214408&214607,\nEducation in Science and Technology,School Practicum-Biology and Environment,214510,2,0,1,6,6,,,134058&134117&136007&214501&216500|134111&134128&134133&214502&214600,\nEducation in Science and Technology,Teaching Sci. Techn. in Jun. High School,214607,3,0,2,0,0,,,134010|134058,214097\nEducation in Science and Technology,School Practicum - Electronics,214610,2,0,1,6,6,,,214602,\nEducation in Science and Technology,Methods of Teaching Technology-Mechanics,214701,3,0,2,0,0,,,,\nEducation in Science and Technology,School Practicum - Technology-Mechanics,214709,2,0,1,6,6,,,214701|214702,\nEducation in Science and Technology,Didactics of Computer Science - 3 Point Level,214901,3,0,2,0,0,,,234111|234114|234117,\nEducation in Science and Technology,School Practicum - Computer Science,214905,2,0,1,6,6,,,214901|214902,\nEducation in Science and Technology,Learning and Behavioral Difficulties,216003,2,0,0,0,0,,,,\nEducation in Science and Technology,Developments in Physics Education,216004,3,0,2,0,0,,,114052&114074&114075|114052&114071&114075|114051&114052&114075,\nEducation in Science and Technology,Effective Creative Thinking,216008,2,0,1,0,0,,,214103|214117|214118,\nEducation in Science and Technology,Quantitative Research Methods in Education,216009,3,0,2,0,0,22.1.2019,,,\nEducation in Science and Technology,The Web as a Learning Environment,216101,2,0,1,0,0,,,218146,\nEducation in Science and Technology,Seminar on Research in Science Teaching,216102,2,0,0,0,2,,,218101,\nEducation in Science and Technology,Science Teaching in Relation to Tech.,216110,2,0,0,0,0,,,114004|114052|114075218117,\nEducation in Science and Technology,Advanced Workshop in High School Mathematics,216112,2,0,0,0,0,,,214208&214209&214233218112,\nEducation in Science and Technology,Practicum-Practicing Science Teaching with Action Research,216126,2,0,2,0,0,,,214223|214224|214303|214903,\nEducation in Science and Technology,Advanced Issues in Design and Production,216144,3,0,2,0,2,,,214702|214701,\nEducation in Science and Technology,Advanced Issues in Teaching Chemistry,216400,3,0,2,0,0,,,214103&214401,\nEducation in Science and Technology,Advanced Issues in Teaching Biology,216500,3,0,2,0,0,,,214113&214501,\nEducation in Science and Technology,Neurocognitive Development in Children,218005,2,0,0,0,1,,,,\nEducation in Science and Technology,Project in Curriculum Development in Biology,218135,3,0,0,3,6,,,218120,\nEducation in Science and Technology,Qualitative Research Methods in Education,218322,2,0,1,0,0,,,,\nComputer Science,Introduction to Computer Science,234111,4,0,2,2,0,19.2.2019,14.3.2019,,\nComputer Science,Programming )C(,234112,4,0,2,2,0,19.2.2019,14.3.2019,,\nComputer Science,Introduction to Computer Science,234114,4,0,2,2,0,19.2.2019,14.3.2019,,\nComputer Science,Introduction to Computer Science H,234117,4,0,2,2,0,19.2.2019,14.3.2019,,\nComputer Science,Computer Organization and Programming,234118,3,0,1,1,0,17.2.2019,13.3.2019,044252&234124|234124&234252,\nComputer Science,Operating Systems,234123,4,0,2,3,6,21.2.2019,15.3.2019,234218,234118\nComputer Science,Introduction to Systems Programming,234124,4,0,2,0,2,13.2.2019,8.3.2019,234114|234117|234111|234128|234221,\nComputer Science,Numerical Algorithms,234125,3,0,2,0,0,5.2.2019,28.2.2019,104167&234114|104016&234114|104166&234114,104013&104032&104281\nComputer Science,Introduction to Computer-C (En),234126,4,0,2,2,0,,,,\nComputer Science,Introduction to Computing with Matlab,234127,4,0,2,2,0,5.2.2019,7.3.2019,,\nComputer Science,Int. to Set Theory and Automata for Cs,234129,3,0,1,0,1,15.2.2019,12.3.2019,,\nComputer Science,Combinatorics for Cs,234141,3,0,1,0,0,31.1.2019,11.3.2019,104012&104167|104167&104195|104031&104167|104012&104166|104166&104195|104031&104166|104016&104031|104012&104016|104016&104195,\nComputer Science,Data Structures 1,234218,3,0,1,1,0,19.2.2019,13.3.2019,234122&234141|234124&234141|104286&234122|104286&234124,94412\nComputer Science,Introduction to Computer Science N,234221,4,0,2,2,0,19.2.2019,14.3.2019,,\nComputer Science,Reading Course 1,234230,2,0,0,0,6,,,,\nComputer Science,Introduction to Algorithms,234247,3,0,1,0,0,28.1.2019,27.2.2019,234141&234218,\nComputer Science,Logic Design,234262,3,0,1,0,0,3.2.2019,3.3.2019,044145|234145,234118&234141\nComputer Science,Computer Architecture,234267,3,0,1,0,0,,,234118,\nComputer Science,Project 2 in Computer Science,234291,1,0,0,0,3,,,,\nComputer Science,Logic and Set Theory for Cs,234293,4,0,2,0,0,11.2.2019,8.3.2019,234114&234145|044145&234114|234117&234145|044145&234117|234111&234145|044145&234111,\nComputer Science,Yearly Project in Software Eng.-Stage a,234311,3,0,0,0,4,,,236703,\nComputer Science,Industrial Project,234313,3,0,0,0,6,,,,\nComputer Science,Programming Languages,234319,3,0,2,0,0,,,234122|234124,234218\nComputer Science,Computer Graphics 1,234325,3,0,1,0,0,12.2.2019,10.3.2019,044268|234218,\nComputer Science,Project in Computer Graphicsh,234326,3,0,0,0,3,,,234325,\nComputer Science,Project in Image Processing and Analysis,234329,4,0,0,0,12,,,046200|046345|234325|236327|236860|236861|236873,\nComputer Science,Signal, Image and Data Processing,236200,4,0,2,0,0,5.2.2019,28.2.2019,094412&234125\nComputer Science,Computer Architecture,236267,3,0,1,0,1,12.2.2019,10.3.2019,234218,\nComputer Science,Constructive Computer Architecture,236268,3,0,1,0,1,29.1.2019,28.2.2019,046267|234267,\nComputer Science,Introduction to Coding Theory,236309,3,0,1,0,0,29.1.2019,14.3.2019,104134|104279,\nComputer Science,Formal Language Theory,236310,3,0,1,0,0,6.2.2019,3.3.2019,236343&236353|234129&236343,\nComputer Science,Programming Languages,236319,3,0,2,0,0,28.1.2019,27.2.2019,234122|234124,234218\nComputer Science,Information Storage Systems,236322,3,0,1,0,1,10.2.2019,7.3.2018,234123&234218,094412&104034\nComputer Science,Project in Data Processing,236323,3,0,0,0,3,,,236363,\nComputer Science,Project in Computer Graphics M,236328,3,0,0,0,3,,,234325,\nComputer Science,Computability and Definability,236331,3,0,1,0,0,,,234293&236343,\nComputer Science,The Internet of Things (Iot) - Technologies and Implementations,236332,2,0,0,0,0,30.1.2019,27.2.2019,,236333\nComputer Science,Project in the Internet of Things,236333,3,0,2,0,4,,,234122&234262|234124&234252|044252&234124,236332\nComputer Science,Introduction to Computer Networks,236334,3,0,1,0,0,1.2.2019,4.3.2019,094412&234247|104034&234247,\nComputer Science,Project in Computer Communication,236340,3,0,0,0,3,,,236334,\nComputer Science,Introduction to Software Verification,236342,3,0,1,0,1,1.2.2019,5.3.2019,234292|234293,\nComputer Science,Theory of Computation,236343,3,0,1,0,0,18.2.2019,12.3.2019,234247,\nComputer Science,Project in Information Security,236349,3,0,0,0,3,,,236350,\nComputer Science,Computer Security,236350,3,0,1,0,0,8.2.2019,3.3.2019,234123,\nComputer Science,Distributed Systems,236351,3,0,1,0,2,1.2.2019,10.3.2019,234123&236334&236370,\nComputer Science,Automata and Formal Languages,236353,3,0,1,2,0,6.2.2019,4.3.2019,234293|104290&106156,104291&234247\nComputer Science,Theory of Compilation,236360,3,0,1,0,0,28.1.2019,26.2.2019,234129|236353|104290&106156,\nComputer Science,Database Systems,236363,3,0,1,0,0,1.2.2019,3.3.2019,234292|234293,\nComputer Science,Project in Operating Systems,236366,3,0,0,0,3,,,234123,\nComputer Science,Parallel and Distributed Programming,236370,3,0,1,0,0,12.2.2019,10.3.2019,234123,\nComputer Science,Project in Parallel/Distributed Programming,236371,3,0,0,0,3,,,,\nComputer Science,Principles of Managing Uncertain Data,236378,2,0,0,0,0,,,236363,\nComputer Science,Project in Vlsi B,236381,4,0,0,0,8,,,044252|044262|234252|234262,\nComputer Science,Project in Firewalls,236499,3,0,0,0,3,,,236350,\nComputer Science,Cryptanalysis,236500,3,0,1,0,1,18.2.2019,15.3.2019,236506,\nComputer Science,Introduction to Artificial Intelligence,236501,3,0,1,0,0,15.2.2019,15.3.2019,234218&234247&234293|234218&234247&234292,\nComputer Science,Project in Computer Science Advanced Programming 1,236503,3,0,0,0,7,,,,\nComputer Science,Project in Software,236504,3,0,0,0,6,,,,\nComputer Science,Cryptography and Complexity,236508,2,0,0,0,0,29.1.2019,,236343&236506,\nComputer Science,Approximation Algorithms,236521,2,0,0,0,0,19.2.2019,15.3.2019,234247&236343,\nComputer Science,Introduction to Bioinformatics,236523,2,0,1,0,0,,,134058&234111|134127&234111|134058&234112|134127&234112|134058&234114|134127&234114,\nComputer Science,Project in Bioinformatics,236524,3,0,0,0,3,,,236522&236523|234523&236522|134020&134058&234218|234525&236522,\nComputer Science,Project in Cs Advanced Programming 2,236526,3,0,0,0,7,,,,\nComputer Science,Advanced Topics in Computer Sciences 1,236601,2,0,0,0,0,7.2.2019,7.3.2019,,\nComputer Science,Advanced Topics in Computer Sciences 2,236602,2,0,0,0,0,,,,\nComputer Science,Advanced Topics in Computer Science 3,236603,2,0,0,0,0,30.1.2019,27.2.2019,,\nComputer Science,Advanced Topics in Computer Science 5,236605,3,0,1,0,0,,,,\nComputer Science,Advanced Topics in Computer Science 6,236606,3,0,1,0,0,,,,\nComputer Science,Advanced Topics in Computer Science 7,236607,3,0,1,0,0,13.2.2019,13.3.2019,,\nComputer Science,Advanced Topics in Computer Science 8,236608,3,0,1,2,0,,,,\nComputer Science,Advanced Topics in Algorithms L,236620,2,0,0,0,0,,,,\nComputer Science,Advanced Topics in Computer Graphics L,236628,2,0,0,0,0,,,,\nComputer Science,Advanced Topics in Computer Communication Networks L,236634,2,0,0,0,0,,,,\nComputer Science,Advanced Topics in Theoretical Computer Science L,236646,2,0,0,0,0,,,,\nComputer Science,Advanced Topics in Information Security L T,236653,3,0,1,0,1,29.1.2019,28.2.2019,,\nComputer Science,Object-Oriented Programming,236703,3,0,2,0,0,1.2.2019,12.3.2019,234319,\nComputer Science,Computational Geometry,236719,3,0,1,0,1,,,234218,\nComputer Science,Project in Intelligent Systems,236754,3,0,0,0,3,,,236327|236373|236501|236716|236860|236861|236873|236927,\nComputer Science,Introduction to Machine Learning,236756,3,0,1,2,0,11.2.2019,6.3.2019,234125&236501046195,\nComputer Science,Project in Machine Learning,236757,3,0,0,0,3,,,236756,\nComputer Science,Algorithms for Dynamic Memory Management,236780,2,0,0,0,0,3.2.2019,5.3.2019,234123&234247,\nComputer Science,Multigrid Methods,236790,2,0,0,0,0,,,234107|234125,\nComputer Science,Seminar in Computer Science 1,236801,2,0,0,0,0,,,,\nComputer Science,Seminar in Algorithms,236813,2,0,0,0,0,,,,\nComputer Science,Seminar in Bioinformatics,236818,2,0,0,0,0,,,,\nComputer Science,Project in Computer Systems,236828,3,0,0,0,6,,,046209|234123,\nComputer Science,Digital Image Processing,236860,3,0,1,0,1,,,044130|236200|236327046200,\nComputer Science,Geometric Computer Vision,236861,3,0,1,0,1,13.2.2019,11.3.2019,104013&234247|044198&104013|104032&234247|044198&104032|104281&234247|044198&104281,\nComputer Science,Sparse Representations and Applications in Signal and Image Processing,236862,3,0,0,0,0,,,234125&236860|046200&234125,\nComputer Science,Computer Vision,236873,3,0,1,0,1,19.2.2019,13.3.2019,046200|236327,\nComputer Science,Project in Computer Vision,236874,3,0,0,0,4,,,236327|236873,\nComputer Science,Introduction to Robotics,236927,3,0,1,0,0,8.2.2019,3.3.2019,234218&234247035001,\nComputer Science,Introduction to Quantum Information Processing,236990,3,0,1,0,2,12.2.2019,8.3.2019,114073|115203|124400|104122&114071|114071&234262|114071&234247,\nMedicine,Introduction to Macroscopic and Microscopic Anatomy,274001,2,0,0,0,0,31.1.2019,13.3.2019,,\nMedicine,Introducion to Laboratory Medicine,274070,3,0,1,0,0,17.2.2019,14.3.2019,134006&134016&134029&274002,\nMedicine,General Pathology - Laboratory Medicine,274073,3,0,0,0,0,7.2.2019,6.3.2019,134029&274071,\nMedicine,Clinical Laboratory Skills,274075,0,0,0,0,0,,,274070&274072&274073&274328&274331&274332&274340&276310&276413,\nMedicine,Introduction to Emergency Medicine,274109,2,0,0,3,0,14.2.2019,10.3.2019,,\nMedicine,General and Clinical Biochemistry(Teams),274126,3,0,1,0,0,10.2.2019,4.3.2019,,274112&274226&274227\nMedicine,Behavioral Sci.and Medical Profe(Teams),274136,2,0,0,0,0,,,,\nMedicine,\"Medical Science# Analysis of Signals and Systems a\"\"\",274138,4,0,2,0,0,4.2.2019,3.3.2019,,\nMedicine,Clinical Tuesday - Being a Doctor 1,274142,2,0,0,6,0,,,,\nMedicine,Biophysics and Neuroscience (Teams),274168,6,0,0,2,0,28.1.2019,15.3.2019,,\nMedicine,Anatomy and Embryology 1  (Teams),274169,6,0,1,4,0,5.2.2019,8.3.2019,,\nMedicine,Cell Structure and Function (Teams),274171,2,0,0,0,0,15.2.2019,27.2.2019,,\nMedicine,Intro.to Clinical Medicine (Teams),274173,0,0,0,0,0,12.2.2019,,,\nMedicine,Pharmacology (Teams),274175,3,0,2,0,0,29.1.2019,,274124&274214&274228&274229&274303|274323&274324&274325&274328&276310,\nMedicine,Pathology ( Teams ),274176,0,0,0,0,0,31.1.2019,20.2.2019,274216,274177&274321&274343\nMedicine,Neurology (Teams),274178,4,0,0,0,0,,,274500|274505,\nMedicine,Specialty Career Rotation (Teams),274179,2,0,0,0,0,,,,\nMedicine,Advanced Clinical Elective (American Pr),274180,0,0,0,0,0,,,274178&274509&274523&274534&274536&274602&274604,\nMedicine,Epidemiology (Teams),274181,3,0,2,0,0,31.1.2019,6.3.2019,,\nMedicine,Histology (Teams),274216,4,0,0,3,0,19.2.2019,12.3.2019,2.74112E+17,\nMedicine,Biostatistics,274219,2,0,2,0,0,11.2.2019,7.3.2019,,\nMedicine,Being a Doctor-Exposure to the Medical P,274234,1,0,0,2,0,,,274132,\nMedicine,Clinical Biochemistry Lab.,274237,1,0,1,2,0,,,274238|274241,276310\nMedicine,Microbiology (Teams),274239,5,0,0,1,0,6.2.2019,,274112&274126&274303,274310\nMedicine,Integrative View on Human Morphology,274240,8,0,1,3,0,8.2.2019,6.3.2019,134128|274167|274244,\nMedicine,General Biochemistry,274241,4,0,1,0,0,24.2.2019,17.3.2019,124120&125802&274167|124120&125801&134128,274243\nMedicine,Human Genetics,274242,2,0,0,0,0,30.1.2019,8.3.2019,274165,\nMedicine,Molecular Bio.and Regulatory Mechanisms,274243,3,0,0,0,0,14.2.2019,11.3.2019,124120&125801&134020&134128|124120&125802&274165&274167,274241\nMedicine,Epidemiology,274318,2,0,0,0,0,14.2.2019,12.3.2019,274219,\nMedicine,Being a Doctor-Cultural and Ethical 5,274335,0,0,0,1,0,,,274235,\nMedicine,Systems Neurophysiology,274336,3,0,0,0,0,26.2.2019,19.3.2019,274240&274248|274240&274253,274338\nMedicine,Neuroanatomy,274338,1,0,0,2,0,4.3.2019,,274114&274240&274248|274240&274253&274254,274336\nMedicine,Medical Bacteriology,274339,2,0,0,2,0,22.2.2019,17.3.2019,274245&274249,274252\nMedicine,Introduction to System Physiology,274356,3,0,1,0,0,29.1.2019,1.3.2019,274248,\nMedicine,Seminar in Medical Sciences,274357,2,0,0,0,0,,,,\nMedicine,Translation.Bioinformatics and Genomics,274358,2,0,2,0,0,,,274138&274139&274165|274111&274165|234112&274165|234114&274165,\nMedicine,Technologies in Biomedical Research,274359,2,0,2,0,0,,,274242&274244&274249|274167&274242&274249,\nMedicine,Regulatory Paths Controlling Cell Fate,274360,2,0,0,0,0,6.2.2019,7.3.2019,274241&274243&274244|274167&274241&274243,\nMedicine,Clinical Immunology,274362,2,0,0,3,0,4.2.2019,28.2.2019,274249|276413,\nMedicine,Endocrinology Physiology and Patohphy,274363,2,0,0,0,0,27.1.2019,3.3.2019,134020&274241&274242&274243&274244&274248&274249|134020&274167&274241&274242&274243&274248&274249,\nMedicine,Preclinical-Clinical Integrated Systems,274425,0,0,0,0,0,6.2.2019,28.2.2019,,\nMedicine,Obstetrics and Gynecology (American Program),274509,6,0,6,17,0,,,,\nMedicine,General Surgery (American Program),274523,6,0,6,17,0,,,274130&274214&274217&274228&274341&274342&274343&274408&274527,\nMedicine,Surgery N,274526,7,0,0,17,0,,,,\nMedicine,Neurology,274530,3,0,0,11,0,,,274503,\nMedicine,Psychiatry,274531,6,0,0,14,0,,,,\nMedicine,Obstetrics and Gynecology,274532,7,0,0,17,0,,,,\nMedicine,Pediatrics 1N,274533,7,0,0,20,0,,,,\nMedicine,Internal Medicine (American Program),274534,9,0,0,26,0,,,274321&274343,\nMedicine,Pediatrics (American Program),274536,6,0,0,17,0,,,274507|274522|274528|274605,\nMedicine,Community Family Health,274604,4,0,0,11,0,15.2.2019,15.3.2019,274500,\nMedicine,Pediatrics 2,274632,3,0,0,9,0,,,274507|274533,\nMedicine,Internal Medicine 2T,274633,4,0,0,11,0,,,274503,\nMedicine,The Hospitalized Older Adult,275102,3,0,2,0,0,,,,\nMedicine,Community Academia Partnership-Health a,275103,2,0,0,1,0,,,,\nMedicine,History of Medicine,275200,2,0,0,0,0,,,,\nMedicine,Introduction in Emergency Medicine 2,275208,2,0,0,1,0,,,274109,\nMedicine,Physicans and Domestic Violence,275315,2,0,0,0,1,,,,\nMedicine,Literature and Medicine,275317,2,0,0,0,0,,,,\nMedicine,Sleep Medicine-from Physiology to Illness,276001,3,0,0,0,0,,,,\nMedicine,Body Systems Physiology for Engineers,276011,3,0,2,0,0,11.2.2019,13.3.2019,274001&336537,\nMedicine,Clinical Biochemistry,276310,4,0,0,0,0,1.2.2019,10.3.2019,274226|274238,\nMedicine,Basic Immunology,276413,3,0,0,0,0,31.1.2019,6.3.2019,134019&134020&134058,\nMedicine,Seminar in Physiology,278301,2,0,2,0,0,,,274364|277003|277004|274323&274348,\nMaterials Science and Engineering,Introduction to Solid Mechanics,314003,2,0,0,0,0,13.2.2019,15.3.2019,104131,\nMaterials Science and Engineering,Microstructural Characterization of Mate,314006,4,0,2,0,0,19.2.2019,11.3.2019,115203&314011|124400&314011|115203&314535|124400&314535,\nMaterials Science and Engineering,Materials Laboratory,314009,1,0,0,3,0,,,314011,\nMaterials Science and Engineering,Fundamentals of Materials Science and Engineering,314011,4,0,2,0,0,,,124115|124117|124120|125001,\nMaterials Science and Engineering,Biomedical Materials,314014,2,0,1,0,0,28.1.2019,27.2.2019,134058&314011|134128&314011,\nMaterials Science and Engineering,Principles and Learning Methods of Ma.En,314100,1,0,0,0,0,,,,\nMaterials Science and Engineering,Materials Processing,314309,2,0,1,0,0,8.2.2019,4.3.2019,314011|314533,\nMaterials Science and Engineering,Electroch., Corrosion and Protection,314532,2,0,1,0,0,8.2.2019,4.3.2019,314011|314200\nMaterials Science and Engineering,Introduction to Materials Engineering M1,314533,3,0,2,1,0,,,125001,\nMaterials Science and Engineering,Introduction to Materials Engineering,314535,2,0,1,0,0,17.2.2019,15.3.2019,125001,\nMaterials Science and Engineering,Advanced Materials Laboratory 1,315001,2,0,0,4,0,,,314006,\nMaterials Science and Engineering,Advanced Project in Materials Engineering,315014,4,0,0,0,8,,,315002,\nMaterials Science and Engineering,Physical Metallurgy,315037,2,0,2,0,0,4.2.2019,8.3.2019,314011,\nMaterials Science and Engineering,Optical Phenomena in Materials,315041,2,0,1,0,0,6.2.2019,15.3.2019,114217|116217|127427,\nMaterials Science and Engineering,Optical Materials,315044,2,0,1,0,0,19.2.2019,6.3.2019,114217&114245|124414&127427|114245&116217,\nMaterials Science and Engineering,Processes in Microelectronics Fabrication,315045,3,0,1,0,0,1.2.2019,11.3.2019,315030,\nMaterials Science and Engineering,Biomineralization and Bio. Materials,315049,2,0,0,0,0,12.2.2019,10.3.2019,314006&315003&315052,\nMaterials Science and Engineering,Transformation Kinetics in Materials,315052,2,0,1,0,0,1.2.2019,1.3.2019,315003&315051,\nMaterials Science and Engineering,Computer Analysis Methods for Materials,315058,2,0,0,0,0,4.2.2019,14.3.2019,234112|234127,\nMaterials Science and Engineering,From Functional Materials to Devices,315059,2,0,1,0,0,30.1.2019,1.3.2019,124400&127427&314006&315003|115203&116217&314006&315003,\nMaterials Science and Engineering,Composite Materials Engineering,315242,2,0,1,0,0,15.2.2019,8.3.2019,314003&314312&315008,\nMaterials Science and Engineering,Structure and Behavior of Polymers,315721,2,0,1,0,0,10.2.2019,7.3.2019,314312,\nMaterials Science and Engineering,Elements of Crystallography,316240,2,0,0,0,0,,,,\nMaterials Science and Engineering,Porous Polymers,318101,2,0,0,0,0,,,,\nMaterials Science and Engineering,Physical Fundamentals of Microstructure Evolution,318319,2,0,0,0,0,,,,\nMaterials Science and Engineering,Thermodynamics and Kinetics of Interfaces,318320,2,0,0,0,0,,,,\nMaterials Science and Engineering,Phase Transformations in Metals and Alloys,318336,2,0,0,0,0,,,,\nMaterials Science and Engineering,Analytical Scanning Electron Microscopy,318529,2,0,0,0,0,,,,\nHumanities and Arts,On Leave,320000,0,0,0,0,0,,,,\nHumanities and Arts,Physical Education1,320003,1,0,2,0,0,,,,\nHumanities and Arts,Psychology 1R,320020,2,0,2,0,0,,,,\nHumanities and Arts,Free Electives,320033,2,0,0,0,0,,,,\nHumanities and Arts,Electives,320034,2,0,0,0,0,,,,\nHumanities and Arts,Free Electives,320043,3,0,1,0,0,,,,\nHumanities and Arts,Physical Modeling Amd Law 1,320095,2,0,0,0,2,,,,\nHumanities and Arts,Students Exchange,320099,0,0,0,0,0,,,,\nHumanities and Arts,Community Program 1,320101,1,0,0,0,0,,,,\nHumanities and Arts,Community Program 2,320102,1,0,0,0,0,,,,\nHumanities and Arts,General Research Lab,320200,3,0,0,9,0,,,,\nHumanities and Arts,Advanced English - a,324032,0,0,0,0,0,,,,\nHumanities and Arts,Technical English-Advanced B,324033,3,0,0,0,0,24.1.2019,,,\nHumanities and Arts,Hebrew 3,324053,3,0,0,0,0,,,324055,\nHumanities and Arts,Hebrew for Medicine - Beginners 2,324062,0,0,0,0,0,,,324061,\nHumanities and Arts,Hebrew for Medicine-Intermediate Level 3,324063,0,0,0,0,0,,,324062,\nHumanities and Arts,Hebrew for Medicine - Advances Level 4,324064,0,0,0,0,0,,,324063,\nHumanities and Arts,Jazz Improvisation for Beginners,324227,1,0,1,0,0,,,,\nHumanities and Arts,Inprovisation in a Jazz Combo,324228,1,0,1,0,0,,,,\nHumanities and Arts,Communication by Theatrical Means,324235,1,0,1,0,0,,,,\nHumanities and Arts,Exposure to Research at the Technion,324246,2,0,0,0,0,21.2.2019,,,\nHumanities and Arts,Entrpreneurship and Design,324247,2,0,0,0,0,,,,\nHumanities and Arts,A New Israel Order#a Multicultural Perspective on Israeli Society,324282,2,0,0,0,0,,,,\nHumanities and Arts,Comparison of Education in China-Israel,324284,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,Migration, Urbanization and Social Change in China,324285,2,0,0,0,0,20.2.2019,,\nHumanities and Arts,History of Medicine and Medicinal Substances,324290,2,0,0,0,0,24.2.2019,,,\nHumanities and Arts,The Cairo Genizah and Its Historical Contribution,324291,2,0,0,0,0,24.2.2019,,,\nHumanities and Arts,Law, Equality and Social Justice,324292,2,0,0,0,0,20.2.2019,,\nHumanities and Arts,Principal Insights,\"Maimonids\"\" Philosophy\",324293,2,0,0,0,0,24.2.2019,,\nHumanities and Arts,Jewish Philosophy in the Middle Ages,324295,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,Foundations of Chinese Art and Culture,324296,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,Personage in Bible in Light of Our Times,324297,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,From the Bible to the New Israeli Law,324298,2,0,0,0,0,,,,\nHumanities and Arts,Communicating in English,324385,3,0,0,0,0,,,,\nHumanities and Arts,The Philosophy of the Life Sciences,324397,1,0,0,0,0,,,,\nHumanities and Arts,From Destruction to Creativity,324426,2,0,0,0,0,24.2.2019,,,\nHumanities and Arts,Psychology of Music,324432,2,0,0,0,0,26.2.2019,,,\nHumanities and Arts,Israeli Labor Law,324442,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,Psychological Warfare,324444,2,0,0,0,0,21.2.2019,,,\nHumanities and Arts,Adjustment to Stressful Situations,324445,2,0,0,0,0,25.2.2019,,,\nHumanities and Arts,Key Issues in Early Rabbinic Literature,324450,2,0,0,0,0,26.2.2019,,,\nHumanities and Arts,Surveillance#Technology, Theory, Ethics,324452,2,0,0,0,0,21.2.2019,\nHumanities and Arts,Love and Law in the Age of Tech.,324453,2,0,0,0,0,25.2.2019,,,\nHumanities and Arts,Thought# Criticism and Creativity,324456,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,Museology and Technology,324457,2,0,0,0,0,,,,\nHumanities and Arts,Modernism in Theatre,324461,2,0,0,0,0,26.2.2019,,,\nHumanities and Arts,\"Filming Berlin# from 1930\"\"S Till Today\",324462,2,0,0,0,0,25.2.2019,,,\nHumanities and Arts,History of the Middle-East,324463,2,0,0,0,0,,,,\nHumanities and Arts,Chinese Society in Contemporary Chinese Cinema,324469,2,0,0,0,0,,,,\nHumanities and Arts,Freehand Drawing Advanced Level,324482,2,0,2,0,0,,,,\nHumanities and Arts,Drawing and Painting in Color,324495,2,0,0,0,0,,,,\nHumanities and Arts,Workshop in Photography,324567,1,0,0,0,0,,,,\nHumanities and Arts,German 1,324600,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,Japanese for Beginners,324602,2,0,0,0,0,,,,\nHumanities and Arts,German 2,324603,2,0,0,0,0,20.2.2019,,324600,\nHumanities and Arts,German 4,324605,2,0,0,0,0,20.2.2019,,324604,\nHumanities and Arts,French 1,324608,1,0,1,0,0,24.2.2019,,,\nHumanities and Arts,Russian (Beginners) 1,324621,2,0,0,0,0,,,,\nHumanities and Arts,Colloquial Arabic,324628,1,0,0,0,0,,,,\nHumanities and Arts,Italian for Beginners 1,324630,1,0,0,0,0,,,,\nHumanities and Arts,Spanish for Beginners,324675,1,0,0,0,0,,,,\nHumanities and Arts,Intermediate Spanish,324679,1,0,0,0,0,,,,\nHumanities and Arts,Chinese for Beginners,324692,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,Entrepreneurship 1,324864,1,0,0,0,0,,,,\nHumanities and Arts,Issues in Contemporary Israeli Society,324879,2,0,0,0,0,,,,\nHumanities and Arts,Topics in History of the Jewish People,324881,2,0,0,0,0,,,,\nHumanities and Arts,The Middle East in the Modern Age# Processes of Change,324904,2,0,0,0,0,25.2.2019,,,\nHumanities and Arts,Philosophy and Science,324914,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,The Holy Land as Mirrored in Art,324917,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,Photographic Pilgrimage of the Holy Land,324929,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,\"The Sunni Shi\"\"I Conflict in the Islam\",324945,2,0,0,0,0,25.2.2019,,,\nHumanities and Arts,The Renaissance in Italy# An Artistic and Cultural Journey,324946,2,0,0,0,0,21.2.2019,,,\nHumanities and Arts,War and Film,324948,2,0,0,0,0,26.2.2019,,,\nHumanities and Arts,Health and Illness-Cultural Aspects,324952,2,0,0,0,0,25.2.2019,,,\nHumanities and Arts,Religion and Politics in Israel,324954,2,0,0,0,0,21.2.2019,,,\nHumanities and Arts,Political Sociology,324958,2,0,0,0,0,,,,\nHumanities and Arts,Archit.of Renowned Exhibition Pavilions,324963,2,0,0,0,0,,,,\nHumanities and Arts,The Human Career,324965,2,0,0,0,0,20.2.2019,,,\nHumanities and Arts,Observing the Musical Experience,324966,2,0,0,0,0,26.2.2019,,,\nHumanities and Arts,The Language of Music-Syntax of Tones,324973,2,0,0,0,0,26.2.2019,,,\nHumanities and Arts,Communism#An Ideology and Practices,324983,2,0,0,0,0,22.2.2019,,,\nHumanities and Arts,Contemporary Korea,324984,2,0,0,0,0,21.2.2019,,,\nHumanities and Arts,Intelligence and National Security,324986,2,0,0,0,0,,,,\nHumanities and Arts,A Brief History of Modern Physics,324987,2,0,0,0,0,,,,\nHumanities and Arts,Color Theory and Application,324990,2,0,0,0,0,,,,\nHumanities and Arts,Ethical Issues in the Personal and Public Space,324992,2,0,0,0,0,18.2.2019,,,\nHumanities and Arts,Diplomacy and National Security in Asia,324993,2,0,0,0,0,25.2.2019,,,\nHumanities and Arts,Academic Writing for Doctoral Candidates,328050,0,0,0,0,0,,,328011,\nN\\A,Vocal Training,394580,1,0,0,0,0,,,,\nN\\A,Technion Symphony Orchestra,394582,2,0,4,0,0,,,,\nN\\A,Choir 3,394587,2,0,0,0,0,,,,\nN\\A,Voice Development,394591,1,0,0,0,0,,,,\nBio-Medicine,Biomedical Engineering Project 1,334014,4,0,0,0,12,,,276011&334022&335010&335016,\nBio-Medicine,Advanced Lab. in Biomedical Engineering,334019,2,0,0,6,0,,,,\nBio-Medicine,Directions in Biomedical Engineering,334021,1,0,0,0,0,17.2.2019,15.3.2019,,\nBio-Medicine,Basic Bioelectrical Design,334022,3,0,1,0,1,5.2.2019,7.3.2019,44130,\nBio-Medicine,Laboratory in Bio-Medical Engineering 2,335002,2,0,0,4,0,8.2.2019,8.3.2019,335001,\nBio-Medicine,Laboratory in Bio-Medical Engineering 4,335004,2,0,0,4,0,8.2.2019,8.3.2019,335001,\nBio-Medicine,Advanced Topics in Biomedical Engineering3,336017,2,0,1,0,0,,,094423&104016&234112,\nBio-Medicine,Bio-Electrical Phenomena,336020,2,0,1,0,0,17.2.2019,14.3.2019,44130,\nBio-Medicine,Nano-Particles in Biology, Mechanics and Rheology,336021,2,0,1,0,0,1.2.2019,4.3.2019,134058&334009|134058&335009\nBio-Medicine,From Cells to Tissues,336022,2,0,1,0,0,31.1.2019,27.2.2019,134019&336004|134019&134113,\nBio-Medicine,Principles of Medical Imaging,336502,2,0,1,0,0,7.2.2019,10.3.2019,044130&104223,\nBio-Medicine,Heat Transfer in Biological Systems,336518,3,0,2,0,0,,,104223&274001&337403,\nBio-Medicine,Engineering Aspects of the Cardivascular System,336521,3,0,1,0,0,29.1.2019,1.3.2019,334009&336522,\nBio-Medicine,Medical Instrumentation, Standards and Safety,336523,2,0,1,0,0,11.2.2019,11.3.2019,\nBio-Medicine,Controlled Drug Delivery,336528,2,0,1,0,0,30.1.2019,15.3.2019,124708|124801|125801,337403\nBio-Medicine,Fundamentals of Biomdical Optics and Photonics,336533,3,0,2,0,0,28.1.2019,3.3.2019,114052|104223&114052,\nBio-Medicine,Bioengineering of Biomolecular Sensing,336538,2,0,1,0,0,,,114052&336004,\nBio-Medicine,Design of Virtual Medical Instrumentation,336540,2,0,1,0,0,,,334011,\nBio-Medicine,Computational Optical Imaging in Biomedical Engineering,336547,2,0,1,0,0,,,044198&114210|044198&336533,\nBio-Medicine,Transport Phenomena in Phys. Systems,337403,3,0,2,0,0,14.2.2019,11.3.2019,335009&336537|334009&336537336403,\nBio-Medicine,Control of Cellular Bioenergetics,338001,2,0,1,0,0,,,044130&336537,\nBio-Medicine,Bioimaterials,338401,2,0,0,0,0,,,124708|124801|125801336401,\nBio-Medicine,Advanced Seminar in Biomedical Engineering,338500,1,0,0,0,2,,,336500,\nNano-Science,Seminar Nano,648001,2,0,0,0,0,,,,\nNano-Science,Quantum Mechanics in Nanoscience and Nanotechnology,648010,2,0,1,0,0,,,104004&104006&114052&114054|104004&104006&114052&125001,\nNano-Science,Fundamentals of Bionanotechnology,648011,3,0,1,0,0,,,114052|125801|134058|134128,\nN\\A,Bio-Mass Energy,518006,2,0,0,0,0,,,,\nN\\A,Selected Topics in Energy 1,518009,2,0,0,0,0,,,,\nN\\A,Materials Standards in Natural Gas,518104,2,0,0,0,0,,,,\nN\\A,Produc. Storage, Transmission and Safety,518106,2,0,2,0,0,,,\nN\\A,Subsurface and Subsea Production,518113,2,0,0,0,0,,,,\nN\\A,Conditioning and Processing of Natural Gas,518114,2,0,0,0,0,1.2.2019,,,\nN\\A,Law and Economics of Natural Gas,518117,2,0,0,0,0,,,,\nN\\A,Environmental Control in Natural Gas and Petroleum Engineering,518120,2,0,0,0,0,,,,\nN\\A,Physical Education Courses,394800,1,0,2,0,0,,,,\nN\\A,Physical Education Courses,394801,1,0,2,0,0,,,,\nN\\A,Physical Education Courses,394802,1,0,2,0,0,,,,\nN\\A,Physical Education Courses,394803,1,0,2,0,0,,,,\nN\\A,Physical Education Courses,394804,1,0,2,0,0,,,,\nN\\A,Physical Education - Athletics,394805,1,0,2,0,0,,,,\nN\\A,Physical Education Courses,394806,1,0,2,0,0,,,,\nN\\A,Physical Education-for New Students,394808,1,0,2,0,0,,,,\nN\\A,Physical Education Courses,394820,1,0,2,0,0,,,,\nN\\A,Competition Teams,394902,1,0,4,0,0,,,,\n"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "select-one",
+      "id": "txtEncoding",
+      "elementPos": 2,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "url",
+      "type": "text",
+      "id": "url",
+      "elementPos": 3,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "chkHeader",
+      "type": "checkbox",
+      "id": "chkHeader",
+      "elementPos": 8,
+      "checked": true,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "txtRowLimit",
+      "elementPos": 9,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "txtSkipLimit",
+      "elementPos": 10,
+      "checked": false,
+      "namePos": 0,
+      "value": "0"
+   },
+   {
+      "form": 0,
+      "name": "sep",
+      "type": "radio",
+      "id": "sepAuto",
+      "elementPos": 11,
+      "checked": true,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "sep",
+      "type": "radio",
+      "id": "sepComma",
+      "elementPos": 12,
+      "checked": false,
+      "namePos": 1,
+      "value": ","
+   },
+   {
+      "form": 0,
+      "name": "sep",
+      "type": "radio",
+      "id": "sepSemicolon",
+      "elementPos": 13,
+      "checked": false,
+      "namePos": 2,
+      "value": ";"
+   },
+   {
+      "form": 0,
+      "name": "sep",
+      "type": "radio",
+      "id": "sepColon",
+      "elementPos": 14,
+      "checked": false,
+      "namePos": 3,
+      "value": ":"
+   },
+   {
+      "form": 0,
+      "name": "sep",
+      "type": "radio",
+      "id": "sepPipe",
+      "elementPos": 15,
+      "checked": false,
+      "namePos": 4,
+      "value": "|"
+   },
+   {
+      "form": 0,
+      "name": "sep",
+      "type": "radio",
+      "id": "sepTab",
+      "elementPos": 16,
+      "checked": false,
+      "namePos": 5,
+      "value": "\\t"
+   },
+   {
+      "form": 0,
+      "name": "sep",
+      "type": "radio",
+      "id": "sepCaret",
+      "elementPos": 17,
+      "checked": false,
+      "namePos": 6,
+      "value": "^"
+   },
+   {
+      "form": 0,
+      "name": "sep",
+      "type": "radio",
+      "id": "sepSpace",
+      "elementPos": 18,
+      "checked": false,
+      "namePos": 7,
+      "value": " "
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkReplaceAccents",
+      "elementPos": 19,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkIgnoreDoubleQuote",
+      "elementPos": 20,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkInputQuote",
+      "elementPos": 21,
+      "checked": false,
+      "namePos": 0,
+      "value": "'"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkDecodeLiterals",
+      "elementPos": 22,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "txtCols",
+      "elementPos": 24,
+      "checked": false,
+      "namePos": 0,
+      "value": "1,2,3,4,5,6,7,8,9,10,11,12"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkIgnoreCase",
+      "elementPos": 26,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "select-one",
+      "id": "selSortFld1",
+      "elementPos": 27,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "select-one",
+      "id": "selSortType1",
+      "elementPos": 28,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "select-one",
+      "id": "selSortAsc1",
+      "elementPos": 29,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "select-one",
+      "id": "selSortFld2",
+      "elementPos": 30,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "select-one",
+      "id": "selSortType2",
+      "elementPos": 31,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "select-one",
+      "id": "selSortAsc2",
+      "elementPos": 32,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "select-one",
+      "id": "selSortFld3",
+      "elementPos": 33,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "select-one",
+      "id": "selSortType3",
+      "elementPos": 34,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "select-one",
+      "id": "selSortAsc3",
+      "elementPos": 35,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "",
+      "elementPos": 36,
+      "checked": false,
+      "namePos": 0,
+      "value": "on"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "",
+      "elementPos": 37,
+      "checked": false,
+      "namePos": 0,
+      "value": "on"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "",
+      "elementPos": 38,
+      "checked": false,
+      "namePos": 0,
+      "value": "on"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "",
+      "elementPos": 39,
+      "checked": false,
+      "namePos": 0,
+      "value": "on"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "",
+      "elementPos": 40,
+      "checked": false,
+      "namePos": 0,
+      "value": "on"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "",
+      "elementPos": 41,
+      "checked": false,
+      "namePos": 0,
+      "value": "on"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "",
+      "elementPos": 42,
+      "checked": false,
+      "namePos": 0,
+      "value": "on"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "",
+      "elementPos": 43,
+      "checked": false,
+      "namePos": 0,
+      "value": "on"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml1",
+      "elementPos": 44,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr1",
+      "elementPos": 45,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper1",
+      "elementPos": 46,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower1",
+      "elementPos": 47,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper1",
+      "elementPos": 48,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct1",
+      "elementPos": 49,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch1",
+      "elementPos": 50,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull1",
+      "elementPos": 51,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals1",
+      "elementPos": 52,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml2",
+      "elementPos": 53,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr2",
+      "elementPos": 54,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper2",
+      "elementPos": 55,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower2",
+      "elementPos": 56,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper2",
+      "elementPos": 57,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct2",
+      "elementPos": 58,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch2",
+      "elementPos": 59,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull2",
+      "elementPos": 60,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals2",
+      "elementPos": 61,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml3",
+      "elementPos": 62,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr3",
+      "elementPos": 63,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper3",
+      "elementPos": 64,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower3",
+      "elementPos": 65,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper3",
+      "elementPos": 66,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct3",
+      "elementPos": 67,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch3",
+      "elementPos": 68,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull3",
+      "elementPos": 69,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals3",
+      "elementPos": 70,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml4",
+      "elementPos": 71,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr4",
+      "elementPos": 72,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper4",
+      "elementPos": 73,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower4",
+      "elementPos": 74,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper4",
+      "elementPos": 75,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct4",
+      "elementPos": 76,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch4",
+      "elementPos": 77,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull4",
+      "elementPos": 78,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals4",
+      "elementPos": 79,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml5",
+      "elementPos": 80,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr5",
+      "elementPos": 81,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper5",
+      "elementPos": 82,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower5",
+      "elementPos": 83,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper5",
+      "elementPos": 84,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct5",
+      "elementPos": 85,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch5",
+      "elementPos": 86,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull5",
+      "elementPos": 87,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals5",
+      "elementPos": 88,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml6",
+      "elementPos": 89,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr6",
+      "elementPos": 90,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper6",
+      "elementPos": 91,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower6",
+      "elementPos": 92,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper6",
+      "elementPos": 93,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct6",
+      "elementPos": 94,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch6",
+      "elementPos": 95,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull6",
+      "elementPos": 96,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals6",
+      "elementPos": 97,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml7",
+      "elementPos": 98,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr7",
+      "elementPos": 99,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper7",
+      "elementPos": 100,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower7",
+      "elementPos": 101,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper7",
+      "elementPos": 102,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct7",
+      "elementPos": 103,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch7",
+      "elementPos": 104,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull7",
+      "elementPos": 105,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals7",
+      "elementPos": 106,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml8",
+      "elementPos": 107,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr8",
+      "elementPos": 108,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper8",
+      "elementPos": 109,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower8",
+      "elementPos": 110,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper8",
+      "elementPos": 111,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct8",
+      "elementPos": 112,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch8",
+      "elementPos": 113,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull8",
+      "elementPos": 114,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals8",
+      "elementPos": 115,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml9",
+      "elementPos": 116,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr9",
+      "elementPos": 117,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper9",
+      "elementPos": 118,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower9",
+      "elementPos": 119,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper9",
+      "elementPos": 120,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct9",
+      "elementPos": 121,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch9",
+      "elementPos": 122,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull9",
+      "elementPos": 123,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals9",
+      "elementPos": 124,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml10",
+      "elementPos": 125,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr10",
+      "elementPos": 126,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper10",
+      "elementPos": 127,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower10",
+      "elementPos": 128,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper10",
+      "elementPos": 129,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct10",
+      "elementPos": 130,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch10",
+      "elementPos": 131,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull10",
+      "elementPos": 132,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals10",
+      "elementPos": 133,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml11",
+      "elementPos": 134,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr11",
+      "elementPos": 135,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper11",
+      "elementPos": 136,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower11",
+      "elementPos": 137,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper11",
+      "elementPos": 138,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct11",
+      "elementPos": 139,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch11",
+      "elementPos": 140,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull11",
+      "elementPos": 141,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals11",
+      "elementPos": 142,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftriml12",
+      "elementPos": 143,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "ftrimr12",
+      "elementPos": 144,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkupper12",
+      "elementPos": 145,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chklower12",
+      "elementPos": 146,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkProper12",
+      "elementPos": 147,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkpunct12",
+      "elementPos": 148,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkcrunch12",
+      "elementPos": 149,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chknull12",
+      "elementPos": 150,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fdecimals12",
+      "elementPos": 151,
+      "checked": false,
+      "namePos": 0,
+      "value": ""
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkCsvQuotes",
+      "elementPos": 152,
+      "checked": false,
+      "namePos": 0,
+      "value": "on"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "txtKeyNum",
+      "elementPos": 153,
+      "checked": false,
+      "namePos": 0,
+      "value": "1"
+   },
+   {
+      "form": 0,
+      "name": "chkFldData",
+      "type": "checkbox",
+      "id": "chkFldData",
+      "elementPos": 154,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "txtFieldName",
+      "elementPos": 155,
+      "checked": false,
+      "namePos": 0,
+      "value": "fields"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "txtDataName",
+      "elementPos": 156,
+      "checked": false,
+      "namePos": 0,
+      "value": "data"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "checkbox",
+      "id": "chkOverwrite",
+      "elementPos": 157,
+      "checked": true,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "chkNullJson",
+      "type": "checkbox",
+      "id": "chkNullJson",
+      "elementPos": 158,
+      "checked": true,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "chkSkipEmpty",
+      "type": "checkbox",
+      "id": "chkSkipEmpty",
+      "elementPos": 159,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "chkTryToObject",
+      "type": "checkbox",
+      "id": "chkTryToObject",
+      "elementPos": 160,
+      "checked": true,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "chkMongoDbMode",
+      "type": "checkbox",
+      "id": "chkMongoDbMode",
+      "elementPos": 161,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "chkAutoNum",
+      "type": "checkbox",
+      "id": "chkAutoNum",
+      "elementPos": 162,
+      "checked": false,
+      "namePos": 0,
+      "value": "Y"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "txtHeader",
+      "elementPos": 164,
+      "checked": false,
+      "namePos": 0,
+      "value": "[{br}"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "textarea",
+      "id": "txtTemplate",
+      "elementPos": 165,
+      "namePos": 0,
+      "value": "  {lb}\n     \"{h1}\":\"{f1}\"\n    ,\"{h2}\":\"{f2}\"\n    ,\"{h3}\":\"{f3}\"\n    ,\"{h4}\":\"{f4}\"\n    ,\"{h5}\":{(f5)==\"\"?\"null\":f5}\n    ,\"{h6}\":{(f6)==\"\"?\"null\":f6}\n    ,\"{h7}\":{(f7)==\"\"?\"null\":f7}\n    ,\"{h8}\":{(f8)==\"\"?\"null\":f8}\n    ,\"{h9}\":\"{f9}\"\n    ,\"{h10}\":\"{f10}\"\n    ,\"{h11}\":\"{f11}\"\n    ,\"{h12}\":\"{f12}\"\n  {rb}"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "txtFooter",
+      "elementPos": 166,
+      "checked": false,
+      "namePos": 0,
+      "value": "]"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "text",
+      "id": "fn",
+      "elementPos": 173,
+      "checked": false,
+      "namePos": 0,
+      "value": "convertcsv"
+   },
+   {
+      "form": 0,
+      "name": "",
+      "type": "select-one",
+      "id": "eol",
+      "elementPos": 175,
+      "namePos": 0,
+      "value": ""
+   }
+]
