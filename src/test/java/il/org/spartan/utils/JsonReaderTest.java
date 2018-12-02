@@ -1,6 +1,6 @@
 package il.org.spartan.utils;
 
-import org.junit.Test;
+import org.junit.*;
 
 import fluent.ly.*;
 
