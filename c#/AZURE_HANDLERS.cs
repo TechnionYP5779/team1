@@ -108,17 +108,33 @@ public static StringBuilder HandleBusinessHourWeekly(string cnnString,StringBuil
     ===================================================================================
 */
 public static StringBuilder HandleBussinessHourByDay(string cnnString,StringBuilder resultText,string day,string bname){
-    if(bname == null){
+    if(bname == null || bname == ""){
         resultText.Append("please choose a business to look into");
         return resultText;
     }
+    if(day == null || day == ""){
+        resultText.Append("please choose a specific day");
+        return resultText;
+    }
     //===================================
-    string [] days_of_week = new string[7]{"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+    string [] days_of_week = new string[10]{"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Today","Tomorrow","Now"};
     day = day.First().ToString().ToUpper() + day.Substring(1);
     if(-1 == Array.IndexOf(days_of_week, day))
     {
         resultText.Append("please choose a valid day of the week");
         return resultText;
+    }
+    //===================================
+    // handle special days
+    if(day == "Now" || day == "Today") // question regarding this day
+    {
+        day = DateTime.Now.AddHours(2).DayOfWeek.ToString();
+    }
+    else{
+        if(day == "Tomorrow") // question regarding the next day
+        {
+            day = DateTime.Now.AddHours(2).AddDays(1).DayOfWeek.ToString();
+        }
     }
     //===================================
     var jsonResult = new StringBuilder();
