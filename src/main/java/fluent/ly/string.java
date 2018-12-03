@@ -18,6 +18,13 @@ public enum string {
   static final int MAX_FIRST = 20;
   static final int MAX_LAST = 10;
 
+  /** Quote a given {@link String}
+   * @param $ some {@link String} to be quoted
+   * @return parameter, quoted */
+  @NotNull static String quote(final @Nullable Object $) {
+    return $ != null ? wrap('\'', $ + "") : "<null reference>";
+  }
+  
   public static double atod(final @NotNull String ¢) {
     return unbox(Double.valueOf(¢));
   }
@@ -259,10 +266,6 @@ public enum string {
       $ += n > MAX_FIRST && n <= a.size() - MAX_LAST ? ellipsis : "\t" + n + ") " + ¢ + "\n";
     }
     return $;
-  }
-
-  @NotNull public static String quote(final Object ¢) {
-    return wrap('\'', ¢ + "");
   }
 
   @NotNull public static String repeat(final int i, final char c) {

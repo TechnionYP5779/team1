@@ -43,11 +43,6 @@ import fluent.ly.idiomatic.*;
     }
   }
 
-  @Test public void testQuote() {
-    azzert.that(idiomatic.quote(null), is("<null reference>"));
-    azzert.that(idiomatic.quote("abc"), is("'abc'"));
-  }
-
   @Test public void testRunDoesNotThrow_SanityCheck() {
     final idiomatic.Runner empty = idiomatic.run(() -> {
       // empty runner

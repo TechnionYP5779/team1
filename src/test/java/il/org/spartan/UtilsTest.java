@@ -63,18 +63,6 @@ import fluent.ly.*;
    
   }
 
-  @Test public void quoteEmptyString() {
-    azzert.that(idiomatic.quote(""), is("''"));
-  }
-
-  @Test public void quoteNull() {
-    azzert.that(idiomatic.quote(null), is("<null reference>"));
-  }
-
-  @Test public void quoteSimpleString() {
-    azzert.that(idiomatic.quote("A"), is("'A'"));
-  }
-
   @Test public void swapDegenerate() {
     final @NotNull String[] ss = as.array("A", "B", "C", "D");
     Utils.swap(ss, 1, 1);
@@ -162,8 +150,6 @@ import fluent.ly.*;
     azzert.that(Utils.prepend(new StringBuilder(), 'c') + "", is("c"));
     azzert.that(Utils.prepend(new StringBuilder(), "ac") + "", is("ac"));
     azzert.that(Utils.prepend(new StringBuilder(), "ac") + "", is("ac"));
-    azzert.that(Utils.quote("ac"), is("'ac'"));
-    azzert.that(Utils.quote(null), is("<null reference>"));
     azzert.that(Utils.removePrefix("Maaaaaaaa", "M"), is("aaaaaaaa"));
     azzert.that(Utils.removeSuffix("Maaaaaaaa", "aaaaaaaa"), is("M"));
     azzert.that(Utils.removeWhites("  "), is(""));
