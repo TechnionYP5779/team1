@@ -23,11 +23,8 @@ function validateEmail(formName) {
 function validatePassword(formName) {
     var pass1 = document.forms[formName]["password"].value;
     var pass2 = document.forms[formName]["confirm_password"].value;
-    if(pass1.length < 6){
-        writeError("The password has to be at least 6 characters long!");
-        return false;
-    }
-    if(pass1 != pass2){
+    if (!validatePasswordLength(formName)) return false;
+    if (pass1 != pass2) {
         writeError("Passwords have to match!");
         return false;
     }
@@ -44,4 +41,19 @@ function writeError(errorMessage) {
 function validateSignUp() {
     var formName = "signupform";
     return validateUsername(formName) && validateEmail(formName) && validatePassword(formName);
+}
+
+function validatePasswordLength(formName) {
+    var pass = document.forms[formName]["password"].value;
+    if (pass.length < 6) {
+        writeError("The password has to be at least 6 characters long!");
+        return false;
+    }
+    document.getElementById("error_label").style.visibility = 'hidden';
+    return true;
+}
+
+function validateSignIn() {
+    var formName = "signinform";
+    return validateUsername(formName) && validatePasswordLength(formName);
 }
