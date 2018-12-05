@@ -27,18 +27,47 @@
         <div class="wrapper wrapper--w960">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Offer Parking Spot</h2>      
-                        <label class="label error" id="error_label"></label>
-                        <div class="row row-space">
-							Added the parking spot successfully!
-							</br>
-							</br>
-                        </div>
-						<div class="row row-space">
-							<div class="col-2">
-                                <button class="btn btn--radius-2 btn--blue" onclick="location.href='./offerParkingSpot.html'">Add Another</button>
-							</div>						
-						</div>
+                    <h2 class="title">Available Parking Spots</h2>      
+                    <?php
+						$host = "localhost";
+						$username = "root";
+						$password = "";
+						$scheme = "parking";
+
+						//Create connection
+						$conn = mysqli_connect($host, $username, $password, $scheme);
+
+						//Check connection
+						if($conn == false){
+							die("Connection failed: " . mysqli_connect_error());
+						}
+						$query = "SELECT * FROM parkingspots WHERE boughtBy=''";
+						$result = mysqli_query($conn,$query);
+
+						echo "<table border='1'>
+						<tr>
+						<th>Owner Username</th>
+						<th>Location</th>
+						<th>Price</th>
+						</tr>";
+
+						while($row = mysqli_fetch_array($result))
+						{
+							echo "<tr>";
+							echo "<td>" . $row['username'] . "</td>";
+							echo "<td>" . $row['location'] . "</td>";
+							echo "<td>" . $row['price'] . "</td>";
+							echo "</tr>";
+						}
+						echo "</table>";
+						mysqli_close($conn);
+					?>
+					</br>
+					<div class="row row-space">
+                            <div class="col-2">
+                                <button class="btn btn--radius-2 btn--blue" onclick="location.href='./offerParkingSpot.html'">Offer Your Parking</button>
+                            </div>
+					</div>
                 </div>
             </div>
         </div>
