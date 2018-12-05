@@ -32,14 +32,8 @@ function validatePassword(formName) {
     return true;
 }
 
-function writeError(errorMessage) {
-    document.getElementById("error_label").innerHTML = errorMessage;
-    document.getElementById("error_label").style.visibility = 'visible';
-    document.getElementById("error_label").style.color = 'red';
-}
-
-function validateLocation(formName){
-	var loc = document.forms[formName]["location"].value;
+function validateLocation(formName) {
+    var loc = document.forms[formName]["location"].value;
     if (loc == "") {
         writeError("The location cannot be empty!");
         return false;
@@ -48,23 +42,18 @@ function validateLocation(formName){
     return true;
 }
 
-function validateAskingPrice(formName){
-	var askingPrice = parseInt(document.forms[formName]["asking_price"].value);
+function validateAskingPrice(formName) {
+    var askingPrice = parseInt(document.forms[formName]["asking_price"].value);
     if (isNaN(askingPrice)) {
         writeError("The asking price cannot be empty!");
         return false;
     }
-	if (askingPrice < 0) {
-		writeError("The asking price cannot be negative!");
-		return false;
+    if (askingPrice < 0) {
+        writeError("The asking price cannot be negative!");
+        return false;
     }
     document.getElementById("error_label").style.visibility = 'hidden';
     return true;
-}
-
-function validateSignUp() {
-    var formName = "signupform";
-    return validateUsername(formName) && validateEmail(formName) && validatePassword(formName);
 }
 
 function validatePasswordLength(formName) {
@@ -77,12 +66,37 @@ function validatePasswordLength(formName) {
     return true;
 }
 
+function validateNoSQLInjection(formName) {
+
+    var elements = document.forms[formName].elements;
+    for (var i = 0, element; element = elements[i++];) {
+        var str = element.value;
+        if (str == null || str.search("'") != -1) {
+            writeError("Please Don't Try SQL Injection...");
+            return false;
+        }
+    }
+    document.getElementById("error_label").style.visibility = 'hidden';
+    return true;
+}
+
+function writeError(errorMessage) {
+    document.getElementById("error_label").innerHTML = errorMessage;
+    document.getElementById("error_label").style.visibility = 'visible';
+    document.getElementById("error_label").style.color = 'red';
+}
+
+function validateSignUp() {
+    var formName = "signupform";
+    return validateNoSQLInjection(formName) && validateUsername(formName) && validateEmail(formName) && validatePassword(formName);
+}
+
 function validateSignIn() {
     var formName = "signinform";
-    return validateUsername(formName) && validatePasswordLength(formName);
+    return validateNoSQLInjection(formName) && validateUsername(formName) && validatePasswordLength(formName);
 }
 
 function validateOfferParkingSpot() {
     var formName = "parkingspotform";
-    return validateLocation(formName) && validateAskingPrice(formName);
+    return validateNoSQLInjection(formName) && validateLocation(formName) && validateAskingPrice(formName);
 }
