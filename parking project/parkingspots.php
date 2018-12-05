@@ -17,7 +17,6 @@
         <ul>
             <li><a href='./home.html'>Home</a></li>
             <li><a href='./parkingspots.php'>Available Parking Spots</a></li>
-			<li><a href='./offerParkingSpot.html'>Add Parking Sport</a></li>
             <!--When logged in should turn to "My Profile"-->
             <!--When adding more pages, keep this one as the last one-->
             <li class='active'><a href='./signup.html'>Sign In/Sign up</a></li>
@@ -63,6 +62,12 @@
 						echo "</table>";
 						mysqli_close($conn);
 					?>
+					</br>
+					<div class="row row-space">
+                            <div class="col-2">
+                                <button class="btn btn--radius-2 btn--blue" onclick="location.href='./offerParkingSpot.html'">Offer Your Parking</button>
+                            </div>
+					</div>
                 </div>
             </div>
         </div>
