@@ -7,10 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <script src="./validationScript.js" type="text/javascript"></script>
+    <script>
+        function check_cred() {
+            if(location.search == '?bad_cred')
+                writeError("Wrong Credentials!");
+        }
+    </script>
     <title>ParkNet</title>
 </head>
 
-<body>
+<body onload = check_cred()>
 
     <div id='cssmenu'>
         <ul>
@@ -26,8 +32,8 @@
         <div class="wrapper wrapper--w660">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Registration Form</h2>
-                    <form method="POST" name="signinform" onsubmit="return validateSignIn()">
+                    <h2 class="title">Sign In Form</h2>
+                    <form method="POST" name="signinform" onsubmit="return validateSignIn()" action="./signinuser.php">
                         <label class="label error" id="error_label"></label>
                         <div class="input-group">
                             <label class="label">Username</label>

@@ -8,9 +8,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="styles.css">
 	<title>ParkNet</title>
+	<script>
+		function greet() {
+			var user = getCookie("user");
+			if (user != null && user.length > 0) {
+				document.getElementById("mainTitle").innerHTML = "Hello All, and Welcome " + user + "!";
+			}
+		}
+
+		function getCookie(name) {
+			var nameEQ = name + "=";
+			//alert(document.cookie);
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') c = c.substring(1);
+				if (c.indexOf(nameEQ) != -1) return c.substring(nameEQ.length, c.length);
+			}
+			return null;
+		}
+	</script>
 </head>
 
-<body>
+<body onload="greet()">
 
 	<div id='cssmenu'>
 		<ul>
@@ -27,7 +47,7 @@
 			<div class="card card-4">
 				<div class="card-body">
 					<center>
-						<h1 class="title">Hello All, and Welcome!</h1>
+						<h1 class="title" id="mainTitle">Hello All, and Welcome!</h1>
 					</center>
 					<h3>You have reached "ParkNet"!</h3>
 					<p>
