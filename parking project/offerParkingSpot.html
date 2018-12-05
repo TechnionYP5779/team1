@@ -1,3 +1,4 @@
+<!--This is the skeleton all the ParkNet pages-->
 <!doctype html>
 <html lang=''>
 
@@ -7,43 +8,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <script src="./validationScript.js" type="text/javascript"></script>
-    <title>ParkNet</title>
+    <title>ParkNet - Offer Praking Spot</title>
 </head>
 
 <body>
 
     <div id='cssmenu'>
         <ul>
-            <li class='active'><a href='./home.html'>Home</a></li>
-            <li><a href='#'>Available Parking Spots</a></li>
+            <li><a href='./home.html'>Home</a></li>
+            <li><a href='./offerParkingSpot.html'>Available Parking Spots</a></li>
 			<li><a href='./offerParkingSpot.html'>Add Parking Sport</a></li>
             <!--When logged in should turn to "My Profile"-->
             <!--When adding more pages, keep this one as the last one-->
-            <li><a href='./signup.html'>Sign In/Sign up</a></li>
+            <li class='active'><a href='./signup.html'>Sign In/Sign up</a></li>
         </ul>
     </div>
 
     <div class="page-wrapper bg-gra-02 p-t-30 font-poppins">
-        <div class="wrapper wrapper--w660">
+        <div class="wrapper wrapper--w960">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Registration Form</h2>
-                    <form method="POST" name="signinform" onsubmit="return validateSignIn()">
+                    <h2 class="title">Offer Parking Spot</h2>      
+                    <form method="POST" name="parkingspotform" onsubmit="return validateOfferParkingSpot()" action="./addParking.php">
                         <label class="label error" id="error_label"></label>
-                        <div class="input-group">
-                            <label class="label">Username</label>
-                            <input class="input--style-4" type="text" name="username">
-                        </div>
-                        <div class="input-group">
-                            <label class="label">Password</label>
-                            <input class="input--style-4" type="password" name="password">
-                        </div>
                         <div class="row row-space">
                             <div class="col-2">
-                                <button class="btn btn--radius-2 btn--blue" type="submit">Sign In</button>
+                                <div class="input-group">
+                                    <label class="label">Location:</label>
+                                    <input class="input--style-4" type="text" name="location">
+                                </div>
                             </div>
+                        </div>
+						<div class="row row-space">
+							<div class="col-2">
+								<div class="input-group">
+									<label class="label">Asking Price:</label>
+									<input class="input--style-4" type="text" name="asking_price">
+								</div>
+							</div>
+						</div>
+                        <div class="row row-space">
                             <div class="col-2">
-                                <label class="label">Don't have an account? <a href="./signup.html">Sign Up</a>!</label>
+                                <button class="btn btn--radius-2 btn--blue" type="submit">Offer</button>
                             </div>
                         </div>
                     </form>
@@ -51,6 +57,7 @@
             </div>
         </div>
     </div>
+
 
     <footer class="footer">
         <center>
