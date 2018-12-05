@@ -9,9 +9,15 @@
     <link rel="stylesheet" href="styles.css">
     <script src="./validationScript.js" type="text/javascript"></script>
     <title>ParkNet - Sign Up</title>
+    <script>
+        function check_exists(){
+            if(location.search == '?exist')
+                writeError("The Username or Email already exist!");
+        }
+    </script>
 </head>
 
-<body>
+<body onload="check_exists()">
 
     <div id='cssmenu'>
         <ul>
@@ -28,7 +34,7 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Registration Form</h2>      
-                    <form method="POST" name="signupform" onsubmit="return validateSignUp()">
+                    <form method="POST" name="signupform" onsubmit="return validateSignUp()" action = "./signupuser.php">
                         <label class="label error" id="error_label"></label>
                         <div class="row row-space">
                             <div class="col-2">

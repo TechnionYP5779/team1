@@ -21,13 +21,13 @@ $result = $conn->query($query);
 
 if ($result->num_rows > 0) {
     header('Location: ./home.html');
-    $cookie_name = "user";
+    $cookie_name = "username";
     $cookie_value = $username;
     setcookie($cookie_name, $cookie_value, time() + (86400), "/");
 }
 else{
     header('Location: ./signin.html?bad_cred');
-    $cookie_name = "user";
+    $cookie_name = "username";
     $cookie_value = null;
     setcookie($cookie_name, $cookie_value, time() + (86400), "/");
 }
