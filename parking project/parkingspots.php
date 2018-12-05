@@ -41,7 +41,7 @@
 						if($conn == false){
 							die("Connection failed: " . mysqli_connect_error());
 						}
-						$query = "SELECT * FROM parkingspots";
+						$query = "SELECT * FROM parkingspots WHERE boughtBy=''";
 						$result = mysqli_query($conn,$query);
 
 						echo "<table border='1'>
