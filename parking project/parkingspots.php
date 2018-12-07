@@ -27,7 +27,14 @@
         <div class="wrapper wrapper--w960">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Available Parking Spots</h2>      
+                    <h2 class="title">Available Parking Spots</h2>
+
+                    <div class="row row-space">
+                            <div class="col-2">
+                                <button class="btn btn--radius-2 btn--blue" onclick="location.href='./offerParkingSpot.html'">Offer Your Parking</button>
+                            </div>
+                    </div>  
+                    <br/> 
                     <?php
 						$host = "localhost";
 						$username = "root";
@@ -41,7 +48,7 @@
 						if($conn == false){
 							die("Connection failed: " . mysqli_connect_error());
 						}
-						$query = "SELECT * FROM parkingspots WHERE boughtBy=''";
+						$query = "SELECT * FROM parkingspots WHERE boughtBy='none'";
 						$result = mysqli_query($conn,$query);
 
 						echo "<table border='1'>
@@ -61,13 +68,7 @@
 						}
 						echo "</table>";
 						mysqli_close($conn);
-					?>
-					</br>
-					<div class="row row-space">
-                            <div class="col-2">
-                                <button class="btn btn--radius-2 btn--blue" onclick="location.href='./offerParkingSpot.html'">Offer Your Parking</button>
-                            </div>
-					</div>
+					?>					
                 </div>
             </div>
         </div>

@@ -19,7 +19,8 @@ echo $location;
 echo $askingPrice;
 
 //need to change the username inputted to the current session's username
-$query = "INSERT INTO parkingspots (username, location, price) VALUES ('randomUser', '$location', '$askingPrice')";
+$username = $_COOKIE['username'];
+$query = "INSERT INTO parkingspots (username, location, price) VALUES ('$username', '$location', '$askingPrice')";
 if(mysqli_query($conn, $query)){
     echo "Records inserted successfully.";
 	header('Location: ./confirmAdded.html');

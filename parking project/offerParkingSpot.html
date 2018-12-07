@@ -24,28 +24,22 @@
     </div>
 
     <div class="page-wrapper bg-gra-02 p-t-30 font-poppins">
-        <div class="wrapper wrapper--w960">
+        <div class="wrapper wrapper--w660">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Offer Parking Spot</h2>      
+                    <h2 class="title">Offer Parking Spot</h2>
                     <form method="POST" name="parkingspotform" onsubmit="return validateOfferParkingSpot()" action="./addParking.php">
                         <label class="label error" id="error_label"></label>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Location:</label>
-                                    <input class="input--style-4" type="text" name="location">
-                                </div>
-                            </div>
+
+                        <div class="input-group">
+                            <label class="label">Location:</label>
+                            <input class="input--style-4" type="text" name="location">
                         </div>
-						<div class="row row-space">
-							<div class="col-2">
-								<div class="input-group">
-									<label class="label">Asking Price:</label>
-									<input class="input--style-4" type="text" name="asking_price">
-								</div>
-							</div>
-						</div>
+                        <div class="input-group">
+                            <label class="label">Asking Price:</label>
+                            <input class="input--style-4" type="text" name="asking_price">
+                        </div>
+
                         <div class="row row-space">
                             <div class="col-2">
                                 <button class="btn btn--radius-2 btn--blue" type="submit">Offer</button>
