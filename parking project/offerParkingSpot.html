@@ -9,9 +9,28 @@
     <link rel="stylesheet" href="styles.css">
     <script src="./validationScript.js" type="text/javascript"></script>
     <title>ParkNet - Offer Praking Spot</title>
+    <script>
+        function checksignin(){
+            var user = getCookie("username");
+            if(user == null || user.length == 0)
+                window.location.replace("./signin.html?sign_in_first");
+        }
+
+        function getCookie(name) {
+			var nameEQ = name + "=";
+			//alert(document.cookie);
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') c = c.substring(1);
+				if (c.indexOf(nameEQ) != -1) return c.substring(nameEQ.length, c.length);
+			}
+			return null;
+		}
+    </script>
 </head>
 
-<body>
+<body onload="checksignin()">
 
     <div id='cssmenu'>
         <ul>
