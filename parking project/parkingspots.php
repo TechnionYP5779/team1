@@ -6,7 +6,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <script src="./validationScript.js" type="text/javascript"></script>
     <title>ParkNet - Offer Praking Spot</title>
 </head>
@@ -30,11 +30,13 @@
                     <h2 class="title">Available Parking Spots</h2>
 
                     <div class="row row-space">
-                            <div class="col-2">
-                                <button class="btn btn--radius-2 btn--blue" onclick="location.href='./offerParkingSpot.html'">Offer Your Parking</button>
-                            </div>
-                    </div>  
-                    <br/> 
+                        <div class="col-2">
+                            <button class="btn btn--radius-2 btn--blue" onclick="location.href='./offerParkingSpot.html'">
+                                Offer Your Parking
+                            </button>
+                        </div>
+                    </div>
+                    <br />
                     <?php
 						$host = "localhost";
 						$username = "root";
@@ -52,26 +54,33 @@
 						$result = mysqli_query($conn,$query);
 
 						echo "<table border='1'>
-						<tr>
-						<th>Owner Username</th>
-						<th>Location</th>
-						<th>Price</th>
-						</tr>";
+						        <tr>
+                                    <th>Owner Username</th>
+                                    <th>Location</th>
+                                    <th>Price</th>
+                                    <th>Buy</th>
+						        </tr>";
 
 						while($row = mysqli_fetch_array($result))
 						{
 							echo "<tr>";
 							echo "<td>" . $row['username'] . "</td>";
 							echo "<td>" . $row['location'] . "</td>";
-							echo "<td>" . $row['price'] . "</td>";
+                            echo "<td>" . $row['price'] . "</td>";
+                            echo "<td>
+                                    <label class=\"label\">
+                                        <a href=\"./buyParking.php?parkingID=" . $row['id'] . "\">Buy Now!</a>
+                                    </label>
+                                </td>";
 							echo "</tr>";
 						}
 						echo "</table>";
 						mysqli_close($conn);
-					?>					
+					?>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 

@@ -20,12 +20,17 @@ echo $askingPrice;
 
 //need to change the username inputted to the current session's username
 $username = $_COOKIE['username'];
-$query = "INSERT INTO parkingspots (username, location, price) VALUES ('$username', '$location', '$askingPrice')";
-if(mysqli_query($conn, $query)){
-    echo "Records inserted successfully.";
-	header('Location: ./confirmAdded.html');
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+if($username == null || strlen($username) == 0){
+    header('Location: ./signin.html?sign_in_first');
+}
+else{
+    $query = "INSERT INTO parkingspots (username, location, price) VALUES ('$username', '$location', '$askingPrice')";
+    if(mysqli_query($conn, $query)){
+        echo "Records inserted successfully.";
+        header('Location: ./confirmAdded.html');
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+    }
 }
  
 // Close connection

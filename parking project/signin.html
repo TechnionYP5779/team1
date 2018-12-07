@@ -11,6 +11,8 @@
         function check_cred() {
             if (location.search == '?bad_cred')
                 writeError("Wrong Credentials!");
+            else if(location.search == '?sign_in_first')
+                writeError("You have to be logged in to do that!");
         }
     </script>
     <title>ParkNet</title>
