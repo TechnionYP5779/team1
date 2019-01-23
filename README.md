@@ -1,6 +1,8 @@
 # Yearly Project Team 1
 
-# Our Status
+## Visit Our new Repository- [Technion Bot](https://github.com/TechnionYP5779/team1-bot/)
+
+## Our Status
 [![Build Status](https://travis-ci.org/TechnionYP5779/team1.svg?branch=master)](https://travis-ci.org/TechnionYP5779/team1)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/TechnionYP5779/team1.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/TechnionYP5779/team1/alerts/)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/TechnionYP5779/team1.svg?maxAge=100)](https://github.com/TechnionYP5779/team1/issues?q=is%3Aissue+is%3Aclosed)
@@ -10,7 +12,7 @@
 
 [Visit our wiki page for more information](https://github.com/TechnionYP5779/team1/wiki)
 
-# Contributors
+## Contributors
 * **Yoav Zuriel** - [Yoav's Git](https://github.com/yoavz1997/)
 * **Shai Zeevi** - [Shai's Git](https://github.com/shaizeevi/)
 * **Saifun Naveh** - [Saifun's Git](https://github.com/saifun)
@@ -19,7 +21,7 @@
 * **Yarin Shlafir** - [Yarin's Git](https://github.com/yarinsh/)
 * **Itamar Ordani** - [Itamar's Git](https://github.com/itamaror/)
 
-# About the spartanizer
+## About the spartanizer
 The Spartanizer is an Eclipse plugin that offers tips for simplifying your code and make it shorter.
 
 The Spartanizer applies spartan programming principles to your code. It refactors your code so it is simpler, contains less variable names that take place in the program's namespaces and is supposed to make the code cleaner.
@@ -28,14 +30,14 @@ The Spartanizer offers a various of programming tips and improvements, including
 
 This project was conceived as an academic project in the 'Technion - Israel Institute of Technology', and was later developed for several years by different students and members of the Computer Science faculty.
 
-# We used these tools to build the project
+## We used these tools to build the project
 * [Travis](https://travis-ci.org/) - Farmework for continuous integration
 * [Maven](https://maven.apache.org/) - Dependency Management
 
-# License
+## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-# Instructors
+## Instructors
 * **Prof. Yossi Gil** - [Yossi's Git](https://github.com/yossigil/)
 * **Dor Maayan** - [Dor's Git](https://github.com/dormaayan/)
 
